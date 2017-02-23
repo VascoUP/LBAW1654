@@ -1,1 +1,20 @@
 # LBAW
+
+This project is intended to develop an **information system** with a web interface for **project management**. This web interface brings **workers** and **supervisors** together by clearly assigning users to **tasks** and **projects**, while tracking their efforts. The **project supervisor** can compare the initial expectations to these tracked metrics and further improve how **tasks** are assigned. In turn, this improves the overall __speed__ and __efficiency__ of the project development. The web interface also promotes communication between the people working on the project with **forums** and **comments**.
+
+---------------------------------------------------
+
+Anyone can access the website. However, unregistered users (**guests**) are limited to the __login__/__register__ page.
+After **guests** register, they become **common users**. This means they can browse and search **public** projects and request to join them, as well as be invited to any project.
+
+Once a **common user** is accepted into a project, they can access the project's **task list**. The **tasks** in the list are __tagged__ according to their working context and have __three states__ ("*active*", "*completed*", "*unassigned*"). If the **common user** is assigned to a **task**, it becomes "*active*" and the user is allowed to comment on it, along with other users working on the respective **task**. Any user assigned to a certain **task** can change its **state** to "*completed*".
+
+If a **common user** creates a project, they become the project's **coordinator**. The project **coordinator** can invite users to be **coordinators** or work on the project. As **coordinators**, these users should manage the project development, as well as moderate the **comments** on the **tasks** and the project's **forum**. In the **forum**, all the project users can partake in discussions, by creating **threads** or posting on these **threads**. Any project user can report any project comment, **post** or **thread**. This action will be reviewed by one of the **coordinators**, who can __dismiss__ the report or __delete__ the **post/thread** as well as ban the reported user from the project. If the **coordinators** take action regarding the report, the reported user will be __notified by email__.
+
+The **coordinators** can also edit their project's **management platform**. This component includes a **weekly task planner** where the **coordinators** can create **tasks** and lay them out for the following week. To plan each week, the **coordinators** should make a **time prediction** and assign a **priority** to each **task**. In addition, there is the option to extend a **task** to the next week, in case it hasn't been completed yet.
+
+As the users work on the **tasks** and log their efforts, the **coordinators** can reassess how they estimate **task** __times__ and how well each team __works together__ through a **statistical overview** of the __hours spent by each member__ and __percentage of work completed__. This statistical overview will be common to all projects and will provide the **coordinators** with the information above, as well as information on the __number of members__ working on their projects. For every member the __number of projects__ they are working on is available too. Hopefully, this way it will become easier to manage the project and __improve__ each coordinators' abilities in **managing** projects. The current week's planning is relayed to all project users through the **task list**, which **changes** every week according to the planner.
+
+Users can also create **private** projects. They differ from **public** projects in that only invited users can see them and they aren't available in the search results. The **private** project's **coordinators** can invite users to work on the project through their **user profiles**, which are searchable.
+
+Finally, there is a **page administrator**. This user has access to **everything** on the website and acts as a **moderator** with permission to __delete__ any project or __post__ on any **thread** or **task**.
