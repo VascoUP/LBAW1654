@@ -98,7 +98,8 @@ body {
   text-align: center;
 }
 
-.no-margin-top {
+.contact-title {
+  font-weight: 300;
   margin-top: 0;
 }
 
@@ -139,6 +140,11 @@ body {
   .featurette-heading {
     font-size: 50px;
   }
+
+  .contact-title {
+    font-size: 50px;
+    margin-top: 0;
+  }
 }
 
 @media (min-width: 992px) {
@@ -147,6 +153,6 @@ body {
   }
 
   .text-center-xs {
-    text-align: center;
+    text-align: left;
   }
 }
