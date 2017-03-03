@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="pageIcon.jpg">
+
+    <title>YM</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/register.css" rel="stylesheet">
+	<link href="css/mainPage.css" rel="stylesheet">
+	<link href="css/bootstrap-social.css" rel="stylesheet">
+</head>
+
+ <body>
+  
+  <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">YM</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+   <div class="container">
+<div class="row">
+<div class="col-md-10 ">
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Register</legend>
+
+<!-- Text input-->
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Name (Full name)">Name (Full name)</label>  
+  <div class="col-md-4">
+ <div class="input-group">
+
+       <input id="Name (Full name)" name="Name (Full name)" type="text" placeholder="Name (Full name)" class="form-control input-md">
+      </div>
+
+    
+  </div>
+
+  
+</div>
+
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Upload photo">Upload photo</label>
+  <div class="col-md-4">
+    <input id="Upload photo" name="Upload photo" class="input-file" type="file">
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Gender">Gender</label>
+  <div class="col-md-4"> 
+    <label class="radio-inline" for="Gender-0">
+      <input type="radio" name="Gender" id="Gender-0" value="1" checked="checked">
+      Male
+    </label> 
+    <label class="radio-inline" for="Gender-1">
+      <input type="radio" name="Gender" id="Gender-1" value="2">
+      Female
+    </label> 
+    <label class="radio-inline" for="Gender-2">
+      <input type="radio" name="Gender" id="Gender-2" value="3">
+      Other
+    </label>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Email Address">Email Address</label>  
+  <div class="col-md-4">
+  <div class="input-group">
+    <input id="Email Address" name="Email Address" type="text" placeholder="Email Address" class="form-control input-md">
+    
+      </div>
+  
+  </div>
+</div>
+
+<a class="btn btn-block btn-social btn-linkedin">
+					<i class="fa fa-linkedin"></i> Sign in with LinkedIn
+				</a>
+
+<div class="form-group">
+							<label for="password" class="col-md-4 control-label">Password</label>
+							<div class="col-md-4 control-label">
+								<div class="col-md-4">
+									
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="confirm" class="col-md-4 control-label">Confirm Password</label>
+							<div class="col-md-4 control-label">
+								<div class="col-md-4">
+									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+								</div>
+							</div>
+						</div>
+						
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Upload cv">Upload Curriculum Vitae</label>
+  <div class="col-md-4">
+    <input id="Upload cv" name="Upload cv" class="input-file" type="file">
+  </div>
+</div>
+						
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Overview (max 200 words)">Overview (max 200 words)</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" rows="10"  id="Overview (max 200 words)" name="Overview (max 200 words)">Overview</textarea>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" ></label>  
+  <div class="col-md-4">
+  <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</a>
+  <a href="#" class="btn btn-danger" value=""><span class="glyphicon glyphicon-remove-sign"></span> Clear</a>
+    
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+<div class="col-md-2 hidden-xs">
+<img id="profile-img" class="profile-img-card" src="loginImage.png" />
+  </div>
+
+
+</div>
+   </div>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
