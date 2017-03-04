@@ -12,6 +12,9 @@ body, html {
 
 /* Profile sidebar */
 .profile-sidebar {
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
   padding: 20px 0 10px 0;
   background: #fff;
 }
@@ -38,8 +41,7 @@ body, html {
   margin-bottom: 7px;
 }
 
-.profile-usertitle-job {
-  text-transform: uppercase;
+.profile-usertitle-email {
   color: #5b9bd1;
   font-size: 12px;
   font-weight: 600;
@@ -104,6 +106,9 @@ body, html {
 
 /* Profile Content */
 .profile-content {
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
   padding: 20px;
   background: #fff;
   min-height: 460px;
