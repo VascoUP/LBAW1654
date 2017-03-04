@@ -1,0 +1,29 @@
+/**
+ * ------------------------------------------------
+ *  General style of this website in order to keep 
+ *  consistency throughout all the different pages
+ * ------------------------------------------------
+ */
+
+body {
+	background: #F1F3FA;
+}
+
+text-style-1 {
+	color: #535353;
+	font-size: 150%;
+}
+
+text-style-2 {
+	color: #858585;
+	font-size: 120%
+}
+
+text-style-3 {
+	color: #000000;	
+}
+
+text-style-4 {
+	color: #000000;
+	font-size: 80%;
+}
