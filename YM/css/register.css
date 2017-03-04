@@ -1,19 +1,8 @@
 body, html{
-	padding-top: 70px;
     height: 100%;
  	background-repeat: no-repeat;
  	background-color: #d3d3d3;
  	font-family: 'Oxygen', sans-serif;
-}
-
-img{
-	width: 150px;
-    height: 150px;
-    margin: 0 auto 10px;
-    display: block;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
 }
 
 .main{
@@ -23,10 +12,6 @@ img{
 hr{
 	width: 10%;
 	color: #fff;
-}
-
-.form-group{
-	margin-bottom: 15px;
 }
 
 .form-control{
@@ -44,6 +29,16 @@ hr{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+img{
+	width: 150px;
+	height: 150px;
+}
+
+.form-control.input-md {
+	width: 300px;
+	height: 40px;
 }
 
 label{
@@ -82,5 +77,26 @@ input::-webkit-input-placeholder {
 
 .login-register{
 	font-size: 16px;
+	text-align: center;
+}
+
+.row{
+	max-width: 700px;
+	background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 100px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.btn-block{
+	width: 50%;
 	text-align: center;
 }

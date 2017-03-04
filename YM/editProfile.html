@@ -71,15 +71,25 @@
 						<legend>Edit Profile</legend>
 
 					<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="Name (Full name)">Username</label>  
+								<div class="col-md-4">
+									<div class="col-md-4">
+										<input id="Username" name="Username" type="text" placeholder="Username" class="form-control input-md">
+									</div>
+								</div>
+							</div>
+							
+						<!-- Text input-->
 						<div class="form-group">
-							<label class="col-md-4 control-label" for="Name (Full name)">Name (Full name)</label>  
+							<label class="col-md-4 control-label" for="Email Address">Email Address</label>  
 							<div class="col-md-4">
-								<div class="input-group">
-									<input id="Name (Full name)" name="Name (Full name)" type="text" placeholder="Name (Full name)" class="form-control input-md">
-								</div>  
+								<div class="col-md-4">
+									<input id="Email Address" name="Email Address" type="text" placeholder="Email Address" class="form-control input-md">
+								</div>
 							</div>
 						</div>
-
+						
 					<!-- File Button --> 
 						<div class="form-group">
 							<label class="col-md-4 control-label" for="Upload photo">Upload photo</label>
@@ -88,34 +98,24 @@
 							</div>
 						</div>
 
-					<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Email Address">Email Address</label>  
-							<div class="col-md-4">
-								<div class="input-group">
-									<input id="Email Address" name="Email Address" type="text" placeholder="Email Address" class="form-control input-md">
-								</div>
-							</div>
-						</div>
-
 						<a class="btn btn-block btn-social btn-linkedin">
-							<i class="fa fa-linkedin"></i> Sign in with LinkedIn
+							<i class="fa fa-linkedin"></i> Use LinkedIn credentials
 						</a>
 
 						<div class="form-group">
 							<label for="password" class="col-md-4 control-label">Password</label>
-							<div class="col-md-4 control-label">
+							<div class="col-md-4">
 								<div class="col-md-4">
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<input type="password" class="form-control input-md" name="password" id="password"  placeholder="Enter your Password"/>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="confirm" class="col-md-4 control-label">Confirm Password</label>
-							<div class="col-md-4 control-label">
+							<div class="col-md-4">
 								<div class="col-md-4">
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+									<input type="password" class="form-control input-md" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
 								</div>
 							</div>
 						</div>
@@ -153,9 +153,6 @@
 
 		</div>
 	</div>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
 	</body>
 
 </html>
