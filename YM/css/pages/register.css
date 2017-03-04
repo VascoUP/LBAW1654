@@ -111,6 +111,6 @@ input::-webkit-input-placeholder {
 }
 
 .input-file{
-	min-width: 300px;
+	min-width: 100px;
 	max-width: 325px;
 }
