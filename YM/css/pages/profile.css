@@ -39,6 +39,20 @@ body, html {
   margin-bottom: 7px;
 }
 
+.profile-content h2{
+	font-size: 25px;
+	color: #5a7391;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-content h3{
+	font-size: 20px;
+	color: #5a7391;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
 .profile-usertitle-email {
   color: #5b9bd1;
   font-size: 12px;
