@@ -1,0 +1,78 @@
+body, html{
+   height: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(158, 158, 158), rgb(255, 255, 255));
+}
+
+/*
+.card-container.card {
+    max-width: 900px;
+    padding: 40px 40px;
+}
+
+
+.card {
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+
+/*
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 100px;
+    /* shadows and rounded borders */
+
+/*
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+    font-size: 16px;
+}
+*/
+
+.forum.table > tbody > tr > td {
+    vertical-align: middle;
+    background-color: white;
+}
+
+.forum .fa {
+    width: 1em;
+    text-align: center;
+
+}
+
+.forum.table th.cell-stat {
+    width: 6em;
+    padding: 2em;
+
+}
+
+.forum.table th.cell-stat-2x {
+    width: 14em;
+    padding: 2em;
+}
+
+.forum.table.forum.table-striped{
+    background-color: #007852;
+    color: #e1f6f0;
+}
+
+.posted.by{
+    color: #666666;
+}
+
+.center{
+    color: #666666;
+}
+
+h4 small{
+    color: #666666;
+}
+
+.table.forum.table-striped h3{
+    margin-bottom: 1em;
+
+}
