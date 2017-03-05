@@ -6,24 +6,118 @@
  */
 
 body {
-	background: #F1F3FA;
+	height:100%;
+	background-repeat: no-repeat;
+	background-image: linear-gradient(rgb(158, 158, 158), rgb(255, 255, 255));
+}
+	
+.text-style-1 {
+	color: #000;
+	font-weight: 400;
+	font-size: 200%;
 }
 
-text-style-1 {
-	color: #535353;
-	font-size: 150%;
+.text-style-2 {
+	color: #000;
+	font-weight: 400;
+	font-size: 100%
 }
 
-text-style-2 {
-	color: #858585;
-	font-size: 120%
+.text-style-3 {
+	color: #555;
+	font-weight: 400;
+	font-size: 100%
 }
 
-text-style-3 {
-	color: #000000;	
+.text-style-4 {
+	color: #000;
+	font-weight: 400;
+	font-size: 70%;
 }
 
-text-style-4 {
-	color: #000000;
-	font-size: 80%;
+.text-style-5 {
+	color: #555;
+	font-size: 70%;
 }
+
+.text-center-sm {
+	text-align:center;	
+}
+
+.text-center-xs {
+  	text-align: center;
+}
+
+@media (min-width: 768px) {	
+	.text-style-1 {
+		color: #000;
+		font-weight: 400;
+		font-size: 250%;
+	}
+
+	.text-style-2 {
+		color: #000;
+		font-weight: 400;
+		font-size: 250%
+	}
+
+	.text-style-3 {
+		color: #555;
+		font-weight: 400;
+		font-size: 150%
+	}
+
+	.text-style-4 {
+		color: #000;
+		font-weight: 400;
+		font-size: 90%;
+	}
+
+	.text-style-5 {
+		color: #555;
+		font-size: 90%;
+	}
+	
+	.text-center-xs {
+		text-align: left;
+	}
+}
+
+@media (min-width: 992px) {	
+	.text-style-1 {
+		color: #000;
+		font-weight: 400;
+		font-size: 300%;
+	}
+
+	.text-style-2 {
+		color: #000;
+		font-weight: 400;
+		font-size: 200%
+	}
+
+	.text-style-3 {
+		color: #555;
+		font-weight: 400;
+		font-size: 200%
+	}
+
+	.text-style-4 {
+		color: #000;
+		font-weight: 400;
+		font-size: 100%;
+	}
+
+	.text-style-5 {
+		color: #555;
+		font-size: 100%;
+	}
+	
+	.text-center-xs {
+		text-align: left;
+	}
+	.text-center-sm {
+		text-align: left;
+	}
+}
+
