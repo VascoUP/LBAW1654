@@ -23,3 +23,14 @@
 .info tr:first-child th:last-child { border-top-right-radius: 4px; }
 .info tr:last-child th:first-child { border-bottom-left-radius: 4px; }
 .info tr:last-child th:last-child { border-bottom-right-radius: 4px; }
+
+.project-info-box {
+	background-color: white;
+	
+	border: solid;
+	border-width: 0 1px 1px 1px;
+}
+
+.nav-table {
+	text-align: center;
+}
