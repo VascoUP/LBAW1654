@@ -1,0 +1,39 @@
+body, html{
+   height: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(158, 158, 158), rgb(255, 255, 255));
+}
+
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+    background-color: white;
+}
+
+.task.table{
+    background-color: #007852; /*dark green*/
+    color: #e1f6f0; /*light green*/
+
+    border-top: 200px;
+}
+
+.task.table h3{
+    margin-bottom: 1em;
+}
+
+.info {
+    text-align: center;
+    color: #666666;
+    background-color: white !important; /* usei imporant porque NAO consigo encontrar o que esta a sobrepor-se a isto!*/
+}
+
+.column{
+    text-align: center;
+    padding: 2em !important; /* usei imporant porque NAO consigo encontrar o que esta a sobrepor-se a isto!*/
+}
+
+.join.button{
+    display: table;
+    margin: 0 auto;
+    color: #666666;
+}
