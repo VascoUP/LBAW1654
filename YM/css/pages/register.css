@@ -104,11 +104,16 @@ input::-webkit-input-placeholder {
 }
 
 .btn.btn-block.btn-social.btn-linkedin{
-	display: block;
-	max-width: 40%;
+    margin: 20px auto;
+	max-width: 45%;
 }
 
 .input-file{
 	min-width: 100px;
 	max-width: 325px;
+}
+
+#update{
+	display: table;
+    margin: 0 auto;
 }
