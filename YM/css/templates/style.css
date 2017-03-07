@@ -65,7 +65,13 @@ a.text-style-2:hover, a.text-style-4:hover, a.text-style-6:hover {
     text-decoration: none;
 }
 
-@media (min-width: 768px) {	
+@media (max-width: 767px) {
+	.table-responsive {
+		margin-bottom: 0px;
+	}
+}
+
+@media (min-width: 768px) {
 	.text-style-1 {
 		font-size: 250%;
 	}

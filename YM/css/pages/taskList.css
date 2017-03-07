@@ -1,11 +1,3 @@
-body, html{
-   height: 100%;
-   width: 100%;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(158, 158, 158), rgb(255, 255, 255));
-}
-
-
 .table > tbody > tr > td {
     vertical-align: middle;
     background-color: white;
@@ -22,15 +14,15 @@ body, html{
     margin-bottom: 1em;
 }
 
-.info {
+.task-info {
     text-align: center;
     color: #666666;
-    background-color: white !important; /* usei imporant porque NAO consigo encontrar o que esta a sobrepor-se a isto!*/
+    background-color: white;
 }
 
-.column{
+.project-info-box .task thead tr th.column{
     text-align: center;
-    padding: 2em !important; /* usei imporant porque NAO consigo encontrar o que esta a sobrepor-se a isto!*/
+    padding: 2em;
 }
 
 .join.button{
