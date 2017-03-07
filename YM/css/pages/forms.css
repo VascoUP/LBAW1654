@@ -113,7 +113,7 @@ input::-webkit-input-placeholder {
 	max-width: 325px;
 }
 
-#update{
+#update, #addTask{
 	display: table;
     margin: 0 auto;
 }
