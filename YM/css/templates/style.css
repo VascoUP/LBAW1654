@@ -6,7 +6,7 @@
  */
 
 body {
-	height:100%;
+	height: 100%;
 	background-repeat: no-repeat;
 	background-image: linear-gradient(rgb(158, 158, 158), rgb(255, 255, 255));
 }
@@ -141,4 +141,11 @@ a.text-style-2:hover, a.text-style-4:hover, a.text-style-6:hover {
 
 .table-responsive {
 	border-width: 0;
+}
+
+.footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }
