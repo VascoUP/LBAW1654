@@ -36,14 +36,13 @@ body {
 }
 
 .text-style-5 {
-	color: #000
+	color: #555;
 	font-weight: bold;
 	font-size: 100%;
 }
 
 .text-style-6 {
-	color: #555;
-	font-weight: bold;
+	color: #000;
 	font-size: 100%;
 }
 
@@ -82,15 +81,19 @@ a.text-style-2:hover, a.text-style-4:hover, a.text-style-6:hover {
 
 	.text-style-3 {
 		color: #555;
-		font-size: 150%
+		font-size: 175%
 	}
 
 	.text-style-4 {
-		font-size: 100%;
+		font-size: 175%;
 	}
 
 	.text-style-5 {
-		font-size: 100%;
+		font-size: 120%;
+	}
+	
+	.text-style-6 {
+		font-size: 120%;
 	}
 	
 	.text-center-xs {
@@ -104,7 +107,7 @@ a.text-style-2:hover, a.text-style-4:hover, a.text-style-6:hover {
 	}
 
 	.text-style-2 {
-		font-size: 200%
+		font-size: 300%
 	}
 
 	.text-style-3 {
@@ -112,12 +115,17 @@ a.text-style-2:hover, a.text-style-4:hover, a.text-style-6:hover {
 	}
 
 	.text-style-4 {
-		font-size: 150%;
+		font-size: 200%;
 	}
 
 	.text-style-5 {
 		font-size: 150%;
+	}	
+	
+	.text-style-6 {
+		font-size: 150%;
 	}
+	
 	
 	.text-center-xs {
 		text-align: left;
