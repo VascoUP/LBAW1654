@@ -7,15 +7,6 @@ body, html {
     padding: 40px 40px;
 }
 
-.btn {
-    font-weight: 700;
-    height: 36px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: default;
-}
-
 .card {
     background-color: #F7F7F7;
     /* just in case there no content*/
