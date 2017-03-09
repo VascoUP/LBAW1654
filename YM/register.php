@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
-  	<head>
+
+	<head>
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,14 +15,12 @@
 
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-		<link href="css/pages/profile.css" rel="stylesheet">
+		<link href="css/pages/forms.css" rel="stylesheet">
 		<link href="css/templates/navbar.css" rel="stylesheet">
 		<link href="css/templates/style.css" rel="stylesheet">
 		<link href="css/bootstrap/bootstrap-social.css" rel="stylesheet">
-
 	</head>
-<!-- NAVBAR
-================================================== -->
+
 	<body>
 		<div class="navbar-wrapper">
 			<div class="container">
@@ -76,78 +77,72 @@
 				</nav>
 			</div>
 		</div>
+		
 		<div class="container">
-			<div class="row profile">
-				<div class="col-md-3">
-					<div class="profile-sidebar">
-						<!-- SIDEBAR USERPIC -->
-						<div class="profile-userpic">
-							<img src="loginImage.png" class="img-responsive" alt="">
-						</div>
-						<!-- END SIDEBAR USERPIC -->
-						<!-- SIDEBAR USER TITLE -->
-						<div class="profile-usertitle">
-							<div class="profile-usertitle-name">
-								aeFi321
+			<div class="card card-container">
+					<form class="form-horizontal">
+						<fieldset>
+						<!-- Form Name -->
+							<legend>Register</legend>
+
+						<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="Username">Username</label>  
+								<div class="col-md-4">
+									<div class="col-md-4">
+										<input id="Username" name="Username" type="text" placeholder="Username" class="form-control form-style input-md">
+									</div>
+								</div>
 							</div>
-							<div class="profile-usertitle-email">
-								aeFi321@gmail.com
+							
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="Email Address">Email Address</label>  
+							<div class="col-md-4">
+								<div class="col-md-4">
+									<input id="Email Address" name="Email Address" type="text" placeholder="Email Address" class="form-control form-style input-md">
+								</div>
+							</div>
+						</div>
+						
+						<a class="btn btn-block btn-social btn-linkedin">
+							<i class="fa fa-linkedin"></i> Use LinkedIn credentials
+						</a>
+
+						<div class="form-group">
+							<label for="password" class="col-md-4 control-label">Password</label>
+							<div class="col-md-4">
+								<div class="col-md-4">
+									<input type="password" class="form-control form-style input-md" name="password" id="password"  placeholder="Enter your Password"/>
+								</div>
 							</div>
 						</div>
 
-						<!-- END SIDEBAR BUTTONS -->
-						<!-- SIDEBAR MENU -->
-						<div class="profile-usermenu">
-							<ul class="nav">
-								<li class="active">
-									<a href="#">
-									<i class="glyphicon glyphicon-home"></i>
-									Overview </a>
-								</li>
-								<li>
-									<a href="#">
-									<i class="glyphicon glyphicon-user"></i>
-									Account Settings </a>
-								</li>
-								<li>
-									<a href="#" target="_blank">
-									<i class="glyphicon glyphicon-ok"></i>
-									Projects I contributed to</a>
-								</li>
-							</ul>
+						<div class="form-group">
+							<label for="confirm" class="col-md-4 control-label">Confirm Password</label>
+							<div class="col-md-4">
+								<div class="col-md-4">
+									<input type="password" class="form-control form-style input-md" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+								</div>
+							</div>
 						</div>
-						<!-- END MENU -->
-					</div>
+					
+						<div class="form-group">
+							<label class="col-md-4 control-label" ></label>  
+							<div class="col-md-4">
+								<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Register</a>
+								<a href="#" class="btn btn-danger" value=""><span class="glyphicon glyphicon-remove-sign"></span> Clear</a>
+							</div>
+						</div>
 
-					<!-- END SIDEBAR USER TITLE -->
-						<!-- SIDEBAR BUTTONS -->
-						<div class="profile-userbuttons">
-							<button type="button" class="btn btn-success btn-sm">Add project</button>
-							<button type="button" class="btn btn-success btn-sm">Contact</button>
-						</div>
-				</div>
-				<div class="col-md-9">
-					<div class="profile-content">
-					   <h2>
-							Biography
-						</h2>
-						<p class="summary">
-						My name is Andrew, I'm 20 years old and I live in Barcelona. <br>
-						I have a degree in Computer Engineering and I like to listen to music.
-						</p>
-						<br>
-						<h3>
-							Curriculum Vitae
-						</h3>
-						<a href="#"> aeFi321CV </a>
-					</div>
-				</div>
+						</fieldset>
+					</form>
+			
 			</div>
 		</div>
-		<!-- FOOTER -->
-		<footer class="footer">
-			<p class="pull-right"><a href="#">Back to top</a></p>
-			<p>&copy; 2017 YM, Inc. &middot;
-		</footer>
 	</body>
+	
+	<!-- FOOTER -->
+	<?php include 'templates/default/footer.php';?>
+	
 </html>

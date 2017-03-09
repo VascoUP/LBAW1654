@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,11 +13,10 @@
 
 		<title>YM</title>
 
-		<!-- Bootstrap core CSS -->
+			<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
 		<link href="css/pages/project.css" rel="stylesheet">
-		<link href="css/pages/forms.css" rel="stylesheet">
-		<link href="css/pages/editProject.css" rel="stylesheet">
+		<link href="css/pages/forum.css" rel="stylesheet">
 		<link href="css/templates/navbar.css" rel="stylesheet">
 		<link href="css/templates/navtable.css" rel="stylesheet">
 		<link href="css/templates/style.css" rel="stylesheet">
@@ -112,74 +113,118 @@
 						<td><a class="text-style-6" href="#overview">Overview</a></td>
 						<td><a class="text-style-6" href="#tasks">Tasks</a></td>
 						<td><a class="text-style-6" href="#stats">Statistics</a></td>
-						<td><a class="text-style-6" href="#forum">Forum</a></td>
-						<td class="active"><a class="text-style-6" href="#edit">Edit</a></td>
+						<td class="active"><a class="text-style-6" href="#forum">Forum</a></td>
+						<td><a class="text-style-6" href="#edit">Edit</a></td>
 						<td class="nav-table-fill"></td>
 					</tr>
 				</table>
 			</div>
 		</div>
-		
 		<div class="container">
 			<div class="row">
 				<div class="container">
 					<div class="project-info-box">
-						<p class="text-style-2">Edit project</p>
-						<legend></legend>
-						
-						<div class="project-edit-box">
-							<div class="project-edit-box-header">
-								<p class="text-style-5">Rename project</p>
-							</div>
-							<div class="text-edit-box-body">
-								<p class="text-style-6">Change the name of the project to a new one</p>
-								<div class="col-md-6 col-sm-6 input-group">
-									<input type="text" class="form-control" placeholder="ex: PIU">
-									<span class="input-group-addon btn btn-primary">Submit</span>
-								</div>
-							</div> 
+						<p class="text-style-2">Forum</p>
+          				<p class="text-style-5">This is the right place to discuss any ideas, critics, feature requests and all the ideas regarding the project. Please follow the forum rules and always check FAQ before posting to prevent duplicate posts.</p>
+						<hr class="featurette-divider">
+          
+						<div class="table-responsive">
+							<table class="table forum table-striped">
+								<thead>
+									<tr>
+										<th class="hidden-xs cell-stat"></th>
+										<th>
+											<h3>Important</h3>
+										</th>
+										<th class="cell-stat text-center hidden-xs hidden-sm">Topics</th>
+										<th class="cell-stat text-center hidden-xs hidden-sm">Posts</th>
+										<th class="cell-stat-2x hidden-xs hidden-sm">Last Post</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="hidden-xs text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
+										<td>
+											<h4><a href="#">Frequently Asked Questions</a><br><small>Some description</small></h4>
+										</td>
+										<td class="text-center hidden-xs hidden-sm"><a href="#">9 542</a></td>
+										<td class="text-center hidden-xs hidden-sm"><a href="#">89 897</a></td>
+										<td class="posted by">by <a href="#">John Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>
+									</tr>
+									<tr>
+										<td class="hidden-xs text-center"><i class="fa fa-exclamation fa-2x text-danger"></i></td>
+										<td>
+											<h4><a href="#">Important changes</a><br><small>Category description</small></h4>
+										</td>
+										<td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
+										<td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
+										<td class="posted by">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 1 years ago</small></td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
-						
-						<legend></legend>
-						
-						<div class="project-edit-box">
-							<div class="project-edit-box-header">
-								<p class="text-style-5">Edit overview</p>
-							</div>
-							<div class="text-edit-box-body">
-								<p class="text-style-6">Redo the overview project for either a quick fix or an overall update</p>
-								<div class="col-md-7 col-sm-7 input-group">
-									<textarea rows="4" cols="50" class="form-control" placeholder="ex: PIU"></textarea>
-									<span class="input-group-addon btn btn-primary">Submit</span>
-								</div>
-							</div> 
+						<div class="table-responsive">
+							<table class="table forum table-striped">
+								<thead>
+									<tr>
+										<th class="hidden-xs cell-stat"></th>
+										<th>
+											<h3>Suggestions</h3>
+										</th>
+										<th class="cell-stat text-center hidden-xs hidden-sm">Topics</th>
+										<th class="cell-stat text-center hidden-xs hidden-sm">Posts</th>
+										<th class="cell-stat-2x hidden-xs hidden-sm">Last Post</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="hidden-xs text-center"><i class="fa fa-heart fa-2x text-primary"></i></td>
+										<td>
+											<h4><a href="#">More more more</a><br><small>Category description</small></h4>
+										</td>
+										<td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
+										<td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
+										<td class="posted by">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>
+									</tr>
+									<tr>
+										<td class="hidden-xs text-center"><i class="fa fa-magic fa-2x text-primary"></i></td>
+										<td>
+											<h4><a href="#">Haha</a><br><small>Category description</small></h4>
+										</td>
+										<td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
+										<td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
+										<td class="posted by">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 1 years ago</small></td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
-						
-						<legend></legend>
-						
-						<div class="project-edit-box">
-							<div class="project-edit-box-header">
-								<p class="text-style-5">Rename project</p>
-							</div>
-							<div class="buttons-edit-box-body">
-								<p class="text-style-6 col-xs-6">Make project public</p>
-								<button class="btn btn-secondary style-button col-xs-offset-2" type="button">Go Public</button>
-							</div>
-							<div class="buttons-edit-box-body">
-								<p class="text-style-6 col-xs-6">Delete project</p>
-								<button class="btn btn-secondary style-button col-xs-offset-2" type="button">Delete</button>
-							</div>
+						<div class="table-responsive">
+							<table class="table forum table-striped">
+								<thead>
+									<tr>
+										<th class="hidden-xs cell-stat"></th>
+										<th>
+											<h3>Open discussion</h3>
+										</th>
+										<th class="cell-stat text-center hidden-xs hidden-sm">Topics</th>
+										<th class="cell-stat text-center hidden-xs hidden-sm">Posts</th>
+										<th class="cell-stat-2x hidden-xs hidden-sm">Last Post</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td></td>
+										<td colspan="4" class="center">No topics have been added yet.</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</body>
-	
+
+    </body>
 	<!-- FOOTER -->
-	<footer>
-		<p class="pull-right"><a href="#">Back to top</a></p>
-		<p>&copy; 2017 YM, Inc. &middot;
-	</footer>
-	
+	<?php include 'templates/default/footer.php';?>
 </html>

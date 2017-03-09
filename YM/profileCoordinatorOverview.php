@@ -1,24 +1,23 @@
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<link rel="icon" href="pageIcon.jpg">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="pageIcon.jpg">
 
-		<title>YM</title>
+    <title>YM</title>
 
-		<!-- Bootstrap core CSS -->
-		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-		<link href="css/pages/profile.css" rel="stylesheet">
-		<link href="css/templates/projectsUsers.css" rel="stylesheet">
-		<link href="css/templates/navbar.css" rel="stylesheet">
-		<link href="css/templates/style.css" rel="stylesheet">
-		<link href="css/bootstrap/bootstrap-social.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="css/pages/profile.css" rel="stylesheet">
+    <link href="css/templates/navbar.css" rel="stylesheet">
+	<link href="css/templates/style.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap-social.css" rel="stylesheet">
 
-	</head>
+  </head>
 <!-- NAVBAR
 ================================================== -->
 	<body>
@@ -90,10 +89,10 @@
 						<!-- SIDEBAR USER TITLE -->
 						<div class="profile-usertitle">
 							<div class="profile-usertitle-name">
-								Ava Stuart
+								Marcus Doe
 							</div>
 							<div class="profile-usertitle-email">
-								avieSS@hotmail.com
+								marcusDoe@gmail.com
 							</div>
 						</div>
 
@@ -101,79 +100,58 @@
 						<!-- SIDEBAR MENU -->
 						<div class="profile-usermenu">
 							<ul class="nav">
-								<li>
-									<a href="#" target="_blank">
-									<i class="glyphicon glyphicon-ok"></i>
-									Site projects </a>
-								</li>
 								<li class="active">
-									<a href="#" target="_blank">
-									<i class="glyphicon glyphicon-ok"></i>
-									Site users </a>
+									<a href="#">
+									<i class="glyphicon glyphicon-home"></i>
+									Overview </a>
 								</li>
 								<li>
 									<a href="#">
 									<i class="glyphicon glyphicon-user"></i>
 									Account Settings </a>
 								</li>
+								<li>
+									<a href="#" target="_blank">
+									<i class="glyphicon glyphicon-ok"></i>
+									My Projects </a>
+								</li>
+								<li>
+									<a href="#" target="_blank">
+									<i class="glyphicon glyphicon-ok"></i>
+									Projects I contributed to </a>
+								</li>
 							</ul>
 						</div>
 						<!-- END MENU -->
 					</div>
+
+					<!-- END SIDEBAR USER TITLE -->
+						<!-- SIDEBAR BUTTONS -->
+						<div class="profile-userbuttons">
+							<button type="button" class="btn btn-success btn-sm">Add project</button>
+							<button type="button" class="btn btn-success btn-sm">Contact</button>
+						</div>
 				</div>
 				<div class="col-md-9">
 					<div class="profile-content">
-							<div class="pull-right">
-								<div class="btn-group">
-									<button type="button" class="btn btn-success btn-filter" data-target="active">Active</button>
-									<button type="button" class="btn btn-danger btn-filter" data-target="reported">Reported</button>
-									<button type="button" class="btn btn-default btn-filter" data-target="all">All</button>
-								</div>
-							</div>
-							<div class="table-container">
-								<table class="table table-filter">
-									<tbody>
-										<tr data-status="active">
-											<td>
-												<div class="media">
-													<div class="media-body">
-														<h4 class="title2">
-															aeFi321
-															<span class="pull-right active">(Active)</span>
-														</h4>
-													</div>
-													<a href="#" class="pull-left">
-														<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-													</a>
-												</div>
-											</td>
-										</tr>
-										<tr data-status="active">
-											<td>
-												<div class="media">
-													<div class="media-body">
-														<h4 class="title2">
-															Marcus Doe
-															<span class="pull-right active">(Active)</span>
-														</h4>
-													</div>
-													<a href="#" class="pull-left">
-														<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-													</a>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
+						<h2>
+							Biography
+						</h2>
+						<p class="summary">
+						My name is Marcus Doe, I'm 27 years old and I live in Scotland. <br>
+						I have a degree in Multimedia and Communication and I like to watch movies and listen to music.
+						</p>
+						<br>
+						<h3>
+							Curriculum Vitae
+						</h3>
+						<a href="#"> MarcusDoeCV </a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- FOOTER -->
-		<footer class="footer">
-			<p class="pull-right"><a href="#">Back to top</a></p>
-			<p>&copy; 2017 YM, Inc. &middot;
-		</footer>
 	</body>
+
+	<!-- FOOTER -->
+	<?php include 'templates/default/footer.php';?>
 </html>

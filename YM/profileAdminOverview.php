@@ -22,38 +22,39 @@
 <!-- NAVBAR
 ================================================== -->
 	<body>
+
 		<div class="navbar-wrapper">
 			<div class="container">
 				<nav class="navbar navbar-inverse navbar-static-top">
 					<div class="container">
 						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" href="#">YM</a>
+						  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						  </button>
+						  <a class="navbar-brand" href="#">YM</a>
 						</div>
 						<div id="navbar" class="navbar-collapse collapse">
-							<ul class="nav navbar-nav">
-								<li class="active"><a href="#">Home</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Action</a></li>
-									<li><a href="#">Another action</a></li>
-									<li><a href="#">Something else here</a></li>
-									<li role="separator" class="divider"></li>
-									<li class="dropdown-header">Nav header</li>
-									<li><a href="#">Separated link</a></li>
-									<li><a href="#">One more separated link</a></li>
-								</ul>
-								</li>
-							</ul>
-							<ul class="nav navbar-nav navbar-right">
+						  <ul class="nav navbar-nav">
+							<li><a href="#">Home</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#contact">Contact</a></li>
+							<li class="dropdown">
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+							  <ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li role="separator" class="divider"></li>
+								<li class="dropdown-header">Nav header</li>
+								<li><a href="#">Separated link</a></li>
+								<li><a href="#">One more separated link</a></li>
+							  </ul>
+							</li>
+						  </ul>
+						  <ul class="nav navbar-nav navbar-right">
 								<li>
 									<form class="form-inline navbar-form">								
 										<div class="input-group">
@@ -77,6 +78,7 @@
 				</nav>
 			</div>
 		</div>
+
 		<div class="container">
 			<div class="row profile">
 				<div class="col-md-3">
@@ -89,10 +91,10 @@
 						<!-- SIDEBAR USER TITLE -->
 						<div class="profile-usertitle">
 							<div class="profile-usertitle-name">
-								Marcus Doe
+								Ava Stuart
 							</div>
 							<div class="profile-usertitle-email">
-								marcusDoe@gmail.com
+								avieSS@hotmail.com
 							</div>
 						</div>
 
@@ -100,54 +102,64 @@
 						<!-- SIDEBAR MENU -->
 						<div class="profile-usermenu">
 							<ul class="nav">
+								<li class="active">
+									<a href="#" target="_blank">
+									<i class="glyphicon glyphicon-ok"></i>
+									Site projects </a>
+								</li>
 								<li>
-									<a href="#">
-									<i class="glyphicon glyphicon-home"></i>
-									Overview </a>
+									<a href="#" target="_blank">
+									<i class="glyphicon glyphicon-ok"></i>
+									Site users </a>
 								</li>
 								<li>
 									<a href="#">
 									<i class="glyphicon glyphicon-user"></i>
 									Account Settings </a>
 								</li>
-								<li>
-									<a href="#" target="_blank">
-									<i class="glyphicon glyphicon-ok"></i>
-									My Projects </a>
-								</li>
-								<li class="active">
-									<a href="#" target="_blank">
-									<i class="glyphicon glyphicon-ok"></i>
-									Projects I contributed to </a>
-								</li>
 							</ul>
 						</div>
 						<!-- END MENU -->
 					</div>
-
-					<!-- END SIDEBAR USER TITLE -->
-						<!-- SIDEBAR BUTTONS -->
-						<div class="profile-userbuttons">
-							<button type="button" class="btn btn-success btn-sm">Add project</button>
-							<button type="button" class="btn btn-success btn-sm">Contact</button>
-						</div>
 				</div>
 				<div class="col-md-9">
 					<div class="profile-content">
+						<div class="pull-right">
+							<div class="btn-group">
+								<button type="button" class="btn btn-success btn-filter" data-target="accepted">Accepted</button>
+								<button type="button" class="btn btn-danger btn-filter" data-target="reported">Reported</button>
+								<button type="button" class="btn btn-default btn-filter" data-target="all">All</button>
+							</div>
+						</div>
 						<div class="table-container">
 							<table class="table table-filter">
 								<tbody>
-									<tr>
+									<tr data-status="accepetd">
 										<td>
 											<div class="media">
 												<div class="media-body">
 													<h4 class="title">
-													Lorem
-												</h4>
-												<p class="summary">Ut enim ad minim veniam</p>
+														Lorem Impsum
+														<span class="pull-right accepted">(Accepted)</span>
+													</h4>
+													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
 												</div>
 											</div>
 										</td>
+									</tr>
+									<tr data-status="banned">
+
+									<td>
+										<div class="media">
+											<div class="media-body">
+												<h4 class="title">
+													Lorem
+													<span class="pull-right reported">(Reported)</span>
+												</h4>
+												<p class="summary">Ut enim ad minim veniam</p>
+											</div>
+										</div>
+									</td>
 									</tr>
 								</tbody>
 							</table>
@@ -156,10 +168,8 @@
 				</div>
 			</div>
 		</div>
-		<!-- FOOTER -->
-		<footer class="footer">
-			<p class="pull-right"><a href="#">Back to top</a></p>
-			<p>&copy; 2017 YM, Inc. &middot;
-		</footer>
 	</body>
+	
+	<!-- FOOTER -->
+	<?php include 'templates/default/footer.php';?>
 </html>

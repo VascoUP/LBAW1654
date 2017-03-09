@@ -12,15 +12,15 @@
 
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-		<link href="css/pages/login.css" rel="stylesheet">
+		<link href="css/pages/profile.css" rel="stylesheet">
+		<link href="css/templates/projectsUsers.css" rel="stylesheet">
 		<link href="css/templates/navbar.css" rel="stylesheet">
 		<link href="css/templates/style.css" rel="stylesheet">
 		<link href="css/bootstrap/bootstrap-social.css" rel="stylesheet">
-
 	</head>
-	<!-- NAVBAR
-	================================================== -->
-	<body>
+<!-- NAVBAR
+================================================== -->
+  	<body>
 		<div class="navbar-wrapper">
 			<div class="container">
 				<nav class="navbar navbar-inverse navbar-static-top">
@@ -78,33 +78,86 @@
 		</div>
 
 		<div class="container">
-			<div class="card card-container">
-				<img id="profile-img" class="profile-img-card" src="loginImage.png" />
-				<p id="profile-name" class="profile-name-card"></p>
-				<form class="form-signin">
-					<span id="reauth-email" class="reauth-email"></span>
-					<input type="email" id="inputEmail" class="form-control form-style" placeholder="Email address" required autofocus>
-					<input type="password" id="inputPassword" class="form-control form-style" placeholder="Password" required>
-					<div id="remember" class="checkbox">
-						<label>
-							<input type="checkbox" value="remember-me"> Remember me
-						</label>
+			<div class="row profile">
+				<div class="col-md-3">
+					<div class="profile-sidebar">
+						<!-- SIDEBAR USERPIC -->
+						<div class="profile-userpic">
+							<img src="loginImage.png" class="img-responsive" alt="">
+						</div>
+						<!-- END SIDEBAR USERPIC -->
+						<!-- SIDEBAR USER TITLE -->
+						<div class="profile-usertitle">
+							<div class="profile-usertitle-name">
+								Marcus Doe
+							</div>
+							<div class="profile-usertitle-email">
+								marcusDoe@gmail.com
+							</div>
+						</div>
+
+						<!-- END SIDEBAR BUTTONS -->
+						<!-- SIDEBAR MENU -->
+						<div class="profile-usermenu">
+							<ul class="nav">
+								<li>
+									<a href="#">
+									<i class="glyphicon glyphicon-home"></i>
+									Overview </a>
+								</li>
+								<li>
+									<a href="#">
+									<i class="glyphicon glyphicon-user"></i>
+									Account Settings </a>
+								</li>
+								<li class="active">
+									<a href="#" target="_blank">
+									<i class="glyphicon glyphicon-ok"></i>
+									My Projects </a>
+								</li>
+								<li>
+									<a href="#" target="_blank">
+									<i class="glyphicon glyphicon-ok"></i>
+									Projects I contributed to </a>
+								</li>
+							</ul>
+						</div>
+						<!-- END MENU -->
 					</div>
-					<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
-					<a class="btn btn-block btn-social btn-linkedin">
-						<i class="fa fa-linkedin"></i> Sign in with LinkedIn
-					</a>
-				</form>
-				<a href="#" class="forgot-password">
-					Forgot the password?
-				</a>
+
+					<!-- END SIDEBAR USER TITLE -->
+						<!-- SIDEBAR BUTTONS -->
+						<div class="profile-userbuttons">
+							<button type="button" class="btn btn-success btn-sm">Add project</button>
+							<button type="button" class="btn btn-success btn-sm">Contact</button>
+						</div>
+				</div>
+				<div class="col-md-9">
+					<div class="profile-content">
+						<div class="table-container">
+							<table class="table table-filter">
+								<tbody>
+									<tr>
+										<td>
+											<div class="media">
+												<div class="media-body">
+													<h4 class="title">
+														Lorem Impsum
+													</h4>
+													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>	
+		</div>
 	</body>
 	
 	<!-- FOOTER -->
-	<footer>
-		<p class="pull-right"><a href="#">Back to top</a></p>
-		<p>&copy; 2017 YM, Inc. &middot;
-	</footer>
+	<?php include 'templates/default/footer.php';?>
 </html>

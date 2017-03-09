@@ -13,6 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/pages/profile.css" rel="stylesheet">
+	<link href="css/templates/projectsUsers.css" rel="stylesheet">
     <link href="css/templates/navbar.css" rel="stylesheet">
 	<link href="css/templates/style.css" rel="stylesheet">
     <link href="css/bootstrap/bootstrap-social.css" rel="stylesheet">
@@ -76,7 +77,6 @@
 				</nav>
 			</div>
 		</div>
-
 		<div class="container">
 			<div class="row profile">
 				<div class="col-md-3">
@@ -100,7 +100,7 @@
 						<!-- SIDEBAR MENU -->
 						<div class="profile-usermenu">
 							<ul class="nav">
-								<li class="active">
+								<li>
 									<a href="#">
 									<i class="glyphicon glyphicon-home"></i>
 									Overview </a>
@@ -115,7 +115,7 @@
 									<i class="glyphicon glyphicon-ok"></i>
 									My Projects </a>
 								</li>
-								<li>
+								<li class="active">
 									<a href="#" target="_blank">
 									<i class="glyphicon glyphicon-ok"></i>
 									Projects I contributed to </a>
@@ -134,26 +134,30 @@
 				</div>
 				<div class="col-md-9">
 					<div class="profile-content">
-						<h2>
-							Biography
-						</h2>
-						<p class="summary">
-						My name is Marcus Doe, I'm 27 years old and I live in Scotland. <br>
-						I have a degree in Multimedia and Communication and I like to watch movies and listen to music.
-						</p>
-						<br>
-						<h3>
-							Curriculum Vitae
-						</h3>
-						<a href="#"> MarcusDoeCV </a>
+						<div class="table-container">
+							<table class="table table-filter">
+								<tbody>
+									<tr>
+										<td>
+											<div class="media">
+												<div class="media-body">
+													<h4 class="title">
+													Lorem
+												</h4>
+												<p class="summary">Ut enim ad minim veniam</p>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- FOOTER -->
-		<footer class="footer">
-			<p class="pull-right"><a href="#">Back to top</a></p>
-			<p>&copy; 2017 YM, Inc. &middot;
-		</footer>
 	</body>
+	
+	<!-- FOOTER -->
+	<?php include 'templates/default/footer.php';?>
 </html>

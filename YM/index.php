@@ -1,3 +1,3 @@
 <?php
-  header ('Location: mainPage.html');
+	header ('Location: mainPage.php');
 ?>
