@@ -85,9 +85,18 @@
 						<!-- Form Name -->
 						<legend>Edit Profile</legend>
 
+						<div class="form-group">
+								<label class="col-md-4 control-label" ></label>  
+								<div class="col-md-4">
+									<a class="btn btn-block btn-social btn-linkedin">
+										<i class="fa fa-linkedin"></i> Link to Linkedin
+									</a>
+								</div>
+							</div>
+							
 						<!-- Text input-->
 						<div class="form-group">
-							<label class="col-md-4 control-label" for="Name (Full name)">Username</label>  
+							<label class="col-md-4 control-label" for="Username">Username</label>  
 							<div class="col-md-4">
 								<div class="col-md-4">
 									<input id="Username" name="Username" type="text" placeholder="Username" class="form-control form-style input-md">
@@ -123,10 +132,6 @@
 								</div>
 							</div>
 						</div>
-
-						<a class="btn btn-block btn-social btn-linkedin">
-							<i class="fa fa-linkedin"></i> Use LinkedIn credentials
-						</a>
 
 						<div class="form-group">
 							<label for="password" class="col-md-4 control-label">Password</label>

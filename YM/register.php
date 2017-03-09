@@ -85,6 +85,15 @@
 						<!-- Form Name -->
 							<legend>Register</legend>
 
+							<div class="form-group">
+								<label class="col-md-4 control-label" ></label>  
+								<div class="col-md-4">
+									<a class="btn btn-block btn-social btn-linkedin">
+										<i class="fa fa-linkedin"></i> Use LinkedIn credentials
+									</a>
+								</div>
+							</div>
+							
 						<!-- Text input-->
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="Username">Username</label>  
@@ -104,10 +113,6 @@
 								</div>
 							</div>
 						</div>
-						
-						<a class="btn btn-block btn-social btn-linkedin">
-							<i class="fa fa-linkedin"></i> Use LinkedIn credentials
-						</a>
 
 						<div class="form-group">
 							<label for="password" class="col-md-4 control-label">Password</label>

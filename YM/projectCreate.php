@@ -105,27 +105,16 @@
 								</div>
 							</div>
 							
-							
 							<legend></legend>
 							
 							<div class="form-group">
-								<div class="row">
-									<label class="col-xs-4 control-label" for="Access">Control access<br></label>
-								</div>
-								<div class="row">
-									<div class="radio">
-										<label class="col-xs-4 control-label">Private<br>Inaccessible unless invited</label>
-										<div class="col-sm-offset-6 col-xs-offset-8">
-											<input type="radio" name="premissions">
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="radio">
-										<label class="col-xs-4 control-label">Public<br>Anyone can see it</label>
-										<div class="col-sm-offset-6 col-xs-offset-8">
-											<input type="radio" name="premissions">
-										</div>
+								<label class="col-md-4 control-label" for="Access">Control access</label>
+								<div class="col-md-4">
+									<div class="col-md-4">
+										<!-- <select name="control-access">
+											<option value="public">Public</option>
+											<option value="private">Private</option>
+										</select> -->
 									</div>
 								</div>
 							</div>
@@ -133,8 +122,8 @@
 							<legend></legend>
 
 							<div class="form-group">
-								<label class="col-xs-4 control-label" ></label>  
-								<div class="col-xs-4">
+								<label class="col-md-4 control-label" ></label>  
+								<div class="col-md-4">
 									<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Create</a>
 									<a href="#" class="btn btn-danger" value=""><span class="glyphicon glyphicon-remove-sign"></span> Clear</a>
 								</div>
