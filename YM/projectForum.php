@@ -219,6 +219,7 @@
 								</tbody>
 							</table>
 						</div>
+							<button class="addCategory">Add Category</button>
 					</div>
 				</div>
 			</div>
