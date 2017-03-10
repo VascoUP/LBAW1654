@@ -94,6 +94,7 @@
 							<h1>Your Management</h1>
 							<p>A free project management website tailored for professional individuals looking for the best way to manage their projects</p>
 							<p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+							<p><a class="btn btn-lg btn-primary" href="#" role="button">Login</a></p>
 						</div>
 					</div> 
 				</div>
