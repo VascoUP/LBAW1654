@@ -9,7 +9,8 @@
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="pageIcon.jpg">
+		
+		<link rel="icon" href="img/pageIcon.jpg">
 
 		<title>YM</title>
 
@@ -23,62 +24,54 @@
 
 	<body>
 	  
-		<div class="navbar-wrapper">
-			<div class="container">
-				<nav class="navbar navbar-inverse navbar-static-top">
-					<div class="container">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" href="#">YM</a>
-						</div>
-						<div id="navbar" class="navbar-collapse collapse">
-							<ul class="nav navbar-nav">
-								<li><a href="#">Home</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="#">Action</a></li>
-										<li><a href="#">Another action</a></li>
-										<li><a href="#">Something else here</a></li>
-										<li role="separator" class="divider"></li>
-										<li class="dropdown-header">Nav header</li>
-										<li><a href="#">Separated link</a></li>
-										<li><a href="#">One more separated link</a></li>
-									</ul>
-								</li>
-							</ul>
-							<ul class="nav navbar-nav navbar-right">
-								<li>
-									<form class="form-inline navbar-form">								
-										<div class="input-group">
-											<input type="text" class="form-control" placeholder="Search...">
-											<span class="input-group-addon btn btn-primary">Go!</span>
-										</div>
-									</form>
-								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="#">Profile</a></li>
-										<li><a href="#">Projects</a></li>
-										<li><a href="#">Edit Profile</a></li>
-										<li><a href="#">Logout</a></li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</nav>
+		  
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom n">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">YM</a>
+            </div>
 
-			</div>
-		</div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#home">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+				<ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Profile</a></li>
+							<li><a href="#">Projects</a></li>
+							<li><a href="#">Edit Profile</a></li>
+							<li><a href="#">Logout</a></li>
+						</ul>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
 		
 		<div class="container">
 			<div class="card card-container">
@@ -157,6 +150,16 @@
 			</div>
 		</div>
 	</body>
+	
+	<footer>
+        <div class="container">
+            <div class="row">
+                <div class="row text-center">
+                    <span class="copyright">Copyright &copy; Your Website 2017</span>
+                </div>
+            </div>
+        </div>
+    </footer>
 	
 	<!-- FOOTER -->
 	<?php include 'templates/default/footer.php';?>
