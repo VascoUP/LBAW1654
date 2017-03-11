@@ -160,5 +160,5 @@
     </footer>
 	
 	<!-- FOOTER -->
-	<?php include 'templates/default/footer.php';?>
+	<?php include ('templates/default/footer.php'); ?> 
 </html>

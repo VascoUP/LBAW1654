@@ -114,9 +114,7 @@
 		</div>
 	
 	</body>
-	<!-- FOOTER -->
-	<?php include 'templates/default/footer.php'?> 
-		
+	
 	<footer>
         <div class="container">
             <div class="row">
@@ -126,4 +124,7 @@
             </div>
         </div>
     </footer>
+	
+	<?php include ('templates/default/footer.php'); ?> 
+	
 </html>
