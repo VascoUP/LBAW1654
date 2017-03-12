@@ -29,13 +29,10 @@
 	
 	border: solid;
 	border-width: 0 1px 1px 1px;
+	padding: 10px;	
+	margin-bottom: 150px;
 }
 
 .nav-table {
 	text-align: center;
-}
-
-.project-info-box {
-	padding: 10px;	
-	margin-bottom: 150px;
 }

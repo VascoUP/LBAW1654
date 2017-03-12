@@ -119,10 +119,10 @@
 								<label class="col-md-4 control-label" for="Access">Control access</label>
 								<div class="col-md-4">
 									<div class="col-md-4">
-										<!-- <select name="control-access">
+										<select class="form-control form-style input-xs">
 											<option value="public">Public</option>
 											<option value="private">Private</option>
-										</select> -->
+										</select>
 									</div>
 								</div>
 							</div>
