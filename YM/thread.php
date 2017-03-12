@@ -17,7 +17,12 @@
 		<link href="css/templates/style.css" rel="stylesheet">
 		<link href="css/bootstrap/bootstrap-social.css" rel="stylesheet">
 		<link href="css/pages/thread.css" rel="stylesheet">
-	</head>
+		
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+		</head>
 	<body>
 		<!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom n">
@@ -46,6 +51,18 @@
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                 </ul>
+				<ul class="nav navbar-nav navbar-center">
+					<li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+					<li>
+						<form class="form-inline navbar-form">								
+							<div class="input-group">
+								<input type="text" class="form-control search" placeholder="Search...">
+							</div>
+						</form>
+					</li>
+				</ul>
 				<ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>

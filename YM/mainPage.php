@@ -16,7 +16,7 @@
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="css/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -57,6 +57,18 @@
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                 </ul>
+				<ul class="nav navbar-nav navbar-center">
+					<li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+					<li>
+						<form class="form-inline navbar-form">								
+							<div class="input-group">
+								<input type="text" class="form-control search" placeholder="Search...">
+							</div>
+						</form>
+					</li>
+				</ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -88,7 +100,7 @@
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-list-alt fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Task List</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
@@ -96,7 +108,7 @@
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-comments fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Forum</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
@@ -104,7 +116,7 @@
 				<div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Week Planner</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
@@ -112,7 +124,7 @@
 				<div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-bar-chart fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Statistics</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
