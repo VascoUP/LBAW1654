@@ -105,10 +105,19 @@
 							
 							<!-- Text input-->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="Email Address">Description <span class="underline">(optional)</span></label>
+								<label class="col-md-4 control-label" for="Overview">Description <span class="underline">(optional)</span></label>
 								<div class="col-md-4">
 									<div class="col-md-4">
 										<input id="Overview" name="overview" type="text" placeholder="" class="form-control form-style input-xs">
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="Tags">Tags</label>
+								<div class="col-md-4">
+									<div class="col-md-4">
+										<input id="Tags" name="Tags" type="text" placeholder="Project Tags" class="form-control form-style input-xs">
 									</div>
 								</div>
 							</div>

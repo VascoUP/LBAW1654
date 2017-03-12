@@ -17,6 +17,7 @@
 
     <!-- Theme CSS -->
 	<link href="css/pages/forms.css" rel="stylesheet">
+	<link href="css/pages/search.css" rel="stylesheet">
 	<link href="css/templates/navbar.css" rel="stylesheet">
 	<link href="css/templates/style.css" rel="stylesheet">
 	<link href="css/templates/projectsUsers.css" rel="stylesheet">
@@ -93,50 +94,45 @@
 		
 		<div class="container">
 			<div class="card card-container">
-					<div class="table-container">
-							<table class="table table-filter">
-								<tbody>
-									<tr>
-										<td>
-											<div class="media">
-												<div class="media-body">
-													<h4 class="title">
-														Lorem Impsum
-													</h4>
-													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-									<td>
-										<div class="media">
-											<div class="media-body">
-												<h4 class="title">
-													Lorem
-												</h4>
-												<p class="summary">Ut enim ad minim veniam</p>
-											</div>
+				<div class="overlay">
+					<select id="order" name="order" onchange="getResults()">
+						<option value="name ASC">Alphabetical A->Z</option>
+						<option value="name DESC">Alphabetical Z->A</option>
+					</select>
+				</div>
+				<div class="table-container">
+					<table class="table table-filter">
+						<tbody>
+							<tr>
+								<td>
+									<div class="media">
+										<div class="media-body">
+											<h4 class="title">Lorem Impsum</h4>
+											<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
 										</div>
-									</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-			
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="media">
+										<div class="media-body">
+											<h4 class="title">Lorem</h4>
+											<p class="summary">Ut enim ad minim veniam</p>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	
 	</body>
 	
 	<footer>
-        <div class="container">
-            <div class="row">
-                <div class="row text-center">
-                    <span class="copyright">Copyright &copy; Your Website 2017</span>
-                </div>
-            </div>
-        </div>
+        <span class="copyright">Copyright &copy; Your Website 2017</span>
     </footer>
 	
 	<?php include ('templates/default/footer.php'); ?> 
