@@ -66,21 +66,6 @@
 						</form>
 					</li>
 				</ul>
-				<ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Profile</a></li>
-							<li><a href="#">Projects</a></li>
-							<li><a href="#">Edit Profile</a></li>
-							<li><a href="#">Logout</a></li>
-						</ul>
-                    </li>
-                    
-                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
