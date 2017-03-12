@@ -179,14 +179,9 @@
     </section>
 
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="row text-center">
-                    <span class="copyright">Copyright &copy; Your Website 2017</span>
-                </div>
-            </div>
-        </div>
+		<span class="copyright">Copyright &copy; Your Website 2017</span>
     </footer>
+	
 
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>

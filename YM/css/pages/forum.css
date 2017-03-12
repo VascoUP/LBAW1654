@@ -1,9 +1,3 @@
-body, html{
-   height: 100%;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(158, 158, 158), rgb(255, 255, 255));
-}
-
 .forum.table > tbody > tr > td {
     vertical-align: middle;
     background-color: white;

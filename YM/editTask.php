@@ -166,18 +166,12 @@
 			
 			</div>
 		</div>
-	</body>
-	
-	<footer>
-        <div class="container">
-            <div class="row">
-                <div class="row text-center">
-                    <span class="copyright">Copyright &copy; Your Website 2017</span>
-                </div>
-            </div>
-        </div>
+		
+		<footer>
+		<span class="copyright">Copyright &copy; Your Website 2017</span>
     </footer>
 	
+	</body>
 	<!-- FOOTER -->
 	<?php include ('templates/default/footer.php'); ?> 
 </html>
