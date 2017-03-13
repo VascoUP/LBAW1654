@@ -1,7 +1,7 @@
 
 /* Profile container */
 .profile {
-  margin: 20px 0;
+  margin: 60px 0;
   margin-top: 20px;
 }
 
@@ -121,4 +121,8 @@
   padding: 20px;
   background: #fff;
   min-height: 460px;
+}
+
+.profile-and-comment div {
+	padding-bottom: 20px;
 }

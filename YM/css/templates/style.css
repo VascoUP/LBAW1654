@@ -11,6 +11,17 @@ html, body{
 	background-repeat: no-repeat;
 	background-color: #eee;
 }
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+    height: 100%;
+    margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.footer, .push {
+    height: 50px; /* .push must be the same height as .footer */
+}
 	
 .text-style-1 {
 	color: #000;
@@ -145,7 +156,7 @@ a.text-style-2:hover, a.text-style-4:hover, a.text-style-6:hover {
 	border-width: 0;
 }
 
-footer {
+.footer {
 	background-color: rgba(0,0,0,1);
 	padding: 15px 0;
 	width: 100%;
@@ -153,7 +164,8 @@ footer {
 	color: white;
 	bottom: 0;
 }
-footer span.copyright {
+
+.footer span.copyright {
   line-height: 40px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
