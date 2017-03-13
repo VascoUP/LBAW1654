@@ -274,11 +274,11 @@ section#contact .text-danger {
   color: #e74c3c;
 }
 
-footer {
+.footer.push {
   padding: 25px 0;
   text-align: center;
 }
-footer span.copyright {
+.footer.push span.copyright {
   line-height: 40px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;

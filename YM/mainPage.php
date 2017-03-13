@@ -180,6 +180,7 @@
 			</section>
 		
 		</div>
+	
 		<!-- FOOTER -->
 		<?php include ('templates/default/footer.php'); ?>
 
