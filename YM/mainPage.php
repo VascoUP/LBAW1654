@@ -178,11 +178,6 @@
         </div>
     </section>
 
-    <footer>
-		<span class="copyright">Copyright &copy; Your Website 2017</span>
-    </footer>
-	
-
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
 
