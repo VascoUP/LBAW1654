@@ -92,7 +92,7 @@
 			</nav>
 
 			<div class="container">
-				<div class="card card-container">
+				<div class="card card-container-it">
 					<div class="table-container">
 						<div class="project-info-box">
 							<p class="text-style-2">Iteration 1</p>

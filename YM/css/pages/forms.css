@@ -9,10 +9,18 @@ hr{
 
 
 .card-container.card {
+    max-width: 800px;
+    padding: 40px 40px;
+	margin-bottom: 100px;
+}
+
+
+.card-container-it.card {
     max-width: 1000px;
     padding: 40px 40px;
 	margin-bottom: 100px;
 }
+
 
 
 .card {
@@ -106,6 +114,7 @@ input::-webkit-input-placeholder {
 	border-right:0; 
 	box-shadow:0 0 0; 
 	border-color:#ccc;
+	max-width: 200px;
 }
 .stylish-input-group button{
     border:0;
