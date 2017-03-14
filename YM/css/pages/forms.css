@@ -114,9 +114,6 @@ input::-webkit-input-placeholder {
 	border-right:0; 
 	box-shadow:0 0 0; 
 	border-color:#ccc;
-	max-width: 200px;
-}
-.stylish-input-group button{
-    border:0;
-    background:transparent;
+	width: 100%;
+	position: relative;
 }

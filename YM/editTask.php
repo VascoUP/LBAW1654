@@ -133,14 +133,7 @@
 									<label class="col-md-4 control-label" for="Collaborators">Add Collaborators</label> 
 									<div class="col-md-4">								
 										<div id="imaginary_container"> 
-											<div class="input-group stylish-input-group">
-												<input type="text" class="form-control form-style"  placeholder="Search" >
-												<span class="input-group-addon">
-													<button type="submit">
-														<span class="glyphicon glyphicon-search"></span>
-													</button>  
-												</span>
-											</div>
+												<input type="text" class="form-control form-style input-md"  placeholder="Search" >
 										</div>
 									</div>
 								</div>
