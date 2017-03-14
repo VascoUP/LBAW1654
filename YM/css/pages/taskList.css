@@ -1,6 +1,7 @@
 .table > tbody > tr > td {
     vertical-align: middle;
     background-color: white;
+	min-width: 100 px;
 }
 
 .task.table{
@@ -25,17 +26,25 @@
     padding: 2em;
 }
 
+.project-info-box .task thead tr th.column{
+    text-align: center;
+    padding: 2em;
+}
+
+.info-box .task thead tr th.column{
+    text-align: center;
+}
+
 .join.button{
 	border: 3px;
     display: table;
     margin: 0 auto;
-	max-width: 200px;
-	max-height: 40px;
+	max-height: 200px;
 	font-size: 16px;
     color: #666666;
 }
 
-.addTask{
+.addTask {
 	border: 3px;
     display: table;
     margin: 0 auto;
@@ -43,5 +52,60 @@
 	max-height: 40px;
 	font-size: 24px;
     color: #666666;
+}
+
+.iteration.table > tbody > tr > td {
+    vertical-align: middle;
+    background-color: white;
+}
+
+.iteration .fa {
+    width: 1em;
+    text-align: center;
+
+}
+
+.iteration.table th.cell-stat {
+    width: 6em;
+    padding: 2em;
+
+}
+
+.iteration.table th.cell-stat-2x {
+    width: 14em;
+    padding: 2em;
+}
+
+.iteration.table.iteration.table-striped{
+    background-color: #FF8C00;
+    color: #e1f6f0;
+}
+
+.addIteration{
+	border: 3px;
+    display: table;
+    margin: 0 auto;
+	max-width: 200px;
+	max-height: 40px;
+	font-size: 24px;
+    color: #666666;
+}
+
+
+.task-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.task-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.task-userbuttons .btn:last-child {
+  margin-right: 0px;
 }
 

@@ -119,7 +119,7 @@
 					<table class="nav-table">
 						<tr class="col-xs-12">
 							<td><a class="text-style-6" href="#overview">Overview</a></td>
-							<td><a class="text-style-6" href="#tasks">Tasks</a></td>
+							<td><a class="text-style-6" href="#tasks">Iterations</a></td>
 							<td><a class="text-style-6" href="#stats">Statistics</a></td>
 							<td><a class="text-style-6" href="#forum">Forum</a></td>
 							<td class="active"><a class="text-style-6" href="#edit">Edit</a></td>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +13,7 @@
 
 		<title>YM</title>
 
-		<!-- Bootstrap core CSS -->
+			<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
 		<link href="css/pages/project.css" rel="stylesheet">
 		<link href="css/pages/taskList.css" rel="stylesheet">
@@ -27,7 +29,7 @@
 
 	<body>
 		<div class="wrapper">
-	<!-- Navigation -->
+			<!-- Navigation -->
 			<nav id="mainNav" class="navbar navbar-default navbar-custom n">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -117,7 +119,7 @@
 					<table class="nav-table">
 						<tr class="col-xs-12">
 							<td><a class="text-style-6" href="#overview">Overview</a></td>
-							<td class="active"><a class="text-style-6" href="#tasks">Tasks</a></td>
+							<td class="active"><a class="text-style-6" href="#tasks">Iterations</a></td>
 							<td><a class="text-style-6" href="#stats">Statistics</a></td>
 							<td><a class="text-style-6" href="#forum">Forum</a></td>
 							<td><a class="text-style-6" href="#edit">Edit</a></td>
@@ -130,103 +132,46 @@
 				<div class="row">
 					<div class="container">
 						<div class="project-info-box">
-							<p class="text-style-2">Task List</p>
-							<p class="text-style-5">This is where you'll find the project tasks for this week.</p>
+							<p class="text-style-2">Iterations</p>
+							<p class="text-style-5">This is where you'll find the project iterations</p>
 							<hr class="featurette-divider">
+
 							<div class="table-responsive">
-								<table class="task table">
+								<table class="table iteration table-striped">
 									<thead>
 										<tr>
-											<th class="task meta line"></th>
+											<th class="hidden-xs cell-stat"></th>
 											<th>
-											<h3>Tasks</h3>
+												<h3>Iterations</h3>
 											</th>
-											<th class="column state">State</th>
-											<th class="column priority">Priority</th>
-											<th class="column due date">Due date</th>
-											<th class="column workers">Workers</th>
-											<th class="column join button"></th>
-
+											<th class="cell-stat text-center hidden-xs hidden-sm">Number of tasks</th>
+											<th class="cell-stat text-center hidden-xs hidden-sm">Start date</th>
+											<th class="cell-stat text-center hidden-xs hidden-sm">Due date</th>
 										</tr>
 									</thead>
 									<tbody>
-										<!-- Tasks -->
 										<tr>
-											<td class="task entry"><i class="fa fa-question fa-2x text-primary"></i></td>
+											<td class="hidden-xs text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
 											<td>
-												<h4><a href="#">Add search bar</a><br><small>Searches only users for now</small></h4>
+												<h4><a href="#">Iteration 1</a></h4>
 											</td>
-											<td class="task-info state">Unassigned</td>
-											<td class="task-info priority">High</td>
-											<td class="task-info due date">1/5/2017<br><small><i class="fa fa-clock-o"></i> (2 months left) </small></td>
-											<td class="task-info workers">0/2</td>
-											<td> <button class="join button">Request to join task</button> </td>
+											<td class="text-center hidden-xs hidden-sm"><a href="#">2</a></td>
+											<td class="text-center hidden-xs hidden-sm"><a href="#">03-04-2017</a></td>
+											<td class="text-center hidden-xs hidden-sm"><a href="#">10-04-2017</a></td>
 										</tr>
-
 										<tr>
-											<td class="task entry"><i class="fa fa-exclamation fa-2x text-danger"></i></td>
+											<td class="hidden-xs text-center"><i class="fa fa-exclamation fa-2x text-danger"></i></td>
 											<td>
-												<h4><a href="#">Set up color schemes</a><br><small></small></h4>
+												<h4><a href="#">Iteration 2</a></h4>
 											</td>
-											<td class="task-info state">Active</td>
-											<td class="task-info priority">Medium</td>
-											<td class="task-info due date">28/3/2017<br><small><i class="fa fa-clock-o"></i> (25 days left) </small></td>
-											<td class="task-info workers">1/2</td>
-											<td> <button class="join button">Request to join task</button> </td>
+											<td class="text-center hidden-xs hidden-sm"><a href="#">1</a></td>
+											<td class="text-center hidden-xs hidden-sm"><a href="#">11-04-2017</a></td>
+											<td class="text-center hidden-xs hidden-sm"><a href="#">18-04-2017</a></td>
 										</tr>
-
-										<tr>
-											<td class="task entry"><i class="fa fa-exclamation fa-2x text-danger"></i></td>
-											<td>
-												<h4><a href="#">Test login security</a><br><small>Also fix whatever is wrong</small></h4>
-											</td>
-											<td class="task-info state">Active</td>
-											<td class="task-info priority">High</td>
-											<td class="task-info due date">10/3/2017<br><small><i class="fa fa-clock-o"></i> (7 days left) </small></td>
-											<td class="task-info workers">3/3</td>
-											<td class="task-info empty placeholder"></td>
-										</tr>
-
-										<tr>
-											<td class="task entry"><i class="fa fa-exclamation fa-2x text-danger"></i></td>
-											<td>
-												<h4><a href="#">Buy coffee</a><br><small>Nespresso </small></h4>
-											</td>
-											<td class="task-info state">Active</td>
-											<td class="task-info priority">High</td>
-											<td class="task-info due date">3/3/2017<br><small><i class="fa fa-clock-o"></i> (17 hours left) </small></td>
-											<td class="task-info workers">9/10</td>
-											<td> <button class="join button">Request to join task</button> </td>
-										</tr>
-
-										<tr>
-											<td class="task entry"><i class="fa fa-exclamation fa-2x text-danger"></i></td>
-											<td>
-												<h4><a href="#">Request market studies</a><br><small>About usage in India</small></h4>
-											</td>
-											<td class="task-info state">Completed</td>
-											<td class="task-info priority">Medium</td>
-											<td class="task-info due date">14/3/2017<br><small><i class="fa fa-clock-o"></i> (11 days left) </small></td>
-											<td class="task-info workers">1/1</td>
-											<td class="task-info empty placeholder"></td>
-										</tr>
-
-										<tr>
-											<td class="task entry"><i class="fa fa-exclamation fa-2x text-danger"></i></td>
-											<td>
-												<h4><a href="#">Round all button egdes</a><br><small>Perfect circle quarters only </small></h4>
-											</td>
-											<td class="task-info state">Unassigned</td>
-											<td class="task-info priority">Low</td>
-											<td class="task-info due date">21/3/2017<br><small><i class="fa fa-clock-o"></i> (18 days left) </small></td>
-											<td class="task-info workers">0/1</td>
-											<td> <button class="join button">Request to join task</button> </td>
-										</tr>
-
 									</tbody>
 								</table>
 							</div>
-							<button class="addTask">Add Task</button>
+								<button class="addIteration">Add Iteration</button>
 						</div>
 					</div>
 				</div>
@@ -234,6 +179,5 @@
 		</div>
 		<!-- FOOTER -->
 		<?php include ('templates/default/footer.php'); ?>
-	</body>
-
+    </body>
 </html>
