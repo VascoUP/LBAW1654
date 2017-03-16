@@ -1,3 +1,10 @@
+.bail ON
+.mode columns
+.headers on
+.nullvalue NULL
+
+PRAGMA FOREIGN_KEYS=ON;
+
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Administrator;
 DROP TABLE IF EXISTS AuthenticatedUser;
