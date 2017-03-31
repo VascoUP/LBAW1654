@@ -23,6 +23,8 @@
 		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/recovery.js"></script>
 	</head>
 	<!-- NAVBAR
 	================================================== -->
@@ -75,6 +77,7 @@
 
 			<div class="container">
 				<div class="card card-container">
+				<div id="form-login">
 					<img id="profile-img" class="profile-img-card" src="img/loginImage.png" />
 					<p id="profile-name" class="profile-name-card"></p>
 					<form class="form-signin">
@@ -94,10 +97,38 @@
 					<a href="#" class="forgot-password">
 						Forgot the password?
 					</a>
+					</div>
+					<div id="form-olvidado">
+						<h4 class="">
+						  Forgot the password?
+						</h4>
+						<form accept-charset="UTF-8" role="form" id="login-recordar" method="post">
+						  <fieldset>
+							<span class="help-block">
+							  <p>Email address you use to log in to your account</p>
+							  <p>We'll send you an email with instructions to choose a new password.</p>
+							</span>
+							<div class="form-group input-group">
+							  <span class="input-group-addon">
+								@
+							  </span>
+							  <input class="form-control" placeholder="Email" name="email" type="email" required="">
+							</div>
+							<button type="submit" class="btn btn-primary btn-block" id="btn-olvidado">
+							  Continue
+							</button>
+							<p class="help-block">
+							  <a class="text-muted" href="#" id="acceso"><small>Account Access</small></a>
+							</p>
+						  </fieldset>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
 		<!-- FOOTER -->
 		<?php include ('templates/default/footer.php'); ?>
+		
+		<script src="js/recovery.js"></script>
 	</body>
 </html>

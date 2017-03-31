@@ -177,6 +177,12 @@
 									<a href="#" id="update" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update</a>
 								</div>
 							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" ></label>  
+								<div class="col-md-4">
+									<a href="#" id="update" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Delete account</a>
+								</div>
+							</div>
 
 						</fieldset>
 					</form>

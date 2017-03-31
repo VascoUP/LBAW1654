@@ -1,5 +1,5 @@
 <html lang="en">
-	<head>
+  	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,14 +12,16 @@
 
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="css/pages/profile.css" rel="stylesheet">
 		<link href="css/templates/navbar.css" rel="stylesheet">
 		<link href="css/templates/style.css" rel="stylesheet">
-		<link href="css/pages/thread.css" rel="stylesheet">
+		<link href="css/bootstrap/bootstrap-social.css" rel="stylesheet">
 		
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
 	</head>
 	<body>
 		<div class="wrapper">
@@ -82,56 +84,71 @@
 				</div>
 				<!-- /.container-fluid -->
 			</nav>
-
 			<div class="container">
-				<div class="card card-container">	
-					<div class="row">
-						<div class="col-md-12">
-							<div class="blog-comment">
-								<h3>Comments</h3>
-								<hr/>
-								<ul class="comments">
-								<li class="clearfix">
-								  <img src="http://bootdey.com/img/Content/user_1.jpg" class="avatar" alt="">
-								  <div class="post-comments">
-									  <p class="meta">Dec 18, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
-									  <p>
-										  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-										  Etiam a sapien odio, sit amet
-									  </p>
-								  </div>
-								</li>
-								<li class="clearfix">
-								  <img src="http://bootdey.com/img/Content/user_2.jpg" class="avatar" alt="">
-								  <div class="post-comments">
-									  <p class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
-									  <p>
-										  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-										  Etiam a sapien odio, sit amet
-									  </p>
-								  </div>
-								
-								  <ul class="comments">
-									  <li class="clearfix">
-										  <img src="http://bootdey.com/img/Content/user_3.jpg" class="avatar" alt="">
-										  <div class="post-comments">
-											  <p class="meta">Dec 20, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
-											  <p>
-												  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-												  Etiam a sapien odio, sit amet
-											  </p>
-										  </div>
-									  </li>
-								  </ul>
-								</li>
+				<div class="row profile">
+					<div class="col-md-3">
+						<div class="profile-sidebar">
+							<!-- SIDEBAR USERPIC -->
+							<div class="profile-userpic">
+								<img src="img/loginImage.png" class="img-responsive" alt="">
+							</div>
+							<!-- END SIDEBAR USERPIC -->
+							<!-- SIDEBAR USER TITLE -->
+							<div class="profile-usertitle">
+								<div class="profile-usertitle-name">
+									aeFi321
+								</div>
+								<div class="profile-usertitle-email">
+									aeFi321@gmail.com
+								</div>
+							</div>
+
+							<!-- END SIDEBAR BUTTONS -->
+							<!-- SIDEBAR MENU -->
+							<div class="profile-usermenu">
+								<ul class="nav">
+									<li class="active">
+										<a href="#">
+										<i class="glyphicon glyphicon-home"></i>
+										Overview </a>
+									</li>
+									<li>
+										<a href="#" target="_blank">
+										<i class="glyphicon glyphicon-ok"></i>
+										Projects</a>
+									</li>
 								</ul>
 							</div>
+							<!-- END MENU -->
+						</div>
+
+						<!-- END SIDEBAR USER TITLE -->
+							<!-- SIDEBAR BUTTONS -->
+							<div class="profile-userbuttons">
+								<button type="button" class="btn btn-success btn-sm">Contact</button>
+								<button type="button" class="btn btn-danger btn-sm">Ban User</button>
+							</div>
+					</div>
+					<div class="col-md-9">
+						<div class="profile-content">
+						   <h2>
+								Biography
+							</h2>
+							<p class="summary">
+							My name is Andrew, I'm 20 years old and I live in Barcelona. <br>
+							I have a degree in Computer Engineering and I like to listen to music.
+							</p>
+							<br>
+							<h3>
+								Curriculum Vitae
+							</h3>
+							<a href="#"> aeFi321CV </a>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 		<!-- FOOTER -->
 		<?php include ('templates/default/footer.php'); ?>
 	</body>
-
 </html>

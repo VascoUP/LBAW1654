@@ -150,6 +150,7 @@
 								<label class="col-md-4 control-label" ></label>  
 								<div class="col-md-4">
 									<a href="#" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Edit Task</a>
+									<a href="#" id="deleteTask" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up"></span> Delete Task</a>
 								</div>
 							</div>
 

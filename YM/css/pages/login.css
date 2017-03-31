@@ -110,3 +110,18 @@
 .forgot-password:focus{
     color: rgb(12, 97, 33);
 }
+
+#form-olvidado{
+	color: rgb(104, 145, 162);
+	display: none;
+}
+
+#forgot-olvidado:hover,
+#forgot-olvidado:active,
+#forgot-olvidado:focus{
+    color: rgb(12, 97, 33);
+}
+
+#acceso{
+	color: rgb(104, 145, 162);
+}

@@ -151,6 +151,11 @@
 														</h4>
 														<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
 													</div>
+													
+													<div class="profile-userbuttons">
+														<button type="button" class="btn btn-danger btn-sm">Delete Project</button>
+													</div>
+													
 												</div>
 											</td>
 										</tr>
