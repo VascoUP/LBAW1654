@@ -1,9 +1,8 @@
-$(document).ready( function() { comment() } )
-
-function comment(){
-	$('#second').hide();
-	$('.pull-right').click(function(e) {
-		e.preventDefault();
-		$('#second').show();
-	});
-}
+(function ($) {
+    $(function () {
+        $('.pull-right').click(function() {
+			$('#middle').show();
+			$('#inner_reply').show();
+		});
+    });
+}(jQuery));
