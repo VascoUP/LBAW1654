@@ -41,11 +41,27 @@
   letter-spacing: 1px;
   color: white;
 }
+
+.navbar-custom .nav #drop {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #fed136;
+}
+
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
   color: #fed136;
   outline: none;
 }
+
+.navbar-custom .navbar-nav > .active > #drop {
+  border-radius: 0;
+  color: white;
+  background-color: #fed136;
+}
+
 .navbar-custom .navbar-nav > .active > a {
   border-radius: 0;
   color: white;
@@ -56,6 +72,7 @@
   color: white;
   background-color: #fec503;
 }
+
 @media (min-width: 768px) {
   .navbar-custom {
     background-color: transparent;

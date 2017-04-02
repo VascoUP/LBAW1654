@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
-
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		
 		<link rel="icon" href="img/pageIcon.jpg">
 
 		<title>YM</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-		<link href="css/pages/forms.css" rel="stylesheet">
+		<link href="css/pages/project.css" rel="stylesheet">
 		<link href="css/templates/navbar.css" rel="stylesheet">
+		<link href="css/templates/navtable.css" rel="stylesheet">
 		<link href="css/templates/style.css" rel="stylesheet">
-		<link href="css/bootstrap/bootstrap-social.css" rel="stylesheet">
+		
+		<link href="css/pages/forms.css" rel="stylesheet">
+		<link href="css/pages/editProject.css" rel="stylesheet">
 		
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -91,107 +91,65 @@
 				</div>
 				<!-- /.container-fluid -->
 			</nav>
+			<div class="navbar-spacing"></div>
+			<div class="page-spacing"></div>
 
+			<!--	PROJECT NAME AND OTHER IMPORTANT INFOS
+			======================================================= -->
 			<div class="container">
-				<div class="card card-container">
-					<form class="form-horizontal">
-						<fieldset>
-							<!-- Form Name -->
-							<legend>Edit Profile</legend>
-
-							<div class="form-group">
-									<label class="col-md-4 control-label" ></label>  
-									<div class="col-md-4">
-										<a class="btn btn-block btn-social btn-linkedin">
-											<i class="fa fa-linkedin"></i> Link to Linkedin
-										</a>
-									</div>
-								</div>
-
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="Username">Username</label>  
-								<div class="col-md-4">
-									<div class="col-md-4">
-										<input id="Username" name="Username" type="text" placeholder="Username" class="form-control form-style input-md">
-									</div>
-								</div>
+				<div class="row">
+					<div class="container">
+						<p class="text-style-1 col-md-6 col-xs-6">Project Name</p>
+						<div class="col-xs-offset-10">
+							<div class="table-responsive info-responsive">
+								<table class="info col-xs-12" cellspacing="0">
+									<tr>
+										<th class="text-style-6 info-type col-xs-8">Users</th>
+										<th class="text-style-6 col-xs-4">1</th>
+									</tr>
+								</table>
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="page-spacing"></div>
 
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="Email Address">Email Address</label>  
-								<div class="col-md-4">
-									<div class="col-md-4">
-										<input id="Email Address" name="Email Address" type="text" placeholder="Email Address" class="form-control form-style input-md">
-									</div>
-								</div>
-							</div>
-
-							<!-- File Button --> 
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="Upload photo">Upload photo</label>
-								<div class="col-md-4">   
-									<div class="col-md-4">
-										<input id="Upload photo" name="Upload photo" class="input-file" type="file" accept=".png, .jpg, .jpeg">
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="Upload cv">Upload Curriculum Vitae</label>
-								<div class="col-md-4">
-									<div class="col-md-4">   
-										<input id="Upload cv" name="Upload cv" class="input-file" type="file" accept=".pdf">
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="password" class="col-md-4 control-label">Password</label>
-								<div class="col-md-4">
-									<div class="col-md-4">
-										<input type="password" class="form-control form-style input-md" name="password" id="password"  placeholder="Enter your Password"/>
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="confirm" class="col-md-4 control-label">Confirm Password</label>
-								<div class="col-md-4">
-									<div class="col-md-4">
-										<input type="password" class="form-control form-style input-md" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-									</div>
-								</div>
-							</div>	
-
-							<!-- Textarea -->
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="Overview">Overview (max 200 words)</label>
-								<div class="col-md-4">   
-									<div class="col-md-4">                     
-										<textarea class="form-control form-style" rows="5" cols="30"  id="Overview" name="Overview">Overview</textarea>
-									</div>
-								</div>
-							</div>						
-							<div class="form-group">
-								<label class="col-md-4 control-label" ></label>  
-								<div class="col-md-4">
-									<a href="#" id="update" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update</a>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-4 control-label" ></label>  
-								<div class="col-md-4">
-									<a href="#" id="update" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Delete account</a>
-								</div>
-							</div>
-
-						</fieldset>
-					</form>
+			<!--	PROJECT PAGE SELECTOR
+			============================================ -->
+			<div class="container">
+				<div class="table-responsive nav-table-scroll">
+					<table class="nav-table">
+						<tr class="col-xs-12">
+							<td class="active"><a class="text-style-6" href="#overview">Overview</a></td>
+							<td><a class="text-style-6" href="#tasks">Iterations</a></td>
+							<td><a class="text-style-6" href="#stats">Statistics</a></td>
+							<td><a class="text-style-6" href="#forum">Forum</a></td>
+							<td><a class="text-style-6" href="#edit">Edit</a></td>
+							<td class="nav-table-fill"></td>
+						</tr>
+					</table>
 				</div>
 			</div>
 
+			<div class="container">
+				<div class="row">
+					<div class="container">
+						<div class="project-info-box">
+							<p class="text-style-2">Overview</p>
+							<p class="text-style-5">Quick and simple overview of the project</p>
+							<hr class="featurette-divider">
+							<p class="text-style-6">Game developmnent project that focuses on C/C++ and Java implementations.</p>
+							<div class="form-group">
+								<label class="col-md-4 control-label" ></label>  
+								<div class="col-md-4">
+									<a href="#" id="update" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Ban Project</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
 		</div>
 		<!-- FOOTER -->
 		<?php include ('templates/default/footer.php'); ?>

@@ -9,6 +9,10 @@
 
 }
 
+.forum.table th h3{
+	min-width: 340px;
+}
+
 .forum.table th.cell-stat {
     width: 6em;
     padding: 2em;

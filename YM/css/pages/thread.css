@@ -89,3 +89,26 @@ a {
 	line-height: 30px;
 	font-weight: 800;
 }
+
+#middle{
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	max-width: 800px;
+	max-height: 150px;
+	background-color: lightyellow;
+	margin-left: 45px;
+	text-align: left;
+	margin-top: 10px;
+	box-shadow: 0 2px 0 lightgray;
+}
+
+#inner_reply{
+	margin: 30px 60px;
+	max-width: 100px;
+	max-height: 30px;
+	background-color: #ff6600;
+	text-align: center;
+	font-size: 18px;
+	color: white;
+	border-radius: 18px;
+}

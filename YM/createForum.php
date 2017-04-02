@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
-
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		
 		<link rel="icon" href="img/pageIcon.jpg">
 
 		<title>YM</title>
 
-		<!-- Bootstrap core CSS -->
+		<!-- Bootstrap Core CSS -->
 		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Theme CSS -->
 		<link href="css/pages/forms.css" rel="stylesheet">
 		<link href="css/templates/navbar.css" rel="stylesheet">
 		<link href="css/templates/style.css" rel="stylesheet">
 		<link href="css/bootstrap/bootstrap-social.css" rel="stylesheet">
-		
+
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-	
+
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/dropdownUser.js"></script>
 	</head>
-
 	<body>
 		<div class="wrapper">
 			<!-- Navigation -->
@@ -92,106 +89,46 @@
 				<!-- /.container-fluid -->
 			</nav>
 
+
 			<div class="container">
 				<div class="card card-container">
-					<form class="form-horizontal">
-						<fieldset>
+						<form class="form-horizontal">
+							<fieldset>
 							<!-- Form Name -->
-							<legend>Edit Profile</legend>
+								<legend>Create Forum</legend>
 
-							<div class="form-group">
-									<label class="col-md-4 control-label" ></label>  
+							<!-- Text input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="categoryName">Forum name</label>  
 									<div class="col-md-4">
-										<a class="btn btn-block btn-social btn-linkedin">
-											<i class="fa fa-linkedin"></i> Link to Linkedin
-										</a>
+										<div class="col-md-4">
+											<input id="categoryName" name="categoryName" type="text" placeholder="Forum name" class="form-control form-style input-md">
+										</div>
 									</div>
 								</div>
 
 							<!-- Text input-->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="Username">Username</label>  
-								<div class="col-md-4">
-									<div class="col-md-4">
-										<input id="Username" name="Username" type="text" placeholder="Username" class="form-control form-style input-md">
-									</div>
-								</div>
-							</div>
-
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="Email Address">Email Address</label>  
-								<div class="col-md-4">
-									<div class="col-md-4">
-										<input id="Email Address" name="Email Address" type="text" placeholder="Email Address" class="form-control form-style input-md">
-									</div>
-								</div>
-							</div>
-
-							<!-- File Button --> 
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="Upload photo">Upload photo</label>
-								<div class="col-md-4">   
-									<div class="col-md-4">
-										<input id="Upload photo" name="Upload photo" class="input-file" type="file" accept=".png, .jpg, .jpeg">
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="Upload cv">Upload Curriculum Vitae</label>
-								<div class="col-md-4">
-									<div class="col-md-4">   
-										<input id="Upload cv" name="Upload cv" class="input-file" type="file" accept=".pdf">
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="password" class="col-md-4 control-label">Password</label>
-								<div class="col-md-4">
-									<div class="col-md-4">
-										<input type="password" class="form-control form-style input-md" name="password" id="password"  placeholder="Enter your Password"/>
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="confirm" class="col-md-4 control-label">Confirm Password</label>
-								<div class="col-md-4">
-									<div class="col-md-4">
-										<input type="password" class="form-control form-style input-md" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-									</div>
-								</div>
-							</div>	
-
-							<!-- Textarea -->
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="Overview">Overview (max 200 words)</label>
+								<label class="col-md-4 control-label" for="Description">Description (max 100 words)</label>
 								<div class="col-md-4">   
 									<div class="col-md-4">                     
-										<textarea class="form-control form-style" rows="5" cols="30"  id="Overview" name="Overview">Overview</textarea>
+										<textarea class="form-control form-style" rows="5" cols="30"  id="Description" name="Description">Description</textarea>
 									</div>
 								</div>
-							</div>						
-							<div class="form-group">
-								<label class="col-md-4 control-label" ></label>  
-								<div class="col-md-4">
-									<a href="#" id="update" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update</a>
-								</div>
 							</div>
+
 							<div class="form-group">
 								<label class="col-md-4 control-label" ></label>  
 								<div class="col-md-4">
-									<a href="#" id="update" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Delete account</a>
+									<a href="#" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Create Forum</a>
 								</div>
 							</div>
 
-						</fieldset>
-					</form>
+							</fieldset>
+						</form>
+
 				</div>
 			</div>
-
 		</div>
 		<!-- FOOTER -->
 		<?php include ('templates/default/footer.php'); ?>

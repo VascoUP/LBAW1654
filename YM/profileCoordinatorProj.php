@@ -22,6 +22,9 @@
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+	
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/dropdownUser.js"></script>
 	</head>
   	<body>
 		<div class="wrapper">
@@ -70,10 +73,10 @@
 							<li>
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Profile</a></li>
-									<li><a href="#">Projects</a></li>
-									<li><a href="#">Edit Profile</a></li>
-									<li><a href="#">Logout</a></li>
+									<li><a id="drop">Profile</a></li>
+									<li><a id="drop">Projects</a></li>
+									<li><a id="drop">Edit Profile</a></li>
+									<li><a id="drop">Logout</a></li>
 								</ul>
 							</li>
 

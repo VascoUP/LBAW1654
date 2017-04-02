@@ -17,6 +17,7 @@
 		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
 		<link href="css/pages/project.css" rel="stylesheet">
 		<link href="css/pages/forum.css" rel="stylesheet">
+		<link href="css/pages/taskList.css" rel="stylesheet">
 		<link href="css/templates/navbar.css" rel="stylesheet">
 		<link href="css/templates/navtable.css" rel="stylesheet">
 		<link href="css/templates/style.css" rel="stylesheet">
@@ -25,6 +26,9 @@
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+	
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/dropdownUser.js"></script>
 	</head>
 
 	<body>
@@ -75,10 +79,10 @@
 							<li>
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Profile</a></li>
-									<li><a href="#">Projects</a></li>
-									<li><a href="#">Edit Profile</a></li>
-									<li><a href="#">Logout</a></li>
+									<li><a id="drop">Profile</a></li>
+									<li><a id="drop">Projects</a></li>
+									<li><a id="drop">Edit Profile</a></li>
+									<li><a id="drop">Logout</a></li>
 								</ul>
 							</li>
 
@@ -147,6 +151,7 @@
 											<th class="cell-stat text-center hidden-xs hidden-sm">Topics</th>
 											<th class="cell-stat text-center hidden-xs hidden-sm">Posts</th>
 											<th class="cell-stat-2x hidden-xs hidden-sm">Last Post</th>
+											<th class="column join button"></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -158,6 +163,7 @@
 											<td class="text-center hidden-xs hidden-sm"><a href="#">9 542</a></td>
 											<td class="text-center hidden-xs hidden-sm"><a href="#">89 897</a></td>
 											<td class="posted by">by <a href="#">John Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>
+											<td> <button class="join button">Edit Forum</button> </td>
 										</tr>
 										<tr>
 											<td class="hidden-xs text-center"><i class="fa fa-exclamation fa-2x text-danger"></i></td>
@@ -167,9 +173,13 @@
 											<td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
 											<td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
 											<td class="posted by">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 1 years ago</small></td>
+											<td> <button class="join button">Edit Forum</button> </td>
 										</tr>
 									</tbody>
 								</table>
+								<br>
+									<button class="join button">Add Forum</button>
+								<br>
 							</div>
 							<div class="table-responsive">
 								<table class="table forum table-striped">
@@ -182,6 +192,7 @@
 											<th class="cell-stat text-center hidden-xs hidden-sm">Topics</th>
 											<th class="cell-stat text-center hidden-xs hidden-sm">Posts</th>
 											<th class="cell-stat-2x hidden-xs hidden-sm">Last Post</th>
+											<th class="column join button"></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -193,6 +204,7 @@
 											<td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
 											<td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
 											<td class="posted by">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>
+											<td> <button class="join button">Edit Forum</button> </td>
 										</tr>
 										<tr>
 											<td class="hidden-xs text-center"><i class="fa fa-magic fa-2x text-primary"></i></td>
@@ -202,9 +214,13 @@
 											<td class="text-center hidden-xs hidden-sm"><a href="#">6532</a></td>
 											<td class="text-center hidden-xs hidden-sm"><a href="#">152123</a></td>
 											<td class="posted by">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 1 years ago</small></td>
+											<td> <button class="join button">Edit Forum</button> </td>
 										</tr>
 									</tbody>
 								</table>
+								<br>
+									<button class="join button">Add Forum</button>
+								<br>
 							</div>
 							<div class="table-responsive">
 								<table class="table forum table-striped">
@@ -217,15 +233,21 @@
 											<th class="cell-stat text-center hidden-xs hidden-sm">Topics</th>
 											<th class="cell-stat text-center hidden-xs hidden-sm">Posts</th>
 											<th class="cell-stat-2x hidden-xs hidden-sm">Last Post</th>
+											<th class="column join button"></th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td></td>
 											<td colspan="4" class="center">No topics have been added yet.</td>
+											<td> <button class="join button">Edit Forum</button> </td>
 										</tr>
 									</tbody>
 								</table>
+								<br>
+									<button class="join button">Add Forum</button>
+								<br>
+								<br>
 							</div>
 								<button class="addCategory">Add Category</button>
 						</div>
