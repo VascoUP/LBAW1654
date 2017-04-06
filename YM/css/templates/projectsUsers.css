@@ -79,3 +79,11 @@ h4.title2{
 .table-filter .media .summary {
 	font-size: 14px;
 }
+
+.form-control.search{
+	min-width: 250px;
+	max-width: 400px;
+	color: black;
+	background-color: white;
+	border: 0.5px solid grey;
+}
