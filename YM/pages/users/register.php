@@ -9,16 +9,16 @@
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="img/pageIcon.jpg">
+		<link rel="icon" href="../../images/assets/pageIcon.jpg">
 
 		<title>YM</title>
 
 		<!-- Bootstrap core CSS -->
-		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-		<link href="css/pages/forms.css" rel="stylesheet">
-		<link href="css/templates/navbar.css" rel="stylesheet">
-		<link href="css/templates/style.css" rel="stylesheet">
-		<link href="css/bootstrap/bootstrap-social.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="../../css/pages/forms.css" rel="stylesheet">
+		<link href="../../css/templates/navbar.css" rel="stylesheet">
+		<link href="../../css/templates/style.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 		
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -141,7 +141,7 @@
 			</div>
 		</div>
 		<!-- FOOTER -->
-		<?php include ('templates/default/footer.php'); ?>
+		<?php include ('../../templates_c/default/footer.php'); ?>
 	</body>
 	
 </html>

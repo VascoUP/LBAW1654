@@ -8,23 +8,23 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="img/pageIcon.jpg">
+		<link rel="icon" href="../../images/assets/pageIcon.jpg">
 
 		<title>YM</title>
 
 		<!-- Bootstrap Core CSS -->
-		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
 		<!-- Custom Fonts -->
-		<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
 		<!-- Theme CSS -->
-		<link href="css/pages/mainPage.css" rel="stylesheet">
-		<link href="css/templates/navbar.css" rel="stylesheet">
+		<link href="../../css/pages/mainPage.css" rel="stylesheet">
+		<link href="../../css/templates/navbar.css" rel="stylesheet">
 
 	</head>
 
@@ -182,22 +182,22 @@
 		</div>
 	
 		<!-- FOOTER -->
-		<?php include ('templates/default/footer.php'); ?>
+		<?php include ('../../templates_c/default/footer.php'); ?>
 
 		<!-- jQuery -->
-		<script src="js/jquery.min.js"></script>
+		<script src="../../javascript/jquery.min.js"></script>
 
 		<!-- Bootstrap Core JavaScript -->
-		<script src="js/bootstrap.min.js"></script>
+		<script src="../../javascript/bootstrap.min.js"></script>
 
 		<!-- Plugin JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
 
 		<!-- Contact Form JavaScript -->
-		<script src="js/jqBootstrapValidation.js"></script>
-		<script src="js/contact_me.js"></script>
+		<script src="../../javascript/jqBootstrapValidation.js"></script>
+		<script src="../../javascript/contact_me.js"></script>
 
 		<!-- Theme JavaScript -->
-		<script src="js/agency.min.js"></script>
+		<script src="../../javascript/agency.min.js"></script>
 	</body>
 </html>

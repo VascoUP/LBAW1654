@@ -6,17 +6,17 @@
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="img/pageIcon.jpg">
+		<link rel="icon" href="../../images/assets/pageIcon.jpg">
 
 		<title>YM</title>
 
 		<!-- Bootstrap core CSS -->
-		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-		<link href="css/pages/profile.css" rel="stylesheet">
-		<link href="css/templates/navbar.css" rel="stylesheet">
-		<link href="css/templates/projectsUsers.css" rel="stylesheet">
-		<link href="css/templates/style.css" rel="stylesheet">
-		<link href="css/bootstrap/bootstrap-social.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="../../css/pages/profile.css" rel="stylesheet">
+		<link href="../../css/templates/navbar.css" rel="stylesheet">
+		<link href="../../css/templates/projectsUsers.css" rel="stylesheet">
+		<link href="../../css/templates/style.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 		
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -24,7 +24,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="js/dropdownUser.js"></script>
+		<script type="text/javascript" src="../../javascript/dropdownUser.js"></script>
 	</head>
 <!-- NAVBAR
 ================================================== -->
@@ -96,7 +96,7 @@
 						<div class="profile-sidebar">
 							<!-- SIDEBAR USERPIC -->
 							<div class="profile-userpic">
-								<img src="img/loginImage.png" class="img-responsive" alt="">
+								<img src="../../images/assets/loginImage.png" class="img-responsive" alt="">
 							</div>
 							<!-- END SIDEBAR USERPIC -->
 							<!-- SIDEBAR USER TITLE -->
@@ -137,8 +137,9 @@
 						<div class="profile-content">
 								<div class="pull-right">
 									<div class="btn-group">
-										<button type="button" class="btn btn-success btn-filter" data-target="active">Active</button>
-										<button type="button" class="btn btn-danger btn-filter" data-target="reported">Reported</button>
+										<button type="button" class="btn btn-success btn-filter" data-target="accepted">Accepted</button>
+										<button type="button" class="btn btn-warning btn-filter" data-target="reported">Reported</button>
+										<button type="button" class="btn btn-danger btn-filter" data-target="reported">Banned</button>
 										<button type="button" class="btn btn-default btn-filter" data-target="all">All</button>
 									</div>
 								</div>
@@ -169,12 +170,16 @@
 														<div class="media-body">
 															<h4 class="title2">
 																Marcus Doe
-																<span class="pull-right active">(Active)</span>
+																<span class="pull-right banned">(Banned)</span>
 															</h4>
 														</div>
 														<a href="#" class="pull-left">
 															<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
 														</a>
+														
+														<div class="col-md-4">
+															<a href="#" id="update" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Remove the ban status</a>
+														</div>
 													</div>
 												</td>
 											</tr>
@@ -187,6 +192,6 @@
 			</div>
 		</div>
 		<!-- FOOTER -->
-		<?php include ('templates/default/footer.php'); ?>
+		<?php include ('../../templates_c/default/footer.php'); ?>
 	</body>
 </html>

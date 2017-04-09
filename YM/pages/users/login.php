@@ -7,16 +7,16 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		
-		<link rel="icon" href="img/pageIcon.jpg">
+		<link rel="icon" href="../../images/assets/pageIcon.jpg">
 
 		<title>YM</title>
 
 		<!-- Bootstrap core CSS -->
-		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-		<link href="css/pages/login.css" rel="stylesheet">
-		<link href="css/templates/navbar.css" rel="stylesheet">
-		<link href="css/templates/style.css" rel="stylesheet">
-		<link href="css/bootstrap/bootstrap-social.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="../../css/pages/login.css" rel="stylesheet">
+		<link href="../../css/templates/navbar.css" rel="stylesheet">
+		<link href="../../css/templates/style.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 		
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -24,7 +24,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="js/recovery.js"></script>
+		<script type="text/javascript" src="../../javascript/recovery.js"></script>
 	</head>
 	<!-- NAVBAR
 	================================================== -->
@@ -78,7 +78,7 @@
 			<div class="container">
 				<div class="card card-container">
 				<div id="form-login">
-					<img id="profile-img" class="profile-img-card" src="img/loginImage.png" />
+					<img id="profile-img" class="profile-img-card" src="../../images/assets/loginImage.png" />
 					<p id="profile-name" class="profile-name-card"></p>
 					<form class="form-signin">
 						<span id="reauth-email" class="reauth-email"></span>
@@ -127,8 +127,8 @@
 			</div>
 		</div>
 		<!-- FOOTER -->
-		<?php include ('templates/default/footer.php'); ?>
+		<?php include ('../../templates_c/default/footer.php'); ?>
 		
-		<script src="js/recovery.js"></script>
+		<script src="../../javascript/recovery.js"></script>
 	</body>
 </html>
