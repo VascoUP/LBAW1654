@@ -7,18 +7,18 @@
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="../../images/assets/pageIcon.jpg">
+		<link rel="icon" href="../../../images/assets/pageIcon.jpg">
 
 		<title>YM</title>
 
 		<!-- Bootstrap core CSS -->
-		<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
-		<link href="../../css/pages/project.css" rel="stylesheet">
-		<link href="../../css/pages/forms.css" rel="stylesheet">
-		<link href="../../css/pages/editProject.css" rel="stylesheet">
-		<link href="../../css/templates/navbar.css" rel="stylesheet">
-		<link href="../../css/templates/navtable.css" rel="stylesheet">
-		<link href="../../css/templates/style.css" rel="stylesheet">
+		<link href="../../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="../../../css/pages/project.css" rel="stylesheet">
+		<link href="../../../css/pages/forms.css" rel="stylesheet">
+		<link href="../../../css/pages/editProject.css" rel="stylesheet">
+		<link href="../../../css/templates/navbar.css" rel="stylesheet">
+		<link href="../../../css/templates/navtable.css" rel="stylesheet">
+		<link href="../../../css/templates/style.css" rel="stylesheet">
 		
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -26,7 +26,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 	
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="../../javascript/dropdownUser.js"></script>
+		<script type="text/javascript" src="../../../javascript/dropdownUser.js"></script>
 	</head>
 
 	<body>
@@ -180,6 +180,19 @@
 									<p class="text-style-6 col-xs-6">Delete project</p>
 									<button class="btn btn-secondary style-button col-xs-offset-2" type="button">Delete</button>
 								</div>
+							</div>
+							
+							<div class="project-edit-box">
+								<div class="project-edit-box-header">
+									<p class="text-style-5">Invite Users</p>
+								</div>
+								<div class="text-edit-box-body">
+									<p class="text-style-6">Invite a user to join project</p>
+									<div class="col-md-6 col-sm-6 input-group">
+										<input type="text" class="form-control" placeholder="ex: aed1123">
+										<span class="input-group-addon btn btn-primary">Invite</span>
+									</div>
+								</div> 
 							</div>
 						</div>
 					</div>

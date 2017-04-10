@@ -7,21 +7,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="../../images/assets/pageIcon.jpg">
+		<link rel="icon" href="../../../images/assets/pageIcon.jpg">
 
 		<title>YM</title>
 
 		<!-- Bootstrap Core CSS -->
-		<link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="../../../css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
 		<!-- Theme CSS -->
-		<link href="../../css/pages/forms.css" rel="stylesheet">
-		<link href="../../css/pages/taskList.css" rel="stylesheet">
-		<link href="../../css/pages/search.css" rel="stylesheet">
-		<link href="../../css/templates/navbar.css" rel="stylesheet">
-		<link href="../../css/templates/style.css" rel="stylesheet">
-		<link href="../../css/templates/projectsUsers.css" rel="stylesheet">
-		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
+		<link href="../../../css/pages/forms.css" rel="stylesheet">
+		<link href="../../../css/pages/taskList.css" rel="stylesheet">
+		<link href="../../../css/pages/search.css" rel="stylesheet">
+		<link href="../../../css/templates/navbar.css" rel="stylesheet">
+		<link href="../../../css/templates/style.css" rel="stylesheet">
+		<link href="../../../css/templates/projectsUsers.css" rel="stylesheet">
+		<link href="../../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -29,7 +29,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="../../javascript/dropdownUser.js"></script>
+		<script type="text/javascript" src="../../../javascript/dropdownUser.js"></script>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -139,6 +139,6 @@
 		</div>
 		</div>
 		<!-- FOOTER -->
-		<?php include ('../../templates_c/default/footer.php'); ?>	
+		<?php include ('../../../templates_c/default/footer.php'); ?>	
 	</body>
 </html>
