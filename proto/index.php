@@ -1,3 +1,4 @@
 <?php
-	header('Location: mainPage.php');
+	include_once('config/init.php');
+	header('Location: pages/general/mainPage.php');
 ?>
