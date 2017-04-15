@@ -1,5 +1,7 @@
 <?php
 
+$email =$_POST['email'];
+
 public function sendMail($email)
 {
     $to = $email;
