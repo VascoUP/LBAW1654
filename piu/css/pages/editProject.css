@@ -1,0 +1,26 @@
+.project-edit-box {
+	border-radius: 4px;
+	border: 1px solid black;
+	
+	margin: 10px 10px 20px 10px;
+}
+
+.project-edit-box-header {
+	width: 100%;
+	
+	background-color: #FF8C00;
+	padding-top: 5px;
+	
+	border: solid;
+	border-width: 0 0 1px 0;
+	border-color: black;
+}
+
+.project-edit-box-header p { margin-left: 10px;}
+
+.style-button {	width: 100px;}
+
+.text-edit-box-body {text-align: center;}
+.text-edit-box-body .input-group {margin:auto;}
+.buttons-edit-box-body p {display:inline-block;}
+.text-edit-box-body, .buttons-edit-box-body {padding: 10px;}
