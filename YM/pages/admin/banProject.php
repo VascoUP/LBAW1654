@@ -152,6 +152,6 @@
 			</div>
 		</div>
 		<!-- FOOTER -->
-		<?php include ('../../templates_c/default/footer.php'); ?>
+		<?php include ('templates/default/footer.php'); ?>
 	</body>
 </html>

@@ -1,0 +1,33 @@
+.nav-table {
+	border-collapse: collapse;
+	min-width: 100%;
+}
+
+.nav-table tr {
+	padding: 0;
+}
+
+.nav-table td {
+	border: solid;
+	border-color: black;
+	border-width: 0 0 1px 1px;
+	
+	min-width: 100px;
+    padding: 5px 10px 5px 10px;
+}
+
+.nav-table .nav-table-fill {
+	width: 100%;
+	border-width: 0 0 1px 0;
+}
+
+.nav-table .active, .nav-table .active:first-child { 
+	background-color: white;
+	border-width: 1px 1px 1px 1px; 
+	border-color: black black white;
+}
+
+.nav-table td:hover { background-color: #AAA; }
+.nav-table .active:hover { background-color: white;	}
+.nav-table td:last-child { opacity: 0; }
+.nav-table td:first-child {	border-width: 0 0 1px 0; }

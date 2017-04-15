@@ -113,6 +113,13 @@
   margin-left: -2px;
 }
 
+.profile-usermenu ul li.banned a {
+  color: red;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
 /* Profile Content */
 .profile-content {
 	-moz-border-radius: 10px;
