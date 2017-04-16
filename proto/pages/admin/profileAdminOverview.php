@@ -1,11 +1,11 @@
 <?php 
 	include_once('../../config/init.php');
-	$smarty->assign('style','css/pages/profile.css');
-	$smarty->assign('style','css/templates/projectsUsers.css');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 ?>
-
+		<link href="../../css/pages/profile.css" rel="stylesheet">
+		<link href="../../css/templates/projectsUsers.css" rel="stylesheet">
+		
 			<div class="container">
 				<div class="row profile">
 					<div class="col-md-3">

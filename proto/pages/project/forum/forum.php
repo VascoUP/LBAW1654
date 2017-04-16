@@ -1,7 +1,6 @@
 <?php 
 	include_once('../../../config/init.php');
 	$smarty->assign('style','css/pages/thread.css');
-	$smarty->assign('javascript/comment.js');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 ?>
@@ -54,6 +53,8 @@
 						</div>
 					</div>
 				</div>
+				
+				<script src="../../../javascript/comment.js"></script>
 		
 	<!-- FOOTER -->
 		<?php $smarty->display($BASE_DIR .'templates/common/footer.tpl'); ?>

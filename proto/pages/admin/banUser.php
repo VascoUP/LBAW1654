@@ -4,6 +4,9 @@
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 ?>
+		
+		<link href="../../css/pages/profile.css" rel="stylesheet">
+		
 			<div class="container">
 				<div class="row profile">
 					<div class="col-md-3">

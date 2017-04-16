@@ -1,35 +1,66 @@
-<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-16 21:45:52
+         compiled from "/opt/lbaw/lbaw1654/public_html/proto/templates/common/headerMainPage.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:66499198658f26a205a7302-77471799%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '4f2adb24655d2dea8228c272cfd34e5c2d5aad21' => 
+    array (
+      0 => '/opt/lbaw/lbaw1654/public_html/proto/templates/common/headerMainPage.tpl',
+      1 => 1492375410,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '66499198658f26a205a7302-77471799',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_58f26a20720b62_55378398',
+  'variables' => 
+  array (
+    'BASE_URL' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_58f26a20720b62_55378398')) {function content_58f26a20720b62_55378398($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
+
 	<head>
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="{$BASE_URL}images/assets/pageIcon.jpg">
+		<link rel="icon" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/assets/pageIcon.jpg">
 
 		<title>YM</title>
 
-		<!-- Bootstrap core CSS -->
-		<link href="{$BASE_URL}css/bootstrap/bootstrap.min.css" rel="stylesheet">
-		<link href="{$BASE_URL}css/templates/navbar.css" rel="stylesheet">
-		<link href="{$BASE_URL}css/templates/style.css" rel="stylesheet">
-		<link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
-		<link href="{$BASE_URL}{$style}" rel="stylesheet">
-		
+		<!-- Bootstrap Core CSS -->
+		<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom Fonts -->
+		<link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-	
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="{$BASE_URL}javascript/dropdownUser.js"></script>
+
+		<!-- Theme CSS -->
+		<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/pages/mainPage.css" rel="stylesheet">
+		<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/templates/navbar.css" rel="stylesheet">
+
 	</head>
-	<body>
+
+	<body id="page-top" class="index">
 		<div class="wrapper">
 			<!-- Navigation -->
-			<nav id="mainNav" class="navbar navbar-default navbar-custom n">
+			<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header page-scroll">
@@ -67,24 +98,8 @@
 								</form>
 							</li>
 						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li class="hidden">
-								<a href="#page-top"></a>
-							</li>
-							<li>
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a id="drop">Profile</a></li>
-									<li><a id="drop">Projects</a></li>
-									<li><a id="drop">Edit Profile</a></li>
-									<li><a id="drop">Logout</a></li>
-								</ul>
-							</li>
-
-						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
 				</div>
 				<!-- /.container-fluid -->
-			</nav>
-
+			</nav><?php }} ?>

@@ -1,10 +1,11 @@
 <?php 
 	include_once('../../../config/init.php');
-	$smarty->assign('style','css/pages/project.css');
-	$smarty->assign('style','css/templates/navtable.css');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 ?>
+
+		<link href="../../../css/pages/project.css" rel="stylesheet">
+		<link href="../../../css/templates/navtable.css" rel="stylesheet">
 			<div class="navbar-spacing"></div>
 			<div class="page-spacing"></div>
 

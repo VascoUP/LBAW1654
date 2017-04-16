@@ -1,12 +1,13 @@
 <?php 
 	include_once('../../../config/init.php');
-	$smarty->assign('style','css/pages/forms.css');
-	$smarty->assign('style','css/pages/taskList.css');
-	$smarty->assign('style','css/pages/search.css');
-	$smarty->assign('style','css/templates/projectsUsers.css');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 ?>
+
+		<link href="../../../css/pages/forms.css" rel="stylesheet">
+		<link href="../../../css/pages/taskList.css" rel="stylesheet">
+		<link href="../../../css/pages/search.css" rel="stylesheet">
+		<link href="../../../css/templates/projectsUsers.css" rel="stylesheet">
 			<div class="container">
 				<div class="card card-container">
 					<div class="table-container">
