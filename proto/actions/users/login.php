@@ -18,5 +18,13 @@
   } else {
     $_SESSION['error_messages'][] = 'Login failed';  
   }
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+  if($_POST["remember"] == '1' || $_POST["remember"] == 'on')
+  {
+    $year = time() + (365 * 24 * 60 * 60); //365 days * 24 hours * 60 minutes * 60 seconds
+    setcookie('username', $username, $year);
+    setcookie('password', $password, $year);
+  }
+  
+  header('Location: ' .$BASE_DIR.'pages/profile/userOverview.php');
 ?>

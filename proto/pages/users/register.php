@@ -1,13 +1,13 @@
 <?php 
 	include_once('../../config/init.php');
-	$smarty->assign('style', 'css/pages/forms.css');
 	
 	$smarty->display($BASE_DIR .'templates/common/headerLoginRegister.tpl'); 
 ?>
-
+		<link href="../../css/pages/forms.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 			<div class="container">
 				<div class="card card-container">
-						<form class="form-horizontal">
+						<form class="form-horizontal" action="../../actions/users/register.php" method="post">
 							<fieldset>
 							<!-- Form Name -->
 								<legend>Register</legend>
@@ -23,20 +23,20 @@
 
 							<!-- Text input-->
 								<div class="form-group">
-									<label class="col-md-4 control-label" for="Username">Username</label>  
+									<label class="col-md-4 control-label" for="username">Username</label>  
 									<div class="col-md-4">
 										<div class="col-md-4">
-											<input id="Username" name="Username" type="text" placeholder="Username" class="form-control form-style input-md">
+											<input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md">
 										</div>
 									</div>
 								</div>
 
 							<!-- Text input-->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="Email Address">Email Address</label>  
+								<label class="col-md-4 control-label" for="email">Email Address</label>  
 								<div class="col-md-4">
 									<div class="col-md-4">
-										<input id="Email Address" name="Email Address" type="text" placeholder="Email Address" class="form-control form-style input-md">
+										<input id="email" name="email" type="text" placeholder="Email Address" class="form-control form-style input-md">
 									</div>
 								</div>
 							</div>
@@ -62,8 +62,7 @@
 							<div class="form-group">
 								<label class="col-md-4 control-label" ></label>  
 								<div class="col-md-4">
-									<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Register</a>
-									<a href="#" class="btn btn-danger" value=""><span class="glyphicon glyphicon-remove-sign"></span> Clear</a>
+									<button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-thumbs-up"></span> Register</button>
 								</div>
 							</div>
 

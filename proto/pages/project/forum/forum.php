@@ -1,10 +1,10 @@
 <?php 
 	include_once('../../../config/init.php');
-	$smarty->assign('style','css/pages/thread.css');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 ?>
-
+		<link href="../../css/pages/forms.css" rel="stylesheet">
+	
 			<div class="container">
 				<div class="card card-container">	
 				

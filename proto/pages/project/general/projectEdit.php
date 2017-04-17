@@ -7,6 +7,7 @@
 		<link href="../../../css/pages/forms.css" rel="stylesheet">
 		<link href="../../../css/pages/editProject.css" rel="stylesheet">
 		<link href="../../../css/templates/navtable.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 		
 			<div class="navbar-spacing"></div>
 			<div class="page-spacing"></div>

@@ -1,9 +1,12 @@
 <?php 
 	include_once('../../../config/init.php');
-	$smarty->assign('style','css/pages/forms.css');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 ?>
+
+		<link href="../../css/pages/forms.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
+		
 			<div class="container">
 				<div class="card card-container">
 						<form class="form-horizontal">

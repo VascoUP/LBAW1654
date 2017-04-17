@@ -1,9 +1,11 @@
 <?php 
 	include_once('../../config/init.php');
-	$smarty->assign('style','css/pages/profile.css');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 ?>
+		<link href="../../css/pages/profile.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
+		
 			<div class="container">
 				<div class="row profile">
 					<div class="col-md-3">

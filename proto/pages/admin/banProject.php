@@ -3,8 +3,6 @@
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 ?>
-
-
 		<link href="../../css/pages/project.css" rel="stylesheet">
 		<link href="../../css/templates/navtable.css" rel="stylesheet">
 		<link href="../../css/pages/forms.css" rel="stylesheet">
