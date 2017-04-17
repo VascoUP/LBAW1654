@@ -75,7 +75,7 @@
 									<li><a id="drop">Profile</a></li>
 									<li><a id="drop">Projects</a></li>
 									<li><a id="drop">Edit Profile</a></li>
-									<li><a id="drop">Logout</a></li>
+									<li><form action="../../actions/users/logout.php" method="POST" id="drop">Logout</form></li>
 								</ul>
 							</li>
 

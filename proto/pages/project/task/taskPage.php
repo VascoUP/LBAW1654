@@ -3,7 +3,7 @@
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 ?>
-		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
+		<link href="../../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 		<link href="../../../css/pages/forms.css" rel="stylesheet">
 		<link href="../../../css/pages/taskList.css" rel="stylesheet">
 		<link href="../../../css/pages/search.css" rel="stylesheet">

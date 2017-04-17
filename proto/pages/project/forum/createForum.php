@@ -3,8 +3,8 @@
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 ?>
-			<link href="../../css/pages/forms.css" rel="stylesheet">
-			<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
+			<link href="../../../css/pages/forms.css" rel="stylesheet">
+			<link href="../../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 			<div class="container">
 				<div class="card card-container">
 						<form class="form-horizontal">

@@ -7,7 +7,7 @@
 		<link href="../../../css/pages/taskList.css" rel="stylesheet">
 		<link href="../../../css/pages/search.css" rel="stylesheet">
 		<link href="../../../css/templates/projectsUsers.css" rel="stylesheet">
-		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
+		<link href="../../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 			<div class="container">
 				<div class="card card-container-it">
 					<div class="table-container">
