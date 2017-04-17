@@ -19,7 +19,7 @@
     $_SESSION['error_messages'][] = 'Login failed';  
   }
 
-  if($_POST["remember"] == '1' || $_POST["remember"] == 'on')
+  if($_POST['remember'] == '1' || $_POST['remember'] == 'on')
   {
     $year = time() + (365 * 24 * 60 * 60); //365 days * 24 hours * 60 minutes * 60 seconds
     setcookie('username', $username, $year);
