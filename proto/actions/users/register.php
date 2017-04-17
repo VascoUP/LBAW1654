@@ -12,20 +12,19 @@
   $email = strip_tags($_POST['email']);
   $username = strip_tags($_POST['username']);
   $password = $_POST['password'];
+  $confirm = $_POST['confirm'];
 
   /**$photo = $_FILES['photo'];
   $extension = end(explode(".", $photo["name"]));*/
 
 
-    createUser($username, $email, $password);
    /* move_uploaded_file($photo["tmp_name"], $BASE_DIR . "images/users/" . $username . '.' . $extension); // this is dangerous
     chmod($BASE_DIR . "images/users/" . $username . '.' . $extension, 0644);*/
   
-	if (usernameExists($username))
-	  $_SESSION['field_errors']['username'] = 'Username already exists';
-	else if (emailExists($email))
-		$_SESSION['field_errors']['email'] = 'Email already exists';
-	else $_SESSION['error_messages'][] = 'Error creating user';
+	if (!usernameExists($username) && !emailExists($email) && verifyPassword($password, $confirm))
+		createUser($username, $email, $password);
+	else
+		$_SESSION['error_messages'][] = 'Error creating user';
 
   $_SESSION['success_messages'][] = 'User registered successfully';  
   header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php');

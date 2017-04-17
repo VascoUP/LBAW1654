@@ -1,11 +1,13 @@
 <?php 
 	include_once('../../config/init.php');
+	include_once($BASE_DIR .'database/userInformation.php'); 
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
+	
+	$userInfo = getUserInformation($_SESSION['username']);
 ?>
 		<link href="../../css/pages/profile.css" rel="stylesheet">
 		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
-		
 			<div class="container">
 				<div class="row profile">
 					<div class="col-md-3">
@@ -18,10 +20,10 @@
 							<!-- SIDEBAR USER TITLE -->
 							<div class="profile-usertitle">
 								<div class="profile-usertitle-name">
-									aeFi321
+									<?echo $userInfo['0']['username']?>
 								</div>
 								<div class="profile-usertitle-email">
-									aeFi321@gmail.com
+									<?echo $userInfo['0']['email']?>
 								</div>
 							</div>
 
@@ -35,7 +37,7 @@
 										Overview </a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/editProfile.php">
 										<i class="glyphicon glyphicon-user"></i>
 										Account Settings </a>
 									</li>
@@ -52,26 +54,29 @@
 						<!-- END SIDEBAR USER TITLE -->
 							<!-- SIDEBAR BUTTONS -->
 							<div class="profile-userbuttons">
-								<button type="button" class="btn btn-success btn-sm">Add project</button>
-								<button type="button" class="btn btn-success btn-sm">Contact</button>
+								<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/general/projectCreate.php" type="button" class="btn btn-success btn-sm">Add project</a>
+								<a type="button" class="btn btn-success btn-sm">Contact</a>
 							</div>
 					</div>
+					<? if(isset($userInfo['overview']) || isset($userInfo['curriculumVitae'])) : ?>
 					<div class="col-md-9">
 						<div class="profile-content">
+						<? if(isset($userInfo['overview'])) : ?>
 						   <h2>
 								Biography
 							</h2>
 							<p class="summary">
-							My name is Andrew, I'm 20 years old and I live in Barcelona. <br>
-							I have a degree in Computer Engineering and I like to listen to music.
+							<? echo $userInfo['overview'] ?>
 							</p>
 							<br>
 							<h3>
 								Curriculum Vitae
 							</h3>
-							<a href="#"> aeFi321CV </a>
+							<a href="#"> </a>
+						<? endif; ?>
 						</div>
 					</div>
+					<? endif; ?>
 				</div>
 			</div>
 		</div>

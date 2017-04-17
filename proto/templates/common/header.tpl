@@ -75,7 +75,7 @@
 									<li><a id="drop">Profile</a></li>
 									<li><a id="drop">Projects</a></li>
 									<li><a id="drop">Edit Profile</a></li>
-									<li><form action="../../actions/users/logout.php" method="POST" id="drop">Logout</form></li>
+									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/proto/actions/users/logout.php" role="button" id="drop" class="logout">Logout</a></li>
 								</ul>
 							</li>
 

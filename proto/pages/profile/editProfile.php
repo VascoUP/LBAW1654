@@ -23,39 +23,39 @@
 
 							<!-- Text input-->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="Username">Username</label>  
+								<label class="col-md-4 control-label" for="username">Username</label>  
 								<div class="col-md-4">
 									<div class="col-md-4">
-										<input id="Username" name="Username" type="text" placeholder="Username" class="form-control form-style input-md">
+										<input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md">
 									</div>
 								</div>
 							</div>
 
 							<!-- Text input-->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="Email Address">Email Address</label>  
+								<label class="col-md-4 control-label" for="email">Email Address</label>  
 								<div class="col-md-4">
 									<div class="col-md-4">
-										<input id="Email Address" name="Email Address" type="text" placeholder="Email Address" class="form-control form-style input-md">
+										<input id="email" name="email" type="text" placeholder="Email Address" class="form-control form-style input-md">
 									</div>
 								</div>
 							</div>
 
 							<!-- File Button --> 
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="Upload photo">Upload photo</label>
+								<label class="col-md-4 control-label" for="upload">Upload photo</label>
 								<div class="col-md-4">   
 									<div class="col-md-4">
-										<input id="Upload photo" name="Upload photo" class="input-file" type="file" accept=".png, .jpg, .jpeg">
+										<input id="upload" name="upload" class="input-file" type="file" accept=".png, .jpg, .jpeg">
 									</div>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="Upload cv">Upload Curriculum Vitae</label>
+								<label class="col-md-4 control-label" for="uploadCV">Upload Curriculum Vitae</label>
 								<div class="col-md-4">
 									<div class="col-md-4">   
-										<input id="Upload cv" name="Upload cv" class="input-file" type="file" accept=".pdf">
+										<input id="uploadCV" name="uploadCV" class="input-file" type="file" accept=".pdf">
 									</div>
 								</div>
 							</div>
@@ -80,10 +80,10 @@
 
 							<!-- Textarea -->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="Overview">Overview (max 200 words)</label>
+								<label class="col-md-4 control-label" for="overview">Overview (max 200 words)</label>
 								<div class="col-md-4">   
 									<div class="col-md-4">                     
-										<textarea class="form-control form-style" rows="5" cols="30"  id="Overview" name="Overview">Overview</textarea>
+										<textarea class="form-control form-style" rows="5" cols="30"  id="overview" name="overview">Overview</textarea>
 									</div>
 								</div>
 							</div>						

@@ -12,12 +12,11 @@
 					<img id="profile-img" class="profile-img-card" src="../../images/assets/loginImage.png" />
 					<p id="profile-name" class="profile-name-card"></p>
 					<form class="form-signin" action="../../actions/users/login.php" method="post">
-						<span id="reauth-email" class="reauth-email"></span>
-						<input type="text" id="username" class="form-control form-style" placeholder="Username" required autofocus>
-						<input type="password" id="password" class="form-control form-style" placeholder="Password" required>
+						<input type="text" id="username" name="username" class="form-control form-style" placeholder="Username" value="<?php if(isset($_COOKIE["username"])) { echo $_COOKIE["username"]; } ?>" required autofocus>
+						<input type="password" id="password" name="password" class="form-control form-style" placeholder="Password" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>" required autofocus>
 						<div id="remember" class="checkbox">
 							<label>
-								<input id="remember" type="checkbox" value="remember-me"> Remember me
+								<input id="remember" type="checkbox" value="remember" name="remember" <?php if(isset($_COOKIE["username"])) { ?> checked <?php } ?>> Remember me
 							</label>
 						</div>
 						<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>

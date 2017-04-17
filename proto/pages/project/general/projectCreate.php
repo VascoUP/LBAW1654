@@ -1,9 +1,11 @@
 <?php
   include_once('../../../config/init.php');
-  $smarty->assign('style','css/pages/forms.css');
+ 
   $smarty->display($BASE_DIR .'templates/common/header.tpl');
 ?>
-  <script src="../../../javascript/projects/projectCreate.js"></script>
+
+	<link href="../../../css/pages/forms.css" rel="stylesheet">
+  
   <div class="container">
     <div class="card card-container">
       <form action="../../../actions/projects/projectCreate.php" method="post"
@@ -45,7 +47,7 @@
               <div class="col-md-4">
                 <input id="tags" name="tags" type="text" 
                         placeholder="Project Tags" required
-                        class="form-control form-style input-xs">
+                        class="form-control form-style input-xs" data-role="tagsinput">
               </div>
             </div>
           </div>
@@ -161,5 +163,6 @@
 				</div>
 			</div>
 		</div>
+		<script src="../../../javascript/projects/projectCreate.js"></script>
 		<!-- FOOTER -->
 		<?php $smarty->display($BASE_DIR .'templates/common/footer.tpl'); ?>
