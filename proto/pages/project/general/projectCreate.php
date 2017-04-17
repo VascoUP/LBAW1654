@@ -8,8 +8,7 @@
   
   <div class="container">
     <div class="card card-container">
-      <form action="../../../actions/projects/projectCreate.php" method="post"
-            id="mainForm" class="form-horizontal">
+      <form action="../../../actions/projects/projectCreate.php" method="post" id="mainForm" class="form-horizontal">
         <fieldset>
           <!-- Form Name -->
           <legend>Create new project</legend>

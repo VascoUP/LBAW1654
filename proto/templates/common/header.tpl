@@ -34,7 +34,7 @@
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 							<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
 						</button>
-						<a class="navbar-brand page-scroll" href="#page-top">YM</a>
+						<a class="navbar-brand page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php">YM</a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,13 +44,13 @@
 								<a href="#page-top"></a>
 							</li>
 							<li>
-								<a class="page-scroll" href="#home">Home</a>
+								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php">Home</a>
 							</li>
 							<li>
-								<a class="page-scroll" href="#about">About</a>
+								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php#about">About</a>
 							</li>
 							<li>
-								<a class="page-scroll" href="#contact">Contact</a>
+								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php#contact">Contact</a>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-center">
