@@ -5,6 +5,7 @@
 ?>
 		<link href="../../css/pages/profile.css" rel="stylesheet">
 		<link href="../../css/templates/projectsUsers.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 		
 			<div class="container">
 				<div class="row profile">

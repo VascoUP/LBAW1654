@@ -15,8 +15,6 @@
 		<link href="{$BASE_URL}css/bootstrap/bootstrap.min.css" rel="stylesheet">
 		<link href="{$BASE_URL}css/templates/navbar.css" rel="stylesheet">
 		<link href="{$BASE_URL}css/templates/style.css" rel="stylesheet">
-		<link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
-		<link href="{$BASE_URL}{$style}" rel="stylesheet">
 		
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>

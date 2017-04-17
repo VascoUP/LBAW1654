@@ -28,5 +28,5 @@
 	else $_SESSION['error_messages'][] = 'Error creating user';
 
   $_SESSION['success_messages'][] = 'User registered successfully';  
-  header("Location: $BASE_URL");
+  header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php');
 ?>

@@ -1,13 +1,14 @@
 <?php 
 	include_once('../../config/init.php');
-	$smarty->assign('style', 'css/pages/forms.css');
 	
 	$smarty->display($BASE_DIR .'templates/common/headerLoginRegister.tpl'); 
 ?>
-
+		<link href="../../css/pages/forms.css" rel="stylesheet">
+		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
+		
 			<div class="container">
 				<div class="card card-container">
-					<form class="form-horizontal">
+					<form class="form-horizontal" action="../../actions/users/recoverPassword.php" method="post">
 						<fieldset>
 							<!-- Form Name -->
 							<legend>Change Password</legend>
