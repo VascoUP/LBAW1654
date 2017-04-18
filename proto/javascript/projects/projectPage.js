@@ -4,9 +4,23 @@ function init() {
     showPart();
 }
 
+function tabsHandlers() {
+    $('#projectTabs a').click(function(e) {
+        showPart();
+    });
+}
+
 function hide() {
-    $('#overviewContainer').hide();
+    $('#tasksContainer').hide();
+    $('#tasksOpt').toggleClass('active', false);
+    $('#statsContainer').hide();
+    $('#statsOpt').toggleClass('active', false);
+    $('#forumContainer').hide();
+    $('#forumOpt').toggleClass('active', false);
     $('#editContainer').hide();
+    $('#editOpt').toggleClass('active', false);
+    $('#overviewContainer').hide();
+    $('#overviewOpt').toggleClass('active', false);
 }
 
 function showPart() {
@@ -15,17 +29,24 @@ function showPart() {
     console.log(hash);
     switch (hash) {
         case 'tasks':
+            $('#tasksContainer').show();
+            $('#tasksOpt').toggleClass('active', true);
             break;
         case 'stats':
+            $('#statsContainer').show();
+            $('#statsOpt').toggleClass('active', true);
             break;
         case 'forum':
+            $('#forumContainer').show();
+            $('#forumOpt').toggleClass('active', true);
             break;
         case 'edit':
             $('#editContainer').show();
+            $('#editOpt').toggleClass('active', true);
             break;
         default:
             $('#overviewContainer').show();
-            $('#overviewOpt').class('active');
+            $('#overviewOpt').toggleClass('active', true);
             break;
     }
 }

@@ -36,7 +36,7 @@ $smarty->display($BASE_DIR .'templates/common/header.tpl');
 ============================================ -->
   <div class='container'>
     <div class='table-responsive nav-table-scroll'>
-      <table class='nav-table'>
+      <table id="projectTabs" class='nav-table'>
         <tr class='col-xs-12'>
           <td id='overviewOpt'>
             <a class='text-style-6' href='#overview'>Overview</a>
@@ -63,6 +63,15 @@ $smarty->display($BASE_DIR .'templates/common/header.tpl');
 <?php
 echo '<div id=\'overviewContainer\'>';
 include_once('general/projectOverview.php');
+echo '</div>';
+echo '<div id=\'tasksContainer\'>';
+include_once('iteration/projectIterations.php');
+echo '</div>';
+echo '<div id=\'statsContainer\'>';
+include_once('general/projectOverview.php');
+echo '</div>';
+echo '<div id=\'forumContainer\'>';
+include_once('forum/projectForum.php');
 echo '</div>';
 echo '<div id=\'editContainer\'>';
 include_once('general/projectEdit.php');
