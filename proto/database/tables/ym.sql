@@ -633,12 +633,14 @@ BEFORE INSERT ON Tag
 FOR EACH ROW 
 EXECUTE PROCEDURE CheckTag();
 
+DROP FUNCTION IF EXISTS changeUser();
 CREATE FUNCTION changeUser()
 RETURNS TRIGGER AS $changeUser$
 	BEGIN
 		UPDATE UserSite
 		SET type = 'coordinator'
 		WHERE userID = (SELECT ProjectCoordinator.userID FROM ProjectCoordinator WHERE ProjectCoordinator.projectID = NEW.projectID);
+		RETURN NEW;
 	END;
 $changeUser$ LANGUAGE plpgsql;
 

@@ -22,7 +22,7 @@
 	global $conn;
 
 	$stmt = $conn->prepare('SELECT * FROM UserSite WHERE email = ?');
-	$stmt->execute($email);
+	$stmt->execute(array($email));
 	$result = $stmt->fetch();
 
 	return ($result !== false);
@@ -32,7 +32,7 @@
 	global $conn;
 
 	$stmt = $conn->prepare('SELECT * FROM UserSite WHERE username = ?');
-	$stmt->execute($username);
+	$stmt->execute(aray($username));
 	$result = $stmt->fetch();
 
 	return ($result !== false);

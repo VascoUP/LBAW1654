@@ -5,11 +5,16 @@
   function createProject($projName, $description, $access) {
     global $conn;
 
+	if($access === 'public')
+		$typeAccess = 'true';
+	else
+		$typeAccess = 'false';
+	
 	$stmt = $conn->prepare("INSERT INTO Project(name, description, access)
 								VALUES (:name, :description, :access)");						
 	$stmt->bindParam(':name', $projName);
 	$stmt->bindParam(':description', $description);
-	$stmt->bindParam(':access', $access);
+	$stmt->bindParam(':access', $typeAccess);
 	$stmt->execute();	
 	
 	insertProjCoord($projName);
@@ -22,8 +27,8 @@
                             WHERE name = ?");
 							
     $stmt->execute(array($proj));
-	echo $stmt->fetchAll();
-    return $stmt->fetchAll();
+	$result = $stmt->fetchAll();
+    return $result['0']['projectid'];
   }
   
   function insertProjCoord($proj){
@@ -40,5 +45,8 @@
 	$stmt->bindParam(':startDate', $startDate);
 	$stmt->bindParam(':projectStatus', $projStatus);
 	$stmt->execute();
+	
+	$stmt = $conn->prepare("UPDATE UserSite SET type='coordinator' WHERE userID = ?");
+	$stmt->execute(array($userID));
   }
 ?>

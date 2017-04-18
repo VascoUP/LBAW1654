@@ -12,12 +12,13 @@
 
   function getUserID($username){
 	global $conn;
-    $stmt = $conn->prepare("SELECT * 
+    $stmt = $conn->prepare("SELECT userID 
                             FROM UserSite
                             WHERE username = ?");
 							
     $stmt->execute(array($username));
-    return $stmt->fetchAll();
+	$result = $stmt->fetchAll();
+    return $result['0']['userid'];
   }
   
   function updateUsername($user, $username){

@@ -1,7 +1,10 @@
 <?php
 include_once('../../config/init.php');
-
-$smarty->display($BASE_DIR .'templates/common/header.tpl');
+include_once($BASE_DIR .'database/projectInformation.php'); 
+	
+$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
+	
+$projInfo = getProjectInformation($_SESSION['username']);
 ?>
 
   <link href='../../css/pages/project.css' rel='stylesheet'>
@@ -16,7 +19,7 @@ $smarty->display($BASE_DIR .'templates/common/header.tpl');
   <div class='container'>
     <div class='row'>
       <div class='container'>
-        <p class='text-style-1 col-md-6 col-xs-6'>Project Name</p>
+        <p class='text-style-1 col-md-6 col-xs-6'><?echo $projInfo['0']['name']?></p>
         <div class='col-xs-offset-10'>
           <div class='table-responsive info-responsive'>
             <table class='info col-xs-12' cellspacing='0'>

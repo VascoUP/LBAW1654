@@ -16,5 +16,5 @@
   createProject($name, $overview, $access);
 
   $_SESSION['success_messages'][] = 'Project created successfully';  
-  header('Location: ' .$BASE_URL.'pages/project/general/projectOverview.php');
+  header('Location: ' .$BASE_URL.'pages/project/projectPage.php');
 ?>

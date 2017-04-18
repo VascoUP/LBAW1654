@@ -7,11 +7,11 @@
           Overview
         </p>
         <p class="text-style-5">
-          Quick and simple overview of the project
+          <?echo $projInfo['0']['name']?>
         </p>
         <hr class="featurette-divider">
         <p class="text-style-6">
-          Game developmnent project that focuses on C/C++ and Java implementations.
+          <?echo $projInfo['0']['description']?>
         </p>
       </div>
     </div>
