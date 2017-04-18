@@ -7,7 +7,7 @@
 		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 			<div class="container">
 				<div class="card card-container">
-					<form class="form-horizontal">
+					<form class="form-horizontal" action="../../actions/editProfile.php" method="post">
 						<fieldset>
 							<!-- Form Name -->
 							<legend>Edit Profile</legend>

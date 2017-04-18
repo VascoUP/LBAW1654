@@ -6,11 +6,10 @@
 	if($key === 'username'){
 		updateUsername($_SESSION['username'], $_POST['username']);
 		$_SESSION["username"] = $_POST['username'];
-		header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php');
 	}
 	else if($key === 'email')
 		updateEmail($_SESSION['username'], $_POST['email']);
-	else if($key === 'password')
+	else if($key === 'password'){
 		if(!$_POST['confirm'])
 			$_SESSION['error_messages'][] = 'You need to confirm the password';
 		else{
@@ -19,6 +18,7 @@
 			else
 				updatePassword($_SESSION['username'], $_POST['password']);
 		}
+	}
 	else if($key === 'overview')
 		updateDescription($_SESSION['username'], $_POST['overview']);
 	else if($key === 'upload'){
@@ -101,5 +101,7 @@
 			}
 		}
 	}
+	
+	header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php');
   }
 ?>

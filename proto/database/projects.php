@@ -22,6 +22,7 @@
                             WHERE name = ?");
 							
     $stmt->execute(array($proj));
+	echo $stmt->fetchAll();
     return $stmt->fetchAll();
   }
   
@@ -30,7 +31,6 @@
 	$projStatus = "working";
 	$startDate = date('Y-m-d');
 	$userID = getUserID($_SESSION['username']);
-	echo $userID['userid'];
 	$projID = getProjectID($proj);
 	
     $stmt = $conn->prepare("INSERT INTO ProjectCoordinator(userID, projectID, startDate, projectStatus)
