@@ -62,13 +62,13 @@ $smarty->display($BASE_DIR .'templates/common/header.tpl');
   <div>
 <?php
 echo '<div id=\'overviewContainer\'>';
-include_once('general/projectOverview.php');
+include('general/projectOverview.php');
 echo '</div>';
 echo '<div id=\'tasksContainer\'>';
 include_once('iteration/projectIterations.php');
 echo '</div>';
 echo '<div id=\'statsContainer\'>';
-include_once('general/projectOverview.php');
+include('general/projectOverview.php');
 echo '</div>';
 echo '<div id=\'forumContainer\'>';
 include_once('forum/projectForum.php');

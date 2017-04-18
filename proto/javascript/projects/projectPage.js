@@ -1,11 +1,13 @@
 $(document).ready(init);
 
 function init() {
+    tabsHandlers();
     showPart();
 }
 
 function tabsHandlers() {
-    $('#projectTabs a').click(function(e) {
+    $('#projectTabs td').click(function(e) {
+        window.location.hash = $(this).children('a').attr('href');
         showPart();
     });
 }

@@ -1,4 +1,4 @@
-<link href="../../../css/pages/taskList.css" rel="stylesheet">
+<link href="../../css/pages/taskList.css" rel="stylesheet">
 <div class="container">
   <div class="row">
     <div class="container">
