@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-18 18:00:41
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-18 20:37:56
          compiled from "/opt/lbaw/lbaw1654/public_html/proto/templates/common/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:91416728158f258ac37fd07-36169235%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '17c6def2956807b92d5d94e96e7886af39d0e9d7' => 
     array (
       0 => '/opt/lbaw/lbaw1654/public_html/proto/templates/common/header.tpl',
-      1 => 1492534781,
+      1 => 1492544208,
       2 => 'file',
     ),
   ),
@@ -102,9 +102,9 @@ javascript/dropdownUser.js"></script>
 							<li>
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a id="drop">Profile</a></li>
+									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/profileUserOverview.php" role="button" id="drop">Profile</a></li>
 									<li><a id="drop">Projects</a></li>
-									<li><a id="drop">Edit Profile</a></li>
+									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/editProfile.php" role="button" id="drop">Edit Profile</a></li>
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/proto/actions/users/logout.php" role="button" id="drop" class="logout">Logout</a></li>
 								</ul>
 							</li>
