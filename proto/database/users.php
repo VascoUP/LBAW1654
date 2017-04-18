@@ -60,4 +60,12 @@
 		  return true;
 	  return false;
   }
+  
+  function deleteUser($username){
+	global $conn;
+	$stmt = $conn->prepare("DELETE 
+                            FROM UserSite 
+                            WHERE username = ?");
+    $stmt->execute(array($username));
+  }
 ?>
