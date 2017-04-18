@@ -1,8 +1,8 @@
 <?php
 
-	include_once('../userInformation.php');
+	include_once('userInformation.php');
 	
-  function createProject($projName, $description, $tags, $access) {
+  function createProject($projName, $description, $access) {
     global $conn;
 
 	$stmt = $conn->prepare("INSERT INTO Project(name, description, access)
@@ -30,6 +30,7 @@
 	$projStatus = "working";
 	$startDate = date('Y-m-d');
 	$userID = getUserID($_SESSION['username']);
+	echo $userID['userid'];
 	$projID = getProjectID($proj);
 	
     $stmt = $conn->prepare("INSERT INTO ProjectCoordinator(userID, projectID, startDate, projectStatus)

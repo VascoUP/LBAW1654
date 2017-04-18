@@ -12,7 +12,7 @@
 
   function getUserID($username){
 	global $conn;
-    $stmt = $conn->prepare("SELECT userID 
+    $stmt = $conn->prepare("SELECT * 
                             FROM UserSite
                             WHERE username = ?");
 							

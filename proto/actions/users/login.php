@@ -14,24 +14,24 @@
   
   if (isLoginCorrect($username, $password)) {
     $_SESSION['username'] = $username;
-    $_SESSION['success_messages'][] = 'Login successful';  
-  } else {
+    $_SESSION['success_messages'][] = 'Login successful'; 
+	if(!empty($_POST["remember"])) {
+		$year = time() + (365 * 24 * 60 * 60); //365 days * 24 hours * 60 minutes * 60 seconds
+		setcookie('username', $username, $year);
+		setcookie('password', $password, $year);
+	  }
+	  else {
+		if(isset($_COOKIE["username"])) {
+			setcookie ("username","");
+		}
+		if(isset($_COOKIE["password"])) {
+			setcookie ("password","");
+		}
+	  }	
+	header("Location: $BASE_URL" . "pages/profile/profileUserOverview.php");
+  } 
+  else {
     $_SESSION['error_messages'][] = 'Login failed';  
   }
-
-  if(!empty($_POST["remember"])) {
-	$year = time() + (365 * 24 * 60 * 60); //365 days * 24 hours * 60 minutes * 60 seconds
-	setcookie('username', $username, $year);
-    setcookie('password', $password, $year);
-  }
-  else {
-	if(isset($_COOKIE["username"])) {
-		setcookie ("username","");
-	}
-	if(isset($_COOKIE["password"])) {
-		setcookie ("password","");
-	}
-  }
   
-  header("Location: $BASE_URL" . "pages/profile/profileUserOverview.php");
 ?>
