@@ -1,5 +1,5 @@
 <?php
-  include_once('../../config/init.php');
+  include_once('../config/init.php');
   include_once($BASE_DIR .'database/userInformation.php');  
 
   foreach($_POST as $key => $value) {
