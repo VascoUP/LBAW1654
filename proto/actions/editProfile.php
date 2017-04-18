@@ -2,12 +2,12 @@
   include_once('../config/init.php');
   include_once($BASE_DIR .'database/userInformation.php');  
 
-  foreach($_POST as $key) {
-	if($key === 'username'){
+  //foreach($_POST as $key) {
+	//if($key === 'username'){
 		updateUsername($_SESSION['username'], $_POST['username']);
 		$_SESSION["username"] = $_POST['username'];
-	}
-	else if($key === 'email')
+	// }
+	/**else if($key === 'email')
 		updateEmail($_SESSION['username'], $_POST['email']);
 	else if($key === 'password'){
 		if(!$_POST['confirm'])
@@ -101,7 +101,7 @@
 			}
 		}
 	}
-	
+	**/
 	header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php');
-  }
+  /**}**/
 ?>
