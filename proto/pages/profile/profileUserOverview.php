@@ -7,10 +7,17 @@
 	$userInfo = getUserInformation($_SESSION['username']);
 ?>
 		<link href="../../css/pages/profile.css" rel="stylesheet">
+		<link href="../../css/pages/login.css" rel="stylesheet">
 		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
+		
 			<div class="container">
+			<? if(!isset($userInfo['description']) && !isset($userInfo['curriculumVitae'])) : ?>
+				<div class="card card-container">
+					<div id="form-login">
+			<? else : ?>	
 				<div class="row profile">
 					<div class="col-md-3">
+			<? endif; ?>
 						<div class="profile-sidebar">
 							<!-- SIDEBAR USERPIC -->
 							<div class="profile-userpic">
@@ -58,21 +65,23 @@
 								<a type="button" class="btn btn-success btn-sm">Contact</a>
 							</div>
 					</div>
-					<? if(isset($userInfo['overview']) || isset($userInfo['curriculumVitae'])) : ?>
+					<? if(isset($userInfo['description']) || isset($userInfo['curriculumVitae'])) : ?>
 					<div class="col-md-9">
 						<div class="profile-content">
-						<? if(isset($userInfo['overview'])) : ?>
+						<? if(isset($userInfo['description'])) : ?>
 						   <h2>
 								Biography
 							</h2>
 							<p class="summary">
-							<? echo $userInfo['overview'] ?>
+							<? echo $userInfo['description'] ?>
 							</p>
+						<? endif; ?>
 							<br>
+						<? if(isset($userInfo['curriculumVitae'])) : ?>
 							<h3>
 								Curriculum Vitae
 							</h3>
-							<a href="#"> </a>
+							<a href="#"><? echo $userInfo['curriculumVitae'] ?></a>
 						<? endif; ?>
 						</div>
 					</div>

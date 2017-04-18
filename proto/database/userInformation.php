@@ -20,8 +20,8 @@
     return $stmt->fetchAll();
   }
   
-  function updateUsername($oldUser, $username){
-	$id = getUserID($oldUser);
+  function updateUsername($user, $username){
+	$id = getUserID($user);
 	  
 	global $conn;
 	$stmt = $conn->prepare("UPDATE UserSite
@@ -31,8 +31,8 @@
     $stmt->execute(array($username), array($id));
   }
   
-  function updateEmail($oldUser, $email){
-	$id = getUserID($oldUser);
+  function updateEmail($user, $email){
+	$id = getUserID($user);
 	  
 	global $conn;
 	$stmt = $conn->prepare("UPDATE UserSite
@@ -42,8 +42,8 @@
     $stmt->execute(array($email), array($id));
   }
   
-  function updatePassword($oldUser, $password){
-	$id = getUserID($oldUser);
+  function updatePassword($user, $password){
+	$id = getUserID($user);
 	  
 	global $conn;
 	$stmt = $conn->prepare("UPDATE UserSite
@@ -53,8 +53,8 @@
     $stmt->execute(array($password), array($id));
   }
   
-  function updateDescription($oldUser, $overview){
-	$id = getUserID($oldUser);
+  function updateDescription($user, $overview){
+	$id = getUserID($user);
 	  
 	global $conn;
 	$stmt = $conn->prepare("UPDATE UserSite
@@ -62,5 +62,27 @@
 							WHERE userID = ?");
 							
     $stmt->execute(array($description), array($id));
+  }
+  
+  function updatePhoto($user, $photo){
+	$id = getUserID($user);
+	  
+	global $conn;
+	$stmt = $conn->prepare("UPDATE UserSite
+							SET photo = ?
+							WHERE userID = ?");
+							
+    $stmt->execute(array($photo), array($id));
+  }
+  
+  function updateCurriculum($user, $cv){
+	$id = getUserID($user);
+	  
+	global $conn;
+	$stmt = $conn->prepare("UPDATE UserSite
+							SET curriculumVitae = ?
+							WHERE userID = ?");
+							
+    $stmt->execute(array($cv), array($id));
   }
 ?>

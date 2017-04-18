@@ -90,13 +90,13 @@
 							<div class="form-group">
 								<label class="col-md-4 control-label" ></label>  
 								<div class="col-md-4">
-									<a href="#" id="update" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update</a>
+									<button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update</button>
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-md-4 control-label" ></label>  
 								<div class="col-md-4">
-									<a href="#" id="update" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Delete account</a>
+									<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/actions/projects/delete.php" role="button" id="update" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Delete account</a>
 								</div>
 							</div>
 

@@ -1,6 +1,7 @@
   <link href="../../css/pages/forms.css" rel="stylesheet">
   <link href="../../css/pages/editProject.css" rel="stylesheet">
 
+  <!-- Edit body -->
   <div class="container">
     <div class="row">
       <div class="container">
@@ -68,6 +69,4 @@
       </div>
     </div>
   </div>
-
-  <!-- FOOTER -->
-  <?php $smarty->display($BASE_DIR .'templates/common/footer.tpl'); ?>
+</div>

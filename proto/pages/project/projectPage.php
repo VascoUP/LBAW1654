@@ -59,14 +59,19 @@ $smarty->display($BASE_DIR .'templates/common/header.tpl');
     </div>
   </div>
 
-  <?php
-	echo '<div id=\'overviewContainer\' hidden>';
-	include_once('general/projectOverview.php');
-	echo '<\\div>';
-  echo '<div id=\'editContainer\' hidden>';
-	include_once('general/projectEdit.php');
-	echo '<\\div>';
-  ?>
+  <div>
+<?php
+echo '<div id=\'overviewContainer\'>';
+include_once('general/projectOverview.php');
+echo '</div>';
+echo '<div id=\'editContainer\'>';
+include_once('general/projectEdit.php');
+echo '</div>';
+?>
+
   <script src='../../javascript/projects/projectPage.js'></script>
-  <!-- FOOTER -->
-  <?php $smarty->display($BASE_DIR .'templates/common/footer.tpl'); ?>
+
+<!-- Page Footer -->
+<?php
+$smarty->display($BASE_DIR .'templates/common/footer.tpl'); 
+?>

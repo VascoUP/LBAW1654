@@ -21,8 +21,10 @@
    /* move_uploaded_file($photo["tmp_name"], $BASE_DIR . "images/users/" . $username . '.' . $extension); // this is dangerous
     chmod($BASE_DIR . "images/users/" . $username . '.' . $extension, 0644);*/
   
-	if (!usernameExists($username) && !emailExists($email) && verifyPassword($password, $confirm))
+	if (!usernameExists($username) && !emailExists($email) && verifyPassword($password, $confirm)){
+		$_SESSION['username'] = $username;
 		createUser($username, $email, $password);
+	}
 	else
 		$_SESSION['error_messages'][] = 'Error creating user';
 

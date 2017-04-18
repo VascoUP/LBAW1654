@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-16 21:45:51
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-18 18:00:41
          compiled from "/opt/lbaw/lbaw1654/public_html/proto/templates/common/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:91416728158f258ac37fd07-36169235%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '17c6def2956807b92d5d94e96e7886af39d0e9d7' => 
     array (
       0 => '/opt/lbaw/lbaw1654/public_html/proto/templates/common/header.tpl',
-      1 => 1492375409,
+      1 => 1492534781,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'BASE_URL' => 0,
-    'style' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -45,14 +44,7 @@ css/bootstrap/bootstrap.min.css" rel="stylesheet">
 css/templates/navbar.css" rel="stylesheet">
 		<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/templates/style.css" rel="stylesheet">
-		<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/bootstrap/bootstrap-social.css" rel="stylesheet">
-		<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-<?php echo $_smarty_tpl->tpl_vars['style']->value;?>
-" rel="stylesheet">
 		
-		<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -72,7 +64,7 @@ javascript/dropdownUser.js"></script>
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 							<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
 						</button>
-						<a class="navbar-brand page-scroll" href="#page-top">YM</a>
+						<a class="navbar-brand page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php">YM</a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -82,13 +74,13 @@ javascript/dropdownUser.js"></script>
 								<a href="#page-top"></a>
 							</li>
 							<li>
-								<a class="page-scroll" href="#home">Home</a>
+								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php">Home</a>
 							</li>
 							<li>
-								<a class="page-scroll" href="#about">About</a>
+								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php#about">About</a>
 							</li>
 							<li>
-								<a class="page-scroll" href="#contact">Contact</a>
+								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php#contact">Contact</a>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-center">
@@ -113,7 +105,7 @@ javascript/dropdownUser.js"></script>
 									<li><a id="drop">Profile</a></li>
 									<li><a id="drop">Projects</a></li>
 									<li><a id="drop">Edit Profile</a></li>
-									<li><a id="drop">Logout</a></li>
+									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/proto/actions/users/logout.php" role="button" id="drop" class="logout">Logout</a></li>
 								</ul>
 							</li>
 

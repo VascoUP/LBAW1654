@@ -14,10 +14,6 @@ function showPart() {
     var hash = location.hash.substr(1);
     console.log(hash);
     switch (hash) {
-        case 'overview':
-            $('#overviewContainer').show();
-            $('#overviewOpt').class('active');
-            break;
         case 'tasks':
             break;
         case 'stats':
@@ -28,6 +24,8 @@ function showPart() {
             $('#editContainer').show();
             break;
         default:
+            $('#overviewContainer').show();
+            $('#overviewOpt').class('active');
             break;
     }
 }

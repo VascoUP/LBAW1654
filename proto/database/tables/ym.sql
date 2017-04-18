@@ -80,9 +80,9 @@ CREATE TABLE UserSite
 	username varchar(50) NOT NULL,
 	email varchar(50) NOT NULL,
 	password varchar(500) NOT NULL,
-	photo boolean DEFAULT(FALSE),
+	photo varchar(100),
 	description varchar(100),
-	curriculumVitae boolean DEFAULT(FALSE),
+	curriculumVitae varchar(100),
 	type varchar(50) NOT NULL,
 	userStatus UserStatus NOT NULL DEFAULT('active')
 );
@@ -375,26 +375,26 @@ INSERT INTO Thread(threadID, projectID, title, date) VALUES (18, 1, 'I dont know
 INSERT INTO Thread(threadID, projectID, title, date) VALUES (19, 1, 'The dates presented are previous to the creation of the project', '2017-03-26');
 INSERT INTO Thread(threadID, projectID, title, date) VALUES (20, 2, 'Work overload, seeking treatment!', '2017-02-05');
 
-INSERT INTO UserSite(username, email, password, photo, description, curriculumVitae, type, userStatus) VALUES ('METRAP', 'metrap@gmail.com', 'metaBoss', true, 'I like to play games', true, 'coordinator', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('nikki', 'nikki45@gmail.com', 'nikki89765', false, false, 'coordinator', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('adminYM', 'adminYM@gmail.com', 'adminYM', true, false, 'administrator', 'active');
-INSERT INTO UserSite(username, email, password, photo, description, curriculumVitae, type, userStatus) VALUES ('sfcf', 'sfcf@hotmail.com', 'sfcf199612', true, 'A beautiful butterfly', true, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('ymUser', 'ymUser@gmail.com', '12345ym67890', true, false, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('vanFree', 'vanFree@gmail.com', 'vanFreevfvf', false, false, 'user', 'inactive');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('hisa', 'hisa@hotmail.com', 'hisa1234', true,  false, 'coordinator', 'active');
-INSERT INTO UserSite(username, email, password, photo, description, curriculumVitae, type, userStatus) VALUES ('ruteMarlene', 'rute_marlene@gmail.com', 'rutinha', true, 'I like to draw and paint', true, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, description, curriculumVitae, type, userStatus) VALUES ('mariaLeal', 'maryLinda@gmail.com', 'maryTheLinda', true, 'I like to sing and help others', false, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('ymUser1', 'ymUser1@gmail.com', '12345ym67890', true, false, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('ymUser2', 'ymUser2@gmail.com', '12345ym67890', true, false, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('ymUser3', 'ymUser3@gmail.com', '12345ym67890', true, false, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('ymUser4', 'ymUser4@gmail.com', '12345ym67890', true, false, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('ymUser5', 'ymUser5@gmail.com', '12345ym67890', true, false, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('ymUser6', 'ymUser6@gmail.com', '12345ym67890', true, false, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('ymUser7', 'ymUser7@gmail.com', '12345ym67890', true, false, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('ymUser8', 'ymUser8@gmail.com', '12345ym67890', true, false, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('ymUser9', 'ymUser9@gmail.com', '12345ym67890', true, false, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('ymUser10', 'ymUser10@gmail.com', '12345ym67890', true, false, 'user', 'active');
-INSERT INTO UserSite(username, email, password, photo, curriculumVitae, type, userStatus) VALUES ('ymUser20', 'ymUser20@gmail.com', '12345ym67890', true, false, 'user', 'active');
+INSERT INTO UserSite(username, email, password, description, type, userStatus) VALUES ('METRAP', 'metrap@gmail.com', 'metaBoss', 'I like to play games', 'coordinator', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('nikki', 'nikki45@gmail.com', 'nikki89765', 'coordinator', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('adminYM', 'adminYM@gmail.com', 'adminYM', 'administrator', 'active');
+INSERT INTO UserSite(username, email, password, description, type, userStatus) VALUES ('sfcf', 'sfcf@hotmail.com', 'sfcf199612', 'A beautiful butterfly', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser', 'ymUser@gmail.com', '12345ym67890', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('vanFree', 'vanFree@gmail.com', 'vanFreevfvf', 'user', 'inactive');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('hisa', 'hisa@hotmail.com', 'hisa1234', 'coordinator', 'active');
+INSERT INTO UserSite(username, email, password, description, type, userStatus) VALUES ('ruteMarlene', 'rute_marlene@gmail.com', 'rutinha', 'I like to draw and paint', 'user', 'active');
+INSERT INTO UserSite(username, email, password, description, type, userStatus) VALUES ('mariaLeal', 'maryLinda@gmail.com', 'maryTheLinda', 'I like to sing and help others', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser1', 'ymUser1@gmail.com', '12345ym67890', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser2', 'ymUser2@gmail.com', '12345ym67890', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser3', 'ymUser3@gmail.com', '12345ym67890', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser4', 'ymUser4@gmail.com', '12345ym67890', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser5', 'ymUser5@gmail.com', '12345ym67890', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser6', 'ymUser6@gmail.com', '12345ym67890', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser7', 'ymUser7@gmail.com', '12345ym67890', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser8', 'ymUser8@gmail.com', '12345ym67890', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser9', 'ymUser9@gmail.com', '12345ym67890', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser10', 'ymUser10@gmail.com', '12345ym67890', 'user', 'active');
+INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser20', 'ymUser20@gmail.com', '12345ym67890', 'user', 'active');
 
 INSERT INTO Report(reportID, threadID, reportDate, reportStatus) VALUES (1,1,'2017-03-29', 'waiting');
 INSERT INTO Report(reportID, userID, reportDate, reportStatus) VALUES (2,6,'2017-02-01', 'waiting');
@@ -632,6 +632,21 @@ CREATE TRIGGER CheckTagAddition
 BEFORE INSERT ON Tag 
 FOR EACH ROW 
 EXECUTE PROCEDURE CheckTag();
+
+CREATE FUNCTION changeUser()
+RETURNS TRIGGER AS $changeUser$
+	BEGIN
+		UPDATE UserSite
+		SET type = 'coordinator'
+		WHERE userID = (SELECT ProjectCoordinator.userID FROM ProjectCoordinator WHERE ProjectCoordinator.projectID = NEW.projectID);
+	END;
+$changeUser$ LANGUAGE plpgsql;
+
+CREATE TRIGGER CheckChangeUser
+BEFORE INSERT ON ProjectCoordinator 
+FOR EACH ROW 
+EXECUTE PROCEDURE changeUser();
+		
 
 SELECT Project.projectID AS "Project ID", Project.name AS "Project name", Tag.name AS "Tag name"
 FROM Project, Tag, TagProject
