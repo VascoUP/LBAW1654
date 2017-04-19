@@ -15,12 +15,12 @@
   $confirm = $_POST['confirm'];
 
   if(empty($_SESSION['username'])){
-	 if (!usernameExists($username) && !emailExists($email) && verifyPassword($password, $confirm)){
+	if (!usernameExists($username) && !emailExists($email) && verifyPassword($password, $confirm)){
 		$_SESSION['username'] = $username;
 		createUser($username, $email, $password);
 	}
 	else
-		$_SESSION['error_messages'][] = 'Error creating user'; 
+		header("Location: $BASE_URL" . 'pages/users/register.php'); 
   }
   else
 	header("Location: $BASE_URL" . 'pages/users/register.php'); 
