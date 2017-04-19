@@ -32,7 +32,7 @@
 	global $conn;
 
 	$stmt = $conn->prepare('SELECT * FROM UserSite WHERE username = ?');
-	$stmt->execute(aray($username));
+	$stmt->execute(array($username));
 	$result = $stmt->fetch();
 
 	return ($result !== false);

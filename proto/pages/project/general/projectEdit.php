@@ -16,8 +16,10 @@
             <div class="text-edit-box-body">
               <p class="text-style-6">Change the name of the project to a new one</p>
               <div class="col-md-6 col-sm-6 input-group">
-                <input type="text" class="form-control" placeholder="ex: PIU">
-                <span class="input-group-addon btn btn-primary">Submit</span>
+				<form action="../../../actions/projects/projectEdit.php" method="post">
+					<input type="text" class="form-control" placeholder="ex: PIU">
+					<span type="submit" class="input-group-addon btn btn-primary">Submit</span>
+				</form>
               </div>
             </div>
           </div>

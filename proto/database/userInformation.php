@@ -21,62 +21,62 @@
     return $result['0']['userid'];
   }
   
-  function updateUsername($user, $username){
-	$id = getUserID($user);
-	
+  function updateUsername($username){
+	$id = getUserID($_SESSION['username']);
 	global $conn;
 	$stmt = $conn->prepare("UPDATE UserSite
 							SET username = ?
 							WHERE userID = ?");
 							
-    $stmt->execute(array($username), array($id));
+    $stmt->execute(array($username, $id));
+	$_SESSION['username'] = $username;
   }
   
-  function updateEmail($user, $email){
-	$id = getUserID($user);
+  function updateEmail($email){
+	$id = getUserID($_SESSION['username']);
 	  
 	global $conn;
 	$stmt = $conn->prepare("UPDATE UserSite
 							SET email = ?
 							WHERE userID = ?");
 							
-    $stmt->execute(array($email), array($id));
+    $stmt->execute(array($email, $id));
   }
   
-  function updatePassword($user, $password){
-	$id = getUserID($user);
+  function updatePassword($password){
+	$id = getUserID($_SESSION['username']);
 	  
 	global $conn;
 	$stmt = $conn->prepare("UPDATE UserSite
 							SET password = ?
 							WHERE userID = ?");
-							
-    $stmt->execute(array($password), array($id));
+	$passHash = password_hash($password, PASSWORD_DEFAULT);	
+    $stmt->execute(array($passHash, $id));
   }
   
-  function updateDescription($user, $overview){
-	$id = getUserID($user);
+  function updateDescription($overview){
+	$id = getUserID($_SESSION['username']);
 	  
 	global $conn;
 	$stmt = $conn->prepare("UPDATE UserSite
 							SET description = ?
 							WHERE userID = ?");
 							
-    $stmt->execute(array($description), array($id));
+    $stmt->execute(array($description, $id));
   }
   
-  function updatePhoto($user, $photo){
-	$id = getUserID($user);
+  function updatePhoto($photo){
+	$id = getUserID($_SESSION['username']);
 	  
 	global $conn;
 	$stmt = $conn->prepare("UPDATE UserSite
 							SET photo = ?
 							WHERE userID = ?");
 							
-    $stmt->execute(array($photo), array($id));
+    $stmt->execute(array($photo, $id));
   }
   
-  function updateCurriculum($user, $cv){
+  function updateCurriculum($cv){
 	$id = getUserID($user);
 	  
 	global $conn;
@@ -84,6 +84,6 @@
 							SET curriculumVitae = ?
 							WHERE userID = ?");
 							
-    $stmt->execute(array($cv), array($id));
+    $stmt->execute(array($cv, $id));
   }
 ?>

@@ -31,7 +31,8 @@
 	header("Location: $BASE_URL" . "pages/profile/profileUserOverview.php");
   } 
   else {
-    $_SESSION['error_messages'][] = 'Login failed';  
+    $_SESSION['error_messages'][] = 'Login failed';
+	header("Location: $BASE_URL" . "pages/users/login.php");
   }
   
 ?>
