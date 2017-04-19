@@ -68,24 +68,15 @@
           <legend></legend>
 
           <div class="form-group">
-            <label class="col-md-4 control-label"></label>
-            <div class="col-md-4">
-              <a href="#" id="create" class="btn btn-success">
-                <span class="glyphicon glyphicon-thumbs-up"></span> 
-                Create
-              </a>
-              <a href="#" id="clear" class="btn btn-danger" value="">
-                <span class="glyphicon glyphicon-remove-sign"></span>
-                Clear
-              </a>
-            </div>
-          </div>
+			<label class="col-md-4 control-label" ></label>  
+			<div class="col-md-4">
+				<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Create</button>
+			</div>
+		  </div>
 
         </fieldset>
       </form>
     </div>
   </div>
-
-		<script src="../../../javascript/projects/projectCreate.js"></script>
 		<!-- FOOTER -->
 		<?php $smarty->display($BASE_DIR .'templates/common/footer.tpl'); ?>

@@ -11,7 +11,7 @@
 		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 		
 			<div class="container">
-			<? if(!isset($userInfo['description']) && !isset($userInfo['curriculumVitae'])) : ?>
+			<? if(!empty($userInfo['0']['description']) && !empty($userInfo['0']['curriculumVitae'])) : ?>
 				<div class="card card-container">
 					<div id="form-login">
 			<? else : ?>	

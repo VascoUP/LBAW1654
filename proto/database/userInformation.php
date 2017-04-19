@@ -62,7 +62,7 @@
 							SET description = ?
 							WHERE userID = ?");
 							
-    $stmt->execute(array($description, $id));
+    $stmt->execute(array($overview, $id));
   }
   
   function updatePhoto($photo){

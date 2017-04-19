@@ -18,7 +18,7 @@
               <div class="col-md-6 col-sm-6 input-group">
 				<form action="../../../actions/projects/projectEdit.php" method="post">
 					<input type="text" class="form-control" placeholder="ex: PIU">
-					<span type="submit" class="input-group-addon btn btn-primary">Submit</span>
+					<button type="submit" class="input-group-addon btn btn-primary">Submit</button>
 				</form>
               </div>
             </div>
