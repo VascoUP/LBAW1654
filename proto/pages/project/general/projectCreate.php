@@ -70,7 +70,7 @@
           <div class="form-group">
 			<label class="col-md-4 control-label" ></label>  
 			<div class="col-md-4">
-				<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Create</button>
+				<button id="create" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Create</button>
 			</div>
 		  </div>
 

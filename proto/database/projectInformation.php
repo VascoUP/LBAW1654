@@ -12,11 +12,11 @@
   
   function getNumberUsers($ID){
 	global $conn;
-    $stmt = $conn->prepare("SELECT COUNT(*) 
-                            FROM ProjectCoordinator, ProjectUsers
-                            WHERE ProjectCoordinator.projectID = ?
-							AND ProjectUsers.projectID = ?");		
-    $stmt->execute(array($ID, $ID));
-    return $stmt->fetchAll();  
+    $stmt = $conn->prepare("SELECT count(*) AS counter 
+                            FROM ProjectCoordinator
+                            WHERE ProjectCoordinator.projectID = ?");		
+    $stmt->execute(array($ID));
+    $result = $stmt->fetchAll();
+    return $result['0']['counter'];
   }
 ?>

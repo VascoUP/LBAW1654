@@ -83,8 +83,7 @@ echo '<div id=\'editContainer\'>';
 include_once('general/projectEdit.php');
 echo '</div>';
 ?>
-
-  <script src='../../javascript/projects/projectPage.js'></script>
+<script src='../../javascript/projects/projectPage.js'></script>
 
 <!-- Page Footer -->
 <?php

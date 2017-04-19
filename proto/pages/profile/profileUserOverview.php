@@ -11,7 +11,7 @@
 		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 		
 			<div class="container">
-			<? if(!empty($userInfo['0']['description']) && !empty($userInfo['0']['curriculumVitae'])) : ?>
+			<? if(!$userInfo['0']['description'] && !$userInfo['0']['curriculumVitae']) : ?>
 				<div class="card card-container">
 					<div id="form-login">
 			<? else : ?>	
@@ -21,7 +21,11 @@
 						<div class="profile-sidebar">
 							<!-- SIDEBAR USERPIC -->
 							<div class="profile-userpic">
+								<? if($userInfo['0']['photo']) : ?>
 								<img src="../../images/assets/<?echo $userInfo['0']['photo']?> " class="img-responsive" alt="">
+								<? else : ?>
+								<img src="../../images/assets/loginImage.png" class="img-responsive" alt="">
+								<? endif; ?>
 							</div>
 							<!-- END SIDEBAR USERPIC -->
 							<!-- SIDEBAR USER TITLE -->
@@ -64,7 +68,7 @@
 								<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/general/projectCreate.php" type="button" class="btn btn-success btn-sm">Add project</a>
 								<a type="button" class="btn btn-success btn-sm">Contact</a>
 							</div>
-					
+					</div>
 					<? if(!empty($userInfo['0']['description']) || !empty($userInfo['0']['curriculumVitae'])) : ?>
 					<div class="col-md-9">
 						<div id="profile-content" class="profile-content">
@@ -86,7 +90,6 @@
 						</div>
 					</div>
 					<? endif; ?>
-				</div>
 			</div>
 		</div>
 		<!-- FOOTER -->
