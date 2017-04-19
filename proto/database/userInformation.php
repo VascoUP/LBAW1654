@@ -23,6 +23,7 @@
   
   function updateUsername($user, $username){
 	$id = getUserID($user);
+	
 	global $conn;
 	$stmt = $conn->prepare("UPDATE UserSite
 							SET username = ?

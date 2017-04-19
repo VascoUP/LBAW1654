@@ -121,3 +121,7 @@ input::-webkit-input-placeholder {
 	width: 100%;
 	position: relative;
 }
+
+legend.tab{
+	font-size: 16px;
+}

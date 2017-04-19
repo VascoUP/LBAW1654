@@ -3,8 +3,10 @@ include_once('../../config/init.php');
 include_once($BASE_DIR .'database/projectInformation.php'); 
 	
 $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
+
+$projID = $_GET['projID'];
 	
-$projInfo = getProjectInformation($_SESSION['username']);
+$projInfo = getProjectInformation($projID);
 ?>
 
   <link href='../../css/pages/project.css' rel='stylesheet'>

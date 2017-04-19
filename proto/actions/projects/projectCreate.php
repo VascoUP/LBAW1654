@@ -14,7 +14,8 @@
   $access = strip_tags($_POST['access']);
 	
   createProject($name, $overview, $access);
-
+  $id = getProjectID($name);
+  
   $_SESSION['success_messages'][] = 'Project created successfully';  
-  header('Location: ' .$BASE_URL.'pages/project/projectPage.php');
+  header('Location: ' .$BASE_URL.'pages/project/projectPage.php?projID='.$id);
 ?>
