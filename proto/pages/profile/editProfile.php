@@ -8,9 +8,8 @@
 			<div class="container">
 				<div class="card card-container">
 					<form class="form-horizontal" action="../../actions/editProfile.php" method="post">
-						<fieldset>
 							<!-- Form Name -->
-							<legend>Edit Profile</legend>
+							<h2>Edit Profile</h2>
 
 							<div class="form-group">
 									<label class="col-md-4 control-label" ></label>  
@@ -94,16 +93,14 @@
 							<form class="form-horizontal" action="../../actions/editProfile.php" method="post">
 							<fieldset>
 							<!-- Form Name -->
-							<legend class="tab">Overview</legend>
+							<legend class="tab" id="tab">Overview</legend>
 							<!-- Textarea -->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="overview">Overview (max 200 words)</label>
-								<div class="col-md-4">   
+								<label class="col-md-4 control-label" for="overview">Overview (max 200 words)</label>  
 									<div class="col-md-4">                     
 										<textarea class="form-control form-style" rows="5" cols="30"  id="overview" name="overview">Overview</textarea>
 										<button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Overview</button>
 									</div>
-								</div>
 							</div>			
 							</fieldset>
 							</form>
@@ -116,8 +113,6 @@
 									<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/actions/projects/delete.php" role="button" id="update" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Delete account</a>
 								</div>
 							</div>
-
-						</fieldset>
 					</form>
 				</div>
 			</div>
