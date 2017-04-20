@@ -7,6 +7,7 @@ $smarty->display($BASE_DIR .'templates/common/header.tpl');
 $projID = $_GET['projID'];
 	
 $projInfo = getProjectInformation($projID);
+$numUsers = getNumberUsers($projID);
 ?>
 
   <link href='../../css/pages/project.css' rel='stylesheet'>
@@ -27,7 +28,7 @@ $projInfo = getProjectInformation($projID);
             <table class='info col-xs-12' cellspacing='0'>
               <tr>
                 <th class='text-style-6 info-type col-xs-8'>Users</th>
-                <th class='text-style-6 col-xs-4'>1</th>
+                <th class='text-style-6 col-xs-4'><? echo $numUsers ?></th>
               </tr>
             </table>
           </div>
@@ -82,8 +83,7 @@ echo '<div id=\'editContainer\'>';
 include_once('general/projectEdit.php');
 echo '</div>';
 ?>
-
-  <script src='../../javascript/projects/projectPage.js'></script>
+<script src='../../javascript/projects/projectPage.js'></script>
 
 <!-- Page Footer -->
 <?php

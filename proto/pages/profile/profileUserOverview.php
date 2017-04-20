@@ -11,7 +11,7 @@
 		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 		
 			<div class="container">
-			<? if(!isset($userInfo['description']) && !isset($userInfo['curriculumVitae'])) : ?>
+			<? if(!$userInfo['0']['description'] && !$userInfo['0']['curriculumVitae']) : ?>
 				<div class="card card-container">
 					<div id="form-login">
 			<? else : ?>	
@@ -21,7 +21,11 @@
 						<div class="profile-sidebar">
 							<!-- SIDEBAR USERPIC -->
 							<div class="profile-userpic">
+								<? if($userInfo['0']['photo']) : ?>
+								<img src="../../images/assets/<?echo $userInfo['0']['photo']?> " class="img-responsive" alt="">
+								<? else : ?>
 								<img src="../../images/assets/loginImage.png" class="img-responsive" alt="">
+								<? endif; ?>
 							</div>
 							<!-- END SIDEBAR USERPIC -->
 							<!-- SIDEBAR USER TITLE -->
@@ -51,7 +55,7 @@
 									<li>
 										<a href="#" target="_blank">
 										<i class="glyphicon glyphicon-ok"></i>
-										Projects I contributed to</a>
+										My Projects</a>
 									</li>
 								</ul>
 							</div>
@@ -65,28 +69,27 @@
 								<a type="button" class="btn btn-success btn-sm">Contact</a>
 							</div>
 					</div>
-					<? if(isset($userInfo['description']) || isset($userInfo['curriculumVitae'])) : ?>
+					<? if(!empty($userInfo['0']['description']) || !empty($userInfo['0']['curriculumVitae'])) : ?>
 					<div class="col-md-9">
-						<div class="profile-content">
-						<? if(isset($userInfo['description'])) : ?>
+						<div id="profile-content" class="profile-content">
+						<? if(!empty($userInfo['0']['description'])) : ?>
 						   <h2>
 								Biography
 							</h2>
 							<p class="summary">
-							<? echo $userInfo['description'] ?>
+							<? echo $userInfo['0']['description'] ?>
 							</p>
 						<? endif; ?>
 							<br>
-						<? if(isset($userInfo['curriculumVitae'])) : ?>
+						<? if(!empty($userInfo['0']['curriculumVitae'])) : ?>
 							<h3>
 								Curriculum Vitae
 							</h3>
-							<a href="#"><? echo $userInfo['curriculumVitae'] ?></a>
+							<a href="#"><? echo $userInfo['0']['curriculumVitae'] ?></a>
 						<? endif; ?>
 						</div>
 					</div>
 					<? endif; ?>
-				</div>
 			</div>
 		</div>
 		<!-- FOOTER -->

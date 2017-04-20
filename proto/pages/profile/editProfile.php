@@ -1,13 +1,12 @@
 <?php 
 	include_once('../../config/init.php');
-	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 ?>
 		<link href="../../css/pages/forms.css" rel="stylesheet">
 		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 			<div class="container">
 				<div class="card card-container">
-					<form class="form-horizontal" action="../../actions/editProfile.php" method="post">
+					<form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
 							<!-- Form Name -->
 							<h2>Edit Profile</h2>
 
@@ -20,7 +19,7 @@
 									</div>
 								</div>
 
-							<form class="form-horizontal" action="../../actions/editProfile.php" method="post">
+							<form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
 							<fieldset>
 							<!-- Form Name -->
 							<legend class="tab">Username</legend>
@@ -35,7 +34,7 @@
 							</fieldset>
 							</form>
 
-							<form class="form-horizontal" action="../../actions/editProfile.php" method="post">
+							<form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
 							<fieldset>
 							<!-- Form Name -->
 							<legend class="tab">Email</legend>
@@ -50,7 +49,7 @@
 							</fieldset>
 							</form>
 
-							<form class="form-horizontal" action="../../actions/editProfile.php" method="post">
+							<form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
 							<fieldset>
 							<!-- Form Name -->
 							<legend class="tab">Files upload</legend>
@@ -67,10 +66,16 @@
 										<input id="uploadCV" name="uploadCV" class="input-file" type="file" accept=".pdf">
 									</div>
 							</div>
+							<div class="form-group"> 
+							<label class="col-md-4 control-label" ></label> 
+									<div class="col-md-4">
+										<button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Files</button>
+									</div>
+							</div>
 							</fieldset>
 							</form>
 
-							<form class="form-horizontal" action="../../actions/editProfile.php" method="post">
+							<form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
 							<fieldset>
 							<!-- Form Name -->
 							<legend class="tab">Password</legend>
@@ -90,7 +95,7 @@
 							</fieldset>
 							</form>
 
-							<form class="form-horizontal" action="../../actions/editProfile.php" method="post">
+							<form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
 							<fieldset>
 							<!-- Form Name -->
 							<legend class="tab" id="tab">Overview</legend>
@@ -110,7 +115,7 @@
 							<div class="form-group">
 								<label class="col-md-4 control-label" ></label>  
 								<div class="col-md-4">
-									<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/actions/projects/delete.php" role="button" id="update" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Delete account</a>
+									<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/actions/users/deleteAccount.php" role="button" id="update" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Delete account</a>
 								</div>
 							</div>
 					</form>
