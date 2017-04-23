@@ -10,10 +10,10 @@
             <!-- SIDEBAR USER TITLE -->
             <div class='profile-usertitle'>
                 <div class='profile-usertitle-name'>
-                    
+                    {$smartyProjInfo['0']['name']}
                 </div>
                 <div class='profile-usertitle-email'>
-                    
+                    {$smartyNumUsers} users
                 </div>
             </div>
 
@@ -30,11 +30,11 @@
                         Edit Project </a>
                     </li>
 					<li>
-                        <a href='#' target='_blank'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/iteration/projectIterations.php' target='_blank'>
                         Iterations</a>
                     </li>
                     <li>
-                        <a href='#' target='_blank'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/forum/projectForum.php' target='_blank'>
                         Forum</a>
                     </li>
 					<li>
@@ -54,7 +54,7 @@
                         Description
                     </h2>
                     <p class='summary'>
-               
+						{$smartyProjInfo['0']['description']}
                     </p>
             </div>
         </div>
