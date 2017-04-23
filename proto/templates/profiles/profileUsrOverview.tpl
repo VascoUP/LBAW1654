@@ -1,26 +1,26 @@
-<link href='./css/pages/profile.css' rel='stylesheet'>
-<link href='./css/pages/login.css' rel='stylesheet'>
-<link href='./css/bootstrap/bootstrap-social.css' rel='stylesheet'>
+<link href="{$BASE_DIR}css/pages/profile.css" rel='stylesheet'>
+<link href="{$BASE_URL}css/pages/login.css" rel='stylesheet'>
+<link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel='stylesheet'>
 
 <div class='container'>
 
-    {if(!$smartyUsrInfo['0']['description'] && !$smartyUsrInfo['0']['curriculumVitae'])}
+    {if ! isset($smartyUsrInfo['0']['description']) && ! isset($smartyUsrInfo['0']['curriculumVitae'])}
         <div class='card card-container'>
             <div id='form-login'>
     {else}
         <div class='row profile'>
             <div class='col-md-3'>
-    {endif}
+    {/if}
 
         <div class='profile-sidebar'>
             <!-- SIDEBAR USERPIC -->
             <div class='profile-userpic'>
 
-                {if($smartyUsrInfo['0']['photo'])}
-                    <img src='./images/assets/'{$smartyUsrInfo['0']['photo']} class='img-responsive' alt=''>
+                {if isset($smartyUsrInfo['0']['photo'])}
+                    <img src="{$BASE_URL}images/assets/{$smartyUsrInfo['0']['photo']}" class='img-responsive' alt=''>
                 {else}
-                    <img src='./images/assets/loginImage.png' class='img-responsive' alt=''>
-                {endif}
+                    <img src="{$BASE_URL}images/assets/loginImage.png" class='img-responsive' alt=''>
+                {/if}
 
             </div>
             <!-- END SIDEBAR USERPIC -->
@@ -66,31 +66,31 @@
             </div>
     </div>
     
-    {if(!empty($smartyUsrInfo['0']['description']) || !empty($smartyUsrInfo['0']['curriculumVitae']))}
+    {if !empty($smartyUsrInfo['0']['description']) || !empty($smartyUsrInfo['0']['curriculumVitae'])}
         <div class='col-md-9'>
             <div id='profile-content' class='profile-content'>
                 
-                {if(!empty($smartyUsrInfo['0']['description']))}
+                {if !empty($smartyUsrInfo['0']['description'])}
                     <h2>
                         Biography
                     </h2>
                     <p class='summary'>
                     {$smartyUsrInfo['0']['description']}
                     </p>
-                {endif}
+                {/if}
 
                 <br>
 
-                {if(!empty($smartyUsrInfo['0']['curriculumVitae']))}
+                {if !empty($smartyUsrInfo['0']['curriculumVitae'])}
                 <h3>
                     Curriculum Vitae
                 </h3>
-                <a href='#'>{echo $smartyUsrInfo['0']['curriculumVitae']}</a>
-                {endif}
+                <a href='#'>{$smartyUsrInfo['0']['curriculumVitae']}</a>
+                {/if}
 
             </div>
         </div>
-    {endif}
+    {/if}
 
 </div>
 </div>

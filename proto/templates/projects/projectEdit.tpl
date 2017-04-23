@@ -1,14 +1,14 @@
 <div id='editContainer'>
-    <link href='../../css/pages/forms.css' rel='stylesheet'>
-    <link href='../../css/pages/project.css' rel='stylesheet'>
-    <link href='../../css/pages/editProject.css' rel='stylesheet'>
+    <link href="{$BASE_URL}css/pages/forms.css" rel='stylesheet'>
+    <link href="{$BASE_URL}css/pages/project.css" rel='stylesheet'>
+    <link href="{$BASE_URL}css/pages/editProject.css" rel='stylesheet'>
 
     <!-- Edit body -->
     <div class='container'>
         <div class='row'>
             <div class='container'>
             <div class='project-info-box'>
-            <form action='../../actions/projects/projectEdit.php?projID='{$smartyProjID} method='post'>
+            <form action="{$BASE_URL}actions/projects/projectEdit.php?projID={$smartyProjID}" method='post'>
                 <p class='text-style-2'>Edit project</p>
                 <legend></legend>
                 <div class='project-edit-box'>
@@ -75,5 +75,5 @@
     </div>
     </div>
 
-    <script src='../../javascript/projects/projectEdit.js'></script>
+    <script src="{$BASE_URL}javascript/projects/projectEdit.js"></script>
 </div>

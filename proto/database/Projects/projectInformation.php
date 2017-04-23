@@ -2,7 +2,7 @@
   include_once('userInformation.php');
   
   function getProjectInformation($ID) {
-	global $conn;
+	  global $conn;
     $stmt = $conn->prepare("SELECT * 
                             FROM Project
                             WHERE projectID = ?");		

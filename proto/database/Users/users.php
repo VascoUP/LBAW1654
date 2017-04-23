@@ -1,21 +1,19 @@
 <?php
-  
   function createUser($username, $email, $password) {
     global $conn;
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-	$type = 'user';
-	$userStatus = 'active';
+		$type = 'user';
+		$userStatus = 'active';
 
-	$stmt = $conn->prepare("INSERT INTO UserSite(username, email, password, type, userStatus)
-								VALUES (:username, :email, :password, :type, :userStatus)");						
-	$stmt->bindParam(':username', $username);
-	$stmt->bindParam(':email', $email);
-	$stmt->bindParam(':password', $passwordHash);
-	$stmt->bindParam(':type', $type);
-	$stmt->bindParam(':userStatus', $userStatus);
-	$stmt->execute();
-	
+		$stmt = $conn->prepare("INSERT INTO UserSite(username, email, password, type, userStatus)
+									VALUES (:username, :email, :password, :type, :userStatus)");						
+		$stmt->bindParam(':username', $username);
+		$stmt->bindParam(':email', $email);
+		$stmt->bindParam(':password', $passwordHash);
+		$stmt->bindParam(':type', $type);
+		$stmt->bindParam(':userStatus', $userStatus);
+		$stmt->execute();
   }
   
   function emailExists($email) {
