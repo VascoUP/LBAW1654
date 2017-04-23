@@ -1,5 +1,5 @@
 <?php
-  include_once('userInformation.php');
+  include('../../database/Users/userInformation.php');
   
   function getProjectInformation($ID) {
 	  global $conn;
