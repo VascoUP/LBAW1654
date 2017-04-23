@@ -65,7 +65,7 @@
 						<!-- END SIDEBAR USER TITLE -->
 							<!-- SIDEBAR BUTTONS -->
 							<div class="profile-userbuttons">
-								<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/general/projectCreate.php" type="button" class="btn btn-success btn-sm">Add project</a>
+								<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/projectCreate.php" type="button" class="btn btn-success btn-sm">Add project</a>
 								<a type="button" class="btn btn-success btn-sm">Contact</a>
 							</div>
 					</div>
