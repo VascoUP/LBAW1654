@@ -1,6 +1,6 @@
 <div id='forumContainer'>
-  <link href='../../css/pages/forum.css' rel='stylesheet'>
-  <link href='../../css/pages/taskList.css' rel='stylesheet'>
+  <link href="{$BASE_URL}css/pages/forum.css" rel='stylesheet'>
+  <link href="{$BASE_URL}css/pages/taskList.css" rel='stylesheet'>
 
   <div class='container'>
     <div class='row'>

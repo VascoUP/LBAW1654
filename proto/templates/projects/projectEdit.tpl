@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <link href="../../css/pages/forms.css" rel="stylesheet">
 <link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <script src="../../javascript/confirmDelete.js"></script>
@@ -16,6 +17,28 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="name">Username</label>  
                     <div class="col-md-4">
+=======
+<div id='editContainer'>
+    <link href="{$BASE_URL}css/pages/forms.css" rel='stylesheet'>
+    <link href="{$BASE_URL}css/pages/project.css" rel='stylesheet'>
+    <link href="{$BASE_URL}css/pages/editProject.css" rel='stylesheet'>
+
+    <!-- Edit body -->
+    <div class='container'>
+        <div class='row'>
+            <div class='container'>
+            <div class='project-info-box'>
+            <form action="{$BASE_URL}actions/projects/projectEdit.php?projID={$smartyProjID}" method='post'>
+                <p class='text-style-2'>Edit project</p>
+                <legend></legend>
+                <div class='project-edit-box'>
+                <div class='project-edit-box-header'>
+                    <p class='text-style-5'>Rename project</p>
+                </div>
+                <div class='text-edit-box-body'>
+                    <p class='text-style-6'>Change the name of the project to a new one</p>
+                    <div class='col-md-6 col-sm-6 input-group'>
+>>>>>>> origin/master
                         <input type='text' name='name' id='name' class='form-control' placeholder='ex: PIU'>
                         <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Username</button>
                     </div>
@@ -52,6 +75,7 @@
                     </div>
             </div>
 
+<<<<<<< HEAD
             <fieldset>
             <!-- Form Name -->
             <legend class="tab">Invite Users</legend>
@@ -63,4 +87,7 @@
             </div>
         </form>
     </div>
+=======
+    <script src="{$BASE_URL}javascript/projects/projectEdit.js"></script>
+>>>>>>> origin/master
 </div>

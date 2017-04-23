@@ -1,5 +1,5 @@
 <div id='tasksContainer'>
-  <link href='../../css/pages/taskList.css' rel='stylesheet'>
+  <link href="{$BASE_URL}css/pages/taskList.css" rel='stylesheet'>
   <div class='container'>
     <div class='row'>
       <div class='container'>
