@@ -44,7 +44,11 @@
 								<a href="#page-top"></a>
 							</li>
 							<li>
+							{if $_SESSION['username']}
+								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/profileUserOverview.php">Home</a>
+							{else}
 								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php">Home</a>
+							{/if}
 							</li>
 							<li>
 								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php#about">About</a>

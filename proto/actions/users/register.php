@@ -19,6 +19,9 @@
 		if (!usernameExists($username) && !emailExists($email) && verifyPassword($password, $confirm)){
 		$_SESSION['username'] = $username;
 		createUser($username, $email, $password);
+		
+		$_SESSION['success_messages'][] = 'User registered successfully';  
+		header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php');
 		}
 		else
 			header("Location: $BASE_URL" . 'pages/users/register.php');
@@ -28,7 +31,4 @@
   }
   else
 	header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php'); 
-
-  $_SESSION['success_messages'][] = 'User registered successfully';  
-  header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php');
 ?>

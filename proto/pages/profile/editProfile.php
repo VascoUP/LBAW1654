@@ -20,7 +20,6 @@
 									</div>
 								</div>
 
-							<form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
 							<fieldset>
 							<!-- Form Name -->
 							<legend class="tab">Username</legend>
@@ -33,9 +32,7 @@
 									</div>
 							</div>
 							</fieldset>
-							</form>
 
-							<form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
 							<fieldset>
 							<!-- Form Name -->
 							<legend class="tab">Email</legend>
@@ -48,9 +45,7 @@
 									</div>
 							</div>
 							</fieldset>
-							</form>
 
-							<form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
 							<fieldset>
 							<!-- Form Name -->
 							<legend class="tab">Files upload</legend>
@@ -74,9 +69,7 @@
 									</div>
 							</div>
 							</fieldset>
-							</form>
 
-							<form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
 							<fieldset>
 							<!-- Form Name -->
 							<legend class="tab">Password</legend>
@@ -94,9 +87,7 @@
 									</div>
 							</div>
 							</fieldset>
-							</form>
 
-							<form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
 							<fieldset>
 							<!-- Form Name -->
 							<legend class="tab" id="tab">Overview</legend>
@@ -109,7 +100,6 @@
 									</div>
 							</div>			
 							</fieldset>
-							</form>
 							
 							<br>
 							<br>
