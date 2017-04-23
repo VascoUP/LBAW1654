@@ -9,13 +9,6 @@
 
   $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
   $smarty->display($BASE_DIR .'templates/projects/projectPage.tpl');
-  $smarty->display($BASE_DIR .'templates/projects/projectOverview.tpl');
-  $smarty->display($BASE_DIR .'templates/projects/projectIterations.tpl');
-  echo '<div id=\'statsContainer\'>';
-  echo '</div>';
-  $smarty->display($BASE_DIR .'templates/projects/projectForum.tpl');
-  $smarty->display($BASE_DIR .'templates/projects/projectEdit.tpl');
-
-
+  
   $smarty->display($BASE_DIR .'templates/common/footer.tpl'); 
 ?>

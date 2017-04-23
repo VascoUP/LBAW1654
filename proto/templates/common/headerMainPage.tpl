@@ -1,5 +1,3 @@
-<? $smarty->display($BASE_DIR .'templates/common/head.tpl'); ?>
-
 		<!-- Bootstrap Core CSS -->
 		<link href="{$BASE_URL}css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
