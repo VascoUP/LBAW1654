@@ -1,6 +1,6 @@
 <?php
   include_once('../../config/init.php');
-  include_once($BASE_DIR .'database/recoverPassword.php');  
+  include_once($BASE_DIR .'database/Users/recoverPassword.php');  
 
   $email = strip_tags($_POST['email']);
   

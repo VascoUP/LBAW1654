@@ -1,6 +1,6 @@
 <?php	
 	include_once('../../config/init.php');
-	include_once($BASE_DIR .'database/projects.php');  
+	include_once($BASE_DIR .'database/Projects/projects.php');  
 
 	if (!$_POST['projName'] || !$_POST['overview'] || !$_POST['access']) {
 		$_SESSION['error_messages'][] = 'All fields are mandatory';

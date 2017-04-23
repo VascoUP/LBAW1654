@@ -77,8 +77,8 @@ CREATE TABLE Thread
 CREATE TABLE UserSite
 (
 	userID serial PRIMARY KEY,
-	username varchar(50) NOT NULL,
-	email varchar(50) NOT NULL,
+	username varchar(50) NOT NULL UNIQUE,
+	email varchar(50) NOT NULL UNIQUE,
 	password varchar(500) NOT NULL,
 	photo varchar(100),
 	description varchar(100),
