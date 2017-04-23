@@ -1,12 +1,12 @@
-<link href="../../css/pages/login.css" rel="stylesheet">
-<script src="../../javascript/recovery.js"></script>
+<link href="{$BASE_URL}css/pages/login.css" rel="stylesheet">
+<script src="{$BASE_URL}javascript/recovery.js"></script>
 
 <div class="container">
     <div class="card card-container">
         <div id="form-login">
-            <img id="profile-img" class="profile-img-card" src="../../images/assets/loginImage.png" />
+            <img id="profile-img" class="profile-img-card" src="{$BASE_URL}images/assets/loginImage.png" />
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin" action="../../actions/users/login.php" method="post">
+            <form class="form-signin" action="{$BASE_URL}actions/users/login.php" method="post">
                 <input type="text" id="username" 
                         name="username" class="form-control form-style"
                         placeholder="Username" 
@@ -46,7 +46,7 @@
             <h4 class="">
                 Forgot the password?
             </h4>
-            <form accept-charset="UTF-8" role="form" id="login-recordar" action="../../actions/users/recoverPassword.php" method="post">
+            <form accept-charset="UTF-8" role="form" id="login-recordar" action="{$BASE_URL}actions/users/recoverPassword.php" method="post">
                 <fieldset>
                     <span class="help-block">
                       <p>Email address you use to log in to your account</p>

@@ -1,8 +1,8 @@
-<link href="../../../css/pages/forms.css" rel="stylesheet">
-<link href="../../../css/pages/taskList.css" rel="stylesheet">
-<link href="../../../css/pages/search.css" rel="stylesheet">
-<link href="../../../css/templates/projectsUsers.css" rel="stylesheet">
-<link href="../../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
+<link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
+<link href="{$BASE_URL}css/pages/taskList.css" rel="stylesheet">
+<link href="{$BASE_URL}css/pages/search.css" rel="stylesheet">
+<link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
+<link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 
 <div class="container">
 	<div class="card card-container-it">

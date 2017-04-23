@@ -1,10 +1,10 @@
-<link href="../../css/pages/forms.css" rel="stylesheet">
-<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
-<script src="../../javascript/confirmDelete.js"></script>
+<link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
+<link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
+<script src="{$BASE_URL}javascript/confirmDelete.js"></script>
 
 <div class="container">
     <div class="card card-container">
-        <form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
+        <form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post">
             <!-- Form Name -->
             <h2>Edit Profile</h2>
 
@@ -99,7 +99,7 @@
             </fieldset>
             </form>
 
-            <form action="../../actions/users/deleteAccount.php" method="post">
+            <form action="{$BASE_URL}actions/users/deleteAccount.php" method="post">
             <br>
             <br>
             <div class="form-group">

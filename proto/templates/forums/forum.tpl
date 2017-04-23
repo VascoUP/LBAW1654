@@ -1,4 +1,4 @@
-<link href="../../../css/pages/thread.css" rel="stylesheet">
+<link href="{$BASE_URL}css/pages/thread.css" rel="stylesheet">
 
 <div class="container">
     <div class="card card-container">
@@ -46,4 +46,4 @@
 </div>
 </div>
 
-<script src="../../../javascript/comment.js"></script>
+<script src="{$BASE_URL}javascript/comment.js"></script>

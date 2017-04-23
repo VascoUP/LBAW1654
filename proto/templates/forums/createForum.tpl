@@ -1,5 +1,5 @@
-<link href="../../../css/pages/forms.css" rel="stylesheet">
-<link href="../../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
+<link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
+<link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <div class="container">
     <div class="card card-container">
         <form class="form-horizontal">

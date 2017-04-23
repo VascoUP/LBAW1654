@@ -1,4 +1,4 @@
-<? $smarty->display($BASE_DIR .'templates/common/head.tpl'); ?>
+{include file="../../templates/common/head.tpl" }
 
 		<!-- Bootstrap core CSS -->
 		<link href="{$BASE_URL}css/bootstrap/bootstrap.min.css" rel="stylesheet">

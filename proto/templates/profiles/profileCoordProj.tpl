@@ -1,6 +1,6 @@
-<link href="../../css/pages/profile.css" rel="stylesheet">
-<link href="../../css/templates/projectsUsers.css" rel="stylesheet">
-<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
+<link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
+<link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
+<link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 
 <div class="container">
     <div class="row profile">
@@ -8,7 +8,7 @@
             <div class="profile-sidebar">
                 <!-- SIDEBAR USERPIC -->
                 <div class="profile-userpic">
-                    <img src="../../images/assets/loginImage.png" class="img-responsive" alt="">
+                    <img src="{$BASE_URL}images/assets/loginImage.png" class="img-responsive" alt="">
                 </div>
                 <!-- END SIDEBAR USERPIC -->
                 <!-- SIDEBAR USER TITLE -->
