@@ -1,6 +1,6 @@
 <?php
 
-	include_once('userInformation.php');
+	include_once($BASE_DIR .'database/Users/userInformation.php');
 	
   function createProject($projName, $description, $access) {
     global $conn;
@@ -14,23 +14,6 @@
 								VALUES (:name, :description, :access)");						
 	$stmt->bindParam(':name', $projName);
 	$stmt->bindParam(':description', $description);
-	$stmt->bindParam(':access', $typeAccess);
-	$stmt->execute();	
-	
-	insertProjCoord($projName);
-  }
-  
-  function createProjectVersion2($projName, $access) {
-    global $conn;
-
-	if($access === 'public')
-		$typeAccess = 'true';
-	else
-		$typeAccess = 'false';
-	
-	$stmt = $conn->prepare("INSERT INTO Project(name, access)
-								VALUES (:name, :access)");						
-	$stmt->bindParam(':name', $projName);
 	$stmt->bindParam(':access', $typeAccess);
 	$stmt->execute();	
 	

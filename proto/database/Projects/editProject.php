@@ -1,11 +1,13 @@
 <?
   function updateProjName($name, $id){
+	echo "<script>console.log( '2' );</script>";
 	global $conn;
 	$stmt = $conn->prepare("UPDATE Project
 							SET name = ?
 							WHERE projectID = ?");
 							
     $stmt->execute(array($name, $id));
+	echo "<script>console.log( '3' );</script>";
   }
   
   function updateOverview($overview, $id){

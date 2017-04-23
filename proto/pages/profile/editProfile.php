@@ -100,16 +100,18 @@
 									</div>
 							</div>			
 							</fieldset>
-							
+							</form>
+
+							<form action="../../actions/users/deleteAccount.php" method="post">
 							<br>
 							<br>
 							<div class="form-group">
 								<label class="col-md-4 control-label" ></label>  
 								<div class="col-md-4">
-									<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/actions/users/deleteAccount.php" role="button" id="update" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Delete account</a>
+									<button id="delete" type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Delete account</button>
 								</div>
 							</div>
-					</form>
+							</form>
 				</div>
 			</div>
 

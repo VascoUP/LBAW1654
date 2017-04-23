@@ -4,8 +4,10 @@
 
 	$id = $_GET['projID'];
 	
-	if($_POST['name'])
+	if($_POST['name']){
+		echo "<script>console.log( '1' );</script>";
 		updateProjName($_POST['name'], $id);
+	}
 	else if($_POST['overview'])
 		updateOverview($_POST['overview'], $id);
 	else if($_POST['access'])
