@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<link href='.css/pages/project.css' rel='stylesheet'>
+<link href='./css/pages/project.css' rel='stylesheet'>
 <link href='./css/pages/login.css' rel='stylesheet'>
 <link href=".css/bootstrap/bootstrap-social.css" rel="stylesheet">
 		
@@ -16,12 +15,6 @@
 									<?echo ?>
 								</div>
 							</div>
-=======
-<script src="{$BASE_URL}javascript/projects/projectPage.js"></script>
-<link href="{$BASE_URL}css/pages/project.css" rel='stylesheet'>
-<link href="{$BASE_URL}css/templates/navtable.css" rel='stylesheet'>
-<link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel='stylesheet'>
->>>>>>> origin/master
 
 							<!-- END SIDEBAR BUTTONS -->
 							<!-- SIDEBAR MENU -->

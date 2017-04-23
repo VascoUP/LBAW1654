@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-		<!-- Bootstrap Core CSS -->
-		<link href="{$BASE_URL}css/bootstrap/bootstrap.min.css" rel="stylesheet">
-=======
 {include file="../../templates/common/head.tpl" }
 
 	<!-- Bootstrap Core CSS -->
 	<link href="{$BASE_URL}css/bootstrap/bootstrap.min.css" rel="stylesheet">
->>>>>>> origin/master
 
 	<!-- Custom Fonts -->
 	<link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

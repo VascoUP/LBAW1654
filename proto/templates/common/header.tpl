@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-
-=======
 {include file="../../templates/common/head.tpl" }
->>>>>>> origin/master
+
 
 		<!-- Bootstrap core CSS -->
 		<link href="{$BASE_URL}css/bootstrap/bootstrap.min.css" rel="stylesheet">
