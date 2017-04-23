@@ -104,7 +104,7 @@ input::-webkit-input-placeholder {
 	max-width: 260px;
 }
 
-#update, #addTask, #create{
+#update, #addTask, #create, #delete{
 	display: table;
     margin: 0 auto;
 }
