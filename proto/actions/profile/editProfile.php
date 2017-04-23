@@ -3,7 +3,11 @@
   include_once($BASE_DIR .'database/Users/userInformation.php');  
 
   if(isset($_POST['username']))
-	  updateUsername($_POST['username']);
+	  try {
+		updateUsername($_POST['username']);
+	  }
+	  catch (PDOException $e){
+	  }
   else if(isset($_POST['password']) && isset($_POST['confirm'])){
 	  if($_POST['password'] === $_POST['confirm'])
 		  updatePassword($_POST['password']);

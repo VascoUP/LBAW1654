@@ -12,9 +12,16 @@
   $name = strip_tags($_POST['projName']);
   $overview = strip_tags($_POST['overview']);
   $access = strip_tags($_POST['access']);
-
-  createProject($name, $overview, $access);
-  $id = getProjectID($name);
+	
+  try{
+	createProject($name, $overview, $access);
+	$id = getProjectID($name); 
+  }
+  catch (PDOException $e){
+	if (strpos($e->getMessage(), 'project_pkey') !== false) {
+		$_SESSION['error_messages'][] = 'Duplicate project';
+	}
+  }
   
   $_SESSION['success_messages'][] = 'Project created successfully';  
   header('Location: ' .$BASE_URL.'pages/project/projectPage.php?projID='.$id);
