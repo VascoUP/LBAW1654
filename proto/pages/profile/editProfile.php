@@ -4,6 +4,7 @@
 ?>
 		<link href="../../css/pages/forms.css" rel="stylesheet">
 		<link href="../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
+		<script src="../../javascript/confirmDelete.js"></script>
 			<div class="container">
 				<div class="card card-container">
 					<form class="form-horizontal" action="../../actions/profile/editProfile.php" method="post">
