@@ -20,6 +20,23 @@
 	insertProjCoord($projName);
   }
   
+  function createProjectVersion2($projName, $access) {
+    global $conn;
+
+	if($access === 'public')
+		$typeAccess = 'true';
+	else
+		$typeAccess = 'false';
+	
+	$stmt = $conn->prepare("INSERT INTO Project(name, access)
+								VALUES (:name, :access)");						
+	$stmt->bindParam(':name', $projName);
+	$stmt->bindParam(':access', $typeAccess);
+	$stmt->execute();	
+	
+	insertProjCoord($projName);
+  }
+  
   function getProjectID($proj){
 	global $conn;
     $stmt = $conn->prepare("SELECT projectID 

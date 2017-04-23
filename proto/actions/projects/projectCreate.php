@@ -12,8 +12,12 @@
   $name = strip_tags($_POST['projName']);
   $overview = strip_tags($_POST['overview']);
   $access = strip_tags($_POST['access']);
-	
-  createProject($name, $overview, $access);
+
+  if($overview)
+	createProject($name, $overview, $access);
+  else
+	createProjectVersion2($name, $access);
+
   $id = getProjectID($name);
   
   $_SESSION['success_messages'][] = 'Project created successfully';  

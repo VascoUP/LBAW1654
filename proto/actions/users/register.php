@@ -15,15 +15,19 @@
   $confirm = $_POST['confirm'];
 
   if(empty($_SESSION['username'])){
-	if (!usernameExists($username) && !emailExists($email) && verifyPassword($password, $confirm)){
+	if(ctype_lower($username)){
+		if (!usernameExists($username) && !emailExists($email) && verifyPassword($password, $confirm)){
 		$_SESSION['username'] = $username;
 		createUser($username, $email, $password);
+		}
+		else
+			header("Location: $BASE_URL" . 'pages/users/register.php');
 	}
 	else
-		header("Location: $BASE_URL" . 'pages/users/register.php'); 
+		header("Location: $BASE_URL" . 'pages/users/register.php');
   }
   else
-	header("Location: $BASE_URL" . 'pages/users/register.php'); 
+	header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php'); 
 
   $_SESSION['success_messages'][] = 'User registered successfully';  
   header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php');
