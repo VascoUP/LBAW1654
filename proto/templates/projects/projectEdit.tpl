@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="card card-container">
-        <form class="form-horizontal" action="../../actions/projects/projectEdit.php?projID='{$smartyProjID} method="post">
+        <form class="form-horizontal" action="../../../actions/projects/projectEdit.php?projID='{$smartyProjID} method="post">
             <!-- Form Name -->
             <h2>Edit Project</h2>
 
