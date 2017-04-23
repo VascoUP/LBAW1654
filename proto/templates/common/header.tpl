@@ -1,5 +1,6 @@
 {include file="../../templates/common/head.tpl" }
 
+
 		<!-- Bootstrap core CSS -->
 		<link href="{$BASE_URL}css/bootstrap/bootstrap.min.css" rel="stylesheet">
 		<link href="{$BASE_URL}css/templates/navbar.css" rel="stylesheet">
