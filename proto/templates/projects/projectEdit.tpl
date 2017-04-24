@@ -40,12 +40,14 @@
             <!-- Form Name -->
             <legend class="tab">Main Settings</legend>
             <!-- File Button --> 
+			<form action="{$BASE_URL}api/changeAccess.php?projID={$smartyProjID}" method="post">
             <div class="form-group">
                 <label class="col-md-4 control-label" for="public">Change Access</label>
                     <div class="col-md-4">
                         <button id="public" name='public' class='btn btn-secondary style-button col-xs-offset-2' type='submit'>Change</button>
                     </div>
             </div>
+			</form>
 
 			<form action="{$BASE_URL}api/deleteProject.php?projID={$smartyProjID}" method="post">
             <div class="form-group">
@@ -57,7 +59,6 @@
 			</fieldset>
 			</form>
 			
-			<form action="../../../actions/projects/projectEdit.php?projID={$smartyProjID}" method="post" class="form-horizontal">
             <fieldset>
             <!-- Form Name -->
             <legend class="tab">Invite Users</legend>
@@ -69,7 +70,7 @@
                     </div>
             </div>
 			</fieldset>
-			</form>
+		</form>
     </div>
 
 </div>

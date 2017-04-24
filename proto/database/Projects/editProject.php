@@ -54,6 +54,11 @@
 		try {
 			global $conn;
 			$stmt = $conn->prepare("DELETE
+									FROM ProjectCoordinator
+									WHERE projectID = ?");
+			$stmt->execute(array($id));
+			
+			$stmt = $conn->prepare("DELETE
 									FROM Project
 									WHERE projectID = ?");
 			$stmt->execute(array($id));
@@ -61,4 +66,8 @@
 			return $e->getMessage();
 		}
   	}
+	
+	function inviteUsers($username, $id){
+		
+	}
 ?>

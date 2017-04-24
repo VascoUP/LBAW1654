@@ -71,9 +71,11 @@
                                 <td>
                                     <div class="media">
                                         <div class="media-body">
-                                            <h4 class="title">
-                                                {$projects[$i]['name']}
-                                            </h4>
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/projectPage.php?projID={$projects[$i]['projectid']}" role="button">
+												<h4 class="title">
+													{$projects[$i]['name']}
+												</h4>
+											</a>
                                             <p class="summary">{$projects[$i]['description']}</p>
                                         </div>
                                         

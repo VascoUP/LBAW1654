@@ -71,7 +71,7 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/profileUserOverview.php" role="button" id="drop">Profile</a></li>
-									<li><a id="drop">Projects</a></li>
+									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/userProjects.php" role="button" id="drop">Projects</a></li>
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/editProfile.php" role="button" id="drop">Edit Profile</a></li>
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/proto/actions/users/logout.php" role="button" id="drop" class="logout">Logout</a></li>
 								</ul>
