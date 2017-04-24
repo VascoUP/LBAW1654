@@ -45,7 +45,7 @@
 		$projStatus = "working";
 		$startDate = date('Y-m-d');
 		$userID = getUserID($_SESSION['username']);
-		$secureUsrID = sanitize($userID);
+		$secureUsrID = $userID;
 		$projID = getProjectID($proj);
 
 		$stmt = $conn->prepare("INSERT INTO ProjectCoordinator(userID, projectID, startDate, projectStatus)
