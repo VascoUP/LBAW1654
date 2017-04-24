@@ -24,7 +24,6 @@
             <div class="form-group">
             <label class="col-md-4 control-label" for="Overview">
                 Description
-                <span class="underline">(optional)</span>
             </label>
             <div class="col-md-4">
                 <div class="col-md-4">

@@ -92,16 +92,16 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="overview">Overview (max 200 words)</label>  
                     <div class="col-md-4">                     
-                        <textarea class="form-control form-style" rows="5" cols="30"  id="overview" name="overview">Overview</textarea>
+                        <textarea class="form-control form-style" rows="5" cols="30"  id="overview" name="overview"></textarea>
                         <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Overview</button>
                     </div>
             </div>			
             </fieldset>
             </form>
 
+			<br>
+            <br>
             <form action="{$BASE_URL}actions/users/deleteAccount.php" method="post">
-            <br>
-            <br>
             <div class="form-group">
                 <label class="col-md-4 control-label" ></label>  
                 <div class="col-md-4">

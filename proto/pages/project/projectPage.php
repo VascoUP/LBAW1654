@@ -3,6 +3,7 @@
   include_once($BASE_DIR .'database/Projects/projectInformation.php'); 
 
   $projID = $_GET['projID'];
+  
   $smarty->assign('smartyProjID', $projID);
   $smarty->assign('smartyProjInfo', getProjectInformation($projID));
   $smarty->assign('smartyNumUsers', getNumberUsers($projID));

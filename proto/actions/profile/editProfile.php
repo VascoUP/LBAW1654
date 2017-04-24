@@ -2,27 +2,23 @@
   include_once('../../config/init.php');
   include_once($BASE_DIR .'database/Users/userInformation.php');  
 
-  if(isset($_POST['username']))
-	  try {
+  if($_POST['username'])
 		updateUsername($_POST['username']);
-	  }
-	  catch (PDOException $e){
-	  }
-  else if(isset($_POST['password']) && isset($_POST['confirm'])){
+  else if($_POST['password'] && $_POST['confirm']){
 	  if($_POST['password'] === $_POST['confirm'])
 		  updatePassword($_POST['password']);
   }
-  else if(isset($_POST['email']))
+  else if($_POST['email'])
 	 updateEmail($_POST['email']);  
-  else if(isset($_POST['upload']) && isset($_POST['uploadCV']))
+  else if($_POST['upload'] || $_POST['uploadCV'])
   {
-	  if(isset($_POST['upload']))
+	  if($_POST['upload'])
 		  updatePhoto($_POST['upload']);
 	  
-	  if(isset($_POST['uploadCV']))
+	  if($_POST['uploadCV'])
 		  updateCurriculum($_POST['uploadCV']);
   }
-  else if(isset($_POST['overview']))
+  else if($_POST['overview'])
 	updateDescription($_POST['overview']); 
   
   header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php'); 

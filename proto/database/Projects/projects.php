@@ -1,10 +1,7 @@
 <?php
 	include($BASE_DIR .'database/Users/userInformation.php');
-	include($BASE_DIR .'database/sanitize.php');
 	
   function createProject($projName, $description, $access) {
-		$secureName = sanitize($projName);
-		$secureDescription = sanitize($description);
 
     global $conn;
 
@@ -15,8 +12,8 @@
 		
 		$stmt = $conn->prepare("INSERT INTO Project(name, description, access)
 									VALUES (:name, :description, :access)");						
-		$stmt->bindParam(':name', $secureName);
-		$stmt->bindParam(':description', $secureDescription);
+		$stmt->bindParam(':name', $projName);
+		$stmt->bindParam(':description', $description);
 		$stmt->bindParam(':access', $typeAccess);
 		$stmt->execute();	
 		
@@ -39,12 +36,11 @@
 		$projStatus = "working";
 		$startDate = date('Y-m-d');
 		$userID = getUserID($_SESSION['username']);
-		$secureUsrID = sanitize($userID);
 		$projID = getProjectID($proj);
 		
 		$stmt = $conn->prepare("INSERT INTO ProjectCoordinator(userID, projectID, startDate, projectStatus)
 								VALUES (:userID, :projectID, :startDate, :projectStatus)");
-		$stmt->bindParam(':userID', $secureUsrID);
+		$stmt->bindParam(':userID', $userID);
 		$stmt->bindParam(':projectID', $projID);
 		$stmt->bindParam(':startDate', $startDate);
 		$stmt->bindParam(':projectStatus', $projStatus);

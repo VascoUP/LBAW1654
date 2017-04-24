@@ -77,7 +77,7 @@
   }
   
   function updateCurriculum($cv){
-	$id = getUserID($user);
+	$id = getUserID($_SESSION['username']);
 	  
 	global $conn;
 	$stmt = $conn->prepare("UPDATE UserSite

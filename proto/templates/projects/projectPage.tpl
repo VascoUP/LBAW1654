@@ -13,7 +13,11 @@
                     {$smartyProjInfo['0']['name']}
                 </div>
                 <div class='profile-usertitle-email'>
-                    {$smartyNumUsers} users
+                    {if $smartyNumUsers == 1}
+						{$smartyNumUsers} user
+					{else}
+						{$smartyNumUsers} users
+					{/if}
                 </div>
             </div>
 
@@ -26,7 +30,7 @@
                         Description </a>
                     </li>
                     <li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/general/projectEdit.php'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/general/projectEdit.php?projID={$smartyProjID}'>
                         Edit Project </a>
                     </li>
 					<li>
