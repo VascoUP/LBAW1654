@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="card card-container">
-        <form class="form-horizontal" action="../../../actions/projects/projectEdit.php?projID={$smartyProjID}" method="post">
+        <form action="../../../actions/projects/projectEdit.php?projID={$smartyProjID}" method="post" class="form-horizontal">
             <!-- Form Name -->
             <h2>Edit Project</h2>
 
@@ -45,16 +45,17 @@
                         <button id="public" name='public' class='btn btn-secondary style-button col-xs-offset-2' type='submit'>Change</button>
                     </div>
             </div>
-			<form action="../../../api/deleteProject.php?projID={$smartyProjID}" method="post">
+			
             <div class="form-group">
                 <label class="col-md-4 control-label" for="deleteProj">Delete Project</label>
                     <div class="col-md-4">   
                         <button id="deleteProj" name='deleteProj' class='btn btn-secondary style-button col-xs-offset-2' type='submit'>Delete</button>
                     </div>
             </div>
-			</form>
 			</fieldset>
+			</form>
 			
+			<form action="../../../actions/projects/projectEdit.php?projID={$smartyProjID}" method="post" class="form-horizontal">
             <fieldset>
             <!-- Form Name -->
             <legend class="tab">Invite Users</legend>
@@ -66,7 +67,7 @@
                     </div>
             </div>
 			</fieldset>
-        </form>
+			</form>
     </div>
 
 </div>

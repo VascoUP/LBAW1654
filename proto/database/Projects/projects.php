@@ -45,12 +45,11 @@
 		$projStatus = "working";
 		$startDate = date('Y-m-d');
 		$userID = getUserID($_SESSION['username']);
-		$secureUsrID = sanitize($userID);
 		$projID = getProjectID($proj);
 
 		$stmt = $conn->prepare("INSERT INTO ProjectCoordinator(userID, projectID, startDate, projectStatus)
 															VALUES (:userID, :projectID, :startDate, :projectStatus)");
-		$stmt->bindParam(':userID', $secureUsrID);
+		$stmt->bindParam(':userID', $userID);
 		$stmt->bindParam(':projectID', $projID);
 		$stmt->bindParam(':startDate', $startDate);
 		$stmt->bindParam(':projectStatus', $projStatus);
@@ -59,7 +58,7 @@
 		$stmt = $conn->prepare("UPDATE UserSite 
 								SET type='coordinator' 
 								WHERE userID = ?");
-		$stmt->execute(array($secureUsrID));
+		$stmt->execute(array($userID));
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}

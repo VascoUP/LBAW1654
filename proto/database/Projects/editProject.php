@@ -1,7 +1,5 @@
 <?
-
   	function updateProjName($name, $id){
-
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Project
@@ -11,7 +9,6 @@
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-
 	}
   
  	function updateOverview($overview, $id){		

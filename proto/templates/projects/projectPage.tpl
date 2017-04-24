@@ -34,11 +34,11 @@
                         Edit Project </a>
                     </li>
 					<li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/iteration/projectIterations.php' target='_blank'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/iteration/projectIterations.php'>
                         Iterations</a>
                     </li>
                     <li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/forum/projectForum.php' target='_blank'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/forum/projectForum.php'>
                         Forum</a>
                     </li>
 					<li>

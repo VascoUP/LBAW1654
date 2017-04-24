@@ -24,7 +24,11 @@
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 							<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
 						</button>
-						<a class="navbar-brand page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php">YM</a>
+						{if $smarty.session.username}
+							<a class="navbar-brand page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/profileUserOverview.php">YM</a>
+						{else}
+							<a class="navbar-brand page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php">YM</a>
+						{/if}
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -34,7 +38,7 @@
 								<a href="#page-top"></a>
 							</li>
 							<li>
-							{if $_SESSION['username']}
+							{if $smarty.session.username}
 								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/profileUserOverview.php">Home</a>
 							{else}
 								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php">Home</a>

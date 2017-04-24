@@ -1,7 +1,6 @@
 <?php	
 	include_once('../../config/init.php');
-	include($BASE_DIR .'database/Projects/editProject.php');  
-
+	
 	$id = $_GET['projID'];
 	
 	if($_POST['name'])

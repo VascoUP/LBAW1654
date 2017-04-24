@@ -49,7 +49,7 @@
                         Account Settings </a>
                     </li>
                     <li>
-                        <a href='#' target='_blank'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/userProjects.php?userInfo={$smartyUsrInfo['0']['userid']}'>
                         <i class='glyphicon glyphicon-ok'></i>
                         My Projects</a>
                     </li>

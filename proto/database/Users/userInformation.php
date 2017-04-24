@@ -1,5 +1,4 @@
 <?php
-  
   function getUserInformation($username) {
 		try {
 			global $conn;
@@ -110,5 +109,25 @@
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
+  }
+  
+  function getProjects($username){
+	  $id = getUserID($username);
+	  try {
+		global $conn;
+		$stmt = $conn->prepare("SELECT *
+								FROM Project
+								WHERE projectid IN (SELECT ProjectCoordinator.projectid
+													FROM ProjectCoordinator
+													WHERE ProjectCoordinator.userid = ?)
+								OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
+								WHERE ProjectUsers.userid = ?);");
+		$stmt->execute(array($id, $id));
+		$result = $stmt->fetchAll();
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+	
+	return $result;
   }
 ?>

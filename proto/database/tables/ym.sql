@@ -695,7 +695,7 @@ SELECT Project.projectID AS "Project ID", title AS "Thread title", content AS "C
 FROM Thread, Project, Comment
 WHERE Project.projectID = Thread.projectID
 AND Comment.threadID = Thread.threadID
-ORDER BY Project.projectID;
+ORDER BY Project.projectID;	
 
 UPDATE UserSite
     SET username = 'nikki2'
