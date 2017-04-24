@@ -12,8 +12,9 @@
   $name = strip_tags($_POST['projName']);
   $overview = strip_tags($_POST['overview']);
   $access = strip_tags($_POST['access']);
+  $tags = explode(' ; ', $_POST['tags']);
 	
-	createProject($name, $overview, $access);
+	createProject($name, $overview, $access, $tags);
 	$id = getProjectID($name); 
   
   

@@ -1,7 +1,7 @@
 <?php
 	include($BASE_DIR .'database/Users/userInformation.php');
 	
-  function createProject($projName, $description, $access) {
+  function createProject($projName, $description, $access, $tags) {
 	try {
 		global $conn;
 		
@@ -21,7 +21,9 @@
 		return $e->getMessage();
 	}
 	
-	insertProjCoord($projName);
+	$id = getProjectID($projName);
+	insertProjCoord($id);
+	addTags($tags, $id);
   }
   
   function getProjectID($proj){
@@ -39,13 +41,12 @@
 	return $result['0']['projectid'];
   }
 
-  function insertProjCoord($proj){
+  function insertProjCoord($projID){
 	try {
 		global $conn;
 		$projStatus = "working";
 		$startDate = date('Y-m-d');
 		$userID = getUserID($_SESSION['username']);
-		$projID = getProjectID($proj);
 
 		$stmt = $conn->prepare("INSERT INTO ProjectCoordinator(userID, projectID, startDate, projectStatus)
 															VALUES (:userID, :projectID, :startDate, :projectStatus)");
@@ -62,6 +63,42 @@
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
+  }
+  
+  function addTags($tags, $id){
+	
+	foreach($tags as $tag){
+		try{
+			global $conn;
+			
+			$stmt = $conn->prepare("SELECT *
+									FROM Tag
+									WHERE name = ?");
+			$stmt->execute(array($tag));
+			$result = $stmt->fetchAll();
+			
+			if(!empty($result)){
+				$stmt = $conn->prepare("INSERT INTO Tag(name) VALUES(:name)");
+				$stmt->bindParam(':name', $tag);
+				$stmt->execute();
+				
+				$stmt = $conn->prepare("SELECT tagID FROM Tag WHERE name = ?");
+				$stmt->execute(array($tag));
+				
+				$result = $stmt->fetchAll();
+				$tagID = $result['0']['tagid'];
+				
+				$stmt = $conn->prepare("INSERT INTO TagProject(tagID, projectID) VALUES(:tagID, :projID)");
+				$stmt->bindParam(':tagID', $tagID);
+				$stmt->bindParam(':projID', $id);
+				$stmt->execute();
+			}
+		}
+		 catch(Exception $e) {
+			return $e->getMessage();
+		}
+	}
+	
   }
 
 ?>
