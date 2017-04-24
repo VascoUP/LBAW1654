@@ -1,11 +1,12 @@
-<link href="../../../css/pages/forms.css" rel="stylesheet">
-<link href="../../../css/bootstrap/bootstrap-social.css" rel="stylesheet">
-<script src="../../../javascript/confirmDelete.js"></script>
-<script src='../../../javascript/projects/projectEdit.js'></script>
+<link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
+<link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
+<script src="{$BASE_URL}javascript/confirmDelete.js"></script>
+<script src='{$BASE_URL}javascript/projects/projectEdit.js'></script>
 
 <div class="container">
     <div class="card card-container">
-        <form action="../../../actions/projects/projectEdit.php?projID={$smartyProjID}" method="post" class="form-horizontal">
+
+        <form class="form-horizontal" action="{$BASE_URL}actions/projects/projectEdit.php?projID={$smartyProjID}" method="post">
             <!-- Form Name -->
             <h2>Edit Project</h2>
 
@@ -45,7 +46,8 @@
                         <button id="public" name='public' class='btn btn-secondary style-button col-xs-offset-2' type='submit'>Change</button>
                     </div>
             </div>
-			
+
+			<form action="{$BASE_URL}api/deleteProject.php?projID={$smartyProjID}" method="post">
             <div class="form-group">
                 <label class="col-md-4 control-label" for="deleteProj">Delete Project</label>
                     <div class="col-md-4">   

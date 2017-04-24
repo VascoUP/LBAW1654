@@ -1,14 +1,19 @@
 <?php	
 	include_once('../../config/init.php');
-	
+    include_once("{$BASE_DIR}database/Projects/editProject.php");
+
 	$id = $_GET['projID'];
+	echo 'projectEdit: after get id';
 	
 	if($_POST['name'])
-		updateProjName($_POST['name'], $id);
+		$result = updateProjName($_POST['name'], $id);
 	else if($_POST['description'])
-		updateOverview($_POST['description'], $id);
+		$result = updateOverview($_POST['description'], $id);
 	else if($_POST['access'])
-		updateAccess($id);
+		$result = updateAccess($id);
+
+	if( isset($result) )
+		echo $result;
 	
-  header('Location: ' .$BASE_URL.'pages/project/projectPage.php?projID='.$id);
+	header("Location: ../../pages/project/projectPage.php?projID=" .$id);
 ?>
