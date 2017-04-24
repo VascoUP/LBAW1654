@@ -1,13 +1,10 @@
-<div id='forumContainer'>
-  <link href="{$BASE_URL}css/pages/forum.css" rel='stylesheet'>
+   <link href="{$BASE_URL}css/pages/forum.css" rel='stylesheet'>
   <link href="{$BASE_URL}css/pages/taskList.css" rel='stylesheet'>
 
-  <div class='container'>
-    <div class='row'>
-      <div class='container'>
-        <div class='project-info-box'>
-          <p class='text-style-2'>Forum</p>
-          <p class='text-style-5'>This is the right place to discuss any ideas, critics, feature requests and all the ideas regarding the project. Please follow the forum rules and always check FAQ before posting to prevent duplicate posts.</p>
+  <div class="container">
+    <div class="card card-container">
+          <h2>Forum</h2>
+          <p>This is the right place to discuss any ideas, critics, feature requests and all the ideas regarding the project. Please follow the forum rules and always check FAQ before posting to prevent duplicate posts.</p>
           <hr class='featurette-divider'>
 
           <div class='table-responsive'>
@@ -34,8 +31,8 @@
                   <td class='text-center hidden-xs hidden-sm'><a href='#'>89 897</a></td>
                   <td class='posted by'>by <a href='#'>John Doe</a>
                     <br><small><i class='fa fa-clock-o'></i> 3 months ago</small></td>
-                  <td>
-                    <button class='join button'>Edit Forum</button>
+                  <td>   
+					<button id="editForum" type="submit" class="btn btn-warning">Edit Forum</button>
                   </td>
                 </tr>
                 <tr>
@@ -48,13 +45,13 @@
                   <td class='posted by'>by <a href='#'>Jane Doe</a>
                     <br><small><i class='fa fa-clock-o'></i> 1 years ago</small></td>
                   <td>
-                    <button class='join button'>Edit Forum</button>
+                    <button id="editForum" type="submit" class="btn btn-warning">Edit Forum</button>
                   </td>
                 </tr>
               </tbody>
             </table>
             <br>
-            <button class='join button'>Add Forum</button>
+            <button id="addForum" type="submit" class="btn btn-success">Add Forum</button>
             <br>
           </div>
           <div class='table-responsive'>
@@ -82,7 +79,7 @@
                   <td class='posted by'>by <a href='#'>Jane Doe</a>
                     <br><small><i class='fa fa-clock-o'></i> 3 months ago</small></td>
                   <td>
-                    <button class='join button'>Edit Forum</button>
+                    <button id="editForum" type="submit" class="btn btn-warning">Edit Forum</button>
                   </td>
                 </tr>
                 <tr>
@@ -95,13 +92,13 @@
                   <td class='posted by'>by <a href='#'>Jane Doe</a>
                     <br><small><i class='fa fa-clock-o'></i> 1 years ago</small></td>
                   <td>
-                    <button class='join button'>Edit Forum</button>
+                    <button id="editForum" type="submit" class="btn btn-warning">Edit Forum</button>
                   </td>
                 </tr>
               </tbody>
             </table>
             <br>
-            <button class='join button'>Add Forum</button>
+            <button id="addForum" type="submit" class="btn btn-success">Add Forum</button>
             <br>
           </div>
           <div class='table-responsive'>
@@ -123,19 +120,17 @@
                   <td></td>
                   <td colspan='4' class='center'>No topics have been added yet.</td>
                   <td>
-                    <button class='join button'>Edit Forum</button>
+                    <button id="editForum" type="submit" class="btn btn-warning">Edit Forum</button>
                   </td>
                 </tr>
               </tbody>
             </table>
             <br>
-            <button class='join button'>Add Forum</button>
+            <button id="addForum" type="submit" class="btn btn-success">Add Forum</button>
             <br>
             <br>
           </div>
-          <button class='addCategory'>Add Category</button>
+          <button id="addCategory" type="submit" class="btn btn-success">Add Category</button>
         </div>
-      </div>
-    </div>
   </div>
 </div>

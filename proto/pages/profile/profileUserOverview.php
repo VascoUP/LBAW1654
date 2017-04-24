@@ -1,6 +1,6 @@
 <?php 
 	include_once('../../config/init.php');
-	include_once($BASE_DIR .'database/userInformation.php'); 
+	include_once($BASE_DIR .'database/Users/userInformation.php'); 
 	
 	$userInfo = getUserInformation($_SESSION['username']);
   	$smarty->assign('smartyUsrInfo', $userInfo);

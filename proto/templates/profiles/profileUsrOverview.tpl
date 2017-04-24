@@ -1,6 +1,6 @@
-<link href="{$BASE_DIR}css/pages/profile.css" rel='stylesheet'>
-<link href="{$BASE_URL}css/pages/login.css" rel='stylesheet'>
-<link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel='stylesheet'>
+<link href="../../css/pages/profile.css" rel='stylesheet'>
+<link href="../../css/pages/login.css" rel='stylesheet'>
+<link href="../../css/bootstrap/bootstrap-social.css" rel='stylesheet'>
 
 <div class='container'>
 

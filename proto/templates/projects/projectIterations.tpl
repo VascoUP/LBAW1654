@@ -1,11 +1,9 @@
-<div id='tasksContainer'>
+
   <link href="{$BASE_URL}css/pages/taskList.css" rel='stylesheet'>
-  <div class='container'>
-    <div class='row'>
-      <div class='container'>
-        <div class='project-info-box'>
-          <p class='text-style-2'>Iterations</p>
-          <p class='text-style-5'>This is where you'll find the project iterations</p>
+  <div class="container">
+    <div class="card card-container">
+          <h2>Iterations</h2>
+          <p>This is where you'll find the project iterations</p>
           <hr class='featurette-divider'>
 
           <div class='table-responsive'>
@@ -32,7 +30,7 @@
                   <td class='text-center hidden-xs hidden-sm'><a href='#'>03-04-2017</a></td>
                   <td class='text-center hidden-xs hidden-sm'><a href='#'>10-04-2017</a></td>
                   <td>
-                    <button class='join button'>Edit Iteration</button>
+                    <button id="editIteration" type="submit" class="btn btn-warning">Edit Iteration</button>
                   </td>
                 </tr>
                 <tr>
@@ -44,15 +42,13 @@
                   <td class='text-center hidden-xs hidden-sm'><a href='#'>11-04-2017</a></td>
                   <td class='text-center hidden-xs hidden-sm'><a href='#'>18-04-2017</a></td>
                   <td>
-                    <button class='join button'>Edit Iteration</button>
+                    <button id="editIteration" type="submit" class="btn btn-warning">Edit Iteration</button>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <button class='addIteration'>Add Iteration</button>
-        </div>
-      </div>
+         <button id="addIteration" type="submit" class="btn btn-success">Add Iteration</button>
     </div>
   </div>
 </div>

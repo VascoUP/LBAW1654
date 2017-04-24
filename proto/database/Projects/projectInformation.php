@@ -1,5 +1,5 @@
 <?php
-  include_once('userInformation.php');
+  include($BASE_DIR .'database/Users/userInformation.php');
   
   function getProjectInformation($ID) {
 		try {

@@ -1,6 +1,6 @@
 <?php
   include_once('../../config/init.php');
-  include_once($BASE_DIR .'database/projectInformation.php'); 
+  include_once($BASE_DIR .'database/Projects/projectInformation.php'); 
 
   $projID = $_GET['projID'];
   $smarty->assign('smartyProjID', $projID);

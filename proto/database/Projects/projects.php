@@ -1,5 +1,5 @@
 <?php
-	include_once($BASE_DIR .'database/Users/userInformation.php');
+	include($BASE_DIR .'database/Users/userInformation.php');
 	include($BASE_DIR .'database/sanitize.php');
 
 	function createProject($projName, $description, $access) {
