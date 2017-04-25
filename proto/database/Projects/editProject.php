@@ -36,11 +36,11 @@
 			$result = $stmt->fetchAll();
 			$access = $result['0']['access'];
 			
-			if($access == 'true')
-				$newAccess = 'false';
+			if($access === '1')
+				$newAccess = 0;
 			else
-				$newAccess = 'true';
-			
+				$newAccess = 1;
+		
 			$stmt = $conn->prepare("UPDATE Project
 									SET access = ?
 									WHERE projectID = ?");

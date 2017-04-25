@@ -31,7 +31,7 @@ CREATE TABLE Project
 	projectID serial PRIMARY KEY,
 	name varchar(50) NOT NULL,
 	description varchar(100) NOT NULL,
-	access boolean NOT NULL DEFAULT(TRUE)
+	access bit DEFAULT 1::bit NOT NULL 
 );
 
 CREATE TABLE Iteration
@@ -233,26 +233,26 @@ CLUSTER ProjectCoordinator USING idxProjectStatus;
 
 -- Inserts --
 
-INSERT INTO Project(name, description, access) VALUES ('MathProject', 'Awesome calculator developed in C++', true);
-INSERT INTO Project(name, description, access) VALUES ('Aelius', 'Restaurant guide developed in HTML', false);
-INSERT INTO Project(name, description, access) VALUES ('Zombie Attack', 'Zombie game developed in C', false);
-INSERT INTO Project(name, description, access) VALUES ('Organizer', 'A project on developing a task scheduler in JavaScript', false);
-INSERT INTO Project(name, description, access) VALUES ('The Pianist', 'An indie movie developed by a small team', false);
-INSERT INTO Project(name, description, access) VALUES ('Surfer Shack', 'Construction of a surfing school in Cascais', false);
-INSERT INTO Project(name, description, access) VALUES ('Music School', 'Independent Music school project', false);
-INSERT INTO Project(name, description, access) VALUES ('MathProject', 'Awesome calculator developed in C++', true);
-INSERT INTO Project(name, description, access) VALUES ('Website Development', 'Project about developing a website', true);
-INSERT INTO Project(name, description, access) VALUES ('Study of inter eletronic vibrations', 'Phisics related study', false);
-INSERT INTO Project(name, description, access) VALUES ('Research in Africa', 'Waka waka, because this is Africa!', false);
-INSERT INTO Project(name, description, access) VALUES ('Gardening Project', 'Need help to form small gardening team', true);
-INSERT INTO Project(name, description, access) VALUES ('Work overload support group', 'Because sometimes four deliveries in the same week is too much', false);
-INSERT INTO Project(name, description, access) VALUES ('Rural road construction', 'Independent construction service', false);
-INSERT INTO Project(name, description, access) VALUES ('MazeRunner', 'Maze game developed in Assembly', false);
-INSERT INTO Project(name, description, access) VALUES ('Cell research', 'A project in research of cell DNA', false);
-INSERT INTO Project(name, description, access) VALUES ('Project on Projects', 'Project on a project about developing projects', false);
-INSERT INTO Project(name, description, access) VALUES ('Movie making course', 'Course on film shooting', false);
-INSERT INTO Project(name, description, access) VALUES ('Running group', 'Project on creating a city running group', false);
-INSERT INTO Project(name, description, access) VALUES ('HTML is your friend!', 'Project on setting a HTML learning platform!', false);
+INSERT INTO Project(name, description, access) VALUES ('MathProject', 'Awesome calculator developed in C++', B'1');
+INSERT INTO Project(name, description, access) VALUES ('Aelius', 'Restaurant guide developed in HTML', B'0');
+INSERT INTO Project(name, description, access) VALUES ('Zombie Attack', 'Zombie game developed in C', B'1');
+INSERT INTO Project(name, description, access) VALUES ('Organizer', 'A project on developing a task scheduler in JavaScript', B'0');
+INSERT INTO Project(name, description, access) VALUES ('The Pianist', 'An indie movie developed by a small team', B'1');
+INSERT INTO Project(name, description, access) VALUES ('Surfer Shack', 'Construction of a surfing school in Cascais', B'1');
+INSERT INTO Project(name, description, access) VALUES ('Music School', 'Independent Music school project', B'0');
+INSERT INTO Project(name, description, access) VALUES ('MathProject', 'Awesome calculator developed in C++', B'1');
+INSERT INTO Project(name, description, access) VALUES ('Website Development', 'Project about developing a website', B'0');
+INSERT INTO Project(name, description, access) VALUES ('Study of inter eletronic vibrations', 'Phisics related study', B'1');
+INSERT INTO Project(name, description, access) VALUES ('Research in Africa', 'Waka waka, because this is Africa!', B'0');
+INSERT INTO Project(name, description, access) VALUES ('Gardening Project', 'Need help to form small gardening team', B'0');
+INSERT INTO Project(name, description, access) VALUES ('Work overload support group', 'Because sometimes four deliveries in the same week is too much', B'0');
+INSERT INTO Project(name, description, access) VALUES ('Rural road construction', 'Independent construction service', B'0');
+INSERT INTO Project(name, description, access) VALUES ('MazeRunner', 'Maze game developed in Assembly', B'0');
+INSERT INTO Project(name, description, access) VALUES ('Cell research', 'A project in research of cell DNA', B'0');
+INSERT INTO Project(name, description, access) VALUES ('Project on Projects', 'Project on a project about developing projects', B'0');
+INSERT INTO Project(name, description, access) VALUES ('Movie making course', 'Course on film shooting', B'0');
+INSERT INTO Project(name, description, access) VALUES ('Running group', 'Project on creating a city running group', B'0');
+INSERT INTO Project(name, description, access) VALUES ('HTML is your friend!', 'Project on setting a HTML learning platform!', B'0');
 
 INSERT INTO Iteration(iterationID, projectID, description, startDate, maximumEffort) VALUES (1, 1, 'Week #1', '2017-01-08', 40);
 INSERT INTO Iteration(iterationID, projectID, description, startDate, dueDate, maximumEffort) VALUES (2, 2, 'Iteration 1', '2017-02-01', '2017-02-09', 90);
@@ -696,69 +696,3 @@ FROM Thread, Project, Comment
 WHERE Project.projectID = Thread.projectID
 AND Comment.threadID = Thread.threadID
 ORDER BY Project.projectID;	
-
-UPDATE UserSite
-    SET username = 'nikki2'
-    WHERE userID = 2;
-UPDATE UserSite
-    SET email = 'pinkflower3@outlook.com'
-    WHERE userID = 7;
-UPDATE UserSite
-    SET password = 'rutinha1'
-    WHERE userID = 8;
-UPDATE UserSite
-    SET userStatus = 'banned'
-    WHERE userID = 1;
-
-UPDATE Project
-    SET name = 'AmathProject'
-    WHERE projectID = 1;
-UPDATE Project
-    SET description = 'Zombie game developed in prolog'
-    WHERE projectID = 3;
-UPDATE Project
-    SET access = false
-    WHERE projectID = 3;
-
-UPDATE Iteration
-    SET dueDate = '2017-02-10', maximumEffort = 85
-    WHERE iterationID = 1;
-UPDATE Iteration
-    SET description = 'Iteration 2 - Easter week', maximumEffort = 85
-    WHERE iterationID = 3;
-
-UPDATE Task
-    SET description = 'fix director chair and bring him coffee', name = 'Fix furniture'
-    WHERE taskID = 33;
-UPDATE Task
-    SET priority = 2
-    WHERE taskID = 22;
-UPDATE Task
-    SET effort = 4
-    WHERE taskID = 16;
-UPDATE Task
-    SET taskStatus = 'completed'
-    WHERE taskID = 10;
-
-UPDATE Thread
-    SET title = 'Background image (.jpg) doesnt load'
-    WHERE ThreadID = 3;
-
-UPDATE Comment
-    SET content = 'I can help!'
-    WHERE commentID = 1;
-
-UPDATE Report
-    SET reportStatus = 'handled'
-    WHERE reportID = 1;
-
-UPDATE Notification
-    SET NotificationStatus = 'read'
-    WHERE notificationID = 1;
-
-UPDATE ProjectCoordinator
-    SET endDate = '2017-03-27', projectStatus = 'finished'
-    WHERE userID = 1;
-UPDATE ProjectUsers
-    SET userStatusProject = 'inactive'
-    WHERE userID = 1;

@@ -3,7 +3,6 @@
     include_once("{$BASE_DIR}database/Projects/editProject.php");
 
 	$id = $_GET['projID'];
-	echo 'projectEdit: after get id';
 	
 	if($_POST['name'])
 		updateProjName($_POST['name'], $id);
@@ -11,4 +10,5 @@
 		updateOverview($_POST['description'], $id);
 	
 	header("Location: ../../pages/project/projectPage.php?projID=" .$id);
+	
 ?>

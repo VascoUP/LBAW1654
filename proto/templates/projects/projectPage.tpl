@@ -11,6 +11,7 @@
             <div class='profile-usertitle'>
                 <div class='profile-usertitle-name'>
                     {$smartyProjInfo['0']['name']}
+					{$smartyProjInfo['0']['access']}
                 </div>
                 <div class='profile-usertitle-email'>
                     {if $smartyNumUsers == 1}

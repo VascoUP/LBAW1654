@@ -6,9 +6,9 @@
 		global $conn;
 		
 		if($access === 'public')
-			$typeAccess = 'true';
+			$typeAccess = 1;
 		else
-		$typeAccess = 'false';
+		$typeAccess = 0;
 	
 		$stmt = $conn->prepare("INSERT INTO Project(name, description, access)
 								VALUES (:name, :description, :access)");						
