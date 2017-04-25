@@ -22,6 +22,7 @@ DROP TYPE IF EXISTS NotificationStatus;
 CREATE TYPE TaskStatus AS ENUM('active', 'completed', 'unassigned');
 CREATE TYPE UserStatusProject AS ENUM('inactive', 'active', 'invited');
 CREATE TYPE ProjectStatus AS ENUM('finished', 'working');
+CREATE TYPE StatusProj AS ENUM('active', 'banned');
 CREATE TYPE UserStatus AS ENUM('active', 'inactive', 'banned');
 CREATE TYPE ReportStatus AS ENUM('waiting', 'handled');
 CREATE TYPE NotificationStatus AS ENUM('waiting', 'read');
@@ -31,13 +32,15 @@ CREATE TABLE Project
 	projectID serial PRIMARY KEY,
 	name varchar(50) NOT NULL,
 	description varchar(100) NOT NULL,
-	access bit DEFAULT 1::bit NOT NULL 
+	access bit DEFAULT 1::bit NOT NULL,
+	projectStatus StatusProj NOT NULL DEFAULT('active')
 );
 
 CREATE TABLE Iteration
 (
 	iterationID serial PRIMARY KEY,
 	projectID integer NOT NULL,
+	name varchar(50),
 	description varchar(100) NOT NULL,
 	startDate date NOT NULL,
 	dueDate date,
@@ -233,26 +236,26 @@ CLUSTER ProjectCoordinator USING idxProjectStatus;
 
 -- Inserts --
 
-INSERT INTO Project(name, description, access) VALUES ('MathProject', 'Awesome calculator developed in C++', B'1');
-INSERT INTO Project(name, description, access) VALUES ('Aelius', 'Restaurant guide developed in HTML', B'0');
-INSERT INTO Project(name, description, access) VALUES ('Zombie Attack', 'Zombie game developed in C', B'1');
-INSERT INTO Project(name, description, access) VALUES ('Organizer', 'A project on developing a task scheduler in JavaScript', B'0');
-INSERT INTO Project(name, description, access) VALUES ('The Pianist', 'An indie movie developed by a small team', B'1');
-INSERT INTO Project(name, description, access) VALUES ('Surfer Shack', 'Construction of a surfing school in Cascais', B'1');
-INSERT INTO Project(name, description, access) VALUES ('Music School', 'Independent Music school project', B'0');
-INSERT INTO Project(name, description, access) VALUES ('MathProject', 'Awesome calculator developed in C++', B'1');
-INSERT INTO Project(name, description, access) VALUES ('Website Development', 'Project about developing a website', B'0');
-INSERT INTO Project(name, description, access) VALUES ('Study of inter eletronic vibrations', 'Phisics related study', B'1');
-INSERT INTO Project(name, description, access) VALUES ('Research in Africa', 'Waka waka, because this is Africa!', B'0');
-INSERT INTO Project(name, description, access) VALUES ('Gardening Project', 'Need help to form small gardening team', B'0');
-INSERT INTO Project(name, description, access) VALUES ('Work overload support group', 'Because sometimes four deliveries in the same week is too much', B'0');
-INSERT INTO Project(name, description, access) VALUES ('Rural road construction', 'Independent construction service', B'0');
-INSERT INTO Project(name, description, access) VALUES ('MazeRunner', 'Maze game developed in Assembly', B'0');
-INSERT INTO Project(name, description, access) VALUES ('Cell research', 'A project in research of cell DNA', B'0');
-INSERT INTO Project(name, description, access) VALUES ('Project on Projects', 'Project on a project about developing projects', B'0');
-INSERT INTO Project(name, description, access) VALUES ('Movie making course', 'Course on film shooting', B'0');
-INSERT INTO Project(name, description, access) VALUES ('Running group', 'Project on creating a city running group', B'0');
-INSERT INTO Project(name, description, access) VALUES ('HTML is your friend!', 'Project on setting a HTML learning platform!', B'0');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('MathProject', 'Awesome calculator developed in C++', B'1', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Aelius', 'Restaurant guide developed in HTML', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Zombie Attack', 'Zombie game developed in C', B'1', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Organizer', 'A project on developing a task scheduler in JavaScript', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('The Pianist', 'An indie movie developed by a small team', B'1', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Surfer Shack', 'Construction of a surfing school in Cascais', B'1', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Music School', 'Independent Music school project', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('MathProject', 'Awesome calculator developed in C++', B'1', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Website Development', 'Project about developing a website', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Study of inter eletronic vibrations', 'Phisics related study', B'1', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Research in Africa', 'Waka waka, because this is Africa!', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Gardening Project', 'Need help to form small gardening team', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Work overload support group', 'Because sometimes four deliveries in the same week is too much', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Rural road construction', 'Independent construction service', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('MazeRunner', 'Maze game developed in Assembly', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Cell research', 'A project in research of cell DNA', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Project on Projects', 'Project on a project about developing projects', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Movie making course', 'Course on film shooting', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('Running group', 'Project on creating a city running group', B'0', 'active');
+INSERT INTO Project(name, description, access, projectStatus) VALUES ('HTML is your friend!', 'Project on setting a HTML learning platform!', B'0', 'active');
 
 INSERT INTO Iteration(iterationID, projectID, description, startDate, maximumEffort) VALUES (1, 1, 'Week #1', '2017-01-08', 40);
 INSERT INTO Iteration(iterationID, projectID, description, startDate, dueDate, maximumEffort) VALUES (2, 2, 'Iteration 1', '2017-02-01', '2017-02-09', 90);

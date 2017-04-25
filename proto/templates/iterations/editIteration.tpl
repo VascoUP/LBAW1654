@@ -18,11 +18,9 @@
             
             <div class="form-group">
             <label class="col-md-4 control-label" for="maximum">Maximum Effort</label>  
-            <div class="col-md-4">
                 <div class="col-md-4">
                     <input id="maximum" name="maximum" type="text" placeholder="Maximum effort" class="form-control form-style input-md">
                 </div>
-            </div>
             </div>
 
             <div class="form-group">

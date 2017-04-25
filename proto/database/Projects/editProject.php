@@ -1,6 +1,5 @@
 <?php
   	function updateProjName($name, $id){
-		echo 'updateProjName: start';
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Project
@@ -8,7 +7,6 @@
 										WHERE projectID = ?");		
 			$stmt->execute(array($name, $id));
 		} catch(Exception $e) {
-			echo 'updateProjName: exception';
 			return $e->getMessage();
 		}
 	}
@@ -47,6 +45,11 @@
 			global $conn;
 			$stmt = $conn->prepare("DELETE
 									FROM ProjectCoordinator
+									WHERE projectID = ?");
+			$stmt->execute(array($id));
+			
+			$stmt = $conn->prepare("DELETE
+									FROM TagProject
 									WHERE projectID = ?");
 			$stmt->execute(array($id));
 			

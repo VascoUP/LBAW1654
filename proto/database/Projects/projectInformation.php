@@ -23,11 +23,17 @@
                                 FROM ProjectCoordinator
                                 WHERE ProjectCoordinator.projectID = ?");		
       $stmt->execute(array($ID));
-      $result = $stmt->fetchAll();
+      $resultCoord = $stmt->fetchAll();
+	  
+	  $stmt = $conn->prepare("SELECT count(*) AS counter 
+                                FROM ProjectUsers
+                                WHERE ProjectUsers.projectID = ?");		
+      $stmt->execute(array($ID));
+      $resultUsers = $stmt->fetchAll();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
 
-    return $result['0']['counter'];
+    return $resultCoord['0']['counter'] + $resultUsers['0']['counter'];
   }
 ?>

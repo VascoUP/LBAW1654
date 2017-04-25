@@ -1,7 +1,6 @@
 <link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <script src="{$BASE_URL}javascript/confirmDelete.js"></script>
-<script src='{$BASE_URL}javascript/projects/projectEdit.js'></script>
 
 <div class="container">
     <div class="card card-container">
@@ -51,17 +50,20 @@
 						<button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Change Access</button>
                     </div>
             </div>
-
-			<form action="{$BASE_URL}api/deleteProject.php?projID={$smartyProjID}" method="post">
+			</form>
+			<br>
+			<br>
+			<form class="form-horizontal" action="{$BASE_URL}actions/projects/deleteProject.php?projID={$smartyProjID}" method="post">
             <div class="form-group">
                 <label class="col-md-4 control-label" for="deleteProj">Delete Project</label>
                     <div class="col-md-4">   
-                        <button id="deleteProj" name='deleteProj' class='btn btn-secondary style-button col-xs-offset-2' type='submit'>Delete</button>
+                        <button id="deleteProj" name='deleteProj' type='submit' class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-down" value=""></span> Delete</button>
                     </div>
             </div>
 			</fieldset>
 			</form>
 			
+			<form class="form-horizontal" action="{$BASE_URL}actions/projects/projectEdit.php?projID={$smartyProjID}" method="post">
             <fieldset>
             <!-- Form Name -->
             <legend class="tab">Invite Users</legend>
@@ -73,7 +75,7 @@
                     </div>
             </div>
 			</fieldset>
-		</form>
+			</form>
     </div>
 
 </div>

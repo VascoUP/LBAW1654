@@ -9,13 +9,16 @@
 		if($access === 'public')
 			$typeAccess = 1;
 		else
-		$typeAccess = 0;
+			$typeAccess = 0;
+		
+		$status = 'active';
 	
-		$stmt = $conn->prepare("INSERT INTO Project(name, description, access)
-								VALUES (:name, :description, :access)");						
+		$stmt = $conn->prepare("INSERT INTO Project(name, description, access, projectStatus)
+								VALUES (:name, :description, :access, :status)");						
 		$stmt->bindParam(':name', $projName);
 		$stmt->bindParam(':description', $description);
 		$stmt->bindParam(':access', $typeAccess);
+		$stmt->bindParam(':status', $status);
 		$stmt->execute();
 	} catch(Exception $e) {
 		return $e->getMessage();

@@ -1,5 +1,4 @@
 <link href="{$BASE_URL}css/pages/login.css" rel="stylesheet">
-<script src="{$BASE_URL}javascript/recovery.js"></script>
 
 <div class="container">
     <div class="card card-container">
@@ -10,27 +9,21 @@
                 <input type="text" id="username" 
                         name="username" class="form-control form-style"
                         placeholder="Username" 
-                        value =
                         {if isset($smartyUsername)}
-                            {$smartyUsername}
-                        {else}
-                            ''
+                          value = {$smartyUsername}
                         {/if}
-                        required autofocus>
+                        required>
                 <input type="password" id="password" 
                         name="password" class="form-control form-style" 
                         placeholder="Password" 
-                        value =
                         {if isset($smartyPassword)}
-                            {$smartyPassword}
-                        {else}
-                            ''
+                            value ={$smartyPassword}
                         {/if}
-                        required autofocus>
+                        required>
                 <div id="remember" class="checkbox">
                     <label>
                       <input id="remember" type="checkbox" 
-                              value="remember" name="remember" {$smartyCkeck}>Remember me
+                              value="remember" name="remember" {if isset($smartyCkeck)}{$smartyCkeck}{/if}>Remember me
                     </label>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
