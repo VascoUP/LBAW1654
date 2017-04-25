@@ -58,11 +58,12 @@
 		}
 	
 		if(!password_verify($password, $result["password"])) {
-        $data = array('type' => 'fail');
-        header($_SERVER["SERVER_PROTOCOL"]."400 Bad Request");
-        return false;
-    }
-	
+			$data = array('result' => 'fail');
+			header($_SERVER["SERVER_PROTOCOL"]."400 Bad Request");
+			return false;
+		}
+		
+		$data = array('result' => 'done');
 		return true;
   }
   
