@@ -102,6 +102,25 @@
 		}
 	}
 	
+	function inviteToProject($user, $project){
+		try{
+			global $conn;
+
+			$invitedate = date('Y-m-d');
+			$userStatusProject = 'invited';
+			$stmt = $conn->prepare("INSERT INTO ProjectUsers(userID, projectID, inviteDate, userStatus) 
+									VALUES(:userID, :projectID, :inviteDate, :userStatus)");
+			$stmt->bindParam(':userID', $user);
+			$stmt->bindParam(':projectID', $project);
+			$stmt->bindParam(':inviteDate', $inviteDate);
+			$stmt->bindParam(':userStatus', $userStatusProject);
+			$stmt->execute();
+			
+		}
+		 catch(Exception $e) {
+			return $e->getMessage();
+		}
+	}
   }
 
 ?>

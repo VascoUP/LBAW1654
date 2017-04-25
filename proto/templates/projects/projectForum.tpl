@@ -13,7 +13,7 @@
                 <tr>
                   <th class='hidden-xs cell-stat'></th>
                   <th>
-                    <h3>Important</h3>
+                    <h3>Forums</h3>
                   </th>
                   <th class='cell-stat text-center hidden-xs hidden-sm'>Topics</th>
                   <th class='cell-stat text-center hidden-xs hidden-sm'>Posts</th>
@@ -54,83 +54,5 @@
             <button id="addForum" type="submit" class="btn btn-success">Add Forum</button>
             <br>
           </div>
-          <div class='table-responsive'>
-            <table class='table forum table-striped'>
-              <thead>
-                <tr>
-                  <th class='hidden-xs cell-stat'></th>
-                  <th>
-                    <h3>Suggestions</h3>
-                  </th>
-                  <th class='cell-stat text-center hidden-xs hidden-sm'>Topics</th>
-                  <th class='cell-stat text-center hidden-xs hidden-sm'>Posts</th>
-                  <th class='cell-stat-2x hidden-xs hidden-sm'>Last Post</th>
-                  <th class='column join button'></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class='hidden-xs text-center'><i class='fa fa-heart fa-2x text-primary'></i></td>
-                  <td>
-                    <h4><a href='#'>More more more</a><br><small>Category description</small></h4>
-                  </td>
-                  <td class='text-center hidden-xs hidden-sm'><a href='#'>6532</a></td>
-                  <td class='text-center hidden-xs hidden-sm'><a href='#'>152123</a></td>
-                  <td class='posted by'>by <a href='#'>Jane Doe</a>
-                    <br><small><i class='fa fa-clock-o'></i> 3 months ago</small></td>
-                  <td>
-                    <button id="editForum" type="submit" class="btn btn-warning">Edit Forum</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class='hidden-xs text-center'><i class='fa fa-magic fa-2x text-primary'></i></td>
-                  <td>
-                    <h4><a href='#'>Haha</a><br><small>Category description</small></h4>
-                  </td>
-                  <td class='text-center hidden-xs hidden-sm'><a href='#'>6532</a></td>
-                  <td class='text-center hidden-xs hidden-sm'><a href='#'>152123</a></td>
-                  <td class='posted by'>by <a href='#'>Jane Doe</a>
-                    <br><small><i class='fa fa-clock-o'></i> 1 years ago</small></td>
-                  <td>
-                    <button id="editForum" type="submit" class="btn btn-warning">Edit Forum</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <br>
-            <button id="addForum" type="submit" class="btn btn-success">Add Forum</button>
-            <br>
-          </div>
-          <div class='table-responsive'>
-            <table class='table forum table-striped'>
-              <thead>
-                <tr>
-                  <th class='hidden-xs cell-stat'></th>
-                  <th>
-                    <h3>Open discussion</h3>
-                  </th>
-                  <th class='cell-stat text-center hidden-xs hidden-sm'>Topics</th>
-                  <th class='cell-stat text-center hidden-xs hidden-sm'>Posts</th>
-                  <th class='cell-stat-2x hidden-xs hidden-sm'>Last Post</th>
-                  <th class='column join button'></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td colspan='4' class='center'>No topics have been added yet.</td>
-                  <td>
-                    <button id="editForum" type="submit" class="btn btn-warning">Edit Forum</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <br>
-            <button id="addForum" type="submit" class="btn btn-success">Add Forum</button>
-            <br>
-            <br>
-          </div>
-          <button id="addCategory" type="submit" class="btn btn-success">Add Category</button>
-        </div>
   </div>
 </div>
