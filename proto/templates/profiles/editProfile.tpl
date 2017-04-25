@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="card card-container">
-        <form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post">
+        <form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
             <!-- Form Name -->
             <h2>Edit Profile</h2>
 
@@ -29,7 +29,9 @@
                     </div>
             </div>
             </fieldset>
+		</form>
 
+		<form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
             <fieldset>
             <!-- Form Name -->
             <legend class="tab">Email</legend>
@@ -42,7 +44,9 @@
                     </div>
             </div>
             </fieldset>
-
+			<form>
+			
+		<form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
             <fieldset>
             <!-- Form Name -->
             <legend class="tab">Files upload</legend>
@@ -50,23 +54,33 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="upload">Upload photo</label>
                     <div class="col-md-4">
-                        <input id="upload" name="upload" class="input-file" type="file" accept=".png, .jpg, .jpeg">
+                        <input name="upload" type="file" accept=".png, .jpg, .jpeg">
                     </div>
             </div>
+			<div class="form-group"> 
+            <label class="col-md-4 control-label" ></label> 
+                    <div class="col-md-4">
+                        <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Photo</button>
+                    </div>
+            </div>
+		</form>
+		<form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label class="col-md-4 control-label" for="uploadCV">Upload Curriculum Vitae</label>
                     <div class="col-md-4">   
-                        <input id="uploadCV" name="uploadCV" class="input-file" type="file" accept=".pdf">
+                        <input name="uploadCV" type="file" accept=".pdf">
                     </div>
             </div>
             <div class="form-group"> 
             <label class="col-md-4 control-label" ></label> 
                     <div class="col-md-4">
-                        <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Files</button>
+                        <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Curriculum</button>
                     </div>
             </div>
             </fieldset>
+		</form>
 
+		<form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
             <fieldset>
             <!-- Form Name -->
             <legend class="tab">Password</legend>
@@ -84,7 +98,9 @@
                     </div>
             </div>
             </fieldset>
-
+			</form>
+			
+			<form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
             <fieldset>
             <!-- Form Name -->
             <legend class="tab" id="tab">Overview</legend>
@@ -98,7 +114,7 @@
             </div>			
             </fieldset>
             </form>
-
+		
 			<br>
             <br>
             <form action="{$BASE_URL}actions/users/deleteAccount.php" method="post">

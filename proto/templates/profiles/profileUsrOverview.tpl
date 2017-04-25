@@ -4,7 +4,7 @@
 
 <div class='container'>
 
-    {if ! isset($smartyUsrInfo['0']['description']) && ! isset($smartyUsrInfo['0']['curriculumVitae'])}
+    {if !isset($smartyUsrInfo['0']['description']) && !isset($smartyUsrInfo['0']['curriculumVitae'])}
         <div class='card card-container'>
             <div id='form-login'>
     {else}
@@ -17,7 +17,7 @@
             <div class='profile-userpic'>
 
                 {if isset($smartyUsrInfo['0']['photo'])}
-                    <img src="{$BASE_URL}images/assets/{$smartyUsrInfo['0']['photo']}" class='img-responsive' alt=''>
+                    <img src="{$BASE_URL}images/users/{$smartyUsrInfo['0']['photo']}" class='img-responsive' alt=''>
                 {else}
                     <img src="{$BASE_URL}images/assets/loginImage.png" class='img-responsive' alt=''>
                 {/if}
@@ -66,11 +66,11 @@
             </div>
     </div>
     
-    {if !empty($smartyUsrInfo['0']['description']) || !empty($smartyUsrInfo['0']['curriculumVitae'])}
+    {if isset($smartyUsrInfo['0']['description']) || isset($smartyUsrInfo['0']['curriculumVitae'])}
         <div class='col-md-9'>
             <div id='profile-content' class='profile-content'>
                 
-                {if !empty($smartyUsrInfo['0']['description'])}
+                {if isset($smartyUsrInfo['0']['description'])}
                     <h2>
                         Biography
                     </h2>
@@ -81,11 +81,11 @@
 
                 <br>
 
-                {if !empty($smartyUsrInfo['0']['curriculumVitae'])}
+                {if isset($smartyUsrInfo['0']['curriculumvitae'])}
                 <h3>
                     Curriculum Vitae
                 </h3>
-                <a href='#'>{$smartyUsrInfo['0']['curriculumVitae']}</a>
+                <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/documents/{$smartyUsrInfo['0']['curriculumvitae']}' download>{$smartyUsrInfo['0']['curriculumvitae']}</a>
                 {/if}
 
             </div>
