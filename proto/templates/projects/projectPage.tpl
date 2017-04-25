@@ -26,24 +26,28 @@
             <div class='profile-usermenu'>
                 <ul class='nav'>
                     <li class='active'>
-                        <a href='#'>
+                        <a href='#'><i class='glyphicon glyphicon-home'></i>
                         Description </a>
                     </li>
                     <li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/general/projectEdit.php?projID={$smartyProjID}'>
+                        <i class='glyphicon glyphicon-ok'></i>
                         Edit Project </a>
                     </li>
 					<li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/iteration/projectIterations.php'>
-                        Iterations</a>
+                        <i class='glyphicon glyphicon-ok'></i>
+                        Iterations </a>
                     </li>
                     <li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/forum/projectForum.php'>
-                        Forum</a>
+                        <i class='glyphicon glyphicon-ok'></i>
+                        Forum </a>
                     </li>
 					<li>
                         <a href='#' target='_blank'>
-                        Statistics</a>
+                        <i class='glyphicon glyphicon-ok'></i>
+                        Statistics </a>
                     </li>
                 </ul>
             </div>

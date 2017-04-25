@@ -1,8 +1,7 @@
 <?php
 	include($BASE_DIR .'database/Users/userInformation.php');
 	
-  function createProject($projName, $description, $access, $tags) {
-	$id = getProjectID($projName);
+  function createProject($projName, $description, $access) {
 	
 	try {
 		global $conn;
@@ -18,12 +17,11 @@
 		$stmt->bindParam(':description', $description);
 		$stmt->bindParam(':access', $typeAccess);
 		$stmt->execute();
-
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
-	
-	addTags($tags, $id);
+
+	$id = getProjectID($projName);
 	insertProjCoord($id);
   }
   

@@ -621,9 +621,9 @@ RETURNS TRIGGER AS $checkTag$
 	BEGIN
         IF EXISTS (SELECT * FROM Tag 
         WHERE Tag.name = NEW.name) THEN
-		DROP TABLE Tag;
-        END IF;
 		RETURN OLD;
+        END IF;
+		RETURN NEW;
 	END;
 $checkTag$ LANGUAGE plpgsql;
  
