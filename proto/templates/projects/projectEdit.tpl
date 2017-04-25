@@ -40,14 +40,17 @@
             <!-- Form Name -->
             <legend class="tab">Main Settings</legend>
             <!-- File Button --> 
-			<form action="{$BASE_URL}api/changeAccess.php?projID={$smartyProjID}" method="post">
             <div class="form-group">
                 <label class="col-md-4 control-label" for="public">Change Access</label>
                     <div class="col-md-4">
-                        <button id="public" name='public' class='btn btn-secondary style-button col-xs-offset-2' type='submit'>Change</button>
+                        <select name="access" class="form-control form-style input-xs">
+							<option value="public">Public</option>
+							<option value="private">Private</option>
+						</select>
+						
+						<button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Change Access</button>
                     </div>
             </div>
-			</form>
 
 			<form action="{$BASE_URL}api/deleteProject.php?projID={$smartyProjID}" method="post">
             <div class="form-group">

@@ -40,7 +40,7 @@
                 <div class="col-md-4">
                 <input id="tags" name="tags" type="text" 
                         placeholder="Project Tags" required
-                        class="form-control form-style input-xs" data-role="tagsinput">
+                        class="form-control form-style input-xs">
                 </div>
             </div>
             </div>

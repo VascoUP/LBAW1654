@@ -8,6 +8,8 @@
 		updateProjName($_POST['name'], $id);
 	else if($_POST['description'])
 		updateOverview($_POST['description'], $id);
+	else if($_POST['access'])
+		updateAccess($_POST['access'], $id);
 	
 	header("Location: ../../pages/project/projectPage.php?projID=" .$id);
 	

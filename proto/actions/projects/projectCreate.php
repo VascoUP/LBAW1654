@@ -14,8 +14,8 @@
   $access = strip_tags($_POST['access']);
   $tags = explode(' ; ', $_POST['tags']);
 	
-	createProject($name, $overview, $access, $tags);
-	$id = getProjectID($name); 
+  createProject($name, $overview, $access, $tags);
+  $id = getProjectID($name); 
   
   
   $_SESSION['success_messages'][] = 'Project created successfully';  

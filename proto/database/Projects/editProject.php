@@ -25,26 +25,18 @@
 		}
   	}
 	
-	function updateAccess($id){		
+	function updateAccess($access, $id){		
 		try {
 			global $conn;
-			$stmt = $conn->prepare("SELECT access
-									FROM Project
-									WHERE projectID = ?");
-			$stmt->execute(array($id));
-
-			$result = $stmt->fetchAll();
-			$access = $result['0']['access'];
-			
-			if($access === '1')
-				$newAccess = 0;
+			if($access === 'public')
+				$typeAccess = 1;
 			else
-				$newAccess = 1;
+				$typeAccess = 0;
 		
 			$stmt = $conn->prepare("UPDATE Project
 									SET access = ?
 									WHERE projectID = ?");
-			$stmt->execute(array($newAccess, $id));
+			$stmt->execute(array($typeAccess, $id));
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
