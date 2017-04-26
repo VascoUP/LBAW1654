@@ -4,7 +4,7 @@
 
 <div class='container'>
 
-    {if !isset($smartyUsrInfo['0']['description']) && !isset($smartyUsrInfo['0']['curriculumVitae'])}
+    {if !$smartyUsrInfo['0']['description'] && !$smartyUsrInfo['0']['curriculumvitae']}
         <div class='card card-container'>
             <div id='form-login'>
     {else}
@@ -66,11 +66,11 @@
             </div>
     </div>
     
-    {if isset($smartyUsrInfo['0']['description']) || isset($smartyUsrInfo['0']['curriculumVitae'])}
+    {if $smartyUsrInfo['0']['description'] || $smartyUsrInfo['0']['curriculumvitae']}
         <div class='col-md-9'>
             <div id='profile-content' class='profile-content'>
                 
-                {if isset($smartyUsrInfo['0']['description'])}
+                {if $smartyUsrInfo['0']['description']}
                     <h2>
                         Biography
                     </h2>
@@ -81,7 +81,7 @@
 
                 <br>
 
-                {if isset($smartyUsrInfo['0']['curriculumvitae'])}
+                {if $smartyUsrInfo['0']['curriculumvitae']}
                 <h3>
                     Curriculum Vitae
                 </h3>
