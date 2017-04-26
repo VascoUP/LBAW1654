@@ -1,6 +1,6 @@
 <link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
-<script src="{$BASE_URL}javascript/confirmDelete.js"></script>
+<script src="{$BASE_URL}javascript/users/confirmDelete.js"></script>
 
 <div class="container">
     <div class="card card-container">

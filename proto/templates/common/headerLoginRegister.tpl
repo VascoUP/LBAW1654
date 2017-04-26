@@ -13,7 +13,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="{$BASE_URL}javascript/recovery.js"></script>
+		<script type="text/javascript" src="{$BASE_URL}javascript/users/recovery.js"></script>
 	</head>
 	<!-- NAVBAR
 	================================================== -->

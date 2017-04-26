@@ -12,7 +12,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 	
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="{$BASE_URL}javascript/dropdownUser.js"></script>
+		<script type="text/javascript" src="{$BASE_URL}javascript/header/dropdownUser.js"></script>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -44,12 +44,14 @@
 								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php">Home</a>
 							{/if}
 							</li>
+							{if !$smarty.session.username}
 							<li>
 								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php#about">About</a>
 							</li>
 							<li>
 								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/general/mainPage.php#contact">Contact</a>
 							</li>
+							{/if}
 						</ul>
 						<ul class="nav navbar-nav navbar-center">
 							<li class="hidden">

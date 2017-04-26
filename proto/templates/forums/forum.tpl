@@ -46,4 +46,4 @@
 </div>
 </div>
 
-<script src="{$BASE_URL}javascript/comment.js"></script>
+<script src="{$BASE_URL}javascript/users/comment.js"></script>

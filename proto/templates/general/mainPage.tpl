@@ -105,17 +105,17 @@
 </div>
 
 <!-- jQuery -->
-<script src="{$BASE_URL}javascript/jquery.min.js"></script>
+<script src="{$BASE_URL}javascript/templates/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="{$BASE_URL}javascript/bootstrap.min.js"></script>
+<script src="{$BASE_URL}javascript/templates/bootstrap.min.js"></script>
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
 
 <!-- Contact Form JavaScript -->
-<script src="{$BASE_URL}javascript/jqBootstrapValidation.js"></script>
-<script src="{$BASE_URL}javascript/contact_me.js"></script>
+<script src="{$BASE_URL}javascript/templates/jqBootstrapValidation.js"></script>
+<script src="{$BASE_URL}javascript/templates/contact_me.js"></script>
 
 <!-- Theme JavaScript -->
-<script src="{$BASE_URL}javascript/agency.min.js"></script>
+<script src="{$BASE_URL}javascript/templates/agency.min.js"></script>

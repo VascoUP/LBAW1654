@@ -32,7 +32,7 @@
             <div class='profile-usermenu'>
                 <ul class='nav'>
                     <li>
-                        <a href='#'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/profileUserOverview.php'>
                         <i class='glyphicon glyphicon-home'></i>
                         Overview </a>
                     </li>
@@ -80,7 +80,7 @@
                                         </div>
                                         
                                         <div class="profile-userbuttons">
-                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/proto/api/deleteProject.php?projID={$projects[$i]['projectid']}" type="button" class="btn btn-danger btn-sm">Delete Project</a>
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/proto/actions/projects/deleteProject.php?projID={$projects[$i]['projectid']}" type="button" class="btn btn-danger btn-sm">Delete Project</a>
                                         </div>
                                     </div>
                                 </td>
