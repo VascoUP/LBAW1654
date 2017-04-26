@@ -30,7 +30,7 @@ function reportTask($task){
 		}
 }
 
-function reportTask($thread){
+function reportThread($thread){
 	try {
 			global $conn;
 			$date = date('Y-m-d');
