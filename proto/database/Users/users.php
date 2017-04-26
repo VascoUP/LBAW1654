@@ -1,4 +1,6 @@
 <?php
+include($BASE_DIR .'database/Users/userInformation.php');
+
   function createUser($username, $email, $password) {
 		try {
 			global $conn;
@@ -74,11 +76,17 @@
   }
   
   function deleteUser($username) {
+	  $id = getUserID($username);
 		try {
 			global $conn;
 			$stmt = $conn->prepare("DELETE 
-																FROM UserSite 
-																WHERE username = ?");
+									FROM ProjectCoordinator 
+									WHERE userID = ?");
+			$stmt->execute(array($id));		
+			
+			$stmt = $conn->prepare("DELETE 
+									FROM UserSite 
+									WHERE username = ?");
 			$stmt->execute(array($username));
 		} catch(Exception $e) {
 			return $e->getMessage();
