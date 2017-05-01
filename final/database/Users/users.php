@@ -80,8 +80,8 @@ include($BASE_DIR .'database/Users/userInformation.php');
 		try {
 			global $conn;	
 			
-			$stmt = $conn->prepare("UPDATE
-									SET userStatus = ?
+			$stmt = $conn->prepare("UPDATE UserSite
+									SET userStatus = 'inactive'
 									WHERE username = ?");
 			$stmt->execute(array($username));
 		} catch(Exception $e) {
