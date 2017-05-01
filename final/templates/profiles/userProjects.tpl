@@ -33,17 +33,17 @@
             <div class='profile-usermenu'>
                 <ul class='nav'>
                     <li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/profileUserOverview.php'>
+                        <a href='{$BASE_URL}pages/profile/profileUserOverview.php'>
                         <i class='glyphicon glyphicon-home'></i>
                         Overview </a>
                     </li>
                     <li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/editProfile.php'>
+                        <a href='{$BASE_URL}pages/profile/editProfile.php'>
                         <i class='glyphicon glyphicon-user'></i>
                         Account Settings </a>
                     </li>
                     <li class='active'>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/userProjects.php?username={$smartyUsrInfo['0']['username']}'>
+                        <a href='{$BASE_URL}pages/profile/userProjects.php?username={$smartyUsrInfo['0']['username']}'>
                         <i class='glyphicon glyphicon-ok'></i>
                         My Projects</a>
                     </li>
@@ -55,7 +55,7 @@
             <!-- END SIDEBAR USER TITLE -->
             <!-- SIDEBAR BUTTONS -->
             <div class='profile-userbuttons'>
-                <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/projectCreate.php' type='button' class='btn btn-success btn-sm'>Add project</a>
+                <a href='{$BASE_URL}pages/project/projectCreate.php' type='button' class='btn btn-success btn-sm'>Add project</a>
                 <a type='button' class='btn btn-success btn-sm'>Contact</a>
             </div>
     </div>
@@ -72,7 +72,7 @@
                                 <td>
                                     <div class="media">
                                         <div class="media-body">
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/projectPage.php?projID={$projects[$i]['projectid']}" role="button">
+											<a href="{$BASE_URL}pages/project/projectPage.php?projID={$projects[$i]['projectid']}" role="button">
 												<h4 class="title">
 													{$projects[$i]['name']}
 												</h4>
@@ -81,7 +81,7 @@
                                         </div>
                                         
                                         <div class="profile-userbuttons">
-                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/proto/actions/projects/deleteProject.php?projID={$projects[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
+                                            <a href="{$BASE_URL}actions/projects/deleteProject.php?projID={$projects[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
                                         </div>
                                     </div>
                                 </td>

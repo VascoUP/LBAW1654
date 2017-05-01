@@ -44,12 +44,12 @@
                         Overview </a>
                     </li>
                     <li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/editProfile.php'>
+                        <a href='{$BASE_URL}pages/profile/editProfile.php'>
                         <i class='glyphicon glyphicon-user'></i>
                         Account Settings </a>
                     </li>
                     <li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/profile/userProjects.php?userInfo={$smartyUsrInfo['0']['userid']}'>
+                        <a href='{$BASE_URL}pages/profile/userProjects.php?userInfo={$smartyUsrInfo['0']['userid']}'>
                         <i class='glyphicon glyphicon-ok'></i>
                         My Projects</a>
                     </li>
@@ -61,7 +61,7 @@
         <!-- END SIDEBAR USER TITLE -->
             <!-- SIDEBAR BUTTONS -->
             <div class='profile-userbuttons'>
-                <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/projectCreate.php' type='button' class='btn btn-success btn-sm'>Add project</a>
+                <a href='{$BASE_URL}proto/pages/project/projectCreate.php' type='button' class='btn btn-success btn-sm'>Add project</a>
                 <a type='button' class='btn btn-success btn-sm'>Contact</a>
             </div>
     </div>
@@ -85,7 +85,7 @@
                 <h3>
                     Curriculum Vitae
                 </h3>
-                <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/documents/{$smartyUsrInfo['0']['curriculumvitae']}' download>{$smartyUsrInfo['0']['curriculumvitae']}</a>
+                <a href='{$BASE_URL}proto/documents/{$smartyUsrInfo['0']['curriculumvitae']}' download>{$smartyUsrInfo['0']['curriculumvitae']}</a>
                 {/if}
 
             </div>

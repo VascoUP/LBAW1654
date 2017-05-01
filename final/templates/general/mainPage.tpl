@@ -4,8 +4,8 @@
 		<div class="intro-text">
 			<div class="intro-lead-in">Your Management</div>
 			<div class="intro-heading">A free project management website for professional individuals looking for the best way to manage their projects </div>
-			<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/users/register.php" class="page-scroll btn btn-xl">Sign Up</a>
-			<a href="https://gnomo.fe.up.pt/~lbaw1654/proto/pages/users/login.php" class="page-scroll btn btn-xl">Sign In</a>
+			<a href="{$BASE_URL}pages/users/register.php" class="page-scroll btn btn-xl">Sign Up</a>
+			<a href="{$BASE_URL}pages/users/login.php" class="page-scroll btn btn-xl">Sign In</a>
 		</div>
 	</div>
 </header>

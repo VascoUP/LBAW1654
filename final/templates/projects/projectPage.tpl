@@ -1,5 +1,5 @@
-<link href="../../css/pages/profile.css" rel='stylesheet'>
-<link href="../../css/bootstrap/bootstrap-social.css" rel='stylesheet'>
+<link href="{$BASE_URL}css/pages/profile.css" rel='stylesheet'>
+<link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel='stylesheet'>
 
 <div class='container'>
 
@@ -42,17 +42,17 @@
                         Description </a>
                     </li>
                     <li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/general/projectEdit.php?projID={$smartyProjID}'>
+                        <a href='{$BASE_URL}pages/project/general/projectEdit.php?projID={$smartyProjID}'>
                         <i class='glyphicon glyphicon-ok'></i>
                         Edit Project </a>
                     </li>
 					<li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/iteration/projectIterations.php'>
+                        <a href='{$BASE_URL}pages/project/iteration/projectIterations.php'>
                         <i class='glyphicon glyphicon-ok'></i>
                         Iterations </a>
                     </li>
                     <li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/proto/pages/project/forum/projectForum.php'>
+                        <a href='{$BASE_URL}pages/project/forum/projectForum.php'>
                         <i class='glyphicon glyphicon-ok'></i>
                         Forum </a>
                     </li>
