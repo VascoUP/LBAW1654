@@ -3,11 +3,10 @@
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE UserSite
-										SET userStatus = ?
+										SET userStatus = 'banned'
 										WHERE userID = ?");	
 												
-			$status = 'banned';
-			$stmt->execute(array($status, $userID));
+			$stmt->execute(array($userID));
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
@@ -17,11 +16,38 @@
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Project
-										SET projectStatus = ?
+										SET projectStatus = 'banned'
 										WHERE projectID = ?");	
+
+			$stmt->execute(array($projID));
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+	}
+	
+	function removeBanStatusUser($userID)
+	{
+		try {
+			global $conn;
+			$stmt = $conn->prepare("UPDATE UserSite
+										SET userStatus = 'active'
+										WHERE userID = ?");	
 												
-			$status = 'banned';
-			$stmt->execute(array($status, $projID));
+			$stmt->execute(array($userID));
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+	}
+	
+	function removeBanStatusProj($projID)
+	{
+		try {
+			global $conn;
+			$stmt = $conn->prepare("UPDATE Project
+										SET projectStatus = 'active'
+										WHERE projectID = ?");	
+
+			$stmt->execute(array($projID));
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}

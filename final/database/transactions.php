@@ -2,7 +2,7 @@
 BEGIN;
   DELETE FROM ProjectCoordinator WHERE userID = ?;
   DELETE FROM ProjectUsers WHERE userID = ?;
-  UPDATE UserSite SET userStatus = 'inactive';
+  UPDATE UserSite SET userStatus = 'inactive' WHERE userID = ?;
 COMMIT;
 
 BEGIN;

@@ -35,7 +35,7 @@
   function editThread($id, $name, $description){
 	  try {
 			global $conn;
-			$stmt = $conn->prepare("UPDATE
+			$stmt = $conn->prepare("UPDATE Thread
 									SET name = ?, description = ?
 									WHERE threadID = ?");
 								
