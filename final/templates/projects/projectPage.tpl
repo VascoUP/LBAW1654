@@ -42,17 +42,17 @@
                         Description </a>
                     </li>
                     <li>
-                        <a href='{$BASE_URL}pages/project/general/projectEdit.php?projID={$smartyProjID}'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/general/projectEdit.php?projID={$smartyProjID}'>
                         <i class='glyphicon glyphicon-ok'></i>
                         Edit Project </a>
                     </li>
 					<li>
-                        <a href='{$BASE_URL}pages/project/iteration/projectIterations.php'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/projectIterations.php'>
                         <i class='glyphicon glyphicon-ok'></i>
                         Iterations </a>
                     </li>
                     <li>
-                        <a href='{$BASE_URL}pages/project/forum/projectForum.php'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/projectForum.php'>
                         <i class='glyphicon glyphicon-ok'></i>
                         Forum </a>
                     </li>

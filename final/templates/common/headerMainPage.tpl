@@ -1,4 +1,4 @@
-{include file="{$BASE_URL}templates/common/head.tpl" }
+{include file="../../templates/common/head.tpl" }
 
 	<!-- Bootstrap Core CSS -->
 	<link href="{$BASE_URL}css/bootstrap/bootstrap.min.css" rel="stylesheet">

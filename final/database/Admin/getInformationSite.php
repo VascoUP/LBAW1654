@@ -50,8 +50,7 @@ function searchProjects($name){
 								OR (to_tsvector('english', Tag.name) @@ to_tsquery('english', ?)
 								OR Tag.name ILIKE '%?%'
 								AND TagProject.tagID = Tag.tagID
-								AND Project.projectID = TagProject.projectID)
-								LIMIT 10");
+								AND Project.projectID = TagProject.projectID)");
 		$stmt->execute(array($name, $name, $name, $name));
 	} catch(Exception $e) {
 		return $e->getMessage();
