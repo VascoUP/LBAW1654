@@ -1,9 +1,10 @@
 <?php
   include_once('../../config/init.php');
-  include_once($BASE_DIR .'database/Users/recoverPassword.php');  
+  include($BASE_DIR .'database/Users/recoverPassword.php');  
 
   $email = $_POST['email'];
   $password = $_POST['password'];
+  
   updatePassword($email, $password);
   
   $_SESSION['success_messages'][] = 'password changed successfully';  

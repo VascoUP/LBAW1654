@@ -37,7 +37,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" ></label>  
                     <div class="col-md-4">
-                        <a href="#" id="update" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Password</a>
+                        <button type="submit" id="update" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Password</button>
                     </div>
                 </div>
 
