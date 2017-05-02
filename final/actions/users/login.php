@@ -19,14 +19,9 @@
 		  if (isLoginCorrect($username, $password)) {
 			$_SESSION['username'] = $username;
 			$_SESSION['success_messages'][] = 'Login successful'; 
-			if(!empty($_POST["remember"])) {
+			if($_POST["remember"]) {
 				$year = time() + (365 * 24 * 60 * 60); //365 days * 24 hours * 60 minutes * 60 seconds
-				setcookie('username', $username, $year);
-				setcookie('password', $password, $year);
-			}
-			else{
-				setcookie ("username","");
-				setcookie ("password","");
+				setcookie('remember_username', $username, $year);
 			}
 			  header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php'); 
 		  } 

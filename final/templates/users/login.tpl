@@ -16,9 +16,6 @@
                 <input type="password" id="password" 
                         name="password" class="form-control form-style" 
                         placeholder="Password" 
-                        {if isset($smartyPassword)}
-                            value ={$smartyPassword}
-                        {/if}
                         required>
                 <div id="remember" class="checkbox">
                     <label>
@@ -39,7 +36,7 @@
             <h4 class="">
                 Forgot the password?
             </h4>
-            <form accept-charset="UTF-8" role="form" id="login-recordar" action="{$BASE_URL}actions/users/recoverPassword.php" method="post">
+            <form accept-charset="UTF-8" role="form" id="login-recordar" action="{$BASE_URL}actions/users/sendEmail.php" method="post">
                 <fieldset>
                     <span class="help-block">
                       <p>Email address you use to log in to your account</p>

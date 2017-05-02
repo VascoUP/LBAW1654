@@ -8,6 +8,15 @@
                 <!-- Form Name -->
                 <legend>Change Password</legend>
 
+				<div class="form-group">
+                    <label for="password" class="col-md-4 control-label">Password</label>
+                    <div class="col-md-4">
+                        <div class="col-md-4">
+                            <input type="email" class="form-control form-style input-md" name="email" id="email"  placeholder="Email"/>
+                        </div>
+                    </div>
+                </div>
+				
                 <div class="form-group">
                     <label for="password" class="col-md-4 control-label">Password</label>
                     <div class="col-md-4">

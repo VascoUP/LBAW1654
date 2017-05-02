@@ -1,5 +1,5 @@
 	<div class="footer push">
-		<span class="copyright">Copyright &copy; Your Website 2017</span>   
+		<span class="copyright">Copyright &copy; Your Management 2017</span>   
 	</div> 
   </body>
 </html>
