@@ -88,4 +88,19 @@ include($BASE_DIR .'database/Users/userInformation.php');
 			return $e->getMessage();
 		}
   }
+  
+  function addUserToken($token, $username){
+	  $id = getUserID($username);
+	  try {
+			global $conn;	
+			
+			$stmt = $conn->prepare("INSERT INTO UserToken(userID, tokenName) VALUES (:userID, :tokenName");
+			$stmt->bindParam(':userID', $id);
+			$stmt->bindParam(':tokenName', $token);
+			$stmt->execute();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+	  
+  }
 ?>

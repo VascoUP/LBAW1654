@@ -13,6 +13,21 @@
 		}
     return $result;
   }
+  
+  function getUserInformationByID($ID) {
+		try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT * 
+									FROM UserSite
+									WHERE userid = ?");
+								
+			$stmt->execute(array($ID));
+			$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+    return $result;
+  }
 
   function getUserID($username){
 		try {
@@ -129,5 +144,20 @@
 	}
 	
 	return $result;
+  }
+  
+  function getTokenInfo($token){
+	try {
+		global $conn;
+		$stmt = $conn->prepare("SELECT *
+								FROM UserToken
+								WHERE tokenName = ?);");
+		$stmt->execute(array($token));
+		$result = $stmt->fetchAll();
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+	
+	return $result['0']['userid'];
   }
 ?>

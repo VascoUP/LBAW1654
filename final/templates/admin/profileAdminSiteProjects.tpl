@@ -9,6 +9,17 @@
 				<div class="profile-userpic">
 					<img src="{$BASE_URL}images/assets/loginImage.png" class="img-responsive" alt="">
 				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						Ava Stuart
+					</div>
+					<div class="profile-usertitle-email">
+						avieSS@hotmail.com
+					</div>
+				</div>
+
 				<div class='profile-usertitle'>
                 <div class='profile-usertitle-name'>
                     {$smartyUsrInfo['0']['username']}

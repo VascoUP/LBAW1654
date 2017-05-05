@@ -1,7 +1,12 @@
 <?php 
 	include_once('../../config/init.php');
-	if(isset($_COOKIE['remember_username'])){
-		$smarty->assign('smartyUsername', $_COOKIE['remember_username']);
+	include('../../database/Users/userInformation.php');
+	
+	if($_COOKIE['remember_username']){
+		$userID = getTokenInfo($_COOKIE['remember_username']);
+		$username = getUserInformationByID($userID);
+		
+		$smarty->assign('smartyUsername', $username['0']['username']);
 		$smarty->assign('smartyCheck', 'checked');
 	}		
 
