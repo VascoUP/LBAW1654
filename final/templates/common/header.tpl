@@ -75,7 +75,7 @@
 									<ul id="notification" class="dropdown-menu">
 									<li>New notifications ({$smartyProjInvites|@count})</li>
 										{for $index=0 to $smartyProjInvites|@count - 1}
-											{assign $smartyProjInvite $smartyProjInvites[$index]}
+											{assign var="smartyProjInvite" value=$smartyProjInvites[$index]}
 											<li>
 												<p>Invitation: {$smartyProjInvites['0']['projectID']}</p>
 												{include file="../../templates/common/projectInvite.tpl" }
