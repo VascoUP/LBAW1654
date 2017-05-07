@@ -26,39 +26,65 @@ function getInfoIteration($itID){
 	return $result;
 }
 
-function updateIteration($description, $startDate, $max, $itID){
+function updateDescription($description, $itID){
 	try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Iteration
-									SET description = ?, startDate = ?, maximumEffort = ?
+									SET description = ?
 									WHERE iterationID = ?");		
-			$stmt->execute(array($description, $startDate, $max, $itID));
+			$stmt->execute(array($description, $itID));
 	
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
 }
 
-function updateDueDate($itID){
+function updateMaximum($max, $itID){
+	try {
+			global $conn;
+			$stmt = $conn->prepare("UPDATE Iteration
+									SET maximumEffort = ?
+									WHERE iterationID = ?");		
+			$stmt->execute(array($max, $itID));
+	
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+}
+
+function updateStartDate($start, $itID){
+	try {
+			global $conn;
+			$stmt = $conn->prepare("UPDATE Iteration
+									SET startDate = ?
+									WHERE iterationID = ?");		
+			$stmt->execute(array($start, $itID));
+	
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+}
+
+function updateDueDate($dueDate, $itID){
 	try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Iteration
 									SET dueDate = ?
 									WHERE iterationID = ?");		
-			$stmt->execute(array($itID));
+			$stmt->execute(array($dueDate, $itID));
 	
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
 }
 
-function updateName($itID){
+function updateName($name, $itID){
 	try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Iteration
 									SET name = ?
 									WHERE iterationID = ?");		
-			$stmt->execute(array($itID));
+			$stmt->execute(array($name, $itID));
 	
 		} catch(Exception $e) {
 			return $e->getMessage();

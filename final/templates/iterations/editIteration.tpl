@@ -3,16 +3,16 @@
 
 <div class="container">
     <div class="card card-container">
-        <form class="form-horizontal">
+        <form class="form-horizontal" action="{$BASE_URL}actions/projects/editIteration.php?itID={$smartyItID}" method="post">
         <fieldset>
         <!-- Form Name -->
             <legend>Edit Iteration</legend>
 
         <!-- Text input-->
             <div class="form-group">
-            <label class="col-md-4 control-label" for="TaskName">Iteration Name</label>  
+            <label class="col-md-4 control-label" for="ItName">Iteration Name</label>  
             <div class="col-md-4">
-                <input id="TaskName" name="TaskName" type="text" placeholder="Name" class="form-control form-style input-md">
+                <input id="ItName" name="ItName" type="text" placeholder="Name" class="form-control form-style input-md">
             </div>
             </div>
             
@@ -47,7 +47,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" ></label>  
                 <div class="col-md-4">
-                    <a href="#" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Edit Iteration</a>
+                    <button id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Edit Iteration</button>
                 </div>
             </div>
 

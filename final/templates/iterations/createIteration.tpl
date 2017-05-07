@@ -58,7 +58,7 @@
             <div class="form-group">
             <label class="col-md-4 control-label" ></label>  
             <div class="col-md-4">
-                <button type=submit" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Add Task</button>
+                <button type=submit" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Add Iteration</button>
             </div>
             </div>
 

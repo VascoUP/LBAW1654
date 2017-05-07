@@ -8,8 +8,9 @@
 	<div class="card card-container-it">
 		<div class="table-container">
 			<div class="project-info-box">
-				<p class="text-style-2">Iteration 1</p>
-				<p class="text-style-5">This is where you'll find the project tasks for iteration 1</p>
+				<p class="text-style-2">{$smartyIterations['0']['name']}</p>
+				<p class="text-style-5">{$smartyIterations['0']['description']}</p>
+				<p class="text-style-6">This is where you'll find the project tasks for {$smartyIterations['0']['name']}</p>
 				<hr class="featurette-divider">
 				<div class="table-responsive">
 					<table class="task table">
@@ -37,7 +38,7 @@
                             <td class="task-info priority">High</td>
                             <td class="task-info due date">1/5/2017<br><small><i class="fa fa-clock-o"></i> (2 months left) </small></td>
                             <td class="task-info workers">0/2</td>
-                            <td> <button class="join button">Request to join task</button> </td>
+                            <td> <button class="btn btn-warning">Request to join task</button> </td>
                         </tr>
 
                         <tr>
@@ -55,7 +56,7 @@
                     </tbody>
 					</table>
 				</div>
-				<button class="addTask">Add Task</button>
+				<button class="btn btn-success">Add Task</button>
 			</div>
 		</div>
 	</div>
