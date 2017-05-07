@@ -5,7 +5,7 @@
             $stmt = $conn->prepare("SELECT *
                                     FROM ProjectUsers
                                     WHERE userStatusProject = 'invited'
-                                    AND userID = ?);");
+                                    AND userID = ?");
             $stmt->execute(array($userID));
             $result = $stmt->fetchAll();
         } catch(Exception $e) {

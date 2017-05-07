@@ -136,7 +136,7 @@
 													FROM ProjectCoordinator
 													WHERE ProjectCoordinator.userid = ?)
 								OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
-								WHERE ProjectUsers.userid = ?);");
+								WHERE ProjectUsers.userid = ?)");
 		$stmt->execute(array($id, $id));
 		$result = $stmt->fetchAll();
 		} catch(Exception $e) {
@@ -151,7 +151,7 @@
 			global $conn;
 			$stmt = $conn->prepare("SELECT *
 									FROM UserToken
-									WHERE tokenName = ?);");
+									WHERE tokenName = ?)");
 			$stmt->execute(array($token));
 			$result = $stmt->fetchAll();
 		} catch(Exception $e) {
