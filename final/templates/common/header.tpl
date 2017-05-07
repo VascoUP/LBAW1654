@@ -13,6 +13,7 @@
 	
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="{$BASE_URL}javascript/header/dropdownUser.js"></script>
+		<script type="text/javascript" src="{$BASE_URL}javascript/header/notifications.js"></script>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -72,10 +73,13 @@
 							<li>
 								<img class="dropdown-notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="{$BASE_URL}images/assets/notificationBell.png">
 									<ul id="notification" class="dropdown-menu">
-										<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php" role="button" id="drop">Profile</a></li>
-										<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php" role="button" id="drop">Projects</a></li>
-										<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php" role="button" id="drop">Edit Profile</a></li>
-										<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/users/logout.php" role="button" id="drop" class="logout">Logout</a></li>
+									<li>New notifications ({$smartyProjInvites|@count})</li>
+										{for $index=0 to $smartyProjInvites|@count - 1}
+											{assign $smartyProjInvite $smartyProjInvites[$index]}
+											<li>
+											{include file="../../templates/common/projectInvite.tpl" }
+											</li>
+										{/for}
 									</ul>
 								</img>
 							</li>

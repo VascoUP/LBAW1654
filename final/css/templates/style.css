@@ -5,167 +5,167 @@
  * ------------------------------------------------
  */
 
-html, body{
-	overflow-x: hidden;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-color: #eee;
+html,
+body {
+    overflow-x: hidden;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-color: #eee;
 }
 
 .wrapper {
     min-height: 100%;
-    height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+    height: auto !important;
+    /* This line and the next line are not necessary unless you need IE6 support */
     height: 100%;
-    margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto -50px;
+    /* the bottom margin is the negative value of the footer's height */
 }
 
-.footer, .push {
-    height: 50px; /* .push must be the same height as .footer */
+.footer,
+.push {
+    height: 50px;
+    /* .push must be the same height as .footer */
 }
-	
+
+.projInvite:hover {
+    background-color: #888;
+}
+
 .text-style-1 {
-	color: #000;
-	font-weight: bold;
-	font-size: 200%;
-	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #000;
+    font-weight: bold;
+    font-size: 200%;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .text-style-2 {
-	color: #555;
-	font-weight: bold;
-	font-size: 200%;
+    color: #555;
+    font-weight: bold;
+    font-size: 200%;
 }
 
 .text-style-3 {
-	color: #000;
-	font-weight: bold;
-	font-size: 150%
+    color: #000;
+    font-weight: bold;
+    font-size: 150%
 }
 
 .text-style-4 {
-	color: #555;
-	font-weight: bold;
-	font-size: 150%
+    color: #555;
+    font-weight: bold;
+    font-size: 150%
 }
 
 .text-style-5 {
-	color: #555;
-	font-weight: bold;
-	font-size: 100%;
+    color: #555;
+    font-weight: bold;
+    font-size: 100%;
 }
 
 .text-style-6 {
-	color: #000;
-	font-size: 100%;
+    color: #000;
+    font-size: 100%;
 }
 
 .text-center-sm {
-	text-align:center;	
+    text-align: center;
 }
 
 .text-center-xs {
-  	text-align: center;
+    text-align: center;
 }
 
-a.text-style-1:hover, a.text-style-3:hover, a.text-style-5:hover {
-	color: #115;
+a.text-style-1:hover,
+a.text-style-3:hover,
+a.text-style-5:hover {
+    color: #115;
     text-decoration: none;
 }
 
-a.text-style-2:hover, a.text-style-4:hover, a.text-style-6:hover {
-	color: #A50;
+a.text-style-2:hover,
+a.text-style-4:hover,
+a.text-style-6:hover {
+    color: #A50;
     text-decoration: none;
 }
 
 @media (max-width: 767px) {
-	.table-responsive {
-		margin-bottom: 0px;
-	}
+    .table-responsive {
+        margin-bottom: 0px;
+    }
 }
 
 @media (min-width: 768px) {
-	.text-style-1 {
-		font-size: 250%;
-	}
-
-	.text-style-2 {
-		font-size: 250%
-	}
-
-	.text-style-3 {
-		color: #555;
-		font-size: 175%
-	}
-
-	.text-style-4 {
-		font-size: 175%;
-	}
-
-	.text-style-5 {
-		font-size: 120%;
-	}
-	
-	.text-style-6 {
-		font-size: 120%;
-	}
-	
-	.text-center-xs {
-		text-align: left;
-	}
+    .text-style-1 {
+        font-size: 250%;
+    }
+    .text-style-2 {
+        font-size: 250%
+    }
+    .text-style-3 {
+        color: #555;
+        font-size: 175%
+    }
+    .text-style-4 {
+        font-size: 175%;
+    }
+    .text-style-5 {
+        font-size: 120%;
+    }
+    .text-style-6 {
+        font-size: 120%;
+    }
+    .text-center-xs {
+        text-align: left;
+    }
 }
 
-@media (min-width: 992px) {	
-	.text-style-1 {
-		font-size: 300%;
-	}
-
-	.text-style-2 {
-		font-size: 300%
-	}
-
-	.text-style-3 {
-		font-size: 200%
-	}
-
-	.text-style-4 {
-		font-size: 200%;
-	}
-
-	.text-style-5 {
-		font-size: 150%;
-	}	
-	
-	.text-style-6 {
-		font-size: 150%;
-	}
-	
-	
-	.text-center-xs {
-		text-align: left;
-	}
-	.text-center-sm {
-		text-align: left;
-	}
+@media (min-width: 992px) {
+    .text-style-1 {
+        font-size: 300%;
+    }
+    .text-style-2 {
+        font-size: 300%
+    }
+    .text-style-3 {
+        font-size: 200%
+    }
+    .text-style-4 {
+        font-size: 200%;
+    }
+    .text-style-5 {
+        font-size: 150%;
+    }
+    .text-style-6 {
+        font-size: 150%;
+    }
+    .text-center-xs {
+        text-align: left;
+    }
+    .text-center-sm {
+        text-align: left;
+    }
 }
 
 .page-spacing {
-	margin-top: 40px;
+    margin-top: 40px;
 }
 
 .table-responsive {
-	border-width: 0;
+    border-width: 0;
 }
 
 .footer {
-	background-color: rgba(0,0,0,1);
-	padding: 15px 0;
-	width: 100%;
-	text-align: center;
-	color: white;
-	bottom: 0;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    bottom: 0;
 }
 
 .footer span.copyright {
-  line-height: 40px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 40px;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

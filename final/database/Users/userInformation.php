@@ -1,5 +1,5 @@
 <?php
-  function getUserInformation($username) {
+	function getUserInformation($username) {
 		try {
 			global $conn;
 			$stmt = $conn->prepare("SELECT * 
@@ -11,10 +11,10 @@
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-    return $result;
-  }
-  
-  function getUserInformationByID($ID) {
+		return $result;
+	}
+
+	function getUserInformationByID($ID) {
 		try {
 			global $conn;
 			$stmt = $conn->prepare("SELECT * 
@@ -26,10 +26,10 @@
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-    return $result;
-  }
+		return $result;
+	}
 
-  function getUserID($username){
+  	function getUserID($username){
 		try {
 			global $conn;
 			$stmt = $conn->prepare("SELECT userID 
@@ -41,10 +41,10 @@
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-    return $result['0']['userid'];
-  }
+    	return $result['0']['userid'];
+  	}
   
-  function updateUsername($username){
+  	function updateUsername($username){
 		$id = getUserID($_SESSION['username']);
 		try {
 			global $conn;
@@ -58,9 +58,9 @@
 		}
 
 		$_SESSION['username'] = $username;
-  }
+ 	}
   
-  function updateEmail($email){
+  	function updateEmail($email){
 		$id = getUserID($_SESSION['username']);
 		try {
 			global $conn;
@@ -71,9 +71,9 @@
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-  }
+  	}
   
-  function updatePassword($password){
+  	function updatePassword($password){
 		$id = getUserID($_SESSION['username']);
 		try {
 			global $conn;
@@ -85,9 +85,9 @@
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-  }
+  	}
   
-  function updateDescription($overview){
+ 	function updateDescription($overview){
 		$id = getUserID($_SESSION['username']);
 		try {
 			global $conn;
@@ -98,9 +98,9 @@
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-  }
+ 	}
   
-  function updatePhoto($photo){
+  	function updatePhoto($photo){
 		$id = getUserID($_SESSION['username']);
 		try {
 			global $conn;
@@ -111,9 +111,9 @@
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-  }
+  	}
   
-  function updateCurriculum($cv){
+  	function updateCurriculum($cv){
 		$id = getUserID($_SESSION['username']);
 		try {
 			global $conn;
@@ -124,11 +124,11 @@
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-  }
+  	}
   
-  function getProjects($username){
-	  $id = getUserID($username);
-	  try {
+  	function getProjects($username){
+		$id = getUserID($username);
+		try {
 		global $conn;
 		$stmt = $conn->prepare("SELECT *
 								FROM Project
@@ -139,25 +139,25 @@
 								WHERE ProjectUsers.userid = ?);");
 		$stmt->execute(array($id, $id));
 		$result = $stmt->fetchAll();
-	} catch(Exception $e) {
+		} catch(Exception $e) {
 		return $e->getMessage();
+		}
+
+		return $result;
+  	}
+
+	function getTokenInfo($token){
+		try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT *
+									FROM UserToken
+									WHERE tokenName = ?);");
+			$stmt->execute(array($token));
+			$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+
+		return $result['0']['userid'];
 	}
-	
-	return $result;
-  }
-  
-  function getTokenInfo($token){
-	try {
-		global $conn;
-		$stmt = $conn->prepare("SELECT *
-								FROM UserToken
-								WHERE tokenName = ?);");
-		$stmt->execute(array($token));
-		$result = $stmt->fetchAll();
-	} catch(Exception $e) {
-		return $e->getMessage();
-	}
-	
-	return $result['0']['userid'];
-  }
 ?>
