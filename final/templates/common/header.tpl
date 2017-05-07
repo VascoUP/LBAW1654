@@ -77,7 +77,8 @@
 										{for $index=0 to $smartyProjInvites|@count - 1}
 											{assign $smartyProjInvite $smartyProjInvites[$index]}
 											<li>
-											{include file="../../templates/common/projectInvite.tpl" }
+												<p>Invitation: {$smartyProjInvites['0']['projectID']}</p>
+												{include file="../../templates/common/projectInvite.tpl" }
 											</li>
 										{/for}
 									</ul>
