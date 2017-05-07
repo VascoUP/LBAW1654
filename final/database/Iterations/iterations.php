@@ -1,13 +1,29 @@
 <?
 
+function getProjectIterations($projID){
+	try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT * FROM Iteration WHERE projectID = ?");		
+			$stmt->execute(array($projID));
+			$result = $stmt->fetchAll();
+	} catch(Exception $e) {
+			return $e->getMessage();
+	}
+	
+	return $result;
+}
+
 function getInfoIteration($itID){
 	try {
 			global $conn;
 			$stmt = $conn->prepare("SELECT * FROM Iteration WHERE iterationID = ?");		
 			$stmt->execute(array($itID));
+			$result = $stmt->fetchAll();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
+		
+	return $result;
 }
 
 function updateIteration($description, $startDate, $max, $itID){
@@ -49,12 +65,12 @@ function updateName($itID){
 		}
 }
 
-function addIteration($name, $description, $startDate, $max, $dueDate){
+function addIteration($ID, $name, $description, $startDate, $max, $dueDate){
 	try {
 		global $conn;
-		
-		$stmt = $conn->prepare("INSERT INTO Iteration(name, description, startDate, dueDate, maximumEffort)
-								VALUES (:name, :description, :startDate, :dueDate, :max)");						
+		$stmt = $conn->prepare("INSERT INTO Iteration(projectID, name, description, startDate, dueDate, maximumEffort)
+								VALUES (:projID, :name, :description, :startDate, :dueDate, :max)");						
+		$stmt->bindParam(':projID', $ID);
 		$stmt->bindParam(':name', $name);
 		$stmt->bindParam(':description', $description);
 		$stmt->bindParam(':startDate', $startDate);
@@ -64,6 +80,20 @@ function addIteration($name, $description, $startDate, $max, $dueDate){
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
+}
+
+function numberTasks($idIt){
+	try {
+		global $conn;
+		
+		$stmt = $conn->prepare("SELECT COUNT(*) AS counter FROM Task WHERE Task.iterationID = ?");						
+		$stmt->execute(array($idIt));
+		$result = $stmt->fetchAll();
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+	
+	return $result['0']['counter'];
 }
 
 ?>

@@ -1,5 +1,6 @@
 
   <link href="{$BASE_URL}css/pages/taskList.css" rel='stylesheet'>
+  
   <div class="container">
     <div class="card card-container">
           <h2>Iterations</h2>
@@ -20,35 +21,25 @@
                   <th class='column join button'></th>
                 </tr>
               </thead>
+			  {for $i=0 to ($smartyIterations|@count-1)}
               <tbody>
                 <tr>
                   <td class='hidden-xs text-center'><i class='fa fa-question fa-2x text-primary'></i></td>
                   <td>
-                    <h4><a href='#'>Iteration 1</a></h4>
+                    <h4><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/iterationPage.php?itID={$smartyIterations[$i]['iterationid']}">{$smartyIterations[$i]['name']}</a></h4>
                   </td>
-                  <td class='text-center hidden-xs hidden-sm'><a href='#'>2</a></td>
-                  <td class='text-center hidden-xs hidden-sm'><a href='#'>03-04-2017</a></td>
-                  <td class='text-center hidden-xs hidden-sm'><a href='#'>10-04-2017</a></td>
+                  <td class='text-center hidden-xs hidden-sm'><a>{$smartyIterationsCounter[$i]}</a></td>
+                  <td class='text-center hidden-xs hidden-sm'><a>{$smartyIterations[$i]['startdate']}</a></td>
+                  <td class='text-center hidden-xs hidden-sm'><a>{$smartyIterations[$i]['duedate']}</a></td>
                   <td>
-                    <button id="editIteration" type="submit" class="btn btn-warning">Edit Iteration</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class='hidden-xs text-center'><i class='fa fa-exclamation fa-2x text-danger'></i></td>
-                  <td>
-                    <h4><a href='#'>Iteration 2</a></h4>
-                  </td>
-                  <td class='text-center hidden-xs hidden-sm'><a href='#'>1</a></td>
-                  <td class='text-center hidden-xs hidden-sm'><a href='#'>11-04-2017</a></td>
-                  <td class='text-center hidden-xs hidden-sm'><a href='#'>18-04-2017</a></td>
-                  <td>
-                    <button id="editIteration" type="submit" class="btn btn-warning">Edit Iteration</button>
+					<a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/editIteration.php?itID={$smartyIterations[$i]['iterationid']}">Edit Iteration</a>
                   </td>
                 </tr>
               </tbody>
+			  {/for}
             </table>
           </div>
-         <button id="addIteration" type="submit" class="btn btn-success">Add Iteration</button>
-    </div>
+         <a id="addIteration" role="button" class="btn btn-success" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/createIteration.php?projID={$smartyProjID}">Add Iteration</a>
+	</div>
   </div>
 </div>

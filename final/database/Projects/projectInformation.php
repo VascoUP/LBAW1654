@@ -38,4 +38,20 @@
 
     return $resultCoord['0']['username'];
   }
+  
+  function getProjectTags($id){
+	  try {
+      global $conn;
+      $stmt = $conn->prepare("SELECT Tag.name AS name
+                              FROM Tag, TagProject
+                              WHERE TagProject.projectID = ?
+							  AND Tag.tagID = TagProject.tagID");		
+      $stmt->execute(array($id));
+      $result = $stmt->fetchAll();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+
+    return $result; 
+  }
 ?>

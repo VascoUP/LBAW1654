@@ -47,7 +47,7 @@
                         Edit Project </a>
                     </li>
 					<li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/projectIterations.php'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/projectIterations.php?projID={$smartyProjID}'>
                         <i class='glyphicon glyphicon-ok'></i>
                         Iterations </a>
                     </li>

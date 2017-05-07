@@ -34,6 +34,19 @@
                     </div>
             </div>
             </fieldset>
+			
+			<fieldset>
+            <!-- Form Name -->
+            <legend class="tab">Project Tags</legend>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="tags">Tags</label>  
+                    <div class="col-md-4">
+                        <input id="dtags" name="tags" type="text" placeholder="{$smartyProjTags}" class="form-control form-style input-md">
+                        <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Tags</button>
+                    </div>
+            </div>
+            </fieldset>
 
             <fieldset>
             <!-- Form Name -->

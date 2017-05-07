@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="card card-container">
-        <form class="form-horizontal">
+        <form action="{$BASE_URL}actions/projects/createIteration.php?projID={$smartyProjID}" method="post" class="form-horizontal">
         <fieldset>
         <!-- Form Name -->
             <legend>Add Iteration</legend>
@@ -31,7 +31,7 @@
             <label class="col-md-4 control-label" for="StartDate">Start Date</label>  
             <div class="col-md-4">
                 <div class="col-md-4">
-                    <input type="date" value="2017-03-07" id="StartDate" name="StartDate" class="form-control form-style input-md">
+                    <input type="date" value="2017-05-16" id="StartDate" name="StartDate" class="form-control form-style input-md">
                 </div>
             </div>
             </div>
@@ -40,7 +40,7 @@
             <label class="col-md-4 control-label" for="DueDate">Due Date</label>  
             <div class="col-md-4">
                 <div class="col-md-4">
-                    <input type="date" value="2017-03-07" id="DueDate" name="DueDate" class="form-control form-style input-md">
+                    <input type="date" value="2017-05-16" id="DueDate" name="DueDate" class="form-control form-style input-md">
                 </div>
             </div>
             </div>
@@ -50,7 +50,7 @@
             <label class="col-md-4 control-label" for="Description">Description (max 100 words)</label>
             <div class="col-md-4">   
                 <div class="col-md-4">                     
-                    <textarea class="form-control form-style" rows="5" cols="30"  id="Description" name="Description">Description</textarea>
+                    <textarea class="form-control form-style" rows="5" cols="30" placeholder="Description" id="Description" name="Description"></textarea>
                 </div>
             </div>
             </div>
@@ -58,7 +58,7 @@
             <div class="form-group">
             <label class="col-md-4 control-label" ></label>  
             <div class="col-md-4">
-                <a href="#" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Add Task</a>
+                <button type=submit" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Add Task</button>
             </div>
             </div>
 
