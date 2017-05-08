@@ -1,21 +1,22 @@
 <?php
 	function inviteToProject($user, $project){
+		$invitedate = date("Y-m-d");
 		try{
 			global $conn;
 
-			$invitedate = date('Y-m-d');
+			$invitedate = date("Y-m-d");
 			$userStatusProject = 'invited';
-			$stmt = $conn->prepare("INSERT INTO ProjectUsers(userID, projectID, inviteDate, userStatus) 
-									VALUES(:userID, :projectID, :inviteDate, :userStatus)");
+			$stmt = $conn->prepare("INSERT INTO ProjectUsers(userID, projectID, inviteDate, userStatusProject) 
+									VALUES(:userID, :projectID, :inviteDate, :userStatusProject)");
 			$stmt->bindParam(':userID', $user);
 			$stmt->bindParam(':projectID', $project);
-			$stmt->bindParam(':inviteDate', $inviteDate);
-			$stmt->bindParam(':userStatus', $userStatusProject);
+			$stmt->bindParam(':inviteDate', $invitedate);
+			$stmt->bindParam(':userStatusProject', $userStatusProject);
 			$stmt->execute();
 			
 		}
 		 catch(Exception $e) {
-			return $e->getMessage();
+			return $e->getMessage() . " - " . $invitedate;
 		}
 	}
 	
@@ -24,7 +25,7 @@
 			try{
 				global $conn;
 				
-				if(tagExists($tag, $project)
+				if(tagExists($tag, $project))
 					return;
 				
 				$stmt = $conn->prepare("SELECT *
@@ -32,7 +33,7 @@
 										WHERE name = ?");
 				$stmt->execute(array($tag));
 				$result = $stmt->fetchAll();
-				
+			
 				if(count($result) == 0){
 					$stmt = $conn->prepare("INSERT INTO Tag(name) VALUES(:name)");
 					$stmt->bindParam(':name', $tag);
@@ -49,7 +50,7 @@
 				$stmt->bindParam(':tagID', $tagID);
 				$stmt->bindParam(':projID', $id);
 				$stmt->execute();
-				
+			
 			}
 			 catch(Exception $e) {
 				return $e->getMessage();
