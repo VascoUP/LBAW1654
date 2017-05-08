@@ -104,7 +104,8 @@ input::-webkit-input-placeholder {
 	max-width: 260px;
 }
 
-#update, #addTask, #create, #delete, #deleteProj{
+#update, #addTask, #create, #delete, #deleteProj, #editName,
+#editDates, #editEffort, #editDescription{
 	display: table;
     margin: 0 auto;
 }

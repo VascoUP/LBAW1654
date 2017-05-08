@@ -78,6 +78,19 @@ function updateDueDate($dueDate, $itID){
 		}
 }
 
+function updateDates($startDate, $dueDate, $itID){
+	try {
+			global $conn;
+			$stmt = $conn->prepare("UPDATE Iteration
+									SET startDate = ?, dueDate = ?
+									WHERE iterationID = ?");		
+			$stmt->execute(array($startDate, $dueDate, $itID));
+	
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+}
+
 function updateName($name, $itID){
 	try {
 			global $conn;

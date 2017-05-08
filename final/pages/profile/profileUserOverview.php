@@ -7,7 +7,6 @@
   	$smarty->assign('smartyUsrInfo', $userInfo);
 
 	$projectInvites = invitedProjects($userInfo[0][userid]);
-	echo "<p>" . print_r($projectInvites) . "</p>";
   	$smarty->assign('smartyProjInvites', $userInfo);
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');

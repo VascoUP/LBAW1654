@@ -4,18 +4,20 @@
 
 	$id = $_GET['itID'];
 	
-	foreach($_POST as $key => $val){
-		if($key == 'itName')
-			updateName($_POST['itName'], $id);
-		else if($key == 'maximum')
-			updateMaximum($_POST['maximum'], $id);
-		else if($key == 'StartDate')
+	if($_POST['ItName'])
+		updateName($_POST['ItName'], $id);	
+	else if($_POST['maximum'])
+		updateMaximum($_POST['maximum'], $id);
+	else if($_POST['StartDate'] || $_POST['DueDate']){
+		if($_POST['StartDate'] && $_POST['DueDate'])
+			updateDates($_POST['StartDate'], $_POST['DueDate'], $id);
+		else if($_POST['StartDate'])
 			updateStartDate($_POST['StartDate'], $id);
-		else if($key == 'DueDate')
-			updateDueDate($_POST['DueDate'], $id);
-		else if($key == 'Description')
-			updateDescription($_POST['Description'], $id);
-	}
+		else if($_POST['DueDate'])
+			updateDueDate($_POST['DueDate'], $id);		
+	}	
+	else if($_POST['Description'])
+		updateDescription($_POST['Description'], $id);
  
   $_SESSION['success_messages'][] = 'Iteration updated successfully';  
   header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?itID='.$id);
