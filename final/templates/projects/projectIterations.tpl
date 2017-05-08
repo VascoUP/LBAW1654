@@ -21,8 +21,8 @@
                   <th class='column join button'></th>
                 </tr>
               </thead>
-			  {for $i=0 to ($smartyIterations|@count-1)}
               <tbody>
+			  {for $i=0 to ($smartyIterations|@count-1)}
                 <tr>
                   <td class='hidden-xs text-center'><i class='fa fa-question fa-2x text-primary'></i></td>
                   <td>
@@ -35,8 +35,8 @@
 					<a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/editIteration.php?itID={$smartyIterations[$i]['iterationid']}">Edit Iteration</a>
                   </td>
                 </tr>
+				{/for}
               </tbody>
-			  {/for}
             </table>
           </div>
          <a id="addIteration" role="button" class="btn btn-success" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/createIteration.php?projID={$smartyProjID}">Add Iteration</a>

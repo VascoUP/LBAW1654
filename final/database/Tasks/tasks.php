@@ -7,9 +7,27 @@ function getInfoTask($taskID){
 									FROM Task, Iteration WHERE taskID = ? 
 									AND Iteration.iterationID = Task.iterationID");		
 			$stmt->execute(array($taskID));
+			$result = $stmt->fetchAll();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
+		
+		return $result;
+}
+
+function getNumberUsers($taskID){
+	try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT COUNT(*) AS counter
+									FROM TaskUser
+									WHERE taskID = ?");		
+			$stmt->execute(array($taskID));
+			$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+		
+		return $result['0']['counter'];
 }
 
 function updateTask($name, $priority, $effort, $taskStatus, $id){
@@ -38,9 +56,11 @@ function updateTaskDescription($description, $id){
 		}
 }
 
-function addTask($name, $priority, $description, $effort, $taskStatus, $itID){
+function addTask($name, $priority, $description, $effort, $itID){
 	try {
 		global $conn;
+		
+		$taskStatus = 'unassigned';
 		
 		$stmt = $conn->prepare("INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus)
 								VALUES (:iterationID, :priority, :description, :name, :effort, :taskStatus)");						

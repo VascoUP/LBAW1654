@@ -151,3 +151,8 @@ h2{
   margin-bottom: 7px;
 }
 
+#addTaskIteration{
+	display: table;
+    margin: 10px auto;
+}
+

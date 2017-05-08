@@ -135,4 +135,18 @@ function numberTasks($idIt){
 	return $result['0']['counter'];
 }
 
+function getTasks($idIt){
+	try {
+		global $conn;
+		
+		$stmt = $conn->prepare("SELECT * FROM Task WHERE iterationID = ?");						
+		$stmt->execute(array($idIt));
+		$result = $stmt->fetchAll();
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+	
+	return $result;
+}
+
 ?>

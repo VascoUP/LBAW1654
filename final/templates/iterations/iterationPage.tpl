@@ -10,7 +10,10 @@
 			<div class="project-info-box">
 				<p class="text-style-2">{$smartyIterations['0']['name']}</p>
 				<p class="text-style-5">{$smartyIterations['0']['description']}</p>
+				<br>
 				<p class="text-style-6">This is where you'll find the project tasks for {$smartyIterations['0']['name']}</p>
+				<a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/editIteration.php?itID={$smartyID}">Edit Iteration</a>
+				{if $smartyTaskNumber != 0}
 				<hr class="featurette-divider">
 				<div class="table-responsive">
 					<table class="task table">
@@ -22,41 +25,30 @@
                             </th>
                             <th class="column state">State</th>
                             <th class="column priority">Priority</th>
-                            <th class="column due date">Due date</th>
                             <th class="column workers">Workers</th>
                             <th class="column join button"></th>
                         </tr>
                     </thead>
+					
                     <tbody>
+					{for $i=0 to ($smartyTasks|@count-1)}
                         <!-- Tasks -->
                         <tr>
                             <td class="task entry"><i class="fa fa-question fa-2x text-primary"></i></td>
                             <td>
-                                <h4><a href="#">Add search bar</a><br><small>Searches only users for now</small></h4>
+                                <h4><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$smartyTasks[$i]['taskid']}">{$smartyTasks[$i]['name']}</a><br><small>{$smartyTasks[$i]['description']}</small></h4>
                             </td>
-                            <td class="task-info state">Unassigned</td>
-                            <td class="task-info priority">High</td>
-                            <td class="task-info due date">1/5/2017<br><small><i class="fa fa-clock-o"></i> (2 months left) </small></td>
-                            <td class="task-info workers">0/2</td>
+                            <td class="task-info state">{$smartyTasks[$i]['taskStatus']}</td>
+                            <td class="task-info priority">{$smartyTasks[$i]['priority']}</td>
+                            <td class="task-info workers">{$smartyNumberUsers[$i]}</td>
                             <td> <button class="btn btn-warning">Request to join task</button> </td>
                         </tr>
-
-                        <tr>
-                            <td class="task entry"><i class="fa fa-exclamation fa-2x text-danger"></i></td>
-                            <td>
-                                <h4><a href="#">Set up color schemes</a><br><small></small></h4>
-                            </td>
-                            <td class="task-info state">Active</td>
-                            <td class="task-info priority">Medium</td>
-                            <td class="task-info due date">28/3/2017<br><small><i class="fa fa-clock-o"></i> (25 days left) </small></td>
-                            <td class="task-info workers">1/2</td>
-                            <td> <button class="join button">Request to join task</button> </td>
-                        </tr>
-
+					{/for}
                     </tbody>
 					</table>
 				</div>
-				<button class="btn btn-success">Add Task</button>
+				{/if}
+				<a id="addTaskIteration" role="button" class="btn btn-success" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/createTask.php?itID={$smartyID}">Add Task</a>
 			</div>
 		</div>
 	</div>
