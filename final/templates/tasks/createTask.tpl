@@ -41,7 +41,7 @@
                 <label class="col-md-4 control-label" for="Description">Description (max 100 words)</label>
                 <div class="col-md-4">   
                     <div class="col-md-4">                     
-                        <textarea class="form-control form-style" rows="5" cols="30"  id="Description" name="Description">Description</textarea>
+                        <textarea class="form-control form-style" rows="5" cols="30"  id="Description" name="Description"></textarea>
                     </div>
                 </div>
             </div>

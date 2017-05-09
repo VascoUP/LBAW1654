@@ -294,83 +294,83 @@ INSERT INTO Iteration(projectID, description, startDate, maximumEffort) VALUES (
 INSERT INTO Iteration(projectID, description, startDate, maximumEffort) VALUES (19, 'First race', '2017-02-02', 90);
 INSERT INTO Iteration(projectID, description, startDate, maximumEffort) VALUES (20, 'Tag 1', '2017-02-02', 90);
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (1, 1, 1, 'We need to implement the sum operation', 'Sum opperation', 10, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (2, 1, 1, 'We need to implement the minus operation', 'Minus opperation', 10, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (3, 1, 2, 'We need to implement the divison operation', 'Divison opperation', 8, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (4, 1, 2, 'We need to implement the multiplication operation', 'Multiplication opperation', 8, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (1, 1, 'We need to implement the sum operation', 'Sum opperation', 10, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (1, 1, 'We need to implement the minus operation', 'Minus opperation', 10, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (1, 2, 'We need to implement the divison operation', 'Divison opperation', 8, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (1, 2, 'We need to implement the multiplication operation', 'Multiplication opperation', 8, 'completed');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (5, 2, 1, 'Implement the the edit profile', 'Edit profile', 5, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (6, 2, 1, 'Implement the restaurant main page', 'Restaurant page', 20, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (7, 2, 1, 'Implement the search page', 'Search page', 10, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (8, 2, 2, 'Implement the edit restaurant page', 'Edit restaurant edit page', 5, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (9, 2, 2, 'Implement the restaurant menu page', 'Menu page', 15, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (10, 2, 3, 'Implement a search organizer', 'Search organizer', 5, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (11, 2, 4, 'Implement a top 5 restaurants', 'Top5', 5, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (12, 2, 5, 'CSS review', 'CSS', 10, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (13, 2, 10, 'Site main page', 'Main page', 20, 'completed');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (14, 2, 10, 'Create login', 'Login', 10, 'completed');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (15, 2, 10, 'Create register', 'Register', 10, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (2, 1, 'Implement the the edit profile', 'Edit profile', 5, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (2, 1, 'Implement the restaurant main page', 'Restaurant page', 20, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (2, 1, 'Implement the search page', 'Search page', 10, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (2, 2, 'Implement the edit restaurant page', 'Edit restaurant edit page', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (2, 2, 'Implement the restaurant menu page', 'Menu page', 15, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (2, 3, 'Implement a search organizer', 'Search organizer', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (2, 4, 'Implement a top 5 restaurants', 'Top5', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (2, 5, 'CSS review', 'CSS', 10, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (2, 10, 'Site main page', 'Main page', 20, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (2, 10, 'Create login', 'Login', 10, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (2, 10, 'Create register', 'Register', 10, 'completed');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (16, 3, 1, 'JavaScript to login', 'JavScript login', 10, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (17, 3, 1, 'JavaScript to register', 'Sum opperation', 10, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (3, 1, 'JavaScript to login', 'JavScript login', 10, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (3, 1, 'JavaScript to register', 'Sum opperation', 10, 'unassigned');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (18, 4, 10, 'Start the main class', 'Main class', 10, 'completed');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (19, 4, 10, 'Start the game class', 'Game class', 10, 'completed');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (20, 4, 10, 'Draw the characters', 'Characters', 10, 'completed');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (21, 4, 10, 'Draw the background', 'Background', 10, 'completed');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (22, 4, 10, 'State machine', 'State machine', 10, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (4, 10, 'Start the main class', 'Main class', 10, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (4, 10, 'Start the game class', 'Game class', 10, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (4, 10, 'Draw the characters', 'Characters', 10, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (4, 10, 'Draw the background', 'Background', 10, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (4, 10, 'State machine', 'State machine', 10, 'completed');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (23, 5, 10, 'Draw the background', 'Background', 10, 'completed');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (24, 5, 10, 'State machine', 'State machine', 10, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (5, 10, 'Draw the background', 'Background', 10, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (5, 10, 'State machine', 'State machine', 10, 'completed');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (25, 6, 10, 'Purchase 5 cameras and props', 'Purchase Equipment', 10, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (26, 6, 10, 'Buy 3 microphones', 'Obtain Microphones', 5, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (27, 6, 1, 'Fix the directors chair', 'Fixing Instruments', 5, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (28, 6, 3, 'Review actor roles', 'Review Roles', 20, 'completed');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (29, 6, 5, 'Begin movie production', 'Start Recording', 20, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (6, 10, 'Purchase 5 cameras and props', 'Purchase Equipment', 10, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (6, 10, 'Buy 3 microphones', 'Obtain Microphones', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (6, 1, 'Fix the directors chair', 'Fixing Instruments', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (6, 3, 'Review actor roles', 'Review Roles', 20, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (6, 5, 'Begin movie production', 'Start Recording', 20, 'completed');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (30, 7, 5, 'Buy materials for construction','Buy Materials', 10, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (31, 7, 5, 'Start Foundation work', 'Lay the foundation for the building', 5, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (32, 7, 5, 'Assert last minute details about the construction', 'Finish contruction plan', 5, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (33, 7, 10, 'Use social networks to find new participants for the project', 'Find Volunteers', 10, 'completed');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (7, 5, 'Buy materials for construction','Buy Materials', 10, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (7, 5, 'Start Foundation work', 'Lay the foundation for the building', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (7, 5, 'Assert last minute details about the construction', 'Finish contruction plan', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (7, 10, 'Use social networks to find new participants for the project', 'Find Volunteers', 10, 'completed');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (34, 8, 4, 'Purchase some violins and flutes', 'Purchase Equipment', 10, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (35, 8, 10, 'Initiate Recorder Lessons', 'Recorcer lessons', 5, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (36, 8, 3, 'Distribute the music sheets', 'Assing Sheets', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (8, 4, 'Purchase some violins and flutes', 'Purchase Equipment', 10, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (8, 10, 'Initiate Recorder Lessons', 'Recorcer lessons', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (8, 3, 'Distribute the music sheets', 'Assing Sheets', 5, 'unassigned');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (37, 9, 4, 'Start JSON', 'Implement some JSON', 10, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (38, 9, 10, 'Clean DB', 'Clean Database', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (9, 4, 'Start JSON', 'Implement some JSON', 10, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (9, 10, 'Clean DB', 'Clean Database', 5, 'unassigned');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (39, 10, 4, 'Clean eletronic microscopes', 'Clean eletronic Microscopes', 10, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (40, 10, 10, 'Check study', 'Check scientific studies about the issue', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (10, 4, 'Clean eletronic microscopes', 'Clean eletronic Microscopes', 10, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (10, 10, 'Check study', 'Check scientific studies about the issue', 5, 'unassigned');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (41, 11, 4, 'Geo Measurements', 'Perform geographic mesurements of plates', 10, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (42, 11, 10, 'Find some volunteers', 'Requestion Volunteers', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (11, 4, 'Geo Measurements', 'Perform geographic mesurements of plates', 10, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (11, 10, 'Find some volunteers', 'Requestion Volunteers', 5, 'unassigned');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (43, 12, 4, 'Buy tools for gardening', 'Buy Equipment', 10, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (44, 12, 10, 'Keep the lawn clear', 'Clean the Lawn', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (12, 4, 'Buy tools for gardening', 'Buy Equipment', 10, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (12, 10, 'Keep the lawn clear', 'Clean the Lawn', 5, 'unassigned');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (45, 13, 4, ' Start Support Group', 'Start Group', 10, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (46, 13, 10, 'Record Lessons', 'Record the lessons', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (13, 4, ' Start Support Group', 'Start Group', 10, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (13, 10, 'Record Lessons', 'Record the lessons', 5, 'unassigned');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (47, 14, 4, 'Buy tools', 'Purchase Equipment', 10, 'active');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (48, 14, 10, 'Begin construction', 'Construction start', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (14, 4, 'Buy tools', 'Purchase Equipment', 10, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (14, 10, 'Begin construction', 'Construction start', 5, 'unassigned');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (49, 15, 4, 'Implement AI', 'AI Implementation', 10, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (50, 15, 10, 'Implement Tests', 'Implement Tests', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (15, 4, 'Implement AI', 'AI Implementation', 10, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (15, 10, 'Implement Tests', 'Implement Tests', 5, 'unassigned');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (51, 16, 4, 'Clean microscopes', 'Clean Equipment', 10, 'unassigned');
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (52, 16, 10, 'Start analysis', 'Begin analysis', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (16, 4, 'Clean microscopes', 'Clean Equipment', 10, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (16, 10, 'Start analysis', 'Begin analysis', 5, 'unassigned');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (54, 17, 10, 'Start Project', 'Project start', 5, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (17, 10, 'Start Project', 'Project start', 5, 'active');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (55, 18, 4, 'Begin lessons', 'Begin lessons', 10, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (18, 4, 'Begin lessons', 'Begin lessons', 10, 'unassigned');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (56, 19, 10, 'Start with light jogging', 'Jogging practise', 5, 'active');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (19, 10, 'Start with light jogging', 'Jogging practise', 5, 'active');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (57, 20, 10, 'Run up and down', 'Running', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (20, 10, 'Run up and down', 'Running', 5, 'unassigned');
 
-INSERT INTO Task(taskID, iterationID, priority, description, name, effort, taskStatus) VALUES (58, 21, 10, 'Beging HTML implementation', 'Start HTML', 5, 'unassigned');
+INSERT INTO Task(iterationID, priority, description, name, effort, taskStatus) VALUES (21, 10, 'Beging HTML implementation', 'Start HTML', 5, 'unassigned');
 
 
 INSERT INTO UserSite(username, email, password, description, type, userStatus) VALUES ('METRAP', 'metrap@gmail.com', 'metaBoss', 'I like to play games', 'coordinator', 'active');
@@ -636,7 +636,7 @@ EXECUTE PROCEDURE checkIterarions();
 CREATE OR REPLACE FUNCTION checkEffort()
 	RETURNS TRIGGER AS $checkEffort$
 BEGIN
-	IF ((SELECT SUM (Task.effort) FROM Task INNER JOIN Iteration ON Task.iterationID = Iteration.iterationID) > Iteration.maximumEffort)
+	IF ((SELECT SUM (Task.effort) FROM Task INNER JOIN Iteration ON Task.iterationID = Iteration.iterationID) > (SELECT maximumEffort FROM Iteration WHERE Iteration.iterationID = NEW.iterationID))
         THEN RAISE EXCEPTION ' Effort cannot surpass maximum effort for an iterarion! ';
         END IF;
 	RETURN NEW;
@@ -679,7 +679,7 @@ RETURNS TRIGGER AS $changeUser$
 $changeUser$ LANGUAGE plpgsql;
 
 CREATE TRIGGER CheckChangeUser
-AFTER INSERT ON ProjectCoordinator 
+AFTER INSERT ON ProjectCoordinator
 FOR EACH ROW 
 EXECUTE PROCEDURE changeUser();
 		
