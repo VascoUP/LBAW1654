@@ -27,6 +27,7 @@
                         <tbody>
                             <!-- Tasks -->
                             <tr>
+                                <td class="task-info state">{$smartyInfo['0']['status']}</td>
                                 <td class="task-info priority">
 								{if $smartyInfo['0']['priority'] < 5}
 								Low
@@ -36,6 +37,7 @@
 								High
 								{/if}
 								</td>
+                                <td class="task-info effort">{$smartyInfo['0']['effort']}</td>
                                 <td class="task-info workers">{$smartyWorkers}</td>
                             </tr>
 
@@ -45,6 +47,7 @@
                 </div>
                 <div class="task-userbuttons">
                     <button type="button" class="btn btn-success btn-sm">Request to join task</button>
+                    <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/editTask.php?taskID={$smartyTaskID}" class="btn btn-warning btn-sm">Edit Task</a>
 					<button type="button" class="btn btn-danger btn-sm">Conclude Task</button>
                 </div>
             </div>
