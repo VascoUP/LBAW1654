@@ -1,5 +1,5 @@
 <?php
-  include($BASE_DIR .'database/Users/userInformation.php');
+  include_once($BASE_DIR .'database/Users/userInformation.php');
   
   function getProjectInformation($ID) {
     try {
@@ -19,7 +19,7 @@
                   ProjectUsers 
                   ON ProjectUsers.projectID = Project.projectID
                 WHERE Project.projectID = ?
-                GROUP BY Project.projectID");		
+                GROUP BY Project.projectID");
       $stmt->execute(array($ID, $ID));
       $result = $stmt->fetchAll();
     } catch(Exception $e) {
