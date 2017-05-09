@@ -3,11 +3,11 @@
 
 <div class="container">
     <div class="card card-container">
-        <form class="form-horizontal">
-        <fieldset>
-        <!-- Form Name -->
-            <legend>Edit Task</legend>
+        <form class="form-horizontal" action="{$BASE_URL}actions/projects/editTask.php?taskID={$smartyTaskID}" method="post">
+        <h2>Edit Task</h2>
 
+		<fieldset>
+		<legend class="tab">Task name</legend>
         <!-- Text input-->
             <div class="form-group">
             <label class="col-md-4 control-label" for="TaskName">Identification</label>  
@@ -15,53 +15,99 @@
                 <input id="TaskName" name="TaskName" type="text" placeholder="TaskName" class="form-control form-style input-md">
             </div>
             </div>
+			
+			<div class="form-group">
+            <label class="col-md-4 control-label" ></label>  
+            <div class="col-md-4">
+                <button type="submit" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Edit Name</button>
+            </div>
+            </div>
+		</fieldset>
 
+		<fieldset>
+		<legend class="tab">Priority</legend>
             <div class="form-group">
             <label class="col-md-4 control-label" for="Priority">Priority</label>  
             <div class="col-md-4">
                 <input id="Priority" name="Priority" type="text" placeholder="Priority" class="form-control form-style input-md">
             </div>
             </div>
-
-            <div class="form-group">
-            <label class="col-md-4 control-label" for="DueDate">Due Date</label>  
+			
+			<div class="form-group">
+            <label class="col-md-4 control-label" ></label>  
             <div class="col-md-4">
-                <input type="date" value="2017-03-07" id="DueDate" name="DueDate" class="form-control form-style input-md">
+                <button type="submit" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Edit Priority</button>
             </div>
             </div>
-
+		</fieldset>
+		
+		<fieldset>
+		<legend class="tab">Effort</legend>
             <div class="form-group">
-            <label class="col-md-4 control-label" for="Status">Status</label> 
+            <label class="col-md-4 control-label" for="Effort">Effort</label>  
             <div class="col-md-4">
-                <select name="status" class="form-control form-style input-md" required>
-                    <option value="active">Active</option>
-                    <option value="unassgined">Unassigned</option>
-                    <option value="completed">Completed</option>
-                </select>
+                <input id="Effort" name="Effort" type="text" placeholder="Effort" class="form-control form-style input-md">
             </div>
             </div>
-
+			
+			<div class="form-group">
+            <label class="col-md-4 control-label" ></label>  
+            <div class="col-md-4">
+                <button type="submit" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Edit Effort</button>
+            </div>
+            </div>
+		</fieldset>
+		
+		<fieldset>
+		<legend class="tab">Status</legend>
+			
+			<div class="form-group">
+            <label class="col-md-4 control-label" ></label>  
+            <div class="col-md-4">
+                <button type="submit" id="addTask" name="completed" class="btn btn-warning"><span class="glyphicon glyphicon-thumbs-up"></span> Task Completed</button>
+            </div>
+            </div>
+		</fieldset>
+		
+		<fieldset>
+		<legend class="tab">New collaborators</legend>
             <div class="form-group">
-            <label class="col-md-4 control-label" for="Collaborators">Add Collaborators</label> 
+            <label class="col-md-4 control-label" for="Collaborators">Add Collaborator</label> 
             <div class="col-md-4">								
                 <div id="imaginary_container"> 
-                        <input type="text" class="form-control form-style input-md"  placeholder="Search" >
+                        <input type="text" class="form-control form-style input-md"  id = "Collaborators" name="Collaborators" placeholder="Search" >
                 </div>
             </div>
             </div>
+			<div class="form-group">
+            <label class="col-md-4 control-label" ></label>  
+            <div class="col-md-4">
+                <button type="submit" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Add collaborator</button>
+            </div>
+            </div>
+		</fieldset>
 
+		<fieldset>
+		<legend class="tab">Description</legend>
         <!-- Text input-->
             <div class="form-group">
             <label class="col-md-4 control-label" for="Description">Description (max 100 words)</label>
             <div class="col-md-4">                    
-                <textarea class="form-control form-style" rows="5" cols="30"  id="Description" name="Description">Description</textarea>
+                <textarea class="form-control form-style" rows="5" cols="30"  id="Description" name="Description"></textarea>
             </div>
             </div>
+			
+			<div class="form-group">
+            <label class="col-md-4 control-label" ></label>  
+            <div class="col-md-4">
+                <button type="submit" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Edit Description</button>
+            </div>
+            </div>
+		</fieldset>
 
             <div class="form-group">
             <label class="col-md-4 control-label" ></label>  
             <div class="col-md-4">
-                <a href="#" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Edit Task</a>
                 <a href="#" id="deleteTask" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up"></span> Delete Task</a>
             </div>
             </div>

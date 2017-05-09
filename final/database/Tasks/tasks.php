@@ -3,7 +3,7 @@
 function getInfoTask($taskID){
 	try {
 			global $conn;
-			$stmt = $conn->prepare("SELECT Task.name AS name, Task.priority AS priority, Task.description AS description, Task.effort AS effort, Iteration.name AS iterationName
+			$stmt = $conn->prepare("SELECT Task.name AS name, Task.priority AS priority, Task.description AS description, Task.effort AS effort, Task.taskStatus AS status, Iteration.name AS iterationName
 									FROM Task, Iteration WHERE taskID = ? 
 									AND Iteration.iterationID = Task.iterationID");		
 			$stmt->execute(array($taskID));
@@ -30,13 +30,52 @@ function getNumberUsers($taskID){
 		return $result['0']['counter'];
 }
 
-function updateTask($name, $priority, $effort, $taskStatus, $id){
+function updateName($name, $id){
 	try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Task
-									SET name = ?, priority = ?, effort = ?, taskStatus = ?
+									SET name = ?
 									WHERE taskID = ?");		
-			$stmt->execute(array($name, $priority, $effort, $taskStatus, $id));
+			$stmt->execute(array($name, $id));
+	
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+}
+
+function updatePriority($priority, $id){
+	try {
+			global $conn;
+			$stmt = $conn->prepare("UPDATE Task
+									SET priority = ?
+									WHERE taskID = ?");		
+			$stmt->execute(array($priority, $id));
+	
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+}
+
+function updateEffort($effort, $id){
+	try {
+			global $conn;
+			$stmt = $conn->prepare("UPDATE Task
+									SET effort = ?
+									WHERE taskID = ?");		
+			$stmt->execute(array($effort, $id));
+	
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+}
+
+function updateTaskStatus($id){
+	try {
+			global $conn;
+			$stmt = $conn->prepare("UPDATE Task
+									SET taskStatus = 'completed'
+									WHERE taskID = ?");		
+			$stmt->execute(array($id));
 	
 		} catch(Exception $e) {
 			return $e->getMessage();
@@ -93,7 +132,7 @@ function joinTask($userID, $taskID){
 		
 		$stmt = $conn->prepare("INSERT INTO TaskUser(taskID, userID)
 								VALUES (:taskID, :userID)");						
-		$stmt->bindParam(':taskID', $itID);
+		$stmt->bindParam(':taskID', $taskID);
 		$stmt->bindParam(':userID', $userID);
 		$stmt->execute();
 	} catch(Exception $e) {

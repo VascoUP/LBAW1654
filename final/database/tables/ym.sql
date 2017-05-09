@@ -682,6 +682,22 @@ CREATE TRIGGER CheckChangeUser
 AFTER INSERT ON ProjectCoordinator
 FOR EACH ROW 
 EXECUTE PROCEDURE changeUser();
+
+DROP FUNCTION IF EXISTS changeTaskStatus();
+CREATE FUNCTION changeTaskStatus()
+RETURNS TRIGGER AS $changeTaskStatus$
+	BEGIN
+		UPDATE Task
+		SET taskStatus = 'active'
+		WHERE taskID = NEW.taskID;
+		RETURN NEW;
+	END;
+$changeTaskStatus$ LANGUAGE plpgsql;
+
+CREATE TRIGGER changeTaskStatus
+AFTER INSERT ON TaskUser
+FOR EACH ROW 
+EXECUTE PROCEDURE changeTaskStatus();
 		
 
 SELECT Project.projectID AS "Project ID", Project.name AS "Project name", Tag.name AS "Tag name"
