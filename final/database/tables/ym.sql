@@ -593,7 +593,7 @@ INSERT INTO TaskUser(taskID, userID) VALUES (56,12);
 CREATE OR REPLACE FUNCTION checkAdmins()
 	RETURNS TRIGGER AS $checkAdmins$ 
 	BEGIN
-        IF (SELECT COUNT(*) FROM (SELECT DISTINCT * FROM UserSite WHERE type = 'administrator') AS Sel)  = 1 AND OLD.user_type = 'administrator'
+        IF (SELECT COUNT(*) FROM (SELECT DISTINCT * FROM UserSite WHERE type = 'administrator') AS Sel) = 1
         THEN RAISE EXCEPTION 'Website needs administrators! ';
         END IF;
         RETURN OLD;
@@ -607,7 +607,7 @@ EXECUTE PROCEDURE checkAdmins();
 CREATE OR REPLACE FUNCTION checkCoords()
 	RETURNS TRIGGER AS $checkCoords$ 
 	BEGIN
-        IF (SELECT COUNT(*) FROM (SELECT DISTINCT * FROM ProjectCoordinator WHERE projectID = NEW.projectID) AS Sel)  = 1 AND OLD.type = 'coordinator'
+        IF (SELECT COUNT(*) FROM (SELECT DISTINCT * FROM ProjectCoordinator WHERE projectID = NEW.projectID) AS Sel) = 1
         THEN RAISE EXCEPTION 'Project needs coordinators! ';
         END IF;
         RETURN OLD;

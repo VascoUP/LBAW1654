@@ -1,5 +1,6 @@
 <link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
+<script src="{$BASE_URL}javascript/users/confirmDelete.js"></script>
 
 <div class="container">
     <div class="card card-container">
@@ -97,7 +98,7 @@
             <div class="form-group">
             <label class="col-md-4 control-label" ></label>  
             <div class="col-md-4">
-                <a href="#" id="deleteTask" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up"></span> Delete Task</a>
+                <a href="{$BASE_URL}actions/projects/deleteTask.php?taskID={$smartyTaskID}" id="deleteTask" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up"></span> Delete Task</a>
             </div>
             </div>
 

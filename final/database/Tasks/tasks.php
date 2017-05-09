@@ -3,7 +3,7 @@
 function getInfoTask($taskID){
 	try {
 			global $conn;
-			$stmt = $conn->prepare("SELECT Task.name AS name, Task.priority AS priority, Task.description AS description, Task.effort AS effort, Task.taskStatus AS status, Iteration.name AS iterationName
+			$stmt = $conn->prepare("SELECT Task.name AS name, Task.priority AS priority, Task.description AS description, Task.effort AS effort, Task.taskStatus AS status, Iteration.name AS iterationName, Task.iterationID AS iterationID
 									FROM Task, Iteration WHERE taskID = ? 
 									AND Iteration.iterationID = Task.iterationID");		
 			$stmt->execute(array($taskID));
@@ -30,7 +30,7 @@ function getNumberUsers($taskID){
 		return $result['0']['counter'];
 }
 
-function updateName($name, $id){
+function updateTaskName($name, $id){
 	try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Task

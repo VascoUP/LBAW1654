@@ -31,7 +31,7 @@
                                 <td class="task-info priority">
 								{if $smartyInfo['0']['priority'] < 5}
 								Low
-								{else if $smartyInfo['0']['priority'] > 5 && $smartyInfo['0']['priority'] < 7}
+								{elseif $smartyInfo['0']['priority'] > 5 && $smartyInfo['0']['priority'] < 7}
 								Medium
 								{else}
 								High
@@ -48,7 +48,7 @@
                 <div class="task-userbuttons">
                     <button type="button" class="btn btn-success btn-sm">Request to join task</button>
                     <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/editTask.php?taskID={$smartyTaskID}" class="btn btn-warning btn-sm">Edit Task</a>
-					<button type="button" class="btn btn-danger btn-sm">Conclude Task</button>
+					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/completeTask.php?taskID={$smartyTaskID}" class="btn btn-danger btn-sm">Conclude Task</a>
                 </div>
             </div>
         </div>

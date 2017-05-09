@@ -6,7 +6,7 @@
 	$id = $_GET['taskID'];
 	
 	if($_POST['TaskName'])
-		updateName($_POST['TaskName'], $id);	
+		updateTaskName($_POST['TaskName'], $id);	
 	else if($_POST['Priority'])
 		updatePriority($_POST['Priority'], $id);
 	else if($_POST['Effort'])
