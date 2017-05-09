@@ -9,8 +9,8 @@
         <div class="table-container">
             <div class="info-box">
                 <div class="info-box">
-                <p class="text-style-3">Add search bar</p>
-                <p class="text-style-5">Searches only users for now.</p>
+                <p class="text-style-3">{$smartyInfo['0']['name']}</p>
+                <p class="text-style-5">{$smartyInfo['0']['description']}</p>
                 <hr class="featurette-divider">
                 <div class="table-responsive">
                     <table class="task table">
@@ -19,7 +19,6 @@
                                 <th class="column state">State</th>
                                 <th class="column priority">Priority</th>
                                 <th class="column effort">Effort</th>
-                                <th class="column dueDate">Due Date</th>
                                 <th class="column workers">Workers</th>
                                 <th class="column join button"></th>
 
@@ -28,11 +27,18 @@
                         <tbody>
                             <!-- Tasks -->
                             <tr>
-                                <td class="task-info state">Unassigned</td>
-                                <td class="task-info priority">High</td>
-                                <td class="task-info effort">10</td>
-                                <td class="task-info dueDate">23-04-2017</td>
-                                <td class="task-info workers">0/2</td>
+                                <td class="task-info state">{$smartyInfo['0']['status']}</td>
+                                <td class="task-info priority">
+								{if $smartyInfo['0']['priority'] < 5}
+								Low
+								{elseif $smartyInfo['0']['priority'] > 5 && $smartyInfo['0']['priority'] < 7}
+								Medium
+								{else}
+								High
+								{/if}
+								</td>
+                                <td class="task-info effort">{$smartyInfo['0']['effort']}</td>
+                                <td class="task-info workers">{$smartyWorkers}</td>
                             </tr>
 
 
@@ -41,7 +47,8 @@
                 </div>
                 <div class="task-userbuttons">
                     <button type="button" class="btn btn-success btn-sm">Request to join task</button>
-                    <button type="button" class="btn btn-warning btn-sm">Edit Task</button>
+                    <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/editTask.php?taskID={$smartyTaskID}" class="btn btn-warning btn-sm">Edit Task</a>
+					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/completeTask.php?taskID={$smartyTaskID}" class="btn btn-danger btn-sm">Conclude Task</a>
                 </div>
             </div>
         </div>

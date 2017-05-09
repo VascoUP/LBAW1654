@@ -7,7 +7,7 @@
 	if (!$_POST['maximum'] || !$_POST['StartDate'] || !$_POST['Description']) {
 		$_SESSION['error_messages'][] = 'All fields are mandatory';
 		$_SESSION['form_values'] = $_POST;
-		header("Location: $BASE_URL" . 'pages/project/iteration/createIteration.php');
+		header("Location: $BASE_URL" . 'pages/project/iteration/createIteration.php?projID='.$id);
 		exit;
 	}
 

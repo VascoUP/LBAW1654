@@ -58,10 +58,6 @@
 		$stmt->bindParam(':projectStatus', $projStatus);
 		$stmt->execute();
 
-		$stmt = $conn->prepare("UPDATE UserSite 
-								SET type='coordinator' 
-								WHERE userID = ?");
-		$stmt->execute(array($userID));
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}

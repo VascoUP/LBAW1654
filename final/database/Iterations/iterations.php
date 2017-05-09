@@ -78,6 +78,19 @@ function updateDueDate($dueDate, $itID){
 		}
 }
 
+function updateDates($startDate, $dueDate, $itID){
+	try {
+			global $conn;
+			$stmt = $conn->prepare("UPDATE Iteration
+									SET startDate = ?, dueDate = ?
+									WHERE iterationID = ?");		
+			$stmt->execute(array($startDate, $dueDate, $itID));
+	
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+}
+
 function updateName($name, $itID){
 	try {
 			global $conn;
@@ -120,6 +133,20 @@ function numberTasks($idIt){
 	}
 	
 	return $result['0']['counter'];
+}
+
+function getTasks($idIt){
+	try {
+		global $conn;
+		
+		$stmt = $conn->prepare("SELECT * FROM Task WHERE iterationID = ?");						
+		$stmt->execute(array($idIt));
+		$result = $stmt->fetchAll();
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+	
+	return $result;
 }
 
 ?>
