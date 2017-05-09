@@ -11,8 +11,6 @@
 		updatePriority($_POST['Priority'], $id);
 	else if($_POST['Effort'])
 		updateEffort($_POST['Effort'], $id);
-	else if($_POST['completed'])
-		updateTaskStatus($id);
 	else if($_POST['Collaborators']){
 		$userID = getUserID($_POST['Collaborators']);
 		joinTask($userID, $id);

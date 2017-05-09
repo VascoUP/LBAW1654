@@ -59,17 +59,6 @@
 		</fieldset>
 		
 		<fieldset>
-		<legend class="tab">Status</legend>
-			
-			<div class="form-group">
-            <label class="col-md-4 control-label" ></label>  
-            <div class="col-md-4">
-                <button type="submit" id="addTask" name="completed" class="btn btn-warning"><span class="glyphicon glyphicon-thumbs-up"></span> Task Completed</button>
-            </div>
-            </div>
-		</fieldset>
-		
-		<fieldset>
 		<legend class="tab">New collaborators</legend>
             <div class="form-group">
             <label class="col-md-4 control-label" for="Collaborators">Add Collaborator</label> 
