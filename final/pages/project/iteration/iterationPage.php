@@ -9,7 +9,7 @@
 	$numberUsers = array();
 	 
 	foreach($tasks as $task){
-		$numberUsers = getNumberUsers($task['taskID']);
+		$numberUsers[] = getNumberUsers($task['taskID']);
 	}
 	
 	$smarty->assign('smartyIterations', $iterations);

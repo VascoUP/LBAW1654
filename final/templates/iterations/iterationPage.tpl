@@ -13,7 +13,7 @@
 				<br>
 				<p class="text-style-6">This is where you'll find the project tasks for {$smartyIterations['0']['name']}</p>
 				<a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/editIteration.php?itID={$smartyID}">Edit Iteration</a>
-				{if $smartyTaskNumber != 0}
+				{if $smartyTasks|@count != 0}
 				<hr class="featurette-divider">
 				<div class="table-responsive">
 					<table class="task table">
@@ -38,7 +38,7 @@
                             <td>
                                 <h4><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$smartyTasks[$i]['taskid']}">{$smartyTasks[$i]['name']}</a><br><small>{$smartyTasks[$i]['description']}</small></h4>
                             </td>
-                            <td class="task-info state">{$smartyTasks[$i]['taskStatus']}</td>
+                            <td class="task-info state">{$smartyTasks[$i]['taskstatus']}</td>
                             <td class="task-info priority">{$smartyTasks[$i]['priority']}</td>
                             <td class="task-info workers">{$smartyNumberUsers[$i]}</td>
                             <td> <button class="btn btn-warning">Request to join task</button> </td>

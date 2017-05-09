@@ -607,7 +607,7 @@ EXECUTE PROCEDURE checkAdmins();
 CREATE OR REPLACE FUNCTION checkCoords()
 	RETURNS TRIGGER AS $checkCoords$ 
 	BEGIN
-        IF (SELECT COUNT(*) FROM (SELECT DISTINCT * FROM ProjectCoordinator WHERE projectID = NEW.projectID) AS Sel)  = 1 AND OLD.user_type = 'coordinator'
+        IF (SELECT COUNT(*) FROM (SELECT DISTINCT * FROM ProjectCoordinator WHERE projectID = NEW.projectID) AS Sel)  = 1 AND OLD.type = 'coordinator'
         THEN RAISE EXCEPTION 'Project needs coordinators! ';
         END IF;
         RETURN OLD;
