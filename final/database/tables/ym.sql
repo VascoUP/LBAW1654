@@ -395,26 +395,26 @@ INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUse
 INSERT INTO UserSite(username, email, password, type, userStatus) VALUES ('ymUser20', 'ymUser20@gmail.com', '12345ym67890', 'user', 'active');
 
 
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (1, 1, 1, 'I cant print the operation result', '2017-03-22');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (2, 1, 2, 'I cant import the project', '2017-03-25');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (3, 2, 3, 'Background image doesnt load', '2017-02-11');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (4, 3, 4, 'Zombies are crazy', '2017-03-25');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (5, 7, 5, 'Where to buy flutes!?', '2017-02-23');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (6, 3, 6, 'Running in virtualBox scenario', '2017-03-12');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (7, 5, 7, 'Camera no2 will not work', '2017-03-26');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (8, 6, 8, 'I have no surf board, please help', '2017-05-05');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (9, 4, 9, 'How to use a state machine in C', '2017-03-26');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (10, 7, 10, 'Should we repaint the piano keys?', '2017-02-05');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (11, 8, 11, 'Help reinstalling OS', '2017-03-22');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (12, 8, 12, 'Linux has npm issues', '2017-03-25');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (13, 3, 1, 'Self presentation thread', '2017-02-11');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (14, 9, 3, 'Welcome to the project', '2017-03-25');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (15, 11, 13, 'When should we use JSON?', '2017-02-23');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (16, 15, 16, 'Mobility issues, seeking help', '2017-03-12');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (17, 14, 4, 'Investigation projects related with medical issues', '2017-03-26');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (18, 1, 5, 'I dont know how to code!!', '2017-05-05');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (19, 1, 6, 'The dates presented are previous to the creation of the project', '2017-03-26');
-INSERT INTO Thread(threadID, projectID, userID, title, date) VALUES (20, 2, 7, 'Work overload, seeking treatment!', '2017-02-05');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (1, 1, 'I cant print the operation result', '2017-03-22');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (1, 2, 'I cant import the project', '2017-03-25');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (2, 3, 'Background image doesnt load', '2017-02-11');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (3, 4, 'Zombies are crazy', '2017-03-25');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (7, 5, 'Where to buy flutes!?', '2017-02-23');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (3, 6, 'Running in virtualBox scenario', '2017-03-12');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (5, 7, 'Camera no2 will not work', '2017-03-26');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (6, 8, 'I have no surf board, please help', '2017-05-05');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (4, 9, 'How to use a state machine in C', '2017-03-26');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (7, 10, 'Should we repaint the piano keys?', '2017-02-05');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (8, 11, 'Help reinstalling OS', '2017-03-22');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (8, 12, 'Linux has npm issues', '2017-03-25');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (3, 1, 'Self presentation thread', '2017-02-11');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (9, 3, 'Welcome to the project', '2017-03-25');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (11, 13, 'When should we use JSON?', '2017-02-23');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (15, 16, 'Mobility issues, seeking help', '2017-03-12');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (14, 4, 'Investigation projects related with medical issues', '2017-03-26');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (1, 5, 'I dont know how to code!!', '2017-05-05');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (1, 6, 'The dates presented are previous to the creation of the project', '2017-03-26');
+INSERT INTO Thread(projectID, userID, title, date) VALUES (2, 7, 'Work overload, seeking treatment!', '2017-02-05');
 
 INSERT INTO Report(reportID, content, threadID, reportDate, reportStatus) VALUES (1,'a', 1,'2017-03-29', 'waiting');
 INSERT INTO Report(reportID, content, userID, reportDate, reportStatus) VALUES (2, 'b', 6,'2017-02-01', 'waiting');

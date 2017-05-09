@@ -52,7 +52,7 @@
                         Iterations </a>
                     </li>
                     <li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/projectForum.php'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/projectForum.php?projID={$smartyProjID}'>
                         <i class='glyphicon glyphicon-ok'></i>
                         Forum </a>
                     </li>

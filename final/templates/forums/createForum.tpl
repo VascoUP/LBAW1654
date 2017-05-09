@@ -2,7 +2,7 @@
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <div class="container">
     <div class="card card-container">
-        <form class="form-horizontal" action="{$BASE_URL}actions/projects/createThread.php?projID={$smartyProjID}" method="post">
+        <form class="form-horizontal" action="{$BASE_URL}actions/projects/createForum.php?projID={$smartyProjID}" method="post">
         <fieldset>
             <!-- Form Name -->
             <legend>Create Forum</legend>

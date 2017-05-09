@@ -50,6 +50,10 @@
     color: #e1f6f0;
 }
 
+#threadUser, #threadNumber, #threadComments{
+    color: #666666;
+}
+
 .posted.by{
     color: #666666;
 }

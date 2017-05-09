@@ -51,27 +51,29 @@
 	  try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Thread
-									SET name = ?
+									SET title = ?
 									WHERE threadID = ?");
 								
-			$stmt->execute(array($name,$id));
+			$stmt->execute(array($name, $id));
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
   }
 
-  function addForum($projID, $title, $date){
+  function addForum($projID, $userID, $title, $date){
 	  try {
 			global $conn;
-			$stmt = $conn->prepare("INSERT INTO Thread(projectID, title, date)
-									VALUES(:projID, :title, :date");
+			$stmt = $conn->prepare("INSERT INTO Thread(projectID, userID, title, date)
+									VALUES(:projID, :userID, :title, :date)");
 								
-			$stmt->bindParam(':projectID', $projID);
+			$stmt->bindParam(':projID', $projID);
+			$stmt->bindParam(':userID', $userID);
 			$stmt->bindParam(':title', $title);
 			$stmt->bindParam(':date', $date);
 			$stmt->execute();
+			echo "done";
 		} catch(Exception $e) {
-			return $e->getMessage();
+			echo $e->getMessage();
 		}
   }
   

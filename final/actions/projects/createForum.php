@@ -1,6 +1,7 @@
 <?php	
 	include_once('../../config/init.php');
-	include_once($BASE_DIR .'database/Threads/threads.php');  
+	include_once($BASE_DIR .'database/Threads/threads.php'); 
+include_once($BASE_DIR .'database/Users/userInformation.php'); 	
 
 	$id = $_GET['projID'];
 	
@@ -13,10 +14,11 @@
 	
 	$name = strip_tags($_POST['categoryName']);
 	$date = date('Y-m-d');
-	addForum($projID, $name, $date);
+	$userID = getUserID($_SESSION['username']);
+	addForum($id, $userID, $name, $date);
 	
 	$forumID = getThreads($id)['0']['threadid'];
  
   $_SESSION['success_messages'][] = 'Thread created successfully';  
- header('Location: ' .$BASE_URL.'pages/project/thread/forum.php?forumID='.$forumID);
+ header('Location: ' .$BASE_URL.'pages/project/forum/forum.php?forumID='.$forumID);
 ?>

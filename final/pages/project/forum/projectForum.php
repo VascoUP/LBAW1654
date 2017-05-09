@@ -2,7 +2,7 @@
   include_once('../../../config/init.php');
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
-	include_once($BASE_DIR .'database/Threads/threads.php')
+	include_once($BASE_DIR .'database/Threads/threads.php');
 	
 	$userInfo = getUserInformation($_SESSION['username']);
 	$smarty->assign('smartyUsrInfo', $userInfo);
@@ -14,7 +14,7 @@
   $smarty->assign('smartyProjID', $projID);
   
   $threads = getThreads($projID);
-  $smarty->assign('smartyThreads', $projID);
+  $smarty->assign('smartyThreads', $threads);
   
   $numberComments = array();
   $usernames = array();
@@ -23,15 +23,23 @@
   
   foreach($threads as $thread){
 	  $numberComments[] = numberOfComments($thread['threadid']);
-	  $userInfo = getUserInformationByID($thread['userid'])
-	  $usernames[] = $userInfo['username'];
+	  $userInfo = getUserInformationByID($thread['userid']);
+	  $usernames[] = $userInfo['0']['username'];
 	  $lastComment = lastComment($thread['threadid']);
-	  $lastCommentUser[] = getUserInformationByID($lastComment['userid'])['username'];
-	  $lastCommentDate[] = $lastComment['date'];
+	  $lastCommentInfo = getUserInformationByID($lastComment['0']['userid']);
+	  if(count($lastCommentInfo) != 0){
+		$lastCommentUser[] = $lastCommentInfo['0']['username'];
+		$lastCommentDate[] = $lastComment['0']['date'];
+	  }
   }
 
+  $smarty->assign('numberComments', $numberComments);
+  $smarty->assign('usernames', $usernames);
+  $smarty->assign('lastCommentUser', $lastCommentUser);
+  $smarty->assign('lastCommentDate', $lastCommentDate);
+  
   $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
   $smarty->display($BASE_DIR .'templates/projects/projectForum.tpl');
   
-  $smarty->display($BASE_DIR .'templates/common/footer.tpl'); 
+  $smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>
