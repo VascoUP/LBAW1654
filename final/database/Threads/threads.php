@@ -32,20 +32,35 @@
     return $result;
   }
   
-  function editThread($id, $name, $description){
+  function getProject($threadID){
+	  try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT projectID
+									FROM Thread
+									WHERE threadID = ?");
+								
+			$stmt->execute(array($threadID));
+			$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+    return $result['0']['projectid'];
+  }
+  
+  function editThread($id, $name){
 	  try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Thread
-									SET name = ?, description = ?
+									SET name = ?
 									WHERE threadID = ?");
 								
-			$stmt->execute(array($name, $description, $id));
+			$stmt->execute(array($name,$id));
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
   }
 
-  function addForum($projID){
+  function addForum($projID, $title, $date){
 	  try {
 			global $conn;
 			$stmt = $conn->prepare("INSERT INTO Thread(projectID, title, date)
@@ -88,5 +103,37 @@
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
+  }
+  
+  function numberOfComments($thread){
+	  try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT COUNT(*) AS counter
+									FROM Comment
+									WHERE threadID = ?");
+								
+			$stmt->execute(array($thread));
+			$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+    return $result['0']['counter'];
+  }
+  
+  function lastComment($thread){
+	  try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT * 
+									FROM Comment
+									WHERE threadID = ?
+									ORDER BY Comment.commentID DESC
+									LIMIT 1");
+								
+			$stmt->execute(array($thread));
+			$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+    return $result;
   }
 ?>

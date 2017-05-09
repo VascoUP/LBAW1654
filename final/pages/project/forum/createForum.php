@@ -8,6 +8,9 @@
 
 	$projectInvites = invitedProjects($userInfo[0][userid]);
 	$smarty->assign('smartyProjInvites', $projectInvites);
+	
+	$projID = $_GET['projID'];
+	$smarty->assign('smartyProjID', $projID);
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/forums/createForum.tpl');

@@ -3,6 +3,9 @@
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
 	
+	$forum = $_GET['forumID'];
+	$smarty->assign('smartyForumID', $forum);
+	
 	$userInfo = getUserInformation($_SESSION['username']);
 	$smarty->assign('smartyUsrInfo', $userInfo);
 
