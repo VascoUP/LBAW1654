@@ -92,18 +92,20 @@
     return $result;
   }
   
-  function addComment($thread, $user){
+  function addComment($thread, $user, $content){
 	  try {
 			global $conn;
+			$date = date('Y-m-d');
 			$stmt = $conn->prepare("INSERT INTO Comment(threadID, userID, content, date) 
 									VALUES (:thread, :user, :content, :date)");
 								
 			$stmt->bindParam(':threadID', $thread);
 			$stmt->bindParam(':user', $user);
-			$stmt->bindParam(':content', $title);
+			$stmt->bindParam(':content', $content);
 			$stmt->bindParam(':date', $date);
+			echo "done";
 		} catch(Exception $e) {
-			return $e->getMessage();
+			echo $e->getMessage();
 		}
   }
   

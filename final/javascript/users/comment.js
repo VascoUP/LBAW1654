@@ -19,19 +19,19 @@ function clickButton(){
 }
 
 function ajaxPost(){
-	var parent = $(this).parent()
-    var forumid = parseInt($(this).siblings('.ForumID').text());
-    var userid = parseInt($(this).siblings('.userID').text());
+	var content = $('textarea').val();
 	var accept = true;
 	
-	$.post("api/comments", { accepted:accept, forumID: forumid, userID: userid})
+	var data = {
+        'accepted': accept,
+        'content': content
+    }
+	
+	$.post("../../../api/comments.php", JSON.stringify(data))
         .done(function() {
             alert("success");
         })
         .fail(function() {
             alert("error");
-        })
-        .always(function() {
-            alert("finished");
         });
-}	
+}

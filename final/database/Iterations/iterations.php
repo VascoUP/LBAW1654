@@ -26,7 +26,7 @@ function getInfoIteration($itID){
 	return $result;
 }
 
-function updateDescription($description, $itID){
+function updateIterationDescription($description, $itID){
 	try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Iteration

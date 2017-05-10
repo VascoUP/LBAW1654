@@ -17,7 +17,7 @@
 			updateDueDate($_POST['DueDate'], $id);		
 	}	
 	else if($_POST['Description'])
-		updateDescription($_POST['Description'], $id);
+		updateIterationDescription($_POST['Description'], $id);
  
   $_SESSION['success_messages'][] = 'Iteration updated successfully';  
   header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?itID='.$id);
