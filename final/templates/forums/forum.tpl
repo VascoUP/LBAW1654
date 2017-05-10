@@ -15,25 +15,23 @@
 			<img src="http://bootdey.com/img/Content/user_1.jpg" class="avatar" alt="">
 			{/if}
             <div class="post-comments">
-                <p class="meta">{@comments[$i]['date']}<a href="#">$smartyUserInformation[$i]['username']</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
+                <p class="meta">{$comments[$i]['date']}<a href="#">{$smartyUserInformation[$i]['username']}</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
                 <p>
                 {$comment[$i]['content']}
                 </p>
             </div>
             </li>
-			{/for}
-			{if $smartyComments|@count == 0}
-				<div id="second">
-				<textarea class="form-control form-style" rows="5" cols="30" id="middle" name="Reply">Comment</textarea>
-				<button type="button" id="inner_reply">Reply</button>
-				</div>
-			{else}
-				<div id="second">
-				<textarea class="form-control form-style" rows="5" cols="30" id="middle" name="Reply">Reply</textarea>
-				<button type="button" id="inner_reply">Reply</button>
-				</div>
-			{/if}
+			{/for}	
+			<div id="second">
+			<textarea class="form-control form-style" rows="5" cols="30" id="middle" name="Reply">Reply</textarea>
+			<button type="button" id="inner_reply">Reply</button>
+			</div>
         </ul>
+		{else}
+			<div id="second2">
+			<textarea class="form-control form-style" rows="5" cols="30" id="middleComment" name="Comment">Comment</textarea>
+			<button type="button" id="inner_comment">Comment</button>
+			</div>
 		{/if}
         </div>
     </div>

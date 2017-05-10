@@ -5,7 +5,7 @@
 	$userID = $_GET['userID'];
 	$forumID = $_GET['forumID'];
 	
-	if($_POST['comment'] == true)
+	if($_POST['accepted'] == true)
 		addComment($forumID, $userID);
 
 ?>

@@ -21,7 +21,7 @@
 	}
 
 	$smarty->assign('smartyComments', $comments);
-	$smarty->assign('smartyUserInformation', $userInformation)
+	$smarty->assign('smartyUserInformation', $userInformation);
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/forums/forum.tpl');
