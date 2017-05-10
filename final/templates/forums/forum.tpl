@@ -6,28 +6,38 @@
         <div class="blog-comment">
         <h3>Comments</h3>
 		<div id="placeComments">
+		{if $smartyComments|@count != 0 }
         <ul class="comments">
-			{for $i=0 to ($comments|@count - 1)}
+			{for $i=0 to ($smartyComments|@count - 1)}
             <li class="clearfix">
-			{if isset($smartyUserInformation[$i]['photo'])}
+			{if $smartyUserInformation[$i]['photo']}
             <img src="{$BASE_URL}images/users/{$smartyUserInformation[$i]['photo']}" class="avatar" alt="">
 			{else}
 			<img src="http://bootdey.com/img/Content/user_1.jpg" class="avatar" alt="">
 			{/if}
             <div class="post-comments">
-                <p class="meta">{$comments[$i]['date']}<a href="#">{$smartyUserInformation[$i]['username']}</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
+                <p class="meta">{$smartyComments[$i]['date']}  <a href="#">{$smartyUserInformation[$i]['username']}</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
                 <p>
-                {$comment[$i]['content']}
+                {$smartyComments[$i]['content']}
                 </p>
             </div>
 			{/for}
             </li>
         </ul>
+		
+		<div id="second">
+			<p hidden id='hdnSession'>{$smartyUsrInfo['0']['username']}</p>
+			<textarea class="form-control form-style" rows="5" cols="30" id="middle" name="Reply">Reply</textarea>
+			<button type="button" id="inner_reply">Reply</button>
+		</div>
+		
+		{else}
 		<div id="second2">
 			<p hidden id='hdnSession'>{$smartyUsrInfo['0']['username']}</p>
 			<textarea class="form-control form-style" rows="5" cols="30" id="middleComment" name="Comment">Comment</textarea>
 			<button type="button" id="inner_comment">Comment</button>
 		</div>
+		{/if}
         </div>
     </div>
 </div>

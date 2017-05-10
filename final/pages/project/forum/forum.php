@@ -23,7 +23,8 @@
 	$userInformation = array();
 	
 	foreach($comments as $comment){
-		$userInformation = getUserInformationByID($comment['userid']);
+		$aux = getUserInformationByID($comment['userid'])['0'];
+		$userInformation[] = $aux;
 	}
 
 	$smarty->assign('smartyComments', $comments);
@@ -31,5 +32,5 @@
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/forums/forum.tpl');
-	$smarty->display($BASE_DIR .'templates/common/footer.tpl'); 
+	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>

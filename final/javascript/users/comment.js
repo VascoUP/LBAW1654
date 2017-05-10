@@ -56,8 +56,12 @@ function ajaxPost() {
 
 function addComment(content, data) {
     var html = "";
+	html += "<li class='clearfix'>";
     if (data['userInfo']['photo'] != null)
-        html += "<img src='../../../images/users/" + data['userInfo']['photo'] + "' class='avatar' alt=''";
+        html += "<img src='../../../images/users/" + data['userInfo']['photo'] + "' class='avatar' alt=''>";
+	else
+		html += "<img src='http://bootdey.com/img/Content/user_1.jpg' class='avatar' alt=''>";
+	
     html += "<div class='post-comments'>";
     html += "<p class='meta'>" + data['date'];
     html += "<a href='#'> " + data['userInfo']['username'] + "</a>";
@@ -65,4 +69,6 @@ function addComment(content, data) {
     html += "<p>" + content + "</p></div>";
 
     $('.comments').append(html);
+	$('#middleComment').hide();
+    $('#inner_comment').hide();
 }
