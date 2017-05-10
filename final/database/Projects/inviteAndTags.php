@@ -43,6 +43,7 @@
 				if( $value['userid'] == $user )
 					return true;
 			return false;
+			}
 		}
 		 catch(Exception $e) {
 			return $e->getMessage() . " - " . $invitedate;
@@ -51,39 +52,7 @@
 	
 	function editTags($tags, $project){
 		foreach($tags as $tag){
-			try{
-				global $conn;
-				
-				if(tagExists($tag, $project))
-					return;
-				
-				$stmt = $conn->prepare("SELECT *
-										FROM Tag
-										WHERE name = ?");
-				$stmt->execute(array($tag));
-				$result = $stmt->fetchAll();
-			
-				if(count($result) == 0){
-					$stmt = $conn->prepare("INSERT INTO Tag(name) VALUES(:name)");
-					$stmt->bindParam(':name', $tag);
-					$stmt->execute();
-				}
-				
-				$stmt = $conn->prepare("SELECT tagID FROM Tag WHERE name = ?");
-				$stmt->execute(array($tag));
-				
-				$result = $stmt->fetchAll();
-				$tagID = $result['0']['tagid'];
-				
-				$stmt = $conn->prepare("INSERT INTO TagProject(tagID, projectID) VALUES(:tagID, :projID)");
-				$stmt->bindParam(':tagID', $tagID);
-				$stmt->bindParam(':projID', $id);
-				$stmt->execute();
-			
-			}
-			 catch(Exception $e) {
-				return $e->getMessage();
-			}
+			addTag($tag, $project);
 		}
 	}
 	
@@ -91,8 +60,9 @@
 		try{
 			global $conn;
 			
-			$stmt = $conn->prepare("SELECT tagID FROM TagProject, Tag WHERE projectID = ? 
-									AND Tag.tagID = ? 
+			$stmt = $conn->prepare("SELECT tagID FROM TagProject, Tag 
+									WHERE projectID = ? 
+									AND Tag.name = ? 
 									AND TagProject.tagID = Tag.tagID");
 			$stmt->execute(array($project, $tag));
 			
@@ -102,6 +72,42 @@
 				return false;
 			
 		}catch(Exception $e) {
+			return $e->getMessage();
+		}
+	}
+	
+	function addTag($tag, $id){
+		try{
+			global $conn;
+			
+			if(tagExists($tag, $project))
+				return;
+			
+			$stmt = $conn->prepare("SELECT *
+									FROM Tag
+									WHERE name = ?");
+			$stmt->execute(array($tag));
+			$result = $stmt->fetchAll();
+		
+			if(count($result) == 0){
+				$stmt = $conn->prepare("INSERT INTO Tag(name) VALUES(:name)");
+				$stmt->bindParam(':name', $tag);
+				$stmt->execute();
+			}
+			
+			$stmt = $conn->prepare("SELECT tagID FROM Tag WHERE name = ?");
+			$stmt->execute(array($tag));
+			
+			$result = $stmt->fetchAll();
+			$tagID = $result['0']['tagid'];
+			
+			$stmt = $conn->prepare("INSERT INTO TagProject(tagID, projectID) VALUES(:tagID, :projID)");
+			$stmt->bindParam(':tagID', $tagID);
+			$stmt->bindParam(':projID', $id);
+			$stmt->execute();
+		
+		}
+		 catch(Exception $e) {
 			return $e->getMessage();
 		}
 	}

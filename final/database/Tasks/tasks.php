@@ -95,7 +95,7 @@ function updateTaskDescription($description, $id){
 		}
 }
 
-function addTask($name, $priority, $description, $effort, $itID){
+function addTask($name, $priority, $description, $effort, $itID, $userID){
 	try {
 		global $conn;
 		
@@ -110,6 +110,19 @@ function addTask($name, $priority, $description, $effort, $itID){
 		$stmt->bindParam(':effort', $effort);
 		$stmt->bindParam(':taskStatus', $taskStatus);
 		$stmt->execute();
+		
+		$stmt = $conn->prepare("SELECT taskID FROM Task WHERE name = ?");
+		$stmt->execute(array($name));
+		$result = $stmt->fetchAll;
+		
+		$taskID = $result['0']['taskid'];
+		
+		$stmt = $conn->prepare("INSERT INTO TaskUser(taskID, userID)
+								VALUES (:taskID, :userID)");						
+		$stmt->bindParam(':taskID', $taskID);
+		$stmt->bindParam(':userID', $userID);
+		$stmt->execute();
+		
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
@@ -135,6 +148,17 @@ function joinTask($userID, $taskID){
 		$stmt->bindParam(':taskID', $taskID);
 		$stmt->bindParam(':userID', $userID);
 		$stmt->execute();
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+}
+
+function leaveTask($userID, $taskID){
+	try {
+		global $conn;
+		
+		$stmt = $conn->prepare("DELETE FROM TaskUser WHERE taskID = ? AND userID = ?");					
+		$stmt->execute(array($taskID, $userID));
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}

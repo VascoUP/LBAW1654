@@ -12,13 +12,18 @@
 		updateOverview($_POST['description'], $id);
 	else if($_POST['access'])
 		updateAccess($_POST['access'], $id);
-	/*else if($_POST['tags']){
+	else if($_POST['tags']){
 		$tags = explode(' ; ', $_POST['tags']);
-		editTags($tags, $id);
-	}*/
+		foreach($tags as $tag)
+			echo $tag;
+		if(count($tags) == 0)
+			addTag($tag, $id);
+		else
+			editTags($tags, $id);
+	}
 	else if($_POST['joinUser']) {
 		$userInfo = getUserInformation($_POST['joinUser']);
-		$result = inviteToProject($userInfo[0][userid], $id);
+		$result = inviteToProject($userInfo[0]['userid'], $id);
 		if( $result ) {
 			$string = urlencode($result);
 			header("Location: ../../pages/message.php?result={$string}");

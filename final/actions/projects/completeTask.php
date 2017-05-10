@@ -6,6 +6,6 @@
 	
 	updateTaskStatus($id);
  
-  $_SESSION['success_messages'][] = 'Task updated successfully';  
+  $_SESSION['success_messages'][] = 'Task completed successfully';  
   header('Location: ' .$BASE_URL.'pages/project/task/taskPage.php?taskID='.$id);
  ?>
