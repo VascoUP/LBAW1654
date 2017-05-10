@@ -5,11 +5,13 @@
 	
 	$data = json_decode(file_get_contents('php://input'), true);
 	
-	$userID = getUserID($_SESSION['username']);
-	$forumID = $_GET['forumID'];
+	$userID = getUserID($data['username']);
+	$forumID = $data['forumID'];
 	$content = $data['content'];
-	
-	if($data['accepted'] == true)
-		addComment($forumID, $userID, $content);
+	$userInfo = getUserInformation($data['username']);
+	$date = date('Y-m-d');
 
+	addComment($forumID, $userID, $content);
+
+	echo json_encode(array( "date" => $date, "userInfo" => $userInfo['0'] ));
 ?>

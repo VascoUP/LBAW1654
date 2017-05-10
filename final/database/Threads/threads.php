@@ -97,13 +97,12 @@
 			global $conn;
 			$date = date('Y-m-d');
 			$stmt = $conn->prepare("INSERT INTO Comment(threadID, userID, content, date) 
-									VALUES (:thread, :user, :content, :date)");
+									VALUES (:threadID, :userID, :content, :date)");
 								
 			$stmt->bindParam(':threadID', $thread);
-			$stmt->bindParam(':user', $user);
+			$stmt->bindParam(':userID', $user);
 			$stmt->bindParam(':content', $content);
 			$stmt->bindParam(':date', $date);
-			echo "done";
 		} catch(Exception $e) {
 			echo $e->getMessage();
 		}
