@@ -27,8 +27,6 @@
 		try{
 			global $conn;
 
-			$invitedate = date("Y-m-d");
-			$userStatusProject = 'invited';
 			$stmt = $conn->prepare("SELECT UserSite.userID 
 									FROM ProjectCoordinator, ProjectUser, UserSite 
 									WHERE (ProjectCoordinator.projectID = ? 
@@ -36,17 +34,16 @@
 									OR (ProjectUsers.projectID = ? 
 											AND ProjectUsers.userID = UserSite.userID)" );
       		$stmt->execute(array($project, $project));
-			$stmt->execute();
       		$result = $stmt->fetchAll();
 
-			foreach ($result as &$value) {
+			foreach ($result as &$value)
 				if( $value['userid'] == $user )
 					return true;
 			return false;
-			}
+	
 		}
 		 catch(Exception $e) {
-			return $e->getMessage() . " - " . $invitedate;
+			return $e->getMessage();
 		}
 	}
 	

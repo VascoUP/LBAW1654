@@ -1,6 +1,6 @@
 <?php	
 	include_once('../../config/init.php');
-	include($BASE_DIR .'database/Users/userInformation.php');
+	include("{$BASE_DIR}database/Users/userInformation.php");
     include("{$BASE_DIR}database/Projects/editProject.php");
 	include("{$BASE_DIR}database/Projects/inviteAndTags.php");
 

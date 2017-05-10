@@ -1,5 +1,11 @@
 <?php
 	include_once('../../../config/init.php');
+	
+	if( !$_SESSION['username'] ) {
+		header('Location: https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php');
+		die();
+	}
+	
 	include($BASE_DIR .'database/Users/userInformation.php');
 	include($BASE_DIR .'database/invites.php');
 	
