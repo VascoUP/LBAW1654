@@ -2,7 +2,7 @@
     function invitedProjects($userID){
         try {
             global $conn;
-            $stmt = $conn->prepare("SELECT Project.projectID, ProjectUsers.userID, Project.name
+            $stmt = $conn->prepare("SELECT Project.projectID AS projectID, ProjectUsers.userID AS userID, Project.name AS name
                                     FROM Project, ProjectUsers
                                     WHERE Project.projectID = ProjectUsers.projectID
                                     AND ProjectUsers.userStatusProject = 'invited'

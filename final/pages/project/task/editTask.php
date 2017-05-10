@@ -6,7 +6,7 @@
 	$userInfo = getUserInformation($_SESSION['username']);
   	$smarty->assign('smartyUsrInfo', $userInfo);
 
-	$projectInvites = invitedProjects($userInfo[0][userid]);
+	$projectInvites = invitedProjects($userInfo[0]['userid']);
   	$smarty->assign('smartyProjInvites', $projectInvites);
 	
 	$id = $_GET['taskID'];
