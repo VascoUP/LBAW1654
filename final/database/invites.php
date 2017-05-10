@@ -17,17 +17,19 @@
     }
 	
 	function removeInvitedStatus($userID, $projID){
+        echo "remove invite $userID -  $projID\n";
 		try {
             global $conn;
             $stmt = $conn->prepare("DELETE FROM ProjectUsers WHERE projectID = ? AND userID = ?");
             $stmt->execute(array($projID, $userID));
-            $result = $stmt->fetchAll();
         } catch(Exception $e) {
+            echo $e->getMessage();
             return $e->getMessage();
         }
 	}
 	
 	function acceptInvite($userID, $projID){
+        echo "accept invite $userID -  $projID\n";
 		try {
             global $conn;
             $stmt = $conn->prepare("UPDATE ProjectUsers 
@@ -35,6 +37,7 @@
 									WHERE projectID = ? AND userID = ?");
             $stmt->execute(array($projID, $userID));
         } catch(Exception $e) {
+            echo $e->getMessage();
             return $e->getMessage();
         }
 	}

@@ -73,7 +73,7 @@
 							<li>
 								<img class="dropdown-notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="{$BASE_URL}images/assets/notificationBell.png">
 									<ul id="notification" class="dropdown-menu">
-									<li>New notifications ({$smartyProjInvites|@count})</li>
+									<li>New notifications (<span id="nNotifications">{$smartyProjInvites|@count}</span>)</li>
 										{for $index=0 to $smartyProjInvites|@count - 1}
 											{assign var="smartyProjInvite" value=$smartyProjInvites[$index]}
 											<li>

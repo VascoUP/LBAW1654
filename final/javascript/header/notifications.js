@@ -7,9 +7,10 @@ function init() {
         var parent = $(this).parent()
         var projid = parseInt($(this).siblings('.projID').text());
         var userid = parseInt($(this).siblings('.userID').text());
-        console.log(id);
+        console.log(projid);
+        console.log(userid);
         // CHANGE PROJ STATUS
-        ajaxPost(true);
+        ajaxPost(true, projid, userid, $(this).parent());
     });
 
     $('.projReject').click(function(e) {
@@ -18,21 +19,27 @@ function init() {
         var parent = $(this).parent()
         var projid = parseInt($(this).siblings('.projID').text());
         var userid = parseInt($(this).siblings('.userID').text());
-        console.log(id);
+        console.log(projid);
+        console.log(userid);
         // CHANGE PROJ STATUS
-        ajaxPost(false);
+        ajaxPost(false, projid, userid, $(this).parent());
     });
 }
 
-function ajaxPost(acceptedVal, userid, projid) {
-    $.post("api/answerInvite", { accepted: acceptedVal, userID: userid, projID: projid })
-        .done(function() {
-            alert("success");
+function ajaxPost(accepted, userid, projid, element) {
+    var data = {
+        'accepted': accepted,
+        'userid': userid,
+        'projid': projid
+    }
+    $.post("../../api/answerInvite.php", JSON.stringify(data))
+        .done(function(data) {
+            $(element).remove();
+            var n = parseInt($('#nNotifications').text());
+            console.log(n);
+            $('#nNotifications').text(n - 1);
         })
-        .fail(function() {
-            alert("error");
-        })
-        .always(function() {
-            alert("finished");
+        .fail(function(data) {
+            alert("Failure:\n" + data);
         });
 }
