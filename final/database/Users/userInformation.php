@@ -1,4 +1,10 @@
 <?php
+	
+	if( !$_SESSION['username'] ) {
+		header('Location: https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php');
+		die();
+	}
+
 	function getUserInformation($username) {
 		try {
 			global $conn;
