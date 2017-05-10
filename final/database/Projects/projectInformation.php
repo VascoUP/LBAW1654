@@ -7,6 +7,7 @@
       $stmt = $conn->prepare(
                 "SELECT Project.name AS name, 
                         Project.description AS description, 
+						Project.access AS access,
                         COUNT(distinct ProjectCoordinator.projectID) AS countCoord,
                         COUNT(distinct ProjectUsers.projectID) AS countUsers
                 FROM Project

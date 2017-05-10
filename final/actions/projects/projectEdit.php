@@ -1,8 +1,7 @@
 <?php	
 	include_once('../../config/init.php');
-	include("{$BASE_DIR}database/Users/userInformation.php");
     include("{$BASE_DIR}database/Projects/editProject.php");
-	include("{$BASE_DIR}database/Projects/inviteAndTags.php");
+	include("{$BASE_DIR}database/Projects/projects.php");
 
 	$id = $_GET['projID'];
 	
@@ -10,16 +9,9 @@
 		updateProjName($_POST['name'], $id);
 	else if($_POST['description'])
 		updateOverview($_POST['description'], $id);
-	else if($_POST['access'])
-		updateAccess($_POST['access'], $id);
 	else if($_POST['tags']){
 		$tags = explode(' ; ', $_POST['tags']);
-		foreach($tags as $tag)
-			echo $tag;
-		if(count($tags) == 0)
-			addTag($tag, $id);
-		else
-			editTags($tags, $id);
+		addTags($tags, $id);
 	}
 	else if($_POST['joinUser']) {
 		$userInfo = getUserInformation($_POST['joinUser']);
@@ -30,6 +22,8 @@
 			exit("Stop");
 		}
 	}
+	else if($_POST['access'])
+		updateAccess($_POST['access'], $id);
 
 	header("Location: ../../pages/project/projectPage.php?projID=" .$id);
 ?>

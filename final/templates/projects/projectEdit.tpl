@@ -42,7 +42,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="tags">Tags</label>  
                     <div class="col-md-4">
-                        <input id="dtags" name="tags" type="text" placeholder="Tags" class="form-control form-style input-md">
+                        <input id="tags" name="tags" type="text" placeholder="Tags" class="form-control form-style input-md">
                         <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Add Tags</button>
                     </div>
             </div>
@@ -56,8 +56,13 @@
                 <label class="col-md-4 control-label" for="public">Change Access</label>
                     <div class="col-md-4">
                         <select name="access" class="form-control form-style input-xs">
+							{if $smartyAccess == 1}
 							<option value="public">Public</option>
 							<option value="private">Private</option>
+							{else}
+							<option value="private">Private</option>
+							<option value="public">Public</option>
+							{/if}
 						</select>
 						
 						<button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Change Access</button>

@@ -20,6 +20,9 @@
   $projTags = getProjectTags($projID);
   
   $smarty->assign('smartyProjID', $projID);
+  
+  $access = getProjectInformation($projID)['0']['access'];
+  $smarty->assign('smartyAccess', $access);
 
   $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
   $smarty->display($BASE_DIR .'templates/projects/projectEdit.tpl');
