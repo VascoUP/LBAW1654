@@ -9,8 +9,7 @@
 	
 	$userInfoID = getUserID($_SESSION['username']);
 	
-	leaveTask($userID, $id);
-	
+	leaveTask($userInfoID, $id);
 	
   $_SESSION['success_messages'][] = 'Task removed successfully';  
   header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?itID='.$itID);

@@ -23,7 +23,7 @@
 	$numberUsers = array();
 	 
 	foreach($tasks as $task){
-		$numberUsers[] = getNumberUsers($task['taskID']);
+		$numberUsers[] = getNumberUsers($task['taskid']);
 	}
 	
 	$smarty->assign('smartyIterations', $iterations);

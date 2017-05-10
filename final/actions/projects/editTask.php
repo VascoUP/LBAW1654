@@ -17,6 +17,8 @@
 	}
 	else if($_POST['Description'])
 		updateTaskDescription($_POST['Description'], $id);
+	else if($_POST['status'])
+		updateStatus($_POST['status'], $id);
  
   $_SESSION['success_messages'][] = 'Task updated successfully';  
   header('Location: ' .$BASE_URL.'pages/project/task/taskPage.php?taskID='.$id);

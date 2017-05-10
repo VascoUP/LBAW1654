@@ -94,6 +94,31 @@
             </div>
             </div>
 		</fieldset>
+		
+		<fieldset>
+		<legend class="tab">Status</legend>
+		<div class="form-group">
+                <label class="col-md-4 control-label" for="status">Change Status</label>
+                    <div class="col-md-4">
+                        <select name="status" class="form-control form-style input-xs">
+							{if $smartyTaskStatus == 'completed'}
+							<option value="completed">Completed</option>
+							<option value="active">Active</option>
+							{else}
+							<option value="active">Active</option>
+							<option value="completed">Completed</option>
+							{/if}
+						</select>
+						
+						<div class="form-group">
+            <label class="col-md-4 control-label" ></label>  
+            <div class="col-md-4">
+                <button type="submit" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Change Status</button>
+            </div>
+            </div>
+                    </div>
+            </div>
+		</fieldset>
 
             <div class="form-group">
             <label class="col-md-4 control-label" ></label>  

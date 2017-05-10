@@ -41,7 +41,7 @@
                             <td class="task-info state">{$smartyTasks[$i]['taskstatus']}</td>
                             <td class="task-info priority">{$smartyTasks[$i]['priority']}</td>
                             <td class="task-info workers">{$smartyNumberUsers[$i]}</td>
-                            <td> <button class="btn btn-warning">Request to join task</button> </td>
+                            <td> <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/joinTask.php?taskID={$smartyTasks[$i]['taskid']}" class="btn btn-primary btn-sm">Join task</a> </td>
                         </tr>
 					{/for}
                     </tbody>

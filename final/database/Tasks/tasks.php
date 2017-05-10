@@ -69,13 +69,26 @@ function updateEffort($effort, $id){
 		}
 }
 
-function updateTaskStatus($id){
+function completeTask($id){
 	try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Task
 									SET taskStatus = 'completed'
 									WHERE taskID = ?");		
 			$stmt->execute(array($id));
+	
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+}
+
+function updateStatus($status, $id){
+	try {
+			global $conn;
+			$stmt = $conn->prepare("UPDATE Task
+									SET taskStatus = ?
+									WHERE taskID = ?");		
+			$stmt->execute(array($status, $id));
 	
 		} catch(Exception $e) {
 			return $e->getMessage();
@@ -109,20 +122,7 @@ function addTask($name, $priority, $description, $effort, $itID, $userID){
 		$stmt->bindParam(':name', $name);
 		$stmt->bindParam(':effort', $effort);
 		$stmt->bindParam(':taskStatus', $taskStatus);
-		$stmt->execute();
-		
-		$stmt = $conn->prepare("SELECT taskID FROM Task WHERE name = ?");
-		$stmt->execute(array($name));
-		$result = $stmt->fetchAll;
-		
-		$taskID = $result['0']['taskid'];
-		
-		$stmt = $conn->prepare("INSERT INTO TaskUser(taskID, userID)
-								VALUES (:taskID, :userID)");						
-		$stmt->bindParam(':taskID', $taskID);
-		$stmt->bindParam(':userID', $userID);
-		$stmt->execute();
-		
+		$stmt->execute();		
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
@@ -148,6 +148,9 @@ function joinTask($userID, $taskID){
 		$stmt->bindParam(':taskID', $taskID);
 		$stmt->bindParam(':userID', $userID);
 		$stmt->execute();
+		
+		$stmt = $conn->prepare("UPDATE Task SET taskStatus='active' WHERE taskID = ?");
+		$stmt->execute(array($taskID));
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
@@ -159,6 +162,12 @@ function leaveTask($userID, $taskID){
 		
 		$stmt = $conn->prepare("DELETE FROM TaskUser WHERE taskID = ? AND userID = ?");					
 		$stmt->execute(array($taskID, $userID));
+		
+		echo getNumberUsers($taskID);
+		if(getNumberUsers($taskID) == 0){
+			$stmt = $conn->prepare("UPDATE Task SET taskStatus='unassigned' WHERE taskID = ?");
+			$stmt->execute(array($taskID));
+		}
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}

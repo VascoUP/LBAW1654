@@ -46,7 +46,6 @@
                     </table>
                 </div>
                 <div class="task-userbuttons">
-                    <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/joinTask.php?taskID={$smartyTaskID}" class="btn btn-primary btn-sm">Join task</a>
                     <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/editTask.php?taskID={$smartyTaskID}" class="btn btn-info btn-sm">Edit Task</a>
 					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/completeTask.php?taskID={$smartyTaskID}" class="btn btn-success btn-sm">Conclude Task</a>
 					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveTask.php?taskID={$smartyTaskID}" class="btn btn-warning btn-sm">Leave Task</a>

@@ -4,8 +4,7 @@
 	include($BASE_DIR .'database/Users/userInformation.php');
 	
 	$taskID = $_GET['taskID'];
-	$userInfo = getUserID($_SESSION['username']);
-	$userID = $userInfo['0']['userid'];
+	$userID= getUserID($_SESSION['username']);
 	
 	joinTask($userID, $taskID);
 	

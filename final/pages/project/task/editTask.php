@@ -7,6 +7,7 @@
 	}
 	
 	include_once($BASE_DIR .'database/Users/userInformation.php');
+	include_once($BASE_DIR .'database/Tasks/tasks.php');
 	include_once($BASE_DIR .'database/invites.php');
 	
 	$userInfo = getUserInformation($_SESSION['username']);
@@ -16,8 +17,10 @@
   	$smarty->assign('smartyProjInvites', $projectInvites);
 	
 	$id = $_GET['taskID'];
-	
 	$smarty->assign('smartyTaskID', $id);
+	
+	$status = getInfoTask($id)['0']['status'];
+	$smarty->assign('smartyTaskStatus', $status);
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/tasks/editTask.tpl');

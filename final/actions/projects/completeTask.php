@@ -4,7 +4,7 @@
 
 	$id = $_GET['taskID'];
 	
-	updateTaskStatus($id);
+	completeTask($id);
  
   $_SESSION['success_messages'][] = 'Task completed successfully';  
   header('Location: ' .$BASE_URL.'pages/project/task/taskPage.php?taskID='.$id);
