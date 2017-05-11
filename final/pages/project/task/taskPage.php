@@ -31,9 +31,9 @@
 	$smarty->assign('smartyIterationID', $iterationID);
 	$smarty->assign('smartyProjectID', $projID);
 	
-	$numberTasks = numberTasks($taskInfo['0']['iterationID']);
-	$numberTasksCompleted = numberTasksCompleted($taskInfo['0']['iterationID']);
-	
+	$numberTasks = numberTasks($iterationID);
+	$numberTasksCompleted = numberTasksCompleted($iterationID);
+
 	if($numberTasks == $numberTasksCompleted)
 		$value = 1;
 	else
