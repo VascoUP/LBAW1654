@@ -129,3 +129,11 @@
 	background-position: center;
 	background-repeat: no-repeat;
 }
+
+#notification li{
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 150;
+    letter-spacing: 1px;
+    color: #fed136;
+}

@@ -8,6 +8,7 @@
 	
   include_once($BASE_DIR .'database/Iterations/iterations.php');
 	include_once($BASE_DIR .'database/Users/userInformation.php');
+	include_once($BASE_DIR .'database/Projects/projectInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
 		
 	$userInfo = getUserInformation($_SESSION['username']);
@@ -18,7 +19,7 @@
   
   $projID = $_GET['projID'];
   $smarty->assign('smartyProjID', $projID);
-  
+    
   $iterations = getProjectIterations($projID);
   $smarty->assign('smartyIterations', $iterations);
   

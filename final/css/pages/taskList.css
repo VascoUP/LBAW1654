@@ -146,7 +146,7 @@
 
 h2{
 	font-size: 25px;
-	color: #5a7391;
+	color: orange;
   font-weight: 600;
   margin-bottom: 7px;
 }
@@ -156,3 +156,7 @@ h2{
     margin: 10px auto;
 }
 
+#completed{
+	font-weight: bold;
+	color: #fed136;
+}

@@ -7,10 +7,13 @@
 <div class="container">
     <div class="card card-container">
         <div class="table-container">
+		<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/iterationPage.php?itID={$smartyIterationID}"> Iteration </a>
+		<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/projectIterations.php?projID={$smartyProjectID}"> Iterations </a>
+		<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectID}"> Project </a>
             <div class="info-box">
                 <div class="info-box">
-                <p class="text-style-3">{$smartyInfo['0']['name']}</p>
-                <p class="text-style-5">{$smartyInfo['0']['description']}</p>
+                <h2>{$smartyInfo['0']['name']}</h2>
+                <p>{$smartyInfo['0']['description']}</p>
                 <hr class="featurette-divider">
                 <div class="table-responsive">
                     <table class="task table">

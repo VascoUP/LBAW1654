@@ -7,11 +7,11 @@
 <div class="container">
 	<div class="card card-container-it">
 		<div class="table-container">
+		<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/projectIterations.php?projID={$smartyIterations['0']['projectid']}"> Iterations </a>
+		<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyIterations['0']['projectid']}"> Project </a>
 			<div class="project-info-box">
-				<p class="text-style-2">{$smartyIterations['0']['name']}</p>
-				<p class="text-style-5">{$smartyIterations['0']['description']}</p>
-				<br>
-				<p class="text-style-6">This is where you'll find the project tasks for {$smartyIterations['0']['name']}</p>
+				<h2>{$smartyIterations['0']['name']}</h2>
+				<p>{$smartyIterations['0']['description']}</p>
 				{if $smartyTasks|@count != $smartyNumberTasks}
 				<a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/editIteration.php?itID={$smartyID}">Edit Iteration</a>
 				{/if}

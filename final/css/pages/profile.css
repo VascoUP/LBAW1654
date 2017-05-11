@@ -100,6 +100,7 @@
 .profile-usermenu ul li a:hover {
   background-color: #fafcfd;
   color: #5b9bd1;
+   font-weight: bold;
 }
 
 .profile-usermenu ul li.active {
@@ -111,6 +112,7 @@
   background-color: #f6f9fb;
   border-left: 2px solid #5b9bd1;
   margin-left: -2px;
+   font-weight: bold;
 }
 
 .profile-usermenu ul li.banned a {

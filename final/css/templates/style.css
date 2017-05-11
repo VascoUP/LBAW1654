@@ -169,3 +169,14 @@ a.text-style-6:hover {
     line-height: 40px;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.hiper{
+	font-weight: bold;
+	color: #fed136;
+	float: right;
+	margin: 10px;
+}
+
+.hiper:hover{
+	color: orange;
+}

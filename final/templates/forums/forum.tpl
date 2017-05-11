@@ -2,7 +2,8 @@
 
 <div class="container">
     <div class="card card-container">
-
+	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/projectForum.php?projID={$smartyProjID}"> Forums </a>
+	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjID}"> Project </a>
         <div class="blog-comment">
         <h3>Comments</h3>
 		<div id="placeComments">

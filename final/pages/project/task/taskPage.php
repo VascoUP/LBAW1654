@@ -19,11 +19,17 @@
 	
 	$taskID = $_GET['taskID'];
 	$taskInfo = getInfoTask($taskID);
+	
+	$iterationID = $taskInfo['0']['iterationid'];
+	$projID = getInfoIteration($iterationID)['0']['projectid'];
+	
 	$numberWorkers = getNumberUsers($taskID);
 	
 	$smarty->assign('smartyTaskID', $taskID);
 	$smarty->assign('smartyInfo', $taskInfo);
 	$smarty->assign('smartyWorkers', $numberWorkers);
+	$smarty->assign('smartyIterationID', $iterationID);
+	$smarty->assign('smartyProjectID', $projID);
 	
 	$numberTasks = numberTasks($taskInfo['0']['iterationID']);
 	$numberTasksCompleted = numberTasksCompleted($taskInfo['0']['iterationID']);

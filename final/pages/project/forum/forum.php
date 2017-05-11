@@ -22,6 +22,9 @@
 	$comments = getComments($forumID);
 	$userInformation = array();
 	
+	$projID = getProject($forumID);
+	$smarty->assign('smartyProjID', $projID);
+	
 	foreach($comments as $comment){
 		$aux = getUserInformationByID($comment['userid'])['0'];
 		$userInformation[] = $aux;
