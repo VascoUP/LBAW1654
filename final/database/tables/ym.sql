@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS TaskUser CASCADE;
 DROP TABLE IF EXISTS Thread CASCADE;
 DROP TABLE IF EXISTS UserSite CASCADE;
 DROP TABLE IF EXISTS UserTokens CASCADE;
+DROP TABLE IF EXISTS IterationsPermissions CASCADE;
 
 DROP TYPE IF EXISTS TaskStatus;
 DROP TYPE IF EXISTS UserStatusProject;
@@ -225,6 +226,18 @@ CREATE TABLE UserTokens
 	tokenName varchar(500),
 	FOREIGN KEY(userID) REFERENCES UserSite(userID)
 				ON UPDATE CASCADE
+);
+
+CREATE TABLE IterationsPermissions
+(
+	iterationID serial,
+	userID serial,
+	FOREIGN KEY(iterationID) REFERENCES Iteration(iterationID)
+				ON DELETE CASCADE
+				ON UPDATE CASCADE,
+	FOREIGN KEY(userID) REFERENCES UserSite(userID)
+				ON UPDATE CASCADE,
+	PRIMARY KEY(iterationID, userID)
 );
 
 DROP INDEX IF EXISTS idxUserName;

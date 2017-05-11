@@ -83,6 +83,20 @@
 
         </fieldset>
         </form>
+		
+		<form class="form-horizontal" action="{$BASE_URL}actions/projects/givePermission.php?itID={$smartyItID}" method="post">
+            <fieldset>
+            <!-- Form Name -->
+            <legend class="tab">Give User Permission</legend>
+            <div class="form-group">
+                <label for="givePermission" class="col-md-4 control-label">Give Permission</label>
+                    <div class="col-md-4">
+                        <input name='givePermission' id='givePermission' type='text' class="form-control form-style input-md" placeholder='ex: aed1123'>
+						<button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Add User</button>
+                    </div>
+            </div>
+			</fieldset>
+			</form>
     </div>
 </div>
 </div>

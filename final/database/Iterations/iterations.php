@@ -164,4 +164,29 @@ function numberTasksCompleted($idIt){
 	return $result['0']['counter'];
 }
 
+function givePermission($userID, $itID){
+	try {
+		global $conn;
+		
+		$stmt = $conn->prepare("SELECT COUNT(TaskUser.userID) AS counter
+								FROM TaskUser, Task
+								WHERE Task.iterationID = ? 
+								AND Task.taskID = TaskUser.taskID
+								AND TaskUser.userID = ?");						
+		$stmt->execute(array($itID, $userID));
+		$result = $stmt->fetchAll();
+
+		if($result['0']['counter'] == 0)
+			return "This user can't add or edit a task in this iteration";
+		else
+		{
+			$stmt = $conn->prepare("INSERT INTO IterationsPermissions(iterationID, userID)
+									VALUES (?,?)");										
+			$stmt->execute(array($itID, $userID));
+		}
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+}
+
 ?>
