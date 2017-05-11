@@ -1,7 +1,7 @@
 <?php
 	function inviteToProject($user, $project){
 		if( checkWorkingOnProject($user, $project) == true )
-			return ;
+			return "Working on the project";
 			
 		$invitedate = date("Y-m-d");
 		try{
@@ -21,6 +21,8 @@
 		 catch(Exception $e) {
 			return $e->getMessage() . " - " . $invitedate;
 		}
+		
+		return "Success " . $user . " - " . $project;
 	}
 
 	function checkWorkingOnProject($user, $project) {
@@ -28,7 +30,7 @@
 			global $conn;
 
 			$stmt = $conn->prepare("SELECT UserSite.userID 
-									FROM ProjectCoordinator, ProjectUser, UserSite 
+									FROM ProjectCoordinator, ProjectUsers, UserSite 
 									WHERE (ProjectCoordinator.projectID = ? 
 											AND ProjectCoordinator.userID = UserSite.userID)  
 									OR (ProjectUsers.projectID = ? 

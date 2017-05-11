@@ -136,7 +136,8 @@
 													FROM ProjectCoordinator
 													WHERE ProjectCoordinator.userid = ?)
 								OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
-								WHERE ProjectUsers.userid = ?)");
+								WHERE ProjectUsers.userid = ?
+								AND userStatusProject = 'active')");
 		$stmt->execute(array($id, $id));
 		$result = $stmt->fetchAll();
 		} catch(Exception $e) {

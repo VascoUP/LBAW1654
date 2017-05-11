@@ -2,6 +2,7 @@
 	include_once('../../config/init.php');
     include("{$BASE_DIR}database/Projects/editProject.php");
 	include("{$BASE_DIR}database/Projects/projects.php");
+	include("{$BASE_DIR}database/Projects/inviteAndTags.php");
 
 	$id = $_GET['projID'];
 	

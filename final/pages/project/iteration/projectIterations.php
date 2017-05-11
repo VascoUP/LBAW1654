@@ -26,11 +26,12 @@
   $numberCompletedTasks = array();
   
   foreach($iterations as $iteration){
-	$iterationCounter[] = numberTasks($iteration['iterationID']);
-	$numberCompletedTasks[] = numberTasksCompleted($iteration['iterationID']);
+	$iterationCounter[] = numberTasks($iteration['iterationid']);
+	$numberCompletedTasks[] = numberTasksCompleted($iteration['iterationid']);
   }
 
   $smarty->assign('smartyIterationsCounter', $iterationCounter);
+  $smarty->assign('numberTasksCompleted', $numberCompletedTasks);
   
   $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
   $smarty->display($BASE_DIR .'templates/projects/projectIterations.tpl');
