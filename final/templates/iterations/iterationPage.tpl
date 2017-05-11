@@ -12,7 +12,9 @@
 				<p class="text-style-5">{$smartyIterations['0']['description']}</p>
 				<br>
 				<p class="text-style-6">This is where you'll find the project tasks for {$smartyIterations['0']['name']}</p>
+				{if $smartyTasks|@count != $smartyNumberTasks}
 				<a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/editIteration.php?itID={$smartyID}">Edit Iteration</a>
+				{/if}
 				{if $smartyTasks|@count != 0}
 				<hr class="featurette-divider">
 				<div class="table-responsive">

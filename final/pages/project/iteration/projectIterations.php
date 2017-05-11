@@ -23,9 +23,11 @@
   $smarty->assign('smartyIterations', $iterations);
   
   $iterationCounter = array();
+  $numberCompletedTasks = array();
   
   foreach($iterations as $iteration){
 	$iterationCounter[] = numberTasks($iteration['iterationID']);
+	$numberCompletedTasks[] = numberTasksCompleted($iteration['iterationID']);
   }
 
   $smarty->assign('smartyIterationsCounter', $iterationCounter);

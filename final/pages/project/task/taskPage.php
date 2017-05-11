@@ -7,6 +7,7 @@
 	}
 	
 	include_once($BASE_DIR .'database/Tasks/tasks.php');
+	include_once($BASE_DIR .'database/Iterations/iterations.php');
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
 	
@@ -23,6 +24,16 @@
 	$smarty->assign('smartyTaskID', $taskID);
 	$smarty->assign('smartyInfo', $taskInfo);
 	$smarty->assign('smartyWorkers', $numberWorkers);
+	
+	$numberTasks = numberTasks($taskInfo['0']['iterationID']);
+	$numberTasksCompleted = numberTasksCompleted($taskInfo['0']['iterationID']);
+	
+	if($numberTasks == $numberTasksCompleted)
+		$value = 1;
+	else
+		$value = 0;
+	
+	$smarty->assign('smartyTaskValue', $value);
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/tasks/taskPage.tpl');

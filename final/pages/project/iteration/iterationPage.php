@@ -21,6 +21,7 @@
 	$iterations = getInfoIteration($itID);
 	$tasks = getTasks($itID);
 	$numberUsers = array();
+	$numberTasks = numberTasksCompleted($itID);
 	 
 	foreach($tasks as $task){
 		$numberUsers[] = getNumberUsers($task['taskid']);
@@ -30,6 +31,7 @@
 	$smarty->assign('smartyID', $itID);
 	$smarty->assign('smartyTasks', $tasks);
 	$smarty->assign('smartyNumberUsers', $numberUsers);
+	$smarty->assign('smartyNumberTasks', $numberTasks);
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/iterations/iterationPage.tpl');

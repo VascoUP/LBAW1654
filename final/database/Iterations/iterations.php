@@ -149,4 +149,19 @@ function getTasks($idIt){
 	return $result;
 }
 
+function numberTasksCompleted($idIt){
+	try {
+		global $conn;
+		
+		$stmt = $conn->prepare("SELECT COUNT(*) AS counter FROM Task 
+								WHERE iterationID = ? AND taskStatus = 'completed'");						
+		$stmt->execute(array($idIt));
+		$result = $stmt->fetchAll();
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+	
+	return $result['0']['counter'];
+}
+
 ?>
