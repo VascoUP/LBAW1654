@@ -20,7 +20,7 @@
                 {if isset($smartyUsrInfo['0']['photo'])}
                     <img src="{$BASE_URL}images/users/{$smartyUsrInfo['0']['photo']}" class='img-responsive' alt=''>
                 {else}
-                    <img src="{$BASE_URL}images/assets/loginImage.png" class='img-responsive' alt=''>
+                    <img src="{$BASE_URL}images/assets/default.png" class='img-responsive' alt=''>
                 {/if}
 
             </div>
