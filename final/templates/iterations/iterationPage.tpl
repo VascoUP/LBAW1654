@@ -50,7 +50,9 @@
 					</table>
 				</div>
 				{/if}
+				{if $smartyPermission}
 				<a id="addTaskIteration" role="button" class="btn btn-success" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/createTask.php?itID={$smartyID}">Add Task</a>
+				{/if}
 			</div>
 		</div>
 	</div>

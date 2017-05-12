@@ -189,4 +189,24 @@ function givePermission($userID, $itID){
 	}
 }
 
+function userWithPermission($itID, $userID){
+	try {
+		global $conn;
+		
+		$stmt = $conn->prepare("SELECT userID
+								FROM IterationsPermissions
+								WHERE iterationID = ?
+								AND userID = ?");						
+		$stmt->execute(array($itID, $userID));
+		$result = $stmt->fetchAll();
+		
+		if(count($result) != 0)
+			return true;
+		return false;
+		
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+}
+
 ?>

@@ -122,7 +122,11 @@ function addTask($name, $priority, $description, $effort, $itID, $userID){
 		$stmt->bindParam(':name', $name);
 		$stmt->bindParam(':effort', $effort);
 		$stmt->bindParam(':taskStatus', $taskStatus);
-		$stmt->execute();		
+		$stmt->execute();
+
+		$stmt = $conn->prepare("INSERT INTO IterationsPermissions(iterationID, userID)
+									VALUES (?,?)");										
+		$stmt->execute(array($itID, $userID));
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}

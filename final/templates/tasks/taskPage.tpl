@@ -48,13 +48,17 @@
                     </table>
                 </div>
                 <div class="task-userbuttons">
-				{if $smartyTaskValue == 0}
+				{if $smartyTaskValue == 0 && $smartyPermission}
                     <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/editTask.php?taskID={$smartyTaskID}" class="btn btn-info btn-sm">Edit Task</a>
 				{/if}
+				{if $smartyPermission}
 					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/projects/createForumTask.php?projID={$smartyProjectID}&taskID={$smartyTaskID}" class="btn btn-primary btn-sm">Comment Task</a>
 					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/completeTask.php?taskID={$smartyTaskID}" class="btn btn-success btn-sm">Conclude Task</a>
+				{/if}
 					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveTask.php?taskID={$smartyTaskID}" class="btn btn-warning btn-sm">Leave Task</a>
+				{if $smartyPermission}	
 					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteTask.php?taskID={$smartyTaskID}" class="btn btn-danger btn-sm">Remove Task</a>
+				{/if}
                 </div>
             </div>
         </div>

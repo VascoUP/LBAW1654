@@ -23,6 +23,8 @@
 	$iterationID = $taskInfo['0']['iterationid'];
 	$projID = getInfoIteration($iterationID)['0']['projectid'];
 	
+	$userPermissions = userWithPermission($iterationID, $userInfo['0']['userid']);
+	
 	$numberWorkers = getNumberUsers($taskID);
 	
 	$smarty->assign('smartyTaskID', $taskID);
@@ -30,6 +32,7 @@
 	$smarty->assign('smartyWorkers', $numberWorkers);
 	$smarty->assign('smartyIterationID', $iterationID);
 	$smarty->assign('smartyProjectID', $projID);
+	$smarty->assign('smartyPermission', $userPermissions);
 	
 	$numberTasks = numberTasks($iterationID);
 	$numberTasksCompleted = numberTasksCompleted($iterationID);
