@@ -12,7 +12,7 @@
 			<div class="project-info-box">
 				<h2>{$smartyIterations['0']['name']}</h2>
 				<p>{$smartyIterations['0']['description']}</p>
-				{if $smartyTasks|@count != $smartyNumberTasks}
+				{if $smartyTasks|@count != $smartyNumberTasks || $smartyTasks|@count == 0}
 				<a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/editIteration.php?itID={$smartyID}">Edit Iteration</a>
 				{/if}
 				{if $smartyTasks|@count != 0}

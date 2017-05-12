@@ -37,14 +37,14 @@
                   <td class='text-center hidden-xs hidden-sm'><a>{$smartyIterations[$i]['startdate']}</a></td>
                   <td class='text-center hidden-xs hidden-sm'><a>{$smartyIterations[$i]['duedate']}</a></td>
 				  <td id = 'completed' class='text-center hidden-xs hidden-sm'>
-				  {if $numberTasksCompleted[$i] != $smartyIterationsCounter[$i]}
+				  {if $numberTasksCompleted[$i] != $smartyIterationsCounter[$i] || $smartyIterationsCounter[$i] == 0}
 				  Active
 				  {else}
 				  Completed
 				  {/if}
 				  </td>
                   <td>
-				  {if $numberTasksCompleted[$i] != $smartyIterationsCounter[$i]}
+				  {if $numberTasksCompleted[$i] != $smartyIterationsCounter[$i] || $smartyIterationsCounter[$i] == 0}
 					<a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/editIteration.php?itID={$smartyIterations[$i]['iterationid']}">Edit Iteration</a>
 				  {/if}
                   </td>
