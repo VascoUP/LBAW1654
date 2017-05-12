@@ -97,7 +97,25 @@
 			return $e->getMessage();
 		}
 	}
-	
   }
+	
+	function leaveProject($userID, $projID){
+		try{
+			global $conn;
+			$type = getUserInformationByID($userID)['0']['type'];
+			
+			if($type === 'coordinator'){
+				$stmt = $conn->prepare("DELETE FROM ProjectCoordinator WHERE userID = ? AND projectID = ?");
+				$stmt->execute(array($userID, $projID));
+			}
+			else{
+				$stmt = $conn->prepare("DELETE FROM ProjectUsers WHERE userID = ? AND projectID = ?");
+				$stmt->execute(array($userID, $projID));
+			}
+		}
+		 catch(Exception $e) {
+			return $e->getMessage();
+		}
+	}
 
 ?>

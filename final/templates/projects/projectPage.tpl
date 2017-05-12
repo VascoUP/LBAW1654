@@ -63,6 +63,7 @@
                     </li>
                 </ul>
             </div>
+			
             <!-- END MENU -->
         </div>
 		{if $smartyUsrInfo['0']['type'] == 'administrator'}
@@ -70,6 +71,9 @@
                 <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/deleteProject.php?projID={$smartyProjID}' type='button' class='btn btn-danger btn-sm'>Remove Project</a>
             </div>
 		{/if}
+		<div class='profile-userbuttons'>
+		<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveProject.php?projID={$smartyProjID}" class="btn btn-warning btn-sm">Leave Task</a>
+		</div>
     </div>
    
         <div class='col-md-9'>
