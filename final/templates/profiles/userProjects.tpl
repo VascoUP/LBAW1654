@@ -61,6 +61,14 @@
     </div>
         <div class="col-md-9">
             <div class="profile-content">
+				<div class="pull-right">
+						<div class="btn-group">
+							<input id="top5" type="submit" class="btn btn-success btn-filter" value="Last 5 Active" name="Top5">
+							<input id="coord" type="submit" class="btn btn-primary btn-filter" value="Coordinator" name"coordinator">
+							<input id="collab" type="submit" class="btn btn-info btn-filter" value="Collaborator" name="Collaborator">
+							<input id="all" type="submit" class="btn btn-default btn-filter" value="All" name="All">
+						</div>
+					</div>
 				<div class="pull-left">
                     <input type="text" class="form-control search" placeholder="Search...">
                 </div>
@@ -95,3 +103,5 @@
     </div>
 </div>
 </div>
+
+<script src="{$BASE_URL}javascript/users/userProjects.js"></script>

@@ -146,6 +146,31 @@
 
 		return $result;
   	}
+	
+	function getTop5($userID){
+		try {
+		global $conn;
+		$stmt = $conn->prepare("SELECT *
+								FROM Project
+								WHERE projectid IN (SELECT ProjectCoordinator.projectid
+													FROM ProjectCoordinator
+													WHERE ProjectCoordinator.userid = ?
+													ORDER BY startDate DESC
+													LIMIT 5)
+								OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
+								WHERE ProjectUsers.userid = ?
+								AND userStatusProject = 'active'
+								ORDE BY invitedate DESC
+								LIMIT 5)
+								LIMIT 5");
+		$stmt->execute(array($id, $id));
+		$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+		return $e->getMessage();
+		}
+
+		return $result;
+	}
 
 	function getTokenInfo($token){
 		try {
