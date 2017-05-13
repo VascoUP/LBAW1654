@@ -6,6 +6,6 @@
         Waiting ...
     </h4>
       <p>An email was sent to you.</p>
-      <p><small>If you didn't receive an email, <a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/user/waitingPage.php?email={$email}">select this to resend the email</a></small></p>  
+      <p><small>If you didn't receive an email, <a href="{$BASE_URL}actions/users/sendEmail.php?email={$email}">select this to resend the email</a></small></p>  
 	</div>
 </div>

@@ -1,8 +1,10 @@
 <?php
   include_once('../../config/init.php');
-
-  $email = strip_tags($_POST['email']);
   
+  if(!$_POST['email'])
+	  $email = $_GET['email'];
+  else
+	  $email = strip_tags($_POST['email']);
   $to = $email;
 		$subject = 'YourManagement: Password Recovery';
 
