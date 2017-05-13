@@ -6,21 +6,15 @@
 		die();
 	}
 	
-	include_once($BASE_DIR .'database/Projects/projectInformation.php');
 	include_once($BASE_DIR .'database/Users/userInformation.php');
-	include_once($BASE_DIR .'database/invites.php');
-
-	$userID = $_GET['userInfo'];
-	$userInfo = getUserInformationByID($userID);
-  	$smarty->assign('smartyUsrInfo', $userInfo);
 	
+	$userID = $_GET['userID'];
+
 	$projects = getProjects($userID);
+	$smarty->assign('userID', $userID);
 	$smarty->assign('projects', $projects);
-
-	$projectInvites = invitedProjects($userID);
-  	$smarty->assign('smartyProjInvites', $projectInvites);
-
+	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
-	$smarty->display($BASE_DIR .'templates/profiles/userProjects.tpl');
+	$smarty->display($BASE_DIR .'templates/profiles/projects.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>

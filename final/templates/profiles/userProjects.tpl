@@ -66,7 +66,6 @@
 							<input id="top5" type="submit" class="btn btn-success btn-filter" value="Last 5 Active" name="Top5">
 							<input id="coord" type="submit" class="btn btn-primary btn-filter" value="Coordinator" name"coordinator">
 							<input id="collab" type="submit" class="btn btn-info btn-filter" value="Collaborator" name="Collaborator">
-							<input id="all" type="submit" class="btn btn-default btn-filter" value="All" name="All">
 						</div>
 					</div>
 				<div class="pull-left">
@@ -97,6 +96,7 @@
 							{/for}
                         </tbody>
                     </table>
+					<a class='pull-right' href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/projects.php?userID={$smartyUsrInfo['0']['userid']}'>Show all projects</a>
                 </div>
             </div>
         </div>

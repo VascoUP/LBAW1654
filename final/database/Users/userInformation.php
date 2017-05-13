@@ -126,8 +126,7 @@
 		}
   	}
   
-  	function getProjects($username){
-		$id = getUserID($username);
+  	function getProjects($id){
 		try {
 		global $conn;
 		$stmt = $conn->prepare("SELECT *
@@ -137,7 +136,9 @@
 													WHERE ProjectCoordinator.userid = ?)
 								OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
 								WHERE ProjectUsers.userid = ?
-								AND userStatusProject = 'active')");
+								AND userStatusProject = 'active')
+								ORDER BY name
+								LIMIT 6");
 		$stmt->execute(array($id, $id));
 		$result = $stmt->fetchAll();
 		} catch(Exception $e) {
