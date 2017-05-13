@@ -20,10 +20,14 @@
         }
     }
 
+    $userIsCoord = isCoordinatorInProject($projID,$userInfo[0]['userid']);
+
     if( $isCollaborator === false ) {
         if( $projectInformation['0']['access'] == 0 ) {
-            header('Location: https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php');
-            die();
+            if (!$userIsCoord) {
+                header('Location: https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php');
+                die();
+            }
         }
 
         // ADD BUTTON TO THE PAGE
