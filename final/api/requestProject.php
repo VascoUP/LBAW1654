@@ -4,17 +4,10 @@
 
 	$data = json_decode(file_get_contents('php://input'), true);
 	
-	$userID = $data['userid'];
+	$userID = getUserID($_SESSION['username']);
 	$projID = $data['projid'];
 	
-	if($data['accepted'] == true) {
-		$result = acceptInvite($userID, $projID);
-		echo "Accepted\n";
-	}
-	else {
-		$result = removeInvitedStatus($userID, $projID);
-		echo "Refused\n";
-	}
+    $result = requestParticipation($userID, $projID);
 	
 	echo $data['accepted'];
 ?>

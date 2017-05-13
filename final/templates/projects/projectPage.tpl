@@ -1,5 +1,6 @@
 <link href="{$BASE_URL}css/pages/profile.css" rel='stylesheet'>
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel='stylesheet'>
+<script type="text/javascript" src="{$BASE_URL}javascript/projects/projectPage.js"></script>
 
 <div class='container'>
 

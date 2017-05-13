@@ -19,8 +19,7 @@ function init() {
         var parent = $(this).parent()
         var projid = parseInt($(this).siblings('.projID').text());
         var userid = parseInt($(this).siblings('.userID').text());
-        console.log(projid);
-        console.log(userid);
+
         // CHANGE PROJ STATUS
         ajaxPost(false, projid, userid, $(this).parent());
     });
