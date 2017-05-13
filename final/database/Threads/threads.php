@@ -14,6 +14,24 @@
 		}
     return $result;
   }
+  
+  function getThreadCreated($projID){
+	  try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT * 
+									FROM Thread
+									WHERE projectID = ?
+									ORDER BY threadID DESC
+									LIMIT 1");
+								
+			$stmt->execute(array($projID));
+			$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+    return $result;
+  }
+  
   function getThreadInformation($thread, $projID) {
 		try {
 			global $conn;
@@ -92,13 +110,29 @@
     return $result;
   }
   
-  function addComment($thread, $user, $content){
+  function addComment($thread, $user, $content, $date){
 	  try {
 			global $conn;
 			$date = date('Y-m-d');
 			$stmt = $conn->prepare("INSERT INTO Comment(threadID, userID, content, date) 
 									VALUES (:threadID, :userID, :content, :date)");
 								
+			$stmt->bindParam(':threadID', $thread);
+			$stmt->bindParam(':userID', $user);
+			$stmt->bindParam(':content', $content);
+			$stmt->bindParam(':date', $date);
+		} catch(Exception $e) {
+			echo $e->getMessage();
+		}
+  }
+  
+  function addTaskComment($thread, $user, $content, $date, $taskID){
+	  try {
+			global $conn;
+			$date = date('Y-m-d');
+			$stmt = $conn->prepare("INSERT INTO Comment(taskID, threadID, userID, content, date) 
+									VALUES (:taskID, :threadID, :userID, :content, :date)");
+			$stmt->bindParam(':taskID', $taskID);			
 			$stmt->bindParam(':threadID', $thread);
 			$stmt->bindParam(':userID', $user);
 			$stmt->bindParam(':content', $content);

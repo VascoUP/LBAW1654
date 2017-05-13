@@ -63,21 +63,23 @@
 					<div class="table-container">
 						<table class="table table-filter">
 							<tbody>
+								{for $i=0 to ($users|@count-1)}
 								<tr data-status="active">
 									<td>
 										<div class="media">
 											<div class="media-body">
 												<h4 class="title2">
-													aeFi321
-													<span class="pull-right active">(Active)</span>
+													{$users[$i]['username']}
+													<span class="pull-right active">{$user[$i]['userstatus']}</span>
 												</h4>
 											</div>
 											<a href="#" class="pull-left">
-												<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+												<img src="https://gnomo.fe.up.pt/~lbaw1654/final/images/users/{$user[$i]['photo']}" class="media-photo">
 											</a>
 										</div>
 									</td>
 								</tr>
+								{/for}
 								<tr data-status="active">
 									<td>
 										<div class="media">

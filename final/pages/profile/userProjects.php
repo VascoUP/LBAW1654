@@ -16,7 +16,13 @@
 	
 	$projects = getProjects($userID);
 	$smarty->assign('projects', $projects);
-
+	
+	$projectsCoord = getProjectsCoordinator($userID);
+	$smarty->assign('projectsCoord', $projectsCood);
+	
+	$projectsCollab = getProjectsCollaborator($userID);
+	$smarty->assign('projectsCollab', $projectsCollab);
+	
 	$projectInvites = invitedProjects($userID);
   	$smarty->assign('smartyProjInvites', $projectInvites);
 

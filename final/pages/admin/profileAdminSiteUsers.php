@@ -14,6 +14,9 @@
 
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
   	$smarty->assign('smartyProjInvites', $projectInvites);
+	
+	$users = getUsers();
+	$smarty->assign('smartyUsers', $users);
 	  
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 	$smarty->display($BASE_DIR .'templates/admin/profileAdminSiteUsers.tpl');

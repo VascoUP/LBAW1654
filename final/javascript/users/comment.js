@@ -36,9 +36,10 @@ function getUrlParameter(sParam) {
 function ajaxPost() {
     var content = $('textarea').val();
     var forumID = getUrlParameter('forumID');
+	var taskID = getUrlParameter('taskID');
     var username = $("#hdnSession").text();
 
-    var data = {
+	var data = {
         'username': username,
         'forumID': forumID,
         'content': content

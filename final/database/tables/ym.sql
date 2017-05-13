@@ -711,6 +711,27 @@ CREATE TRIGGER changeTaskStatus
 AFTER INSERT ON TaskUser
 FOR EACH ROW 
 EXECUTE PROCEDURE changeTaskStatus();
+
+CREATE TRIGGER CheckChangeUser
+AFTER INSERT ON ProjectCoordinator
+FOR EACH ROW 
+EXECUTE PROCEDURE changeUser();
+
+DROP FUNCTION IF EXISTS changeTaskStatusDeleteProject();
+CREATE FUNCTION changeTaskStatusDeleteProject()
+RETURNS TRIGGER AS $changeTaskStatusDeleteProject$
+	BEGIN
+		UPDATE Task
+		SET taskStatus = 'completed'
+		WHERE iterationID IN (SELECT iterationID FROM Iteration WHERE projectID = OLD.projectID);
+		RETURN NEW;
+	END;
+$changeTaskStatusDeleteProject$ LANGUAGE plpgsql;
+
+CREATE TRIGGER changeTaskStatusDeleteProject
+BEFORE DELETE ON Project
+FOR EACH ROW 
+EXECUTE PROCEDURE changeTaskStatusDeleteProject();
 		
 
 SELECT Project.projectID AS "Project ID", Project.name AS "Project name", Tag.name AS "Tag name"

@@ -12,28 +12,36 @@
 			</select>
 		</div>
 		<div class="table-container">
-			<table class="table table-filter">
+			<table id="tableUser" class="table table-filter"  style="float: left">
 				<tbody>
+				{for $i=0 to ($smartyUsers|@count -1}
 					<tr>
 						<td>
 							<div class="media">
 								<div class="media-body">
-									<h4 class="title">Lorem Impsum</h4>
-									<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+									<h4 class="title">{$smartyUsers[$i]['username']}</h4>
+									<p class="summary">{$smartyUsers[$i]['email']</p>
 								</div>
 							</div>
 						</td>
 					</tr>
+				{/for}
+				</tbody>
+			</table>
+			<table id="tableProj" class="table table-filter"  style="float: left">
+				<tbody>
+					{for $i=0 to ($smartyProjs|@count -1}
 					<tr>
 						<td>
 							<div class="media">
 								<div class="media-body">
-									<h4 class="title">Lorem</h4>
-									<p class="summary">Ut enim ad minim veniam</p>
+									<h4 class="title">{$smartyProjs[$i]['name']}</h4>
+									<p class="summary">{$smartyProjs[$i]['description']</p>
 								</div>
 							</div>
 						</td>
 					</tr>
+					{/for}
 				</tbody>
 			</table>
 		</div>

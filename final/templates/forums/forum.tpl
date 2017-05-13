@@ -2,6 +2,9 @@
 
 <div class="container">
     <div class="card card-container">
+	{if $smartyTaskID}
+	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$smartyTaskID}"> Task </a>
+	{/if}
 	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/projectForum.php?projID={$smartyProjID}"> Forums </a>
 	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjID}"> Project </a>
         <div class="blog-comment">

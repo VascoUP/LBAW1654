@@ -2,6 +2,7 @@
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <script src="{$BASE_URL}javascript/users/confirmDelete.js"></script>
+<script src="{$BASE_URL}javascript/projects/showProjects.js"></script>
 
 <div class="container">
     <div class="row profile">
@@ -63,16 +64,16 @@
             <div class="profile-content">
 				<div class="pull-right">
 						<div class="btn-group">
-							<input id="top5" type="submit" class="btn btn-success btn-filter" value="Last 5 Active" name="Top5">
-							<input id="coord" type="submit" class="btn btn-primary btn-filter" value="Coordinator" name"coordinator">
-							<input id="collab" type="submit" class="btn btn-info btn-filter" value="Collaborator" name="Collaborator">
+							<button id="top5" type="submit" class="btn btn-success btn-filter" name="Top5">Last 5 Active</button>
+							<button id="coord" type="submit" class="btn btn-primary btn-filter" name"coordinator">Coordinator</button>
+							<button id="collab" type="submit" class="btn btn-info btn-filter" name="Collaborator">Collaborator</button>
 						</div>
 					</div>
 				<div class="pull-left">
                     <input type="text" class="form-control search" placeholder="Search...">
                 </div>
                 <div class="table-container">
-                    <table class="table table-filter">
+                    <table id="top5table" class="table table-filter">
                         <tbody>
 							{for $i=0 to ($projects|@count-1)}
                             <tr>
@@ -96,6 +97,54 @@
 							{/for}
                         </tbody>
                     </table>
+					 <table id="coordtable" class="table table-filter">
+                        <tbody>
+							{for $i=0 to ($projectsCoord|@count-1)}
+                            <tr>
+                                <td>
+                                    <div class="media">
+                                        <div class="media-body">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projectsCoord[$i]['projectid']}" role="button">
+												<h4 class="title">
+													{$projects[$i]['name']}
+												</h4>
+											</a>
+                                            <p class="summary">{$projectsCoord[$i]['description']}</p>
+                                        </div>
+                                        
+                                        <div class="profile-userbuttons">
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projectsCoord[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+							{/for}
+                        </tbody>
+                    </table>
+					<table id="collabtable" class="table table-filter">
+                        <tbody>
+							{for $i=0 to ($projectsCollab|@count-1)}
+                            <tr>
+                                <td>
+                                    <div class="media">
+                                        <div class="media-body">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projectsCollab[$i]['projectid']}" role="button">
+												<h4 class="title">
+													{$projectsCollab[$i]['name']}
+												</h4>
+											</a>
+                                            <p class="summary">{$projectsCollab[$i]['description']}</p>
+                                        </div>
+                                        
+                                        <div class="profile-userbuttons">
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projectsCollab[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+							{/for}
+                        </tbody>
+                    </table>
 					<a class='pull-right' href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/projects.php?userID={$smartyUsrInfo['0']['userid']}'>Show all projects</a>
                 </div>
             </div>
@@ -103,5 +152,3 @@
     </div>
 </div>
 </div>
-
-<script src="{$BASE_URL}javascript/users/userProjects.js"></script>

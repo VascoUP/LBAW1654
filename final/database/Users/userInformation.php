@@ -148,6 +148,44 @@
 		return $result;
   	}
 	
+	function getProjectsCoordinator($id){
+		try {
+		global $conn;
+		$stmt = $conn->prepare("SELECT *
+								FROM Project
+								WHERE projectid IN (SELECT ProjectCoordinator.projectid
+													FROM ProjectCoordinator
+													WHERE ProjectCoordinator.userid = ?)
+								ORDER BY name
+								LIMIT 6");
+		$stmt->execute(array($id));
+		$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+		return $e->getMessage();
+		}
+
+		return $result;
+	}
+	
+	function getProjectsCollaborator($id){
+		try {
+		global $conn;
+		$stmt = $conn->prepare("SELECT *
+								FROM Project
+								WHERE projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
+													WHERE ProjectUsers.userid = ?
+													AND userStatusProject = 'active')
+								ORDER BY name
+								LIMIT 6");
+		$stmt->execute(array($id));
+		$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+		return $e->getMessage();
+		}
+
+		return $result;
+	}
+	
 	function getTop5($userID){
 		try {
 		global $conn;
