@@ -20,5 +20,5 @@
 		
 		$sent = mail($to, $subject, $message, $headers);
 		
-		header("Location: $BASE_URL" . "pages/users/login.php");
+		header("Location: $BASE_URL" . "pages/users/waitingPage.php?email=".$email);
 ?>
