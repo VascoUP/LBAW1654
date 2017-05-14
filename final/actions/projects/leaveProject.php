@@ -8,5 +8,5 @@
 	leaveProject($userInfoID, $id);
 	
   $_SESSION['success_messages'][] = 'Leave project successfully';  
-  header('Location: ' .$BASE_URL.'pages/profile/userProjects.php');
+  header('Location: ' .$BASE_URL.'pages/profile/userProjects.php?userInfo='.$userInfoID);
  ?>

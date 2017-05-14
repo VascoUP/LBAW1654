@@ -137,8 +137,7 @@
 									OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
 									WHERE ProjectUsers.userid = ?
 									AND userStatusProject = 'active')
-									ORDER BY name
-									LIMIT 5");
+									ORDER BY name");
 			$stmt->execute(array($id, $id));
 			$result = $stmt->fetchAll();
 		} catch(Exception $e) {
@@ -199,10 +198,10 @@
 								OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
 								WHERE ProjectUsers.userid = ?
 								AND userStatusProject = 'active'
-								ORDE BY invitedate DESC
+								ORDER BY inviteDate DESC
 								LIMIT 5)
 								LIMIT 5");
-		$stmt->execute(array($id, $id));
+		$stmt->execute(array($userID, $userID));
 		$result = $stmt->fetchAll();
 		} catch(Exception $e) {
 		return $e->getMessage();

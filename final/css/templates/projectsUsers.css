@@ -91,3 +91,8 @@ h4.title2{
 #top5body, #coordbody, #collabbody{
 	display: none;
 }
+
+h3#projh3, h3#coorsh3, h3#collabh3{
+	margin: 40px;
+	color: #b30000;
+}

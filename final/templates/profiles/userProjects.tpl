@@ -73,72 +73,88 @@
                     <input type="text" class="form-control search" placeholder="Search...">
                 </div>
                 <div class="table-container">
-                    <table class="table table-filter">
-                        <tbody id="top5body">
-							{for $i=0 to ($projects|@count-1)}
+                    <table id="top5body" class="table table-filter">
+                        <tbody>
+						{if $top|@count == 0}
+							<h3 id="projh3">{$smartyUsrInfo['0']['username']} doesn't have any project</h3>
+						{else}
+							{for $i=0 to ($top|@count-1)}
                             <tr>
                                 <td>
                                     <div class="media">
                                         <div class="media-body">
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projects[$i]['projectid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$top[$i]['projectid']}" role="button">
 												<h4 class="title">
-													{$projects[$i]['name']}
+													{$top[$i]['name']}
 												</h4>
 											</a>
                                             <p class="summary">{$projects[$i]['description']}</p>
                                         </div>
                                         
                                         <div class="profile-userbuttons">
-                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projects[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$top[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 							{/for}
+						{/if}
                         </tbody>
-						<tbody id="coordbody">
-							{for $i=0 to ($projects|@count-1)}
+                    </table>
+					<table id="coordbody" class="table table-filter">
+                        <tbody>
+						{if $projectsCoord|@count == 0}
+							<h3 id="coordh3">{$smartyUsrInfo['0']['username']} doesn't coordinates any project</h3>
+						{else}
+							{for $i=0 to ($projectsCoord|@count-1)}
                             <tr>
                                 <td>
                                     <div class="media">
                                         <div class="media-body">
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projects[$i]['projectid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projectsCoord[$i]['projectid']}" role="button">
 												<h4 class="title">
-													{$projects[$i]['name']}
+													{$projectsCoord[$i]['name']}
 												</h4>
 											</a>
-                                            <p class="summary">{$projects[$i]['description']}</p>
+                                            <p class="summary">{$projectsCoord[$i]['description']}</p>
                                         </div>
                                         
                                         <div class="profile-userbuttons">
-                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projects[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projectsCoord[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 							{/for}
+							{/if}
                         </tbody>
-						<tbody id="collabbody">
-							{for $i=0 to ($projects|@count-1)}
+                    </table>
+					<table id="collabbody" class="table table-filter">
+                        <tbody>
+						{if $projectsCollab|@count == 0}
+							<h3 id="collabh3">{$smartyUsrInfo['0']['username']} doesn't collaborates in any project</h3>
+						{else}
+							{for $i=0 to ($projectsCollab|@count-1)}
                             <tr>
                                 <td>
                                     <div class="media">
                                         <div class="media-body">
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projects[$i]['projectid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projectsCollab[$i]['projectid']}" role="button">
 												<h4 class="title">
-													{$projects[$i]['name']}
+													{$projectsCollab[$i]['name']}
 												</h4>
 											</a>
                                             <p class="summary">{$projects[$i]['description']}</p>
                                         </div>
                                         
                                         <div class="profile-userbuttons">
-                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projects[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projectCollab[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 							{/for}
+						{/if}
                         </tbody>
                     </table>
 					<a class='pull-right' href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/projects.php?userID={$smartyUsrInfo['0']['userid']}'>Show all projects</a>

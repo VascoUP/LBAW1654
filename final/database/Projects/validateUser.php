@@ -10,11 +10,10 @@
     $projID = $_GET['projID'];
 
     $projectInformation = getProjectInformation($projID);
-
     $userProjects = getProjects($userInfo[0]['userid']);
     $isCollaborator = false;
-    foreach( $userProjects as &$project ) {
-        if( $userProjects['projectid'] == $projID ) {
+    foreach( $userProjects as $project ) {
+        if( $project['projectid'] == $projID ) {
             $isCollaborator = true;
             break;
         }
