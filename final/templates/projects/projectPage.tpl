@@ -1,5 +1,6 @@
 <link href="{$BASE_URL}css/pages/profile.css" rel='stylesheet'>
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel='stylesheet'>
+<script type="text/javascript" src="{$BASE_URL}javascript/projects/projectPage.js"></script>
 
 <div class='container'>
 
@@ -70,10 +71,13 @@
 		<div class='profile-userbuttons'>
                 <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/deleteProject.php?projID={$smartyProjID}' type='button' class='btn btn-danger btn-sm'>Remove Project</a>
             </div>
-		{/if}
+		{else}
 		<div class='profile-userbuttons'>
-		<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveProject.php?projID={$smartyProjID}" class="btn btn-warning btn-sm">Leave Task</a>
+			<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveProject.php?projID={$smartyProjID}" class="btn btn-warning btn-sm">Leave Project</a>
+			
+			<a type="button" id="request" class="btn btn-primary btn-sm">Request to Join</a>
 		</div>
+		{/if}
     </div>
    
         <div class='col-md-9'>

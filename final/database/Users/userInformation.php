@@ -128,21 +128,20 @@
   
   	function getProjects($id){
 		try {
-		global $conn;
-		$stmt = $conn->prepare("SELECT *
-								FROM Project
-								WHERE projectid IN (SELECT ProjectCoordinator.projectid
-													FROM ProjectCoordinator
-													WHERE ProjectCoordinator.userid = ?)
-								OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
-								WHERE ProjectUsers.userid = ?
-								AND userStatusProject = 'active')
-								ORDER BY name
-								LIMIT 6");
-		$stmt->execute(array($id, $id));
-		$result = $stmt->fetchAll();
+			global $conn;
+			$stmt = $conn->prepare("SELECT *
+									FROM Project
+									WHERE projectid IN (SELECT ProjectCoordinator.projectid
+														FROM ProjectCoordinator
+														WHERE ProjectCoordinator.userid = ?)
+									OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
+									WHERE ProjectUsers.userid = ?
+									AND userStatusProject = 'active')
+									ORDER BY name");
+			$stmt->execute(array($id, $id));
+			$result = $stmt->fetchAll();
 		} catch(Exception $e) {
-		return $e->getMessage();
+			return $e->getMessage();
 		}
 
 		return $result;
@@ -199,10 +198,10 @@
 								OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
 								WHERE ProjectUsers.userid = ?
 								AND userStatusProject = 'active'
-								ORDE BY invitedate DESC
+								ORDER BY inviteDate DESC
 								LIMIT 5)
 								LIMIT 5");
-		$stmt->execute(array($id, $id));
+		$stmt->execute(array($userID, $userID));
 		$result = $stmt->fetchAll();
 		} catch(Exception $e) {
 		return $e->getMessage();
@@ -216,13 +215,31 @@
 			global $conn;
 			$stmt = $conn->prepare("SELECT *
 									FROM UserToken
-									WHERE tokenName = ?)");
+									WHERE tokenName = ?");
 			$stmt->execute(array($token));
-			$result = $stmt->fetchAll();
+			$result = $stmt->fetch();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
 
-		return $result['0']['userid'];
+		return $result['userid'];
+	}
+
+	function getRequestInvite($userID, $projID) {
+		try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT userStatusProject
+									FROM ProjectUsers
+									WHERE userid = ?
+									AND projectid = ?");
+			$stmt->execute(array($userID, $projID));
+			$result = $stmt->fetch();
+			if( $result && $result[userStatusProject] == 'requested' )
+				return true;
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+
+		return false;
 	}
 ?>

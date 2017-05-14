@@ -16,10 +16,16 @@
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
   	$smarty->assign('smartyProjInvites', $projectInvites);
 	
-	$projects = getProjects();
-	$smarty->assign('smartyProjects', $projects);
+	$projectsActive = getSiteProjects('active');
+	$smarty->assign('smartyProjectsActive', $projectsActive);
+	
+	$projectsReported = getSiteProjects('reported');
+	$smarty->assign('smartyProjectsReported', $projectsReported);
+	
+	$projectsBanned = getSiteProjects('banned');
+	$smarty->assign('smartyProjectsBanned', $projectsBanned);
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
-	$smarty->display($BASE_DIR .'templates/admin/profileAdminSiteUsers.tpl');
-	$smarty->display($BASE_DIR .'templates/common/footer.tpl');	
+	$smarty->display($BASE_DIR .'templates/admin/profileAdminSiteProjects.tpl');
+	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>

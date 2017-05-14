@@ -23,9 +23,9 @@ DROP TYPE IF EXISTS ReportStatus;
 DROP TYPE IF EXISTS NotificationStatus;
 
 CREATE TYPE TaskStatus AS ENUM('active', 'completed', 'unassigned');
-CREATE TYPE UserStatusProject AS ENUM('inactive', 'active', 'invited');
+CREATE TYPE UserStatusProject AS ENUM('inactive', 'active', 'invited', 'requested');
 CREATE TYPE ProjectStatus AS ENUM('finished', 'working');
-CREATE TYPE StatusProj AS ENUM('active', 'banned');
+CREATE TYPE StatusProj AS ENUM('active', 'banned', 'reported');
 CREATE TYPE UserStatus AS ENUM('active', 'inactive', 'banned');
 CREATE TYPE ReportStatus AS ENUM('waiting', 'handled');
 CREATE TYPE NotificationStatus AS ENUM('waiting', 'read');

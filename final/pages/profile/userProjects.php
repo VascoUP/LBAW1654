@@ -17,8 +17,11 @@
 	$projects = getProjects($userID);
 	$smarty->assign('projects', $projects);
 	
+	$top = getTop5($userID);
+	$smarty->assign('top', $top);
+	
 	$projectsCoord = getProjectsCoordinator($userID);
-	$smarty->assign('projectsCoord', $projectsCood);
+	$smarty->assign('projectsCoord', $projectsCoord);
 	
 	$projectsCollab = getProjectsCollaborator($userID);
 	$smarty->assign('projectsCollab', $projectsCollab);
