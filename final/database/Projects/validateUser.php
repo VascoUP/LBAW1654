@@ -19,11 +19,12 @@
         }
     }
 
+	$userType = $userInfo[0]['type'];
     $userIsCoord = isCoordinatorInProject($projID,$userInfo[0]['userid']);
 
     if( $isCollaborator === false ) {
         if( $projectInformation['0']['access'] == 0 ) {
-            if (!$userIsCoord) {
+            if (!$userIsCoord && $userType != 'administrator') {
                 header('Location: https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php');
                 die();
             }

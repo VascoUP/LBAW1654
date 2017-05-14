@@ -67,6 +67,7 @@
 							<button id="top5" class="btn btn-success btn-filter" name="Top5">Last 5 Active</button>
 							<button id="coord" class="btn btn-primary btn-filter" name"coordinator">Coordinator</button>
 							<button id="collab" class="btn btn-info btn-filter" name="Collaborator">Collaborator</button>
+							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/projects.php?userID={$smartyUsrInfo['0']['userid']}' type="button" class="btn btn-default btn-filter">All</a>
 						</div>
 					</div>
 				<div class="pull-left">

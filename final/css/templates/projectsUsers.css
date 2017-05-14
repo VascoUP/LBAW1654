@@ -92,7 +92,7 @@ h4.title2{
 	display: none;
 }
 
-h3#projh3, h3#coorsh3, h3#collabh3{
+h3#projh3, h3#coorsh3, h3#collabh3, h3#activeh3, h3#reportedh3, h3#bannedh3{
 	margin: 40px;
 	color: #b30000;
 }

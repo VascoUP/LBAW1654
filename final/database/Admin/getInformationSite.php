@@ -1,25 +1,58 @@
 <?
 
-function getUsers(){
+function getSiteUsers(){
 	try {
 		global $conn;
 		$stmt = $conn->prepare("SELECT * FROM UserSite WHERE UserSite.type != 'administrator' LIMIT 10");	
 		
 		$stmt->execute();
+		$result = $stmt->fetchAll();
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
+	return $result;
 }
 
-function getProjects(){
+function getSiteProjects($status){
 	try {
 		global $conn;
-		$stmt = $conn->prepare("SELECT * FROM Project LIMIT 10");	
+		$stmt = $conn->prepare("SELECT * FROM Project WHERE projectStatus = ?");	
 		
-		$stmt->execute();
+		$stmt->execute(array($status));
+		$result = $stmt->fetchAll();
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
+	
+	return $result;
+}
+
+function getSiteProjectsAll(){
+	try {
+		global $conn;
+		$stmt = $conn->prepare("SELECT * FROM Project");	
+		
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+	
+	return $result;
+}
+
+function getSiteUsersAll(){
+	try {
+		global $conn;
+		$stmt = $conn->prepare("SELECT * FROM UserSite");	
+		
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+	
+	return $result;
 }
 
 function searchUsers($name){
