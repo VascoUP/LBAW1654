@@ -6,7 +6,6 @@
 		die();
 	}
 	
-  include_once($BASE_DIR .'database/Projects/validateUser.php');
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
 

@@ -7,6 +7,7 @@
 	}
 	
 	include_once($BASE_DIR .'database/Users/userInformation.php');
+		include_once($BASE_DIR .'database/Admin/getInformationSite.php');
 	include_once($BASE_DIR .'database/invites.php');
 	
 	$userInfo = getUserInformation($_SESSION['username']);
@@ -15,8 +16,17 @@
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
   	$smarty->assign('smartyProjInvites', $projectInvites);
 	
-	$users = getSiteUsers();
-	$smarty->assign('smartyUsers', $users);
+	$usersActive = getSiteUsers('active');
+	$smarty->assign('smartyUsersActive', $usersActive);
+	
+	$usersInactive = getSiteUsers('inactive');
+	$smarty->assign('smartyUsersInactive', $usersInactive);
+	
+	$usersReported = getSiteUsers('reported');
+	$smarty->assign('smartyUsersReported', $usersReported);
+	
+	$usersBanned = getSiteUsers('banned');
+	$smarty->assign('smartyUsersBanned', $usersBanned);
 	  
 	$smarty->display($BASE_DIR .'templates/common/header.tpl'); 
 	$smarty->display($BASE_DIR .'templates/admin/profileAdminSiteUsers.tpl');

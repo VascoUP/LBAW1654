@@ -1,12 +1,12 @@
 $(document).ready(init);
 
 function init() {
+	$('#reportedh3').hide();
+	$('#bannedh3').hide();
 	$('#active').show();
 	$('#reported').hide();
 	$('#banned').hide();
 	$('#activeh3').show();
-	$('#reportedh3').hide();
-	$('#bannedh3').hide();
 	
 	$("#button-active").click(function() {
 		$("#active").show();

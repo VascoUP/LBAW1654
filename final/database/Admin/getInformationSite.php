@@ -1,11 +1,11 @@
 <?
 
-function getSiteUsers(){
+function getSiteUsers($status){
 	try {
 		global $conn;
-		$stmt = $conn->prepare("SELECT * FROM UserSite WHERE UserSite.type != 'administrator' LIMIT 10");	
+		$stmt = $conn->prepare("SELECT * FROM UserSite WHERE UserSite.type != 'administrator' AND userStatus = ?");	
 		
-		$stmt->execute();
+		$stmt->execute(array($status));
 		$result = $stmt->fetchAll();
 	} catch(Exception $e) {
 		return $e->getMessage();
@@ -44,7 +44,7 @@ function getSiteProjectsAll(){
 function getSiteUsersAll(){
 	try {
 		global $conn;
-		$stmt = $conn->prepare("SELECT * FROM UserSite");	
+		$stmt = $conn->prepare("SELECT * FROM UserSite WHERE type != 'administrator'");	
 		
 		$stmt->execute();
 		$result = $stmt->fetchAll();

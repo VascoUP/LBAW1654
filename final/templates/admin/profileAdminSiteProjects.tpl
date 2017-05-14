@@ -56,7 +56,7 @@
 						<div class="btn-group">
 							<button id="button-active" type="button" class="btn btn-success btn-filter" data-target="active">Active</button>
 							<button id="button-reported" type="button" class="btn btn-warning btn-filter" data-target="reported">Reported</button>
-							<button id="button-banned" type="button" class="btn btn-danger btn-filter" data-target="reported">Banned</button>
+							<button id="button-banned" type="button" class="btn btn-danger btn-filter" data-target="banned">Banned</button>
 							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteProjects.php' type="button" class="btn btn-default btn-filter">All</a>
 						</div>
 					</div>

@@ -67,25 +67,25 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<form name="sentMessage" id="contactForm" novalidate>
+				<form name="sentMessage" id="contactForm" method="POST" action="https://gnomo.fe.up.pt/~lbaw1654/final/actions/admin/contactSite.php">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+								<input name="name" type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
 							</div>
 							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+								<input name="email" type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
 								<p class="help-block text-danger"></p>
 							</div>
 							<div class="form-group">
-								<input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+								<input name="tel" type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message.">
+								<textarea name="content" class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message.">
 								</textarea>
 								<p class="help-block text-danger"></p>
 							</div>
@@ -115,7 +115,6 @@
 
 <!-- Contact Form JavaScript -->
 <script src="{$BASE_URL}javascript/templates/jqBootstrapValidation.js"></script>
-<script src="{$BASE_URL}javascript/templates/contact_me.js"></script>
 
 <!-- Theme JavaScript -->
 <script src="{$BASE_URL}javascript/templates/agency.min.js"></script>

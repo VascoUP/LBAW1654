@@ -5,7 +5,7 @@
 
 <div class="container">
 	<div class="card card-container">
-		<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?userInfo={$userID}"> Projects </a>
+		<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php"> Site Users </a>
 		<div class="overlay">
 			<select id="order" name="order" onchange="getResults()">
 				<option value="name ASC">Alphabetical A->Z</option>
@@ -15,19 +15,19 @@
 		<div class="table-container">
 			<table class="table table-filter">
 				<tbody>
-				{if $projects|@count == 0}
-					<h3 id="projectUserh3">This user doesn't have any project created</h3>
+				{if $smartyUsers|@count == 0}
+					<h3 id="userh3">This site doesn't have any user registered</h3>
 				{else}
-				{for $i=0 to ($projects|@count-1)}
+				{for $i=0 to ($smartyUsers|@count-1)}
 					<tr>
 						<td>
 							<div class="media-body">
-								<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projects[$i]['projectid']}" role="button">
+								<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsers[$i]['userid']}" role="button">
 									<h4 class="title">
-										{$projects[$i]['name']}
+										{$smartyUsers[$i]['username']}
 									</h4>
 								</a>
-								<p class="summary">{$projects[$i]['description']}</p>
+								<p class="summary">{$smartyUsers[$i]['userstatus']}</p>
 							</div>
 						</td>
 					</tr>
