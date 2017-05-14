@@ -87,3 +87,7 @@ h4.title2{
 	background-color: white;
 	border: 0.5px solid grey;
 }
+
+#top5body, #coordbody, #collabbody{
+	display: none;
+}

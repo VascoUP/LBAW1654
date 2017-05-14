@@ -64,17 +64,17 @@
             <div class="profile-content">
 				<div class="pull-right">
 						<div class="btn-group">
-							<button id="top5" type="submit" class="btn btn-success btn-filter" name="Top5">Last 5 Active</button>
-							<button id="coord" type="submit" class="btn btn-primary btn-filter" name"coordinator">Coordinator</button>
-							<button id="collab" type="submit" class="btn btn-info btn-filter" name="Collaborator">Collaborator</button>
+							<button id="top5" class="btn btn-success btn-filter" name="Top5">Last 5 Active</button>
+							<button id="coord" class="btn btn-primary btn-filter" name"coordinator">Coordinator</button>
+							<button id="collab" class="btn btn-info btn-filter" name="Collaborator">Collaborator</button>
 						</div>
 					</div>
 				<div class="pull-left">
                     <input type="text" class="form-control search" placeholder="Search...">
                 </div>
                 <div class="table-container">
-                    <table id="top5table" class="table table-filter">
-                        <tbody>
+                    <table class="table table-filter">
+                        <tbody id="top5body">
 							{for $i=0 to ($projects|@count-1)}
                             <tr>
                                 <td>
@@ -96,48 +96,44 @@
                             </tr>
 							{/for}
                         </tbody>
-                    </table>
-					 <table id="coordtable" class="table table-filter">
-                        <tbody>
-							{for $i=0 to ($projectsCoord|@count-1)}
+						<tbody id="coordbody">
+							{for $i=0 to ($projects|@count-1)}
                             <tr>
                                 <td>
                                     <div class="media">
                                         <div class="media-body">
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projectsCoord[$i]['projectid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projects[$i]['projectid']}" role="button">
 												<h4 class="title">
 													{$projects[$i]['name']}
 												</h4>
 											</a>
-                                            <p class="summary">{$projectsCoord[$i]['description']}</p>
+                                            <p class="summary">{$projects[$i]['description']}</p>
                                         </div>
                                         
                                         <div class="profile-userbuttons">
-                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projectsCoord[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projects[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 							{/for}
                         </tbody>
-                    </table>
-					<table id="collabtable" class="table table-filter">
-                        <tbody>
-							{for $i=0 to ($projectsCollab|@count-1)}
+						<tbody id="collabbody">
+							{for $i=0 to ($projects|@count-1)}
                             <tr>
                                 <td>
                                     <div class="media">
                                         <div class="media-body">
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projectsCollab[$i]['projectid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projects[$i]['projectid']}" role="button">
 												<h4 class="title">
-													{$projectsCollab[$i]['name']}
+													{$projects[$i]['name']}
 												</h4>
 											</a>
-                                            <p class="summary">{$projectsCollab[$i]['description']}</p>
+                                            <p class="summary">{$projects[$i]['description']}</p>
                                         </div>
                                         
                                         <div class="profile-userbuttons">
-                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projectsCollab[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projects[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
                                         </div>
                                     </div>
                                 </td>

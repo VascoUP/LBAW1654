@@ -138,7 +138,7 @@
 									WHERE ProjectUsers.userid = ?
 									AND userStatusProject = 'active')
 									ORDER BY name
-									LIMIT 6");
+									LIMIT 5");
 			$stmt->execute(array($id, $id));
 			$result = $stmt->fetchAll();
 		} catch(Exception $e) {
