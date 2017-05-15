@@ -58,41 +58,41 @@ function getSiteUsersAll(){
 function searchUsers($name){
 	try {
 		global $conn;
-		$stmt = $conn->prepare("SELECT UserSite.username AS username, UserSite.email AS email, 
+		$stmt = $conn->prepare("SELECT DISTINCT UserSite.username AS username, UserSite.email AS email, 
 									UserSite.description AS description, ts_rank_cd(textsearch, query) AS rank
 								FROM UserSite, to_tsvector(username || ' ' || email) textsearch, to_tsquery('english', ?) query
 								WHERE UserSite.type != 'administrator'
 								AND textsearch @@ query
-								OR username ILIKE '%?%'
-								OR email ILIKE '%?%'
+								OR username ILIKE '%' || ? || '%'
+								OR email ILIKE '%' || ? || '%'
 								ORDER BY rank DESC LIMIT 10");	
 		
 		$stmt->execute(array($name, $name, $name));
 		$result = $stmt->fetchAll();
 	} catch(Exception $e) {
-		return $e->getMessage();
+		echo $e->getMessage();
 	}
 	
-	return result;
+	return $result;
 }
 
 function searchProjects($name){
 	try {
 		global $conn;
-		$stmt = $conn->prepare("SELECT Project.name AS name, Project.description AS description
+		$stmt = $conn->prepare("SELECT DISTINCT Project.name AS name, Project.description AS description
 								FROM Project, Tag, TagProject 
 								WHERE to_tsvector('english', Project.name) @@ to_tsquery('english', ?)
-								OR Project.name ILIKE '%?%'
+								OR Project.name ILIKE '%' || ? || '%'
 								OR (to_tsvector('english', Tag.name) @@ to_tsquery('english', ?)
-								OR Tag.name ILIKE '%?%'
+								OR Tag.name ILIKE '%' || ? || '%'
 								AND TagProject.tagID = Tag.tagID
 								AND Project.projectID = TagProject.projectID)
-								AND Project.access = 'public'");
+								AND Project.access = '1'");
 		$stmt->execute(array($name, $name, $name, $name));
 		
 		$result = $stmt->fetchAll();
 	} catch(Exception $e) {
-		return $e->getMessage();
+		echo $e->getMessage();
 	}
 	
 	return $result;

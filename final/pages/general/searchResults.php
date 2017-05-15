@@ -17,17 +17,11 @@
   	$smarty->assign('smartyProjInvites', $projectInvites);
 	
 	$search = $_GET['search'];
-	echo $search;
 	$projects = searchProjects($search);
 	$users = searchUsers($search);
 	
 	$smarty->assign('smartyUsers', $users);
 	$smarty->assign('smartyProjs', $projects);
-	
-	echo count($projects);
-	echo count($users);
-	echo $users['0']['username'];
-	echo $projects['0']['description'];
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/general/searchResults.tpl');
