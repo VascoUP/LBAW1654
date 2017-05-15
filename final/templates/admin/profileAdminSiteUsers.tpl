@@ -41,7 +41,7 @@
 					<li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php'>
                         <i class='glyphicon glyphicon-ok'></i>
-                        SiteUsers</a>
+                        Site Users</a>
                     </li>
                 </ul>
             </div>
@@ -159,7 +159,7 @@
 						<table id="tableBanned" class="table table-filter">
 							<tbody>
 							{if $smartyUsersBanned|@count == 0}
-									<h3 id="Useractiveh3">This site doesn't have any banned user</h3>
+									<h3 id="Userbannedh3">This site doesn't have any banned user</h3>
 								{else}
 								{for $i=0 to ($smartyUsersBanned|@count-1)}
 								<tr data-status="banned">

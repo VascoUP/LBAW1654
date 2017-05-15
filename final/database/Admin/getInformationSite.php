@@ -68,9 +68,12 @@ function searchUsers($name){
 								ORDER BY rank DESC LIMIT 10");	
 		
 		$stmt->execute(array($name, $name, $name));
+		$result = $stmt->fetchAll();
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
+	
+	return result;
 }
 
 function searchProjects($name){
@@ -86,9 +89,13 @@ function searchProjects($name){
 								AND Project.projectID = TagProject.projectID)
 								AND Project.access = 'public'");
 		$stmt->execute(array($name, $name, $name, $name));
+		
+		$result = $stmt->fetchAll();
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
+	
+	return $result;
 }
 
 ?>

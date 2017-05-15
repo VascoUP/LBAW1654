@@ -57,7 +57,7 @@
 					<li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php'>
                         <i class='glyphicon glyphicon-ok'></i>
-                        SiteUsers</a>
+                        Site Users</a>
                     </li>
                 </ul>
             </div>

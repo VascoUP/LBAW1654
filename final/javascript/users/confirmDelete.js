@@ -8,8 +8,24 @@
 				return false;
 		});
 		
-		$('#deleteProj').click(function() {
+		$('.delete').click(function() {
 			var x = confirm("Are you sure you want to delete this project?");
+			if (x)
+				return true;
+			else
+				return false;
+		});
+		
+		$('#adminDeleteProject').click(function() {
+			var x = confirm("Are you sure you want to delete this project?");
+			if (x)
+				return true;
+			else
+				return false;
+		});
+		
+		$('#leaveProject').click(function() {
+			var x = confirm("Are you sure you want to leave this project?");
 			if (x)
 				return true;
 			else
@@ -23,5 +39,15 @@
 			else
 				return false;
 		});
+		
+		$('#leaveTask').click(function() {
+			var x = confirm("Are you sure you want to leave this task?");
+			if (x)
+				return true;
+			else
+				return false;
+		});
+		
+		
     });
 }(jQuery));

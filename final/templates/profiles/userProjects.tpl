@@ -1,8 +1,8 @@
 <link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
-<script src="{$BASE_URL}javascript/users/confirmDelete.js"></script>
 <script src="{$BASE_URL}javascript/projects/showProjects.js"></script>
+<script src="{$BASE_URL}javascript/users/confirmDelete.js"></script>
 
 <div class="container">
     <div class="row profile">
@@ -93,7 +93,7 @@
                                         </div>
                                         
                                         <div class="profile-userbuttons">
-                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$top[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$top[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" type="button" class="btn btn-danger btn-sm delete">Delete Project</a>
                                         </div>
                                     </div>
                                 </td>
@@ -121,7 +121,7 @@
                                         </div>
                                         
                                         <div class="profile-userbuttons">
-                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projectsCoord[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projectsCoord[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" type="button" class="btn btn-danger btn-sm delete">Delete Project</a>
                                         </div>
                                     </div>
                                 </td>
@@ -149,7 +149,7 @@
                                         </div>
                                         
                                         <div class="profile-userbuttons">
-                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projectCollab[$i]['projectid']}" type="button" class="btn btn-danger btn-sm" id="deleteProj">Delete Project</a>
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projectsCollab[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" type="button" class="btn btn-danger btn-sm delete">Delete Project</a>
                                         </div>
                                     </div>
                                 </td>

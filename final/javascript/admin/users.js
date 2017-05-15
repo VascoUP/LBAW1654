@@ -5,10 +5,10 @@ function init() {
 	$('#Userreportedh3').hide();
 	$('#Userbannedh3').hide();
 	$('#tableActive').show();
+	$('#Useractiveh3').show();
 	$('#tableInactive').hide();
 	$('#tableReported').hide();
 	$('#tableBanned').hide();
-	$('#Useractiveh3').show();
 	
 	$("#buttontActive").click(function() {
 		$('#tableActive').show();

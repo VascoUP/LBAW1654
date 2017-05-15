@@ -14,13 +14,13 @@
 		<div class="table-container">
 			<table id="tableUser" class="table table-filter"  style="float: left">
 				<tbody>
-				{for $i=0 to ($smartyUsers|@count -1}
+				{for $i=0 to ($smartyUsers|@count - 1)}
 					<tr>
 						<td>
 							<div class="media">
 								<div class="media-body">
 									<h4 class="title">{$smartyUsers[$i]['username']}</h4>
-									<p class="summary">{$smartyUsers[$i]['email']</p>
+									<p class="summary">{$smartyUsers[$i]['email']}</p>
 								</div>
 							</div>
 						</td>
@@ -30,13 +30,13 @@
 			</table>
 			<table id="tableProj" class="table table-filter"  style="float: left">
 				<tbody>
-					{for $i=0 to ($smartyProjs|@count -1}
+					{for $i=0 to ($smartyProjs|@count - 1)}
 					<tr>
 						<td>
 							<div class="media">
 								<div class="media-body">
 									<h4 class="title">{$smartyProjs[$i]['name']}</h4>
-									<p class="summary">{$smartyProjs[$i]['description']</p>
+									<p class="summary">{$smartyProjs[$i]['description']}</p>
 								</div>
 							</div>
 						</td>
