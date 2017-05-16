@@ -113,7 +113,6 @@
   function addComment($thread, $user, $content, $date){
 	  try {
 			global $conn;
-			$date = date('Y-m-d');
 			$stmt = $conn->prepare("INSERT INTO Comment(threadID, userID, content, date) 
 									VALUES (:threadID, :userID, :content, :date)");
 								

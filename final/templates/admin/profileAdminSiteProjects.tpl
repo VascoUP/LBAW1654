@@ -2,6 +2,7 @@
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <script src="{$BASE_URL}javascript/admin/projects.js"></script>
+<script src="{$BASE_URL}javascript/admin/searchSiteProjects.js"></script>
 <div class="container">
 	<div class="row profile">
 		<div class="col-md-3">
@@ -61,7 +62,7 @@
 						</div>
 					</div>
 					<div class="pull-left">
-					<input type="text" class="form-control search" placeholder="Search...">
+					<input id="searchSiteProj" type="text" class="form-control search" placeholder="Search...">
 				</div>
 					<div class="table-container">
 						<table id='active' class="table table-filter">

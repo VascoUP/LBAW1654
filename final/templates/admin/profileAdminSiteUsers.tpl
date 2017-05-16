@@ -23,8 +23,8 @@
             <!-- SIDEBAR MENU -->
             <div class='profile-usermenu'>
                 <ul class='nav'>
-                    <li class='active'>
-                        <a href='#'>
+                    <li>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php'>
                         <i class='glyphicon glyphicon-home'></i>
                         Overview </a>
                     </li>
@@ -38,7 +38,7 @@
                         <i class='glyphicon glyphicon-ok'></i>
                         Site Projects</a>
                     </li>
-					<li>
+					<li class='active'>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php'>
                         <i class='glyphicon glyphicon-ok'></i>
                         Site Users</a>
@@ -60,7 +60,7 @@
 						</div>
 					</div>
 					<div class="pull-left">
-					<input type="text" class="form-control search" placeholder="Search...">
+					<input id="searchSiteUsers" type="text" class="form-control search" placeholder="Search...">
 				</div>
 					<div class="table-container">
 						<table id="tableActive" class="table table-filter">

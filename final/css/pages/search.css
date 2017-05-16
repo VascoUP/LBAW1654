@@ -1,6 +1,11 @@
 .overlay{
 	height: 30px;
 	margin: -15px;
-	position: absolute;
+	position: fixed;
 	left: 50%;
-	margin-right: -50%;transform: translate(-50%, -50%) }
+	margin-right: -50%;transform: translate(-50%, -50%);
+}
+
+td:hover{
+	background-color: #fafcfd;
+}

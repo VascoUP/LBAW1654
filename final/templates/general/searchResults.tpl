@@ -4,7 +4,8 @@
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 
 <div class="container">
-	<div class="card card-container">
+	<div class="card card-container first">
+		<h3>Users</h3>
 		<div class="overlay">
 			<select id="order" name="order" onchange="getResults()">
 				<option value="name ASC">Alphabetical A->Z</option>
@@ -12,7 +13,7 @@
 			</select>
 		</div>
 		<div class="table-container">
-			<table id="tableUser" class="table table-filter"  style="float: left">
+			<table id="tableUser" class="table table-filter">
 				<tbody>
 				{for $i=0 to ($smartyUsers|@count - 1)}
 					<tr>
@@ -28,7 +29,19 @@
 				{/for}
 				</tbody>
 			</table>
-			<table id="tableProj" class="table table-filter"  style="float: left">
+		</div>
+	</div>
+	
+	<div class="card card-container second">
+		<h3>Projects</h3>
+		<div class="overlay">
+			<select id="order" name="order" onchange="getResults()">
+				<option value="name ASC">Alphabetical A->Z</option>
+				<option value="name DESC">Alphabetical Z->A</option>
+			</select>
+		</div>
+		<div class="table-container">
+			<table id="tableProj" class="table table-filter">
 				<tbody>
 					{for $i=0 to ($smartyProjs|@count - 1)}
 					<tr>
@@ -46,5 +59,4 @@
 			</table>
 		</div>
 	</div>
-</div>
 </div>

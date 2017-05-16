@@ -242,4 +242,26 @@
 
 		return false;
 	}
+	
+	function searchUserProjects($name, $userID){
+	try {
+		global $conn;
+		$stmt = $conn->prepare("SELECT DISTINCT Project.name AS name, Project.description AS description, Project.projectID as projectID
+								FROM Project, ProjectCoordinator, ProjectUsers
+								WHERE (ProjectCoordinator.userID = ?
+								AND Project.projectID = ProjectCoordinator.projectID)
+								OR (ProjectUsers.userID = ?
+								AND Project.projectID = ProjectUsers.projectID)
+								AND (to_tsvector('english', Project.name) @@ to_tsquery('english', ?)
+								OR Project.name ILIKE '%' || ? || '%')
+								AND Project.access = '1'");
+		$stmt->execute(array($userID, $userID, $name, $name));
+		
+		$result = $stmt->fetchAll();
+	} catch(Exception $e) {
+		echo $e->getMessage();
+	}
+	
+	return $result;
+}
 ?>

@@ -1,8 +1,9 @@
 <link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
-<script src="{$BASE_URL}javascript/projects/showProjects.js"></script>
 <script src="{$BASE_URL}javascript/users/confirmDelete.js"></script>
+<script src="{$BASE_URL}javascript/users/searchProjects.js"></script>
+<script src="{$BASE_URL}javascript/projects/showProjects.js"></script>
 
 <div class="container">
     <div class="row profile">
@@ -71,7 +72,7 @@
 						</div>
 					</div>
 				<div class="pull-left">
-                    <input type="text" class="form-control search" placeholder="Search...">
+                    <input id="searchProj" name='search' type="text" class="form-control search" placeholder="Search...">
                 </div>
                 <div class="table-container">
                     <table id="top5body" class="table table-filter">
