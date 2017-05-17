@@ -4,16 +4,8 @@
 <div class="card card-container">	
         <h2>Contact</h2>
             <hr>
-                <form class="form-horizontal" action="https://gnomo.fe.up.pt/~lbaw1654/final/actions/admin/contactUser.php?userID={$userID}" method="POST" id="contact_form">
+                <form class="form-horizontal" action="https://gnomo.fe.up.pt/~lbaw1654/final/actions/admin/contactUser.php?userID={$userID}&second={$secondUser}" method="POST" id="contact_form">
                     <fieldset>
-                        <div class="form-group">
-                            <div class="col-md-12">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input name="first_name" placeholder="Username" class="form-control" type="text">
-                                </div>
-                            </div>
-                        </div>
 						
 						<div class="form-group">
                             <div class="col-md-12">

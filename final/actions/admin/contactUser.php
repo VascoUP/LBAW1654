@@ -3,19 +3,17 @@
   include_once($BASE_DIR .'database/Admin/contacts.php');
  include_once($BASE_DIR .'database/Users/userInformation.php');  
   
-  if(!$_POST['first_name'] || !$_POST['comment'] || !$_POST['subject'] || !$_GET['userID']){
+  if(!$_POST['comment'] || !$_POST['subject'] || !$_GET['userID'] || !$_GET['second']){
 	  $_SESSION['error_messages'][] = 'Invalid contact';
 	  $_SESSION['form_values'] = $_POST;
 	  header('Location: ' . $_SERVER['HTTP_REFERER']);
 	  exit;
   }
   
-  $secondUserID = getUserID($_POST['first_name']);
-  
-  addContactUser($_GET['userID'], $secondUserID, $_POST['subject'], $_POST['comment']);
+  addContactUser($_GET['userID'], $_GET['second'], $_POST['subject'], $_POST['comment']);
   $_SESSION['success_messages'][] = 'Message sent successfully';
  
-  $secondUserEmail = getUserInformation($_POST['first_name'])['0']['email'];
+  $secondUserEmail = getUserInformationByID($_GET['second'])['0']['email'];
   $firstUserEmail = getUserInformationByID($_GET['userID'])['0']['email'];
   
   $email = $secondUserEmail;

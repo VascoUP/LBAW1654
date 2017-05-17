@@ -6,7 +6,6 @@
 		die();
 	}
 	
-  	include_once($BASE_DIR .'database/Projects/validateUser.php');
 	include_once($BASE_DIR .'database/Iterations/iterations.php');
 	include_once($BASE_DIR .'database/Tasks/tasks.php');
 	include_once($BASE_DIR .'database/Users/userInformation.php');
@@ -14,6 +13,8 @@
 		
 	$userInfo = getUserInformation($_SESSION['username']);
 	$smarty->assign('smartyUsrInfo', $userInfo);
+	
+	include_once($BASE_DIR .'database/Projects/validateUser.php');
 
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
 	$smarty->assign('smartyProjInvites', $projectInvites);

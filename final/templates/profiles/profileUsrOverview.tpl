@@ -62,7 +62,7 @@
             <!-- SIDEBAR BUTTONS -->
             <div class='profile-userbuttons'>
                 <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectCreate.php' type='button' class='btn btn-success btn-sm'>Add project</a>
-                <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/contactPage.php?userID={$smartyUsrInfo['0']['userid']}' type='button' class='btn btn-success btn-sm'>Contact</a>
+                <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/contactPage.php?second={$smartyUsrInfo['0']['userid']}&userID={$smartyUser}' type='button' class='btn btn-success btn-sm'>Contact</a>
             </div>
     </div>
     

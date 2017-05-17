@@ -20,7 +20,8 @@
 						<td>
 							<div class="media">
 								<div class="media-body">
-									<h4 class="title">{$smartyUsers[$i]['username']}</h4>
+									<h4 class="title">
+										<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsers[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}">{$smartyUsers[$i]['username']}</a></h4>
 									<p class="summary">{$smartyUsers[$i]['email']}</p>
 								</div>
 							</div>
@@ -48,7 +49,8 @@
 						<td>
 							<div class="media">
 								<div class="media-body">
-									<h4 class="title">{$smartyProjs[$i]['name']}</h4>
+									<h4 class="title">
+									<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjs[$i]['projectid']}">{$smartyProjs[$i]['name']}</a></h4>
 									<p class="summary">{$smartyProjs[$i]['description']}</p>
 								</div>
 							</div>

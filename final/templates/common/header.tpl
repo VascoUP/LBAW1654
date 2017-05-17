@@ -71,7 +71,11 @@
 								<a href="#page-top"></a>
 							</li>
 							<li>
+							{if $smartyProjInvites|@count == 0}
 								<img class="dropdown-notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="{$BASE_URL}images/assets/notificationBell.png">
+							{else}
+								<img class="dropdown-notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="{$BASE_URL}images/assets/bell-icon.png">
+							{/if}
 									<ul id="notification" class="dropdown-menu">
 									<li>New notifications (<span id="nNotifications">{$smartyProjInvites|@count}</span>)</li>
 										{for $index=0 to ($smartyProjInvites|@count - 1)}

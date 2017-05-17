@@ -14,6 +14,9 @@
 	else
 		$userID = $_GET['userInfo'];
 	
+	$first = $_GET['user'];
+	$smarty->assign('smartyUser', $first);
+	
 	$userInfo = getUserInformationByID($userID);
   	$smarty->assign('smartyUsrInfo', $userInfo);
 
