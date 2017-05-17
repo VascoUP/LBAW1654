@@ -1,20 +1,32 @@
 <link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
+<link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
 <link href="{$BASE_URL}css/pages/search.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 
 <div class="container">
-	<div class="card card-container first">
-		<h3>Users</h3>
-		<div class="overlay">
-			<select id="order" name="order" onchange="getResults()">
-				<option value="name ASC">Alphabetical A->Z</option>
-				<option value="name DESC">Alphabetical Z->A</option>
-			</select>
+	<div class="overlay">
+		<div class="results">
+		<select id="order" name="order">
+			<option value="name ASC">Alphabetical A->Z</option>
+			<option value="name DESC">Alphabetical Z->A</option>
+		</select>
+		<input type="checkbox" name="users" value="Users">Search user<br>
+		<input type="checkbox" name="projects" value="Projects">Search project
 		</div>
+	</div>
+	
+	
+	<div class="card card-container first">
+		<h3 class="title">Users</h3>
 		<div class="table-container">
 			<table id="tableUser" class="table table-filter">
 				<tbody>
+				{if $smartyUsers|@count == 0}
+				<h4 class="title">
+				Any users found
+				{/if}
+				</h4>
 				{for $i=0 to ($smartyUsers|@count - 1)}
 					<tr>
 						<td>
@@ -34,15 +46,13 @@
 	</div>
 	
 	<div class="card card-container second">
-		<h3>Projects</h3>
-		<div class="overlay">
-			<select id="order" name="order" onchange="getResults()">
-				<option value="name ASC">Alphabetical A->Z</option>
-				<option value="name DESC">Alphabetical Z->A</option>
-			</select>
-		</div>
+		<h3 class="title">Projects</h3>
 		<div class="table-container">
-			<table id="tableProj" class="table table-filter">
+			<table id="tableProject" class="table table-filter">
+			{if $smartyProjs|@count == 0}
+				<h4 class="title">
+				Any projects found
+				{/if}
 				<tbody>
 					{for $i=0 to ($smartyProjs|@count - 1)}
 					<tr>

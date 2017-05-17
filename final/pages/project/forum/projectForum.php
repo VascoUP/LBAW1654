@@ -18,7 +18,6 @@
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
 	$smarty->assign('smartyProjInvites', $projectInvites);
   
-  $projID = $_GET['projID'];
   $smarty->assign('smartyProjID', $projID);
   
   $threads = getThreads($projID);

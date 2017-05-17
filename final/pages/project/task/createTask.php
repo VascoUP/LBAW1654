@@ -11,8 +11,6 @@
 	
 	$userInfo = getUserInformation($_SESSION['username']);
   	$smarty->assign('smartyUsrInfo', $userInfo);
-	
-	include_once($BASE_DIR .'database/Projects/validateUser.php');
 
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
   	$smarty->assign('smartyProjInvites', $projectInvites);

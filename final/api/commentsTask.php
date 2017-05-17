@@ -12,10 +12,7 @@
 	$userInfo = getUserInformation($data['username']);
 	$date = date('Y-m-d');
 	
-	if(isset($taskID))
-		addTaskComment($forumID, $userID, $content, $date, $taskID);
-	else
-		addComment($forumID, $userID, $content, $date);
-
+    addTaskComment($forumID, $userid, $content, $date, $taskID);
+	
 	echo json_encode(array( "date" => $date, "userInfo" => $userInfo['0'] ));
 ?>

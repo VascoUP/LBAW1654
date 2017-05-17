@@ -39,11 +39,21 @@ function ajaxPost() {
 	var taskID = getUrlParameter('taskID');
     var username = $("#hdnSession").text();
 
-	var data = {
+	if(typeof taskID === undefined || taskID === null){
+		var data = {
+        'username': username,
+		'taskID': taskID,
+        'forumID': forumID,
+        'content': content
+		}
+    }
+	else{
+		var data = {
         'username': username,
         'forumID': forumID,
         'content': content
-    }
+		}
+	}
 
     $.post("../../../api/comments.php", JSON.stringify(data))
         .done(function(data) {
@@ -57,6 +67,9 @@ function ajaxPost() {
 
 function addComment(content, data) {
     var html = "";
+	console.log(data);
+	console.log(content);
+	
 	html += "<li class='clearfix'>";
     if (data['userInfo']['photo'] != null)
         html += "<img src='../../../images/users/" + data['userInfo']['photo'] + "' class='avatar' alt=''>";
@@ -67,8 +80,8 @@ function addComment(content, data) {
     html += "<p class='meta'>" + data['date'];
     html += "<a href='#'> " + data['userInfo']['username'] + "</a>";
     html += " says : <i class='pull-right'><a href='#'><small>Reply</small></a></i></p>";
-    html += "<p>" + content + "</p></div>";
-
+    html += "<p>" + content + "</p></div></li>";
+console.log(html);
     $('.comments').append(html);
 	$('#middleComment').hide();
     $('#inner_comment').hide();

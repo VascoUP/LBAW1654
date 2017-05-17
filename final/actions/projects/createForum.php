@@ -18,7 +18,7 @@ include_once($BASE_DIR .'database/Users/userInformation.php');
 	addForum($id, $userID, $name, $date);
 	
 	$forumID = getThreads($id)['0']['threadid'];
- 
+
   $_SESSION['success_messages'][] = 'Thread created successfully';  
  header('Location: ' .$BASE_URL.'pages/project/forum/forum.php?forumID='.$forumID);
 ?>

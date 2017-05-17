@@ -89,9 +89,8 @@
 			$stmt->bindParam(':title', $title);
 			$stmt->bindParam(':date', $date);
 			$stmt->execute();
-			echo "done";
 		} catch(Exception $e) {
-			echo $e->getMessage();
+			return $e->getMessage();
 		}
   }
   
@@ -120,6 +119,7 @@
 			$stmt->bindParam(':userID', $user);
 			$stmt->bindParam(':content', $content);
 			$stmt->bindParam(':date', $date);
+			$stmt->execute();
 		} catch(Exception $e) {
 			echo $e->getMessage();
 		}
@@ -136,6 +136,7 @@
 			$stmt->bindParam(':userID', $user);
 			$stmt->bindParam(':content', $content);
 			$stmt->bindParam(':date', $date);
+			$stmt->execute();
 		} catch(Exception $e) {
 			echo $e->getMessage();
 		}

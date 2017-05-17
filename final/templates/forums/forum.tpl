@@ -10,8 +10,8 @@
         <div class="blog-comment">
         <h3>Comments</h3>
 		<div id="placeComments">
+		<ul class="comments">
 		{if $smartyComments|@count != 0 }
-        <ul class="comments">
 			{for $i=0 to ($smartyComments|@count - 1)}
             <li class="clearfix">
 			{if $smartyUserInformation[$i]['photo']}
@@ -25,10 +25,9 @@
                 {$smartyComments[$i]['content']}
                 </p>
             </div>
+			</li>
 			{/for}
-            </li>
         </ul>
-		
 		<div id="second">
 			<p hidden id='hdnSession'>{$smartyUsrInfo['0']['username']}</p>
 			<textarea class="form-control form-style" rows="5" cols="30" id="middle" name="Reply">Reply</textarea>
