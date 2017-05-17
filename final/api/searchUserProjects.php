@@ -6,6 +6,7 @@
 	
     $key = $data['text'];
 	$user = $data['userID'];
+	
     $array = searchUserProjects($key, $user);
     echo json_encode($array);
 ?>

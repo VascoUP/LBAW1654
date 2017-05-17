@@ -9,7 +9,12 @@
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
 	
-	$userInfo = getUserInformation($_SESSION['username']);
+	if(!isset($_GET['userInfo']))
+		$userID = getUserInformation($_SESSION['username'])['0']['userid'];
+	else
+		$userID = $_GET['userInfo'];
+	
+	$userInfo = getUserInformationByID($userID);
   	$smarty->assign('smartyUsrInfo', $userInfo);
 
 	$projectInvites = invitedProjects($userInfo[0]['userid']);

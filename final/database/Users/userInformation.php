@@ -253,8 +253,7 @@
 								OR (ProjectUsers.userID = ?
 								AND Project.projectID = ProjectUsers.projectID)
 								AND (to_tsvector('english', Project.name) @@ to_tsquery('english', ?)
-								OR Project.name ILIKE '%' || ? || '%')
-								AND Project.access = '1'");
+								OR Project.name ILIKE '%' || ? || '%')");
 		$stmt->execute(array($userID, $userID, $name, $name));
 		
 		$result = $stmt->fetchAll();

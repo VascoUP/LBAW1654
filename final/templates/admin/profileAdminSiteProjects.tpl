@@ -2,7 +2,6 @@
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <script src="{$BASE_URL}javascript/admin/projects.js"></script>
-<script src="{$BASE_URL}javascript/admin/searchSiteProjects.js"></script>
 <div class="container">
 	<div class="row profile">
 		<div class="col-md-3">
@@ -64,7 +63,7 @@
 					<div class="pull-left">
 					<input id="searchSiteProj" type="text" class="form-control search" placeholder="Search...">
 				</div>
-					<div class="table-container">
+					<div id="projTable" class="table-container">
 						<table id='active' class="table table-filter">
 							<tbody>
 							{if $smartyProjectsActive|@count == 0}
@@ -140,7 +139,6 @@
 								{/if}
 							</tbody>
 						</table>
-						<a class='pull-right' href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteProjects.php'>Show all site projects</a>
 					</div>
 			</div>
 		</div>

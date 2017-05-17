@@ -6,6 +6,6 @@
 	
     $key = $data['text'];
 	
-    $array = searchProjects($key);
+    $array = searchAdminProjects($key);
     echo json_encode($array);
 ?>

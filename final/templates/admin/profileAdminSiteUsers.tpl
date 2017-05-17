@@ -62,7 +62,7 @@
 					<div class="pull-left">
 					<input id="searchSiteUsers" type="text" class="form-control search" placeholder="Search...">
 				</div>
-					<div class="table-container">
+					<div id="usersTable" class="table-container">
 						<table id="tableActive" class="table table-filter">
 							<tbody>
 								{if $smartyUsersActive|@count == 0}
@@ -187,7 +187,6 @@
 								{/if}
 							</tbody>
 						</table>
-						<a class='pull-right' href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteUsers.php'>Show all site users</a>
 					</div>
 			</div>
 		</div>
