@@ -1,13 +1,11 @@
-/*
-
 <?php
   include_once('../../config/init.php');
-  include_once($BASE_DIR .'database/Users/users.php');  
+  include_once($BASE_DIR .'database/Users/users.php');
 
   if (!$_POST['username'] || !$_POST['email'] || !$_POST['password']) {
     $_SESSION['error_messages'][] = 'All fields are mandatory';
     $_SESSION['form_values'] = $_POST;
-
+    header("Location: $BASE_URL" . 'pages/users/register.php');
     exit;
   }
 
@@ -18,27 +16,29 @@
 
   if(empty($_SESSION['username'])){
 	if(ctype_lower($username)){
-		if (!usernameExists($username) && !emailExists($email) && verifyPassword($password, $confirm)){
-		$_SESSION['username'] = $username;
-		createUser($username, $email, $password);
-		
-		$_SESSION['success_messages'][] = 'User registered successfully';  
-		header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php');
+	    if(usernameExists($username)|| emailExists($email)){
+	    		        $_SESSION['form_values'] = $_POST;
+        		        $_SESSION['field_errors']['username'] = 'Email or Username already exists';
+        				header("Location: $BASE_URL" . 'pages/users/register.php');
+	    }
+		else if (!verifyPassword($password, $confirm)){
+	    		        $_SESSION['form_values'] = $_POST;
+        		        $_SESSION['field_errors']['password'] = 'Passwords do not match';
+        				header("Location: $BASE_URL" . 'pages/users/register.php');
 		}
-		else{
 
-		    echo json_encode('User doestn exist');
-		}
-
+		else if (verifyPassword($password, $confirm)){
+        		$_SESSION['username'] = $username;
+        		createUser($username, $email, $password);
+        		$_SESSION['success_messages'][] = 'User registered successfully';
+        		header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php');
+        		}
 	}
-	else
-		echo json_encode("User doesn't exist2");
+	else{
+	        $_SESSION['field_errors']['usernameLow'] = 'Username must be lowercase';
+			header("Location: $BASE_URL" . 'pages/users/register.php');
+	}
   }
   else
-	header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php'); 
-?>
-
-*/
-<?php
-echo json_encode(0);
+	header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php');
 ?>

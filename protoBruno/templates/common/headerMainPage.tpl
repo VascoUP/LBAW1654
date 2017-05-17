@@ -45,18 +45,6 @@
 							<a class="page-scroll" href="#contact">Contact</a>
 						</li>
 					</ul>
-					<ul class="nav navbar-nav navbar-center">
-						<li class="hidden">
-							<a href="#page-top"></a>
-						</li>
-						<li>
-							<form class="form-inline navbar-form">								
-								<div class="input-group">
-									<input type="text" class="form-control search" placeholder="Search...">
-								</div>
-							</form>
-						</li>
-					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
 			</div>

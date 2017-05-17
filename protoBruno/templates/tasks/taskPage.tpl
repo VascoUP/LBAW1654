@@ -3,6 +3,7 @@
 <link href="{$BASE_URL}css/pages/taskList.css" rel="stylesheet">
 <link href="{$BASE_URL}css/pages/search.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
+<script src="{$BASE_URL}javascript/users/confirmDelete.js"></script>
 
 <div class="container">
     <div class="card card-container">
@@ -23,7 +24,6 @@
                                 <th class="column priority">Priority</th>
                                 <th class="column effort">Effort</th>
                                 <th class="column workers">Workers</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -52,12 +52,12 @@
                     <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/editTask.php?taskID={$smartyTaskID}" class="btn btn-info btn-sm">Edit Task</a>
 				{/if}
 				{if $smartyPermission}
-					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/projects/createForumTask.php?projID={$smartyProjectID}&taskID={$smartyTaskID}" class="btn btn-primary btn-sm">Comment Task</a>
+					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/createForumTask.php?projID={$smartyProjectID}&taskID={$smartyTaskID}" class="btn btn-primary btn-sm">Comment Task</a>
 					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/completeTask.php?taskID={$smartyTaskID}" class="btn btn-success btn-sm">Conclude Task</a>
 				{/if}
-					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveTask.php?taskID={$smartyTaskID}" class="btn btn-warning btn-sm">Leave Task</a>
+					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveTask.php?taskID={$smartyTaskID}" class="btn btn-warning btn-sm" id="leaveTask">Leave Task</a>
 				{if $smartyPermission}	
-					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteTask.php?taskID={$smartyTaskID}" class="btn btn-danger btn-sm">Remove Task</a>
+					<a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteTask.php?taskID={$smartyTaskID}" class="btn btn-danger btn-sm" id="deleteTask">Remove Task</a>
 				{/if}
                 </div>
             </div>

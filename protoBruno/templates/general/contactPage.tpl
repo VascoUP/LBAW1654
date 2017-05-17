@@ -4,7 +4,7 @@
 <div class="card card-container">	
         <h2>Contact</h2>
             <hr>
-                <form class="form-horizontal" action=" " method="" id="contact_form">
+                <form class="form-horizontal" action="https://gnomo.fe.up.pt/~lbaw1654/final/actions/admin/contactUser.php?userID={$userID}" method="POST" id="contact_form">
                     <fieldset>
                         <div class="form-group">
                             <div class="col-md-12">
@@ -14,14 +14,12 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-
+						
+						<div class="form-group">
                             <div class="col-md-12">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                    <input name="email" placeholder="Email Address" class="form-control" type="text">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                    <input name="subject" placeholder="Subject" class="form-control" type="text">
                                 </div>
                             </div>
                         </div>

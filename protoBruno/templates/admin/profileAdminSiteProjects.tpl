@@ -1,6 +1,7 @@
 <link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
+<script src="{$BASE_URL}javascript/admin/projects.js"></script>
 <div class="container">
 	<div class="row profile">
 		<div class="col-md-3">
@@ -11,15 +12,6 @@
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-						Ava Stuart
-					</div>
-					<div class="profile-usertitle-email">
-						avieSS@hotmail.com
-					</div>
-				</div>
-
 				<div class='profile-usertitle'>
                 <div class='profile-usertitle-name'>
                     {$smartyUsrInfo['0']['username']}
@@ -33,8 +25,8 @@
             <!-- SIDEBAR MENU -->
             <div class='profile-usermenu'>
                 <ul class='nav'>
-                    <li class='active'>
-                        <a href='#'>
+                    <li>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php'>
                         <i class='glyphicon glyphicon-home'></i>
                         Overview </a>
                     </li>
@@ -43,7 +35,7 @@
                         <i class='glyphicon glyphicon-user'></i>
                         Account Settings </a>
                     </li>
-                    <li>
+                    <li class='active'>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteProjects.php'>
                         <i class='glyphicon glyphicon-ok'></i>
                         Site Projects</a>
@@ -51,7 +43,7 @@
 					<li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php'>
                         <i class='glyphicon glyphicon-ok'></i>
-                        SiteUsers</a>
+                        Site Users</a>
                     </li>
                 </ul>
             </div>
@@ -62,54 +54,92 @@
 			<div class="profile-content">
 					<div class="pull-right">
 						<div class="btn-group">
-							<button type="button" class="btn btn-success btn-filter" data-target="accepted">Accepted</button>
-							<button type="button" class="btn btn-warning btn-filter" data-target="reported">Reported</button>
-							<button type="button" class="btn btn-danger btn-filter" data-target="reported">Banned</button>
-							<button type="button" class="btn btn-default btn-filter" data-target="all">All</button>
+							<button id="button-active" type="button" class="btn btn-success btn-filter" data-target="active">Active</button>
+							<button id="button-reported" type="button" class="btn btn-warning btn-filter" data-target="reported">Reported</button>
+							<button id="button-banned" type="button" class="btn btn-danger btn-filter" data-target="banned">Banned</button>
+							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteProjects.php' type="button" class="btn btn-default btn-filter">All</a>
 						</div>
 					</div>
 					<div class="pull-left">
 					<input type="text" class="form-control search" placeholder="Search...">
 				</div>
 					<div class="table-container">
-						<table class="table table-filter">
+						<table id='active' class="table table-filter">
 							<tbody>
+							{if $smartyProjectsActive|@count == 0}
+								<h3 id="activeh3">This site doesn't have any active project</h3>
+							{else}
+							{for $i=0 to ($smartyProjectsActive|@count-1)}
 								<tr data-status="active">
 									<td>
 										<div class="media">
 											<div class="media-body">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectsActive[$i]['projectid']}" role="button">
 												<h4 class="title2">
-													aeFi321
-													<span class="pull-right active">(Active)</span>
+													{$smartyProjectsActive[$i]['name']}
+													<span class="pull-right active">{$smartyProjectsActive[$i]['projectstatus']}</span>
 												</h4>
-											</div>
-											<a href="#" class="pull-left">
-												<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
 											</a>
-										</div>
-									</td>
-								</tr>
-								<tr data-status="active">
-									<td>
-										<div class="media">
-											<div class="media-body">
-												<h4 class="title2">
-													Marcus Doe
-													<span class="pull-right banned">(Banned)</span>
-												</h4>
 											</div>
-											<a href="#" class="pull-left">
-												<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-											</a>
 											
-											<div class="col-md-4">
-												<a href="#" id="update" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Remove the ban status</a>
-											</div>
 										</div>
 									</td>
 								</tr>
+								{/for}
+								{/if}
 							</tbody>
 						</table>
+						<table id='reported' class="table table-filter">
+							<tbody>
+							{if $smartyProjectsReported|@count == 0}
+								<h3 id="reportedh3">This site doesn't have any reported project</h3>
+							{else}
+							{for $i=0 to ($smartyProjectsReported|@count-1)}
+								<tr data-status="reported">
+									<td>
+										<div class="media">
+											<div class="media-body">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectsReported[$i]['projectid']}" role="button">
+												<h4 class="title2">
+													{$smartyProjectsReported[$i]['name']}
+													<span class="pull-right active">{$smartyProjectsReported[$i]['projectstatus']}</span>
+												</h4>
+											</a>
+											</div>
+											
+										</div>
+									</td>
+								</tr>
+								{/for}
+								{/if}
+							</tbody>
+						</table>
+						<table id='banned' class="table table-filter">
+							<tbody>
+							{if $smartyProjectsBanned|@count == 0}
+								<h3 id="bannedh3">This site doesn't have any banned project</h3>
+							{else}
+							{for $i=0 to ($smartyProjectsBanned|@count-1)}
+								<tr data-status="banned">
+									<td>
+										<div class="media">
+											<div class="media-body">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectsBanned[$i]['projectid']}" role="button">
+												<h4 class="title2">
+													{$smartyProjectsBanned[$i]['name']}
+													<span class="pull-right active">{$smartyProjectsBanned[$i]['projectstatus']}</span>
+												</h4>
+											</a>
+											</div>
+											
+										</div>
+									</td>
+								</tr>
+								{/for}
+								{/if}
+							</tbody>
+						</table>
+						<a class='pull-right' href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteProjects.php'>Show all site projects</a>
 					</div>
 			</div>
 		</div>

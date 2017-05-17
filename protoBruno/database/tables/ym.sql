@@ -13,6 +13,8 @@ DROP TABLE IF EXISTS Thread CASCADE;
 DROP TABLE IF EXISTS UserSite CASCADE;
 DROP TABLE IF EXISTS UserTokens CASCADE;
 DROP TABLE IF EXISTS IterationsPermissions CASCADE;
+DROP TABLE IF EXISTS ContactsSite CASCADE;
+DROP TABLE IF EXISTS ContactsUser CASCADE;
 
 DROP TYPE IF EXISTS TaskStatus;
 DROP TYPE IF EXISTS UserStatusProject;
@@ -23,10 +25,10 @@ DROP TYPE IF EXISTS ReportStatus;
 DROP TYPE IF EXISTS NotificationStatus;
 
 CREATE TYPE TaskStatus AS ENUM('active', 'completed', 'unassigned');
-CREATE TYPE UserStatusProject AS ENUM('inactive', 'active', 'invited');
+CREATE TYPE UserStatusProject AS ENUM('inactive', 'active', 'invited', 'requested');
 CREATE TYPE ProjectStatus AS ENUM('finished', 'working');
-CREATE TYPE StatusProj AS ENUM('active', 'banned');
-CREATE TYPE UserStatus AS ENUM('active', 'inactive', 'banned');
+CREATE TYPE StatusProj AS ENUM('active', 'banned', 'reported');
+CREATE TYPE UserStatus AS ENUM('active', 'inactive', 'banned', 'reported');
 CREATE TYPE ReportStatus AS ENUM('waiting', 'handled');
 CREATE TYPE NotificationStatus AS ENUM('waiting', 'read');
 
@@ -73,7 +75,7 @@ CREATE TABLE UserSite
 (
 	userID serial PRIMARY KEY,
 	username varchar(50) NOT NULL UNIQUE,
-	email varchar(50) NOT NULL UNIQUE,
+	email varchar(100) NOT NULL UNIQUE,
 	password varchar(500) NOT NULL,
 	photo varchar(100),
 	description varchar(100),
@@ -238,6 +240,28 @@ CREATE TABLE IterationsPermissions
 	FOREIGN KEY(userID) REFERENCES UserSite(userID)
 				ON UPDATE CASCADE,
 	PRIMARY KEY(iterationID, userID)
+);
+
+CREATE TABLE ContactsSite
+(	
+	contactAdminID serial PRIMARY KEY,
+	userName varchar(200),
+	phone bigint,
+	email varchar(100),
+	content varchar(10000)
+);
+
+CREATE TABLE ContactsUser
+(	
+	firstUser serial,
+	secondUser serial,
+	subject varchar(100),
+	content varchar(10000),
+	FOREIGN KEY(firstUser) REFERENCES UserSite(userID)
+				ON UPDATE CASCADE,
+	FOREIGN KEY(secondUser) REFERENCES UserSite(userID)
+				ON UPDATE CASCADE,
+	PRIMARY KEY(firstUser, secondUser)
 );
 
 DROP INDEX IF EXISTS idxUserName;
@@ -711,6 +735,27 @@ CREATE TRIGGER changeTaskStatus
 AFTER INSERT ON TaskUser
 FOR EACH ROW 
 EXECUTE PROCEDURE changeTaskStatus();
+
+CREATE TRIGGER CheckChangeUser
+AFTER INSERT ON ProjectCoordinator
+FOR EACH ROW 
+EXECUTE PROCEDURE changeUser();
+
+DROP FUNCTION IF EXISTS changeTaskStatusDeleteProject();
+CREATE FUNCTION changeTaskStatusDeleteProject()
+RETURNS TRIGGER AS $changeTaskStatusDeleteProject$
+	BEGIN
+		UPDATE Task
+		SET taskStatus = 'completed'
+		WHERE iterationID IN (SELECT iterationID FROM Iteration WHERE projectID = OLD.projectID);
+		RETURN NEW;
+	END;
+$changeTaskStatusDeleteProject$ LANGUAGE plpgsql;
+
+CREATE TRIGGER changeTaskStatusDeleteProject
+BEFORE DELETE ON Project
+FOR EACH ROW 
+EXECUTE PROCEDURE changeTaskStatusDeleteProject();
 		
 
 SELECT Project.projectID AS "Project ID", Project.name AS "Project name", Tag.name AS "Tag name"

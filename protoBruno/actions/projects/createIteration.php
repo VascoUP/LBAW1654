@@ -1,7 +1,8 @@
 <?php	
 	include_once('../../config/init.php');
 	include_once($BASE_DIR .'database/Iterations/iterations.php');  
-
+	include_once($BASE_DIR .'database/Users/userInformation.php'); 
+	
 	$id = $_GET['projID'];
 	
 	if (!$_POST['maximum'] || !$_POST['StartDate'] || !$_POST['Description']) {
@@ -17,7 +18,9 @@
   $dueDate = strip_tags($_POST['DueDate']);
   $description = strip_tags($_POST['Description']);
 	
- addIteration($id, $name, $description, $startDate, $maximum, $dueDate);
+ $itID = addIteration($id, $name, $description, $startDate, $maximum, $dueDate);
+ $userID = getUserID($_SESSION['username']);
+ insertPermission($itID, $userID);
  
   $_SESSION['success_messages'][] = 'Iteration created successfully';  
   header('Location: ' .$BASE_URL.'pages/project/iteration/projectIterations.php?projID='.$id);

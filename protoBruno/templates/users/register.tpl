@@ -2,7 +2,7 @@
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <div class="container">
     <div class="card card-container">
-            <form class="form-horizontal" method="post">
+            <form class="form-horizontal" action="{$BASE_URL}actions/users/register.php" method="post">
                 <fieldset>
                 <!-- Form Name -->
                     <legend>Register</legend>
@@ -18,10 +18,12 @@
 
                 <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="username">Username</label>  
+                        <label class="col-md-4 control-label" for="username">Username</label>
                         <div class="col-md-4">
                             <div class="col-md-4">
-                                <input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md" required autofocus>
+                                <input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md" value="{$FORM_VALUES.username}" required autofocus>
+                                        <nobr> <span class="field_error" >{$FIELD_ERRORS.username}</span> </nobr>
+                                        <nobr> <span class="field_error">{$FIELD_ERRORS.usernameLow}</span> </nobr>
                             </div>
                         </div>
                     </div>
@@ -31,7 +33,7 @@
                     <label class="col-md-4 control-label" for="email">Email Address</label>  
                     <div class="col-md-4">
                         <div class="col-md-4">
-                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control form-style input-md" required autofocus>
+                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control form-style input-md" value="{$FORM_VALUES.email}" required autofocus>
                         </div>
                     </div>
                 </div>
@@ -41,6 +43,7 @@
                     <div class="col-md-4">
                         <div class="col-md-4">
                             <input type="password" class="form-control form-style input-md" name="password" id="password"  placeholder="Enter your Password" required autofocus/>
+                              <nobr> <span class="field_error">{$FIELD_ERRORS.password}</span> </nobr>
                         </div>
                     </div>
                 </div>
@@ -61,7 +64,6 @@
                     </div>
                 </div>
 
-                <p id="erroUser"> MENSAGEM QUE FUNCIONOU <p>
                 </fieldset>
             </form>
     </div>

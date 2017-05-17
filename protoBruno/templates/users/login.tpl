@@ -13,10 +13,12 @@
                           value = {$smartyUsername}
                         {/if}
                         required>
+
                 <input type="password" id="password" 
                         name="password" class="form-control form-style" 
                         placeholder="Password" 
                         required>
+                        <nobr> <span id="failed" >{$FIELD_ERRORS.login}</span> </nobr>
                 <div id="remember" class="checkbox">
                     <label>
                       <input id="remember" type="checkbox" 

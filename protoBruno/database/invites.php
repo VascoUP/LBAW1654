@@ -15,6 +15,29 @@
 
         return $result;		
     }
+
+    function requestParticipation($userID, $projectID) {
+        $invitedate = date("Y-m-d");
+		try{
+			global $conn;
+
+			$invitedate = date("Y-m-d");
+			$userStatusProject = 'requested';
+			$stmt = $conn->prepare("INSERT INTO ProjectUsers(userID, projectID, inviteDate, userStatusProject) 
+									VALUES(:userID, :projectID, :inviteDate, :userStatusProject)");
+			$stmt->bindParam(':userID', $user);
+			$stmt->bindParam(':projectID', $project);
+			$stmt->bindParam(':inviteDate', $invitedate);
+			$stmt->bindParam(':userStatusProject', $userStatusProject);
+			$stmt->execute();
+			
+		}
+		 catch(Exception $e) {
+			return $e->getMessage() . " - " . $invitedate;
+		}
+		
+		return "Success " . $user . " - " . $project;
+    }
 	
 	function removeInvitedStatus($userID, $projID){
         echo "remove invite $userID -  $projID\n";

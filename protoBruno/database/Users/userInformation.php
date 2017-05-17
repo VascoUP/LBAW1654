@@ -126,8 +126,28 @@
 		}
   	}
   
-  	function getProjects($username){
-		$id = getUserID($username);
+  	function getProjects($id){
+		try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT *
+									FROM Project
+									WHERE projectid IN (SELECT ProjectCoordinator.projectid
+														FROM ProjectCoordinator
+														WHERE ProjectCoordinator.userid = ?)
+									OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
+									WHERE ProjectUsers.userid = ?
+									AND userStatusProject = 'active')
+									ORDER BY name");
+			$stmt->execute(array($id, $id));
+			$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+
+		return $result;
+  	}
+	
+	function getProjectsCoordinator($id){
 		try {
 		global $conn;
 		$stmt = $conn->prepare("SELECT *
@@ -135,30 +155,91 @@
 								WHERE projectid IN (SELECT ProjectCoordinator.projectid
 													FROM ProjectCoordinator
 													WHERE ProjectCoordinator.userid = ?)
-								OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
-								WHERE ProjectUsers.userid = ?
-								AND userStatusProject = 'active')");
-		$stmt->execute(array($id, $id));
+								ORDER BY name
+								LIMIT 6");
+		$stmt->execute(array($id));
 		$result = $stmt->fetchAll();
 		} catch(Exception $e) {
 		return $e->getMessage();
 		}
 
 		return $result;
-  	}
+	}
+	
+	function getProjectsCollaborator($id){
+		try {
+		global $conn;
+		$stmt = $conn->prepare("SELECT *
+								FROM Project
+								WHERE projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
+													WHERE ProjectUsers.userid = ?
+													AND userStatusProject = 'active')
+								ORDER BY name
+								LIMIT 6");
+		$stmt->execute(array($id));
+		$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+		return $e->getMessage();
+		}
+
+		return $result;
+	}
+	
+	function getTop5($userID){
+		try {
+		global $conn;
+		$stmt = $conn->prepare("SELECT *
+								FROM Project
+								WHERE projectid IN (SELECT ProjectCoordinator.projectid
+													FROM ProjectCoordinator
+													WHERE ProjectCoordinator.userid = ?
+													ORDER BY startDate DESC
+													LIMIT 5)
+								OR projectid IN (SELECT ProjectUsers.projectid FROM ProjectUsers
+								WHERE ProjectUsers.userid = ?
+								AND userStatusProject = 'active'
+								ORDER BY inviteDate DESC
+								LIMIT 5)
+								LIMIT 5");
+		$stmt->execute(array($userID, $userID));
+		$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+		return $e->getMessage();
+		}
+
+		return $result;
+	}
 
 	function getTokenInfo($token){
 		try {
 			global $conn;
 			$stmt = $conn->prepare("SELECT *
 									FROM UserToken
-									WHERE tokenName = ?)");
+									WHERE tokenName = ?");
 			$stmt->execute(array($token));
-			$result = $stmt->fetchAll();
+			$result = $stmt->fetch();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
 
-		return $result['0']['userid'];
+		return $result['userid'];
+	}
+
+	function getRequestInvite($userID, $projID) {
+		try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT userStatusProject
+									FROM ProjectUsers
+									WHERE userid = ?
+									AND projectid = ?");
+			$stmt->execute(array($userID, $projID));
+			$result = $stmt->fetch();
+			if( $result && $result[userStatusProject] == 'requested' )
+				return true;
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+
+		return false;
 	}
 ?>

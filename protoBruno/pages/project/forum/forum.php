@@ -6,6 +6,7 @@
 		die();
 	}
 	
+  	include_once($BASE_DIR .'database/Projects/validateUser.php');
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
 	include_once($BASE_DIR .'database/Threads/threads.php');
@@ -18,6 +19,9 @@
 	
 	$forumID = $_GET['forumID'];
 	$smarty->assign('smartyForumID', $forumID);
+	
+	$taskID = $_GET['taskID'];
+	$smarty->assign('smartyTaskID', $taskID);
 	
 	$comments = getComments($forumID);
 	$userInformation = array();

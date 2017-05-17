@@ -59,9 +59,9 @@
 								<a href="#page-top"></a>
 							</li>
 							<li>
-								<form class="form-inline navbar-form">								
+								<form class="form-inline navbar-form" method="POST" action="https://gnomo.fe.up.pt/~lbaw1654/final/actions/general/search.php">								
 									<div class="input-group">
-										<input type="text" class="form-control search" placeholder="Search...">
+										<input name="search" type="text" class="form-control search" placeholder="Search...">
 									</div>
 								</form>
 							</li>
@@ -87,7 +87,7 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
 								<ul id="menu" class="dropdown-menu">
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php" role="button" id="drop">Profile</a></li>
-									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php" role="button" id="drop">Projects</a></li>
+									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?userInfo={$smartyUsrInfo['0']['userid']}" role="button" id="drop">Projects</a></li>
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php" role="button" id="drop">Edit Profile</a></li>
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/users/logout.php" role="button" id="drop" class="logout">Logout</a></li>
 								</ul>

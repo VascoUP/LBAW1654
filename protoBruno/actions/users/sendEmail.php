@@ -1,8 +1,10 @@
 <?php
   include_once('../../config/init.php');
-
-  $email = strip_tags($_POST['email']);
   
+  if(!$_POST['email'])
+	  $email = $_GET['email'];
+  else
+	  $email = strip_tags($_POST['email']);
   $to = $email;
 		$subject = 'YourManagement: Password Recovery';
 
@@ -20,5 +22,5 @@
 		
 		$sent = mail($to, $subject, $message, $headers);
 		
-		header("Location: $BASE_URL" . "pages/users/login.php");
+		header("Location: $BASE_URL" . "pages/users/waitingPage.php?email=".$email);
 ?>

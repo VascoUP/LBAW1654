@@ -116,6 +116,13 @@ function addIteration($ID, $name, $description, $startDate, $max, $dueDate){
 		$stmt->bindParam(':dueDate', $dueDate);
 		$stmt->bindParam(':max', $max);
 		$stmt->execute();
+		
+		$stmt = $conn->prepare("SELECT iterationID FROM Iteration WHERE name = ?");
+		$stmt->execute(array($name));
+		$result = $stmt->fetchAll()['0']['iterationid'];
+
+		return $result;
+		
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
@@ -179,11 +186,19 @@ function givePermission($userID, $itID){
 		if($result['0']['counter'] == 0)
 			return "This user can't add or edit a task in this iteration";
 		else
-		{
-			$stmt = $conn->prepare("INSERT INTO IterationsPermissions(iterationID, userID)
-									VALUES (?,?)");										
-			$stmt->execute(array($itID, $userID));
-		}
+			insertPermission($itID, $userID);
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+}
+
+function insertPermission($itID, $userID){
+	try {
+		global $conn;
+	
+		$stmt = $conn->prepare("INSERT INTO IterationsPermissions(iterationID, userID)
+								VALUES (?,?)");										
+		$stmt->execute(array($itID, $userID));
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}
