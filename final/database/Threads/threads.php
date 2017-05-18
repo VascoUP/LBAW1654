@@ -50,6 +50,21 @@
     return $result;
   }
   
+  function getThreadInfo($thread){
+	  try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT title, date 
+									FROM Thread
+									WHERE threadID = ?");
+								
+			$stmt->execute(array($thread));
+			$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+    return $result;
+  }
+  
   function getProject($threadID){
 	  try {
 			global $conn;

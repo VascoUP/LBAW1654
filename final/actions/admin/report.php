@@ -6,7 +6,7 @@ include_once('../../config/init.php');
   
   $content = $_POST['content'];
   $user = $_GET['userID'];
-  $threadID = $_GET['thread'];
+  $threadID = $_GET['threadID'];
   $taskID = $_GET['taskID'];
   
   if(isset($user))

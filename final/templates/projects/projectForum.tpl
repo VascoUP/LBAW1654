@@ -22,6 +22,7 @@
 					  <th class='cell-stat text-center hidden-xs hidden-sm'>Comments</th>
 					  <th class='cell-stat hidden-xs hidden-sm'>Last Comment</th>
 					  <th class='column join button'></th>
+					  <th class="column report button"></th>
 					</tr>
 				  </thead>
 				  <tbody>
@@ -44,6 +45,9 @@
 					  </td>
 					  <td>   
 						<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/editThread.php?forumID={$smartyThreads[$i]['threadid']}" id="editForum" type="button" class="btn btn-warning">Edit Forum</a>
+					  </td>
+					  <td>
+					  <a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?threadID={$smartyThreads[$i]['threadid']}" type="button" class="btn btn-danger">Report Forum</a>
 					  </td>
 					</tr>
 					{/for}

@@ -45,6 +45,11 @@
                         <i class='glyphicon glyphicon-ok'></i>
                         Site Users</a>
                     </li>
+					<li>
+						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/reportedList.php'>
+                        <i class='glyphicon glyphicon-remove'></i>
+                        Reported List</a>
+					</li>
                 </ul>
             </div>
 				<!-- END MENU -->
