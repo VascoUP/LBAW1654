@@ -39,8 +39,11 @@
 		  }
 	  }
 	  else
-    	$_SESSION['field_errors'][inactive] = 'Inactive User Account';
+    {  	
+      $_SESSION['field_errors'][inactive] = 'Inactive User Account';
 		  header("Location: $BASE_URL" . "pages/users/login.php");
+    }
+
   }
   else
 	header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php'); 
