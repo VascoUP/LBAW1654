@@ -20,15 +20,13 @@
 	$userInfoFirst = getUserInformationByID($first);
 	$smarty->assign('smartyUserInfoFirst', $userInfoFirst);
 	
-	echo userInfoFirst['0']['type'];
-	
 	$userInfo = getUserInformationByID($userID);
   	$smarty->assign('smartyUsrInfo', $userInfo);
 
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
   	$smarty->assign('smartyProjInvites', $projectInvites);
 
-	/*$smarty->display($BASE_DIR .'templates/common/header.tpl');
+	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/profiles/profileUsrOverview.tpl');
-	$smarty->display($BASE_DIR .'templates/common/footer.tpl');*/
+	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>

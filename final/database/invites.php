@@ -18,7 +18,6 @@
 
     function getRequestedParticition($userID) {
         try {
-			user com requested de todos os projetos do user logged in onde é coord 
             global $conn;
             $stmt = $conn->prepate("SELECT UserSite.userID AS userID, UserSite.username AS username, 
                                             Project.projectID AS projectID, Project.name AS projectName
