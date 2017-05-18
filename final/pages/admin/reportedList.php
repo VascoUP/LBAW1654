@@ -36,6 +36,9 @@
 			$namesHandled[] = getThreadInfo($h['threadid'])['0']['title'];			
 	}
 	
+	echo $handled;
+	echo count($handled);
+	
 	foreach($reported as $r){
 		if($r['userid'])
 			$namesReported[] = getUserInformationByID($r['userid'])['0']['username'];
@@ -46,6 +49,9 @@
 	}
 	
 	$userReport = getUsersReported();
+	
+	echo $userReport;
+	echo count($userReport);
 	
 	$usernames = array();
 	
