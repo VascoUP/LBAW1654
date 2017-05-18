@@ -16,16 +16,18 @@
         return $result;		
     }
 
-    function getRequestedParticition($projectID) {
+    function getRequestedParticition($userID) {
         try {
+			user com requested de todos os projetos do user logged in onde é coord 
             global $conn;
             $stmt = $conn->prepate("SELECT UserSite.userID AS userID, UserSite.username AS username, 
                                             Project.projectID AS projectID, Project.name AS projectName
-                                    FROM ProjectUsers, UserSite, Project
-                                    WHERE ProjectUsers.userID = User.userID
-                                    AND ProjectUsers.projectID = Project.projectID
-                                    AND ProjectUser.userStatusProject = 'requested'
-                                    AND ProjectUser.projectID = ?");
+                                    FROM ProjectUsers, UserSite, Project, ProjectCoordinator
+                                    WHERE ProjectCoordinator.userID = ?
+									AND Project.projectID = ProjectCoordinator.projectID
+									AND ProjectUsers.projectID = Project.projectID
+									AND ProjectUsers.userStatusProject = 'requested'
+									AND UserSite.userID = ProjectUsers.userID");
             $stmt->execute(array($projectID));
             $result = $stmt->fecthAll();
         } catch(Exception $e) {
