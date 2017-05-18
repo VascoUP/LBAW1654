@@ -7,4 +7,5 @@ include_once('../../config/init.php');
   
   banProject($projID);
   
+  header("Location: $BASE_URL" . "pages/admin/profileAdminOverview.php");
 ?>
