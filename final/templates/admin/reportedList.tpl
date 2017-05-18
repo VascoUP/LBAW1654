@@ -64,9 +64,7 @@
 							<button id="buttonThread" type="button" class="btn btn-info btn-filter" data-target="reportedThread">Reported Thread</button>
 						</div>
 					</div>
-					<div class="pull-left">
-					<input id="searchSiteReports" type="text" class="form-control search" placeholder="Search...">
-				</div>
+
 					<div id="reportTable" class="table-container">
 						<table id="tableReported" class="table table-filter">
 							<tbody>
@@ -88,7 +86,7 @@
 											
 												<h4 class="title2">
 													{$namesReported[$i]}
-													<span class="pull-right active">{$reported[$i]['reportdate']}</span>
+													<span class="pull-right active">Report date: {$reported[$i]['reportdate']}</span>
 												</h4>
 											</a>
 											<p class="summary">{$reported[$i]['content']}</p>
@@ -120,7 +118,7 @@
 											
 												<h4 class="title2">
 													{$namesHandled[$i]}
-													<span class="pull-right active">{$handled[$i]['handleddate']}</span>
+													<span class="pull-right active">Handled date: {$handled[$i]['handleddate']}</span>
 												</h4>
 											</a>
 											<p class="summary">{$handled[$i]['content']}</p>
@@ -148,7 +146,7 @@
 											
 												<h4 class="title2">
 													{$usernames[$i]}
-													<span class="pull-right active">{$userReport[$i]['reportdate']}</span>
+													<span class="pull-right active">Report date: {$userReport[$i]['reportdate']}</span>
 												</h4>
 											</a>
 											<p class="summary">{$userReport[$i]['content']}</p>
@@ -175,7 +173,7 @@
 											
 												<h4 class="title2">
 													{$names[$i]}
-													<span class="pull-right active">{$taskReport[$i]['reportdate']}</span>
+													<span class="pull-right active">Report date: {$taskReport[$i]['reportdate']}</span>
 												</h4>
 											</a>
 											<p class="summary">{$taskReport[$i]['content']}</p>
@@ -202,7 +200,7 @@
 											
 												<h4 class="title2">
 													{$titles[$i]}
-													<span class="pull-right active">{$threadReport[$i]['reportdate']}</span>
+													<span class="pull-right active">Report date: {$threadReport[$i]['reportdate']}</span>
 												</h4>
 											</a>
 											<p class="summary">{$threadReport[$i]['content']}</p>

@@ -59,7 +59,7 @@ function searchUsers($name){
 	try {
 		global $conn;
 		$stmt = $conn->prepare("SELECT DISTINCT UserSite.username AS username, UserSite.email AS email, UserSite.userID AS userID, UserSite.description AS description, UserSite.userStatus AS userStatus, ts_rank_cd(textsearch, query) AS rank
-								FROM UserSite, to_tsvector(username || ' ' || email) textsearch, to_tsquery('english', ?) query
+								FROM UserSite, to_tsvector(username || ' ' || email || ' ' || description) textsearch, to_tsquery('english', ?) query
 								WHERE UserSite.type != 'administrator'
 								AND textsearch @@ query
 								OR username ILIKE '%' || ? || '%'
