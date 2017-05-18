@@ -20,7 +20,7 @@ function getUsersReported(){
 		$stmt = $conn->prepare("SELECT * FROM Report WHERE userID IS NOT NULL");	
 		$result = $stmt->fetchAll();
 	} catch(Exception $e) {
-		return $e->getMessage();
+		echo $e->getMessage();
 	}
 	
 	return $result;

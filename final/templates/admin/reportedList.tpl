@@ -1,7 +1,7 @@
 <link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
-<script src="{$BASE_URL}javascript/admin/reported.js"></script>
+<script src="{$BASE_URL}javascript/admin/reports.js"></script>
 <div class="container">
 	<div class="row profile">
 		<div class="col-md-3">
@@ -38,13 +38,13 @@
                         <i class='glyphicon glyphicon-ok'></i>
                         Site Projects</a>
                     </li>
-					<li class='active'>
+					<li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php'>
                         <i class='glyphicon glyphicon-ok'></i>
                         Site Users</a>
                     </li>
-					<li>
-						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminReportedList.php'>
+					<li class='active'>
+						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/reportedList.php'>
                         <i class='glyphicon glyphicon-remove'></i>
                         Reported List</a>
 					</li>
@@ -67,7 +67,7 @@
 					<div class="pull-left">
 					<input id="searchSiteReports" type="text" class="form-control search" placeholder="Search...">
 				</div>
-					<div id="usersTable" class="table-container">
+					<div id="reportTable" class="table-container">
 						<table id="tableReported" class="table table-filter">
 							<tbody>
 								{if $reported|@count == 0}
@@ -81,17 +81,131 @@
 											{if $reported[$i]['userid']}
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$reported[$i]['userid']}" role="button">
 											{elseif $reported[$i]['taskid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPag.php?taskID={$reported[$i]['taskid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$reported[$i]['taskid']}" role="button">
 											{elseif $reported[$i]['threadid']}
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?forumID={$reported[$i]['threadid']}" role="button">
 											{/if}
 											
 												<h4 class="title2">
 													{$namesReported[$i]}
-													<span class="pull-right active">{$reported[$i]['date']}</span>
-													<span class="pull-right active">{									$reported[$i]['content']}</span>
+													<span class="pull-right active">{$reported[$i]['reportdate']}</span>
 												</h4>
 											</a>
+											<p class="summary">{$reported[$i]['content']}</p>
+											</div>
+										</div>
+									</td>
+								</tr>
+								{/for}
+								{/if}
+							</tbody>
+						</table>
+						<table id="tableHandled" class="table table-filter">
+							<tbody>
+								{if $handled|@count == 0}
+									<h3 id="handledH3">This site doesn't have any handled report</h3>
+								{else}
+								{for $i=0 to ($handled|@count-1)}
+								<tr data-status="handled">
+									<td>
+										<div class="media">
+											<div class="media-body">
+											{if $handled[$i]['userid']}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$reported[$i]['userid']}" role="button">
+											{elseif $handled[$i]['taskid']}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$handled[$i]['taskid']}" role="button">
+											{elseif $handled[$i]['threadid']}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?forumID={$handled[$i]['threadid']}" role="button">
+											{/if}
+											
+												<h4 class="title2">
+													{$namesHandled[$i]}
+													<span class="pull-right active">{$handled[$i]['handleddate']}</span>
+												</h4>
+											</a>
+											<p class="summary">{$handled[$i]['content']}</p>
+											</div>
+										</div>
+									</td>
+								</tr>
+								{/for}
+								{/if}
+							</tbody>
+						</table>
+						<table id="tableReportUsers" class="table table-filter">
+							<tbody>
+								{if $userReport|@count == 0}
+									<h3 id="UserreportedH3">This site doesn't have any user's report</h3>
+								{else}
+								{for $i=0 to ($userReport|@count-1)}
+								<tr data-status="reportedUser">
+									<td>
+										<div class="media">
+											<div class="media-body">
+											
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$userReport[$i]['userid']}" role="button">
+											
+											
+												<h4 class="title2">
+													{$usernames[$i]}
+													<span class="pull-right active">{$userReport[$i]['reportdate']}</span>
+												</h4>
+											</a>
+											<p class="summary">{$userReport[$i]['content']}</p>
+											</div>
+										</div>
+									</td>
+								</tr>
+								{/for}
+								{/if}
+							</tbody>
+						</table>
+						<table id="tableReportedTasks" class="table table-filter">
+							<tbody>
+								{if $taskReport|@count == 0}
+									<h3 id="reportedTaskH3">This site doesn't have any task's report</h3>
+								{else}
+								{for $i=0 to ($taskReport|@count-1)}
+								<tr data-status="reportedTask">
+									<td>
+										<div class="media">
+											<div class="media-body">
+											
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$taskReport[$i]['taskid']}" role="button">
+											
+												<h4 class="title2">
+													{$names[$i]}
+													<span class="pull-right active">{$taskReport[$i]['reportdate']}</span>
+												</h4>
+											</a>
+											<p class="summary">{$taskReport[$i]['content']}</p>
+											</div>
+										</div>
+									</td>
+								</tr>
+								{/for}
+								{/if}
+							</tbody>
+						</table>
+						<table id="tableReportedThreads" class="table table-filter">
+							<tbody>
+								{if $threadReport|@count == 0}
+									<h3 id="reportedThreadH3">This site doesn't have any report</h3>
+								{else}
+								{for $i=0 to ($threadReport|@count-1)}
+								<tr data-status="reportedThread">
+									<td>
+										<div class="media">
+											<div class="media-body">
+											
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?forumID={$threadReport[$i]['threadid']}" role="button">
+											
+												<h4 class="title2">
+													{$titles[$i]}
+													<span class="pull-right active">{$threadReport[$i]['reportdate']}</span>
+												</h4>
+											</a>
+											<p class="summary">{$threadReport[$i]['content']}</p>
 											</div>
 										</div>
 									</td>

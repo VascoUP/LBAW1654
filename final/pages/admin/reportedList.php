@@ -13,6 +13,7 @@
 	include_once($BASE_DIR .'database/Admin/report.php');
 	include_once($BASE_DIR .'database/Threads/threads.php');
 	include_once($BASE_DIR .'database/Tasks/tasks.php');
+	
 	include_once($BASE_DIR .'database/invites.php');
 	
   	$smarty->assign('smartyUsrInfo', $userInfo);
@@ -75,20 +76,8 @@
 	$smarty->assign('usernames', $usernames);
 	$smarty->assign('names', $names);
 	$smarty->assign('titles', $titles);
-	
-	$usersActive = getSiteUsers('active');
-	$smarty->assign('smartyUsersActive', $usersActive);
-
-	$usersInactive = getSiteUsers('inactive');
-	$smarty->assign('smartyUsersInactive', $usersInactive);
-
-	$usersReported = getSiteUsers('reported');
-	$smarty->assign('smartyUsersReported', $usersReported);
-
-	$usersBanned = getSiteUsers('banned');
-	$smarty->assign('smartyUsersBanned', $usersBanned);
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
-	$smarty->display($BASE_DIR .'templates/admin/profileAdminSiteUsers.tpl');
+	$smarty->display($BASE_DIR .'templates/admin/reportedList.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>

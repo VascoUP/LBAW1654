@@ -44,7 +44,7 @@
                         Site Users</a>
                     </li>
 					<li>
-						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/ReportedList.php'>
+						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/reportedList.php'>
                         <i class='glyphicon glyphicon-remove'></i>
                         Reported List</a>
 					</li>
