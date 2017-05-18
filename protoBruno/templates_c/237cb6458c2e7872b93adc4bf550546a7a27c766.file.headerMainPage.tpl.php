@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-13 18:49:43
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-18 09:09:16
          compiled from "/opt/lbaw/lbaw1654/public_html/protoBruno/templates/common/headerMainPage.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:188563167559174737d6bad7-65707354%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '237cb6458c2e7872b93adc4bf550546a7a27c766' => 
     array (
       0 => '/opt/lbaw/lbaw1654/public_html/protoBruno/templates/common/headerMainPage.tpl',
-      1 => 1494623848,
+      1 => 1495062995,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_59174737ee94a8_06286526',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_59174737ee94a8_06286526',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59174737ee94a8_06286526')) {function content_59174737ee94a8_06286526($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("../../templates/common/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -72,18 +72,6 @@ css/templates/navbar.css" rel="stylesheet">
 						</li>
 						<li>
 							<a class="page-scroll" href="#contact">Contact</a>
-						</li>
-					</ul>
-					<ul class="nav navbar-nav navbar-center">
-						<li class="hidden">
-							<a href="#page-top"></a>
-						</li>
-						<li>
-							<form class="form-inline navbar-form">								
-								<div class="input-group">
-									<input type="text" class="form-control search" placeholder="Search...">
-								</div>
-							</form>
 						</li>
 					</ul>
 				</div>

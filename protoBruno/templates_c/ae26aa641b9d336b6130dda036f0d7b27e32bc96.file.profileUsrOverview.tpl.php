@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-14 04:26:36
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-16 00:12:41
          compiled from "/opt/lbaw/lbaw1654/public_html/protoBruno/templates/profiles/profileUsrOverview.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13422414285917ce6c227a92-30820976%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ae26aa641b9d336b6130dda036f0d7b27e32bc96' => 
     array (
       0 => '/opt/lbaw/lbaw1654/public_html/protoBruno/templates/profiles/profileUsrOverview.tpl',
-      1 => 1494623855,
+      1 => 1494889697,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_5917ce6c2d85a5_25135037',
   'variables' => 
   array (
     'BASE_URL' => 0,
     'smartyUsrInfo' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_5917ce6c2d85a5_25135037',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5917ce6c2d85a5_25135037')) {function content_5917ce6c2d85a5_25135037($_smarty_tpl) {?><link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/pages/profile.css" rel='stylesheet'>
@@ -97,7 +97,8 @@ images/assets/loginImage.png" class='img-responsive' alt=''>
             <!-- SIDEBAR BUTTONS -->
             <div class='profile-userbuttons'>
                 <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectCreate.php' type='button' class='btn btn-success btn-sm'>Add project</a>
-                <a type='button' class='btn btn-success btn-sm'>Contact</a>
+                <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/contactPage.php?userID=<?php echo $_smarty_tpl->tpl_vars['smartyUsrInfo']->value['0']['userid'];?>
+' type='button' class='btn btn-success btn-sm'>Contact</a>
             </div>
     </div>
     

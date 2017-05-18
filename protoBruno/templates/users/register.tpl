@@ -22,7 +22,6 @@
                         <div class="col-md-4">
                             <div class="col-md-4">
                                 <input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md" value="{$FORM_VALUES.username}" required autofocus>
-                                        <nobr> <span class="field_error" >{$FIELD_ERRORS.username}</span> </nobr>
                                         <nobr> <span class="field_error">{$FIELD_ERRORS.usernameLow}</span> </nobr>
                             </div>
                         </div>
@@ -34,6 +33,9 @@
                     <div class="col-md-4">
                         <div class="col-md-4">
                             <input id="email" name="email" type="text" placeholder="Email Address" class="form-control form-style input-md" value="{$FORM_VALUES.email}" required autofocus>
+                              <nobr>
+                                <span class="field_error" >{$FIELD_ERRORS.username}</span>
+                              </nobr>
                         </div>
                     </div>
                 </div>
@@ -43,7 +45,6 @@
                     <div class="col-md-4">
                         <div class="col-md-4">
                             <input type="password" class="form-control form-style input-md" name="password" id="password"  placeholder="Enter your Password" required autofocus/>
-                              <nobr> <span class="field_error">{$FIELD_ERRORS.password}</span> </nobr>
                         </div>
                     </div>
                 </div>
@@ -53,6 +54,9 @@
                     <div class="col-md-4">
                         <div class="col-md-4">
                             <input type="password" class="form-control form-style input-md" name="confirm" id="confirm"  placeholder="Confirm your Password" required autofocus/>
+                          <nobr>
+                            <span class="field_error">{$FIELD_ERRORS.password}</span>
+                          </nobr>
                         </div>
                     </div>
                 </div>

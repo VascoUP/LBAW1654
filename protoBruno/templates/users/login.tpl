@@ -19,6 +19,7 @@
                         placeholder="Password" 
                         required>
                         <nobr> <span id="failed" >{$FIELD_ERRORS.login}</span> </nobr>
+                        <nobr> <span id="failed" >{$FIELD_ERRORS.inactive}</span> </nobr>
                 <div id="remember" class="checkbox">
                     <label>
                       <input id="remember" type="checkbox" 

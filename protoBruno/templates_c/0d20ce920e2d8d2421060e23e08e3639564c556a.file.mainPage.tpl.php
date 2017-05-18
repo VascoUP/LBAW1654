@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-13 18:49:43
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-18 09:09:16
          compiled from "/opt/lbaw/lbaw1654/public_html/protoBruno/templates/general/mainPage.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:104386016259174737efbc08-86011365%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0d20ce920e2d8d2421060e23e08e3639564c556a' => 
     array (
       0 => '/opt/lbaw/lbaw1654/public_html/protoBruno/templates/general/mainPage.tpl',
-      1 => 1494623851,
+      1 => 1495062998,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_59174737f19d80_51675152',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_59174737f19d80_51675152',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59174737f19d80_51675152')) {function content_59174737f19d80_51675152($_smarty_tpl) {?><!-- Header -->
 <header>
@@ -41,7 +41,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading">About</h2>
-				<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.worked</h3>
+				<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
 			</div>
 		</div>
 		<div class="row text-center">
@@ -92,25 +92,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<form name="sentMessage" id="contactForm" novalidate>
+				<form name="sentMessage" id="contactForm" method="POST" action="https://gnomo.fe.up.pt/~lbaw1654/final/actions/admin/contactSite.php">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+								<input name="name" type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
 							</div>
 							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+								<input name="email" type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
 								<p class="help-block text-danger"></p>
 							</div>
 							<div class="form-group">
-								<input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+								<input name="tel" type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message.">
+								<textarea name="content" class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message.">
 								</textarea>
 								<p class="help-block text-danger"></p>
 							</div>
@@ -143,8 +143,6 @@ javascript/templates/bootstrap.min.js"></script>
 <!-- Contact Form JavaScript -->
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/templates/jqBootstrapValidation.js"></script>
-<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/templates/contact_me.js"></script>
 
 <!-- Theme JavaScript -->
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>

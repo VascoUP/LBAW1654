@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-14 04:26:26
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-18 00:17:23
          compiled from "/opt/lbaw/lbaw1654/public_html/protoBruno/templates/users/login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20312715485917ce62663284-23324752%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bd756ae3997a0ec5ce8871fe11ad19ca3774aab0' => 
     array (
       0 => '/opt/lbaw/lbaw1654/public_html/protoBruno/templates/users/login.tpl',
-      1 => 1494623862,
+      1 => 1495063005,
       2 => 'file',
     ),
   ),
@@ -15,15 +15,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_5917ce62827e45_12136154',
   'variables' => 
   array (
     'BASE_URL' => 0,
     'smartyUsername' => 0,
+    'FIELD_ERRORS' => 0,
     'smartyCkeck' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_5917ce62827e45_12136154',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5917ce62827e45_12136154')) {function content_5917ce62827e45_12136154($_smarty_tpl) {?><link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/pages/login.css" rel="stylesheet">
@@ -44,10 +45,13 @@ actions/users/login.php" method="post">
 
                         <?php }?>
                         required>
+
                 <input type="password" id="password" 
                         name="password" class="form-control form-style" 
                         placeholder="Password" 
                         required>
+                        <nobr> <span id="failed" ><?php echo $_smarty_tpl->tpl_vars['FIELD_ERRORS']->value['login'];?>
+</span> </nobr>
                 <div id="remember" class="checkbox">
                     <label>
                       <input id="remember" type="checkbox" 

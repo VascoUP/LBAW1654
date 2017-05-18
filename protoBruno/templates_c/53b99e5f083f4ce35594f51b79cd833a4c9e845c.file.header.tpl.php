@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-14 04:26:36
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-16 00:12:41
          compiled from "/opt/lbaw/lbaw1654/public_html/protoBruno/templates/common/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1721715615917ce6c016a05-26459325%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '53b99e5f083f4ce35594f51b79cd833a4c9e845c' => 
     array (
       0 => '/opt/lbaw/lbaw1654/public_html/protoBruno/templates/common/header.tpl',
-      1 => 1494623847,
+      1 => 1494889691,
       2 => 'file',
     ),
   ),
@@ -15,15 +15,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_5917ce6c2178f2_55389586',
   'variables' => 
   array (
     'BASE_URL' => 0,
     'smartyProjInvites' => 0,
     'index' => 0,
+    'smartyUsrInfo' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_5917ce6c2178f2_55389586',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5917ce6c2178f2_55389586')) {function content_5917ce6c2178f2_55389586($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("../../templates/common/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -92,9 +93,9 @@ javascript/header/notifications.js"></script>
 								<a href="#page-top"></a>
 							</li>
 							<li>
-								<form class="form-inline navbar-form">								
+								<form class="form-inline navbar-form" method="POST" action="https://gnomo.fe.up.pt/~lbaw1654/final/actions/general/search.php">								
 									<div class="input-group">
-										<input type="text" class="form-control search" placeholder="Search...">
+										<input name="search" type="text" class="form-control search" placeholder="Search...">
 									</div>
 								</form>
 							</li>
@@ -126,7 +127,8 @@ $_smarty_tpl->tpl_vars['index']->first = $_smarty_tpl->tpl_vars['index']->iterat
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
 								<ul id="menu" class="dropdown-menu">
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php" role="button" id="drop">Profile</a></li>
-									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php" role="button" id="drop">Projects</a></li>
+									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?userInfo=<?php echo $_smarty_tpl->tpl_vars['smartyUsrInfo']->value['0']['userid'];?>
+" role="button" id="drop">Projects</a></li>
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php" role="button" id="drop">Edit Profile</a></li>
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/users/logout.php" role="button" id="drop" class="logout">Logout</a></li>
 								</ul>

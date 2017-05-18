@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-05-14 05:11:15
+<?php /* Smarty version Smarty-3.1.15, created on 2017-05-18 09:09:38
          compiled from "/opt/lbaw/lbaw1654/public_html/protoBruno/templates/users/register.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14273209755917577c8df7b7-88530761%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7648dcfcc635e25e5744be537ee70afa23798c60' => 
     array (
       0 => '/opt/lbaw/lbaw1654/public_html/protoBruno/templates/users/register.tpl',
-      1 => 1494734601,
+      1 => 1495063006,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'BASE_URL' => 0,
+    'FORM_VALUES' => 0,
+    'FIELD_ERRORS' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -46,10 +48,15 @@ actions/users/register.php" method="post">
 
                 <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="username">Username</label>  
+                        <label class="col-md-4 control-label" for="username">Username</label>
                         <div class="col-md-4">
                             <div class="col-md-4">
-                                <input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md" required autofocus>
+                                <input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md" value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['username'];?>
+" required autofocus>
+                                        <nobr> <span class="field_error" ><?php echo $_smarty_tpl->tpl_vars['FIELD_ERRORS']->value['username'];?>
+</span> </nobr>
+                                        <nobr> <span class="field_error"><?php echo $_smarty_tpl->tpl_vars['FIELD_ERRORS']->value['usernameLow'];?>
+</span> </nobr>
                             </div>
                         </div>
                     </div>
@@ -59,7 +66,8 @@ actions/users/register.php" method="post">
                     <label class="col-md-4 control-label" for="email">Email Address</label>  
                     <div class="col-md-4">
                         <div class="col-md-4">
-                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control form-style input-md" required autofocus>
+                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control form-style input-md" value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['email'];?>
+" required autofocus>
                         </div>
                     </div>
                 </div>
@@ -69,6 +77,8 @@ actions/users/register.php" method="post">
                     <div class="col-md-4">
                         <div class="col-md-4">
                             <input type="password" class="form-control form-style input-md" name="password" id="password"  placeholder="Enter your Password" required autofocus/>
+                              <nobr> <span class="field_error"><?php echo $_smarty_tpl->tpl_vars['FIELD_ERRORS']->value['password'];?>
+</span> </nobr>
                         </div>
                     </div>
                 </div>
@@ -89,7 +99,6 @@ actions/users/register.php" method="post">
                     </div>
                 </div>
 
-                <p id="erroUser"> MENSAGEM QUE FUNCIONOU <p>
                 </fieldset>
             </form>
     </div>

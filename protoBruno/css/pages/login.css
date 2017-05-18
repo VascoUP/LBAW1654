@@ -125,3 +125,8 @@
 #acceso{
 	color: rgb(104, 145, 162);
 }
+
+#failed{
+    color: red;
+    font-size: 85%;
+}
