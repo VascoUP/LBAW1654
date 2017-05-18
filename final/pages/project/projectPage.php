@@ -16,13 +16,18 @@
   include_once($BASE_DIR .'database/Projects/validateUser.php');
 
   $projectInvites = invitedProjects($userInfo[0]['userid']);
+  $projectRequestedInvites = getRequestedParticition($projID);
+  echo print_r($projectRequestedInvites);
   $smarty->assign('smartyProjInvites', $projectInvites);
   
   if( $isCollaborator === false ) {
-    // ADD BUTTON TO THE PAGE
-    //if( getRequestInvite($userInfo[0]['userid'], $projID) === true )
-      // DEACTIVATE BUTTON
-  }
+    $smarty->assing('joinProjectButton', true);
+    if( getRequestInvite($userInfo[0]['userid'], $projID) === true )
+        $smarty->assign('joinProjectButtonActive', false);
+    else
+        $smarty->assign('joinProjectButtonActive', true);
+  } else
+    $smarty->assing('joinProjectButton', false);
 
   $smarty->assign('smartyProjID', $projID);
   $smarty->assign('smartyProjInfo', $projectInformation);

@@ -2,30 +2,35 @@ $(document).ready(init);
 
 function init() {
     $('.projAccept').click(function(e) {
-        e.preventDefault();
-
-        var parent = $(this).parent()
-        var projid = parseInt($(this).siblings('.projID').text());
-        var userid = parseInt($(this).siblings('.userID').text());
-        console.log(projid);
-        console.log(userid);
-        // CHANGE PROJ STATUS
-        ajaxPost(true, projid, userid, $(this).parent());
+        projAccept(e);
     });
 
     $('.projReject').click(function(e) {
-        e.preventDefault();
-
-        var parent = $(this).parent()
-        var projid = parseInt($(this).siblings('.projID').text());
-        var userid = parseInt($(this).siblings('.userID').text());
-
-        // CHANGE PROJ STATUS
-        ajaxPost(false, projid, userid, $(this).parent());
+        projReject(e);
     });
 }
 
-function ajaxPost(accepted, userid, projid, element) {
+function projAccept(e) {
+    e.preventDefault();
+
+    var parent = $(this).parent()
+    var projid = parseInt($(this).siblings('.projID').text());
+    var userid = parseInt($(this).siblings('.userID').text());
+
+    ajaxInvitePost(true, projid, userid, $(this).parent());
+}
+
+function projReject(e) {
+    e.preventDefault();
+
+    var parent = $(this).parent()
+    var projid = parseInt($(this).siblings('.projID').text());
+    var userid = parseInt($(this).siblings('.userID').text());
+
+    ajaxInvitePost(false, projid, userid, $(this).parent());
+}
+
+function ajaxInvitePost(accepted, userid, projid, element) {
     var data = {
         'accepted': accepted,
         'userid': userid,

@@ -16,6 +16,25 @@
         return $result;		
     }
 
+    function getRequestedParticition($projectID) {
+        try {
+            global $conn;
+            $stmt = $conn->prepate("SELECT UserSite.userID AS userID, UserSite.username AS username, 
+                                            Project.projectID AS projectID, Project.name AS projectName
+                                    FROM ProjectUsers, UserSite, Project
+                                    WHERE ProjectUsers.userID = User.userID
+                                    AND ProjectUsers.projectID = Project.projectID
+                                    AND ProjectUser.userStatusProject = 'requested'
+                                    AND ProjectUser.projectID = ?");
+            $stmt->execute(array($projectID));
+            $result = $stmt->fecthAll();
+        } catch(Exception $e) {
+            return $e->getMessage();
+        }
+
+        return $result;
+    }
+
     function requestParticipation($userID, $projectID) {
         $invitedate = date("Y-m-d");
 		try{

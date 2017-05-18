@@ -77,9 +77,15 @@
 								<img class="dropdown-notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="{$BASE_URL}images/assets/bell-icon.png">
 							{/if}
 									<ul id="notification" class="dropdown-menu">
-									<li>New notifications (<span id="nNotifications">{$smartyProjInvites|@count}</span>)</li>
+									<li>New notifications (<span id="nNotifications">{$smartyProjInvites|@count + $projectRequestedInvites|@count}</span>)</li>
 										{for $index=0 to ($smartyProjInvites|@count - 1)}
 											{assign var="smartyProjInvite" value=$smartyProjInvites[$index]}
+											<li>
+												{include file="../../templates/common/projectInvite.tpl" }
+											</li>
+										{/for}
+										{for $index=0 to ($projectRequestedInvites|@count - 1)}
+											{assign var="smartyProjRequestedInvite" value=$projectRequestedInvites[$index]}
 											<li>
 												{include file="../../templates/common/projectInvite.tpl" }
 											</li>
