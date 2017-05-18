@@ -31,12 +31,12 @@
         }
         
         if( $isCollaborator === false ) {
-            $smarty->assing('joinProjectButton', true);
+            $smarty->assign('joinProjectButton', true);
             if( getRequestInvite($userInfo[0]['userid'], $projID) === true )
                 $smarty->assign('joinProjectButtonActive', false);
             else
                 $smarty->assign('joinProjectButtonActive', true);
         } else
-            $smarty->assing('joinProjectButton', false);
+            $smarty->assign('joinProjectButton', false);
     }
 ?>

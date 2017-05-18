@@ -11,6 +11,7 @@ function reportUser($user, $content){
 			$stmt->bindParam(':user', $user);
 			$stmt->bindParam(':reportDate', $date);
 			$stmt->bindParam(':reportStatus', $status);
+			$stmt->execute();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}

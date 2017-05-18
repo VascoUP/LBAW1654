@@ -3,9 +3,13 @@ include_once('../../config/init.php');
   include_once($BASE_DIR .'database/Admin/ban.php');
  include_once($BASE_DIR .'database/Users/report.php');  
   
-  $userID = $_GET['userID'];
+  $user = $_GET['userID'];
+  $content = $_POST['content'];
   
-  banUser($userID);
+  echo $user;
+  echo $content;
   
-  header("Location: $BASE_URL" . "pages/admin/profileAdminOverview.php");
+  reportUser($user, $content);
+  
+ header("Location: $BASE_URL" . "pages/admin/profileAdminOverview.php");
 ?>

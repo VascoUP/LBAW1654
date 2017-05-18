@@ -19,7 +19,7 @@
     function getRequestedParticition($userID) {
         try {
             global $conn;
-            $stmt = $conn->prepate("SELECT UserSite.userID AS userID, UserSite.username AS username, 
+            $stmt = $conn->prepare("SELECT UserSite.userID AS userID, UserSite.username AS username, 
                                             Project.projectID AS projectID, Project.name AS projectName
                                     FROM ProjectUsers, UserSite, Project, ProjectCoordinator
                                     WHERE ProjectCoordinator.userID = ?
@@ -28,7 +28,7 @@
 									AND ProjectUsers.userStatusProject = 'requested'
 									AND UserSite.userID = ProjectUsers.userID");
             $stmt->execute(array($projectID));
-            $result = $stmt->fecthAll();
+            $result = $stmt->fetchAll();
         } catch(Exception $e) {
             return $e->getMessage();
         }
