@@ -12,8 +12,18 @@
 	$userInfo = getUserInformation($_SESSION['username']);
   	$smarty->assign('smartyUsrInfo', $userInfo);
 	
-	$userID = $_GET['userID'];
-	$smarty->assign('smartyUserID', $userID);
+	if(isset($_GET['userID'])){
+		$userID = $_GET['userID'];
+		$smarty->assign('smartyUserID', $userID);
+	}
+	else if(isset($_GET['threadID'])){
+		$threadID = $_GET['threadID'];
+		$smarty->assign('smartyThreadID', $threadID);
+	}
+	else if(isset($_GET['taskID'])){
+		$taskID = $_GET['taskID'];
+		$smarty->assign('smartyTaskID', $taskID);
+	}
 
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
   	$smarty->assign('smartyProjInvites', $projectInvites);

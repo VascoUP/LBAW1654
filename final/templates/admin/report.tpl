@@ -3,7 +3,15 @@
 
 <div class="container">
     <div class="card card-container">
-        <form class="form-horizontal" action="{$BASE_URL}actions/admin/reportUser.php?userID={$smartyUserID}" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{$BASE_URL}actions/admin/report.php?
+		{if $smartyUserID}
+			userID={$smartyUserID}
+		{elseif $smartyTaskID}
+			taskID={$smartyTaskID}
+		{elseif $smartyThreadID}
+			threadID={$smartyThreadID}
+		{/if}
+		" method="post" enctype="multipart/form-data">
 			
             <fieldset>
             <!-- Form Name -->
@@ -12,7 +20,7 @@
                 <label class="col-md-4 control-label" for="content">Report content (max 200 words)</label>  
                     <div class="col-md-4">                     
                         <textarea class="form-control form-style" rows="5" cols="30"  id="content" name="content"></textarea>
-                        <button id="update" type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Report User</button>
+                        <button id="update" type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Report</button>
                     </div>
             </div>		
 			</fieldset>

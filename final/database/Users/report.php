@@ -28,6 +28,7 @@ function reportTask($task, $content){
 			$stmt->bindParam(':task', $task);
 			$stmt->bindParam(':reportDate', $date);
 			$stmt->bindParam(':reportStatus', $status);
+			$stmt->execute();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
@@ -44,6 +45,7 @@ function reportThread($thread, $content){
 			$stmt->bindParam(':thread', $thread);
 			$stmt->bindParam(':reportDate', $date);
 			$stmt->bindParam(':reportStatus', $status);
+			$stmt->execute();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
