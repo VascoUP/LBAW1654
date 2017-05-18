@@ -74,7 +74,7 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectsActive[$i]['projectid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectsActive[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" role="button">
 												<h4 class="title2">
 													{$smartyProjectsActive[$i]['name']}
 													<span class="pull-right active">{$smartyProjectsActive[$i]['projectstatus']}</span>

@@ -60,9 +60,16 @@
 
         <!-- END SIDEBAR USER TITLE -->
             <!-- SIDEBAR BUTTONS -->
+
             <div class='profile-userbuttons'>
-                <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectCreate.php' type='button' class='btn btn-success btn-sm'>Add project</a>
-                <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/contactPage.php?second={$smartyUsrInfo['0']['userid']}&userID={$smartyUser}' type='button' class='btn btn-success btn-sm'>Contact</a>
+				{if $smartyUser && $smartyUserInfoFirst['0']['type'] == 'administrator'}
+					<a href='https://gnomo.fe.up.pt/~lbaw1654/final/actions/admin/banUser.php?userID={$smartyUsrInfo['0']['userid']}' type='button' class='btn btn-danger btn-sm'>Ban User</a>
+				{elseif $smartyUser && ($smartyUserInfoFirst['0']['type'] == 'coordinator' || $smartyUserInfoFirst['0']['type'] == 'user')}
+					<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/reportUser.php?userID={$smartyUsrInfo['0']['userid']}' type='button' class='btn btn-warning btn-sm'>Report User</a>
+				{else}
+					<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectCreate.php' type='button' class='btn btn-success btn-sm'>Add project</a>
+					<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/contactPage.php?second={$smartyUsrInfo['0']['userid']}&userID={$smartyUser}' type='button' class='btn btn-success btn-sm'>Contact</a>
+				{/if}
             </div>
     </div>
     

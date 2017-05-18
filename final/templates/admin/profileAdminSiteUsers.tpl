@@ -73,7 +73,7 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersActive[$i]['userid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersActive[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
 												<h4 class="title2">
 													{$smartyUsersActive[$i]['username']}
 													<span class="pull-right active">{$smartyUsersActive[$i]['userstatus']}</span>
@@ -104,7 +104,7 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersInactive[$i]['userid']}" role="button">
+												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersInactive[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
 												<h4 class="title2">
 													{$smartyUsersInactive[$i]['username']}
 													<span class="pull-right active">{$smartyUsersInactive[$i]['userstatus']}</span>
@@ -135,7 +135,7 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersReported[$i]['userid']}" role="button">
+												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersReported[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
 												<h4 class="title2">
 													{$smartyUsersReported[$i]['username']}
 													<span class="pull-right active">{$smartyUsersReported[$i]['userstatus']}</span>
