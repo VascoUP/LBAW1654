@@ -29,9 +29,14 @@
                 die();
             }
         }
-
-        // ADD BUTTON TO THE PAGE
-        //if( getRequestInvite($userInfo[0]['userid'], $projID) === true )
-            // DEACTIVATE BUTTON
+        
+        if( $isCollaborator === false ) {
+            $smarty->assing('joinProjectButton', true);
+            if( getRequestInvite($userInfo[0]['userid'], $projID) === true )
+                $smarty->assign('joinProjectButtonActive', false);
+            else
+                $smarty->assign('joinProjectButtonActive', true);
+        } else
+            $smarty->assing('joinProjectButton', false);
     }
 ?>

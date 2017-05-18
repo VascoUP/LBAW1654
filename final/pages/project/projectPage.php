@@ -14,16 +14,13 @@
   $smarty->assign('smartyUsrInfo', $userInfo);
   
   include_once($BASE_DIR .'database/Projects/validateUser.php');
+  include_once($BASE_DIR .'database/prepareNotifications.php');
 
-  $projectInvites = invitedProjects($userInfo[0]['userid']);
-  $smarty->assign('smartyProjInvites', $projectInvites);
+  /*$projectInvites = invitedProjects($userInfo[0]['userid']);
+  $projectRequestedInvites = getRequestedParticition($projID);
+  echo print_r($projectRequestedInvites);
+  $smarty->assign('smartyProjInvites', $projectInvites);*/
   
-  if( $isCollaborator === false ) {
-    // ADD BUTTON TO THE PAGE
-    //if( getRequestInvite($userInfo[0]['userid'], $projID) === true )
-      // DEACTIVATE BUTTON
-  }
-
   $smarty->assign('smartyProjID', $projID);
   $smarty->assign('smartyProjInfo', $projectInformation);
   $smarty->assign('smartyCoord', getCoordinator($projID));

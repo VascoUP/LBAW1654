@@ -17,7 +17,7 @@
 		});
 		
 		$('#adminDeleteProject').click(function() {
-			var x = confirm("Are you sure you want to delete this project?");
+			var x = confirm("Are you sure you want to remove this project?");
 			if (x)
 				return true;
 			else

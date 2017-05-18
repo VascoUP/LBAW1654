@@ -3,29 +3,42 @@ $(document).ready(init);
 function init() {
     $('.projAccept').click(function(e) {
         e.preventDefault();
-
-        var parent = $(this).parent()
-        var projid = parseInt($(this).siblings('.projID').text());
-        var userid = parseInt($(this).siblings('.userID').text());
-        console.log(projid);
-        console.log(userid);
-        // CHANGE PROJ STATUS
-        ajaxPost(true, projid, userid, $(this).parent());
+        var projid = getProjId(this);
+        var userid = getUserId(this);
+        ajaxInvitePost(false, projid, userid, $(this).parent());
     });
 
     $('.projReject').click(function(e) {
         e.preventDefault();
+        var projid = getProjId(this);
+        var userid = getUserId(this);
+        ajaxInvitePost(true, projid, userid, $(this).parent());
+    });
 
-        var parent = $(this).parent()
-        var projid = parseInt($(this).siblings('.projID').text());
-        var userid = parseInt($(this).siblings('.userID').text());
+    $('.identUsername').click(function(e) {
+        var userid = getUserId(this);
+        var url = "http://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userID=" + userid;
+        window.location.href = url;
+    });
 
-        // CHANGE PROJ STATUS
-        ajaxPost(false, projid, userid, $(this).parent());
+    $('.identProject').click(function(e) {
+        var projid = getProjId(this);
+        var url = "http://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID=" + projid;
+        window.location.href = url;
     });
 }
 
-function ajaxPost(accepted, userid, projid, element) {
+function getUserId(element) {
+    var parent = $(this).parent();
+    var userid = parseInt($(this).siblings('.userID').text());
+}
+
+function getProjId(element) {
+    var parent = $(this).parent();
+    var projid = parseInt($(this).siblings('.projID').text());
+}
+
+function ajaxInvitePost(accepted, userid, projid, element) {
     var data = {
         'accepted': accepted,
         'userid': userid,

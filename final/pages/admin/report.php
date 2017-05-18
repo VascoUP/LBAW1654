@@ -8,25 +8,17 @@
 	
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
-	
-	if(!isset($_GET['userInfo']))
-		$userID = getUserInformation($_SESSION['username'])['0']['userid'];
-	else
-		$userID = $_GET['userInfo'];
-	
-	$first = $_GET['user'];
-	$smarty->assign('smartyUser', $first);
-	
-	$userInfoFirst = getUserInformationByID($first);
-	$smarty->assign('smartyUserInfoFirst', $userInfoFirst);
-	
-	$userInfo = getUserInformationByID($userID);
+
+	$userInfo = getUserInformation($_SESSION['username']);
   	$smarty->assign('smartyUsrInfo', $userInfo);
+	
+	$userID = $_GET['userID'];
+	$smarty->assign('smartyUserID', $userID);
 
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
   	$smarty->assign('smartyProjInvites', $projectInvites);
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
-	$smarty->display($BASE_DIR .'templates/profiles/profileUsrOverview.tpl');
+	$smarty->display($BASE_DIR .'templates/admin/report.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>
