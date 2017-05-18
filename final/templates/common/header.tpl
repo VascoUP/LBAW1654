@@ -87,7 +87,7 @@
 										{for $index=0 to ($projectRequestedInvites|@count - 1)}
 											{assign var="smartyProjRequestedInvite" value=$projectRequestedInvites[$index]}
 											<li>
-												{include file="../../templates/common/projectInvite.tpl" }
+												{include file="../../templates/common/projectRequestedInvite.tpl" }
 											</li>
 										{/for}
 									</ul>
