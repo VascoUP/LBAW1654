@@ -2,32 +2,40 @@ $(document).ready(init);
 
 function init() {
     $('.projAccept').click(function(e) {
-        projAccept(e);
+        e.preventDefault();
+        var projid = getProjId(this);
+        var userid = getUserId(this);
+        ajaxInvitePost(false, projid, userid, $(this).parent());
     });
 
     $('.projReject').click(function(e) {
-        projReject(e);
+        e.preventDefault();
+        var projid = getProjId(this);
+        var userid = getUserId(this);
+        ajaxInvitePost(true, projid, userid, $(this).parent());
+    });
+
+    $('.identUsername').click(function(e) {
+        var userid = getUserId(this);
+        var url = "http://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userID=" + userid;
+        window.location.href = url;
+    });
+
+    $('.identProject').click(function(e) {
+        var projid = getProjId(this);
+        var url = "http://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID=" + projid;
+        window.location.href = url;
     });
 }
 
-function projAccept(e) {
-    e.preventDefault();
-
-    var parent = $(this).parent()
-    var projid = parseInt($(this).siblings('.projID').text());
+function getUserId(element) {
+    var parent = $(this).parent();
     var userid = parseInt($(this).siblings('.userID').text());
-
-    ajaxInvitePost(true, projid, userid, $(this).parent());
 }
 
-function projReject(e) {
-    e.preventDefault();
-
-    var parent = $(this).parent()
+function getProjId(element) {
+    var parent = $(this).parent();
     var projid = parseInt($(this).siblings('.projID').text());
-    var userid = parseInt($(this).siblings('.userID').text());
-
-    ajaxInvitePost(false, projid, userid, $(this).parent());
 }
 
 function ajaxInvitePost(accepted, userid, projid, element) {

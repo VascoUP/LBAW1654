@@ -14,21 +14,13 @@
   $smarty->assign('smartyUsrInfo', $userInfo);
   
   include_once($BASE_DIR .'database/Projects/validateUser.php');
+  include_once($BASE_DIR .'database/prepareNotifications.php');
 
-  $projectInvites = invitedProjects($userInfo[0]['userid']);
+  /*$projectInvites = invitedProjects($userInfo[0]['userid']);
   $projectRequestedInvites = getRequestedParticition($projID);
   echo print_r($projectRequestedInvites);
-  $smarty->assign('smartyProjInvites', $projectInvites);
+  $smarty->assign('smartyProjInvites', $projectInvites);*/
   
-  if( $isCollaborator === false ) {
-    $smarty->assing('joinProjectButton', true);
-    if( getRequestInvite($userInfo[0]['userid'], $projID) === true )
-        $smarty->assign('joinProjectButtonActive', false);
-    else
-        $smarty->assign('joinProjectButtonActive', true);
-  } else
-    $smarty->assing('joinProjectButton', false);
-
   $smarty->assign('smartyProjID', $projID);
   $smarty->assign('smartyProjInfo', $projectInformation);
   $smarty->assign('smartyCoord', getCoordinator($projID));
