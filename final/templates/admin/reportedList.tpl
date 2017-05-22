@@ -217,7 +217,7 @@
 								{/if}
 							</tbody>
 						</table>
-						table id="tableReportedProjects" class="table table-filter">
+						<table id="tableReportedProjects" class="table table-filter">
 							<tbody>
 								{if $projReport|@count == 0}
 									<h3 id="reportedprojH3">This site doesn't have any report</h3>

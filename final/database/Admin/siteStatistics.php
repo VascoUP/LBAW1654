@@ -39,41 +39,31 @@ function getUserStatistics(){
 
 function getUserStatusStatistics(){
 	$array = array();
-	try {
-		global $conn;
-		$stmt = $conn->prepare("SELECT COUNT(*) AS users FROM UserSite");	
-		$stmt->execute();
-		$users = $stmt->fetchAll();
-		
+	try {	
+		global $conn;	
 		$stmt = $conn->prepare("SELECT COUNT(*) AS active FROM UserSite WHERE userStatus = 'active'");	
 		$stmt->execute();
 		$active = $stmt->fetchAll();
 		
-		$array['active'] = ($active['0']['active'])/($users['0']['users']);
 		$array['activeCount'] = $active['0']['active']; 
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS banned FROM UserSite WHERE userStatus = 'banned'");	
 		$stmt->execute();
 		$banned = $stmt->fetchAll();
 		
-		$array['banned'] = ($banned['0']['banned'])/($users['0']['users']);
 		$array['bannedCount'] = $banned['0']['banned']; 
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS inactive FROM UserSite WHERE userStatus = 'inactive'");	
 		$stmt->execute();
 		$inactive = $stmt->fetchAll();
 		
-		$array['inactive'] = ($inactive['0']['inactive'])/($users['0']['users']);
 		$array['inactiveCount'] = $inactive['0']['inactive']; 
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS inactive FROM UserSite WHERE userStatus = 'reported'");	
 		$stmt->execute();
 		$reported = $stmt->fetchAll();
 		
-		$array['reported'] = ($reported['0']['reported'])/($users['0']['users']);
 		$array['reportedCount'] = $reported['0']['reported']; 
-		
-		$array['total'] = $users['0']['users'];
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}

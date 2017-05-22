@@ -17,13 +17,20 @@
 			<p id="coord">{$userStatistics['coord']}</p>
 			<p id="collab">{$userStatistics['userCount']}</p>
 			<p id="admin">{$userStatistics['admin']}</p>
-			<div id="chartdiv"></div>	
+			<div id="chartdiv"></div>
+			<h4>Site Users Status</h4>
+			<p id="activeStatus">{$userStatus['activeCount']}</p>
+			<p id="bannedStatus">{$userStatus['bannedCount']}</p>
+			<p id="inactiveStatus">{$userStatus['inactiveCount']}</p>
+			<p id="reportedStatus">{$userStatus['reportedCount']}</p>
+			<div id="statusdiv"></div>
+			<h4>
 		</div>
 	</div>
 </div>
 <!-- Styles -->
 <style>
-#chartdiv {
+#chartdiv, #statusdiv {
 	height		: 160px;
 	font-size	: 11px;
 }							
