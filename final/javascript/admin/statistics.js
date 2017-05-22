@@ -9,6 +9,7 @@ function init() {
 	var inactive = $('#inactiveStatus').text();
 	var banned = $('#bannedStatus').text();
 	var reported = $('#reportedStatus').text();
+	console.log(reported);
 	$('p').hide();
 
 	var chart = AmCharts.makeChart( "chartdiv", {
