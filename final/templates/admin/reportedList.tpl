@@ -59,9 +59,10 @@
 						<div class="btn-group">
 							<button id="buttontReported" type="button" class="btn btn-danger btn-filter" data-target="reported">Reported</button>
 							<button id="buttontHandled" type="button" class="btn btn-success btn-filter" data-target="handled">Handled</button>
-							<button id="buttonUser" type="button" class="btn btn-warning btn-filter" data-target="reportedUser">Reported User</button>
-							<button id="buttonTask" type="button" class="btn btn-primary btn-filter" data-target="reportedTask">Reported Task</button>
-							<button id="buttonThread" type="button" class="btn btn-info btn-filter" data-target="reportedThread">Reported Thread</button>
+							<button id="buttonUser" type="button" class="btn btn-warning btn-filter" data-target="reportedUser">User</button>
+							<button id="buttonTask" type="button" class="btn btn-primary btn-filter" data-target="reportedTask">Task</button>
+							<button id="buttonThread" type="button" class="btn btn-info btn-filter" data-target="reportedThread">Thread</button>
+							<button id="buttonProject" type="button" class="btn btn-default btn-filter" data-target="reportedProject">Project</button>
 						</div>
 					</div>
 
@@ -82,6 +83,8 @@
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$reported[$i]['taskid']}" role="button">
 											{elseif $reported[$i]['threadid']}
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?forumID={$reported[$i]['threadid']}" role="button">
+											{elseif $reported[$i]['projectid']}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?fprojID={$reported[$i]['projectid']}" role="button">
 											{/if}
 											
 												<h4 class="title2">
@@ -114,6 +117,8 @@
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$handled[$i]['taskid']}" role="button">
 											{elseif $handled[$i]['threadid']}
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?forumID={$handled[$i]['threadid']}" role="button">
+											{elseif $reported[$i]['projectid']}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?fprojID={$reported[$i]['projectid']}" role="button">
 											{/if}
 											
 												<h4 class="title2">
@@ -204,6 +209,33 @@
 												</h4>
 											</a>
 											<p class="summary">{$threadReport[$i]['content']}</p>
+											</div>
+										</div>
+									</td>
+								</tr>
+								{/for}
+								{/if}
+							</tbody>
+						</table>
+						table id="tableReportedProjects" class="table table-filter">
+							<tbody>
+								{if $projReport|@count == 0}
+									<h3 id="reportedprojH3">This site doesn't have any report</h3>
+								{else}
+								{for $i=0 to ($projReport|@count-1)}
+								<tr data-status="reportedProject">
+									<td>
+										<div class="media">
+											<div class="media-body">
+											
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/projectPage.php?projID={$projReport[$i]['projectid']}" role="button">
+											
+												<h4 class="title2">
+													{$projNames[$i]}
+													<span class="pull-right active">Report date: {$projReport[$i]['reportdate']}</span>
+												</h4>
+											</a>
+											<p class="summary">{$projReport[$i]['content']}</p>
 											</div>
 										</div>
 									</td>

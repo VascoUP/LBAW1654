@@ -54,4 +54,18 @@ function getThreadReported(){
 	
 	return $result;
 }
+
+function getProjectReported(){
+	try {
+		global $conn;
+	
+		$stmt = $conn->prepare("SELECT * FROM Report WHERE projectID IS NOT NULL");
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+	
+	return $result;
+}
 ?>

@@ -24,6 +24,10 @@
 		$taskID = $_GET['taskID'];
 		$smarty->assign('smartyTaskID', $taskID);
 	}
+	if(isset($_GET['projID'])){
+		$projID = $_GET['projID'];
+		$smarty->assign('smartyProjID', $projID);
+	}
 
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
   	$smarty->assign('smartyProjInvites', $projectInvites);

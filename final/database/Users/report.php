@@ -51,4 +51,21 @@ function reportThread($thread, $content){
 		}
 }
 
+function reportProject($proj, $content){
+	try {
+			global $conn;
+			$date = date('Y-m-d');
+			$status = 'waiting';
+			$stmt = $conn->prepare("INSERT INTO Report(content, reportDate, reportStatus, projectID) 
+									VALUES (:content, :reportDate, :reportStatus, :project)");
+			$stmt->bindParam(':content', $content);
+			$stmt->bindParam(':project', $proj);
+			$stmt->bindParam(':reportDate', $date);
+			$stmt->bindParam(':reportStatus', $status);
+			$stmt->execute();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+}
+
 ?>

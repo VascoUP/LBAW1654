@@ -11,6 +11,8 @@ function init() {
 	$('#reportedTaskH3').hide();
 	$('#tableReportedThreads').hide();
 	$('#reportedThreadH3').hide();
+	$('#tableReportedProjects').hide();
+	$('reportedprojH3').hide();
 	
 	$("#buttontReported").click(function() {
 		$('#reportedH3').show();
@@ -23,6 +25,8 @@ function init() {
 		$('#reportedTaskH3').hide();
 		$('#tableReportedThreads').hide();
 		$('#reportedThreadH3').hide();
+		$('#tableReportedProjects').hide();
+		$('reportedprojH3').hide();
 	});
 	
 	$("#buttontHandled").click(function() {
@@ -36,6 +40,8 @@ function init() {
 		$('#reportedTaskH3').hide();
 		$('#tableReportedThreads').hide();
 		$('#reportedThreadH3').hide();
+		$('#tableReportedProjects').hide();
+		$('reportedprojH3').hide();
 	});
 	
 	$("#buttonUser").click(function() {
@@ -49,6 +55,8 @@ function init() {
 		$('#reportedTaskH3').hide();
 		$('#tableReportedThreads').hide();
 		$('#reportedThreadH3').hide();
+		$('#tableReportedProjects').hide();
+		$('reportedprojH3').hide();
 	});
 	
 	
@@ -63,6 +71,8 @@ function init() {
 		$('#reportedTaskH3').show();
 		$('#tableReportedThreads').hide();
 		$('#reportedThreadH3').hide();
+		$('#tableReportedProjects').hide();
+		$('reportedprojH3').hide();
 	});
 	
 	$("#buttonThread").click(function() {
@@ -76,5 +86,22 @@ function init() {
 		$('#reportedTaskH3').hide();
 		$('#tableReportedThreads').show();
 		$('#reportedThreadH3').show();
+		$('#tableReportedProjects').hide();
+		$('reportedprojH3').hide();
+	});
+	
+	$("#buttonProject").click(function() {
+		$('#reportedH3').hide();
+		$('#tableReported').hide();
+		$('#tableHandled').hide();
+		$('#handledH3').hide();
+		$('#tableReportUsers').hide();
+		$('#UserreportedH3').hide();
+		$('#tableReportedTasks').hide();
+		$('#reportedTaskH3').hide();
+		$('#tableReportedThreads').hide();
+		$('#reportedThreadH3').hide();
+		$('#tableReportedProjects').show();
+		$('reportedprojH3').show();
 	});
 }

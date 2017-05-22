@@ -10,6 +10,8 @@
 			taskID={$smartyTaskID}
 		{elseif $smartyThreadID}
 			threadID={$smartyThreadID}
+		{elseif $smartyProjID}
+			projID={$smartyProjID}
 		{/if}
 		" method="post" enctype="multipart/form-data">
 			

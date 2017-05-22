@@ -13,6 +13,7 @@
 	include_once($BASE_DIR .'database/Admin/report.php');
 	include_once($BASE_DIR .'database/Threads/threads.php');
 	include_once($BASE_DIR .'database/Tasks/tasks.php');
+	include_once($BASE_DIR .'database/Projects/projectInformation.php');
 	
 	include_once($BASE_DIR .'database/invites.php');
 	
@@ -33,7 +34,9 @@
 		else if($h['taskid'])
 			$namesHandled[] = getInfoTask($h['taskid'])['0']['name'];
 		else if($h['threadid'])
-			$namesHandled[] = getThreadInfo($h['threadid'])['0']['title'];			
+			$namesHandled[] = getThreadInfo($h['threadid'])['0']['title'];	
+		else if($h['projectid'])
+			$namesHandled[] = getProjectInformation($h['projectid'])['0']['name'];
 	}
 	
 	foreach($reported as $r){
@@ -42,7 +45,9 @@
 		else if($r['taskid'])
 			$namesReported[] = getInfoTask($r['taskid'])['0']['name'];
 		else if($r['threadid'])
-			$namesReported[] = getThreadInfo($r['threadid'])['0']['title'];			
+			$namesReported[] = getThreadInfo($r['threadid'])['0']['title'];	
+		else if($r['projectid'])
+			$namesHandled[] = getProjectInformation($r['projectid'])['0']['name'];
 	}
 	
 	$userReport = getUsersReported();
@@ -66,16 +71,25 @@
 	foreach($threadReport as $threadRep)
 		$titles[] = getThreadInfo($threadRep['threadid'])['0']['title'];
 		
+	$projReport = getProjectReported();
+	
+	$projNames = array();
+	
+	foreach($projReport as $proj)
+		$projNames[] = getProjectInformation($proj['projectid'])['0']['name'];
+		
 	$smarty->assign('handled', $handled);
 	$smarty->assign('reported', $reported);
 	$smarty->assign('userReport', $userReport);
 	$smarty->assign('taskReport', $taskReport);
 	$smarty->assign('threadReport', $threadReport);
+	$smarty->assign('projReport', $projReport);
 	$smarty->assign('namesHandled', $namesHandled);
 	$smarty->assign('namesReported', $namesReported);
 	$smarty->assign('usernames', $usernames);
 	$smarty->assign('names', $names);
 	$smarty->assign('titles', $titles);
+	$smarty->assign('projNames', $projNames);
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/admin/reportedList.tpl');
