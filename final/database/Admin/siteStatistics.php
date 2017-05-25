@@ -82,25 +82,25 @@ function getReportsStatistics(){
 		$stmt->execute();
 		$userReport = $stmt->fetchAll();
 		
-		$array['userCount'] = $userReport['0']['userreport'];
+		$array['userCount'] = $userReport['0']['userReport'];
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS taskReport FROM Report WHERE taskID IS NOT NULL");	
 		$stmt->execute();
 		$taskReport = $stmt->fetchAll();
 		
-		$array['taskCount'] = $taskReport['0']['taskreport'];
+		$array['taskCount'] = $taskReport['0']['taskReport'];
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS threadReport FROM Report WHERE threadID IS NOT NULL");	
 		$stmt->execute();
 		$threadReport = $stmt->fetchAll();
 		
-		$array['threadCount'] = $threadReport['0']['threadreport'];
+		$array['threadCount'] = $threadReport['0']['threadReport'];
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS projReport FROM Report WHERE projectID IS NOT NULL");	
 		$stmt->execute();
 		$threadReport = $stmt->fetchAll();
 		
-		$array['projCount'] = $threadReport['0']['projreport'];
+		$array['projCount'] = $threadReport['0']['projReport'];
 	
 	} catch(Exception $e) {
 		return $e->getMessage();
@@ -121,19 +121,19 @@ function getProjectStatistics(){
 		$stmt->execute();
 		$projectsActive = $stmt->fetchAll();
 		
-		$array['active'] = $projectsActive['0']['projectsactive'];
+		$array['active'] = $projectsActive['0']['projectsActive'];
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS projectReported FROM Project WHERE projectStatus = 'reported'");	
 		$stmt->execute();
 		$projectReported = $stmt->fetchAll();
 		
-		$array['reported'] = $projectReported['0']['projectreported'];
+		$array['reported'] = $projectReported['0']['projectReported'];
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS projectBanned FROM Project WHERE projectStatus = 'banned'");	
 		$stmt->execute();
 		$projectBanned = $stmt->fetchAll();
 		
-		$array['banned'] = $projectBanned['0']['projectbanned'];
+		$array['banned'] = $projectBanned['0']['projectBanned'];
 		
 		$array['total'] = $projects['0']['projects'];
 	

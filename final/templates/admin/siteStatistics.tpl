@@ -2,8 +2,8 @@
 <link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
 <link href="{$BASE_URL}css/pages/search.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
-<script src="{$BASE_URL}javascript/admin/statistics.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="{$BASE_URL}javascript/admin/statistics.js"></script>
 
 <div class="container">
 	<div class="card card-container">
@@ -16,7 +16,6 @@
 			<p id="collab">{$userStatistics['userCount']}</p>
 			<p id="admin">{$userStatistics['admin']}</p>
 			<div id="chartdiv"></div>
-			<h3>Users Status</h3>
 			<p id="activeStatus">{$userStatus['activeCount']}</p>
 			<p id="bannedStatus">{$userStatus['bannedCount']}</p>
 			<p id="inactiveStatus">{$userStatus['inactiveCount']}</p>
@@ -30,7 +29,7 @@
 			<p id="projectActive">{$projects['banned']}</p>
 			<div id="projdiv"></div>
 			<h4>Reports</h4>
-			<p class="number">Number of reports: {$reportStatistics['reports'}</p>
+			<p class="number">Number of reports: {$reportStatistics['reports']}</p>
 			<h3>Reports</h3>
 			<p id="reportUser">{$reportStatistics['userCount']}</p>
 			<p id="reportUser">{$reportStatistics['taskCount']}</p>
@@ -43,6 +42,6 @@
 <!-- Styles -->
 <style>
 #chartdiv, #statusdiv {
-	width: 900px; height: 500px;
+	width: 430px; height: 300px;
 }							
 </style>

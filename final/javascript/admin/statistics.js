@@ -21,15 +21,22 @@ function init() {
 
 	$('p').hide();
 	$('.number').show();
-
+	
 	google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
+	
+    google.charts.setOnLoadCallback(drawChart);
+	google.charts.setOnLoadCallback(drawChart2);
+	
       function drawChart() {
+		admin = eval(admin);
+		collab = eval(collab);
+		coord = eval(coord);
+		
         var data = google.visualization.arrayToDataTable([
           ['User Type', 'Number'],
           ['Administrator', admin],
           ['Collaborator', collab],
-          ['Coordinator',  coord]
+          ['Coordinator', coord]
         ]);
 
         var options = {
@@ -38,6 +45,26 @@ function init() {
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
+        chart.draw(data, options);
+      }
+	
+	  function drawChart2() {
+		projActive = eval(projActive);
+		projReported = eval(projReported);
+		projBanned = eval(projBanned);
+		
+        var data = google.visualization.arrayToDataTable([
+          ['Projects Status', 'Number'],
+          ['Active', projActive],
+          ['Reported', projReported],
+		  ['Banned', projBanned]
+        ]);
+
+        var options = {
+          title: 'Projects Status'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('statusdiv'));
         chart.draw(data, options);
       }
 }
