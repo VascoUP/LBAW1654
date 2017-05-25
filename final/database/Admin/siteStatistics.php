@@ -12,21 +12,18 @@ function getUserStatistics(){
 		$stmt->execute();
 		$countCoord = $stmt->fetchAll();
 		
-		$array['coordinator'] = ($countCoord['0']['countcoord'])/($users['0']['users']);
 		$array['coord'] = $countCoord['0']['countcoord'];
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS countUser FROM UserSite WHERE type = 'user'");	
 		$stmt->execute();
 		$countUser = $stmt->fetchAll();
 		
-		$array['user'] = ($countUser['0']['countuser'])/($users['0']['users']);
 		$array['userCount'] = $countUser['0']['countuser'];
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS countAdmin FROM UserSite WHERE type = 'administrator'");	
 		$stmt->execute();
 		$countAdmin = $stmt->fetchAll();
 		
-		$array['administrator'] = ($countAdmin['0']['countadmin'])/($users['0']['users']);
 		$array['admin'] = $countAdmin['0']['countadmin'];
 
 		$array['total'] = $users['0']['users'];
@@ -79,28 +76,31 @@ function getReportsStatistics(){
 		$stmt->execute();
 		$reports = $stmt->fetchAll();
 		
+		$array['reports'] = $reports['reports'];
+		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS userReport FROM Report WHERE userID IS NOT NULL");	
 		$stmt->execute();
 		$userReport = $stmt->fetchAll();
 		
-		$array['user'] = ($userReport['0']['userreport'])/($reports['0']['reports']);
-		$array['userCount'] = $userReport['0']['userreport'];
+		$array['userCount'] = $userReport['0']['userReport'];
 		
-		$stmt = $conn->prepare("SELECT COUNT(*) AS taskReport FROM UserSite WHERE taskID IS NOT NULL");	
+		$stmt = $conn->prepare("SELECT COUNT(*) AS taskReport FROM Report WHERE taskID IS NOT NULL");	
 		$stmt->execute();
 		$taskReport = $stmt->fetchAll();
 		
-		$array['taskReport'] = ($taskReport['0']['taskreport'])/($reports['0']['reports']);
-		$array['taskCount'] = $taskReport['0']['taskreport'];
+		$array['taskCount'] = $taskReport['0']['taskReport'];
 		
-		$stmt = $conn->prepare("SELECT COUNT(*) AS threadReport FROM UserSite WHERE threadID IS NOT NULL");	
+		$stmt = $conn->prepare("SELECT COUNT(*) AS threadReport FROM Report WHERE threadID IS NOT NULL");	
 		$stmt->execute();
 		$threadReport = $stmt->fetchAll();
 		
-		$array['threadReport'] = ($threadReport['0']['threadreport'])/($reports['0']['reports']);
-		$array['threadCount'] = $threadReport['0']['threadreport'];
+		$array['threadCount'] = $threadReport['0']['threadReport'];
 		
-		$array['total'] = $reports['0']['reports'];
+		$stmt = $conn->prepare("SELECT COUNT(*) AS projReport FROM Report WHERE projectID IS NOT NULL");	
+		$stmt->execute();
+		$threadReport = $stmt->fetchAll();
+		
+		$array['projCount'] = $threadReport['0']['projReport'];
 	
 	} catch(Exception $e) {
 		return $e->getMessage();
@@ -121,22 +121,19 @@ function getProjectStatistics(){
 		$stmt->execute();
 		$projectsActive = $stmt->fetchAll();
 		
-		$array['projectsActive'] = ($projectsActive['0']['projectsactive'])/($projects['0']['projects']);
-		$array['active'] = $projectsActive['0']['projectsactive'];
+		$array['active'] = $projectsActive['0']['projectsActive'];
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS projectReported FROM Project WHERE projectStatus = 'reported'");	
 		$stmt->execute();
 		$projectReported = $stmt->fetchAll();
 		
-		$array['projectReported'] = ($projectReported['0']['projectreported'])/($projects['0']['projects']);
-		$array['reported'] = $projectReported['0']['projectreported'];
+		$array['reported'] = $projectReported['0']['projectReported'];
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS projectBanned FROM Project WHERE projectStatus = 'banned'");	
 		$stmt->execute();
 		$projectBanned = $stmt->fetchAll();
 		
-		$array['projectBanned'] = ($projectBanned['0']['projectbanned'])/($projects['0']['projects']);
-		$array['banned'] = $projectBanned['0']['projectbanned'];
+		$array['banned'] = $projectBanned['0']['projectBanned'];
 		
 		$array['total'] = $projects['0']['projects'];
 	
