@@ -35,6 +35,8 @@
 
 	$smarty->assign('smartyComments', $comments);
 	$smarty->assign('smartyUserInformation', $userInformation);
+
+  include_once($BASE_DIR .'database/prepareNotifications.php');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/forums/forum.tpl');

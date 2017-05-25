@@ -20,6 +20,8 @@
 	$projID = $_GET['projID'];
 	$smarty->assign('smartyProjID', $projID);
 
+  include_once($BASE_DIR .'database/prepareNotifications.php');
+
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/forums/createForum.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl'); 

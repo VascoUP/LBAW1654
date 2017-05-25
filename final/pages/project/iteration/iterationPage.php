@@ -36,6 +36,8 @@
 	$smarty->assign('smartyNumberUsers', $numberUsers);
 	$smarty->assign('smartyNumberTasks', $numberTasks);
 	$smarty->assign('smartyPermission', $userPermissions);
+
+  include_once($BASE_DIR .'database/prepareNotifications.php');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/iterations/iterationPage.tpl');

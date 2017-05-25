@@ -78,18 +78,18 @@
 							{/if}
 									<ul id="notification" class="dropdown-menu">
 									<li>New notifications (<span id="nNotifications">{$smartyProjInvites|@count + $projectRequestedInvites|@count}</span>)</li>
-										{for $index=0 to ($smartyProjInvites|@count - 1)}
-											{assign var="smartyProjInvite" value=$smartyProjInvites[$index]}
-											<li>
-												{include file="../../templates/common/projectInvite.tpl" }
-											</li>
-										{/for}
-										{for $index=0 to ($projectRequestedInvites|@count - 1)}
-											{assign var="smartyProjRequestedInvite" value=$projectRequestedInvites[$index]}
-											<li>
-												{include file="../../templates/common/projectRequestedInvite.tpl" }
-											</li>
-										{/for}
+								{for $index=0 to ($smartyProjInvites|@count - 1)}
+									{assign var="smartyProjInvite" value=$smartyProjInvites[$index]}
+									<li>
+										{include file="../../templates/common/projectInvite.tpl" }
+									</li>
+								{/for}
+								{for $index=0 to ($projectRequestedInvites|@count - 1)}
+									{assign var="smartyProjRequestedInvite" value=$projectRequestedInvites[$index]}
+									<li>
+										{include file="../../templates/common/projectRequestedInvite.tpl" }
+									</li>
+								{/for}
 									</ul>
 								</img>
 							</li>

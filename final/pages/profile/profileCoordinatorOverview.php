@@ -14,6 +14,8 @@
 
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
   	$smarty->assign('smartyProjInvites', $projectInvites);
+
+  include_once($BASE_DIR .'database/prepareNotifications.php');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/profiles/profileCoordOverview.tpl');

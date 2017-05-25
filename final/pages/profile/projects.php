@@ -13,6 +13,8 @@
 	$projects = getProjects($userID);
 	$smarty->assign('userID', $userID);
 	$smarty->assign('projects', $projects);
+
+  include_once($BASE_DIR .'database/prepareNotifications.php');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/profiles/projects.tpl');

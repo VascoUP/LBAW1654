@@ -21,6 +21,8 @@
 	
 	$smarty->assign('smartyProjID', $ID);
 	
+  include_once($BASE_DIR .'database/prepareNotifications.php');
+	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/iterations/createIteration.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl');

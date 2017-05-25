@@ -16,25 +16,25 @@ function init() {
     });
 
     $('.identUsername').click(function(e) {
-        var userid = getUserId(this);
+        var userid = $(this).parent().siblings('.userID').text();
         var url = "http://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userID=" + userid;
         window.location.href = url;
     });
 
     $('.identProject').click(function(e) {
-        var projid = getProjId(this);
+        var projid = $(this).parent().siblings('.projID').text();
         var url = "http://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID=" + projid;
         window.location.href = url;
     });
 }
 
 function getUserId(element) {
-    var parent = $(this).parent();
+    //var parent = $(this).parent();
     var userid = parseInt($(this).siblings('.userID').text());
 }
 
 function getProjId(element) {
-    var parent = $(this).parent();
+    //var parent = $(this).parent();
     var projid = parseInt($(this).siblings('.projID').text());
 }
 

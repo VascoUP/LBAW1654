@@ -36,6 +36,8 @@
   $smarty->assign('smartyIterationsCounter', $iterationCounter);
   $smarty->assign('numberTasksCompleted', $numberCompletedTasks);
   
+  include_once($BASE_DIR .'database/prepareNotifications.php');
+
   $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
   $smarty->display($BASE_DIR .'templates/projects/projectIterations.tpl');
   

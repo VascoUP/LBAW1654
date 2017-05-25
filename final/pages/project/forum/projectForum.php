@@ -44,6 +44,8 @@
   $smarty->assign('usernames', $usernames);
   $smarty->assign('lastCommentUser', $lastCommentUser);
   $smarty->assign('lastCommentDate', $lastCommentDate);
+
+  include_once($BASE_DIR .'database/prepareNotifications.php');
   
   $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
   $smarty->display($BASE_DIR .'templates/projects/projectForum.tpl');

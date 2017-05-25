@@ -26,6 +26,8 @@
   $access = getProjectInformation($projID)['0']['access'];
   $smarty->assign('smartyAccess', $access);
 
+  include_once($BASE_DIR .'database/prepareNotifications.php');
+
   $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
   $smarty->display($BASE_DIR .'templates/projects/projectEdit.tpl');
   

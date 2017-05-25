@@ -15,11 +15,6 @@
   
   include_once($BASE_DIR .'database/Projects/validateUser.php');
   include_once($BASE_DIR .'database/prepareNotifications.php');
-
-  /*$projectInvites = invitedProjects($userInfo[0]['userid']);
-  $projectRequestedInvites = getRequestedParticition($projID);
-  echo print_r($projectRequestedInvites);
-  $smarty->assign('smartyProjInvites', $projectInvites);*/
   
   $smarty->assign('smartyProjID', $projID);
   $smarty->assign('smartyProjInfo', $projectInformation);

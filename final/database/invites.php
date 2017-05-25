@@ -27,12 +27,11 @@
 									AND ProjectUsers.projectID = Project.projectID
 									AND ProjectUsers.userStatusProject = 'requested'
 									AND UserSite.userID = ProjectUsers.userID");
-            $stmt->execute(array($projectID));
+            $stmt->execute(array($userID));
             $result = $stmt->fetchAll();
         } catch(Exception $e) {
             return $e->getMessage();
         }
-
         return $result;
     }
 
