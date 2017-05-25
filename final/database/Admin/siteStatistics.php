@@ -12,19 +12,19 @@ function getUserStatistics(){
 		$stmt->execute();
 		$countCoord = $stmt->fetchAll();
 		
-		$array['coord'] = $countCoord['0']['countcoord'];
+		$array['coord'] = $countCoord['0']['countCoord'];
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS countUser FROM UserSite WHERE type = 'user'");	
 		$stmt->execute();
 		$countUser = $stmt->fetchAll();
 		
-		$array['userCount'] = $countUser['0']['countuser'];
+		$array['userCount'] = $countUser['0']['countUser'];
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS countAdmin FROM UserSite WHERE type = 'administrator'");	
 		$stmt->execute();
 		$countAdmin = $stmt->fetchAll();
 		
-		$array['admin'] = $countAdmin['0']['countadmin'];
+		$array['admin'] = $countAdmin['0']['countAdmin'];
 
 		$array['total'] = $users['0']['users'];
 	} catch(Exception $e) {
@@ -98,9 +98,9 @@ function getReportsStatistics(){
 		
 		$stmt = $conn->prepare("SELECT COUNT(*) AS projReport FROM Report WHERE projectID IS NOT NULL");	
 		$stmt->execute();
-		$threadReport = $stmt->fetchAll();
+		$projReport = $stmt->fetchAll();
 		
-		$array['projCount'] = $threadReport['0']['projReport'];
+		$array['projCount'] = $projReport['0']['projReport'];
 	
 	} catch(Exception $e) {
 		return $e->getMessage();
