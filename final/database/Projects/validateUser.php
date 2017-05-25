@@ -30,7 +30,10 @@
                 die();
             }
         }
-        
+
+        if(!$userIsCoord){
+            $smarty->assign('leaveBtnVisibility', 'not_visible');
+        }
         if( $isCollaborator === false ) {
             $smarty->assign('joinProjectButton', true);
             if( getRequestInvite($userInfo[0]['userid'], $projID) === true )
@@ -39,5 +42,11 @@
                 $smarty->assign('joinProjectButtonActive', true);
         } else
             $smarty->assign('joinProjectButton', false);
+    } else {
+        $smarty->assign('joinBtnVisibility', 'not_visible');
+                $smarty->assign('joinBtnbility', 'not_visible');
     }
+
+
+
 ?>
