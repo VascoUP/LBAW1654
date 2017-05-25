@@ -7,6 +7,7 @@
         die();
     }
 
+    $userInfo = getUserInformation($_SESSION['username']);
     $projID = $_GET['projID'];
 
     $projectInformation = getProjectInformation($projID);
