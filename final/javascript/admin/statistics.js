@@ -9,59 +9,35 @@ function init() {
 	var inactive = $('#inactiveStatus').text();
 	var banned = $('#bannedStatus').text();
 	var reported = $('#reportedStatus').text();
-	console.log(reported);
-	$('p').hide();
-
-	var chart = AmCharts.makeChart( "chartdiv", {
-	  "type": "pie",
-	  "theme": "light",
-	  "dataProvider": [ {
-		"title": "Coordinator",
-		"value": coord
-	  }, {
-		"title": "Collaborator",
-		"value": collab
-	  }, {
-		"title": "Administrator",
-		"value": admin 
-	  } ],
-	  "titleField": "title",
-	  "valueField": "value",
-	  "labelRadius": 5,
-
-	  "radius": "42%",
-	  "innerRadius": "60%",
-	  "labelText": "[[title]]",
-	  "export": {
-		"enabled": true
-	  }
-	} );
 	
-	var chart2 = AmCharts.makeChart( "statusdiv", {
-	  "type": "pie",
-	  "theme": "light",
-	  "dataProvider": [ {
-		"title": "Active",
-		"value": active
-	  }, {
-		"title": "Inactive",
-		"value": inactive
-	  }, {
-		"title": "Reported",
-		"value": reported 
-	  }, {
-		"title": "Banned",
-		"value": banned 
-	  } ],
-	  "titleField": "title",
-	  "valueField": "value",
-	  "labelRadius": 5,
+	var projActive = $('#projectActive').text();
+	var projReported = $('#projectReported').text();
+	var projBanned = $('#projectBanned').text();
+	
+	var reportUser = $('#reportUser').text();
+	var reportTask = $('#reportTask').text();
+	var reportThread = $('#reportThread').text();
+	var reportProj = $('#reportProj').text();
 
-	  "radius": "42%",
-	  "innerRadius": "60%",
-	  "labelText": "[[title]]",
-	  "export": {
-		"enabled": true
-	  }
-	} );
+	$('p').hide();
+	$('.number').show();
+
+	google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['User Type', 'Number'],
+          ['Administrator', admin],
+          ['Collaborator', collab],
+          ['Coordinator',  coord]
+        ]);
+
+        var options = {
+          title: 'Users Type',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
+        chart.draw(data, options);
+      }
 }
