@@ -11,9 +11,9 @@
             <div class="form-group">
                     <label class="col-md-4 control-label" ></label>  
                     <div class="col-md-4">
-                        <a class="btn btn-block btn-social btn-linkedin">
-                            <i class="fa fa-linkedin"></i> Link to Linkedin
-                        </a>
+                        <button class="btn btn-block btn-social btn-linkedin" onclick="liAuth()">
+								<i class="fa fa-linkedin"></i> Link to Linkedin
+						</button>
                     </div>
                 </div>
 

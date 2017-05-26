@@ -24,9 +24,10 @@
                     </label>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
-                <a class="btn btn-block btn-social btn-linkedin">
+                <button class="btn btn-block btn-social btn-linkedin" onclick="liAuth()">
                     <i class="fa fa-linkedin"></i> Sign in with LinkedIn
-                </a>
+                </button>
+				
             </form>
             <a href="#" class="forgot-password">
               Forgot the password?
