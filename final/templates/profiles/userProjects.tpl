@@ -40,14 +40,20 @@
                     </li>
                     <li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php'>
-                        <i class='glyphicon glyphicon-user'></i>
+                        <i class='glyphicon glyphicon-pencil'></i>
                         Account Settings </a>
                     </li>
                     <li class='active'>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?username={$smartyUsrInfo['0']['username']}'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?userInfo={$smartyUsrInfo['0']['userid']}'>
                         <i class='glyphicon glyphicon-ok'></i>
                         My Projects</a>
                     </li>
+					<li>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userStatistics.php?userInfo={$smartyUsrInfo['0']['userid']}'>
+                        <i class='glyphicon glyphicon-stat'></i>
+                        My Projects</a>
+                    </li>
+					
                 </ul>
             </div>
             <!-- END MENU -->

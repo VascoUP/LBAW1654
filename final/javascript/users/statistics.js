@@ -8,7 +8,7 @@ function init() {
 	
 	var working = $('#projWork').text();
 	var finished = $('#projFinish').text();
-
+	
 	$('p').hide();
 	$('.number').show();
 	
@@ -47,7 +47,7 @@ function init() {
         var data = google.visualization.arrayToDataTable([
           ['Coordinations', 'Number'],
           ['Working', working],
-          ['Finished', finished
+          ['Finished', finished]
         ]);
 
         var options = {

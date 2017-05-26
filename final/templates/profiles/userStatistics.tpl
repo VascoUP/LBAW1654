@@ -18,14 +18,14 @@
 			<p id="projRequested">{$userStatistics['requested']}</p>
 			<div id="chartUserProjdiv"></div>
 			<h3>Projects that I coordinate</h3>
-			<p id="projWork">{$projects['working']}</p>
-			<p id="projFinish">{$projects['finished']}</p>
+			<p id="projWork">{$userStatistics['working']}</p>
+			<p id="projFinish">{$userStatistics['finished']}</p>
 			<div id="projWorkdiv"></div>
 			<h4>Iterations and Tasks</h4>
 			<h3>Iterations</h3>
 			<p class="number">Number of iterations: {$userStatistics['iterations']}</p>
 			<h3>Tasks</h3>
-			<p class="number">Number of tasks: {$userStatistics['task']}</p>
+			<p class="number">Number of tasks: {$userStatistics['tasks']}</p>
 		</div>
 	</div>
 </div>
