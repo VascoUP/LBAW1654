@@ -68,4 +68,16 @@ function getProjectReported(){
 	
 	return $result;
 }
+
+function handlerReport($content){
+	try {
+		global $conn;
+	
+		$stmt = $conn->prepare("UPDATE Report SET reportStatus = 'handled' WHERE content = ?");
+		$stmt->execute(array($content));
+	} catch(Exception $e) {
+		return $e->getMessage();
+	}
+	
+}
 ?>

@@ -104,6 +104,7 @@ CREATE TABLE Report
 	threadID integer,
 	taskID integer,
 	userID integer,
+	projectID integer,
 	reportDate date NOT NULL,
 	handledDate date,
 	reportStatus ReportStatus NOT NULL DEFAULT('waiting'),
@@ -114,6 +115,9 @@ CREATE TABLE Report
 				ON DELETE CASCADE
 				ON UPDATE CASCADE,
 	FOREIGN KEY(userID) REFERENCES UserSite(userID)
+				ON UPDATE CASCADE,
+	FOREIGN KEY(projectID) REFERENCES Project(projectID)
+				ON DELETE CASCADE
 				ON UPDATE CASCADE,
 	CHECK(reportDate <= handledDate)
 );

@@ -190,6 +190,10 @@
 												<img src="{$BASE_URL}images/assets/loginImage.png" class='media-photo' alt=''>
 											{/if}
 											</div>
+											
+											<div class="pull-center">
+											<button id="removeBannedUser" type='button' class='btn btn-success btn-sm' onClick="removeUser(this)">Remove banned status</button>
+											</div>
 										</div>
 									</td>
 								</tr>

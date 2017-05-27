@@ -43,7 +43,7 @@
                         <i class='glyphicon glyphicon-user'></i>
                         Site Users</a>
                     </li>
-					<li class='active'>>
+					<li class='active'>
 						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/reportedList.php'>
                         <i class='glyphicon glyphicon-remove'></i>
                         Reported List</a>
@@ -99,6 +99,9 @@
 											</a>
 											<p class="summary">{$reported[$i]['content']}</p>
 											</div>
+										</div>
+										<div class="pull-center">
+											<button id="handledReports" type='button' class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
 										</div>
 									</td>
 								</tr>

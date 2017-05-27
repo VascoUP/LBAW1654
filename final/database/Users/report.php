@@ -56,8 +56,8 @@ function reportProject($proj, $content){
 			global $conn;
 			$date = date('Y-m-d');
 			$status = 'waiting';
-			$stmt = $conn->prepare("INSERT INTO Report(content, reportDate, reportStatus, projectID) 
-									VALUES (:content, :reportDate, :reportStatus, :project)");
+			$stmt = $conn->prepare("INSERT INTO Report(content,  projectID, reportDate, reportStatus) 
+									VALUES (:content,  :project, :reportDate, :reportStatus)");
 			$stmt->bindParam(':content', $content);
 			$stmt->bindParam(':project', $proj);
 			$stmt->bindParam(':reportDate', $date);

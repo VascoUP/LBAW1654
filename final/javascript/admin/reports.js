@@ -12,7 +12,7 @@ function init() {
 	$('#tableReportedThreads').hide();
 	$('#reportedThreadH3').hide();
 	$('#tableReportedProjects').hide();
-	$('reportedprojH3').hide();
+	$('#reportedprojH3').hide();
 	
 	$("#buttontReported").click(function() {
 		$('#reportedH3').show();
@@ -104,4 +104,28 @@ function init() {
 		$('#tableReportedProjects').show();
 		$('reportedprojH3').show();
 	});
+
+}
+
+function handled(button){
+	
+	if (typeof(button) == "object") {
+		var content = button.siblings().child('p').text();
+		console.log(content);
+		ajaxPost(content);
+        $(button).closest("tr").remove();
+    } else {
+        return false;
+    }
+}
+
+function ajaxPost(content) {
+		var data = {
+        'content': content
+		}
+	console.log(username);
+    $.post("../../../api/handledReports.php", JSON.stringify(data))
+        .done(function(data) {
+            data = jQuery.parseJSON(data);
+        });
 }

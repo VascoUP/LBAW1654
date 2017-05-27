@@ -93,6 +93,29 @@ function init() {
 	});
 }
 
+function removeUser(button){
+	
+	if (typeof(button) == "object") {
+		var username = (((button.parentNode).parentNode).parentNode).child('h4').text();
+		console.log(username);
+		ajaxPostUser(username);
+        $(button).closest("tr").remove();
+    } else {
+        return false;
+    }
+}
+
+function removeProj(button){
+	
+	if (typeof(button) == "object") {
+		var proj = (((button.parentNode).parentNode).parentNode).child('h4').text();
+		ajaxPostProject(proj);
+        $(button).closest("tr").remove();
+    } else {
+        return false;
+    }
+}
+
 function seeSearchUsers(data){
 	$('#tableUsers').remove();
 	html = "";
@@ -125,4 +148,29 @@ function seeSearchUsers(data){
 		html += "</tbody></table>";
 	}
 	$('#usersTable').append(html);
+}
+
+function ajaxPostUser(username) {
+		var data = {
+        'username': username
+		}
+	console.log(username);
+    $.post("../../../api/removeBanStatus.php", JSON.stringify(data))
+        .done(function(data) {
+            data = jQuery.parseJSON(data);
+        });
+}
+
+function ajaxPostProject(proj) {
+		var data = {
+        'proj': proj
+		}
+
+    $.post("../../../api/removeBanStatus.php", JSON.stringify(data))
+        .done(function(data) {
+            data = jQuery.parseJSON(data);
+        })
+        .fail(function(data) {
+            alert("error: " + data);
+        });
 }

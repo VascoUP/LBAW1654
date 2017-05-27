@@ -142,6 +142,10 @@
 											</a>
 											</div>
 											
+											<div class="pull-center">
+											<button id="removeBannedUser" type='button' class='btn btn-success btn-sm' onClick="removeProj(this)">Remove banned status</button>
+											</div>
+											
 										</div>
 									</td>
 								</tr>
