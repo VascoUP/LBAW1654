@@ -2,32 +2,19 @@
 	include_once('../../config/init.php');
 
 	include_once($BASE_DIR .'database/Users/userInformation.php');
-    $userInfo = getUserInformation($_SESSION['username']);
-    $userType = $userInfo[0]['type'];
-
-    if( !($_SESSION['username'] && $userType == 'administrator') ) {
-        header('Location: https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php');
-        die();
-    }
-
+	include_once($BASE_DIR .'database/Admin/validateAdmin.php');
 	include_once($BASE_DIR .'database/Admin/report.php');
 	include_once($BASE_DIR .'database/Threads/threads.php');
 	include_once($BASE_DIR .'database/Tasks/tasks.php');
 	include_once($BASE_DIR .'database/Projects/projectInformation.php');
-	
 	include_once($BASE_DIR .'database/invites.php');
 	
-  	$smarty->assign('smartyUsrInfo', $userInfo);
-
-	$projectInvites = invitedProjects($userInfo[0]['userid']);
-  	$smarty->assign('smartyProjInvites', $projectInvites);
-	
+	$projectInvites = invitedProjects($userInfo[0]['userid']);	
 	$handled = getReported('handled');
 	$reported = getReported('waiting');
 	
 	$namesHandled = array();
 	$namesReported = array();
-	
 	foreach($handled as $h){
 		if($h['userid'])
 			$namesHandled[] = getUserInformationByID($h['userid'])['0']['username'];
@@ -51,33 +38,27 @@
 	}
 	
 	$userReport = getUsersReported();
-	
 	$usernames = array();
-	
 	foreach($userReport as $userRep)
 		$usernames[] = getUserInformationByID($userRep['userid'])['0']['username'];
 		
 	$taskReport = getTaskReported();
-	
 	$names = array();
-	
 	foreach($taskReport as $taskRep)
 		$names[] = getInfoTask($taskRep['taskid'])['0']['name'];
 		
 	$threadReport = getThreadReported();
-	
 	$titles = array();
-	
 	foreach($threadReport as $threadRep)
 		$titles[] = getThreadInfo($threadRep['threadid'])['0']['title'];
 		
 	$projReport = getProjectReported();
-	
 	$projNames = array();
-	
 	foreach($projReport as $proj)
 		$projNames[] = getProjectInformation($proj['projectid'])['0']['name'];
-		
+
+  	$smarty->assign('smartyUsrInfo', $userInfo);
+  	$smarty->assign('smartyProjInvites', $projectInvites);
 	$smarty->assign('handled', $handled);
 	$smarty->assign('reported', $reported);
 	$smarty->assign('userReport', $userReport);
