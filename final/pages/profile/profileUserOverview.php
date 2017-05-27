@@ -22,8 +22,12 @@
 	
 	$userInfo = getUserInformationByID($userID);
   	$smarty->assign('smartyUsrInfo', $userInfo);
-
-	$projectInvites = invitedProjects($userInfo[0]['userid']);
+	
+	if(isset($_GET['searchUser']))
+		$projectInvites = invitedProjects($first);
+	else
+		$projectInvites = invitedProjects($userInfo[0]['userid']);
+	
   	$smarty->assign('smartyProjInvites', $projectInvites);
 
   include_once($BASE_DIR .'database/prepareNotifications.php');

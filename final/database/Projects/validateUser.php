@@ -47,8 +47,7 @@
                 $smarty->assign('joinProjectButtonActive', true);
         } else
             $smarty->assign('joinProjectButton', false);
-    } else {
+    } else 
         $smarty->assign('joinBtnVisibility', 'not_visible');
-        $smarty->assign('joinBtnbility', 'not_visible');
-    }
+   
 ?>
