@@ -33,7 +33,7 @@
 							<div class="media">
 								<div class="media-body">
 									<h4 class="title">
-										<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsers[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}">{$smartyUsers[$i]['username']}</a></h4>
+										<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?searchUser={$smartyUsers[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}">{$smartyUsers[$i]['username']}</a></h4>
 									<p class="summary">{$smartyUsers[$i]['email']}</p>
 								</div>
 							</div>

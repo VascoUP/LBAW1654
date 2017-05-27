@@ -9,10 +9,10 @@
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
 	
-	if(!isset($_GET['userInfo']))
+	if(!isset($_GET['searchUser']))
 		$userID = getUserInformation($_SESSION['username'])['0']['userid'];
 	else
-		$userID = $_GET['userInfo'];
+		$userID = $_GET['searchUser'];
 	
 	$first = $_GET['user'];
 	$smarty->assign('smartyUser', $first);

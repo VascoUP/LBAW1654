@@ -96,9 +96,14 @@
 							<li>
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
 								<ul id="menu" class="dropdown-menu">
-									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsrInfo['0']['userid']}" role="button" id="drop">Profile</a></li>
-									{if $smartyUsrInfo['0']['type'] != 'administrator'}
-									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?userInfo={$smartyUsrInfo['0']['userid']}" role="button" id="drop">Projects</a></li>
+									<li>{if $smartyUserInfoFirst['0']['type'] == 'administrator'}
+									<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php?adminID={$smartyUserInfoFirst['0']['userid']}
+									" role="button" id="drop">Profile</a>
+									{else}<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={if $smartyUserInfoFirst }{$smartyUserInfoFirst['0']['userid']}{else}{$smartyUsrInfo['0']['userid']}{/if}
+									" role="button" id="drop">Profile</a>
+									{/if}</li>
+									{if $smartyUsrInfo['0']['type'] != 'administrator' && $smartyUserInfoFirst['0']['type'] != 'administrator'}
+									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?userInfo={if $smartyUserInfoFirst}{$smartyUserInfoFirst['0']['userid']}{else}{$smartyUsrInfo['0']['userid']}{/if}" role="button" id="drop">Projects</a></li>
 									{/if}
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php" role="button" id="drop">Edit Profile</a></li>
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/users/logout.php" role="button" id="drop" class="logout">Logout</a></li>

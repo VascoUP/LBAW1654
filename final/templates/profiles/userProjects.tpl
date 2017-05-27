@@ -50,8 +50,8 @@
                     </li>
 					<li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userStatistics.php?userInfo={$smartyUsrInfo['0']['userid']}'>
-                        <i class='glyphicon glyphicon-stat'></i>
-                        My Projects</a>
+                        <i class='glyphicon glyphicon-stats'></i>
+                        My Statistics</a>
                     </li>
 					
                 </ul>
