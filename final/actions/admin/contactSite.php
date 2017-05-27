@@ -1,6 +1,7 @@
 <?php
   include_once('../../config/init.php');
   include_once($BASE_DIR .'database/Admin/contacts.php'); 
+  include_once($BASE_DIR .'database/Users/userInformation.php');
   
   if(!$_POST['name'] || !$_POST['email'] || !$_POST['tel'] || !$_POST['content']){
 	  $_SESSION['error_messages'][] = 'Invalid contact';
@@ -8,11 +9,12 @@
 	  header('Location: ' . $_SERVER['HTTP_REFERER']);
 	  exit;
   }
+	$admin = getAdmin();
 	
   addContactSite($_POST['name'], $_POST['email'], $_POST['tel'], $_POST['content']);
   $_SESSION['success_messages'][] = 'Message sent successfully';  
   
-  $email = "saracouto1318@hotmail.com";
+  $email = $admin;
   $to = $email;
 		$subject = "Contact site YM";
 

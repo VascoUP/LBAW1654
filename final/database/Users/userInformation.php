@@ -210,21 +210,6 @@
 		return $result;
 	}
 
-	function getTokenInfo($token){
-		try {
-			global $conn;
-			$stmt = $conn->prepare("SELECT *
-									FROM UserToken
-									WHERE tokenName = ?");
-			$stmt->execute(array($token));
-			$result = $stmt->fetch();
-		} catch(Exception $e) {
-			return $e->getMessage();
-		}
-
-		return $result['userid'];
-	}
-
 	function getRequestInvite($userID, $projID) {
 		try {
 			global $conn;
@@ -263,4 +248,19 @@
 	
 	return $result;
 }
+
+	function getAdmin(){
+		try{
+			global $conn;
+			$stmt = $conn->prepare("SELECT email FROM UserSite WHERE type = 'administrator'");
+		$stmt->execute();
+		
+		$result = $stmt->fetchAll();
+		
+		}catch(Exception $e) {
+		echo $e->getMessage();
+	}
+	
+	return $result['0']['email'];
+	}
 ?>
