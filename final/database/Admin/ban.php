@@ -31,7 +31,7 @@
 			global $conn;
 			$stmt = $conn->prepare("UPDATE UserSite
 										SET userStatus = 'active'
-										WHERE username = ?");	
+										WHERE userid = ?");	
 												
 			$stmt->execute(array($user));
 		} catch(Exception $e) {
@@ -45,7 +45,7 @@
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Project
 										SET projectStatus = 'active'
-										WHERE name = ?");	
+										WHERE projectID = ?");	
 
 			$stmt->execute(array($proj));
 		} catch(Exception $e) {

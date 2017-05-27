@@ -96,9 +96,8 @@ function init() {
 function removeUser(button){
 	
 	if (typeof(button) == "object") {
-		var username = (((button.parentNode).parentNode).parentNode).child('h4').text();
-		console.log(username);
-		ajaxPostUser(username);
+		var user = button.getAttribute('id');
+		ajaxPostUser(user);
         $(button).closest("tr").remove();
     } else {
         return false;
@@ -108,7 +107,7 @@ function removeUser(button){
 function removeProj(button){
 	
 	if (typeof(button) == "object") {
-		var proj = (((button.parentNode).parentNode).parentNode).child('h4').text();
+		var proj = button.getAttribute('id');
 		ajaxPostProject(proj);
         $(button).closest("tr").remove();
     } else {
@@ -150,23 +149,26 @@ function seeSearchUsers(data){
 	$('#usersTable').append(html);
 }
 
-function ajaxPostUser(username) {
+function ajaxPostUser(user) {
 		var data = {
-        'username': username
+			'userID': user
 		}
-	console.log(username);
-    $.post("../../../api/removeBanStatus.php", JSON.stringify(data))
+		
+    $.post("../../api/removeBanStatus.php", JSON.stringify(data))
         .done(function(data) {
             data = jQuery.parseJSON(data);
+        })
+		.fail(function(data) {
+            alert("error: " + data);
         });
 }
 
 function ajaxPostProject(proj) {
 		var data = {
-        'proj': proj
+			'proj': proj
 		}
 
-    $.post("../../../api/removeBanStatus.php", JSON.stringify(data))
+    $.post("../../api/removeBanStatus.php", JSON.stringify(data))
         .done(function(data) {
             data = jQuery.parseJSON(data);
         })
