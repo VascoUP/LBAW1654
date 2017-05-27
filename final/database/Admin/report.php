@@ -69,12 +69,12 @@ function getProjectReported(){
 	return $result;
 }
 
-function handlerReport($content){
+function handlerReport($id){
 	try {
 		global $conn;
 	
-		$stmt = $conn->prepare("UPDATE Report SET reportStatus = 'handled' WHERE content = ?");
-		$stmt->execute(array($content));
+		$stmt = $conn->prepare("UPDATE Report SET reportStatus = 'handled' WHERE reportid = ?");
+		$stmt->execute(array($id));
 	} catch(Exception $e) {
 		return $e->getMessage();
 	}

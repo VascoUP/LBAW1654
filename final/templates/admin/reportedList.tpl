@@ -101,7 +101,7 @@
 											</div>
 										</div>
 										<div class="pull-center">
-											<button id="handledReports" type='button' class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
+											<button id="{$reported[$i]['reportid']}" type='button' class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
 										</div>
 									</td>
 								</tr>
@@ -137,6 +137,7 @@
 											<p class="summary">{$handled[$i]['content']}</p>
 											</div>
 										</div>
+										
 									</td>
 								</tr>
 								{/for}
@@ -165,6 +166,9 @@
 											<p class="summary">{$userReport[$i]['content']}</p>
 											</div>
 										</div>
+										<div class="pull-center">
+											<button id="{$reported[$i]['reportid']}" type='button' class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
+										</div>
 									</td>
 								</tr>
 								{/for}
@@ -191,6 +195,9 @@
 											</a>
 											<p class="summary">{$taskReport[$i]['content']}</p>
 											</div>
+										</div>
+										<div class="pull-center">
+											<button id="{$reported[$i]['reportid']}" type='button' class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
 										</div>
 									</td>
 								</tr>
@@ -219,6 +226,9 @@
 											<p class="summary">{$threadReport[$i]['content']}</p>
 											</div>
 										</div>
+										<div class="pull-center">
+											<button id="{$reported[$i]['reportid']}" type='button' class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
+										</div>
 									</td>
 								</tr>
 								{/for}
@@ -245,6 +255,9 @@
 											</a>
 											<p class="summary">{$projReport[$i]['content']}</p>
 											</div>
+										</div>
+										<div class="pull-center">
+											<button id="{$reported[$i]['reportid']}" type='button' class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
 										</div>
 									</td>
 								</tr>

@@ -110,22 +110,22 @@ function init() {
 function handled(button){
 	
 	if (typeof(button) == "object") {
-		var content = button.siblings().child('p').text();
-		console.log(content);
-		ajaxPost(content);
+		var id = button.getAttribute('id');
+		ajaxPost(id);
         $(button).closest("tr").remove();
     } else {
         return false;
     }
 }
 
-function ajaxPost(content) {
+function ajaxPost(id) {
 		var data = {
-        'content': content
+        'id': id
 		}
-	console.log(username);
-    $.post("../../../api/handledReports.php", JSON.stringify(data))
+    $.post("../../api/handledReports.php", JSON.stringify(data))
         .done(function(data) {
             data = jQuery.parseJSON(data);
+        }).fail(function(data) {
+            alert("error: " + data);
         });
 }
