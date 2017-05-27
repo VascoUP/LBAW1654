@@ -3,6 +3,7 @@
 	include_once($BASE_DIR .'database/Iterations/iterations.php');  
 
 	$id = $_GET['itID'];
+	$projID = $_GET['projID'];
 	
 	if($_POST['ItName'])
 		updateName($_POST['ItName'], $id);	
@@ -20,5 +21,5 @@
 		updateIterationDescription($_POST['Description'], $id);
  
   $_SESSION['success_messages'][] = 'Iteration updated successfully';  
-  header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?itID='.$id);
+  header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?projID=' . $projID . '&itID='.$id);
 ?>

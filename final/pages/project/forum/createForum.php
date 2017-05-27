@@ -8,19 +8,12 @@
 	
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
-	
-	$userInfo = getUserInformation($_SESSION['username']);
-	$smarty->assign('smartyUsrInfo', $userInfo);
-	
 	include_once($BASE_DIR .'database/Projects/validateUser.php');
-	
-	$projectInvites = invitedProjects($userInfo[0]['userid']);
-	$smarty->assign('smartyProjInvites', $projectInvites);
-	
-	$projID = $_GET['projID'];
+	include_once($BASE_DIR .'database/prepareNotifications.php');
+	include_once($BASE_DIR .'database/projectInfo.php');
+		
+	$smarty->assign('smartyUsrInfo', $userInfo);
 	$smarty->assign('smartyProjID', $projID);
-
-  include_once($BASE_DIR .'database/prepareNotifications.php');
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/forums/createForum.tpl');

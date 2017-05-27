@@ -13,87 +13,88 @@
 
                     <fieldset>
                     <!-- Form Name -->
-                    <legend class="tab">Project Name</legend>
+                        <legend class="tab">Project Name</legend>
                     <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="name">Name</label>  
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="name">Name</label>  
                             <div class="col-md-4">
                                 <input type='text' name='name' id='name' class="form-control form-style input-md" placeholder='ex: PIU'>
                                 <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Name</button>
                             </div>
-                    </div>
+                        </div>
                     </fieldset>
 
                     <fieldset>
-                    <!-- Form Name -->
-                    <legend class="tab">Description</legend>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="description">Description</label>  
+                        <!-- Form Name -->
+                        <legend class="tab">Description</legend>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="description">Description</label>  
                             <div class="col-md-4">
                                 <input id="description" name="description" type="text" placeholder="Description" class="form-control form-style input-md">
                                 <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Description</button>
                             </div>
-                    </div>
+                        </div>
                     </fieldset>
                     
                     <fieldset>
-                    <!-- Form Name -->
-                    <legend class="tab">Project Tags</legend>
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="tags">Tags</label>  
+                        <!-- Form Name -->
+                        <legend class="tab">Project Tags</legend>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="tags">Tags</label>  
                             <div class="col-md-4">
                                 <input id="tags" name="tags" type="text" placeholder="Tags" class="form-control form-style input-md">
                                 <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Add Tags</button>
                             </div>
-                    </div>
+                        </div>
                     </fieldset>
 
                     <fieldset>
-                    <!-- Form Name -->
-                    <legend class="tab">Main Settings</legend>
-                    <!-- File Button --> 
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="public">Change Access</label>
+                        <!-- Form Name -->
+                        <legend class="tab">Main Settings</legend>
+                        <!-- File Button --> 
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="public">Change Access</label>
                             <div class="col-md-4">
                                 <select name="access" class="form-control form-style input-xs">
-                                    {if $smartyAccess == 1}
+                                {if $smartyAccess == 1}
                                     <option value="public">Public</option>
                                     <option value="private">Private</option>
-                                    {else}
+                                {else}
                                     <option value="private">Private</option>
                                     <option value="public">Public</option>
-                                    {/if}
+                                {/if}
                                 </select>
-                                
                                 <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Change Access</button>
                             </div>
-                    </div>
-                    </form>
-                    <br>
-                    <br>
-                    <form class="form-horizontal" action="{$BASE_URL}actions/projects/deleteProject.php?projID={$smartyProjID}" method="post">
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="deleteProj">Delete Project</label>
+                        </div>
+                    </fieldset>
+                </form>
+                <br>
+                <br>
+                <form class="form-horizontal" action="{$BASE_URL}actions/projects/deleteProject.php?projID={$smartyProjID}" method="post">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="deleteProj">Delete Project</label>
                             <div class="col-md-4">   
                                 <button id="deleteProj" name='deleteProj' type='submit' class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-down" value=""></span> Delete</button>
                             </div>
-                    </div>
+                        </div>
                     </fieldset>
-                    </form>
+                </form>
                     
-                    <form class="form-horizontal" action="{$BASE_URL}actions/projects/projectEdit.php?projID={$smartyProjID}" method="post">
+                <form class="form-horizontal" action="{$BASE_URL}actions/projects/projectEdit.php?projID={$smartyProjID}" method="post">
                     <fieldset>
-                    <!-- Form Name -->
-                    <legend class="tab">Invite Users</legend>
-                    <div class="form-group">
-                        <label for="joinUser" class="col-md-4 control-label">Invite to join</label>
+                        <!-- Form Name -->
+                        <legend class="tab">Invite Users</legend>
+                        <div class="form-group">
+                            <label for="joinUser" class="col-md-4 control-label">Invite to join</label>
                             <div class="col-md-4">
                                 <input name='joinUser' id='joinUser' type='text' class="form-control form-style input-md" placeholder='ex: aed1123'>
                                 <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Add User</button>
                             </div>
-                    </div>
+                        </div>
                     </fieldset>
                 </form>
             </div>

@@ -10,6 +10,11 @@
     $userInfo = getUserInformation($_SESSION['username']);
     $projID = $_GET['projID'];
 
+    if( !isset($projID) || !$projID ) {
+        header('Location: https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php');
+        die();
+    }
+
     $projectInformation = getProjectInformation($projID);
     $userProjects = getProjects($userInfo[0]['userid']);
     $isCollaborator = false;
@@ -31,9 +36,9 @@
             }
         }
 
-        if(!$userIsCoord){
+        if(!$userIsCoord)
             $smarty->assign('leaveBtnVisibility', 'not_visible');
-        }
+
         if( $isCollaborator === false ) {
             $smarty->assign('joinProjectButton', true);
             if( getRequestInvite($userInfo[0]['userid'], $projID) === true )
@@ -44,9 +49,6 @@
             $smarty->assign('joinProjectButton', false);
     } else {
         $smarty->assign('joinBtnVisibility', 'not_visible');
-                $smarty->assign('joinBtnbility', 'not_visible');
+        $smarty->assign('joinBtnbility', 'not_visible');
     }
-
-
-
 ?>

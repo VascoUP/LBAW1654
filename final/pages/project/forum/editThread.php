@@ -7,20 +7,16 @@
 	}
 	
 	include($BASE_DIR .'database/Users/userInformation.php');
+	include_once($BASE_DIR .'database/Tasks/tasks.php');
 	include($BASE_DIR .'database/invites.php');
+	include_once($BASE_DIR .'database/Projects/validateUser.php');
+	include_once($BASE_DIR .'database/prepareNotifications.php');
+	include_once($BASE_DIR .'database/projectInfo.php');
 	
 	$forum = $_GET['forumID'];
+
 	$smarty->assign('smartyForumID', $forum);
-	
-	$userInfo = getUserInformation($_SESSION['username']);
 	$smarty->assign('smartyUsrInfo', $userInfo);
-	
-	include_once($BASE_DIR .'database/Projects/validateUser.php');
-
-	$projectInvites = invitedProjects($userInfo[0]['userid']);
-	$smarty->assign('smartyProjInvites', $projectInvites);
-
-  include_once($BASE_DIR .'database/prepareNotifications.php');
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/forums/editThread.tpl');

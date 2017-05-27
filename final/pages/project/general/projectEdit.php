@@ -8,7 +8,7 @@
 	
   include_once($BASE_DIR .'database/Projects/projectInformation.php');
 	include_once($BASE_DIR .'database/Users/userInformation.php');
-	include_once($BASE_DIR .'database/invites.php');  
+	include_once($BASE_DIR .'database/invites.php');
   include_once($BASE_DIR .'database/Projects/validateUser.php');
   include_once($BASE_DIR .'database/prepareNotifications.php');
   include_once($BASE_DIR .'database/projectInfo.php');

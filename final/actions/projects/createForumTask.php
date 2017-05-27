@@ -6,6 +6,7 @@
 
 	$id = $_GET['projID'];
 	$taskID = $_GET['taskID'];
+	$projID = $_GET['projID'];
 	
 	$name = getInfoTask($taskID)['0']['name'];
 	$date = date('Y-m-d');
@@ -15,5 +16,5 @@
 	$forumID = getThreadCreated($id)['0']['threadid'];
  
   $_SESSION['success_messages'][] = 'Thread created successfully';  
-  header('Location: ' .$BASE_URL.'pages/project/forum/forum.php?forumID='.$forumID.'&taskID='.$taskID);
+  header('Location: ' .$BASE_URL.'pages/project/forum/forum.php?projID=' . $projID . '&forumID='.$forumID.'&taskID='.$taskID);
 ?>

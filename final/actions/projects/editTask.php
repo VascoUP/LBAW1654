@@ -4,6 +4,7 @@
 	include_once($BASE_DIR .'database/Users/userInformation.php'); 
 
 	$id = $_GET['taskID'];
+	$projID = $_GET['projID'];
 	
 	if($_POST['TaskName'])
 		updateTaskName($_POST['TaskName'], $id);	
@@ -21,6 +22,6 @@
 		updateStatus($_POST['status'], $id);
  
   $_SESSION['success_messages'][] = 'Task updated successfully';  
-  header('Location: ' .$BASE_URL.'pages/project/task/taskPage.php?taskID='.$id);
+  header('Location: ' .$BASE_URL.'pages/project/task/taskPage.php?projID=' . $projID . '&taskID='.$id);
  ?>
   
