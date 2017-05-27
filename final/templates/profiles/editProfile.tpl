@@ -7,16 +7,7 @@
         <form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
             <!-- Form Name -->
             <h2>Edit Profile</h2>
-
-            <div class="form-group">
-                    <label class="col-md-4 control-label" ></label>  
-                    <div class="col-md-4">
-                        <button class="btn btn-block btn-social btn-linkedin" onclick="liAuth()">
-								<i class="fa fa-linkedin"></i> Link to Linkedin
-						</button>
-                    </div>
-                </div>
-
+			
             <fieldset>
             <!-- Form Name -->
             <legend class="tab">Username</legend>

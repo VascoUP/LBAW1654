@@ -15,7 +15,7 @@
   $confirm = $_POST['confirm'];
 
   if(empty($_SESSION['username'])){
-	if(ctype_lower($username)){
+	  if(preg_match('/[a-z0-9]*/', $username)){
 		if (!usernameExists($username) && !emailExists($email) && verifyPassword($password, $confirm)){
 		$_SESSION['username'] = $username;
 		createUser($username, $email, $password);
