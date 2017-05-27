@@ -14,6 +14,7 @@
 		</select>
 		<input id="users" type="checkbox" name="users" value="Users">Search user<br>
 		<input id="projs" type="checkbox" name="projects" value="Projects">Search project
+		<button id="filter" type="button" class="btn btn-primary btn-filter" >Apply Filters</button>
 		</div>
 	</div>
 	

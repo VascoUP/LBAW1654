@@ -16,5 +16,5 @@
 		$arrayProj = searchProjDESC($key);
 	}
 	
-    echo json_encode("users" => $array, "projects" => $arrayProj);
+    echo json_encode(array("users" => $array, "projects" => $arrayProj));
 ?>

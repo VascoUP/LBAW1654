@@ -1,14 +1,17 @@
 $(document).ready(init);
 
 function init() {
-	var value = $( "#order option:selected" ).val;
 	
-	ajaxPost(value);
-	
-	if("checkbox #users").checked())
-		$('#tableProject').hide();
-	else if("checkbox #projs").checked())
-		$('#tableUser').hide();
+	$('#filter').click(function(){
+		var value = $( "#order option:selected" ).val();
+
+		ajaxPost(value);
+		
+		if($("checkbox #users").is(":checked"))
+			$('#tableProject').hide();
+		else if($("checkbox #projs").is(":checked"))
+			$('#tableUser').hide();
+	});
 }
 
 function getUrlParameter(sParam) {
