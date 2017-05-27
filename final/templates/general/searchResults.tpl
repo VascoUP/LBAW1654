@@ -3,16 +3,17 @@
 <link href="{$BASE_URL}css/pages/search.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
+<script src="{$BASE_URL}javascript/admin/search.js"></script>
 
 <div class="container">
 	<div class="overlay">
 		<div class="results">
 		<select id="order" name="order">
-			<option value="name ASC">Alphabetical A->Z</option>
-			<option value="name DESC">Alphabetical Z->A</option>
+			<option value="ASC">Alphabetical A->Z</option>
+			<option value="DESC">Alphabetical Z->A</option>
 		</select>
-		<input type="checkbox" name="users" value="Users">Search user<br>
-		<input type="checkbox" name="projects" value="Projects">Search project
+		<input id="users" type="checkbox" name="users" value="Users">Search user<br>
+		<input id="projs" type="checkbox" name="projects" value="Projects">Search project
 		</div>
 	</div>
 	
@@ -25,8 +26,8 @@
 				{if $smartyUsers|@count == 0}
 				<h4 class="title">
 				Any users found
-				{/if}
 				</h4>
+				{/if}
 				{for $i=0 to ($smartyUsers|@count - 1)}
 					<tr>
 						<td>

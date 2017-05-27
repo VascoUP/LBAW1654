@@ -67,8 +67,6 @@ function ajaxPost() {
 
 function addComment(content, data) {
     var html = "";
-	console.log(data);
-	console.log(content);
 	
 	html += "<li class='clearfix'>";
     if (data['userInfo']['photo'] != null)
