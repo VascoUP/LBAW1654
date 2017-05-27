@@ -21,11 +21,7 @@
 			$_SESSION['success_messages'][] = 'Login successful'; 
 			if($_POST["remember"]) {
 				$year = time() + (365 * 24 * 60 * 60); //365 days * 24 hours * 60 minutes * 60 seconds
-				
-				$tokenName = hash_hmac('sha256', $username . $_SERVER['REMOTE_ADDR'], 'true');
-				setcookie('remember_username', $tokenName, $year);
-				
-				addUserToken($tokenName, $username);
+				setcookie('remember_username', $username, $year);
 			}
 			
 			if($userInfo['0']['type'] == 'administrator')

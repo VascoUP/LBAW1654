@@ -6,30 +6,30 @@
             <img id="profile-img" class="profile-img-card" src="{$BASE_URL}images/assets/loginImage.png" />
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin" action="{$BASE_URL}actions/users/login.php" method="post">
-                <input type="text" id="username" 
+                <input type="text" id="username"
                         name="username" class="form-control form-style"
-                        placeholder="Username" 
+                        placeholder="Username"
                         {if isset($smartyUsername)}
                           value = {$smartyUsername}
                         {/if}
                         required>
-                <input type="password" id="password" 
-                        name="password" class="form-control form-style" 
-                        placeholder="Password" 
+                <input type="password" id="password"
+                        name="password" class="form-control form-style"
+                        placeholder="Password"
                         required>
+                        <nobr> <span id="failed" >{$FIELD_ERRORS.login}</span> </nobr>
+                        <nobr> <span id="failed" >{$FIELD_ERRORS.inactive}</span> </nobr>
                 <div id="remember" class="checkbox">
                     <label>
-                      <input id="remember" type="checkbox" 
+                      <input id="remember" type="checkbox"
                               value="remember" name="remember" {if isset($smartyCkeck)}{$smartyCkeck}{/if}>Remember me
                     </label>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
-				</form>
-                <button class="btn btn-block btn-social btn-linkedin" onclick="liAuth()">
+                <a class="btn btn-block btn-social btn-linkedin">
                     <i class="fa fa-linkedin"></i> Sign in with LinkedIn
-                </button>
-				
-            
+                </a>
+            </form>
             <a href="#" class="forgot-password">
               Forgot the password?
             </a>

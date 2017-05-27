@@ -30,12 +30,16 @@
 				header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php'); 
 		  } 
 		  else {
-			$_SESSION['error_messages'][] = 'Login failed';
+			$_SESSION['field_errors'][login] = 'Invalid Login';
 			header("Location: $BASE_URL" . "pages/users/login.php");
 		  }
 	  }
 	  else
+    {
+      $_SESSION['field_errors'][inactive] = 'Inactive User Account';
 		  header("Location: $BASE_URL" . "pages/users/login.php");
+    }
+
   }
   else
 	header('Location: ' .$BASE_URL.'pages/profile/profileUserOverview.php'); 
