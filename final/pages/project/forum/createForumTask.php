@@ -20,8 +20,9 @@
 	$smarty->assign('smartyProjID', $projID);
 	$smarty->assign('smartyTaskID', $taskID);
 	$smarty->assign('smartyTaskName', $taskName);
+  	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/forums/createForumTask.tpl');
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
-	$smarty->display($BASE_DIR .'templates/forums/createForumTask.tpl');
+	$smarty->display($BASE_DIR .'templates/projects/project.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl'); 
 ?>

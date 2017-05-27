@@ -17,8 +17,9 @@
 	$smarty->assign('smartyUsrInfo', $userInfo);
 	$smarty->assign('smartyProjID', $projID);
 	$smarty->assign('smartyItID', $id);
+ 	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/iterations/editIteration.tpl');
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
-	$smarty->display($BASE_DIR .'templates/iterations/editIteration.tpl');
+	$smarty->display($BASE_DIR .'templates/projects/project.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>

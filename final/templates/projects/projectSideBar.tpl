@@ -29,11 +29,12 @@
         <div class='profile-usermenu'>
             <ul class='nav'>
                 <li class='active'>
-                    <a href='#'><i class='glyphicon glyphicon-home'></i>
+                    <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjID}'>
+                    <i class='glyphicon glyphicon-home'></i>
                     Description </a>
                 </li>
                 <li>
-                    <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/general/projectEdit.php?projID={$smartyProjID}'>
+                    <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectEdit.php?projID={$smartyProjID}'>
                     <i class='glyphicon glyphicon-ok'></i>
                     Edit Project </a>
                 </li>

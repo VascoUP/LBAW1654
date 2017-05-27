@@ -1,5 +1,5 @@
 <?php
-  include_once('../../../config/init.php');
+  include_once('../../config/init.php');
 	
 	if( !$_SESSION['username'] ) {
 		header('Location: https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php');
@@ -15,8 +15,9 @@
 	  
   $smarty->assign('smartyUsrInfo', $userInfo);
   $smarty->assign('smartyProjID', $projID);
+  $smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/projects/projectEdit.tpl');
   
   $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
-  $smarty->display($BASE_DIR .'templates/projects/projectEdit.tpl');
+  $smarty->display($BASE_DIR .'templates/projects/project.tpl');
   $smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>

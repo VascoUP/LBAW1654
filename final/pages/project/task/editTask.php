@@ -19,8 +19,9 @@
   	$smarty->assign('smartyUsrInfo', $userInfo);
 	$smarty->assign('smartyTaskID', $id);
 	$smarty->assign('smartyTaskStatus', $status);
+  	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/tasks/editTask.tpl');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
-	$smarty->display($BASE_DIR .'templates/tasks/editTask.tpl');
+	$smarty->display($BASE_DIR .'templates/projects/project.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>

@@ -35,8 +35,9 @@
 	$smarty->assign('smartyNumberUsers', $numberUsers);
 	$smarty->assign('smartyNumberTasks', $numberTasks);
 	$smarty->assign('smartyPermission', $userPermissions);
-	
+ 	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/iterations/iterationPage.tpl');
+
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
-	$smarty->display($BASE_DIR .'templates/iterations/iterationPage.tpl');
+	$smarty->display($BASE_DIR .'templates/projects/project.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>

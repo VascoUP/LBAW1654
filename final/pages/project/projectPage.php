@@ -14,8 +14,9 @@
   include_once($BASE_DIR .'database/projectInfo.php');
 
   $smarty->assign('smartyUsrInfo', $userInfo);
+  $smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/projects/projectPage.tpl');
 
   $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
-  $smarty->display($BASE_DIR .'templates/projects/projectPage.tpl');
+  $smarty->display($BASE_DIR .'templates/projects/project.tpl');
   $smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>
