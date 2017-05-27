@@ -7,6 +7,7 @@
 
 <div class="container">
 	<div class="card card-container">
+	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php">Profile</a>
 		<h3 class="title">Statistics</h3>
 		<div class="table-container">
 			<h4>Users</h4>

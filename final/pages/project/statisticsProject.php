@@ -17,6 +17,7 @@
 	$reports = reports($projID);
 	$numberOf = numberOf($projID);
 	
+	$smarty->assign('projID', $projID);
 	$smarty->assign('smartyUsrInfo', $userInfo);
 	$smarty->assign('tasksIteration', $tasksIteration);
 	$smarty->assign('reports', $reports);

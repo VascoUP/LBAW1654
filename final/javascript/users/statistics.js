@@ -17,6 +17,7 @@ function init() {
     google.charts.setOnLoadCallback(drawChart);
 	google.charts.setOnLoadCallback(drawChart2);
 	
+	if( active != 0 || inactive != 0 || requested != 0 || invited != 0){
       function drawChart() {
 		active = eval(active);
 		inactive = eval(inactive);
@@ -39,8 +40,10 @@ function init() {
         var chart = new google.visualization.PieChart(document.getElementById('chartUserProjdiv'));
         chart.draw(data, options);
       }
+	}
 	
-	  function drawChart2() {
+	if( working != 0 || finished != 0){
+		function drawChart2() {
 		working = eval(working);
 		finished = eval(finished);
 		
@@ -57,4 +60,5 @@ function init() {
         var chart = new google.visualization.PieChart(document.getElementById('projWorkdiv'));
         chart.draw(data, options);
       }
+	}
 }
