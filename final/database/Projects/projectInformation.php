@@ -33,7 +33,7 @@
   function getCoordinator($ID){
     try {
       global $conn;
-      $stmt = $conn->prepare("SELECT username
+      $stmt = $conn->prepare("SELECT username, userID
                                 FROM UserSite, ProjectCoordinator
                                 WHERE ProjectCoordinator.projectID = ?
 								AND UserSite.userID = ProjectCoordinator.userID
@@ -45,7 +45,7 @@
 			return $e->getMessage();
 		}
 
-    return $resultCoord['0']['username'];
+    return $resultCoord;
   }
 
   function getProjectTags($id){
