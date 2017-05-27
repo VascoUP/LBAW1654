@@ -66,7 +66,7 @@
 							<button id="buttontInactive" type="button" class="btn btn-primary btn-filter" data-target="inactive">Inactive</button>
 							<button id="buttonReported" type="button" class="btn btn-warning btn-filter" data-target="reported">Reported</button>
 							<button id="buttonBanned" type="button" class="btn btn-danger btn-filter" data-target="bannned">Banned</button>
-							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteUsers.php' type="button" class="btn btn-default btn-filter" data-target="all">All</a>
+							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteUsers.php?user={$smartyUsrInfo['0']['userid']}' type="button" class="btn btn-default btn-filter" data-target="all">All</a>
 						</div>
 					</div>
 					<div class="pull-left">
@@ -83,7 +83,11 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
+											{if $smartyUsersActive[$i]['type'] != 'administrator'}
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersActive[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
+											{else}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php" role="button">
+											{/if}
 												<h4 class="title2">
 													{$smartyUsersActive[$i]['username']}
 													<span class="pull-right active">{$smartyUsersActive[$i]['userstatus']}</span>

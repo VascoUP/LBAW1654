@@ -33,7 +33,12 @@
 							<div class="media">
 								<div class="media-body">
 									<h4 class="title">
-										<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?searchUser={$smartyUsers[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}">{$smartyUsers[$i]['username']}</a></h4>
+									{if $smartyUsers[$i]['type'] != 'administrator'}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?searchUser={$smartyUsers[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}">
+											{else}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php" role="button">
+											{/if}
+										{$smartyUsers[$i]['username']}</a></h4>
 									<p class="summary">{$smartyUsers[$i]['email']}</p>
 								</div>
 							</div>
