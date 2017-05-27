@@ -9,8 +9,9 @@ function init() {
 	
 	google.charts.load("current", {packages:["corechart"]});
 	
-    google.charts.setOnLoadCallback(drawChart);
-	google.charts.setOnLoadCallback(drawChart2);
+	if(thread != 0 || task != 0){
+		google.charts.setOnLoadCallback(drawChart);
+		google.charts.setOnLoadCallback(drawChart2);
 	
       function drawChart() {
 		thread = eval(thread);
@@ -29,5 +30,6 @@ function init() {
 
         var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
         chart.draw(data, options);
-      }
+      }}
+	  
 }

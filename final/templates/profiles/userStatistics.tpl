@@ -10,7 +10,8 @@
 		<h3 class="title">Statistics</h3>
 		<div class="table-container">
 			<h4>Projects</h4>
-			<p class="number">Number of projects: {$userStatistics['projects']}</p>
+			<p class="number"><strong>Number of projects: </strong>{$userStatistics['projects']}</p>
+			{if $userStatistics['projects'] != 0 }
 			<h3>Projects that I collaborate</h3>
 			<p id="projActive">{$userStatistics['active']}</p>
 			<p id="projInactive">{$userStatistics['inactive']}</p>
@@ -21,11 +22,12 @@
 			<p id="projWork">{$userStatistics['working']}</p>
 			<p id="projFinish">{$userStatistics['finished']}</p>
 			<div id="projWorkdiv"></div>
+			{/if}
 			<h4>Iterations and Tasks</h4>
 			<h3>Iterations</h3>
-			<p class="number">Number of iterations: {$userStatistics['iterations']}</p>
+			<p class="number"><strong>Number of iterations: </strong>{$userStatistics['iterations']}</p>
 			<h3>Tasks</h3>
-			<p class="number">Number of tasks: {$userStatistics['tasks']}</p>
+			<p class="number"><strong>Number of tasks: </strong>{$userStatistics['tasks']}</p>
 		</div>
 	</div>
 </div>

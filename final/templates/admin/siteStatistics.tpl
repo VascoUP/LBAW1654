@@ -10,7 +10,8 @@
 		<h3 class="title">Statistics</h3>
 		<div class="table-container">
 			<h4>Users</h4>
-			<p class="number">Number of users: {$userStatistics['total']}</p>
+			<p class="number"><strong>Number of users: </strong>{$userStatistics['total']}</p>
+			{if $userStatistics['total'] != 0 }
 			<h3>Users Type</h3>
 			<p id="coord">{$userStatistics['coord']}</p>
 			<p id="collab">{$userStatistics['userCount']}</p>
@@ -21,21 +22,26 @@
 			<p id="inactiveStatus">{$userStatus['inactiveCount']}</p>
 			<p id="reportedStatus">{$userStatus['reportedCount']}</p>
 			<div id="statusdiv"></div>
+			{/if}
 			<h4>Projects</h4>
-			<p class="number">Number of projects: {$projects['total']}</p>
+			<p class="number"><strong>Number of projects: </strong>{$projects['total']}</p>
+			{if $projects['total'] != 0}
 			<h3>Projects Status</h3>
 			<p id="projectActive">{$projects['active']}</p>
 			<p id="projectActive">{$projects['reported']}</p>
 			<p id="projectActive">{$projects['banned']}</p>
 			<div id="projdiv"></div>
+			{/if}
 			<h4>Reports</h4>
-			<p class="number">Number of reports: {$reportStatistics['reports']}</p>
-			<h3>Reports</h3>
+			<p class="number"><strong>Number of reports: </strong>{$reportStatistics['reports']}</p>
+			{if $reportStatistics['reports'] != 0} 
+			<h3>Reports Type</h3>
 			<p id="reportUser">{$reportStatistics['userCount']}</p>
 			<p id="reportUser">{$reportStatistics['taskCount']}</p>
 			<p id="reportUser">{$reportStatistics['threadCount']}</p>
 			<p id="reportProj">{$reportStatistics['projCount']}</p>
 			<div id="reportsdiv"></div>
+			{/if}
 		</div>
 	</div>
 </div>

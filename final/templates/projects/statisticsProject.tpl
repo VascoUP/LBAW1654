@@ -10,16 +10,18 @@
 		<h3 class="title">Statistics</h3>
 		<div class="table-container">
 			<h4>Main Information</h4>
-			<p class="number">Number of Iterations: {$numberOf['iterations']}</p>
-			<p class="number">Number of Tasks: {$numberOf['tasks']}</p>
-			<p class="number">Number of Forums: {$numberOf['threads']}</p>
-			<br>
-			<p class="number">Number of Tasks completed per Iteration: {$tasksIteration}</p>
-			
+			<p class="number"><strong>Number of Iterations: </strong>{$numberOf['iterations']}</p>
+			<p class="number"><strong>Number of Tasks: </strong>{$numberOf['tasks']}</p>
+			<p class="number"><strong>Number of Forums: </strong>{$numberOf['threads']}</p>
+			<p class="number"><strong>Number of Tasks completed per Iteration: </strong>{$tasksIteration}</p>
+			{if $reports['thread'] == 0 && $reports['task'] == 0}
+			<p class="number"><strong>Number of reported tasks or threads:</strong> 0</p>
+			{else}
 			<h3>Reports</h3>
 			<p id="thread">{$reports['thread']}</p>
 			<p id="task">{$reports['task']}</p>
 			<div id="chartdiv"></div>
+			{/if}
 		</div>
 	</div>
 </div>

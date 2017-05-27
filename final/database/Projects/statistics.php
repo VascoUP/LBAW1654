@@ -1,5 +1,5 @@
 <?
-/*
+
 function numberOf($proj){
 	$array = array();
 	try {
@@ -30,10 +30,11 @@ function numberOf($proj){
 		$result = $stmt->fetchAll();
 		$array['threads'] = $result['0']['threads'];
 	} catch(Exception $e) {
-		echo $e->getMessage();
+		return $e->getMessage();
 	}
+	
 	return $array;
-}*/
+}
 
 function taskCompletedPerIteration($proj){
 	try {

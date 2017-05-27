@@ -15,14 +15,14 @@
 	
 	$tasksIteration = taskCompletedPerIteration($projID);
 	$reports = reports($projID);
-	//$numberOf = numberOf($projID);
+	$numberOf = numberOf($projID);
 	
 	$smarty->assign('smartyUsrInfo', $userInfo);
-	//$smarty->assign('tasksIteration', $tasksIteration);
-	//$smarty->assign('reports', $reports);
-	//$smarty->assign('numberOf', $numberOf);
+	$smarty->assign('tasksIteration', $tasksIteration);
+	$smarty->assign('reports', $reports);
+	$smarty->assign('numberOf', $numberOf);
 	
-	/**$smarty->display($BASE_DIR .'templates/common/header.tpl');
-	$smarty->display($BASE_DIR .'templates/profiles/statisticsProject.tpl');
-	$smarty->display($BASE_DIR .'templates/common/footer.tpl');**/
+	$smarty->display($BASE_DIR .'templates/common/header.tpl');
+	$smarty->display($BASE_DIR .'templates/projects/statisticsProject.tpl');
+	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>
