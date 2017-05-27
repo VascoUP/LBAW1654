@@ -13,7 +13,6 @@
                           value = {$smartyUsername}
                         {/if}
                         required>
-
                 <input type="password" id="password" 
                         name="password" class="form-control form-style" 
                         placeholder="Password" 

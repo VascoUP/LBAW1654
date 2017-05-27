@@ -32,7 +32,7 @@
                     <label class="col-md-4 control-label" for="email">Email Address</label>  
                     <div class="col-md-4">
                         <div class="col-md-4">
-                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control form-style input-md" value="{$FORM_VALUES.email}" required autofocus>
+                            <input id="email" name="email" type="email" placeholder="Email Address" class="form-control form-style input-md" value="{$FORM_VALUES.email}" required autofocus>
                               <nobr>
                                 <span class="field_error" >{$FIELD_ERRORS.username}</span>
                               </nobr>

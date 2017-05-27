@@ -18,20 +18,24 @@
 
                 <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="username">Username</label>  
+                        <label class="col-md-4 control-label" for="username">Username</label>
                         <div class="col-md-4">
                             <div class="col-md-4">
-                                <input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md" required autofocus>
+                                <input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md" value="{$FORM_VALUES.username}" required autofocus>
+                                        <nobr> <span class="field_error">{$FIELD_ERRORS.usernameLow}</span> </nobr>
                             </div>
                         </div>
                     </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="email">Email Address</label>  
+                    <label class="col-md-4 control-label" for="email">Email Address</label>
                     <div class="col-md-4">
                         <div class="col-md-4">
-                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control form-style input-md" required autofocus>
+                            <input id="email" name="email" type="email" placeholder="Email Address" class="form-control form-style input-md" value="{$FORM_VALUES.email}" required autofocus>
+                              <nobr>
+                                <span class="field_error" >{$FIELD_ERRORS.username}</span>
+                              </nobr>
                         </div>
                     </div>
                 </div>
@@ -50,12 +54,15 @@
                     <div class="col-md-4">
                         <div class="col-md-4">
                             <input type="password" class="form-control form-style input-md" name="confirm" id="confirm"  placeholder="Confirm your Password" required autofocus/>
+                          <nobr>
+                            <span class="field_error">{$FIELD_ERRORS.password}</span>
+                          </nobr>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label" ></label>  
+                    <label class="col-md-4 control-label" ></label>
                     <div class="col-md-4">
                         <button id="create" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Register</a>
                     </div>
