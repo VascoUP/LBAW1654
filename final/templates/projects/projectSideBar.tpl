@@ -35,22 +35,22 @@
                 </li>
                 <li>
                     <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectEdit.php?projID={$smartyProjID}'>
-                    <i class='glyphicon glyphicon-ok'></i>
+                    <i class='glyphicon glyphicon-pencil'></i>
                     Edit Project </a>
                 </li>
                 <li>
                     <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/projectIterations.php?projID={$smartyProjID}'>
-                    <i class='glyphicon glyphicon-ok'></i>
+                    <i class='glyphicon glyphicon-th-list'></i>
                     Iterations </a>
                 </li>
                 <li>
                     <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/projectForum.php?projID={$smartyProjID}'>
-                    <i class='glyphicon glyphicon-ok'></i>
+                    <i class='glyphicon glyphicon-inbox'></i>
                     Forum </a>
                 </li>
                 <li>
-                    <a href='#' target='_blank'>
-                    <i class='glyphicon glyphicon-ok'></i>
+                    <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/statisticsProject.php?projID={$smartyProjID}'>
+                    <i class='glyphicon glyphicon-stats'></i>
                     Statistics </a>
                 </li>
             </ul>
