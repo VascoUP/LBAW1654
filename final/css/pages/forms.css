@@ -124,7 +124,7 @@ input::-webkit-input-placeholder {
 }
 
 .field_error {
-
+	white-space:nowrap;
     color: red;
-    font-size: 70%;
+    font-size: 90%;
 }

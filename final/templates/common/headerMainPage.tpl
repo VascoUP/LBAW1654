@@ -13,12 +13,6 @@
 	<!-- Theme CSS -->
 	<link href="{$BASE_URL}css/pages/mainPage.css" rel="stylesheet">
 	<link href="{$BASE_URL}css/templates/navbar.css" rel="stylesheet">
-	<script type="text/javascript" src="//platform.linkedin.com/in.js">
-			api_key: 77kxu7awkxp106
-			authorize: true
-			onLoad: onLinkedInLoad
-	</script>
-	<script type="text/javascript" src="{$BASE_URL}javascript/templates/linkedin.js"></script>
 
 </head>
 
