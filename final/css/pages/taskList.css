@@ -26,14 +26,16 @@
 }
 
 .task.table{
-    background-color: #FF8C00;
+    background-color:#f0ca3f ;
     color: #e1f6f0; /*light green*/
 
     border-top: 200px;
 }
 
-.task.table h3{
+.task.table h3 .main_column{
     margin-bottom: 1em;
+    color:white;
+    vertical-align: middle;
 }
 
 .task-info {
@@ -77,7 +79,7 @@
 
 .iteration.table > tbody > tr > td {
     vertical-align: middle;
-    background-color: white;
+
 }
 
 .iteration .fa {
@@ -97,9 +99,14 @@
 }
 
 .iteration.table.iteration.table-striped{
-    background-color: #FF8C00;
+    background-color: #f0ca3f;
     color: #e1f6f0;
 }
+
+.iteration.table.iteration.table-striped h3{
+    vertical-align: middle;
+}
+
 
 .addIteration{
 	border: 3px;
@@ -159,4 +166,8 @@ h2{
 #completed{
 	font-weight: bold;
 	color: #fed136;
+}
+
+#label_tasks_header{
+    color:white; !important
 }

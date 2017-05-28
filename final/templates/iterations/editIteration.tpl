@@ -8,14 +8,14 @@
             <legend class="tab">Iteration Name</legend>
         <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="ItName">Name</label>  
+                <label class="col-md-4 control-label" for="ItName">Name</label>
                 <div class="col-md-4">
                     <input id="ItName" name="ItName" type="text" placeholder="Name" class="form-control form-style input-md">
                 </div>
             </div>
-            
+
             <div class="form-group">
-                <label class="col-md-4 control-label" ></label>  
+                <label class="col-md-4 control-label" ></label>
                 <div class="col-md-4">
                     <button id="editName" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Update name</button>
                 </div>
@@ -25,55 +25,55 @@
         <fieldset>
             <legend class="tab">Maximum Effort</legend>
             <div class="form-group">
-            <label class="col-md-4 control-label" for="maximum">Maximum Effort</label>  
+            <label class="col-md-4 control-label" for="maximum">Maximum Effort</label>
                 <div class="col-md-4">
                     <input id="maximum" name="maximum" type="text" placeholder="Maximum effort" class="form-control form-style input-md">
                 </div>
             </div>
-            
+
             <div class="form-group">
-                <label class="col-md-4 control-label" ></label>  
+                <label class="col-md-4 control-label" ></label>
                 <div class="col-md-4">
                     <button id="editEffort" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Update effort</button>
                 </div>
             </div>
         </fieldset>
-        
+
         <fieldset>
             <legend class="tab">Dates</legend>
             <div class="form-group">
-                <label class="col-md-4 control-label" for="StartDate">Start Date</label>  
+                <label class="col-md-4 control-label" for="StartDate">Start Date</label>
                 <div class="col-md-4">
                     <input type="date" value="YYYY-MM-DD" id="StartDate" name="StartDate" class="form-control form-style input-md">
                 </div>
             </div>
-            
+
             <div class="form-group">
-                <label class="col-md-4 control-label" for="DueDate">Due Date</label>  
+                <label class="col-md-4 control-label" for="DueDate">Due Date</label>
                 <div class="col-md-4">
                     <input type="date" value="YYYY-MM-DD" id="DueDate" name="DueDate" class="form-control form-style input-md">
                 </div>
             </div>
-            
+
             <div class="form-group">
-                <label class="col-md-4 control-label" ></label>  
+                <label class="col-md-4 control-label" ></label>
                 <div class="col-md-4">
                     <button id="editDates" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Edit Dates</button>
                 </div>
             </div>
         </fieldset>
-        
+
         <fieldset>
             <legend class="tab">Description</legend>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="Description">Description (max 100 words)</label>
-                <div class="col-md-4">                    
+                <div class="col-md-4">
                     <textarea class="form-control form-style" rows="5" cols="30"  id="Description" name="Description">Description</textarea>
                 </div>
             </div>
-                
+
             <div class="form-group">
-                <label class="col-md-4 control-label" ></label>  
+                <label class="col-md-4 control-label" ></label>
                 <div class="col-md-4">
                     <button id="editDescription" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Edit Description</button>
                 </div>

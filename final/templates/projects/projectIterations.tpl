@@ -1,6 +1,10 @@
 
 <link href="{$BASE_URL}css/pages/taskList.css" rel='stylesheet'>
 
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="{$BASE_URL}javascript/templates/paginatedTables.js"></script>
+
 <div id='profile-content' class='profile-content'>
   <a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjID}">Project</a>
   <h2>Iterations</h2>
@@ -8,7 +12,7 @@
   {if $smartyIterations|@count != 0}
   <hr class='featurette-divider'>
   <div class='table-responsive'>
-    <table class='table iteration table-striped'>
+    <table class='table iteration table-striped' id='page_table'>
       <thead>
         <tr>
           <th class='hidden-xs cell-stat'></th>
@@ -43,7 +47,7 @@
           </td>
           <td>
         {if $numberTasksCompleted[$i] != $smartyIterationsCounter[$i] || $smartyIterationsCounter[$i] == 0}
-            <a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/editIteration.php?projID={$smartyProjID}&itID={$smartyIterations[$i]['iterationid']}">Edit Iteration</a>
+            <a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/editIteration.php?projID={$smartyProjID}&itID={$smartyIterations[$i]['iterationid']}">Edit <br> Iteration</a>
         {/if}
           </td>
         </tr>
