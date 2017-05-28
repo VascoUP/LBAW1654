@@ -87,6 +87,13 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
+											<div class="pull-left">
+												{if isset($smartyUsersReported[$i]['photo'])}
+												<img alt='Profile image' src="https://gnomo.fe.up.pt/~lbaw1654/final/images/users/{$smartyUsersActive[$i]['photo']}" class="media-photo">
+											{else}
+												<img src="{$BASE_URL}images/assets/loginImage.png" class='media-photo' alt='Profile image'>
+											{/if}
+											</div>
 											{if $smartyUsersActive[$i]['type'] != 'administrator'}
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersActive[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
 											{else}
@@ -97,13 +104,7 @@
 													<span class="pull-right active">{$smartyUsersActive[$i]['userstatus']}</span>
 												</h4>
 											</a>
-											</div>
-											<div class="pull-left">
-												{if isset($smartyUsersActive[$i]['photo'])}
-													<img src="https://gnomo.fe.up.pt/~lbaw1654/final/images/users/{$smartyUsersActive[$i]['photo']}" class="media-photo">
-												{else}
-													<img src="{$BASE_URL}images/assets/loginImage.png" class='media-photo' alt=''>
-												{/if}
+											
 											</div>
 										</div>
 									</td>
@@ -122,19 +123,19 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
+											<div class="pull-left">
+												{if isset($smartyUsersInactive[$i]['photo'])}
+													<img src="https://gnomo.fe.up.pt/~lbaw1654/final/images/users/{$smartyUsersInactive[$i]['photo']}" class="media-photo" alt='Profile image'>
+												{else}
+													<img src="{$BASE_URL}images/assets/loginImage.png" class='media-photo' alt='Profile image'>
+												{/if}
+											</div>
 												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersInactive[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
 												<h4 class="title2">
 													{$smartyUsersInactive[$i]['username']}
-													<span class="pull-right active">{$smartyUsersInactive[$i]['userstatus']}</span>
+													<span class="pull-right inactive">{$smartyUsersInactive[$i]['userstatus']}</span>
 												</h4>
 											</a>
-											</div>
-											<div class="pull-left">
-												{if isset($smartyUsersInactive[$i]['photo'])}
-													<img src="https://gnomo.fe.up.pt/~lbaw1654/final/images/users/{$smartyUsersInactive[$i]['photo']}" class="media-photo">
-												{else}
-													<img src="{$BASE_URL}images/assets/loginImage.png" class='media-photo' alt=''>
-												{/if}
 											</div>
 										</div>
 									</td>
@@ -153,19 +154,19 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
+											<div class="pull-left">
+												{if isset($smartyUsersReported[$i]['photo'])}
+												<img alt='Profile image' src="https://gnomo.fe.up.pt/~lbaw1654/final/images/users/{$smartyUsersReported[$i]['photo']}" class="media-photo">
+											{else}
+												<img src="{$BASE_URL}images/assets/loginImage.png" class='media-photo' alt='Profile image'>
+											{/if}
+											</div>
 												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersReported[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
 												<h4 class="title2">
 													{$smartyUsersReported[$i]['username']}
-													<span class="pull-right active">{$smartyUsersReported[$i]['userstatus']}</span>
+													<span class="pull-right reported">{$smartyUsersReported[$i]['userstatus']}</span>
 												</h4>
 											</a>
-											</div>
-											<div class="pull-left">
-												{if isset($smartyUsersReported[$i]['photo'])}
-												<img src="https://gnomo.fe.up.pt/~lbaw1654/final/images/users/{$smartyUsersReported[$i]['photo']}" class="media-photo">
-											{else}
-												<img src="{$BASE_URL}images/assets/loginImage.png" class='media-photo' alt=''>
-											{/if}
 											</div>
 										</div>
 									</td>
@@ -184,19 +185,20 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
+											<div class="pull-left">
+												{if isset($smartyUsersReported[$i]['photo'])}
+												<img alt='Profile image' src="https://gnomo.fe.up.pt/~lbaw1654/final/images/users/{$smartyUsersBanned[$i]['photo']}" class="media-photo">
+											{else}
+												<img src="{$BASE_URL}images/assets/loginImage.png" class='media-photo' alt='Profile image'>
+											{/if}
+											</div>
 												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersBanned[$i]['userid']}" role="button">
 												<h4 class="title2">
 													{$smartyUsersBanned[$i]['username']}
-													<span class="pull-right active">{$smartyUsersBanned[$i]['userstatus']}</span>
+													<span class="pull-right banned">{$smartyUsersBanned[$i]['userstatus']}</span>
 												</h4>
 											</a>
-											</div>
-											<div class="pull-left">
-											{if isset($smartyUsersBanned[$i]['photo'])}
-												<img src="https://gnomo.fe.up.pt/~lbaw1654/final/images/users/{$smartyUsersBanned[$i]['photo']}" class="media-photo">
-											{else}
-												<img src="{$BASE_URL}images/assets/loginImage.png" class='media-photo' alt=''>
-											{/if}
+											
 											</div>
 											
 											<div class="pull-center">
