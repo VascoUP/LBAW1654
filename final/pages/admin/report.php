@@ -35,8 +35,6 @@
 		die();
 	}
 
-	if()
-
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
   	$smarty->assign('smartyProjInvites', $projectInvites);
 

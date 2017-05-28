@@ -42,7 +42,7 @@
                     Edit Project </a>
                 </li>
 				{/if}
-				{if $isCollaborator || $userIsCoord || $type == 'administrator'}
+				{if $isCollaborator || $userIsCoord || $type === 'administrator'}
                 <li {if $varSideBar == 3}class='active'{/if}>
                     <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/projectIterations.php?projID={$smartyProjID}'>
                     <i class='glyphicon glyphicon-th-list'></i>
