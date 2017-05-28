@@ -62,22 +62,22 @@
 			<div class="profile-content">
 					<div class="pull-right">
 						<div class="btn-group">
-							<button id="buttontActive" type="button" class="btn btn-success btn-filter" data-target="active">Active</button>
-							<button id="buttontInactive" type="button" class="btn btn-primary btn-filter" data-target="inactive">Inactive</button>
-							<button id="buttonReported" type="button" class="btn btn-warning btn-filter" data-target="reported">Reported</button>
-							<button id="buttonBanned" type="button" class="btn btn-danger btn-filter" data-target="bannned">Banned</button>
-							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteUsers.php?user={$smartyUsrInfo['0']['userid']}' type="button" class="btn btn-default btn-filter" data-target="all">All</a>
+							<button id="buttontActive" class="btn btn-success btn-filter" data-target="active">Active</button>
+							<button id="buttontInactive" class="btn btn-primary btn-filter" data-target="inactive">Inactive</button>
+							<button id="buttonReported" class="btn btn-warning btn-filter" data-target="reported">Reported</button>
+							<button id="buttonBanned" class="btn btn-danger btn-filter" data-target="bannned">Banned</button>
+							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteUsers.php?user={$smartyUsrInfo['0']['userid']}' class="btn btn-default btn-filter" data-target="all">All</a>
 						</div>
 					</div>
 					<div class="pull-left">
 					<input id="searchSiteUsers" type="text" class="form-control search" placeholder="Search...">
 				</div>
 					<div id="usersTable" class="table-container">
+					{if $smartyUsersActive|@count == 0}
+									<h3 id="Useractiveh3">This site doesn't have any active user</h3>
+					{else}
 						<table id="tableActive" class="table table-filter">
 							<tbody>
-								{if $smartyUsersActive|@count == 0}
-									<h3 id="Useractiveh3">This site doesn't have any active user</h3>
-								{else}
 								{for $i=0 to ($smartyUsersActive|@count-1)}
 								<tr data-status="active">
 									<td>
@@ -105,14 +105,14 @@
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
+						{if $smartyUsersInactive|@count == 0}
+							<h3 id="Userinactiveh3">This site doesn't have any inactive user</h3>
+						{else}
 						<table id="tableInactive" class="table table-filter">
 							<tbody>
-							{if $smartyUsersInactive|@count == 0}
-									<h3 id="Userinactiveh3">This site doesn't have any inactive user</h3>
-								{else}
 								{for $i=0 to ($smartyUsersInactive|@count-1)}
 								<tr data-status="inactive">
 									<td>
@@ -136,14 +136,14 @@
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
+						{if $smartyUsersReported|@count == 0}
+							<h3 id="Userreportedh3">This site doesn't have any reported user</h3>
+						{else}
 						<table id="tableReported" class="table table-filter">
 							<tbody>
-							{if $smartyUsersReported|@count == 0}
-									<h3 id="Userreportedh3">This site doesn't have any reported user</h3>
-								{else}
 								{for $i=0 to ($smartyUsersReported|@count-1)}
 								<tr data-status="reported">
 									<td>
@@ -167,14 +167,14 @@
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
+						{if $smartyUsersBanned|@count == 0}
+							<h3 id="Userbannedh3">This site doesn't have any banned user</h3>
+						{else}
 						<table id="tableBanned" class="table table-filter">
 							<tbody>
-							{if $smartyUsersBanned|@count == 0}
-									<h3 id="Userbannedh3">This site doesn't have any banned user</h3>
-								{else}
 								{for $i=0 to ($smartyUsersBanned|@count-1)}
 								<tr data-status="banned">
 									<td>
@@ -202,9 +202,9 @@
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
 					</div>
 			</div>
 		</div>

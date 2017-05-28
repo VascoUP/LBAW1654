@@ -62,21 +62,21 @@
 			<div class="profile-content">
 					<div class="pull-right">
 						<div class="btn-group">
-							<button id="buttontReported" type="button" class="btn btn-danger btn-filter" data-target="reported">Reported</button>
-							<button id="buttontHandled" type="button" class="btn btn-success btn-filter" data-target="handled">Handled</button>
-							<button id="buttonUser" type="button" class="btn btn-warning btn-filter" data-target="reportedUser">User</button>
-							<button id="buttonTask" type="button" class="btn btn-primary btn-filter" data-target="reportedTask">Task</button>
-							<button id="buttonThread" type="button" class="btn btn-info btn-filter" data-target="reportedThread">Thread</button>
-							<button id="buttonProject" type="button" class="btn btn-default btn-filter" data-target="reportedProject">Project</button>
+							<button id="buttontReported" class="btn btn-danger btn-filter" data-target="reported">Reported</button>
+							<button id="buttontHandled" class="btn btn-success btn-filter" data-target="handled">Handled</button>
+							<button id="buttonUser" class="btn btn-warning btn-filter" data-target="reportedUser">User</button>
+							<button id="buttonTask" class="btn btn-primary btn-filter" data-target="reportedTask">Task</button>
+							<button id="buttonThread" class="btn btn-info btn-filter" data-target="reportedThread">Thread</button>
+							<button id="buttonProject" class="btn btn-default btn-filter" data-target="reportedProject">Project</button>
 						</div>
 					</div>
 
 					<div id="reportTable" class="table-container">
+					{if $reported|@count == 0}
+						<h3 id="reportedH3">This site doesn't have any report</h3>
+					{else}
 						<table id="tableReported" class="table table-filter">
 							<tbody>
-								{if $reported|@count == 0}
-									<h3 id="reportedH3">This site doesn't have any report</h3>
-								{else}
 								{for $i=0 to ($reported|@count-1)}
 								<tr data-status="reported">
 									<td>
@@ -101,19 +101,19 @@
 											</div>
 										</div>
 										<div class="pull-center">
-											<button id="{$reported[$i]['reportid']}" type='button' class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
+											<button id="{$reported[$i]['reportid']}" class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
 										</div>
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
+						{if $handled|@count == 0}
+							<h3 id="handledH3">This site doesn't have any handled report</h3>
+						{else}
 						<table id="tableHandled" class="table table-filter">
 							<tbody>
-								{if $handled|@count == 0}
-									<h3 id="handledH3">This site doesn't have any handled report</h3>
-								{else}
 								{for $i=0 to ($handled|@count-1)}
 								<tr data-status="handled">
 									<td>
@@ -141,14 +141,14 @@
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
+						{if $userReport|@count == 0}
+							<h3 id="UserreportedH3">This site doesn't have any user's report</h3>
+						{else}
 						<table id="tableReportUsers" class="table table-filter">
 							<tbody>
-								{if $userReport|@count == 0}
-									<h3 id="UserreportedH3">This site doesn't have any user's report</h3>
-								{else}
 								{for $i=0 to ($userReport|@count-1)}
 								<tr data-status="reportedUser">
 									<td>
@@ -172,14 +172,14 @@
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
+						{if $taskReport|@count == 0}
+							<h3 id="reportedTaskH3">This site doesn't have any task's report</h3>
+						{else}
 						<table id="tableReportedTasks" class="table table-filter">
 							<tbody>
-								{if $taskReport|@count == 0}
-									<h3 id="reportedTaskH3">This site doesn't have any task's report</h3>
-								{else}
 								{for $i=0 to ($taskReport|@count-1)}
 								<tr data-status="reportedTask">
 									<td>
@@ -202,14 +202,14 @@
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
+						{if $threadReport|@count == 0}
+							<h3 id="reportedThreadH3">This site doesn't have any report</h3>
+						{else}
 						<table id="tableReportedThreads" class="table table-filter">
 							<tbody>
-								{if $threadReport|@count == 0}
-									<h3 id="reportedThreadH3">This site doesn't have any report</h3>
-								{else}
 								{for $i=0 to ($threadReport|@count-1)}
 								<tr data-status="reportedThread">
 									<td>
@@ -232,14 +232,14 @@
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
+						{if $projReport|@count == 0}
+							<h3 id="reportedprojH3">This site doesn't have any report</h3>
+						{else}
 						<table id="tableReportedProjects" class="table table-filter">
 							<tbody>
-								{if $projReport|@count == 0}
-									<h3 id="reportedprojH3">This site doesn't have any report</h3>
-								{else}
 								{for $i=0 to ($projReport|@count-1)}
 								<tr data-status="reportedProject">
 									<td>
@@ -262,9 +262,9 @@
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
 					</div>
 			</div>
 		</div>

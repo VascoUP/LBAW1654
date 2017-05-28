@@ -30,8 +30,8 @@
 			{if $projects['total'] != 0}
 			<h4>Projects Status</h4>
 			<p id="projectActive">{$projects['active']}</p>
-			<p id="projectActive">{$projects['reported']}</p>
-			<p id="projectActive">{$projects['banned']}</p>
+			<p id="projectReported">{$projects['reported']}</p>
+			<p id="projectBanned">{$projects['banned']}</p>
 			<div id="projdiv"></div>
 			{/if}
 			<h3>Reports</h3>
@@ -46,4 +46,5 @@
 			{/if}
 		</div>
 	</div>
+</div>
 </div>

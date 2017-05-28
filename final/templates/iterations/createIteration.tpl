@@ -29,7 +29,7 @@
                 <label class="col-md-4 control-label" for="StartDate">Start Date</label>  
                 <div class="col-md-4">
                     <div class="col-md-4">
-                        <input type="date" value="2017-05-16" id="StartDate" name="StartDate" class="form-control form-style input-md">
+                        <input type="date" id="StartDate" name="StartDate" class="form-control form-style input-md">
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                 <label class="col-md-4 control-label" for="DueDate">Due Date</label>  
                 <div class="col-md-4">
                     <div class="col-md-4">
-                        <input type="date" value="2017-05-16" id="DueDate" name="DueDate" class="form-control form-style input-md">
+                        <input type="date" id="DueDate" name="DueDate" class="form-control form-style input-md">
                     </div>
                 </div>
             </div>

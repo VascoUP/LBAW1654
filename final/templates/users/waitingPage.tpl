@@ -9,3 +9,4 @@
       <p><small>If you didn't receive an email, <a href="{$BASE_URL}actions/users/sendEmail.php?email={$email}">select this to resend the email</a></small></p>  
 	</div>
 </div>
+</div>

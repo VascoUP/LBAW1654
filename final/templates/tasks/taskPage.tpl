@@ -46,18 +46,19 @@
                 </div>
             <div class="task-userbuttons">
             {if $smartyTaskValue == 0 && $smartyPermission}
-                <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/editTask.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-default btn-sm">Edit Task</a>
+                <a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/editTask.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-default btn-sm">Edit Task</a>
             {/if}
             {if $smartyPermission}
-                <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/createForumTask.php?projID={$smartyProjectID}&taskID={$smartyTaskID}" class="btn btn-info btn-sm">Comment Task</a>
-                <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/completeTask.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-success btn-sm">Conclude Task</a>
+                <a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/createForumTask.php?projID={$smartyProjectID}&taskID={$smartyTaskID}" class="btn btn-info btn-sm">Comment Task</a>
+                <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/completeTask.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-success btn-sm">Conclude Task</a>
             {/if}
-                <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-warning btn-sm">Report task</a>
-                <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveTask.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-primary btn-sm" id="leaveTask">Leave Task</a>
+                <a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-warning btn-sm">Report task</a>
+                <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveTask.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-primary btn-sm" id="leaveTask">Leave Task</a>
             {if $smartyPermission}	
-                <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteTask.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-danger btn-sm" id="deleteTask">Remove Task</a>
+                <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteTask.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-danger btn-sm" id="deleteTask">Remove Task</a>
             {/if}
             </div>
         </div>
     </div>
+</div>
 </div>

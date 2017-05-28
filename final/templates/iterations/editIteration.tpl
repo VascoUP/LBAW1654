@@ -44,14 +44,14 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="StartDate">Start Date</label>
                 <div class="col-md-4">
-                    <input type="date" value="YYYY-MM-DD" id="StartDate" name="StartDate" class="form-control form-style input-md">
+                    <input type="date" id="StartDate" name="StartDate" class="form-control form-style input-md">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-md-4 control-label" for="DueDate">Due Date</label>
                 <div class="col-md-4">
-                    <input type="date" value="YYYY-MM-DD" id="DueDate" name="DueDate" class="form-control form-style input-md">
+                    <input type="date" id="DueDate" name="DueDate" class="form-control form-style input-md">
                 </div>
             </div>
 
@@ -90,7 +90,7 @@
                 <label for="givePermission" class="col-md-4 control-label">Give Permission</label>
                 <div class="col-md-4">
                     <input name='givePermission' id='givePermission' type='text' class="form-control form-style input-md" placeholder='ex: aed1123'>
-                    <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Add User</button>
+                    <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Add User</button>
                 </div>
             </div>
         </fieldset>

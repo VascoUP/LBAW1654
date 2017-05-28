@@ -64,21 +64,21 @@
 			<div class="profile-content">
 					<div class="pull-right">
 						<div class="btn-group">
-							<button id="button-active" type="button" class="btn btn-success btn-filter" data-target="active">Active</button>
-							<button id="button-reported" type="button" class="btn btn-warning btn-filter" data-target="reported">Reported</button>
-							<button id="button-banned" type="button" class="btn btn-danger btn-filter" data-target="banned">Banned</button>
-							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteProjects.php' type="button" class="btn btn-default btn-filter">All</a>
+							<button id="button-active" class="btn btn-success btn-filter" data-target="active">Active</button>
+							<button id="button-reported" class="btn btn-warning btn-filter" data-target="reported">Reported</button>
+							<button id="button-banned" class="btn btn-danger btn-filter" data-target="banned">Banned</button>
+							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteProjects.php'  class="btn btn-default btn-filter">All</a>
 						</div>
 					</div>
 					<div class="pull-left">
 					<input id="searchSiteProj" type="text" class="form-control search" placeholder="Search...">
 				</div>
 					<div id="projTable" class="table-container">
+					{if $smartyProjectsActive|@count == 0}
+								<h3 id="activeh3">This site doesn't have any active project</h3>
+						{else}
 						<table id='active' class="table table-filter">
 							<tbody>
-							{if $smartyProjectsActive|@count == 0}
-								<h3 id="activeh3">This site doesn't have any active project</h3>
-							{else}
 							{for $i=0 to ($smartyProjectsActive|@count-1)}
 								<tr data-status="active">
 									<td>
@@ -96,14 +96,14 @@
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
+						{if $smartyProjectsReported|@count == 0}
+							<h3 id="reportedh3">This site doesn't have any reported project</h3>
+						{else}
 						<table id='reported' class="table table-filter">
 							<tbody>
-							{if $smartyProjectsReported|@count == 0}
-								<h3 id="reportedh3">This site doesn't have any reported project</h3>
-							{else}
 							{for $i=0 to ($smartyProjectsReported|@count-1)}
 								<tr data-status="reported">
 									<td>
@@ -121,14 +121,14 @@
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
+						{if $smartyProjectsBanned|@count == 0}
+							<h3 id="bannedh3">This site doesn't have any banned project</h3>
+						{else}
 						<table id='banned' class="table table-filter">
 							<tbody>
-							{if $smartyProjectsBanned|@count == 0}
-								<h3 id="bannedh3">This site doesn't have any banned project</h3>
-							{else}
 							{for $i=0 to ($smartyProjectsBanned|@count-1)}
 								<tr data-status="banned">
 									<td>
@@ -143,16 +143,16 @@
 											</div>
 											
 											<div class="pull-center">
-											<button id="{$smartyProjectsBanned[$i]['projectid']}" type='button' class='btn btn-success btn-sm' onClick="removeProj(this)">Remove banned status</button>
+											<button id="{$smartyProjectsBanned[$i]['projectid']}" class='btn btn-success btn-sm' onClick="removeProj(this)">Remove banned status</button>
 											</div>
 											
 										</div>
 									</td>
 								</tr>
 								{/for}
-								{/if}
 							</tbody>
 						</table>
+						{/if}
 					</div>
 			</div>
 		</div>

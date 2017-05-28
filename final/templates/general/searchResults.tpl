@@ -22,13 +22,13 @@
 	<div class="card card-container first" id="first">
 		<h3 class="title">Users</h3>
 		<div class="table-container" id="containerResultsUser">
-			<table id="tableUser" class="table table-filter">
-				<tbody>
-				{if $smartyUsers|@count == 0}
+		{if $smartyUsers|@count == 0}
 				<h4 class="title">
 				Any users found
 				</h4>
-				{/if}
+				{else}
+			<table id="tableUser" class="table table-filter">
+				<tbody>
 				{for $i=0 to ($smartyUsers|@count - 1)}
 					<tr>
 						<td>
@@ -49,17 +49,18 @@
 				{/for}
 				</tbody>
 			</table>
+			{/if}
 		</div>
 	</div>
 	
 	<div class="card card-container second" id="second">
 		<h3 class="title">Projects</h3>
 		<div class="table-container" id="containerResultsProj">
-			<table id="tableProject" class="table table-filter">
-			{if $smartyProjs|@count == 0}
+		{if $smartyProjs|@count == 0}
 				<h4 class="title">
-				Any projects found
-				{/if}
+				Any projects found</h4>
+			{else}
+			<table id="tableProject" class="table table-filter">
 				<tbody>
 					{for $i=0 to ($smartyProjs|@count - 1)}
 					<tr>
@@ -76,6 +77,8 @@
 					{/for}
 				</tbody>
 			</table>
+					{/if}
 		</div>
 	</div>
+</div>
 </div>

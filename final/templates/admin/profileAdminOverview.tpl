@@ -18,9 +18,9 @@
             <div class='profile-userpic'>
 
                 {if isset($smartyUsrInfo['0']['photo'])}
-                    <img src="{$BASE_URL}images/users/{$smartyUsrInfo['0']['photo']}" class='img-responsive' alt=''>
+                    <img src="{$BASE_URL}images/users/{$smartyUsrInfo['0']['photo']}" class='img-responsive' alt='Administrator picture'>
                 {else}
-                    <img src="{$BASE_URL}images/assets/default.png" class='img-responsive' alt=''>
+                    <img src="{$BASE_URL}images/assets/default.png" class='img-responsive' alt='Administrator picture'>
                 {/if}
 
             </div>
@@ -77,7 +77,7 @@
         <!-- END SIDEBAR USER TITLE -->
             <!-- SIDEBAR BUTTONS -->
             <div class='profile-userbuttons'>
-                <a type='button' class='btn btn-success btn-sm'>Contact</a>
+                <a class='btn btn-success btn-sm'>Contact</a>
             </div>
     </div>
     
@@ -106,6 +106,6 @@
             </div>
         </div>
     {/if}
-
+</div>
 </div>
 </div>

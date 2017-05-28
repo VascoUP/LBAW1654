@@ -50,7 +50,7 @@
     color: #e1f6f0;
 }
 
-#threadUser, #threadNumber, #threadComments{
+.threadUser, .threadNumber, #threadComments{
     color: #666666;
 }
 
@@ -80,7 +80,7 @@ h4 small{
     color: white;
 }
 
-#editForum{
+.editForum{
 	display: table;
     margin: 0 auto;
 }
