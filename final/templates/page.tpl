@@ -4,7 +4,7 @@
 
 <div class='container'>
     <div class='row profile'>
-        {include file="{$BASE_DIR}/templates/projects/projectSideBar.tpl"}
+        {include file="{$SIDEBAR_TEMPLATE}"}
         <div class='col-md-9'>
             {include file="{$PAGE_TEMPLATE}"}
         </div>

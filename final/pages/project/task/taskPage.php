@@ -42,8 +42,9 @@
 	$smarty->assign('smartyPermission', $userPermissions);
 	$smarty->assign('smartyTaskValue', $value);
   	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/tasks/taskPage.tpl');
+  	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/projects/projectSideBar.tpl');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
-	$smarty->display($BASE_DIR .'templates/projects/project.tpl');
+  	$smarty->display($BASE_DIR .'templates/page.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>
