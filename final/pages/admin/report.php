@@ -3,6 +3,16 @@
 	
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
+	include_once($BASE_DIR .'database/Admin/getInformationSite.php');
+	include_once($BASE_DIR .'database/Users/userInformation.php');
+    
+    $user = $_SESSION['username'];
+	if( !isset($user) || !$user ) {
+		header("Location: https://gnomo.fe.up.pt" . $BASE_URL . "pages/general/mainPage.php");
+		die();
+	}
+	
+    $userInfo = getUserInformation($user);
 	
 	if(isset($_GET['userID'])){
 		$userID = $_GET['userID'];
@@ -16,10 +26,16 @@
 		$taskID = $_GET['taskID'];
 		$smarty->assign('smartyTaskID', $taskID);
 	}
-	if(isset($_GET['projID'])){
+	else if(isset($_GET['projID'])){
 		$projID = $_GET['projID'];
 		$smarty->assign('smartyProjID', $projID);
 	}
+	else {
+		header("Location: https://gnomo.fe.up.pt" . $BASE_URL . "pages/general/mainPage.php");
+		die();
+	}
+
+	if()
 
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
   	$smarty->assign('smartyProjInvites', $projectInvites);
