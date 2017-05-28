@@ -8,26 +8,26 @@
 <div class="container">
 	<div class="card card-container">
 	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsrInfo['0']['userid']}">Profile</a>
-		<h3 class="title">Statistics</h3>
+		<h2 class="title">Statistics</h2>
 		<div class="table-container">
-			<h4>Projects</h4>
+			<h3>Projects</h3>
 			<p class="number"><strong>Number of projects: </strong>{$userStatistics['projects']}</p>
 			{if $userStatistics['projects'] != 0 }
-			<h3>Projects that I collaborate</h3>
-			<p id="projActive">{$userStatistics['active']}</p>
-			<p id="projInactive">{$userStatistics['inactive']}</p>
-			<p id="projInvited">{$userStatistics['invited']}</p>
-			<p id="projRequested">{$userStatistics['requested']}</p>
+			<h4>Projects that I collaborate</h4>
+			<p class="number" id="projActive">{$userStatistics['active']}</p>
+			<p class="number" id="projInactive">{$userStatistics['inactive']}</p>
+			<p class="number" id="projInvited">{$userStatistics['invited']}</p>
+			<p class="number" id="projRequested">{$userStatistics['requested']}</p>
 			<div id="chartUserProjdiv"></div>
-			<h3>Projects that I coordinate</h3>
-			<p id="projWork">{$userStatistics['working']}</p>
-			<p id="projFinish">{$userStatistics['finished']}</p>
+			<h4>Projects that I coordinate</h4>
+			<p class="number" id="projWork">{$userStatistics['working']}</p>
+			<p class="number" id="projFinish">{$userStatistics['finished']}</p>
 			<div id="projWorkdiv"></div>
 			{/if}
-			<h4>Iterations and Tasks</h4>
-			<h3>Iterations</h3>
+			<h3>Iterations and Tasks</h3>
+			<h4>Iterations</h4>
 			<p class="number"><strong>Number of iterations: </strong>{$userStatistics['iterations']}</p>
-			<h3>Tasks</h3>
+			<h4>Tasks</h4>
 			<p class="number"><strong>Number of tasks: </strong>{$userStatistics['tasks']}</p>
 		</div>
 	</div>

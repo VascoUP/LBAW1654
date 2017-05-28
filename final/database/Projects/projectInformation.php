@@ -33,7 +33,7 @@
   function getCoordinator($ID){
     try {
       global $conn;
-      $stmt = $conn->prepare("SELECT username, userID
+      $stmt = $conn->prepare("SELECT username, UserSite.userid as userid
                                 FROM UserSite, ProjectCoordinator
                                 WHERE ProjectCoordinator.projectID = ?
 								AND UserSite.userID = ProjectCoordinator.userID
@@ -42,7 +42,7 @@
       $stmt->execute(array($ID));
       $resultCoord = $stmt->fetchAll();
 		} catch(Exception $e) {
-			return $e->getMessage();
+			echo $e->getMessage();
 		}
 
     return $resultCoord;

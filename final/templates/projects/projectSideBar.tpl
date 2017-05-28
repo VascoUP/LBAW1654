@@ -23,7 +23,7 @@
             <br>
             <div class='profile-usertitle-email'>
                 Main Coordinator: <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyCoord['0']['userid']}'>
-                    {$smartyCoord['0']['username']}'>
+                    {$smartyCoord['0']['username']}
                      </a>
             </div>
         </div>
