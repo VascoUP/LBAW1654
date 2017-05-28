@@ -6,7 +6,6 @@
 <script type="text/javascript" src="{$BASE_URL}javascript/templates/paginatedTables.js"></script>
 
 <div id='profile-content' class='profile-content'>
-  <a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjID}">Project</a>
   <h2>Iterations</h2>
   <p>This is where you'll find the project iterations</p>
   {if $smartyIterations|@count != 0}

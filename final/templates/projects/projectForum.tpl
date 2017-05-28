@@ -2,7 +2,6 @@
 <link href="{$BASE_URL}css/pages/taskList.css" rel='stylesheet'>
 
 <div id='profile-content' class='profile-content'>
-	<a class='hiper forum' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjID}"> Project </a>
 	<h2>Forum</h2>
 	<p>This is the right place to discuss any ideas, critics, feature requests and all the ideas regarding the project. Please follow the forum rules and always check FAQ before posting to prevent duplicate posts.</p>
 	{if $smartyThreads|@count != 0}

@@ -9,8 +9,6 @@
 
 <div id='profile-content' class='profile-content'>
     <div class="table-container">
-        <a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/projectIterations.php?projID={$smartyIterations['0']['projectid']}"> Iterations </a>
-        <a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyIterations['0']['projectid']}"> Project </a>
         <div class="project-info-box">
             <h2>{$smartyIterations['0']['name']}</h2>
             <p>{$smartyIterations['0']['description']}</p>
