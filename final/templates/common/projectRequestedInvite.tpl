@@ -6,6 +6,6 @@
     </p>
     <p class="projID" hidden>{$smartyProjRequestedInvite['projectid']}</p>
     <p class="userID" hidden>{$smartyProjRequestedInvite['userid']}</p>
-    <a href="#" class="projAccept">Yes</a>
-    <a href="#" class="projReject">No</a>
-</div>    
+    <a href="#" class="pull-left projAccept">Yes</a>
+    <a href="#" class="pull-right projReject">No</a>
+</div>

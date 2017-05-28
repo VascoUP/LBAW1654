@@ -170,13 +170,33 @@ a.text-style-6:hover {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.hiper{
-	font-weight: bold;
-	color: #fed136;
-	float: right;
-	margin: 10px;
+.hiper {
+    font-weight: bold;
+    color: #fed136;
+    float: right;
+    margin: 10px;
 }
 
-.hiper:hover{
-	color: orange;
+.hiper:hover {
+    color: orange;
+}
+
+.identUsername,
+.identProject {
+    color: blue;
+}
+
+.projAccept,
+.projReject {
+    color: orange;
+}
+
+.projAccept:hover,
+.projReject:hover {
+    color: #CC6622;
+}
+
+.projAccept:active,
+.projReject:active {
+    color: #AA3322;
 }

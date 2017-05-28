@@ -15,9 +15,9 @@
 	  
   $smarty->assign('smartyUsrInfo', $userInfo);
   $smarty->assign('smartyProjID', $projID);
+  $smarty->assign('varSideBar', 2);
   $smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/projects/projectEdit.tpl');
   $smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/projects/projectSideBar.tpl');
-  $smarty->assign('varSideBar', 2);
   
   $smarty->display($BASE_DIR .'templates/common/header.tpl');
   $smarty->display($BASE_DIR .'templates/page.tpl');
