@@ -1,4 +1,3 @@
-
 <link href="{$BASE_URL}css/pages/taskList.css" rel='stylesheet'>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
