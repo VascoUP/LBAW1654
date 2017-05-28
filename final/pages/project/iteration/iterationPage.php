@@ -36,6 +36,8 @@
 	$smarty->assign('smartyNumberTasks', $numberTasks);
 	$smarty->assign('smartyPermission', $userPermissions);
  	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/iterations/iterationPage.tpl');
+	$smarty->assign('collaborator', $isCollaborator);
+	$smarty->assign('userIsCoord', $userIsCoord);
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/projects/project.tpl');

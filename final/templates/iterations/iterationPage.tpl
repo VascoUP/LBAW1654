@@ -28,7 +28,9 @@
                             <th class="column state">State</th>
                             <th class="column priority">Priority</th>
                             <th class="column workers">Workers</th>
+							{if $collaborator || $userIsCoord}
                             <th class="column join button"></th>
+							{/if}
                         </tr>
                     </thead>
 
@@ -43,9 +45,11 @@
                             <td class="task-info state">{$smartyTasks[$i]['taskstatus']}</td>
                             <td class="task-info priority">{$smartyTasks[$i]['priority']}</td>
                             <td class="task-info workers">{$smartyNumberUsers[$i]}</td>
+							{if $collaborator || $userIsCoord}
                             <td>
                                 <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/joinTask.php?projID={$smartyProjID}&taskID={$smartyTasks[$i]['taskid']}" class="btn btn-primary btn-sm">Join task</a>
                             </td>
+							{/if}
                         </tr>
                     {/for}
                     </tbody>

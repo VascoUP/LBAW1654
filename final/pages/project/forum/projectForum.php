@@ -40,6 +40,9 @@
     $smarty->assign('lastCommentDate', $lastCommentDate);
     $smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/projects/projectForum.tpl');
 	$smarty->assign('varSideBar', 4);
+	$smarty->assign('collaborator', $isCollaborator);
+	$smarty->assign('userIsCoord', $userIsCoord);
+  
     $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
     $smarty->display($BASE_DIR .'templates/projects/project.tpl');  
     $smarty->display($BASE_DIR .'templates/common/footer.tpl');

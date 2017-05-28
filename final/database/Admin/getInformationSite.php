@@ -93,13 +93,14 @@
 			global $conn;
 			$stmt = $conn->prepare("SELECT DISTINCT Project.name AS name, Project.description AS description, Project.projectID AS projectID, Project.projectStatus AS projectStatus
 									FROM Project, Tag, TagProject
-									WHERE to_tsvector('english', Project.name) @@ to_tsquery('english', ?)
+									WHERE Project.access = '1'
+									AND (to_tsvector('english', Project.name) @@ to_tsquery('english', ?)
 									OR Project.name ILIKE '%' || ? || '%'
+									AND Project.access = '1'
 									OR (to_tsvector('english', Tag.name) @@ to_tsquery('english', ?)
 									OR Tag.name ILIKE '%' || ? || '%'
 									AND TagProject.tagID = Tag.tagID
-									AND Project.projectID = TagProject.projectID)
-									AND Project.access = '1'");
+									AND Project.projectID = TagProject.projectID))");
 			$stmt->execute(array($name, $name, $name, $name));
 			
 			$result = $stmt->fetchAll();
@@ -139,7 +140,8 @@
 									WHERE textsearch @@ query
 									OR username ILIKE '%' || ? || '%'
 									OR email ILIKE '%' || ? || '%'
-									ORDER BY UserSite.username");	
+									ORDER BY UserSite.username
+									LIMIT 10");	
 			
 			$stmt->execute(array($name, $name, $name));
 			$result = $stmt->fetchAll();
@@ -158,7 +160,8 @@
 									WHERE textsearch @@ query
 									OR username ILIKE '%' || ? || '%'
 									OR email ILIKE '%' || ? || '%'
-									ORDER BY UserSite.username DESC");	
+									ORDER BY UserSite.username DESC
+									LIMIT 10");	
 			
 			$stmt->execute(array($name, $name, $name));
 			$result = $stmt->fetchAll();
@@ -174,14 +177,16 @@
 			global $conn;
 			$stmt = $conn->prepare("SELECT DISTINCT Project.name AS name, Project.description AS description, Project.projectID AS projectID, Project.projectStatus AS projectStatus
 									FROM Project, Tag, TagProject
-									WHERE to_tsvector('english', Project.name) @@ to_tsquery('english', ?)
+									WHERE Project.access = '1'
+									AND (to_tsvector('english', Project.name) @@ to_tsquery('english', ?)
 									OR Project.name ILIKE '%' || ? || '%'
+									AND Project.access = '1'
 									OR (to_tsvector('english', Tag.name) @@ to_tsquery('english', ?)
 									OR Tag.name ILIKE '%' || ? || '%'
 									AND TagProject.tagID = Tag.tagID
-									AND Project.projectID = TagProject.projectID)
-									AND Project.access = '1'
-									ORDER BY Project.name");
+									AND Project.projectID = TagProject.projectID))
+									ORDER BY Project.name
+									LIMIT 10");
 			$stmt->execute(array($name, $name, $name, $name));
 			
 			$result = $stmt->fetchAll();
@@ -197,14 +202,16 @@
 			global $conn;
 			$stmt = $conn->prepare("SELECT DISTINCT Project.name AS name, Project.description AS description, Project.projectID AS projectID, Project.projectStatus AS projectStatus
 									FROM Project, Tag, TagProject
-									WHERE to_tsvector('english', Project.name) @@ to_tsquery('english', ?)
+									WHERE Project.access = '1'
+									AND (to_tsvector('english', Project.name) @@ to_tsquery('english', ?)
 									OR Project.name ILIKE '%' || ? || '%'
+									AND Project.access = '1'
 									OR (to_tsvector('english', Tag.name) @@ to_tsquery('english', ?)
 									OR Tag.name ILIKE '%' || ? || '%'
 									AND TagProject.tagID = Tag.tagID
-									AND Project.projectID = TagProject.projectID)
-									AND Project.access = '1'
-									ORDER BY Project.name DESC");
+									AND Project.projectID = TagProject.projectID))
+									ORDER BY Project.name DESC
+									LIMIT 10");
 			$stmt->execute(array($name, $name, $name, $name));
 			
 			$result = $stmt->fetchAll();

@@ -30,6 +30,10 @@
   $smarty->assign('numberTasksCompleted', $numberCompletedTasks);
  	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/projects/projectIterations.tpl');
 	$smarty->assign('varSideBar', 3);
+	
+	$smarty->assign('collaborator', $isCollaborator);
+	$smarty->assign('userIsCoord', $userIsCoord);
+	
   $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
   $smarty->display($BASE_DIR .'templates/projects/project.tpl');
   $smarty->display($BASE_DIR .'templates/common/footer.tpl'); 

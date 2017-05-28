@@ -35,11 +35,14 @@
                     <i class='glyphicon glyphicon-home'></i>
                     Description </a>
                 </li>
+				{if $userIsCoord}
                 <li {if $varSideBar == 2}class='active'{/if}>
                     <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectEdit.php?projID={$smartyProjID}'>
                     <i class='glyphicon glyphicon-pencil'></i>
                     Edit Project </a>
                 </li>
+				{/if}
+				{if $isCollaborator || $userIsCoord || $type == 'administrator'}
                 <li {if $varSideBar == 3}class='active'{/if}>
                     <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/projectIterations.php?projID={$smartyProjID}'>
                     <i class='glyphicon glyphicon-th-list'></i>
@@ -55,6 +58,7 @@
                     <i class='glyphicon glyphicon-stats'></i>
                     Statistics </a>
                 </li>
+				{/if}
             </ul>
         </div>
     </div>

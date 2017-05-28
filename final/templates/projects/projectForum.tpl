@@ -17,8 +17,11 @@
 					<th class='cell-stat text-center hidden-xs hidden-sm'>Creator</th>
 					<th class='cell-stat text-center hidden-xs hidden-sm'>Comments</th>
 					<th class='cell-stat hidden-xs hidden-sm'>Last Comment</th>
+					{if $userIsCoord}
 					<th class='column join button'></th>
+					{elseif $collaborator}
 					<th class="column report button"></th>
+					{/if}
 				</tr>
 			</thead>
 			<tbody>
@@ -37,17 +40,22 @@
 					<br><small><i class='fa fa-clock-o'></i> {$lastCommentDate[$i]}
 					</small></td>
 				{/if}
+				{if $userIsCoord}
 					<td>   
 						<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/editThread.php?projID={$smartyProjID}&forumID={$smartyThreads[$i]['threadid']}" class="btn btn-warning forum">Edit Forum</a>
 					</td>
+				{elseif $collaborator}
 					<td>
 						<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?projID={$smartyProjID}&threadID={$smartyThreads[$i]['threadid']}" class="btn btn-danger">Report Forum</a>
 					</td>
+				{/if}
 				</tr>
 			{/for}
 			</tbody>
 		</table>
 	</div>
 	{/if}
+	{if $userIsCoord || $collaborator}
 	<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/createForum.php?projID={$smartyProjID}" id="addForum" class="btn btn-success">Add Forum</a>
+	{/if}
 </div>

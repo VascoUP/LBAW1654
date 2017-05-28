@@ -16,6 +16,9 @@
   $smarty->assign('smartyUsrInfo', $userInfo);
   $smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/projects/projectPage.tpl');
   $smarty->assign('varSideBar', 1);
+  $smarty->assign('collaborator', $isCollaborator);
+  $smarty->assign('userIsCoord', $userIsCoord);
+  $smarty->assign('type', $userType);
   
   $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
   $smarty->display($BASE_DIR .'templates/projects/project.tpl');
