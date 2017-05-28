@@ -30,22 +30,22 @@
 
         <div class='profile-usermenu'>
             <ul class='nav'>
-                <li class='active'>
+                <li {if $varSideBar == 1}class='active'{/if}>
                     <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjID}'>
                     <i class='glyphicon glyphicon-home'></i>
                     Description </a>
                 </li>
-                <li>
+                <li {if $varSideBar == 2}class='active'{/if}>
                     <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectEdit.php?projID={$smartyProjID}'>
                     <i class='glyphicon glyphicon-pencil'></i>
                     Edit Project </a>
                 </li>
-                <li>
+                <li {if $varSideBar == 3}class='active'{/if}>
                     <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/projectIterations.php?projID={$smartyProjID}'>
                     <i class='glyphicon glyphicon-th-list'></i>
                     Iterations </a>
                 </li>
-                <li>
+                <li {if $varSideBar == 4}class='active'{/if}>
                     <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/projectForum.php?projID={$smartyProjID}'>
                     <i class='glyphicon glyphicon-inbox'></i>
                     Forum </a>

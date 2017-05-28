@@ -16,6 +16,7 @@
   $smarty->assign('smartyUsrInfo', $userInfo);
   $smarty->assign('smartyProjID', $projID);
   $smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/projects/projectEdit.tpl');
+  $smarty->assign('varSideBar', 2);
   
   $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
   $smarty->display($BASE_DIR .'templates/projects/project.tpl');
