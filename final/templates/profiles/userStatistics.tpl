@@ -13,21 +13,23 @@
 			<h3>Projects</h3>
 			<p class="number"><strong>Number of projects: </strong>{$userStatistics['projects']}</p>
 			{if $userStatistics['projects'] != 0 }
+			{if $userStatistics['active'] + $userStatistics['inactive'] + $userStatistics['invited'] + $userStatistics['requested'] != 0}
 			<h4>Projects that I collaborate</h4>
-			<p class="number" id="projActive">{$userStatistics['active']}</p>
-			<p class="number" id="projInactive">{$userStatistics['inactive']}</p>
-			<p class="number" id="projInvited">{$userStatistics['invited']}</p>
-			<p class="number" id="projRequested">{$userStatistics['requested']}</p>
+			<p id="projActive">{$userStatistics['active']}</p>
+			<p id="projInactive">{$userStatistics['inactive']}</p>
+			<p id="projInvited">{$userStatistics['invited']}</p>
+			<p id="projRequested">{$userStatistics['requested']}</p>
 			<div id="chartUserProjdiv"></div>
+			{/if}
+			{if $userStatistics['working'] != 0 || $userStatistics['finished'] != 0}
 			<h4>Projects that I coordinate</h4>
-			<p class="number" id="projWork">{$userStatistics['working']}</p>
-			<p class="number" id="projFinish">{$userStatistics['finished']}</p>
+			<p id="projWork">{$userStatistics['working']}</p>
+			<p id="projFinish">{$userStatistics['finished']}</p>
 			<div id="projWorkdiv"></div>
 			{/if}
+			{/if}
 			<h3>Iterations and Tasks</h3>
-			<h4>Iterations</h4>
 			<p class="number"><strong>Number of iterations: </strong>{$userStatistics['iterations']}</p>
-			<h4>Tasks</h4>
 			<p class="number"><strong>Number of tasks: </strong>{$userStatistics['tasks']}</p>
 		</div>
 	</div>

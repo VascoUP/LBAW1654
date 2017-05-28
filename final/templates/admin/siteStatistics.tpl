@@ -15,7 +15,7 @@
 			{if $userStatistics['total'] != 0 }
 			<h4>Users Type</h4>
 			<p id="coord">{$userStatistics['coord']}</p>
-			<p id="collab">{$userStatistics['userCount']}</p>
+			<p id="collab">{$userStatistics['user']}</p>
 			<p id="admin">{$userStatistics['admin']}</p>
 			<div id="chartdiv"></div>
 			<p id="activeStatus">{$userStatus['activeCount']}</p>
@@ -37,10 +37,10 @@
 			<p class="number"><strong>Number of reports: </strong>{$reportStatistics['reports']}</p>
 			{if $reportStatistics['reports'] != 0} 
 			<h4>Reports Type</h4>
-			<p id="reportUser">{$reportStatistics['userCount']}</p>
-			<p id="reportUser">{$reportStatistics['taskCount']}</p>
-			<p id="reportUser">{$reportStatistics['threadCount']}</p>
-			<p id="reportProj">{$reportStatistics['projCount']}</p>
+			<p id="reportUser">{$reportStatistics['user']}</p>
+			<p id="reportTask">{$reportStatistics['task']}</p>
+			<p id="reportThread">{$reportStatistics['thread']}</p>
+			<p id="reportProj">{$reportStatistics['proj']}</p>
 			<div id="reportsdiv"></div>
 			{/if}
 		</div>

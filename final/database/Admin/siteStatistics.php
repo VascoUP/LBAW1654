@@ -8,23 +8,23 @@ function getUserStatistics(){
 		$stmt->execute();
 		$users = $stmt->fetchAll();
 		
-		$stmt = $conn->prepare("SELECT COUNT(*) AS countCoord FROM UserSite WHERE type = 'coordinator'");	
+		$stmt = $conn->prepare("SELECT COUNT(*) AS count FROM UserSite WHERE type = 'coordinator'");	
 		$stmt->execute();
 		$countCoord = $stmt->fetchAll();
 		
-		$array['coord'] = $countCoord['0']['countCoord'];
+		$array['coord'] = $countCoord['0']['count'];
 		
-		$stmt = $conn->prepare("SELECT COUNT(*) AS countUser FROM UserSite WHERE type = 'user'");	
+		$stmt = $conn->prepare("SELECT COUNT(*) AS count FROM UserSite WHERE type = 'user'");	
 		$stmt->execute();
 		$countUser = $stmt->fetchAll();
 		
-		$array['userCount'] = $countUser['0']['countUser'];
+		$array['user'] = $countUser['0']['count'];
 		
-		$stmt = $conn->prepare("SELECT COUNT(*) AS countAdmin FROM UserSite WHERE type = 'administrator'");	
+		$stmt = $conn->prepare("SELECT COUNT(*) AS count FROM UserSite WHERE type = 'administrator'");	
 		$stmt->execute();
 		$countAdmin = $stmt->fetchAll();
 		
-		$array['admin'] = $countAdmin['0']['countAdmin'];
+		$array['admin'] = $countAdmin['0']['count'];
 
 		$array['total'] = $users['0']['users'];
 	} catch(Exception $e) {
@@ -76,31 +76,31 @@ function getReportsStatistics(){
 		$stmt->execute();
 		$reports = $stmt->fetchAll();
 		
-		$array['reports'] = $reports['reports'];
+		$array['reports'] = $reports['0']['reports'];
 		
-		$stmt = $conn->prepare("SELECT COUNT(*) AS userReport FROM Report WHERE userID IS NOT NULL");	
+		$stmt = $conn->prepare("SELECT COUNT(*) AS report FROM Report WHERE userID IS NOT NULL");	
 		$stmt->execute();
 		$userReport = $stmt->fetchAll();
 		
-		$array['userCount'] = $userReport['0']['userReport'];
+		$array['user'] = $userReport['0']['report'];
 		
-		$stmt = $conn->prepare("SELECT COUNT(*) AS taskReport FROM Report WHERE taskID IS NOT NULL");	
+		$stmt = $conn->prepare("SELECT COUNT(*) AS report FROM Report WHERE taskID IS NOT NULL");	
 		$stmt->execute();
 		$taskReport = $stmt->fetchAll();
 		
-		$array['taskCount'] = $taskReport['0']['taskReport'];
+		$array['task'] = $taskReport['0']['report'];
 		
-		$stmt = $conn->prepare("SELECT COUNT(*) AS threadReport FROM Report WHERE threadID IS NOT NULL");	
+		$stmt = $conn->prepare("SELECT COUNT(*) AS report FROM Report WHERE threadID IS NOT NULL");	
 		$stmt->execute();
 		$threadReport = $stmt->fetchAll();
 		
-		$array['threadCount'] = $threadReport['0']['threadReport'];
+		$array['thread'] = $threadReport['0']['report'];
 		
-		$stmt = $conn->prepare("SELECT COUNT(*) AS projReport FROM Report WHERE projectID IS NOT NULL");	
+		$stmt = $conn->prepare("SELECT COUNT(*) AS report FROM Report WHERE projectID IS NOT NULL");	
 		$stmt->execute();
 		$projReport = $stmt->fetchAll();
 		
-		$array['projCount'] = $projReport['0']['projReport'];
+		$array['proj'] = $projReport['0']['report'];
 	
 	} catch(Exception $e) {
 		return $e->getMessage();
@@ -117,23 +117,23 @@ function getProjectStatistics(){
 		$stmt->execute();
 		$projects = $stmt->fetchAll();
 		
-		$stmt = $conn->prepare("SELECT COUNT(*) AS projectsActive FROM Project WHERE projectStatus = 'active'");	
+		$stmt = $conn->prepare("SELECT COUNT(*) AS active FROM Project WHERE projectStatus = 'active'");	
 		$stmt->execute();
 		$projectsActive = $stmt->fetchAll();
 		
-		$array['active'] = $projectsActive['0']['projectsActive'];
+		$array['active'] = $projectsActive['0']['active'];
 		
-		$stmt = $conn->prepare("SELECT COUNT(*) AS projectReported FROM Project WHERE projectStatus = 'reported'");	
+		$stmt = $conn->prepare("SELECT COUNT(*) AS reported FROM Project WHERE projectStatus = 'reported'");	
 		$stmt->execute();
 		$projectReported = $stmt->fetchAll();
 		
-		$array['reported'] = $projectReported['0']['projectReported'];
+		$array['reported'] = $projectReported['0']['reported'];
 		
-		$stmt = $conn->prepare("SELECT COUNT(*) AS projectBanned FROM Project WHERE projectStatus = 'banned'");	
+		$stmt = $conn->prepare("SELECT COUNT(*) AS banned FROM Project WHERE projectStatus = 'banned'");	
 		$stmt->execute();
 		$projectBanned = $stmt->fetchAll();
 		
-		$array['banned'] = $projectBanned['0']['projectBanned'];
+		$array['banned'] = $projectBanned['0']['banned'];
 		
 		$array['total'] = $projects['0']['projects'];
 	
