@@ -4,13 +4,9 @@ function init() {
 	
 	$('#filter').click(function(){
 		var value = $( "#order option:selected" ).val();
-
+		console.log('click');
+		console.log(value);
 		ajaxPost(value);
-		
-		if($("checkbox #users").is(":checked"))
-			$('#tableProject').hide();
-		else if($("checkbox #projs").is(":checked"))
-			$('#tableUser').hide();
 	});
 }
 
@@ -31,7 +27,7 @@ function getUrlParameter(sParam) {
 
 function ajaxPost(value) {
 	var search = getUrlParameter('search');
-	
+	console.log(search);
 	var data = {
 		'search' : search,
 		'value': value
@@ -50,66 +46,82 @@ function ajaxPost(value) {
 
 function seeSearch(data){
 	$('#tableUser').remove();
+	console.log($('#tableUser').html());
 	html = "";
 	
+	html += "<table id='tableUser' class='table table-filter'>";
 	if(data['users'].length == 0)
-		html += "<h4 class='title'>Any users found</h4>";
+	html += "<h4 class='title'>Any users found</h4>";
 
-	else{
-		html += "<table id='tableUser' class='table table-filter'>";
-		html += "<tbody>";
+	html += "<tbody>";
+	
+	for(i = 0; i < data['users'].length; i++){
+		html += "<tr>";
+		html += "<td>";
+		html += "<div class='media'>";
+		html += "<div class='media-body'>";
+		html += "<h4 class='title'>";
 		
-		for(i = 0; i < data.length; i++){
-			html += "<tr>";
-			html += "<td>";
-			html += "<div class='media'>";
-			html += "<div class='media-body'>";
-			html += "<h4 class='title'>";
-			
-			if(data['users'][i]['type'] != admin)
-				
-				html += "<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?searchUser=" + data['users'][i]['userid'] + "' role='button'>";
-			
-			else
-				html += "<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php" + "' role='button'>";
-			
-			html += "<p class='summary'>" + data['users'][i]['email'] + "</p>";
-			html += "</div></div>";
-			html += "</td>";
-			html += "</tr>";
-		}
+		if(data['users'][i]['type'] != 'administrator')			
+			html += "<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?searchUser=" + data['users'][i]['userid'] + "' role='button'>";
+		
+		else
+			html += "<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php" + "' role='button'>";
+		html += data['users'][i]['username'] + "</a></h4>";
+		html += "<p class='summary'>" + data['users'][i]['email'] + "</p>";
+		html += "</div></div>";
+		html += "</td>";
+		html += "</tr>";
+	}
 	
 		html += "</tbody></table>";
-	}
-	$('.table-container').append(html);
-	
+		
+	$('#containerResultsUser').append(html);
+	console.log(html);
 	$('#tableProject').remove();
 	html = "";
+	console.log(data['projects'].length);
 	
-	if(data['users'].length == 0)
-		html += "<h4 class='title'>Any users found</h4>";
+	html += "<table id='tableProject' class='table table-filter'>";
+	
+	if(data['projects'].length == 0)
+		html += "<h4 class='title'>Any projects found</h4>";
 
-	else{
-		html += "<table id='tableProject' class='table table-filter'>";
-		html += "<tbody>";
+	html += "<tbody>";
 		
-		for(i = 0; i < data.length; i++){
-			html += "<tr>";
-			html += "<td>";
-			html += "<div class='media'>";
-			html += "<div class='media-body'>";
-			html += "<h4 class='title'>";
-			
-			html+= "<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID=" + data['projects'][i]['projectid'] + ">"  + data['projects'][i]['name'] + "</a></h4>";
-			
-			html += "<p class='summary'>" + data['projects'][i]['description'] + "</p>";
+	for(i = 0; i < data['projects'].length; i++){
+		html += "<tr>";
+		html += "<td>";
+		html += "<div class='media'>";
+		html += "<div class='media-body'>";
+		html += "<h4 class='title'>";
 		
-			html += "</div></div>";
-			html += "</td>";
-			html += "</tr>";
-		}
+		html+= "<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID=" + data['projects'][i]['projectid'] + "' role='button'>" + data['projects'][i]['name'];
+		
+		html += "</a></h4>";
+		
+		html += "<p class='summary'>" + data['projects'][i]['description'] + "</p>";
 	
-		html += "</tbody></table>";
+		html += "</div></div>";
+		html += "</td>";
+		html += "</tr>";
 	}
-	$('.table-container').append(html);
+
+	html += "</tbody></table>";
+	
+	$('#containerResultsProj').append(html);
+	console.log(html);
+	console.log($("#users").is(":checked"));
+	console.log($("#projs").is(":checked"));
+	
+	if($("#users").is(":checked")){
+		console.log('users');
+		$('#second').hide();
+		$('#first').show();
+	}
+	else if($("#projs").is(":checked")){
+		console.log('projs');
+		$('#first').hide();
+		$('#second').show();
+	}
 }

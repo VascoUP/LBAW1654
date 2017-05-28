@@ -19,9 +19,9 @@
 	</div>
 	
 	
-	<div class="card card-container first">
+	<div class="card card-container first" id="first">
 		<h3 class="title">Users</h3>
-		<div class="table-container">
+		<div class="table-container" id="containerResultsUser">
 			<table id="tableUser" class="table table-filter">
 				<tbody>
 				{if $smartyUsers|@count == 0}
@@ -52,9 +52,9 @@
 		</div>
 	</div>
 	
-	<div class="card card-container second">
+	<div class="card card-container second" id="second">
 		<h3 class="title">Projects</h3>
-		<div class="table-container">
+		<div class="table-container" id="containerResultsProj">
 			<table id="tableProject" class="table table-filter">
 			{if $smartyProjs|@count == 0}
 				<h4 class="title">
