@@ -1,7 +1,6 @@
 <?php 
 	include_once('../../config/init.php');
-
-	include_once($BASE_DIR .'database/Admin/validateAdmin.php');	
+	
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
 	
