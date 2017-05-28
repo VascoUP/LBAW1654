@@ -11,7 +11,7 @@
                 <label class="col-md-4 control-label" for="name">Name</label>  
                 <div class="col-md-4">
                     <input type='text' name='name' id='name' class="form-control form-style input-md" placeholder='ex: PIU'>
-                    <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Name</button>
+                    <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Name</button>
                 </div>
             </div>
         </fieldset>
@@ -24,7 +24,7 @@
                 <label class="col-md-4 control-label" for="description">Description</label>  
                 <div class="col-md-4">
                     <input id="description" name="description" type="text" placeholder="Description" class="form-control form-style input-md">
-                    <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Description</button>
+                    <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Description</button>
                 </div>
             </div>
         </fieldset>
@@ -37,7 +37,7 @@
                 <label class="col-md-4 control-label" for="tags">Tags</label>  
                 <div class="col-md-4">
                     <input id="tags" name="tags" type="text" placeholder="Tags" class="form-control form-style input-md">
-                    <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Add Tags</button>
+                    <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Add Tags</button>
                 </div>
             </div>
         </fieldset>
@@ -47,9 +47,9 @@
             <legend class="tab">Main Settings</legend>
             <!-- File Button --> 
             <div class="form-group">
-                <label class="col-md-4 control-label" for="public">Change Access</label>
+                <label class="col-md-4 control-label" for="access">Change Access</label>
                 <div class="col-md-4">
-                    <select name="access" class="form-control form-style input-xs">
+                    <select id="access" name="access" class="form-control form-style input-xs">
                     {if $smartyAccess == 1}
                         <option value="public">Public</option>
                         <option value="private">Private</option>
@@ -58,7 +58,7 @@
                         <option value="public">Public</option>
                     {/if}
                     </select>
-                    <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Change Access</button>
+                    <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Change Access</button>
                 </div>
             </div>
         </fieldset>
@@ -70,7 +70,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="deleteProj">Delete Project</label>
                 <div class="col-md-4">   
-                    <button id="deleteProj" name='deleteProj' type='submit' class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-down" value=""></span> Delete</button>
+                    <button id="deleteProj" name='deleteProj' type='submit' class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-down"></span> Delete</button>
                 </div>
             </div>
         </fieldset>
@@ -84,7 +84,7 @@
                 <label for="joinUser" class="col-md-4 control-label">Invite to join</label>
                 <div class="col-md-4">
                     <input name='joinUser' id='joinUser' type='text' class="form-control form-style input-md" placeholder='ex: aed1123'>
-                    <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Add User</button>
+                    <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Add User</button>
                 </div>
             </div>
         </fieldset>

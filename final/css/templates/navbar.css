@@ -42,7 +42,7 @@
   color: white;
 }
 
-.navbar-custom .nav #drop {
+.navbar-custom .nav .drop {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 400;
@@ -56,7 +56,7 @@
   outline: none;
 }
 
-.navbar-custom .navbar-nav > .active > #drop {
+.navbar-custom .navbar-nav > .active > .drop {
   border-radius: 0;
   color: white;
   background-color: #fed136;

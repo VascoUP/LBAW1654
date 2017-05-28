@@ -65,14 +65,15 @@
 {else}
     <div class='profile-userbuttons'>
         {if $leaveBtnVisibility != 'not_visible'}
-        <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveProject.php?projID={$smartyProjID}" class="btn btn-warning btn-sm" id="leaveProject">Leave Project</a>
+        <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveProject.php?projID={$smartyProjID}" class="btn btn-warning btn-sm" id="leaveProject">Leave Project</a>
         {/if}
         {if $joinBtnVisibility != 'not_visible'}
-        <a type="button" id="request" class="btn btn-primary btn-sm">Request to Join</a>
+        <a id="request" class="btn btn-primary btn-sm">Request to Join</a>
         {/if}
 		{if $leaveBtnVisibility == 'not_visible'}
-        <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?projID={$smartyProjID}" class="btn btn-danger btn-sm" id="reportProkect">Report Project</a>
+        <a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?projID={$smartyProjID}" class="btn btn-danger btn-sm" id="reportProkect">Report Project</a>
 		{/if}
     </div>
 {/if}
 </div>
+

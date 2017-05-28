@@ -62,8 +62,8 @@
             <!-- END SIDEBAR USER TITLE -->
             <!-- SIDEBAR BUTTONS -->
             <div class='profile-userbuttons'>
-                <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectCreate.php' type='button' class='btn btn-success btn-sm'>Add project</a>
-                <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/contactPage.php?userID={$smartyUsrInfo['0']['userid']}' type='button' class='btn btn-success btn-sm'>Contact</a>
+                <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectCreate.php' class='btn btn-success btn-sm'>Add project</a>
+                <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/contactPage.php?userID={$smartyUsrInfo['0']['userid']}' class='btn btn-success btn-sm'>Contact</a>
             </div>
     </div>
         <div class="col-md-9">
@@ -71,9 +71,9 @@
 				<div class="pull-right">
 						<div class="btn-group">
 							<button id="top5" class="btn btn-success btn-filter" name="Top5">Last 5 Active</button>
-							<button id="coord" class="btn btn-primary btn-filter" name"coordinator">Coordinator</button>
+							<button id="coord" class="btn btn-primary btn-filter" name="coordinator">Coordinator</button>
 							<button id="collab" class="btn btn-info btn-filter" name="Collaborator">Collaborator</button>
-							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/projects.php?userID={$smartyUsrInfo['0']['userid']}' type="button" class="btn btn-default btn-filter">All</a>
+							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/projects.php?userID={$smartyUsrInfo['0']['userid']}' class="btn btn-default btn-filter">All</a>
 						</div>
 					</div>
 				<div class="pull-left">
@@ -82,12 +82,12 @@
                 <div id="userProjTable" class="table-container">
                     <table id="top5body" class="table table-filter">
                         <tbody>
-						{if $top|@count == 0}
-							<h3 id="projh3">{$smartyUsrInfo['0']['username']} doesn't have any project</h3>
-						{else}
 							{for $i=0 to ($top|@count-1)}
                             <tr>
                                 <td>
+								{if $top|@count == 0}
+							<h3 id="projh3">{$smartyUsrInfo['0']['username']} doesn't have any project</h3>
+							{/if}
                                     <div class="media">
                                         <div class="media-body">
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$top[$i]['projectid']}" role="button">
@@ -99,23 +99,22 @@
                                         </div>
                                         
                                         <div class="profile-userbuttons">
-                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$top[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" type="button" class="btn btn-danger btn-sm delete">Delete Project</a>
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$top[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" class="btn btn-danger btn-sm delete">Delete Project</a>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 							{/for}
-						{/if}
                         </tbody>
                     </table>
 					<table id="coordbody" class="table table-filter">
                         <tbody>
-						{if $projectsCoord|@count == 0}
-							<h3 id="coordh3">{$smartyUsrInfo['0']['username']} doesn't coordinates any project</h3>
-						{else}
 							{for $i=0 to ($projectsCoord|@count-1)}
                             <tr>
                                 <td>
+								{if $projectsCoord|@count == 0}
+							<h3 id="coordh3">{$smartyUsrInfo['0']['username']} doesn't coordinates any project</h3>
+							{/if}
                                     <div class="media">
                                         <div class="media-body">
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projectsCoord[$i]['projectid']}" role="button">
@@ -127,23 +126,22 @@
                                         </div>
                                         
                                         <div class="profile-userbuttons">
-                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projectsCoord[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" type="button" class="btn btn-danger btn-sm delete">Delete Project</a>
+                                            <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/deleteProject.php?projID={$projectsCoord[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" class="btn btn-danger btn-sm delete">Delete Project</a>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 							{/for}
-							{/if}
                         </tbody>
                     </table>
 					<table id="collabbody" class="table table-filter">
                         <tbody>
-						{if $projectsCollab|@count == 0}
-							<h3 id="collabh3">{$smartyUsrInfo['0']['username']} doesn't collaborates in any project</h3>
-						{else}
 							{for $i=0 to ($projectsCollab|@count-1)}
                             <tr>
                                 <td>
+								{if $projectsCollab|@count == 0}
+								<h3 id="collabh3">{$smartyUsrInfo['0']['username']} doesn't collaborates in any project</h3>
+								{/if}
                                     <div class="media">
                                         <div class="media-body">
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projectsCollab[$i]['projectid']}" role="button">
@@ -161,7 +159,6 @@
                                 </td>
                             </tr>
 							{/for}
-						{/if}
                         </tbody>
                     </table>
                 </div>

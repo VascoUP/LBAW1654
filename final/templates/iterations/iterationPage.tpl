@@ -4,7 +4,7 @@
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="{$BASE_URL}javascript/templates/paginatedTables.js"></script>
 
 <div id='profile-content' class='profile-content'>
@@ -24,7 +24,7 @@
                     <thead>
                         <tr>
                             <th class="task meta line"></th>
-                            <th class="main_column"><h3>Tasks</h3></th>
+                            <th class="main_column">Tasks</th>
                             <th class="column state">State</th>
                             <th class="column priority">Priority</th>
                             <th class="column workers">Workers</th>
@@ -44,7 +44,7 @@
                             <td class="task-info priority">{$smartyTasks[$i]['priority']}</td>
                             <td class="task-info workers">{$smartyNumberUsers[$i]}</td>
                             <td>
-                                <a type="button" href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/joinTask.php?projID={$smartyProjID}&taskID={$smartyTasks[$i]['taskid']}" class="btn btn-primary btn-sm">Join task</a>
+                                <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/joinTask.php?projID={$smartyProjID}&taskID={$smartyTasks[$i]['taskid']}" class="btn btn-primary btn-sm">Join task</a>
                             </td>
                         </tr>
                     {/for}

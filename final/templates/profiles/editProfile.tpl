@@ -16,7 +16,7 @@
                 <label class="col-md-4 control-label" for="username">Username</label>  
                     <div class="col-md-4">
                         <input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md">
-                        <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Username</button>
+                        <button	type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Username</button>
                     </div>
             </div>
             </fieldset>
@@ -31,11 +31,11 @@
                 <label class="col-md-4 control-label" for="email">Email Address</label>  
                     <div class="col-md-4">
                         <input id="email" name="email" type="text" placeholder="Email Address" class="form-control form-style input-md">
-                        <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Email</button>
+                        <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Email</button>
                     </div>
             </div>
             </fieldset>
-			<form>
+			</form>
 			
 		<form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
             <fieldset>
@@ -45,30 +45,30 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="upload">Upload photo</label>
                     <div class="col-md-4">
-                        <input name="upload" type="file" accept=".png, .jpg, .jpeg">
+                        <input id="upload" name="upload" type="file" accept=".png, .jpg, .jpeg">
                     </div>
             </div>
 			<div class="form-group"> 
             <label class="col-md-4 control-label" ></label> 
                     <div class="col-md-4">
-                        <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Photo</button>
+                        <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Photo</button>
                     </div>
             </div>
+			</fieldset>
 		</form>
 		<form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label class="col-md-4 control-label" for="uploadCV">Upload Curriculum Vitae</label>
                     <div class="col-md-4">   
-                        <input name="uploadCV" type="file" accept=".pdf">
+                        <input id="uploadCV" name="uploadCV" type="file" accept=".pdf">
                     </div>
             </div>
             <div class="form-group"> 
             <label class="col-md-4 control-label" ></label> 
                     <div class="col-md-4">
-                        <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Curriculum</button>
+                        <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Curriculum</button>
                     </div>
             </div>
-            </fieldset>
 		</form>
 
 		<form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
@@ -85,7 +85,7 @@
                 <label for="confirm" class="col-md-4 control-label">Confirm Password</label>
                     <div class="col-md-4">
                         <input type="password" class="form-control form-style input-md" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-                        <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Password</button>
+                        <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Password</button>
                     </div>
             </div>
             </fieldset>
@@ -100,7 +100,7 @@
                 <label class="col-md-4 control-label" for="overview">Overview (max 200 words)</label>  
                     <div class="col-md-4">                     
                         <textarea class="form-control form-style" rows="5" cols="30"  id="overview" name="overview"></textarea>
-                        <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Update Overview</button>
+                        <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Overview</button>
                     </div>
             </div>			
             </fieldset>
@@ -112,7 +112,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" ></label>  
                 <div class="col-md-4">
-                    <button id="delete" type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up" value=""></span> Delete account</button>
+                    <button id="delete" type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up"></span> Delete account</button>
                 </div>
             </div>
         </form>

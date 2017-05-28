@@ -17,9 +17,9 @@
             <div class='profile-userpic'>
 
                 {if isset($smartyUsrInfo['0']['photo'])}
-                    <img src="{$BASE_URL}images/users/{$smartyUsrInfo['0']['photo']}" class='img-responsive' alt=''>
+                    <img alt="Profile image" src="{$BASE_URL}images/users/{$smartyUsrInfo['0']['photo']}" class='img-responsive'>
                 {else}
-                    <img src="{$BASE_URL}images/assets/loginImage.png" class='img-responsive' alt=''>
+                    <img alt="Profile default image" src="{$BASE_URL}images/assets/loginImage.png" class='img-responsive'>
                 {/if}
 
             </div>
@@ -68,12 +68,12 @@
 
             <div class='profile-userbuttons'>
 				{if $smartyUser && $smartyUserInfoFirst['0']['type'] == 'administrator'}
-					<a href='https://gnomo.fe.up.pt/~lbaw1654/final/actions/admin/banUser.php?userID={$smartyUsrInfo['0']['userid']}' type='button' class='btn btn-danger btn-sm'>Ban User</a>
+					<a href='https://gnomo.fe.up.pt/~lbaw1654/final/actions/admin/banUser.php?userID={$smartyUsrInfo['0']['userid']}' class='btn btn-danger btn-sm'>Ban User</a>
 				{elseif $smartyUser && ($smartyUserInfoFirst['0']['type'] == 'coordinator' || $smartyUserInfoFirst['0']['type'] == 'user')}
-					<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?userID={$smartyUsrInfo['0']['userid']}' type='button' class='btn btn-warning btn-sm'>Report User</a>
-					<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/contactPage.php?second={$smartyUsrInfo['0']['userid']}&userID={$smartyUser}' type='button' class='btn btn-success btn-sm'>Contact</a>
+					<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?userID={$smartyUsrInfo['0']['userid']}' class='btn btn-warning btn-sm'>Report User</a>
+					<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/contactPage.php?second={$smartyUsrInfo['0']['userid']}&userID={$smartyUser}' class='btn btn-success btn-sm'>Contact</a>
 				{else}
-					<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectCreate.php' type='button' class='btn btn-success btn-sm'>Add project</a>
+					<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectCreate.php' class='btn btn-success btn-sm'>Add project</a>
 				{/if}
             </div>
     </div>
@@ -103,6 +103,6 @@
             </div>
         </div>
     {/if}
-
+</div>
 </div>
 </div>

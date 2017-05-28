@@ -34,4 +34,5 @@
 			<p class="number"><strong>Number of tasks: </strong>{$userStatistics['tasks']}</p>
 		</div>
 	</div>
+	</div>
 </div>

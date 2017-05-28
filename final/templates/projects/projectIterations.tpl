@@ -2,7 +2,7 @@
 <link href="{$BASE_URL}css/pages/taskList.css" rel='stylesheet'>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="{$BASE_URL}javascript/templates/paginatedTables.js"></script>
 
 <div id='profile-content' class='profile-content'>
@@ -17,7 +17,7 @@
         <tr>
           <th class='hidden-xs cell-stat'></th>
           <th>
-            <h3>Iterations</h3>
+            Iterations
           </th>
           <th class='cell-stat text-center hidden-xs hidden-sm'>Number of tasks</th>
           <th class='cell-stat text-center hidden-xs hidden-sm'>Maximum effort</th>

@@ -38,16 +38,16 @@
 					</small></td>
 				{/if}
 					<td>   
-						<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/editThread.php?projID={$smartyProjID}&forumID={$smartyThreads[$i]['threadid']}" id="editForum" type="button" class="btn btn-warning">Edit Forum</a>
+						<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/editThread.php?projID={$smartyProjID}&forumID={$smartyThreads[$i]['threadid']}" id="editForum" class="btn btn-warning">Edit Forum</a>
 					</td>
 					<td>
-						<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?projID={$smartyProjID}&threadID={$smartyThreads[$i]['threadid']}" type="button" class="btn btn-danger">Report Forum</a>
+						<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?projID={$smartyProjID}&threadID={$smartyThreads[$i]['threadid']}" class="btn btn-danger">Report Forum</a>
 					</td>
 				</tr>
 			{/for}
 			</tbody>
 		</table>
-	{/if}
 	</div>
-	<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/createForum.php?projID={$smartyProjID}" id="addForum" type="button" class="btn btn-success">Add Forum</a>
+	{/if}
+	<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/createForum.php?projID={$smartyProjID}" id="addForum" class="btn btn-success">Add Forum</a>
 </div>
