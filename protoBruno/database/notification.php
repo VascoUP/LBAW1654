@@ -13,6 +13,7 @@ function sendNotification($reportID, $content){
 			$stmt->bindParam(':date', $date);
 			$stmt->bindParam(':content', $content);
 			$stmt->bindParam(':status', $status);
+			$stmt->execute();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}

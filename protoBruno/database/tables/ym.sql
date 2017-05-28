@@ -11,7 +11,6 @@ DROP TABLE IF EXISTS Task CASCADE;
 DROP TABLE IF EXISTS TaskUser CASCADE;
 DROP TABLE IF EXISTS Thread CASCADE;
 DROP TABLE IF EXISTS UserSite CASCADE;
-DROP TABLE IF EXISTS UserTokens CASCADE;
 DROP TABLE IF EXISTS IterationsPermissions CASCADE;
 DROP TABLE IF EXISTS ContactsSite CASCADE;
 DROP TABLE IF EXISTS ContactsUser CASCADE;
@@ -105,6 +104,7 @@ CREATE TABLE Report
 	threadID integer,
 	taskID integer,
 	userID integer,
+	projectID integer,
 	reportDate date NOT NULL,
 	handledDate date,
 	reportStatus ReportStatus NOT NULL DEFAULT('waiting'),
@@ -115,6 +115,9 @@ CREATE TABLE Report
 				ON DELETE CASCADE
 				ON UPDATE CASCADE,
 	FOREIGN KEY(userID) REFERENCES UserSite(userID)
+				ON UPDATE CASCADE,
+	FOREIGN KEY(projectID) REFERENCES Project(projectID)
+				ON DELETE CASCADE
 				ON UPDATE CASCADE,
 	CHECK(reportDate <= handledDate)
 );
@@ -219,15 +222,6 @@ CREATE TABLE TaskUser
 	FOREIGN KEY(userID) REFERENCES UserSite(userID)
 				ON UPDATE CASCADE,
 	PRIMARY KEY(taskID, userID)
-);
-
-CREATE TABLE UserTokens
-(
-	tokenID serial PRIMARY KEY,
-	userID serial,
-	tokenName varchar(500),
-	FOREIGN KEY(userID) REFERENCES UserSite(userID)
-				ON UPDATE CASCADE
 );
 
 CREATE TABLE IterationsPermissions
@@ -685,7 +679,6 @@ BEFORE INSERT ON Task
 FOR EACH ROW
 EXECUTE PROCEDURE checkEffort();
 
-DROP FUNCTION IF EXISTS CheckTag();
 CREATE FUNCTION
 	CheckTag()
 RETURNS TRIGGER AS $checkTag$
@@ -735,11 +728,6 @@ CREATE TRIGGER changeTaskStatus
 AFTER INSERT ON TaskUser
 FOR EACH ROW 
 EXECUTE PROCEDURE changeTaskStatus();
-
-CREATE TRIGGER CheckChangeUser
-AFTER INSERT ON ProjectCoordinator
-FOR EACH ROW 
-EXECUTE PROCEDURE changeUser();
 
 DROP FUNCTION IF EXISTS changeTaskStatusDeleteProject();
 CREATE FUNCTION changeTaskStatusDeleteProject()

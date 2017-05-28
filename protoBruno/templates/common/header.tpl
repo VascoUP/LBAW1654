@@ -71,23 +71,40 @@
 								<a href="#page-top"></a>
 							</li>
 							<li>
+							{if $smartyProjInvites|@count == 0}
 								<img class="dropdown-notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="{$BASE_URL}images/assets/notificationBell.png">
+							{else}
+								<img class="dropdown-notifications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="{$BASE_URL}images/assets/bell-icon.png">
+							{/if}
 									<ul id="notification" class="dropdown-menu">
-									<li>New notifications (<span id="nNotifications">{$smartyProjInvites|@count}</span>)</li>
-										{for $index=0 to ($smartyProjInvites|@count - 1)}
-											{assign var="smartyProjInvite" value=$smartyProjInvites[$index]}
-											<li>
-												{include file="../../templates/common/projectInvite.tpl" }
-											</li>
-										{/for}
+									<li>New notifications (<span id="nNotifications">{$smartyProjInvites|@count + $projectRequestedInvites|@count}</span>)</li>
+								{for $index=0 to ($smartyProjInvites|@count - 1)}
+									{assign var="smartyProjInvite" value=$smartyProjInvites[$index]}
+									<li>
+										{include file="../../templates/common/projectInvite.tpl" }
+									</li>
+								{/for}
+								{for $index=0 to ($projectRequestedInvites|@count - 1)}
+									{assign var="smartyProjRequestedInvite" value=$projectRequestedInvites[$index]}
+									<li>
+										{include file="../../templates/common/projectRequestedInvite.tpl" }
+									</li>
+								{/for}
 									</ul>
 								</img>
 							</li>
 							<li>
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
 								<ul id="menu" class="dropdown-menu">
-									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php" role="button" id="drop">Profile</a></li>
-									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?userInfo={$smartyUsrInfo['0']['userid']}" role="button" id="drop">Projects</a></li>
+									<li>{if $smartyUserInfoFirst['0']['type'] == 'administrator'}
+									<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php?adminID={$smartyUserInfoFirst['0']['userid']}
+									" role="button" id="drop">Profile</a>
+									{else}<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={if $smartyUserInfoFirst }{$smartyUserInfoFirst['0']['userid']}{else}{$smartyUsrInfo['0']['userid']}{/if}
+									" role="button" id="drop">Profile</a>
+									{/if}</li>
+									{if $smartyUsrInfo['0']['type'] != 'administrator' && $smartyUserInfoFirst['0']['type'] != 'administrator'}
+									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?userInfo={if $smartyUserInfoFirst}{$smartyUserInfoFirst['0']['userid']}{else}{$smartyUsrInfo['0']['userid']}{/if}" role="button" id="drop">Projects</a></li>
+									{/if}
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php" role="button" id="drop">Edit Profile</a></li>
 									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/users/logout.php" role="button" id="drop" class="logout">Logout</a></li>
 								</ul>

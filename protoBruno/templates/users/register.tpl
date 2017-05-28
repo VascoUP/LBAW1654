@@ -10,9 +10,9 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" ></label>  
                         <div class="col-md-4">
-                            <a class="btn btn-block btn-social btn-linkedin">
-                                <i class="fa fa-linkedin"></i> Use LinkedIn credentials
-                            </a>
+                            <button class="btn btn-block btn-social btn-linkedin" onclick="liAuth()">
+								<i class="fa fa-linkedin"></i> Use Linkedin credentials
+							</button>
                         </div>
                     </div>
 
@@ -21,21 +21,19 @@
                         <label class="col-md-4 control-label" for="username">Username</label>
                         <div class="col-md-4">
                             <div class="col-md-4">
-                                <input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md" value="{$FORM_VALUES.username}" required autofocus>
-                                        <nobr> <span class="field_error">{$FIELD_ERRORS.usernameLow}</span> </nobr>
+                                <input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md" value="{$FORM_VALUES.username}" required>
+                                  <span class="field_error">{$FIELD_ERRORS.usernameLow}</span>
                             </div>
                         </div>
                     </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="email">Email Address</label>  
+                    <label class="col-md-4 control-label" for="email">Email Address</label>
                     <div class="col-md-4">
                         <div class="col-md-4">
-                            <input id="email" name="email" type="email" placeholder="Email Address" class="form-control form-style input-md" value="{$FORM_VALUES.email}" required autofocus>
-                              <nobr>
+                            <input id="email" name="email" type="email" placeholder="Email Address" class="form-control form-style input-md" value="{$FORM_VALUES.email}" required>
                                 <span class="field_error" >{$FIELD_ERRORS.username}</span>
-                              </nobr>
                         </div>
                     </div>
                 </div>
@@ -44,7 +42,7 @@
                     <label for="password" class="col-md-4 control-label">Password</label>
                     <div class="col-md-4">
                         <div class="col-md-4">
-                            <input type="password" class="form-control form-style input-md" name="password" id="password"  placeholder="Enter your Password" required autofocus/>
+                            <input type="password" class="form-control form-style input-md" name="password" id="password"  placeholder="Enter your Password" required/>
                         </div>
                     </div>
                 </div>
@@ -53,18 +51,16 @@
                     <label for="confirm" class="col-md-4 control-label">Confirm Password</label>
                     <div class="col-md-4">
                         <div class="col-md-4">
-                            <input type="password" class="form-control form-style input-md" name="confirm" id="confirm"  placeholder="Confirm your Password" required autofocus/>
-                          <nobr>
+                            <input type="password" class="form-control form-style input-md" name="confirm" id="confirm"  placeholder="Confirm your Password" required/>
                             <span class="field_error">{$FIELD_ERRORS.password}</span>
-                          </nobr>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label" ></label>  
+                    <label class="col-md-4 control-label" ></label>
                     <div class="col-md-4">
-                        <button id="create" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Register</a>
+                        <button id="create" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Register</button>
                     </div>
                 </div>
 

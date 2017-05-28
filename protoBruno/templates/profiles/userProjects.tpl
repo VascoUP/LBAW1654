@@ -1,8 +1,8 @@
 <link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
-<script src="{$BASE_URL}javascript/projects/showProjects.js"></script>
 <script src="{$BASE_URL}javascript/users/confirmDelete.js"></script>
+<script src="{$BASE_URL}javascript/projects/showProjects.js"></script>
 
 <div class="container">
     <div class="row profile">
@@ -40,14 +40,20 @@
                     </li>
                     <li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php'>
-                        <i class='glyphicon glyphicon-user'></i>
+                        <i class='glyphicon glyphicon-pencil'></i>
                         Account Settings </a>
                     </li>
                     <li class='active'>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?username={$smartyUsrInfo['0']['username']}'>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?userInfo={$smartyUsrInfo['0']['userid']}'>
                         <i class='glyphicon glyphicon-ok'></i>
                         My Projects</a>
                     </li>
+					<li>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userStatistics.php?userInfo={$smartyUsrInfo['0']['userid']}'>
+                        <i class='glyphicon glyphicon-stats'></i>
+                        My Statistics</a>
+                    </li>
+					
                 </ul>
             </div>
             <!-- END MENU -->
@@ -71,9 +77,9 @@
 						</div>
 					</div>
 				<div class="pull-left">
-                    <input type="text" class="form-control search" placeholder="Search...">
+                    <input id="searchProj" name='search' type="text" class="form-control search" placeholder="Search...">
                 </div>
-                <div class="table-container">
+                <div id="userProjTable" class="table-container">
                     <table id="top5body" class="table table-filter">
                         <tbody>
 						{if $top|@count == 0}
@@ -158,7 +164,6 @@
 						{/if}
                         </tbody>
                     </table>
-					<a class='pull-right' href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/projects.php?userID={$smartyUsrInfo['0']['userid']}'>Show all projects</a>
                 </div>
             </div>
         </div>

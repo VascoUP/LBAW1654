@@ -210,21 +210,6 @@
 		return $result;
 	}
 
-	function getTokenInfo($token){
-		try {
-			global $conn;
-			$stmt = $conn->prepare("SELECT *
-									FROM UserToken
-									WHERE tokenName = ?");
-			$stmt->execute(array($token));
-			$result = $stmt->fetch();
-		} catch(Exception $e) {
-			return $e->getMessage();
-		}
-
-		return $result['userid'];
-	}
-
 	function getRequestInvite($userID, $projID) {
 		try {
 			global $conn;
@@ -241,5 +226,41 @@
 		}
 
 		return false;
+	}
+	
+	function searchUserProjects($name, $userID){
+	try {
+		global $conn;
+		$stmt = $conn->prepare("SELECT DISTINCT Project.name AS name, Project.description AS description, Project.projectID as projectID
+								FROM Project, ProjectCoordinator, ProjectUsers
+								WHERE (ProjectCoordinator.userID = ?
+								AND Project.projectID = ProjectCoordinator.projectID)
+								OR (ProjectUsers.userID = ?
+								AND Project.projectID = ProjectUsers.projectID)
+								AND (to_tsvector('english', Project.name) @@ to_tsquery('english', ?)
+								OR Project.name ILIKE '%' || ? || '%')");
+		$stmt->execute(array($userID, $userID, $name, $name));
+		
+		$result = $stmt->fetchAll();
+	} catch(Exception $e) {
+		echo $e->getMessage();
+	}
+	
+	return $result;
+}
+
+	function getAdmin(){
+		try{
+			global $conn;
+			$stmt = $conn->prepare("SELECT email FROM UserSite WHERE type = 'administrator'");
+		$stmt->execute();
+		
+		$result = $stmt->fetchAll();
+		
+		}catch(Exception $e) {
+		echo $e->getMessage();
+	}
+	
+	return $result['0']['email'];
 	}
 ?>

@@ -11,6 +11,7 @@ function reportUser($user, $content){
 			$stmt->bindParam(':user', $user);
 			$stmt->bindParam(':reportDate', $date);
 			$stmt->bindParam(':reportStatus', $status);
+			$stmt->execute();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
@@ -27,6 +28,7 @@ function reportTask($task, $content){
 			$stmt->bindParam(':task', $task);
 			$stmt->bindParam(':reportDate', $date);
 			$stmt->bindParam(':reportStatus', $status);
+			$stmt->execute();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
@@ -43,6 +45,24 @@ function reportThread($thread, $content){
 			$stmt->bindParam(':thread', $thread);
 			$stmt->bindParam(':reportDate', $date);
 			$stmt->bindParam(':reportStatus', $status);
+			$stmt->execute();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+}
+
+function reportProject($proj, $content){
+	try {
+			global $conn;
+			$date = date('Y-m-d');
+			$status = 'waiting';
+			$stmt = $conn->prepare("INSERT INTO Report(content,  projectID, reportDate, reportStatus) 
+									VALUES (:content,  :project, :reportDate, :reportStatus)");
+			$stmt->bindParam(':content', $content);
+			$stmt->bindParam(':project', $proj);
+			$stmt->bindParam(':reportDate', $date);
+			$stmt->bindParam(':reportStatus', $status);
+			$stmt->execute();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}

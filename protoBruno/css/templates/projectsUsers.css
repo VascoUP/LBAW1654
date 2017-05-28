@@ -95,7 +95,9 @@ h4.title2{
 h3#projh3, h3#coordh3, h3#collabh3, 
 h3#activeh3, h3#reportedh3, h3#bannedh3,
 h3#userh3, h3#projecth3, h3#projectUserh3,
-h3#Useractiveh3, h3#Userinactiveh3, h3#Userreportedh3, h3#Userbannedh3{
+h3#Useractiveh3, h3#Userinactiveh3, h3#Userreportedh3, 
+h3#Userbannedh3, h3#reportedH3, h3#handledH3,
+h3#UserreportedH3, h3#reportedTaskH3, h3#reportedThreadH3{
 	margin: 40px;
 	color: #b30000;
 }

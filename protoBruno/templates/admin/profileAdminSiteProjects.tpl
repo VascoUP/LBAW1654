@@ -32,19 +32,29 @@
                     </li>
                     <li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php'>
-                        <i class='glyphicon glyphicon-user'></i>
+                        <i class='glyphicon glyphicon-pencil'></i>
                         Account Settings </a>
                     </li>
-                    <li class='active'>
+                    <li class='active'> 
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteProjects.php'>
-                        <i class='glyphicon glyphicon-ok'></i>
+                        <i class='glyphicon glyphicon-file'></i>
                         Site Projects</a>
                     </li>
 					<li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php'>
-                        <i class='glyphicon glyphicon-ok'></i>
+                        <i class='glyphicon glyphicon-user'></i>
                         Site Users</a>
                     </li>
+					<li>
+						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/reportedList.php'>
+                        <i class='glyphicon glyphicon-remove'></i>
+                        Reported List</a>
+					</li>
+					<li>
+						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteStatistics.php'>
+                        <i class='glyphicon glyphicon-stats'></i>
+                        Site Statistics</a>
+					</li>
                 </ul>
             </div>
 				<!-- END MENU -->
@@ -61,9 +71,9 @@
 						</div>
 					</div>
 					<div class="pull-left">
-					<input type="text" class="form-control search" placeholder="Search...">
+					<input id="searchSiteProj" type="text" class="form-control search" placeholder="Search...">
 				</div>
-					<div class="table-container">
+					<div id="projTable" class="table-container">
 						<table id='active' class="table table-filter">
 							<tbody>
 							{if $smartyProjectsActive|@count == 0}
@@ -74,7 +84,7 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectsActive[$i]['projectid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectsActive[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" role="button">
 												<h4 class="title2">
 													{$smartyProjectsActive[$i]['name']}
 													<span class="pull-right active">{$smartyProjectsActive[$i]['projectstatus']}</span>
@@ -132,6 +142,10 @@
 											</a>
 											</div>
 											
+											<div class="pull-center">
+											<button id="{$smartyProjectsBanned[$i]['projectid']}" type='button' class='btn btn-success btn-sm' onClick="removeProj(this)">Remove banned status</button>
+											</div>
+											
 										</div>
 									</td>
 								</tr>
@@ -139,7 +153,6 @@
 								{/if}
 							</tbody>
 						</table>
-						<a class='pull-right' href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteProjects.php'>Show all site projects</a>
 					</div>
 			</div>
 		</div>

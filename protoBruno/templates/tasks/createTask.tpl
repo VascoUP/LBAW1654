@@ -1,40 +1,38 @@
 <link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
-<link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 
-<div class="container">
-    <div class="card card-container">
-        <form class="form-horizontal" action="{$BASE_URL}actions/projects/createTask.php?itID={$smartyItID}" method="post">
-            <fieldset>
-            <!-- Form Name -->
-                <legend>Add Task</legend>
+<div id='profile-content' class='profile-content'>
+    <form class="form-horizontal" action="{$BASE_URL}actions/projects/createTask.php?projID={$smartyProjID}&itID={$smartyItID}" method="post">
+        <fieldset>
+        <!-- Form Name -->
+            <legend>Add Task</legend>
 
-            <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="TaskName">Identification</label>  
+        <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="TaskName">Identification</label>  
+                <div class="col-md-4">
                     <div class="col-md-4">
-                        <div class="col-md-4">
-                            <input id="TaskName" name="TaskName" type="text" placeholder="Task name" class="form-control form-style input-md">
-                        </div>
+                        <input id="TaskName" name="TaskName" type="text" placeholder="Task name" class="form-control form-style input-md">
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="Priority">Priority</label>  
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Priority">Priority</label>  
+                <div class="col-md-4">
                     <div class="col-md-4">
-                        <div class="col-md-4">
-                            <input id="Priority" name="Priority" type="text" placeholder="Priority" class="form-control form-style input-md">
-                        </div>
+                        <input id="Priority" name="Priority" type="text" placeholder="Priority" class="form-control form-style input-md">
                     </div>
                 </div>
-                
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="Effort">Effort</label>  
+            </div>
+            
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Effort">Effort</label>  
+                <div class="col-md-4">
                     <div class="col-md-4">
-                        <div class="col-md-4">
-                            <input id="Effort" name="Effort" type="text" placeholder="Effort" class="form-control form-style input-md">
-                        </div>
+                        <input id="Effort" name="Effort" type="text" placeholder="Effort" class="form-control form-style input-md">
                     </div>
                 </div>
+            </div>
 
             <!-- Text input-->
             <div class="form-group">
@@ -53,8 +51,6 @@
                 </div>
             </div>
 
-            </fieldset>
-        </form>
-    </div>
-</div>
+        </fieldset>
+    </form>
 </div>

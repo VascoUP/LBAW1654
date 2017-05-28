@@ -50,6 +50,21 @@
     return $result;
   }
   
+  function getThreadInfo($thread){
+	  try {
+			global $conn;
+			$stmt = $conn->prepare("SELECT title, date 
+									FROM Thread
+									WHERE threadID = ?");
+								
+			$stmt->execute(array($thread));
+			$result = $stmt->fetchAll();
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+    return $result;
+  }
+  
   function getProject($threadID){
 	  try {
 			global $conn;
@@ -89,9 +104,8 @@
 			$stmt->bindParam(':title', $title);
 			$stmt->bindParam(':date', $date);
 			$stmt->execute();
-			echo "done";
 		} catch(Exception $e) {
-			echo $e->getMessage();
+			return $e->getMessage();
 		}
   }
   
@@ -113,7 +127,6 @@
   function addComment($thread, $user, $content, $date){
 	  try {
 			global $conn;
-			$date = date('Y-m-d');
 			$stmt = $conn->prepare("INSERT INTO Comment(threadID, userID, content, date) 
 									VALUES (:threadID, :userID, :content, :date)");
 								
@@ -121,6 +134,7 @@
 			$stmt->bindParam(':userID', $user);
 			$stmt->bindParam(':content', $content);
 			$stmt->bindParam(':date', $date);
+			$stmt->execute();
 		} catch(Exception $e) {
 			echo $e->getMessage();
 		}
@@ -137,6 +151,7 @@
 			$stmt->bindParam(':userID', $user);
 			$stmt->bindParam(':content', $content);
 			$stmt->bindParam(':date', $date);
+			$stmt->execute();
 		} catch(Exception $e) {
 			echo $e->getMessage();
 		}

@@ -22,6 +22,8 @@
 	
 	$smarty->assign('smartyUsers', $users);
 	$smarty->assign('smartyProjs', $projects);
+
+  include_once($BASE_DIR .'database/prepareNotifications.php');
 	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/general/searchResults.tpl');

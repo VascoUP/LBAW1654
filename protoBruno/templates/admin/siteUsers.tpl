@@ -22,7 +22,11 @@
 					<tr>
 						<td>
 							<div class="media-body">
-								<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsers[$i]['userid']}" role="button">
+								{if $smartyUsersActive[$i]['type'] != 'administrator'}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersActive[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
+											{else}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php" role="button">
+											{/if}
 									<h4 class="title">
 										{$smartyUsers[$i]['username']}
 									</h4>

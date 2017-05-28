@@ -15,7 +15,7 @@
   $confirm = $_POST['confirm'];
 
   if(empty($_SESSION['username'])){
-	if(preg_match('/[a-z0-9]*/', $username)&& ctype_lower($username)){
+	if(preg_match('/^[a-z0-9_\-]+$/', $username)){
 	    if(usernameExists($username)|| emailExists($email)){
 	    		        $_SESSION['form_values'] = $_POST;
         		        $_SESSION['field_errors']['username'] = 'Email or Username already exists';

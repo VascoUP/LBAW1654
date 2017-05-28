@@ -1,25 +1,46 @@
 <link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
+<link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
 <link href="{$BASE_URL}css/pages/search.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
+<script src="{$BASE_URL}javascript/admin/search.js"></script>
 
 <div class="container">
-	<div class="card card-container">
-		<div class="overlay">
-			<select id="order" name="order" onchange="getResults()">
-				<option value="name ASC">Alphabetical A->Z</option>
-				<option value="name DESC">Alphabetical Z->A</option>
-			</select>
+	<div class="overlay">
+		<div class="results">
+		<select id="order" name="order">
+			<option value="ASC">Alphabetical A->Z</option>
+			<option value="DESC">Alphabetical Z->A</option>
+		</select>
+		<input id="users" type="checkbox" name="users" value="Users">Search user<br>
+		<input id="projs" type="checkbox" name="projects" value="Projects">Search project
+		<button id="filter" type="button" class="btn btn-primary btn-filter" >Apply Filters</button>
 		</div>
-		<div class="table-container">
-			<table id="tableUser" class="table table-filter"  style="float: left">
+	</div>
+	
+	
+	<div class="card card-container first" id="first">
+		<h3 class="title">Users</h3>
+		<div class="table-container" id="containerResultsUser">
+			<table id="tableUser" class="table table-filter">
 				<tbody>
+				{if $smartyUsers|@count == 0}
+				<h4 class="title">
+				Any users found
+				</h4>
+				{/if}
 				{for $i=0 to ($smartyUsers|@count - 1)}
 					<tr>
 						<td>
 							<div class="media">
 								<div class="media-body">
-									<h4 class="title">{$smartyUsers[$i]['username']}</h4>
+									<h4 class="title">
+									{if $smartyUsers[$i]['type'] != 'administrator'}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?searchUser={$smartyUsers[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}">
+											{else}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php" role="button">
+											{/if}
+										{$smartyUsers[$i]['username']}</a></h4>
 									<p class="summary">{$smartyUsers[$i]['email']}</p>
 								</div>
 							</div>
@@ -28,14 +49,25 @@
 				{/for}
 				</tbody>
 			</table>
-			<table id="tableProj" class="table table-filter"  style="float: left">
+		</div>
+	</div>
+	
+	<div class="card card-container second" id="second">
+		<h3 class="title">Projects</h3>
+		<div class="table-container" id="containerResultsProj">
+			<table id="tableProject" class="table table-filter">
+			{if $smartyProjs|@count == 0}
+				<h4 class="title">
+				Any projects found
+				{/if}
 				<tbody>
 					{for $i=0 to ($smartyProjs|@count - 1)}
 					<tr>
 						<td>
 							<div class="media">
 								<div class="media-body">
-									<h4 class="title">{$smartyProjs[$i]['name']}</h4>
+									<h4 class="title">
+									<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjs[$i]['projectid']}">{$smartyProjs[$i]['name']}</a></h4>
 									<p class="summary">{$smartyProjs[$i]['description']}</p>
 								</div>
 							</div>
@@ -46,5 +78,4 @@
 			</table>
 		</div>
 	</div>
-</div>
 </div>

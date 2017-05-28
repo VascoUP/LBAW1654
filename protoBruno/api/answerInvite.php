@@ -9,11 +9,9 @@
 	
 	if($data['accepted'] == true) {
 		$result = acceptInvite($userID, $projID);
-		echo "Accepted\n";
 	}
 	else {
 		$result = removeInvitedStatus($userID, $projID);
-		echo "Refused\n";
 	}
 	
 	echo $data['accepted'];

@@ -14,6 +14,12 @@
 
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="{$BASE_URL}javascript/users/recovery.js"></script>
+		<script type="text/javascript" src="//platform.linkedin.com/in.js">
+			api_key: 77kxu7awkxp106
+			authorize: true
+			onLoad: onLinkedInLoad
+		</script>
+	<script type="text/javascript" src="{$BASE_URL}javascript/templates/linkedin.js"></script>
 	</head>
 	<!-- NAVBAR
 	================================================== -->
@@ -44,18 +50,6 @@
 							</li>
 							<li>
 								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php#contact">Contact</a>
-							</li>
-						</ul>
-						<ul class="nav navbar-nav navbar-center">
-							<li class="hidden">
-								<a href="#page-top"></a>
-							</li>
-							<li>
-								<form class="form-inline navbar-form">								
-									<div class="input-group">
-										<input type="text" class="form-control search" placeholder="Search...">
-									</div>
-								</form>
 							</li>
 						</ul>
 					</div>

@@ -25,21 +25,21 @@
 		}
 	}
 	
-	function removeBanStatusUser($userID)
+	function removeBanStatusUser($user)
 	{
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE UserSite
 										SET userStatus = 'active'
-										WHERE userID = ?");	
+										WHERE userid = ?");	
 												
-			$stmt->execute(array($userID));
+			$stmt->execute(array($user));
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
 	}
 	
-	function removeBanStatusProj($projID)
+	function removeBanStatusProj($proj)
 	{
 		try {
 			global $conn;
@@ -47,7 +47,7 @@
 										SET projectStatus = 'active'
 										WHERE projectID = ?");	
 
-			$stmt->execute(array($projID));
+			$stmt->execute(array($proj));
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}

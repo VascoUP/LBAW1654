@@ -16,9 +16,10 @@
 	
 		$message =
 		"Click in the link below to recover your passord.
-					https://gnomo.fe.up.pt/~lbaw1654/final/pages/users/recoverPassword.php
+		
+		https://gnomo.fe.up.pt/~lbaw1654/final/pages/users/recoverPassword.php
 
-		( This is an automated message, please do not reply to this message, if you have any queries please contact YM@hotmail.com )";
+		( This is an automated message, please do not reply to this message, if you have any questions please contact YM@hotmail.com )";
 		
 		$sent = mail($to, $subject, $message, $headers);
 		

@@ -4,13 +4,14 @@
 	include_once($BASE_DIR .'database/Users/userInformation.php'); 	
 
 	$id = $_GET['itID'];
+	$projID = $_GET['projID'];
 	$userInfo = getUserInformation($_SESSION['username']);
 	$userID = $userInfo['0']['userid'];
 	
 	if (!$_POST['Priority'] || !$_POST['TaskName'] || !$_POST['Effort']){
 		$_SESSION['error_messages'][] = 'All fields are mandatory';
 		$_SESSION['form_values'] = $_POST;
-		header("Location: $BASE_URL" . 'pages/project/task/createTask.php?itID='.$id);
+		header("Location: $BASE_URL" . 'pages/project/task/createTask.php?projID=' . $projID . '&itID='.$id);
 		exit;
 	}
 	
@@ -23,5 +24,5 @@
 	addTask($name, $priority, $description, $effort, $id, $userID);
  
   $_SESSION['success_messages'][] = 'Task created successfully';  
- header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?itID='.$id);
+ header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?projID=' . $projID . '&itID='.$id);
 ?>

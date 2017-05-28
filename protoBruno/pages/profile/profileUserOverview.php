@@ -9,11 +9,28 @@
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 	include_once($BASE_DIR .'database/invites.php');
 	
-	$userInfo = getUserInformation($_SESSION['username']);
+	if(!isset($_GET['searchUser']))
+		$userID = getUserInformation($_SESSION['username'])['0']['userid'];
+	else
+		$userID = $_GET['searchUser'];
+	
+	$first = $_GET['user'];
+	$smarty->assign('smartyUser', $first);
+	
+	$userInfoFirst = getUserInformationByID($first);
+	$smarty->assign('smartyUserInfoFirst', $userInfoFirst);
+	
+	$userInfo = getUserInformationByID($userID);
   	$smarty->assign('smartyUsrInfo', $userInfo);
-
-	$projectInvites = invitedProjects($userInfo[0]['userid']);
+	
+	if(isset($_GET['searchUser']))
+		$projectInvites = invitedProjects($first);
+	else
+		$projectInvites = invitedProjects($userInfo[0]['userid']);
+	
   	$smarty->assign('smartyProjInvites', $projectInvites);
+
+  include_once($BASE_DIR .'database/prepareNotifications.php');
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
 	$smarty->display($BASE_DIR .'templates/profiles/profileUsrOverview.tpl');

@@ -23,26 +23,36 @@
             <!-- SIDEBAR MENU -->
             <div class='profile-usermenu'>
                 <ul class='nav'>
-                    <li class='active'>
-                        <a href='#'>
+                    <li>
+                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php'>
                         <i class='glyphicon glyphicon-home'></i>
                         Overview </a>
                     </li>
                     <li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php'>
-                        <i class='glyphicon glyphicon-user'></i>
+                        <i class='glyphicon glyphicon-pencil'></i>
                         Account Settings </a>
                     </li>
-                    <li>
+                    <li> 
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteProjects.php'>
-                        <i class='glyphicon glyphicon-ok'></i>
+                        <i class='glyphicon glyphicon-file'></i>
                         Site Projects</a>
                     </li>
-					<li>
+					<li class='active'>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php'>
-                        <i class='glyphicon glyphicon-ok'></i>
+                        <i class='glyphicon glyphicon-user'></i>
                         Site Users</a>
                     </li>
+					<li>
+						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/reportedList.php'>
+                        <i class='glyphicon glyphicon-remove'></i>
+                        Reported List</a>
+					</li>
+					<li>
+						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteStatistics.php'>
+                        <i class='glyphicon glyphicon-stats'></i>
+                        Site Statistics</a>
+					</li>
                 </ul>
             </div>
 				<!-- END MENU -->
@@ -56,13 +66,13 @@
 							<button id="buttontInactive" type="button" class="btn btn-primary btn-filter" data-target="inactive">Inactive</button>
 							<button id="buttonReported" type="button" class="btn btn-warning btn-filter" data-target="reported">Reported</button>
 							<button id="buttonBanned" type="button" class="btn btn-danger btn-filter" data-target="bannned">Banned</button>
-							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteUsers.php' type="button" class="btn btn-default btn-filter" data-target="all">All</a>
+							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteUsers.php?user={$smartyUsrInfo['0']['userid']}' type="button" class="btn btn-default btn-filter" data-target="all">All</a>
 						</div>
 					</div>
 					<div class="pull-left">
-					<input type="text" class="form-control search" placeholder="Search...">
+					<input id="searchSiteUsers" type="text" class="form-control search" placeholder="Search...">
 				</div>
-					<div class="table-container">
+					<div id="usersTable" class="table-container">
 						<table id="tableActive" class="table table-filter">
 							<tbody>
 								{if $smartyUsersActive|@count == 0}
@@ -73,7 +83,11 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersActive[$i]['userid']}" role="button">
+											{if $smartyUsersActive[$i]['type'] != 'administrator'}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersActive[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
+											{else}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php" role="button">
+											{/if}
 												<h4 class="title2">
 													{$smartyUsersActive[$i]['username']}
 													<span class="pull-right active">{$smartyUsersActive[$i]['userstatus']}</span>
@@ -104,7 +118,7 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersInactive[$i]['userid']}" role="button">
+												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersInactive[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
 												<h4 class="title2">
 													{$smartyUsersInactive[$i]['username']}
 													<span class="pull-right active">{$smartyUsersInactive[$i]['userstatus']}</span>
@@ -135,7 +149,7 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersReported[$i]['userid']}" role="button">
+												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersReported[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
 												<h4 class="title2">
 													{$smartyUsersReported[$i]['username']}
 													<span class="pull-right active">{$smartyUsersReported[$i]['userstatus']}</span>
@@ -180,6 +194,10 @@
 												<img src="{$BASE_URL}images/assets/loginImage.png" class='media-photo' alt=''>
 											{/if}
 											</div>
+											
+											<div class="pull-center">
+											<button id="{$smartyUsersBanned[$i]['userid']}" type='button' class='btn btn-success btn-sm' onClick="removeUser(this)">Remove banned status</button>
+											</div>
 										</div>
 									</td>
 								</tr>
@@ -187,7 +205,6 @@
 								{/if}
 							</tbody>
 						</table>
-						<a class='pull-right' href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteUsers.php'>Show all site users</a>
 					</div>
 			</div>
 		</div>

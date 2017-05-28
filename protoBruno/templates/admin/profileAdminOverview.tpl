@@ -46,19 +46,29 @@
                     </li>
                     <li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php'>
-                        <i class='glyphicon glyphicon-user'></i>
+                        <i class='glyphicon glyphicon-pencil'></i>
                         Account Settings </a>
                     </li>
                     <li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteProjects.php'>
-                        <i class='glyphicon glyphicon-ok'></i>
+                        <i class='glyphicon glyphicon-file'></i>
                         Site Projects</a>
                     </li>
 					<li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php'>
-                        <i class='glyphicon glyphicon-ok'></i>
+                        <i class='glyphicon glyphicon-user'></i>
                         Site Users</a>
                     </li>
+					<li>
+						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/reportedList.php'>
+                        <i class='glyphicon glyphicon-remove'></i>
+                        Reported List</a>
+					</li>
+					<li>
+						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteStatistics.php'>
+                        <i class='glyphicon glyphicon-stats'></i>
+                        Site Statistics</a>
+					</li>
                 </ul>
             </div>
             <!-- END MENU -->
