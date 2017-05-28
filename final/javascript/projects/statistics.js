@@ -11,7 +11,6 @@ function init() {
 	
 	if(thread != 0 || task != 0){
 		google.charts.setOnLoadCallback(drawChart);
-		google.charts.setOnLoadCallback(drawChart2);
 	
       function drawChart() {
 		thread = eval(thread);

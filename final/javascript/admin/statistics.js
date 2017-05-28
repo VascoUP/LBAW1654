@@ -97,10 +97,6 @@ function init() {
 		}
 	}
 	
-	console.log(reportUser);
-	console.log(reportTask);
-	console.log(reportThread);
-	console.log(reportProj);
 	if( reportUser != 0 || reportTask != 0 || reportThread != 0 || reportProj != 0){
 		google.charts.setOnLoadCallback(drawChart4);
 		
