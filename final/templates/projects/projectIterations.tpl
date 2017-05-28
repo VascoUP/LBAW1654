@@ -6,7 +6,6 @@
 <script type="text/javascript" src="{$BASE_URL}javascript/templates/paginatedTables.js"></script>
 
 <div id='profile-content' class='profile-content'>
-  <a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjID}">Project</a>
   <h2>Iterations</h2>
   <p>This is where you'll find the project iterations</p>
   {if $smartyIterations|@count != 0}
@@ -24,7 +23,9 @@
           <th class='cell-stat text-center hidden-xs hidden-sm'>Start date</th>
           <th class='cell-stat text-center hidden-xs hidden-sm'>Due date</th>
           <th class='cell-stat text-center hidden-xs hidden-sm'>Status</th>
+		  {if $userIsCoord}
           <th class='column join button'></th>
+		  {/if}
         </tr>
       </thead>
       <tbody>
@@ -46,7 +47,7 @@
         {/if}
           </td>
           <td>
-        {if $numberTasksCompleted[$i] != $smartyIterationsCounter[$i] || $smartyIterationsCounter[$i] == 0}
+        {if $userIsCoord && ($numberTasksCompleted[$i] != $smartyIterationsCounter[$i] || $smartyIterationsCounter[$i] == 0) }
             <a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/editIteration.php?projID={$smartyProjID}&itID={$smartyIterations[$i]['iterationid']}">Edit <br> Iteration</a>
         {/if}
           </td>
@@ -56,5 +57,7 @@
     </table>
   </div>
   {/if}
+  {if $userIsCoord}
   <a id="addIteration" role="button" class="btn btn-success" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/createIteration.php?projID={$smartyProjID}">Add Iteration</a>
+  {/if}
 </div>

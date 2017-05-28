@@ -41,8 +41,11 @@
     $smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/projects/projectForum.tpl');
     $smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/projects/projectSideBar.tpl');
 	$smarty->assign('varSideBar', 4);
-    
-    $smarty->display($BASE_DIR .'templates/common/header.tpl');
+	$smarty->assign('collaborator', $isCollaborator);
+	$smarty->assign('userIsCoord', $userIsCoord);
+	$smarty->assign('type', $userType);
+  
+    $smarty->display($BASE_DIR .'templates/common/header.tpl'); 
   	$smarty->display($BASE_DIR .'templates/page.tpl');
     $smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>
