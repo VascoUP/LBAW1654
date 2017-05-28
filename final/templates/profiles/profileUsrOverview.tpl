@@ -3,14 +3,8 @@
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel='stylesheet'>
 
 <div class='container'>
-
-    {if !$smartyUsrInfo['0']['description'] && !$smartyUsrInfo['0']['curriculumvitae']}
-        <div class='card card-container'>
-            <div id='form-login'>
-    {else}
         <div class='row profile'>
             <div class='col-md-3'>
-    {/if}
 
         <div class='profile-sidebar'>
             <!-- SIDEBAR USERPIC -->
@@ -77,8 +71,6 @@
 				{/if}
             </div>
     </div>
-    
-    {if $smartyUsrInfo['0']['description'] || $smartyUsrInfo['0']['curriculumvitae']}
         <div class='col-md-9'>
             <div id='profile-content' class='profile-content'>
                 

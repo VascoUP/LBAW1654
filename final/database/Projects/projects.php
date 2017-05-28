@@ -1,10 +1,11 @@
 <?php
 	include($BASE_DIR .'database/Users/userInformation.php');
 	
-  function createProject($projName, $description, $access) {
+  function createProject($projName, $description, $access, $tags) {
 	
 	try {
 		global $conn;
+		$conn->beginTransaction();
 		
 		if($access === 'public')
 			$typeAccess = 1;
@@ -20,7 +21,37 @@
 		$stmt->bindParam(':access', $typeAccess);
 		$stmt->bindParam(':status', $status);
 		$stmt->execute();
+		
+		$id = getProjectID($projName);
+		
+		foreach($tags as $tag){
+			$stmt = $conn->prepare("SELECT *
+									FROM Tag
+									WHERE name = ?");
+			$stmt->execute(array($tag));
+			$result = $stmt->fetchAll();
+			
+			if(count($result) == 0){
+				$stmt = $conn->prepare("INSERT INTO Tag(name) VALUES(:name)");
+				$stmt->bindParam(':name', $tag);
+				$stmt->execute();
+			}
+			
+			$stmt = $conn->prepare("SELECT tagID FROM Tag WHERE name = ?");
+			$stmt->execute(array($tag));
+			
+			$result = $stmt->fetchAll();
+			$tagID = $result['0']['tagid'];
+			
+			$stmt = $conn->prepare("INSERT INTO TagProject(tagID, projectID) VALUES(:tagID, :projID)");
+			$stmt->bindParam(':tagID', $tagID);
+			$stmt->bindParam(':projID', $id);
+			$stmt->execute();
+		}
+		
+		$conn->commit();
 	} catch(Exception $e) {
+		$conn->rollBack();
 		return $e->getMessage();
 	}
 

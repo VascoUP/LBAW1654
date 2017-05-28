@@ -80,11 +80,22 @@ include($BASE_DIR .'database/Users/userInformation.php');
 		try {
 			global $conn;	
 			
+			$conn->beginTransaction();
+			
+			$stmt = $conn->prepare("DELETE FROM ProjectCoordinator WHERE userID = ?");
+			$stmt->execute(array($id));
+
+			$stmt = $conn->prepare("DELETE FROM ProjectUsers WHERE userID = ?");
+			$stmt->execute(array($id));
+			
 			$stmt = $conn->prepare("UPDATE UserSite
 									SET userStatus = 'inactive'
-									WHERE username = ?");
-			$stmt->execute(array($username));
+									WHERE userID = ?");
+			$stmt->execute(array($id));
+			
+			$conn->commit();
 		} catch(Exception $e) {
+			$conn->rollBack();
 			return $e->getMessage();
 		}
   }
