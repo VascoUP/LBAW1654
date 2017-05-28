@@ -37,20 +37,34 @@
                         <i class='glyphicon glyphicon-home'></i>
                         Overview </a>
                     </li>
+					{if !$smartyUser}
                     <li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php'>
                         <i class='glyphicon glyphicon-pencil'></i>
                         Account Settings </a>
                     </li>
+					{/if}
                     <li>
+					{if $smartyUser}
+						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?user={$smartyUser}&userInfo={$smartyUsrInfo['0']['userid']}'>
+                        <i class='glyphicon glyphicon-ok'></i>
+                        User Projects</a>
+					{else}
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?userInfo={$smartyUsrInfo['0']['userid']}'>
                         <i class='glyphicon glyphicon-ok'></i>
                         My Projects</a>
+					{/if}
                     </li>
 					<li>
+					{if $smartyUser}
+						<a href='	https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userStatistics.php?user={$smartyUser}&userInfo={$smartyUsrInfo['0']['userid']}'>
+                        <i class='glyphicon glyphicon-stats'></i>
+                        User Statistics</a>
+					{else}
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userStatistics.php?userInfo={$smartyUsrInfo['0']['userid']}'>
                         <i class='glyphicon glyphicon-stats'></i>
                         My Statistics</a>
+					{/if}
                     </li>
                 </ul>
             </div>
