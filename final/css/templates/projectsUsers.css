@@ -104,6 +104,7 @@ h3#Userbannedh3, h3#reportedH3, h3#handledH3,
 h3#UserreportedH3, h3#reportedTaskH3, h3#reportedThreadH3, h3#without{
 	margin: 70px;
 	color: #00134d;
+	text-align: center;
 }
 
 .pull-center{

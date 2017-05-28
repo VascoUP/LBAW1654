@@ -19,6 +19,5 @@
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
   	$smarty->display($BASE_DIR .'templates/page.tpl');
-	//$smarty->display($BASE_DIR .'templates/profiles/profileUsrOverview.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
 ?>

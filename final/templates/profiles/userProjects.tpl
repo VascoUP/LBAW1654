@@ -19,12 +19,12 @@
     <div id="userProjTable" class="table-container">
         <table id="top5body" class="table table-filter">
             <tbody>
-                {for $i=0 to ($top|@count-1)}
+            {for $i=0 to ($top|@count-1)}
                 <tr>
                     <td>
                     {if $top|@count == 0}
-                <h3 id="projh3">{$smartyUsrInfo['0']['username']} doesn't have any project</h3>
-                {/if}
+                        <h3 id="projh3">{$smartyUsrInfo['0']['username']} doesn't have any project</h3>
+                    {/if}
                         <div class="media">
                             <div class="media-body">
                                 <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectPage.php?projID={$top[$i]['projectid']}" role="button">
@@ -41,7 +41,7 @@
                         </div>
                     </td>
                 </tr>
-                {/for}
+            {/for}
             </tbody>
         </table>
         <table id="coordbody" class="table table-filter">

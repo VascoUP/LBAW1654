@@ -14,8 +14,8 @@
   include_once($BASE_DIR .'database/projectInfo.php');
 
   $smarty->assign('smartyUsrInfo', $userInfo);
-  $smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/profiles/profileUsrOverview.tpl');
-  $smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/profiles/profileSidebar.tpl');
+  $smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/projects/projectPage.tpl');
+  $smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/projects/projectSideBar.tpl');
   $smarty->assign('varSideBar', 1);
   $smarty->assign('collaborator', $isCollaborator);
   $smarty->assign('userIsCoord', $userIsCoord);
