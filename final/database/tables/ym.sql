@@ -239,10 +239,10 @@ CREATE TABLE IterationsPermissions
 CREATE TABLE ContactsSite
 (	
 	contactAdminID serial PRIMARY KEY,
-	userName varchar(200),
-	phone bigint,
-	email varchar(100),
-	content varchar(10000)
+	userName varchar(200) NOT NULL,
+	phone bigint NOT NULL,
+	email varchar(100) NOT NULL,
+	content varchar(10000) NOT NULL
 );
 
 CREATE TABLE ContactsUser

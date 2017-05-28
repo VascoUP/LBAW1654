@@ -71,9 +71,11 @@
 
         <!-- END SIDEBAR USER TITLE -->
             <!-- SIDEBAR BUTTONS -->
+			{if $smartyUsrInfo['0']['type'] != 'administrator'}
             <div class='profile-userbuttons'>
                 <a class='btn btn-success btn-sm'>Contact</a>
             </div>
+			{/if}
     </div>
         <div class='col-md-9'>
             <div id='profile-content' class='profile-content'>
