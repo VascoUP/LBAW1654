@@ -1,4 +1,11 @@
 <?
+	include_once($BASE_DIR .'database/Iterations/iterarions.php');
+	include_once($BASE_DIR .'database/Users/userInformation.php');
+
+	function userHasPremission($itID) {
+		return userWithPermission(getUserID($_SESSION['username'], $itID));
+	}
+
 	function getInfoTask($taskID){
 		try {
 			global $conn;
@@ -30,6 +37,8 @@
 	}
 
 	function updateTaskName($name, $id){
+		if(	!preg_match('/^[a-Z0-9 \-]+$/i', $name) )
+			return 'Invalid input';
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Task
@@ -56,6 +65,8 @@
 	}
 
 	function updateEffort($effort, $id){
+		if(	!filter_var($priority, FILTER_SANITIZE_NUMBER_INT) )
+			return 'Invalid input';
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Task
@@ -95,6 +106,8 @@
 	}
 
 	function updateTaskDescription($description, $id){
+		if(	!preg_match('/^[a-Z0-9 .\-]+$/i', $description) )
+			return 'Invalid input';
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Task
@@ -108,6 +121,12 @@
 	}
 
 	function addTask($name, $priority, $description, $effort, $itID, $userID){
+		if(	userHasPremission($itID) !== true || 
+			!preg_match('/^[a-Z0-9 \-]+$/i', $name) ||
+			!filter_var($priority, FILTER_SANITIZE_NUMBER_INT) ||
+			!preg_match('/^[a-Z0-9 .\-]+$/i', $description) )
+			return 'Invalid input';
+
 		try {
 			global $conn;
 			

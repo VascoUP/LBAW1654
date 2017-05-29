@@ -1,5 +1,8 @@
 <?php
   	function updateProjName($name, $id){
+		if(!preg_match('/^[a-z0-9 \-]+$/i', $name))
+			return 'Invalid name';
+		
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Project
@@ -11,7 +14,10 @@
 		}
 	}
 	
- 	function updateOverview($overview, $id) {		
+ 	function updateOverview($overview, $id) {
+		if(!preg_match('/^[a-z0-9 .\-]+$/i', $overview))
+			return 'Invalid overview';
+
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Project SET description = ? WHERE projectID = ?");

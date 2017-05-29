@@ -1,5 +1,8 @@
 <?php
 	function updatePassword($email, $password){
+		if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+			return 'Invalid input';
+			
 		try {
 			global $conn;
 			$update = $conn->prepare("UPDATE UserSite SET password = ? WHERE email = ?");

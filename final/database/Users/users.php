@@ -2,6 +2,9 @@
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 
 	function createUser($username, $email, $password) {
+		if(	!preg_match('/^[a-z0-9]+$/i', $username) ||
+			!filter_var($email, FILTER_VALIDATE_EMAIL))
+			return 'Invalid input';
 		try {
 			global $conn;
 			$passwordHash = password_hash($password, PASSWORD_DEFAULT);
@@ -23,6 +26,8 @@
 	}
 
 	function emailExists($email) {
+		if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+			return 'Invalid input';
 		try {
 			global $conn;
 
@@ -36,6 +41,8 @@
 	}
 
 	function usernameExists($username) {
+		if(!preg_match('/^[a-z0-9]+$/i', $username))
+			return 'Invalid input';
 		try {
 			global $conn;
 			$stmt = $conn->prepare('SELECT * FROM UserSite WHERE username = ?');
@@ -48,6 +55,8 @@
 	}
 
 	function isLoginCorrect($username, $password) {
+		if(	!preg_match('/^[a-z0-9]+$/i', $username))
+			return 'Invalid input';
 		try {
 			global $conn;
 			$stmt = $conn->prepare("SELECT * 
@@ -76,6 +85,8 @@
 	}
 
 	function deleteUser($username) {
+		if(	!preg_match('/^[a-z0-9]+$/i', $username))
+			return 'Invalid input';
 		$id = getUserID($username);
 		try {
 			global $conn;	

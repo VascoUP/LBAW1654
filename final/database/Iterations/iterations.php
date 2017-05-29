@@ -26,6 +26,9 @@
 	}
 
 	function updateIterationDescription($description, $itID){
+		if(	!preg_match('/^[a-Z0-9 .\-]+$/i', $description) )
+			return 'Invalid input';
+
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Iteration
@@ -39,6 +42,8 @@
 	}
 
 	function updateMaximum($max, $itID){
+		if(	!filter_var($max, FILTER_SANITIZE_NUMBER_INT) )
+			return 'Invalid input';
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Iteration
@@ -91,6 +96,8 @@
 	}
 
 	function updateName($name, $itID){
+		if(	!preg_match('/^[a-Z0-9 .\-]+$/i', $name) )
+			return 'Invalid input';
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Iteration
@@ -104,6 +111,11 @@
 	}
 
 	function addIteration($ID, $name, $description, $startDate, $max, $dueDate){
+		if(	!preg_match('/^[a-Z0-9 .\-]+$/i', $name) || 
+			!filter_var($max, FILTER_SANITIZE_NUMBER_INT) ||
+			!preg_match('/^[a-Z0-9 .\-]+$/i', $description) )
+			return 'Invalid input';
+
 		try {
 			global $conn;
 			$stmt = $conn->prepare("INSERT INTO Iteration(projectID, name, description, startDate, dueDate, maximumEffort)
@@ -121,7 +133,6 @@
 			$result = $stmt->fetchAll()['0']['iterationid'];
 
 			return $result;
-			
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}

@@ -70,8 +70,7 @@
       $stmt = $conn->prepare("SELECT COUNT(DISTINCT ProjectCoordinator.userID) AS userIsCoordinator
                             FROM ProjectCoordinator
                             WHERE ProjectCoordinator.projectID = ?
-                                AND ProjectCoordinator.UserId = ?
-                            ");
+                            AND ProjectCoordinator.UserId = ?");
       $stmt->execute(array($ProjID, $UserID));
       $result = $stmt->fetchAll();
       } catch(Exception $e) {

@@ -1,5 +1,19 @@
 <?php
+	include_once($BASE_DIR .'database/Users/userInformation.php');
+
+	function userIsAdmin() {
+		$user = $_SESSION['username'];
+		$userInfo = getUserInformation($user);
+		$userType = $userInfo[0]['type'];
+		if( !($user && $userType == 'administrator') )
+			return false;
+		return true;
+	}
+
   	function banUser($userID){
+		if( userIsAdmin() === false )
+			return 'You don\'t have the required premissions to access this functionality';
+
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE UserSite
@@ -13,6 +27,9 @@
 	}
 	
 	function banProject($projID){
+		if( userIsAdmin() === false )
+			return 'You don\'t have the required premissions to access this functionality';
+
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Project
@@ -25,8 +42,10 @@
 		}
 	}
 	
-	function removeBanStatusUser($user)
-	{
+	function removeBanStatusUser($user) {
+		if( userIsAdmin() === false )
+			return 'You don\'t have the required premissions to access this functionality';
+
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE UserSite
@@ -39,8 +58,10 @@
 		}
 	}
 	
-	function removeBanStatusProj($proj)
-	{
+	function removeBanStatusProj($proj) {
+		if( userIsAdmin() === false )
+			return 'You don\'t have the required premissions to access this functionality';
+			
 		try {
 			global $conn;
 			$stmt = $conn->prepare("UPDATE Project

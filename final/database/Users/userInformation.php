@@ -45,6 +45,9 @@
   	}
   
   	function updateUsername($username){
+		if(	!preg_match('/^[a-z0-9]+$/i', $username) )
+			return 'Invalid input';
+
 		$id = getUserID($_SESSION['username']);
 		try {
 			global $conn;
@@ -60,7 +63,9 @@
 		$_SESSION['username'] = $username;
  	}
   
-  	function updateEmail($email){
+  	function updateEmail($email) {
+		if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+			return 'Invalid input';
 		$id = getUserID($_SESSION['username']);
 		try {
 			global $conn;
@@ -88,6 +93,8 @@
   	}
   
  	function updateDescription($overview){
+		if(	!preg_match('/^[a-Z0-9 .\-]+$/i', $overview) )
+			return 'Invalid input';
 		$id = getUserID($_SESSION['username']);
 		try {
 			global $conn;

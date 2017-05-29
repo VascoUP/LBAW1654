@@ -1,5 +1,9 @@
 <?php
-	function inviteToProject($user, $project){
+	include_once($BASE_DIR .'database/Projects/projectInformation.php');
+
+	function inviteToProject($user, $project) {
+		if( isCoordinatorInProject($_SESSION['username']) != 1 )
+			return "Unable to invite users to this project";
 		if( checkWorkingOnProject($user, $project) == true )
 			return "Working on the project";
 			
@@ -18,7 +22,7 @@
 			$stmt->execute();
 			
 		} catch(Exception $e) {
-			return $e->getMessage() . " - " . $invitedate;
+			return $e->getMessage();
 		}
 	}
 

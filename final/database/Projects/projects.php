@@ -2,14 +2,17 @@
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 
 	function createProject($projName, $description, $access, $tags) {
+		if(	!preg_match('/^[a-z0-9 \-]+$/i', $projName) || 
+			!preg_match('/^[a-z0-9 \-]+$/i', $description))
+			return 'Invalid project information';
+
 		try {
 			global $conn;
 			$conn->beginTransaction();
 			
-			if($access === 'public')
+			if($access === 'public') 
 				$typeAccess = 1;
-			else
-				$typeAccess = 0;
+			else $typeAccess = 0;
 			
 			$status = 'active';
 
@@ -23,7 +26,10 @@
 			
 			$id = getProjectID($projName);
 			
-			foreach($tags as $tag){
+			foreach($tags as $tag) {
+				if(	!preg_match('/^[a-z0-9 \-]+$/i', $tag) )
+					return 'Invalid project information';
+
 				$stmt = $conn->prepare("SELECT *
 										FROM Tag
 										WHERE name = ?");
@@ -97,6 +103,8 @@
 
 	function addTags($tags, $id){
 		foreach($tags as $tag){
+			if(	!preg_match('/^[a-z0-9 \-]+$/i', $tag) )
+				continue;
 			try{
 				global $conn;
 				

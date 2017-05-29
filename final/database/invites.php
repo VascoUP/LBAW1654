@@ -54,8 +54,6 @@
 		 catch(Exception $e) {
 			return $e->getMessage() . " - " . $invitedate;
 		}
-		
-		return "Success " . $user . " - " . $project;
     }
 	
 	function removeInvitedStatus($userID, $projID){

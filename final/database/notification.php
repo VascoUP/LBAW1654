@@ -1,5 +1,7 @@
 <?
-	function sendNotification($reportID, $content){
+	function sendNotification($reportID, $content) {
+		if(	!preg_match('/^[a-Z0-9 .\-]+$/i', $content))
+			return 'Invalid input';
 		try {
 			global $conn;
 			$date = date('Y-m-d');
