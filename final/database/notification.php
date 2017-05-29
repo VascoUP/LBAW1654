@@ -1,8 +1,6 @@
 <?
-
-function sendNotification($reportID, $content){
-
-	try {
+	function sendNotification($reportID, $content){
+		try {
 			global $conn;
 			$date = date('Y-m-d');
 			$status = 'waiting';
@@ -16,7 +14,6 @@ function sendNotification($reportID, $content){
 			$stmt->execute();
 		} catch(Exception $e) {
 			return $e->getMessage();
-		}
-		
-}
+		}		
+	}
 ?>

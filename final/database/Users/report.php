@@ -1,7 +1,6 @@
 <?
-
-function reportUser($user, $content){
-	try {
+	function reportUser($user, $content){
+		try {
 			global $conn;
 			$date = date('Y-m-d');
 			$status = 'waiting';
@@ -15,10 +14,10 @@ function reportUser($user, $content){
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-}
+	}
 
-function reportTask($task, $content){
-	try {
+	function reportTask($task, $content){
+		try {
 			global $conn;
 			$date = date('Y-m-d');
 			$status = 'waiting';
@@ -32,10 +31,10 @@ function reportTask($task, $content){
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-}
+	}
 
-function reportThread($thread, $content){
-	try {
+	function reportThread($thread, $content){
+		try {
 			global $conn;
 			$date = date('Y-m-d');
 			$status = 'waiting';
@@ -49,10 +48,10 @@ function reportThread($thread, $content){
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-}
+	}
 
-function reportProject($proj, $content){
-	try {
+	function reportProject($proj, $content){
+		try {
 			global $conn;
 			$date = date('Y-m-d');
 			$status = 'waiting';
@@ -66,6 +65,5 @@ function reportProject($proj, $content){
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-}
-
+	}
 ?>

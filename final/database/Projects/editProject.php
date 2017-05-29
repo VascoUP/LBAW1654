@@ -11,19 +11,17 @@
 		}
 	}
 	
- 	function updateOverview($overview, $id){		
+ 	function updateOverview($overview, $id) {		
 		try {
 			global $conn;
-			$stmt = $conn->prepare("UPDATE Project
-										SET description = ?
-										WHERE projectID = ?");
+			$stmt = $conn->prepare("UPDATE Project SET description = ? WHERE projectID = ?");
 			$stmt->execute(array($overview, $id));
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
   	}
 	
-	function updateAccess($access, $id){		
+	function updateAccess($access, $id) {		
 		try {
 			global $conn;
 			if($access === 'public')
@@ -61,4 +59,5 @@
 			echo $e->getMessage();
 		}
   	}
+	
 ?>
