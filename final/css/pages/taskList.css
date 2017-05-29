@@ -22,7 +22,7 @@
 .table>tbody>tr>td {
     vertical-align: middle;
     background-color: white;
-    min-width: 100 px;
+    min-width: 100px;
 }
 
 .task.table {
@@ -165,5 +165,4 @@ h2 {
 
 #label_tasks_header {
     color: white;
-    !important
 }

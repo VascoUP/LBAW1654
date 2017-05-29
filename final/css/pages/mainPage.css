@@ -296,16 +296,6 @@ section#contact .text-danger {
   text-shadow: none;
   background: #fed136;
 }
-::selection {
-  text-shadow: none;
-  background: #fed136;
-}
-img::selection {
-  background: transparent;
-}
 img::-moz-selection {
   background: transparent;
-}
-body {
-  webkit-tap-highlight-color: #fed136;
 }
