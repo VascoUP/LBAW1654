@@ -20,7 +20,7 @@
 	$smarty->assign('smartyTaskID', $id);
 	$smarty->assign('smartyTaskStatus', $status);
   	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/tasks/editTask.tpl');
-  	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/projects/projectSideBar.tpl');
+  	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'templates/projects/projectSideBar.tpl');
 	$smarty->assign('varSideBar', 3);
 	$smarty->assign('collaborator', $isCollaborator);
 	$smarty->assign('userIsCoord', $userIsCoord);

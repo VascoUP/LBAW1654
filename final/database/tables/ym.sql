@@ -624,7 +624,7 @@ INSERT INTO TaskUser(taskID, userID) VALUES (56,12);
 CREATE OR REPLACE FUNCTION checkCoords()
 	RETURNS TRIGGER AS $checkCoords$ 
 	BEGIN
-        IF (SELECT COUNT(*) FROM ProjectCoordinator WHERE projectID = Project.projectID) = 1
+        IF (SELECT COUNT(*) FROM ProjectCoordinator WHERE ProjectCoordinator.projectID = NEW.projectID) = 1
         THEN RAISE EXCEPTION 'Project needs coordinators! ';
         END IF;
         RETURN OLD;
@@ -632,23 +632,8 @@ CREATE OR REPLACE FUNCTION checkCoords()
 $checkCoords$ LANGUAGE plpgsql;
 
 CREATE TRIGGER checkCoords
-BEFORE DELETE ON Project
+BEFORE DELETE ON ProjectCoordinator
 EXECUTE PROCEDURE checkCoords();
-
-CREATE OR REPLACE FUNCTION checkIterarions()
-	RETURNS TRIGGER AS $checkIterarions$
-	BEGIN
-        IF (SELECT COUNT(*) FROM Task INNER JOIN Iteration ON Task.iterationID = Iteration.iterationID WHERE Task.taskStatus = 'active') > 0 
-        THEN RAISE EXCEPTION ' Not all tasks are completed yet! ';
-        END IF;
-        RETURN OLD;
-	END;
-$checkIterarions$ LANGUAGE plpgsql;
-
-CREATE TRIGGER checkDeleteIteration
-BEFORE DELETE ON Iteration
-FOR EACH ROW
-EXECUTE PROCEDURE checkIterarions();
 
 CREATE OR REPLACE FUNCTION checkEffort()
 	RETURNS TRIGGER AS $checkEffort$
@@ -714,21 +699,6 @@ AFTER INSERT ON TaskUser
 FOR EACH ROW 
 EXECUTE PROCEDURE changeTaskStatus();
 
-DROP FUNCTION IF EXISTS changeTaskStatusDeleteProject();
-CREATE FUNCTION changeTaskStatusDeleteProject()
-RETURNS TRIGGER AS $changeTaskStatusDeleteProject$
-	BEGIN
-		UPDATE Task
-		SET taskStatus = 'completed'
-		WHERE iterationID IN (SELECT iterationID FROM Iteration WHERE projectID = OLD.projectID);
-		RETURN NEW;
-	END;
-$changeTaskStatusDeleteProject$ LANGUAGE plpgsql;
-
-CREATE TRIGGER changeTaskStatusDeleteProject
-BEFORE DELETE ON Project
-FOR EACH ROW 
-EXECUTE PROCEDURE changeTaskStatusDeleteProject();
 		
 
 SELECT Project.projectID AS "Project ID", Project.name AS "Project name", Tag.name AS "Tag name"

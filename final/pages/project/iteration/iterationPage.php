@@ -36,7 +36,7 @@
 	$smarty->assign('smartyNumberTasks', $numberTasks);
 	$smarty->assign('smartyPermission', $userPermissions);
  	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/iterations/iterationPage.tpl');
-  	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/projects/projectSideBar.tpl');
+  	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'templates/projects/projectSideBar.tpl');
 	$smarty->assign('collaborator', $isCollaborator);
 	$smarty->assign('userIsCoord', $userIsCoord);
   	$smarty->assign('varSideBar', 3);
