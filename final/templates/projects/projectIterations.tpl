@@ -20,9 +20,7 @@
           <th class='cell-stat text-center hidden-xs hidden-sm'>Number of tasks</th>
           <th class='cell-stat text-center hidden-xs hidden-sm'>Maximum effort</th>
           <th class='cell-stat text-center hidden-xs hidden-sm'>Start date</th>
-		  {if $smartyIterations[$i]['duedate']}
           <th class='cell-stat text-center hidden-xs hidden-sm'>Due date</th>
-		  {/if}
           <th class='cell-stat text-center hidden-xs hidden-sm'>Status</th>
 		  {if $userIsCoord}
           <th class='column join button'></th>
@@ -41,6 +39,8 @@
           <td class='text-center hidden-xs hidden-sm'><a>{$smartyIterations[$i]['startdate']}</a></td>
 		  {if $smartyIterations[$i]['duedate']}
           <td class='text-center hidden-xs hidden-sm'><a>{$smartyIterations[$i]['duedate']}</a></td>
+          {else}
+          <td class='text-center hidden-xs hidden-sm'><a>not set</a></td>
 		  {/if}
           <td id = 'completed' class='text-center hidden-xs hidden-sm'>
         {if $numberTasksCompleted[$i] != $smartyIterationsCounter[$i] || $smartyIterationsCounter[$i] == 0}
