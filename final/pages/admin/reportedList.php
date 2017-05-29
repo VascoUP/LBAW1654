@@ -21,7 +21,7 @@
 		else if($h['taskid'])
 			$namesHandled[] = getInfoTask($h['taskid'])['0']['name'];
 		else if($h['threadid'])
-			$namesHandled[] = getThreadInfo($h['threadid'])['0']['title'];	
+			$namesHandled[] = getThreadInfo($h['threadid'])['0']['title'];
 		else if($h['projectid'])
 			$namesHandled[] = getProjectInformation($h['projectid'])['0']['name'];
 	}
@@ -34,7 +34,7 @@
 		else if($r['threadid'])
 			$namesReported[] = getThreadInfo($r['threadid'])['0']['title'];	
 		else if($r['projectid'])
-			$namesHandled[] = getProjectInformation($r['projectid'])['0']['name'];
+			$namesReported[] = getProjectInformation($r['projectid'])['0']['name'];
 	}
 	
 	$userReport = getUsersReported();

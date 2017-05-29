@@ -72,9 +72,9 @@
 	function handlerReport($id){
 		try {
 			global $conn;
-		
-			$stmt = $conn->prepare("UPDATE Report SET reportStatus = 'handled' WHERE reportid = ?");
-			$stmt->execute(array($id));
+			$date = date('Y-m-d');
+			$stmt = $conn->prepare("UPDATE Report SET reportStatus = 'handled', handledDate = ? WHERE reportid = ?");
+			$stmt->execute(array($date, $id));
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}

@@ -166,15 +166,23 @@
 												<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/profileUserOverview.php?searchUser={$userReport[$i]['userid']}&user={$smartyUsrID}" role="button">
 													<h4 class="title2">
 														{$usernames[$i]}
-														<span class="pull-right active">Report date: {$userReport[$i]['reportdate']}</span>
+														<span class="pull-right active">
+														{if $userReport[$i]['reportstatus'] == 'waiting'}Report date: {$userReport[$i]['reportdate']}
+														{else}
+														Handled date: {$userReport[$i]['handleddate']}
+														{/if}
+														</span>
 													</h4>
 												</a>
+
 												<p class="summary">{$userReport[$i]['content']}</p>
 											</div>
 										</div>
+										{if $userReport[$i]['reportstatus'] == 'waiting'}
 										<div class="pull-center">
 											<button id="{$reported[$i]['reportid']}" type='button' class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
 										</div>
+										{/if}
 									</td>
 								</tr>
 								{/for}
@@ -196,15 +204,20 @@
 
 												<h4 class="title2">
 													{$names[$i]}
-													<span class="pull-right active">Report date: {$taskReport[$i]['reportdate']}</span>
+													<span class="pull-right active">{if $taskReport[$i]['reportstatus'] == 'waiting'}Report date: {$taskReport[$i]['reportdate']}
+													{else}Handled date: {$taskReport[$i]['handleddate']}
+													{/if}
+													</span>
 												</h4>
 											</a>
 											<p class="summary">{$taskReport[$i]['content']}</p>
 											</div>
 										</div>
+										{if $taskReport[$i]['reportstatus'] == 'waiting'}
 										<div class="pull-center">
 											<button id="{$reported[$i]['reportid']}" type='button' class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
 										</div>
+										{/if}
 									</td>
 								</tr>
 								{/for}
@@ -226,15 +239,20 @@
 
 												<h4 class="title2">
 													{$titles[$i]}
-													<span class="pull-right active">Report date: {$threadReport[$i]['reportdate']}</span>
+													<span class="pull-right active">{if $threadReport[$i]['reportstatus'] == 'waiting'}Report date: {$threadReport[$i]['reportdate']}
+													{else}Handled date: {$threadReport[$i]['handleddate']}
+													{/if}
+													</span>
 												</h4>
 											</a>
 											<p class="summary">{$threadReport[$i]['content']}</p>
 											</div>
 										</div>
+										{if $threadReport[$i]['reportstatus'] == 'waiting'}
 										<div class="pull-center">
 											<button id="{$reported[$i]['reportid']}" type='button' class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
 										</div>
+										{/if}
 									</td>
 								</tr>
 								{/for}
@@ -256,15 +274,20 @@
 
 												<h4 class="title2">
 													{$projNames[$i]}
-													<span class="pull-right active">Report date: {$projReport[$i]['reportdate']}</span>
+													<span class="pull-right active">{if $projReport[$i]['reportstatus'] == 'waiting'}Report date: {$projReport[$i]['reportdate']}
+													{else}Handled date: {$projReport[$i]['handleddate']}
+													{/if}
+													</span>
 												</h4>
 											</a>
 											<p class="summary">{$projReport[$i]['content']}</p>
 											</div>
 										</div>
+										{if $projReport[$i]['reportstatus'] == 'waiting'}
 										<div class="pull-center">
 											<button id="{$reported[$i]['reportid']}" type='button' class='btn btn-success btn-sm' onClick="handled(this)">Handled</button>
 										</div>
+										{/if}
 									</td>
 								</tr>
 								{/for}
