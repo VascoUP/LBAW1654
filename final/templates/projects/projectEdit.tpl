@@ -28,6 +28,7 @@
                 <label class="col-md-4 control-label" for="description">Description</label>  
                 <div class="col-md-4">
                     <input id="description" name="description" type="text" placeholder="Description" class="form-control form-style input-md">
+                    <span class="field_error" >{$FIELD_ERRORS.description}</span>
                     <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Description</button>
                 </div>
             </div>

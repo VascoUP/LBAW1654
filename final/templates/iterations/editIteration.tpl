@@ -1,7 +1,7 @@
 <link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
 
 <div id='profile-content' class='profile-content'>
-    <form class="form-horizontal" action="{$BASE_URL}actions/projects/editIteration.php?itID={$smartyItID}" method="post">
+    <form id="editing" class="form-horizontal" action="{$BASE_URL}actions/projects/editIteration.php?itID={$smartyItID}" method="post">
         <h2>Edit Iteration</h2>
 
         <fieldset>
@@ -11,6 +11,7 @@
                 <label class="col-md-4 control-label" for="ItName">Name</label>
                 <div class="col-md-4">
                     <input id="ItName" name="ItName" type="text" placeholder="Name" class="form-control form-style input-md">
+                    <span class="field_error" >{$FIELD_ERRORS.iterations}</span>
                 </div>
             </div>
 

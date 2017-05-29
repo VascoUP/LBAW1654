@@ -22,7 +22,7 @@
         </fieldset>
     </form>
 
-    <form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
+    <form id = "email" class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
         <fieldset>
         <!-- Form Name -->
         <legend class="tab">Email</legend>
@@ -30,7 +30,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="email">Email Address</label>  
                 <div class="col-md-4">
-                    <input id="email" name="email" type="text" placeholder="Email Address" class="form-control form-style input-md">
+                    <input id="email" name="email" type="email" placeholder="Email Address" class="form-control form-style input-md" required>
                     <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Email</button>
                 </div>
         </div>
@@ -71,27 +71,27 @@
         </div>
     </form>
 
-    <form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
+    <form id= "password" class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
         <fieldset>
         <!-- Form Name -->
         <legend class="tab">Password</legend>
         <div class="form-group">
             <label for="password" class="col-md-4 control-label">Password</label>
                 <div class="col-md-4">
-                    <input type="password" class="form-control form-style input-md" name="password" id="password"  placeholder="Enter your Password"/>
+                    <input id="pass1" type="password" class="form-control form-style input-md" name="password" id="password"  placeholder="Enter your Password"/>
                 </div>
         </div>
         <div class="form-group">
             <label for="confirm" class="col-md-4 control-label">Confirm Password</label>
                 <div class="col-md-4">
-                    <input type="password" class="form-control form-style input-md" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+                    <input id="pass2" type="password" class="form-control form-style input-md" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
                     <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Password</button>
                 </div>
         </div>
         </fieldset>
         </form>
         
-        <form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
+        <form  id="over" class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
         <fieldset>
         <!-- Form Name -->
         <legend class="tab" id="tab">Overview</legend>

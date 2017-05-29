@@ -13,7 +13,12 @@
 			die();
 		}
 	else if($_POST['description'])
-		updateOverview($_POST['description'], $id);
+		$result = updateOverview($_POST['description'], $id);
+				if ($result) {
+        		    $_SESSION['field_errors'][description] = 'Description too long';
+        		    header("Location: https://gnomo.fe.up.pt" . $BASE_URL ."pages/project/projectEdit.php?projID=" .$id);
+        			die();
+        		}
 	else if($_POST['tags']){
 		$tags = explode(';', $_POST['tags']);
 		addTags($tags, $id);
