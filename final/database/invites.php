@@ -59,7 +59,6 @@
     }
 	
 	function removeInvitedStatus($userID, $projID){
-        echo "remove invite $userID -  $projID\n";
 		try {
             global $conn;
             $stmt = $conn->prepare("DELETE FROM ProjectUsers WHERE projectID = ? AND userID = ?");
@@ -71,7 +70,6 @@
 	}
 	
 	function acceptInvite($userID, $projID){
-        echo "accept invite $userID -  $projID\n";
 		try {
             global $conn;
             $stmt = $conn->prepare("UPDATE ProjectUsers 

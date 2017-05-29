@@ -6,13 +6,11 @@
 	
 	$userID = $data['userid'];
 	$projID = $data['projid'];
-	
-	if($data['accepted'] == true) {
+
+	if($data['accepted'] == true)
 		$result = acceptInvite($userID, $projID);
-	}
-	else {
+	else
 		$result = removeInvitedStatus($userID, $projID);
-	}
 	
 	echo $data['accepted'];
 ?>
