@@ -5,9 +5,12 @@
 	include("{$BASE_DIR}database/Projects/inviteAndTags.php");
 
 	$id = $_GET['projID'];
-	
 	if($_POST['name'])
-		updateProjName($_POST['name'], $id);
+		$result = updateProjName($_POST['name'], $id);
+		if ($result) {
+		    $_SESSION['field_errors'][name] = 'Name too long';
+		    header("Location: ../../pages/project/projectEdit.php?projID=" .$id);
+		}
 	else if($_POST['description'])
 		updateOverview($_POST['description'], $id);
 	else if($_POST['tags']){
@@ -20,11 +23,12 @@
 		if( $result ) {
 			$string = urlencode($result);
 			header("Location: ../../pages/message.php?result={$string}");
+
 			exit("Stop");
 		}
 	}
 	else if($_POST['access'])
 		updateAccess($_POST['access'], $id);
 
-	header("Location: ../../pages/project/projectPage.php?projID=" .$id);
+
 ?>

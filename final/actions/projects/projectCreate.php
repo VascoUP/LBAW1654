@@ -5,8 +5,9 @@
 	if (!$_POST['projName'] || !$_POST['overview'] || !$_POST['access']) {
 		$_SESSION['error_messages'][] = 'All fields are mandatory';
 		$_SESSION['form_values'] = $_POST;
-		header("Location: $BASE_URL" . 'pages/project/general/projectCreate.php');
+		header("Location: $BASE_URL" . 'pages/project/projectCreate.php');
 		exit;
+
 	}
 
   $name = strip_tags($_POST['projName']);
@@ -14,8 +15,16 @@
   $access = strip_tags($_POST['access']);
   $tags = explode(' ; ', $_POST['tags']);
 	
-  createProject($name, $overview, $access, $tags);
+ $result = createProject($name, $overview, $access, $tags);
+ if($result){
+     $_SESSION['field_errors'][projCreate] = 'Name or Description too long.';
+     header("Location: $BASE_URL" . 'pages/project/projectCreate.php');
+ }
+ else{
+   $_SESSION['success_messages'][] = 'Project created successfully';
+   header('Location: ' .$BASE_URL.'pages/project/projectPage.php?projID='.$id);
+ }
   
-  $_SESSION['success_messages'][] = 'Project created successfully';  
-  header('Location: ' .$BASE_URL.'pages/project/projectPage.php?projID='.$id);
+
+
 ?>

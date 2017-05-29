@@ -1,3 +1,4 @@
+<link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
 <div id='profile-content' class='profile-content'>
     <form class="form-horizontal" action="{$BASE_URL}actions/projects/projectEdit.php?projID={$smartyProjID}" method="post">
         <!-- Form Name -->
@@ -11,6 +12,7 @@
                 <label class="col-md-4 control-label" for="name">Name</label>  
                 <div class="col-md-4">
                     <input type='text' name='name' id='name' class="form-control form-style input-md" placeholder='ex: PIU'>
+                    <span class="field_error" >{$FIELD_ERRORS.name}</span>
                     <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Name</button>
                 </div>
             </div>
