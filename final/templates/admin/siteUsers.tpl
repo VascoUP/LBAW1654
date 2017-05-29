@@ -27,7 +27,7 @@
 					<h3 id="userh3">This site doesn't have any users registered</h3>
 				{else}
 				{for $i=0 to ($smartyUsers|@count-1)}
-						</td>
+						</td> 
 					</tr>
 					<tr>
 						<td>

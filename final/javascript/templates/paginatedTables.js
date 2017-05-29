@@ -10,5 +10,5 @@ $(document).ready(function() {
     $('#tableUser').DataTable( {
         "pagingType": "full_numbers"
     } );
-    
+
 } );
