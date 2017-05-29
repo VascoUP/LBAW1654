@@ -4,7 +4,7 @@
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel='stylesheet'>
 
 <div id='profile-content' class='profile-content'>
-{if !$smartyUsrInfo['0']['description'] || !$smartyUsrInfo['0']['curriculumvitae']}
+{if !$smartyUsrInfo['0']['description'] && !$smartyUsrInfo['0']['curriculumvitae']}
 	<h3 id="without">   This place is destined to show the biography and curriculum vitae of the administrator  </h3>
 {/if}
 {if $smartyUsrInfo['0']['description']}
