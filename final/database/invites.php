@@ -44,8 +44,8 @@
 			$userStatusProject = 'requested';
 			$stmt = $conn->prepare("INSERT INTO ProjectUsers(userID, projectID, inviteDate, userStatusProject) 
 									VALUES(:userID, :projectID, :inviteDate, :userStatusProject)");
-			$stmt->bindParam(':userID', $user);
-			$stmt->bindParam(':projectID', $project);
+			$stmt->bindParam(':userID', $userID);
+			$stmt->bindParam(':projectID', $projectID);
 			$stmt->bindParam(':inviteDate', $invitedate);
 			$stmt->bindParam(':userStatusProject', $userStatusProject);
 			$stmt->execute();
