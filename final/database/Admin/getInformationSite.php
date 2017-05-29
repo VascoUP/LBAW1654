@@ -92,12 +92,11 @@
 	function searchProjects($name){
 		try {
 			global $conn;
-			$stmt = $conn->prepare("SELECT DISTINCT Project.name AS name, Project.description AS description, Project.projectID AS projectID, Project.projectStatus AS projectStatus
+			$stmt = $conn->prepare("SELECT DISTINCT Project.name AS name, Project.description AS description, Project.projectID AS projectID, Project.projectStatus AS projectStatus, Project.access
 									FROM Project, Tag, TagProject
 									WHERE Project.access = '1'
 									AND (to_tsvector('english', Project.name) @@ to_tsquery('english', ?)
 									OR Project.name ILIKE '%' || ? || '%'
-									AND Project.access = '1'
 									OR (to_tsvector('english', Tag.name) @@ to_tsquery('english', ?)
 									OR Tag.name ILIKE '%' || ? || '%'
 									AND TagProject.tagID = Tag.tagID
