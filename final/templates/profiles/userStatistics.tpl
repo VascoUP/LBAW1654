@@ -31,5 +31,4 @@
 			<p class="number"><strong>Number of iterations: </strong>{$userStatistics['iterations']}</p>
 			<p class="number"><strong>Number of tasks: </strong>{$userStatistics['tasks']}</p>
 		</div>
-	</div>
 </div>

@@ -42,7 +42,7 @@
                         My Projects</a>
                 {/if}
                 </li>
-                <li>
+                <li {if $varSideBar == 4} class='active' {/if}>
                 {if !$smartyUser}
                     <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/userStatistics.php?userInfo={$smartyUsrInfo['0']['userid']}">
                         <i class='glyphicon glyphicon-stats'></i>

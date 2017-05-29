@@ -105,7 +105,7 @@ input::-webkit-input-placeholder {
 }
 
 .update, .task, #create, #delete, #deleteProj, #editName,
-#editDates, #editEffort, #editDescription{
+#editDates, #editEffort, #editDescription, #givePermission, #forumCreate{
 	display: table;
     margin: 0 auto;
 }

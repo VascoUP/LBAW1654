@@ -90,7 +90,7 @@
                 <label for="givePermission" class="col-md-4 control-label">Give Permission</label>
                 <div class="col-md-4">
                     <input name='givePermission' id='givePermission' type='text' class="form-control form-style input-md" placeholder='ex: aed1123'>
-                    <button id="update" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Add User</button>
+                    <button id="givePermission" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Add User</button>
                 </div>
             </div>
         </fieldset>

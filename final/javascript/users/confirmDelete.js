@@ -8,7 +8,7 @@
 				return false;
 		});
 		
-		$('#deleteCoord').click(function() {
+		$('.deleteCoord').click(function() {
 			var x = confirm("Are you sure you want to delete this project?");
 			if (x)
 				return true;

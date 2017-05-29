@@ -13,7 +13,7 @@
 {/if}
     <br>
 {if $smartyUsrInfo['0']['curriculumvitae']}
-    <h3>Curriculum Vitae</h3>
+    <h2>Curriculum Vitae</h2>
     <a href="https://gnomo.fe.up.pt{$BASE_URL}documents/{$smartyUsrInfo['0']['curriculumvitae']}" download>{$smartyUsrInfo['0']['curriculumvitae']}</a>
 {/if}
 </div>

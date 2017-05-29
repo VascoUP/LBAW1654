@@ -26,8 +26,8 @@ Username
 				{if $smartyProjects|@count == 0}
 					<h3 id="projecth3">This site doesn't have any projects created</h3>
 				{else}
+				</td>
 				{for $i=0 to ($smartyProjects|@count-1)}
-						</td>
 					</tr>
 					<tr>
 						<td>

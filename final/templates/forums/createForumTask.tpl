@@ -8,7 +8,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label"></label>
                 <div class="col-md-4">
-                    <button type="submit" id="addTask" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Create Forum</button>
+                    <button type="submit" id="forumCreate" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Create Forum</button>
                 </div>
             </div>
         </fieldset>

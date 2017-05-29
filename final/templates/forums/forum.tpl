@@ -1,7 +1,7 @@
 <link href="{$BASE_URL}css/pages/thread.css" rel="stylesheet">
 <script src="{$BASE_URL}javascript/users/comment.js"></script>
 
-<div id='profile-content' class='profile-content'>
+<div id='profile-content' class='profile-content forum'>
 {if $smartyTaskID}
 	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?projID={$smartyProjID}&taskID={$smartyTaskID}"> Task </a>
 {/if}
