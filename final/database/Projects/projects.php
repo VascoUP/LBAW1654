@@ -105,7 +105,8 @@
 
 	function addTags($tags, $id){
 		foreach($tags as $tag){
-			if(	!preg_match('/^[a-z0-9 \-]+$/i', $tag) )
+			$tag = trim($tag);
+			if(	!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $tag) )
 				continue;
 			try{
 				global $conn;

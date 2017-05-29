@@ -15,7 +15,7 @@
 	else if($_POST['description'])
 		updateOverview($_POST['description'], $id);
 	else if($_POST['tags']){
-		$tags = explode(' ; ', $_POST['tags']);
+		$tags = explode(';', $_POST['tags']);
 		addTags($tags, $id);
 	}
 	else if($_POST['joinUser']) {

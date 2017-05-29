@@ -37,11 +37,9 @@
                         <div class="media">
                             <div class="media-body">
                                 <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectPage.php?projID={$top[$i]['projectid']}" role="button">
-                                    <h4 class="title">
-                                        {$top[$i]['name']}
-                                    </h4>
+                                    <h4 class="title">{$top[$i]['name']}</h4>
                                 </a>
-                                <p class="summary">{$projects[$i]['description']}</p>
+                                <p class="summary">{$top[$i]['description']}</p>
                             </div>
                         </div>
                     </td>
@@ -106,7 +104,7 @@
                                         {$projectsCollab[$i]['name']}
                                     </h4>
                                 </a>
-                                <p class="summary">{$projects[$i]['description']}</p>
+                                <p class="summary">{$projectsCollab[$i]['description']}</p>
                             </div>
                         </div>
                     </td>

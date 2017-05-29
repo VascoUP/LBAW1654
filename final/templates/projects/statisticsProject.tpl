@@ -8,7 +8,7 @@
 
 <div class="container">
 	<div class="card card-container">
-	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$projID}">Project</a>
+	<a class='hiper' href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectPage.php?projID={$projID}">Project</a>
 		<h3 class="title">Statistics</h3>
 		<div class="table-container">
 			<h4>Main Information</h4>

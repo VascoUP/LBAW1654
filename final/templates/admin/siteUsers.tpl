@@ -9,7 +9,7 @@
 
 <div class="container">
 	<div class="card card-container">
-		<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php"> Site Users </a>
+		<a class='hiper' href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/profileAdminSiteUsers.php"> Site Users </a>
 
 		<div class="table-container">
 			<table class="table table-filter" id="page_table">
@@ -33,9 +33,9 @@
 						<td>
 							<div class="media-body">
 								{if $smartyUsersActive[$i]['type'] != 'administrator'}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersActive[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
+											<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/profileUserOverview.php?searchUser={$smartyUsersActive[$i]['userid']}&user={$smartyUsrID}" role="button">
 											{else}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php" role="button">
+											<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/profileAdminOverview.php" role="button">
 											{/if}
 									<h4 class="title">
 										{$smartyUsers[$i]['username']}

@@ -34,32 +34,32 @@
 				<div class='profile-usermenu'>
 					<ul class='nav'>
 						<li>
-							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php'>
+							<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/profileAdminOverview.php">
 							<i class='glyphicon glyphicon-home'></i>
 							Overview </a>
 						</li>
 						<li>
-							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php'>
+							<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/editProfile.php">
 							<i class='glyphicon glyphicon-pencil'></i>
 							Account Settings </a>
 						</li>
 						<li class='active'>
-							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteProjects.php'>
+							<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/profileAdminSiteProjects.php">
 							<i class='glyphicon glyphicon-file'></i>
 							Site Projects</a>
 						</li>
 						<li>
-							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php'>
+							<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/profileAdminSiteUsers.php">
 							<i class='glyphicon glyphicon-user'></i>
 							Site Users</a>
 						</li>
 						<li>
-							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/reportedList.php'>
+							<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/reportedList.php">
 							<i class='glyphicon glyphicon-remove'></i>
 							Reported List</a>
 						</li>
 						<li>
-							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteStatistics.php'>
+							<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/siteStatistics.php">
 							<i class='glyphicon glyphicon-stats'></i>
 							Site Statistics</a>
 						</li>
@@ -75,7 +75,7 @@
 							<button id="button-active" class="btn btn-success btn-filter" data-target="active">Active</button>
 							<button id="button-reported" class="btn btn-warning btn-filter" data-target="reported">Reported</button>
 							<button id="button-banned" class="btn btn-danger btn-filter" data-target="banned">Banned</button>
-							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteProjects.php'  class="btn btn-default btn-filter">All</a>
+							<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/siteProjects.php"  class="btn btn-default btn-filter">All</a>
 						</div>
 					</div>
 					<div class="pull-left">
@@ -98,7 +98,7 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectsActive[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" role="button">
+												<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectPage.php?projID={$smartyProjectsActive[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" role="button">
 													<h4 class="title2">
 														{$smartyProjectsActive[$i]['name']}
 														<span class="pull-right active">{$smartyProjectsActive[$i]['projectstatus']}</span>
@@ -128,7 +128,7 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-												<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectsReported[$i]['projectid']}" role="button">
+												<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectPage.php?projID={$smartyProjectsReported[$i]['projectid']}" role="button">
 													<h4 class="title2">
 														{$smartyProjectsReported[$i]['name']}
 														<span class="pull-right reported">{$smartyProjectsReported[$i]['projectstatus']}</span>
@@ -158,7 +158,7 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectsBanned[$i]['projectid']}" role="button">
+											<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectPage.php?projID={$smartyProjectsBanned[$i]['projectid']}" role="button">
 												<h4 class="title2">
 													{$smartyProjectsBanned[$i]['name']}
 													<span class="pull-right banned">{$smartyProjectsBanned[$i]['projectstatus']}</span>

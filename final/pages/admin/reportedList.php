@@ -49,7 +49,7 @@
 		
 	$threadReport = getThreadReported();
 	$titles = array();
-	foreach($threadReport as $threadRep)
+	foreach($threadReport as $threadRep) 
 		$titles[] = getThreadInfo($threadRep['threadid'])['0']['title'];
 		
 	$projReport = getProjectReported();
@@ -57,6 +57,7 @@
 	foreach($projReport as $proj)
 		$projNames[] = getProjectInformation($proj['projectid'])['0']['name'];
 
+  	$smarty->assign('smartyUsrID', $userInfo[0]['userid']);
   	$smarty->assign('smartyUsrInfo', $userInfo);
   	$smarty->assign('smartyProjInvites', $projectInvites);
 	$smarty->assign('handled', $handled);

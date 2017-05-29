@@ -4,7 +4,7 @@
 <div class="card card-container">	
         <h2>Contact</h2>
             <hr>
-                <form class="form-horizontal" action="https://gnomo.fe.up.pt/~lbaw1654/final/actions/admin/contactUser.php?userID={$userID}&second={$secondUser}" method="POST" id="contact_form">
+                <form class="form-horizontal" action="https://gnomo.fe.up.pt{$BASE_URL}actions/admin/contactUser.php?userID={$userID}&second={$secondUser}" method="POST" id="contact_form">
                     <fieldset>
 						
 						<div class="form-group">
