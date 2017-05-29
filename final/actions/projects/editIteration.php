@@ -20,6 +20,6 @@
 	else if($_POST['Description'])
 		updateIterationDescription($_POST['Description'], $id);
  
-	$_SESSION['success_messages'][] = 'Iteration updated successfully';  
-	header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?projID=' . $projID . '&itID='.$id);
+  $_SESSION['success_messages'][] = 'Iteration updated successfully';  
+  header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?projID=' . $projID . '&itID='.$id);
 ?>
