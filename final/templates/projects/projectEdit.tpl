@@ -1,3 +1,6 @@
+<script src="{$BASE_URL}javascript/users/confirmDelete.js"></script>
+<link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
+
 <div id='profile-content' class='profile-content'>
     <form class="form-horizontal" action="{$BASE_URL}actions/projects/projectEdit.php?projID={$smartyProjID}" method="post">
         <!-- Form Name -->
@@ -65,7 +68,7 @@
     </form>
     <br>
     <br>
-    <form class="form-horizontal" action="{$BASE_URL}actions/projects/deleteProject.php?projID={$smartyProjID}" method="post">
+    <form class="form-horizontal" action="{$BASE_URL}actions/projects/deleteProject.php?projID={$smartyProjID}&userID={$smartyUsrInfo['0']['userid']}" method="post">
         <fieldset>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="deleteProj">Delete Project</label>

@@ -21,7 +21,6 @@
                 <table class="task table" id="page_table">
                     <thead>
                         <tr>
-                            <th class="task meta line"></th>
                             <th class="main_column">Tasks</th>
                             <th class="column state">State</th>
                             <th class="column priority">Priority</th>
@@ -36,7 +35,6 @@
                     {for $i=0 to ($smartyTasks|@count-1)}
                         <!-- Tasks -->
                         <tr>
-                            <td class="task entry"><i class="fa fa-question fa-2x text-primary"></i></td>
                             <td>
                                 <h4><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?projID={$smartyProjID}&taskID={$smartyTasks[$i]['taskid']}">{$smartyTasks[$i]['name']}</a><br><small>{$smartyTasks[$i]['description']}</small></h4>
                             </td>

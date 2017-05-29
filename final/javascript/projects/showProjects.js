@@ -16,7 +16,6 @@ function init() {
 				'text': text,
 				'userID': userID
 			}
-			
 			$('#collabh3').hide();
 			$('#coordh3').hide();
 			$("#top5body").hide();

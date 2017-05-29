@@ -4,13 +4,6 @@
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 
 <div class="card card-container">
-	<a class='hiper' href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/userProjects.php?userInfo={$userID}"> Projects </a>
-	<div class="overlay">
-		<select id="order" name="order" onchange="getResults()">
-			<option value="name ASC">Alphabetical A->Z</option>
-			<option value="name DESC">Alphabetical Z->A</option>
-		</select>
-	</div>
 	<div class="table-container">
 		<table class="table table-filter">
 			<tbody>

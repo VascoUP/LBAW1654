@@ -232,11 +232,10 @@
 	try {
 		global $conn;
 		$stmt = $conn->prepare("SELECT DISTINCT Project.name AS name, Project.description AS description, Project.projectID as projectID
-								FROM Project, ProjectCoordinator, ProjectUsers
-								WHERE (ProjectCoordinator.userID = ?
+								FROM Project
+								WHERE (Project.projectID IN (SELECT ProjectCoordinator.projectID FROM ProjectCoordinator WHERE ProjectCoordinator.userID = ?
 								AND Project.projectID = ProjectCoordinator.projectID)
-								OR (ProjectUsers.userID = ?
-								AND Project.projectID = ProjectUsers.projectID)
+								OR Project.projectID IN (SELECT ProjectUsers.projectID FROM ProjectUsers WHERE ProjectUsers.userID = ?))
 								AND (to_tsvector('english', Project.name) @@ to_tsquery('english', ?)
 								OR Project.name ILIKE '%' || ? || '%')");
 		$stmt->execute(array($userID, $userID, $name, $name));

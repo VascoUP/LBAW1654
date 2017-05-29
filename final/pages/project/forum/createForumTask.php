@@ -20,6 +20,10 @@
 	$smarty->assign('smartyProjID', $projID);
 	$smarty->assign('smartyTaskID', $taskID);
 	$smarty->assign('smartyTaskName', $taskName);
+	$smarty->assign('varSideBar', 3);
+	$smarty->assign('collaborator', $isCollaborator);
+	$smarty->assign('userIsCoord', $userIsCoord);
+	$smarty->assign('type', $userType);
   	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/forums/createForumTask.tpl');
     $smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/projects/projectSideBar.tpl');
 

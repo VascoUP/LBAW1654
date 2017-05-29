@@ -13,8 +13,8 @@
   $overview = strip_tags($_POST['overview']);
   $access = strip_tags($_POST['access']);
   $tags = explode(' ; ', $_POST['tags']);
-	
-  createProject($name, $overview, $access, $tags);
+
+  $id = createProject($name, $overview, $access, $tags);
   
   $_SESSION['success_messages'][] = 'Project created successfully';  
   header('Location: ' .$BASE_URL.'pages/project/projectPage.php?projID='.$id);

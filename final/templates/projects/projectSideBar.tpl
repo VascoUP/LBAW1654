@@ -35,14 +35,14 @@
                     <i class='glyphicon glyphicon-home'></i>
                     Description </a>
                 </li>
-				{if $userIsCoord}
+				{if $userIsCoord }
                 <li {if $varSideBar == 2}class='active'{/if}>
                     <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectEdit.php?projID={$smartyProjID}'>
                     <i class='glyphicon glyphicon-pencil'></i>
                     Edit Project </a>
                 </li>
 				{/if}
-				{if $isCollaborator || $userIsCoord || $type === 'administrator'}
+				{if $isCollaborator || $userIsCoord || $type === 'administrator' }
                 <li {if $varSideBar == 3}class='active'{/if}>
                     <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/projectIterations.php?projID={$smartyProjID}'>
                     <i class='glyphicon glyphicon-th-list'></i>
@@ -68,13 +68,12 @@
     </div>
 {else}
     <div class='profile-userbuttons'>
-        {if $leaveBtnVisibility != 'not_visible' || $smartyProjInfo['0']['projectstatus'] != 'banned'}
+        {if $smartyProjInfo['0']['projectstatus'] != 'banned' || $collaborator === true || $userIsCoord === true}
         <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveProject.php?projID={$smartyProjID}" class="btn btn-warning btn-sm" id="leaveProject">Leave Project</a>
+        {elseif $smartyProjInfo['0']['projectstatus'] != 'banned' || !($collaborator === '1' || $userIsCoord === '1')}
+        <a id="request" class="btn btn-primary btn-sm">Request to join</a>
         {/if}
-        {if $joinBtnVisibility != 'not_visible' || $smartyProjInfo['0']['projectstatus'] != 'banned'}
-        <a id="request" class="btn btn-primary btn-sm">Request to Join</a>
-        {/if}
-		{if $leaveBtnVisibility == 'not_visible' || $smartyProjInfo['0']['projectstatus'] != 'banned'}
+		{if $smartyProjInfo['0']['projectstatus'] != 'banned'}
         <a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?projID={$smartyProjID}" class="btn btn-danger btn-sm" id="reportProkect">Report Project</a>
 		{/if}
     </div>

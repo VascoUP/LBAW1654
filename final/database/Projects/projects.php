@@ -57,6 +57,8 @@
 
 	$id = getProjectID($projName);
 	insertProjCoord($id);
+	
+	return $id;
   }
   
   function getProjectID($proj){

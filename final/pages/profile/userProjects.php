@@ -31,6 +31,7 @@
 		$smarty->assign('smartyUser', false);
 	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/profiles/userProjects.tpl');
 	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/profiles/profileSidebar.tpl');
+	$smarty->assign('varSideBar', 2);
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
   	$smarty->display($BASE_DIR .'templates/page.tpl');

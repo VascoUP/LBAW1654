@@ -10,7 +10,7 @@
     $userInfo = getUserInformation($_SESSION['username']);
     $projID = $_GET['projID'];
 
-    if( !isset($projID) || !$projID ) {
+    if( !isset($projID) || !$projID) {
         header('Location: https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php');
         die();
     }

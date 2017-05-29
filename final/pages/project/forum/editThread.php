@@ -17,6 +17,10 @@
 
 	$smarty->assign('smartyForumID', $forum);
 	$smarty->assign('smartyUsrInfo', $userInfo);
+	$smarty->assign('varSideBar', 4);
+	$smarty->assign('collaborator', $isCollaborator);
+	$smarty->assign('userIsCoord', $userIsCoord);
+	$smarty->assign('type', $userType);
   	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/forums/editThread.tpl');
     $smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/projects/projectSideBar.tpl');
 

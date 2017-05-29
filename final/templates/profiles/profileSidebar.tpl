@@ -15,8 +15,12 @@
 
         <div class='profile-usermenu'>
             <ul class='nav'>
-                <li class='active'>
-                    <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/profileUserOverview.php">
+                <li {if $varSideBar == 1} class='active' {/if}>
+				{if $smartyUser}
+                    <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/profileUserOverview.php?searchUser={$smartyUsrInfo['0']['userid']}&user={$smartyUser}">
+				{else}
+				<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/profileUserOverview.php?">
+				{/if}
                         <i class='glyphicon glyphicon-home'></i>
                         Overview</a>
                 </li>
@@ -27,7 +31,7 @@
                         Account Settings</a>
                 </li>
             {/if}
-                <li>
+                <li {if $varSideBar == 2} class='active' {/if}>
                 {if $smartyUser }
                     <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/userProjects.php?user={$smartyUser}&userInfo={$smartyUsrInfo['0']['userid']}">
                         <i class='glyphicon glyphicon-ok'></i>
@@ -39,15 +43,11 @@
                 {/if}
                 </li>
                 <li>
-                {if $smartyUser}
-                    <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/userStatistics.php?user={$smartyUser}&userInfo={$smartyUsrInfo['0']['userid']}">
-                        <i class='glyphicon glyphicon-stats'></i>
-                        User Statistics</a>
-                {else}
+                {if !$smartyUser}
                     <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/userStatistics.php?userInfo={$smartyUsrInfo['0']['userid']}">
                         <i class='glyphicon glyphicon-stats'></i>
                         My Statistics</a>
-                {/if}
+				{/if}
                 </li>
             </ul>
         </div>
@@ -56,10 +56,10 @@
     <div class='profile-userbuttons'>
     {if $smartyUser && $smartyUserInfoFirst['0']['type'] == 'administrator'}
         <a href="https://gnomo.fe.up.pt{$BASE_URL}actions/admin/banUser.php?userID={$smartyUsrInfo['0']['userid']}" class='btn btn-danger btn-sm'>Ban User</a>
-    {elseif $smartyUser && ($smartyUserInfoFirst['0']['type'] == 'coordinator' || $smartyUserInfoFirst['0']['type'] == 'user')}
+    {elseif $smartyUser || ($smartyUserInfoFirst['0']['type'] == 'coordinator' || $smartyUserInfoFirst['0']['type'] == 'user')}
         <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/report.php?userID={$smartyUsrInfo['0']['userid']}" class='btn btn-warning btn-sm'>Report User</a>
         <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/general/contactPage.php?second={$smartyUsrInfo['0']['userid']}&userID={$smartyUser}" class='btn btn-success btn-sm'>Contact</a>
-    {else}
+    {elseif !$smartyUser}
         <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectCreate.php" class='btn btn-success btn-sm'>Add project</a>
     {/if}
     </div>

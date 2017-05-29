@@ -5,8 +5,6 @@
 {if $smartyTaskID}
 	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?projID={$smartyProjID}&taskID={$smartyTaskID}"> Task </a>
 {/if}
-	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/projectForum.php?projID={$smartyProjID}"> Forums </a>
-	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjID}"> Project </a>
 	<div class="blog-comment">
 		<h3>Comments</h3>
 		<div id="placeComments">

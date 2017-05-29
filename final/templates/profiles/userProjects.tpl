@@ -34,10 +34,6 @@
                                 </a>
                                 <p class="summary">{$projects[$i]['description']}</p>
                             </div>
-                            
-                            <div class="profile-userbuttons">
-                                <a href="https://gnomo.fe.up.pt{$BASE_URL}actions/projects/deleteProject.php?projID={$top[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" class="btn btn-danger btn-sm delete">Delete Project</a>
-                            </div>
                         </div>
                     </td>
                 </tr>
@@ -63,7 +59,7 @@
                             </div>
                             
                             <div class="profile-userbuttons">
-                                <a href="https://gnomo.fe.up.pt{$BASE_URL}actions/projects/deleteProject.php?projID={$projectsCoord[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" class="btn btn-danger btn-sm delete">Delete Project</a>
+                                <a href="https://gnomo.fe.up.pt{$BASE_URL}actions/projects/deleteProject.php?projID={$projectsCoord[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" class="btn btn-danger btn-sm" id="deleteCoord">Delete Project</a>
                             </div>
                         </div>
                     </td>
@@ -87,10 +83,6 @@
                                     </h4>
                                 </a>
                                 <p class="summary">{$projects[$i]['description']}</p>
-                            </div>
-                            
-                            <div class="profile-userbuttons">
-                                <a href="https://gnomo.fe.up.pt{$BASE_URL}actions/projects/deleteProject.php?projID={$projectsCollab[$i]['projectid']}&userID={$smartyUsrInfo['0']['userid']}" type="button" class="btn btn-danger btn-sm delete">Delete Project</a>
                             </div>
                         </div>
                     </td>
