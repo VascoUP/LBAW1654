@@ -638,7 +638,7 @@ EXECUTE PROCEDURE checkCoords();
 CREATE OR REPLACE FUNCTION checkEffort()
 	RETURNS TRIGGER AS $checkEffort$
 BEGIN
-	IF ((SELECT SUM (Task.effort) FROM Task INNER JOIN Iteration ON Task.iterationID = Iteration.iterationID) > (SELECT maximumEffort FROM Iteration WHERE Iteration.iterationID = NEW.iterationID))
+	IF ((SELECT SUM (effort) FROM Task, Iteration WHERE Task.iterationID = NEW.iterationID) > (SELECT maximumEffort FROM Iteration WHERE Iteration.iterationID = NEW.iterationID))
         THEN RAISE EXCEPTION ' Effort cannot surpass maximum effort for an iterarion! ';
         END IF;
 	RETURN NEW;

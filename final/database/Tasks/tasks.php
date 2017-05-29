@@ -2,8 +2,8 @@
 	include_once($BASE_DIR .'database/Iterations/iterations.php');
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 
-	function userHasPremission($itID) {
-		return userWithPermission(getUserID($_SESSION['username'], $itID));
+	function userHasPremission($itID, $userID) {
+		return userWithPermission($itID, $userID);
 	}
 
 	function getInfoTask($taskID){
@@ -121,11 +121,11 @@
 	}
 
 	function addTask($name, $priority, $description, $effort, $itID, $userID){
-		if(	userHasPremission($itID) !== true || 
+		if(	userHasPremission($itID, $userID) !== true || 
 			!preg_match('/^[a-zA-Z0-9 \-]+$/i', $name) ||
 			!filter_var($priority, FILTER_SANITIZE_NUMBER_INT) ||
 			!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $description) )
-			return 'Invalid input';
+			echo 'Invalid input';
 
 		try {
 			global $conn;
@@ -142,7 +142,7 @@
 			$stmt->bindParam(':taskStatus', $taskStatus);
 			$stmt->execute();
 		} catch(Exception $e) {
-			return $e->getMessage();
+			echo $e->getMessage();
 		}
 	}
 
