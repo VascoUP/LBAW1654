@@ -31,7 +31,7 @@
 		try {
 			global $conn;
 		
-			$stmt = $conn->prepare("SELECT * FROM Report WHERE taskID IS NOT NULL");
+			$stmt = $conn->prepare("SELECT * FROM Report WHERE taskID IS NOT NULL AND projID IS NOT NULL");
 			$stmt->execute();		
 			$result = $stmt->fetchAll();
 		} catch(Exception $e) {
@@ -45,7 +45,7 @@
 		try {
 			global $conn;
 		
-			$stmt = $conn->prepare("SELECT * FROM Report WHERE threadID IS NOT NULL");
+			$stmt = $conn->prepare("SELECT * FROM Report WHERE threadID IS NOT NULL AND projID IS NOT NULL");
 			$stmt->execute();
 			$result = $stmt->fetchAll();
 		} catch(Exception $e) {
@@ -59,7 +59,7 @@
 		try {
 			global $conn;
 		
-			$stmt = $conn->prepare("SELECT * FROM Report WHERE projectID IS NOT NULL");
+			$stmt = $conn->prepare("SELECT * FROM Report WHERE projectID IS NOT NULL AND taskID IS NULL AND threadID IS NULL");
 			$stmt->execute();
 			$result = $stmt->fetchAll();
 		} catch(Exception $e) {
