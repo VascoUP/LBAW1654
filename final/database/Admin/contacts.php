@@ -3,7 +3,7 @@
 		if(	!preg_match('/^[a-z0-9\-]+$/i', $name) || 
 			!filter_var($email, FILTER_VALIDATE_EMAIL) ||
 			!preg_match('/^[0-9]+$/i', $phone) ||
-			!preg_match('/^[a-Z0-9 .\-]+$/i', $content) ||)
+			!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $content) ||)
 			return 'Invalid input';
 
 		try {
@@ -24,8 +24,8 @@
 	function addContactUser($firstUser, $secondUser, $subject, $content){
 		if(	!preg_match('/^[a-z0-9\-]+$/i', $firstUser) || 
 			!preg_match('/^[a-z0-9\-]+$/i', $secondUser) || 
-			!preg_match('/^[a-Z0-9 \-]+$/i', $subject) || 
-			!preg_match('/^[a-Z0-9 .\-]+$/i', $content) ||)
+			!preg_match('/^[a-zA-Z0-9 \-]+$/i', $subject) || 
+			!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $content) ||)
 			return 'Invalid input';
 			
 		try {

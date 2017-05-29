@@ -26,7 +26,7 @@
 	}
 
 	function updateIterationDescription($description, $itID){
-		if(	!preg_match('/^[a-Z0-9 .\-]+$/i', $description) )
+		if(	!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $description) )
 			return 'Invalid input';
 
 		try {
@@ -111,9 +111,9 @@
 	}
 
 	function addIteration($ID, $name, $description, $startDate, $max, $dueDate){
-		if(	!preg_match('/^[a-Z0-9 .\-]+$/i', $name) || 
+		if(	!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $name) || 
 			!filter_var($max, FILTER_SANITIZE_NUMBER_INT) ||
-			!preg_match('/^[a-Z0-9 .\-]+$/i', $description) )
+			!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $description) )
 			return 'Invalid input';
 
 		try {

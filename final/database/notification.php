@@ -1,6 +1,6 @@
 <?
 	function sendNotification($reportID, $content) {
-		if(	!preg_match('/^[a-Z0-9 .\-]+$/i', $content))
+		if(	!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $content))
 			return 'Invalid input';
 		try {
 			global $conn;

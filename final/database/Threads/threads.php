@@ -80,7 +80,7 @@
   }
   
   function editThread($id, $name){
-		if(	!preg_match('/^[a-Z0-9 \-]+$/i', $name) )
+		if(	!preg_match('/^[a-zA-Z0-9 \-]+$/i', $name) )
 			return 'Invalid input';
 		try {
 			global $conn;
@@ -95,7 +95,7 @@
   }
 
   function addForum($projID, $userID, $title, $date){
-		if(	!preg_match('/^[a-Z0-9 \-]+$/i', $title) )
+		if(	!preg_match('/^[a-zA-Z0-9 \-]+$/i', $title) )
 			return 'Invalid input';
 		try {
 			global $conn;
@@ -128,7 +128,7 @@
   }
   
   function addComment($thread, $user, $content, $date) {
-		if(	!preg_match('/^[a-Z0-9 .\-]+$/i', $content) )
+		if(	!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $content) )
 			return 'Invalid input';
 		try {
 			global $conn;
@@ -146,7 +146,7 @@
   }
   
   function addTaskComment($thread, $user, $content, $date, $taskID){
-		if(	!preg_match('/^[a-Z0-9 .\-]+$/i', $content) )
+		if(	!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $content) )
 			return 'Invalid input';
 		try {
 			global $conn;

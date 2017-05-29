@@ -37,7 +37,7 @@
 	}
 
 	function updateTaskName($name, $id){
-		if(	!preg_match('/^[a-Z0-9 \-]+$/i', $name) )
+		if(	!preg_match('/^[a-zA-Z0-9 \-]+$/i', $name) )
 			return 'Invalid input';
 		try {
 			global $conn;
@@ -106,7 +106,7 @@
 	}
 
 	function updateTaskDescription($description, $id){
-		if(	!preg_match('/^[a-Z0-9 .\-]+$/i', $description) )
+		if(	!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $description) )
 			return 'Invalid input';
 		try {
 			global $conn;
@@ -122,9 +122,9 @@
 
 	function addTask($name, $priority, $description, $effort, $itID, $userID){
 		if(	userHasPremission($itID) !== true || 
-			!preg_match('/^[a-Z0-9 \-]+$/i', $name) ||
+			!preg_match('/^[a-zA-Z0-9 \-]+$/i', $name) ||
 			!filter_var($priority, FILTER_SANITIZE_NUMBER_INT) ||
-			!preg_match('/^[a-Z0-9 .\-]+$/i', $description) )
+			!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $description) )
 			return 'Invalid input';
 
 		try {
