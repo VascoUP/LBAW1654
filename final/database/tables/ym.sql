@@ -624,7 +624,7 @@ INSERT INTO TaskUser(taskID, userID) VALUES (56,12);
 CREATE OR REPLACE FUNCTION checkCoords()
 	RETURNS TRIGGER AS $checkCoords$ 
 	BEGIN
-        IF (SELECT COUNT(*) FROM ProjectCoordinator WHERE ProjectCoordinator.projectID = NEW.projectID) = 1
+        IF (SELECT COUNT(*) FROM ProjectCoordinator WHERE ProjectCoordinator.projectID = OLD.projectID) = 1
         THEN RAISE EXCEPTION 'Project needs coordinators! ';
         END IF;
         RETURN OLD;
@@ -632,7 +632,7 @@ CREATE OR REPLACE FUNCTION checkCoords()
 $checkCoords$ LANGUAGE plpgsql;
 
 CREATE TRIGGER checkCoords
-BEFORE DELETE ON ProjectCoordinator
+BEFORE DELETE ON ProjectCoordinator FOR EACH ROW
 EXECUTE PROCEDURE checkCoords();
 
 CREATE OR REPLACE FUNCTION checkEffort()
