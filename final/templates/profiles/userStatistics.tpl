@@ -7,7 +7,6 @@
 <script src="{$BASE_URL}javascript/users/statistics.js"></script>
 
 <div class="card card-container">
-	<a class='hiper' href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsrInfo['0']['userid']}">Profile</a>
 		<h2 class="title">Statistics</h2>
 		<div class="table-container">
 			<h3>Projects</h3>

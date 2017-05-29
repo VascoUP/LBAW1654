@@ -116,7 +116,7 @@
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectsReported[$i]['projectid']}" role="button">
 												<h4 class="title2">
 													{$smartyProjectsReported[$i]['name']}
-													<span class="pull-right active">{$smartyProjectsReported[$i]['projectstatus']}</span>
+													<span class="pull-right reported">{$smartyProjectsReported[$i]['projectstatus']}</span>
 												</h4>
 											</a>
 											</div>
@@ -141,7 +141,7 @@
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjectsBanned[$i]['projectid']}" role="button">
 												<h4 class="title2">
 													{$smartyProjectsBanned[$i]['name']}
-													<span class="pull-right active">{$smartyProjectsBanned[$i]['projectstatus']}</span>
+													<span class="pull-right banned">{$smartyProjectsBanned[$i]['projectstatus']}</span>
 												</h4>
 											</a>
 											</div>

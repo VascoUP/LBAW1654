@@ -61,7 +61,7 @@
 							<li>
 								<form class="form-inline navbar-form" method="POST" action="https://gnomo.fe.up.pt/~lbaw1654/final/actions/general/search.php">								
 									<div class="input-group">
-										<input name="search" type="text" class="form-control search" placeholder="Search...">
+										<input name="search" type="text" class="form-control search text" placeholder="Search...">
 									</div>
 								</form>
 							</li>

@@ -14,7 +14,6 @@
 			<h3>Users</h3>
 			<p class="number"><strong>Number of users: </strong>{$userStatistics['total']}</p>
 			{if $userStatistics['total'] != 0 }
-			<h4>Users Type</h4>
 			<p id="coord">{$userStatistics['coord']}</p>
 			<p id="collab">{$userStatistics['user']}</p>
 			<p id="admin">{$userStatistics['admin']}</p>
@@ -28,7 +27,6 @@
 			<h3>Projects</h3>
 			<p class="number"><strong>Number of projects: </strong>{$projects['total']}</p>
 			{if $projects['total'] != 0}
-			<h4>Projects Status</h4>
 			<p id="projectActive">{$projects['active']}</p>
 			<p id="projectReported">{$projects['reported']}</p>
 			<p id="projectBanned">{$projects['banned']}</p>
@@ -36,8 +34,7 @@
 			{/if}
 			<h3>Reports</h3>
 			<p class="number"><strong>Number of reports: </strong>{$reportStatistics['reports']}</p>
-			{if $reportStatistics['reports'] != 0} 
-			<h4>Reports Type</h4>
+			{if $reportStatistics['reports'] != 0}
 			<p id="reportUser">{$reportStatistics['user']}</p>
 			<p id="reportTask">{$reportStatistics['task']}</p>
 			<p id="reportThread">{$reportStatistics['thread']}</p>
