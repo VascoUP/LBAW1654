@@ -21,7 +21,7 @@
 			global $conn;
 			$date = date('Y-m-d');
 			$status = 'waiting';
-			$stmt = $conn->prepare("INSERT INTO Report(content, taskID, projID, reportDate, reportStatus) 
+			$stmt = $conn->prepare("INSERT INTO Report(content, taskID, projectID, reportDate, reportStatus) 
 									VALUES (:content, :task, :proj, :reportDate, :reportStatus)");
 			$stmt->bindParam(':content', $content);
 			$stmt->bindParam(':task', $task);
@@ -30,7 +30,7 @@
 			$stmt->bindParam(':reportStatus', $status);
 			$stmt->execute();
 		} catch(Exception $e) {
-			return $e->getMessage();
+			echo $e->getMessage();
 		}
 	}
 
@@ -39,7 +39,7 @@
 			global $conn;
 			$date = date('Y-m-d');
 			$status = 'waiting';
-			$stmt = $conn->prepare("INSERT INTO Report(content, threadID, projID, reportDate, reportStatus) 
+			$stmt = $conn->prepare("INSERT INTO Report(content, threadID, projectID, reportDate, reportStatus) 
 									VALUES (:content, :thread, :proj, :reportDate, :reportStatus)");
 			$stmt->bindParam(':content', $content);
 			$stmt->bindParam(':thread', $thread);

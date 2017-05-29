@@ -18,13 +18,19 @@
 		$userID = $_GET['userID'];
 		$smarty->assign('smartyUserID', $userID);
 	}
-	else if(isset($_GET['threadID'])){
+	else if(isset($_GET['threadID']) && isset($_GET['projID'])){
 		$threadID = $_GET['threadID'];
 		$smarty->assign('smartyThreadID', $threadID);
+		
+		$projID = $_GET['projID'];
+		$smarty->assign('smartyProjID', $projID);
 	}
-	else if(isset($_GET['taskID'])){
+	else if(isset($_GET['taskID']) && isset($_GET['projID'])){
 		$taskID = $_GET['taskID'];
 		$smarty->assign('smartyTaskID', $taskID);
+		
+		$projID = $_GET['projID'];
+		$smarty->assign('smartyProjID', $projID);
 	}
 	else if(isset($_GET['projID'])){
 		$projID = $_GET['projID'];

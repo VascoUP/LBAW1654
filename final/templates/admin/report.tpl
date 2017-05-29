@@ -6,10 +6,10 @@
         <form class="form-horizontal" action="{$BASE_URL}actions/admin/report.php?
 		{if $smartyUserID}
 			userID={$smartyUserID}
-		{elseif $smartyTaskID}
-			taskID={$smartyTaskID}
-		{elseif $smartyThreadID}
-			threadID={$smartyThreadID}
+		{elseif $smartyTaskID && $smartyProjID}
+			taskID={$smartyTaskID}&projID={$smartyProjID}
+		{elseif $smartyThreadID && $smartyProjID}
+			threadID={$smartyThreadID}&projID={$smartyProjID}
 		{elseif $smartyProjID}
 			projID={$smartyProjID}
 		{/if}

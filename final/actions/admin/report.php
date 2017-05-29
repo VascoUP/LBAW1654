@@ -12,7 +12,7 @@
   if(isset($user))
 	  reportUser($user, $content);
   else if(isset($taskID) && isset($projID))
-	  reportTask($taskID, $projID, $content);
+	reportTask($taskID, $projID, $content);
   else if(isset($threadID) && isset($projID))
 	  reportThread($threadID, $projID, $content);
   else if(isset($projID))
