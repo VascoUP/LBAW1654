@@ -18,8 +18,7 @@
 		</div>
 	</div>
 	
-	<div id="cont">
-	<div class="card card-container first">
+	<div id="first" class="card card-container first">
 		<h3 class="title">Users</h3>
 		<div class="table-container" id="containerResultsUser">
 		{if $smartyUsers|@count == 0}
@@ -49,7 +48,7 @@
 		</div>
 	</div>
 	
-	<div class="card card-container second">
+	<div id="second" class="card card-container second">
 		<h3 class="title">Projects</h3>
 		<div class="table-container" id="containerResultsProj">
 		{if $smartyProjs|@count == 0}
@@ -75,7 +74,6 @@
 			</table>
 					{/if}
 		</div>
-	</div>
 	</div>
 </div>
 </div>

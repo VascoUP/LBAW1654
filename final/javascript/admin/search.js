@@ -28,6 +28,7 @@ function getUrlParameter(sParam) {
 function ajaxPost(value) {
 	var search = getUrlParameter('search');
 	console.log(search);
+	console.log(value);
 	var data = {
 		'search' : search,
 		'value': value
@@ -61,12 +62,7 @@ function seeSearch(data){
 		html += "<div class='media'>";
 		html += "<div class='media-body'>";
 		html += "<h4 class='title'>";
-		
-		if(data['users'][i]['type'] != 'administrator')			
-			html += "<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?searchUser=" + data['users'][i]['userid'] + "' role='button'>";
-		
-		else
-			html += "<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php" + "' role='button'>";
+		html += "<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php" + "' role='button'>";
 		html += data['users'][i]['username'] + "</a></h4>";
 		html += "<p class='summary'>" + data['users'][i]['email'] + "</p>";
 		html += "</div></div>";
@@ -74,7 +70,7 @@ function seeSearch(data){
 		html += "</tr>";
 	}
 	
-		html += "</tbody></table>";
+	html += "</tbody></table>";
 		
 	$('#containerResultsUser').append(html);
 	console.log(html);

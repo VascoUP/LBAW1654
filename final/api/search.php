@@ -7,7 +7,7 @@
     $key = $data['search'];
 	$value = $data['value'];
 	
-	if(value == 'ASC'){
+	if($value === 'ASC'){
 		$array = searchUserASC($key);
 		$arrayProj = searchProjASC($key);
 	}
