@@ -1,6 +1,10 @@
 $(document).ready(init);
 
 function init() {
+	$.fn.dataTable.ext.errMode = 'none';
+	
+	$("#coordbody").hide();
+	$("#collabbody").hide();
 	$('#collabh3').hide();
 	$('#coordh3').hide();
     $("#top5body").show();
@@ -34,6 +38,9 @@ function init() {
 	});
 	
 	$("#top5").click(function() {
+		$('#collabbody').DataTable().destroy();
+		$('#coordbody').DataTable().destroy();
+		
 		$("#top5body").show();
 		$('#projh3').show();
 		$("#coordbody").hide();
@@ -44,6 +51,12 @@ function init() {
 	});
 	
 	$("#coord").click(function() {
+		$('#collabbody').DataTable().destroy();
+		$('#coordbody').DataTable( {
+			"pagingType": "full_numbers",
+			"bFilter": false
+		} );
+		
 		$("#coordbody").show();
 		$('#projh3').hide();
 		$('#collabh3').hide();
@@ -54,6 +67,13 @@ function init() {
 	});
 	
 	$("#collab").click(function() {
+		$('#coordbody').DataTable().destroy();
+		
+		$('#collabbody').DataTable( {
+			"pagingType": "full_numbers",
+			"bFilter": false
+		} );
+		
 		$("#collabbody").show();
 		$("#top5body").hide();
 		$("#coordbody").hide();

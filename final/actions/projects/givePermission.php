@@ -5,9 +5,9 @@
 	
 	$itID = $_GET['itID'];
 	$projID = $_GET['projID'];
-	$userID = getUserID($_SESSION['username']);
-	
+	$userID = getUserID($_POST['permission']);
+
 	givePermission($userID, $itID);
 	
-    header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?projID=' . $projID . '&itID='.$itID);
+   header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?projID=' . $projID . '&itID='.$itID);
 ?>

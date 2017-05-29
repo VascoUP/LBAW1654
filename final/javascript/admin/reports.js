@@ -26,7 +26,7 @@ function init() {
 		$('#tableReportedThreads').hide();
 		$('#reportedThreadH3').hide();
 		$('#tableReportedProjects').hide();
-		$('reportedprojH3').hide();
+		$('#reportedprojH3').hide();
 	});
 	
 	$("#buttontHandled").click(function() {
@@ -41,7 +41,7 @@ function init() {
 		$('#tableReportedThreads').hide();
 		$('#reportedThreadH3').hide();
 		$('#tableReportedProjects').hide();
-		$('reportedprojH3').hide();
+		$('#reportedprojH3').hide();
 	});
 	
 	$("#buttonUser").click(function() {
@@ -56,7 +56,7 @@ function init() {
 		$('#tableReportedThreads').hide();
 		$('#reportedThreadH3').hide();
 		$('#tableReportedProjects').hide();
-		$('reportedprojH3').hide();
+		$('#reportedprojH3').hide();
 	});
 	
 	
@@ -72,7 +72,7 @@ function init() {
 		$('#tableReportedThreads').hide();
 		$('#reportedThreadH3').hide();
 		$('#tableReportedProjects').hide();
-		$('reportedprojH3').hide();
+		$('#reportedprojH3').hide();
 	});
 	
 	$("#buttonThread").click(function() {
@@ -87,7 +87,7 @@ function init() {
 		$('#tableReportedThreads').show();
 		$('#reportedThreadH3').show();
 		$('#tableReportedProjects').hide();
-		$('reportedprojH3').hide();
+		$('#reportedprojH3').hide();
 	});
 	
 	$("#buttonProject").click(function() {
@@ -102,7 +102,7 @@ function init() {
 		$('#tableReportedThreads').hide();
 		$('#reportedThreadH3').hide();
 		$('#tableReportedProjects').show();
-		$('reportedprojH3').show();
+		$('#reportedprojH3').show();
 	});
 
 }

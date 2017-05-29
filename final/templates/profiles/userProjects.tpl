@@ -4,15 +4,15 @@
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <script src="{$BASE_URL}javascript/users/confirmDelete.js"></script>
-<script src="{$BASE_URL}javascript/projects/showProjects.js"></script>
 <script type="text/javascript" src="{$BASE_URL}javascript/templates/paginatedTables.js"></script>
+<script src="{$BASE_URL}javascript/projects/showProjects.js"></script>
 
 <div class="profile-content">
     <div class="pull-right">
             <div class="btn-group">
-                <button id="top5" class="btn btn-success btn-filter" name="Top5">Last 5 Active</button>
-                <button id="coord" class="btn btn-primary btn-filter" name="coordinator">Coordinator</button>
-                <button id="collab" class="btn btn-info btn-filter" name="Collaborator">Collaborator</button>
+                <button id="top5" class="btn btn-success btn-filter" name="Top5" data-target="top">Last 5 Active</button>
+                <button id="coord" class="btn btn-primary btn-filter" name="coordinator" data-target="coord">Coordinator</button>
+                <button id="collab" class="btn btn-info btn-filter" name="Collaborator" data-target="collab">Collaborator</button>
                 <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/projects.php?userID={$smartyUsrInfo['0']['userid']}" class="btn btn-default btn-filter">All</a>
             </div>
         </div>
@@ -32,7 +32,7 @@
             </thead>
             <tbody>
             {for $i=0 to ($top|@count-1)}
-                <tr>
+                <tr data-status="top">
                     <td>
                         <div class="media">
                             <div class="media-body">
@@ -60,7 +60,7 @@
             </thead>
             <tbody>
                 {for $i=0 to ($projectsCoord|@count-1)}
-                <tr>
+                <tr data-status="coord">
                     <td>
 
                         <div class="media">
@@ -95,7 +95,7 @@
             </thead>
             <tbody>
                 {for $i=0 to ($projectsCollab|@count-1)}
-                <tr>
+                <tr data-status="collab">
                     <td>
                         <div class="media">
                             <div class="media-body">
