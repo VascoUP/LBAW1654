@@ -10,7 +10,7 @@
   	$smarty->assign('smartyUsrInfo', $userInfo);
   	$smarty->assign('smartyProjInvites', $projectInvites);
   	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/admin/profileAdminOverview.tpl');
-  	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/admin/adminSidebar.tpl');
+  	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'templates/admin/adminSidebar.tpl');
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
   	$smarty->display($BASE_DIR .'templates/page.tpl');

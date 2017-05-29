@@ -15,7 +15,7 @@
   	$smarty->assign('smartyUsrInfo', $userInfo);
   	$smarty->assign('smartyProjInvites', $projectInvites);
   	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/profiles/profileUsrOverview.tpl');
-  	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/profiles/profileSidebar.tpl');
+  	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'templates/profiles/profileSidebar.tpl');
 	$smarty->assign('varSideBar', 1);
 
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');

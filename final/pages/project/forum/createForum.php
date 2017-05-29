@@ -15,7 +15,7 @@
 	$smarty->assign('smartyUsrInfo', $userInfo);
 	$smarty->assign('smartyProjID', $projID);
   	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/forums/createForum.tpl');
-    $smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/projects/projectSideBar.tpl');
+    $smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'templates/projects/projectSideBar.tpl');
 	
 	$smarty->assign('varSideBar', 4);
 	$smarty->assign('collaborator', $isCollaborator);
