@@ -26,7 +26,7 @@
 			{for $i=0 to ($smartyThreads|@count-1)}
 				<tr>
 					<td>
-						<h4><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?projID={$smartyProjID}&forumID={$smartyThreads[$i]['threadid']}">{$smartyThreads[$i]['title']}</a><br></h4>
+						<h4><a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/forum/forum.php?projID={$smartyProjID}&forumID={$smartyThreads[$i]['threadid']}">{$smartyThreads[$i]['title']}</a><br></h4>
 					</td>
 					<td class='text-center hidden-xs hidden-sm threadUser'>{$usernames[$i]}</td>
 					<td class='text-center hidden-xs hidden-sm threadNumber'>{$numberComments[$i]}</td>
@@ -39,11 +39,11 @@
 				{/if}
 				{if $userIsCoord}
 					<td>   
-						<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/editThread.php?projID={$smartyProjID}&forumID={$smartyThreads[$i]['threadid']}" class="btn btn-warning forum">Edit Forum</a>
+						<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/forum/editThread.php?projID={$smartyProjID}&forumID={$smartyThreads[$i]['threadid']}" class="btn btn-warning forum">Edit Forum</a>
 					</td>
 				{elseif $collaborator}
 					<td>
-						<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?projID={$smartyProjID}&threadID={$smartyThreads[$i]['threadid']}" class="btn btn-danger">Report Forum</a>
+						<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/report.php?projID={$smartyProjID}&threadID={$smartyThreads[$i]['threadid']}" class="btn btn-danger">Report Forum</a>
 					</td>
 				{/if}
 				</tr>
@@ -53,6 +53,6 @@
 	</div>
 	{/if}
 	{if $userIsCoord || $collaborator}
-	<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/createForum.php?projID={$smartyProjID}" id="addForum" class="btn btn-success">Add Forum</a>
+	<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/forum/createForum.php?projID={$smartyProjID}" id="addForum" class="btn btn-success">Add Forum</a>
 	{/if}
 </div>

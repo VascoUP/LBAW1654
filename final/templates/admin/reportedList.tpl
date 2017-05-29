@@ -28,32 +28,32 @@
             <div class='profile-usermenu'>
                 <ul class='nav'>
                     <li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php'>
+                        <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/profileAdminOverview.php">
                         <i class='glyphicon glyphicon-home'></i>
                         Overview </a>
                     </li>
                     <li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php'>
+                        <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/editProfile.php">
                         <i class='glyphicon glyphicon-pencil'></i>
                         Account Settings </a>
                     </li>
                     <li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteProjects.php'>
+                        <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/profileAdminSiteProjects.php">
                         <i class='glyphicon glyphicon-file'></i>
                         Site Projects</a>
                     </li>
 					<li>
-                        <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php'>
+                        <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/profileAdminSiteUsers.php">
                         <i class='glyphicon glyphicon-user'></i>
                         Site Users</a>
                     </li>
 					<li class='active'>
-						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/reportedList.php'>
+						<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/reportedList.php">
                         <i class='glyphicon glyphicon-remove'></i>
                         Reported List</a>
 					</li>
 					<li>
-						<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteStatistics.php'>
+						<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/siteStatistics.php">
                         <i class='glyphicon glyphicon-stats'></i>
                         Site Statistics</a>
 					</li>
@@ -93,21 +93,20 @@
 										<div class="media">
 											<div class="media-body">
 											{if $reported[$i]['userid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$reported[$i]['userid']}" role="button">
+												<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/profileUserOverview.php?searchUser={$reported[$i]['userid']}&user={$smartyUsrID}" role="button">
 											{elseif $reported[$i]['taskid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$reported[$i]['taskid']}" role="button">
+												<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/task/taskPage.php?projID={$reported[$i]['projectid']}&taskID={$reported[$i]['taskid']}" role="button">
 											{elseif $reported[$i]['threadid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?forumID={$reported[$i]['threadid']}" role="button">
+												<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/forum/forum.php?projID={$reported[$i]['projectid']}&forumID={$reported[$i]['threadid']}" role="button">
 											{elseif $reported[$i]['projectid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?fprojID={$reported[$i]['projectid']}" role="button">
+												<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectPage.php?projID={$reported[$i]['projectid']}" role="button">
 											{/if}
-
-												<h4 class="title2">
-													{$namesReported[$i]}
-													<span class="pull-right active">Report date: {$reported[$i]['reportdate']}</span>
-												</h4>
-											</a>
-											<p class="summary">{$reported[$i]['content']}</p>
+													<h4 class="title2">
+														{$namesReported[$i]}
+														<span class="pull-right active">Report date: {$reported[$i]['reportdate']}</span>
+													</h4>
+												</a>
+												<p class="summary">{$reported[$i]['content']}</p>
 											</div>
 										</div>
 										<div class="pull-center">
@@ -130,13 +129,13 @@
 										<div class="media">
 											<div class="media-body">
 											{if $handled[$i]['userid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$reported[$i]['userid']}" role="button">
+											<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/profileUserOverview.php?searchUser={$handled[$i]['userid']}&user={$smartyUsrID}" role="button">
 											{elseif $handled[$i]['taskid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$handled[$i]['taskid']}" role="button">
+											<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/task/taskPage.php?projID={$handled[$i]['projectid']}&taskID={$handled[$i]['taskid']}" role="button">
 											{elseif $handled[$i]['threadid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?forumID={$handled[$i]['threadid']}" role="button">
+											<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/forum/forum.php?projID={$handled[$i]['projectid']}&forumID={$handled[$i]['threadid']}" role="button">
 											{elseif $reported[$i]['projectid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?fprojID={$reported[$i]['projectid']}" role="button">
+											<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectPage.php?projID={$handled[$i]['projectid']}" role="button">
 											{/if}
 
 												<h4 class="title2">
@@ -164,16 +163,13 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$userReport[$i]['userid']}" role="button">
-
-
-												<h4 class="title2">
-													{$usernames[$i]}
-													<span class="pull-right active">Report date: {$userReport[$i]['reportdate']}</span>
-												</h4>
-											</a>
-											<p class="summary">{$userReport[$i]['content']}</p>
+												<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/profileUserOverview.php?searchUser={$userReport[$i]['userid']}&user={$smartyUsrID}" role="button">
+													<h4 class="title2">
+														{$usernames[$i]}
+														<span class="pull-right active">Report date: {$userReport[$i]['reportdate']}</span>
+													</h4>
+												</a>
+												<p class="summary">{$userReport[$i]['content']}</p>
 											</div>
 										</div>
 										<div class="pull-center">
@@ -196,7 +192,7 @@
 										<div class="media">
 											<div class="media-body">
 
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$taskReport[$i]['taskid']}" role="button">
+											<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/task/taskPage.php?projID={$taskReport[$i]['projectid']}&taskID={$taskReport[$i]['taskid']}" role="button">
 
 												<h4 class="title2">
 													{$names[$i]}
@@ -226,7 +222,7 @@
 										<div class="media">
 											<div class="media-body">
 
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?forumID={$threadReport[$i]['threadid']}" role="button">
+											<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/forum/forum.php?projID={$threadReport[$i]['projectid']}&forumID={$threadReport[$i]['threadid']}" role="button">
 
 												<h4 class="title2">
 													{$titles[$i]}
@@ -256,7 +252,7 @@
 										<div class="media">
 											<div class="media-body">
 
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/projectPage.php?projID={$projReport[$i]['projectid']}" role="button">
+											<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/projectPage.php?projID={$projReport[$i]['projectid']}" role="button">
 
 												<h4 class="title2">
 													{$projNames[$i]}

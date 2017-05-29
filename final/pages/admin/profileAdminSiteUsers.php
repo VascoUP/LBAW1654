@@ -12,6 +12,7 @@
 	$usersReported = getSiteUsers('reported');
 	$usersBanned = getSiteUsers('banned');
 
+  	$smarty->assign('smartyUsrID', $userInfo[0]['userid']);
   	$smarty->assign('smartyUsrInfo', $userInfo);
   	$smarty->assign('smartyProjInvites', $projectInvites);
 	$smarty->assign('smartyUsersActive', $usersActive);

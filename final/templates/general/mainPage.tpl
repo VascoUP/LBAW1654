@@ -4,8 +4,8 @@
 		<div class="intro-text">
 			<div class="intro-lead-in">Your Management</div>
 			<div class="intro-heading">A free project management website for professional individuals looking for the best way to manage their projects </div>
-			<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/users/register.php" class="page-scroll btn btn-xl">Sign Up</a>
-			<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/users/login.php" class="page-scroll btn btn-xl">Sign In</a>
+			<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/users/register.php" class="page-scroll btn btn-xl">Sign Up</a>
+			<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/users/login.php" class="page-scroll btn btn-xl">Sign In</a>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<form name="sentMessage" id="contactForm" method="POST" action="https://gnomo.fe.up.pt/~lbaw1654/final/actions/admin/contactSite.php">
+				<form name="sentMessage" id="contactForm" method="POST" action="https://gnomo.fe.up.pt{$BASE_URL}actions/admin/contactSite.php">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">

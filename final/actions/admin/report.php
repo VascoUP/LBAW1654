@@ -1,8 +1,7 @@
 <?
-include_once('../../config/init.php');
-include_once($BASE_DIR .'database/Admin/ban.php');
-include_once($BASE_DIR .'database/Users/report.php');  
-  
+  include_once('../../config/init.php');
+  include_once($BASE_DIR .'database/Admin/ban.php');
+  include_once($BASE_DIR .'database/Users/report.php');  
   
   $content = $_POST['content'];
   $user = $_GET['userID'];
@@ -12,10 +11,10 @@ include_once($BASE_DIR .'database/Users/report.php');
   
   if(isset($user))
 	  reportUser($user, $content);
-  else if(isset($taskID))
-	  reportTask($taskID, $content);
-  else if(isset($threadID))
-	  reportThread($threadID, $content);
+  else if(isset($taskID) && isset($projID))
+	  reportTask($taskID, $projID, $content);
+  else if(isset($threadID) && isset($projID))
+	  reportThread($threadID, $projID, $content);
   else if(isset($projID))
 	  reportProject($projID, $content);
   

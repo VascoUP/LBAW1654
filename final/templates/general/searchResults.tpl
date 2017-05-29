@@ -40,7 +40,7 @@
 							<div class="media">
 								<div class="media-body">
 									<h4 class="title">
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?searchUser={$smartyUsers[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}">
+											<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/profileUserOverview.php?searchUser={$smartyUsers[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}">
 										{$smartyUsers[$i]['username']}</a></h4>
 									<p class="summary">{$smartyUsers[$i]['email']}</p>
 								</div>
@@ -76,7 +76,7 @@
 							<div class="media">
 								<div class="media-body">
 									<h4 class="title">
-									<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?projID={$smartyProjs[$i]['projectid']}">{$smartyProjs[$i]['name']}</a></h4>
+									<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectPage.php?projID={$smartyProjs[$i]['projectid']}">{$smartyProjs[$i]['name']}</a></h4>
 									<p class="summary">{$smartyProjs[$i]['description']}</p>
 								</div>
 							</div>

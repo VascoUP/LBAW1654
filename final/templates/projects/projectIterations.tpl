@@ -32,7 +32,7 @@
         <tr>
           <td class='hidden-xs text-center'><i class='fa fa-question fa-2x text-primary'></i></td>
           <td>
-            <h4><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/iterationPage.php?projID={$smartyProjID}&itID={$smartyIterations[$i]['iterationid']}">{$smartyIterations[$i]['name']}</a></h4>
+            <h4><a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/iteration/iterationPage.php?projID={$smartyProjID}&itID={$smartyIterations[$i]['iterationid']}">{$smartyIterations[$i]['name']}</a></h4>
           </td>
           <td class='text-center hidden-xs hidden-sm'><a>{$smartyIterationsCounter[$i]}</a></td>
           <td class='text-center hidden-xs hidden-sm'><a>{$smartyIterations[$i]['maximumeffort']}</a></td>
@@ -51,7 +51,7 @@
           </td>
           <td>
         {if $userIsCoord && ($numberTasksCompleted[$i] != $smartyIterationsCounter[$i] || $smartyIterationsCounter[$i] == 0) }
-            <a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/editIteration.php?projID={$smartyProjID}&itID={$smartyIterations[$i]['iterationid']}">Edit <br> Iteration</a>
+            <a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/iteration/editIteration.php?projID={$smartyProjID}&itID={$smartyIterations[$i]['iterationid']}">Edit <br> Iteration</a>
         {/if}
           </td>
         </tr>
@@ -61,6 +61,6 @@
   </div>
   {/if}
   {if $userIsCoord}
-  <a id="addIteration" role="button" class="btn btn-success" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/iteration/createIteration.php?projID={$smartyProjID}">Add Iteration</a>
+  <a id="addIteration" role="button" class="btn btn-success" href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/iteration/createIteration.php?projID={$smartyProjID}">Add Iteration</a>
   {/if}
 </div>

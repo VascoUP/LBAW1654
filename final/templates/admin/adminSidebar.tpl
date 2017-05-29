@@ -23,27 +23,27 @@
                     Overview </a>
                 </li>
                 <li>
-                    <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php'>
+                    <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/editProfile.php">
                     <i class='glyphicon glyphicon-pencil'></i>
                     Account Settings </a>
                 </li>
                 <li>
-                    <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteProjects.php'>
+                    <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/profileAdminSiteProjects.php">
                     <i class='glyphicon glyphicon-file'></i>
                     Site Projects</a>
                 </li>
                 <li>
-                    <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteUsers.php'>
+                    <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/profileAdminSiteUsers.php">
                     <i class='glyphicon glyphicon-user'></i>
                     Site Users</a>
                 </li>
                 <li>
-                    <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/reportedList.php'>
+                    <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/reportedList.php">
                     <i class='glyphicon glyphicon-remove'></i>
                     Reported List</a>
                 </li>
                 <li>
-                    <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/siteStatistics.php'>
+                    <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/siteStatistics.php">
                     <i class='glyphicon glyphicon-stats'></i>
                     Site Statistics</a>
                 </li>

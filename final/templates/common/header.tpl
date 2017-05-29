@@ -26,9 +26,9 @@
 							<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
 						</button>
 						{if $smarty.session.username}
-							<a class="navbar-brand page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php">YM</a>
+							<a class="navbar-brand page-scroll" href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/profileUserOverview.php">YM</a>
 						{else}
-							<a class="navbar-brand page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php">YM</a>
+							<a class="navbar-brand page-scroll" href="https://gnomo.fe.up.pt{$BASE_URL}pages/general/mainPage.php">YM</a>
 						{/if}
 					</div>
 
@@ -40,17 +40,17 @@
 							</li>
 							<li>
 							{if $smarty.session.username}
-								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php">Home</a>
+								<a class="page-scroll" href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/profileUserOverview.php">Home</a>
 							{else}
-								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php#page-top">Home</a>
+								<a class="page-scroll" href="https://gnomo.fe.up.pt{$BASE_URL}pages/general/mainPage.php#page-top">Home</a>
 							{/if}
 							</li>
 							{if !$smarty.session.username}
 							<li>
-								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php#about">About</a>
+								<a class="page-scroll" href="https://gnomo.fe.up.pt{$BASE_URL}pages/general/mainPage.php#about">About</a>
 							</li>
 							<li>
-								<a class="page-scroll" href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php#contact">Contact</a>
+								<a class="page-scroll" href="https://gnomo.fe.up.pt{$BASE_URL}pages/general/mainPage.php#contact">Contact</a>
 							</li>
 							{/if}
 						</ul>
@@ -59,7 +59,7 @@
 								<a href="#page-top"></a>
 							</li>
 							<li>
-								<form class="form-inline navbar-form" method="POST" action="https://gnomo.fe.up.pt/~lbaw1654/final/actions/general/search.php">								
+								<form class="form-inline navbar-form" method="POST" action="https://gnomo.fe.up.pt{$BASE_URL}actions/general/search.php">								
 									<div class="input-group">
 										<input name="search" type="text" class="form-control search text" placeholder="Search...">
 									</div>
@@ -96,16 +96,16 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
 								<ul id="menu" class="dropdown-menu">
 									<li>{if $smartyUserInfoFirst['0']['type'] == 'administrator'}
-									<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php?adminID={$smartyUserInfoFirst['0']['userid']}
+									<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/profileAdminOverview.php?adminID={$smartyUserInfoFirst['0']['userid']}
 									" role="button" class="drop">Profile</a>
-									{else}<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={if $smartyUserInfoFirst }{$smartyUserInfoFirst['0']['userid']}{else}{$smartyUsrInfo['0']['userid']}{/if}
+									{else}<a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/profileUserOverview.php?userInfo={if $smartyUserInfoFirst }{$smartyUserInfoFirst['0']['userid']}{else}{$smartyUsrInfo['0']['userid']}{/if}
 									" role="button" class="drop">Profile</a>
 									{/if}</li>
 									{if $smartyUsrInfo['0']['type'] != 'administrator' && $smartyUserInfoFirst['0']['type'] != 'administrator'}
-									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/userProjects.php?userInfo={if $smartyUserInfoFirst}{$smartyUserInfoFirst['0']['userid']}{else}{$smartyUsrInfo['0']['userid']}{/if}" role="button" class="drop">Projects</a></li>
+									<li><a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/userProjects.php?userInfo={if $smartyUserInfoFirst}{$smartyUserInfoFirst['0']['userid']}{else}{$smartyUsrInfo['0']['userid']}{/if}" role="button" class="drop">Projects</a></li>
 									{/if}
-									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/editProfile.php" role="button" class="drop">Edit Profile</a></li>
-									<li><a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/users/logout.php" role="button" class="drop">Logout</a></li>
+									<li><a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/editProfile.php" role="button" class="drop">Edit Profile</a></li>
+									<li><a href="https://gnomo.fe.up.pt{$BASE_URL}actions/users/logout.php" role="button" class="drop">Logout</a></li>
 								</ul>
 							</li>
 

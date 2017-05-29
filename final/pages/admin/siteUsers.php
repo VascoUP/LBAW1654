@@ -9,6 +9,7 @@
 	$projectInvites = invitedProjects($userInfo[0]['userid']);
 	$users = getSiteUsersAll();
 
+  	$smarty->assign('smartyUsrID', $userInfo[0]['userid']);
 	$smarty->assign('smartyUsrInfo', $userInfo);
   	$smarty->assign('smartyProjInvites', $projectInvites);
 	$smarty->assign('smartyUsers', $users);
