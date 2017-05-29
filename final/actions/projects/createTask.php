@@ -22,10 +22,11 @@
 	
 	$result = addTask($name, $priority, $description, $effort, $id, $userID);
 	if( $result ) {
-		echo "<p>$result</p>";
+        $_SESSION['field_errors'][taskCreate] = 'Invalid parameters. Make sure only Letters, numbers, \'.\' and \'-\' are used';
+		header('Location: https://gnomo.fe.up.pt' .$BASE_URL.'pages/project/task/createTask.php?projID=' . $projID . '&itID='.$id);
 		die();
 	}
  
 	$_SESSION['success_messages'][] = 'Task created successfully';  
-	header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?projID=' . $projID . '&itID='.$id);
+	header('Location: https://gnomo.fe.up.pt' .$BASE_URL.'pages/project/iteration/iterationPage.php?projID=' . $projID . '&itID='.$id);
 ?>
