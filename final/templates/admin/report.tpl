@@ -4,7 +4,7 @@
 <div class="container">
     <div class="card card-container">
         <form class="form-horizontal" action="{$BASE_URL}actions/admin/report.php?
-		{if $smartyUserID}
+		{if $smartyUserID }
 			userID={$smartyUserID}
 		{elseif $smartyTaskID && $smartyProjID}
 			taskID={$smartyTaskID}&projID={$smartyProjID}
