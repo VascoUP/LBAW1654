@@ -1,7 +1,11 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <script src="{$BASE_URL}javascript/admin/users.js"></script>
+<script type="text/javascript" src="{$BASE_URL}javascript/templates/paginatedTables.js"></script>
+
 <div class="container">
 	<div class="row profile">
 		<div class="col-md-3">
@@ -37,7 +41,7 @@
                         <i class='glyphicon glyphicon-pencil'></i>
                         Account Settings </a>
                     </li>
-                    <li> 
+                    <li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteProjects.php'>
                         <i class='glyphicon glyphicon-file'></i>
                         Site Projects</a>
@@ -81,6 +85,12 @@
 							<h3 id="Useractiveh3">This site doesn't have any active user</h3>
 					{else}
 						<table id="tableActive" class="table table-filter">
+							<thead>
+							    <tr>
+							        <th>
+							        </th>
+							    </tr>
+							</thead>
 							<tbody>
 								{for $i=0 to ($smartyUsersActive|@count-1)}
 								<tr data-status="active">
@@ -100,7 +110,7 @@
 													<span class="pull-right active">{$smartyUsersActive[$i]['userstatus']}</span>
 												</h4>
 											</a>
-											
+
 											</div>
 										</div>
 									</td>
@@ -194,9 +204,9 @@
 													<span class="pull-right banned">{$smartyUsersBanned[$i]['userstatus']}</span>
 												</h4>
 											</a>
-											
+
 											</div>
-											
+
 											<div class="pull-center">
 											<button id="{$smartyUsersBanned[$i]['userid']}" type='button' class='btn btn-success btn-sm' onClick="removeUser(this)">Remove banned status</button>
 											</div>

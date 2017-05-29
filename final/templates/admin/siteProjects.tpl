@@ -16,7 +16,7 @@
 				<thead>
 				    <tr>
 				        <th>
-Project Name 
+Username 
 				        </th>
 				    </tr>
 				</thead>

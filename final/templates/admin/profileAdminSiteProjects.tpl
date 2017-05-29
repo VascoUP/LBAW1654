@@ -1,7 +1,10 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <script src="{$BASE_URL}javascript/admin/projects.js"></script>
+<script type="text/javascript" src="{$BASE_URL}javascript/templates/paginatedTables.js"></script>
 
 <div class="container">
 	<div class="row profile">
@@ -40,7 +43,7 @@
 							<i class='glyphicon glyphicon-pencil'></i>
 							Account Settings </a>
 						</li>
-						<li class='active'> 
+						<li class='active'>
 							<a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteProjects.php'>
 							<i class='glyphicon glyphicon-file'></i>
 							Site Projects</a>
@@ -83,6 +86,12 @@
 						<h3 id="activeh3">This site doesn't have any active project</h3>
 					{else}
 						<table id='active' class="table table-filter">
+							<thead>
+							    <tr>
+							        <th>
+							        </th>
+							    </tr>
+							</thead>
 							<tbody>
 							{for $i=0 to ($smartyProjectsActive|@count-1)}
 								<tr data-status="active">
@@ -107,6 +116,12 @@
 						<h3 id="reportedh3">This site doesn't have any reported project</h3>
 					{else}
 						<table id='reported' class="table table-filter">
+							<thead>
+							    <tr>
+							        <th>
+							        </th>
+							    </tr>
+							</thead>
 							<tbody>
 							{for $i=0 to ($smartyProjectsReported|@count-1)}
 								<tr data-status="reported">
@@ -131,6 +146,12 @@
 							<h3 id="bannedh3">This site doesn't have any banned project</h3>
 						{else}
 						<table id='banned' class="table table-filter">
+							<thead>
+							    <tr>
+							        <th>
+							        </th>
+							    </tr>
+							</thead>
 							<tbody>
 							{for $i=0 to ($smartyProjectsBanned|@count-1)}
 								<tr data-status="banned">
@@ -144,11 +165,11 @@
 												</h4>
 											</a>
 											</div>
-											
+
 											<div class="pull-center">
 											<button id="{$smartyProjectsBanned[$i]['projectid']}" class='btn btn-success btn-sm' onClick="removeProj(this)">Remove banned status</button>
 											</div>
-											
+
 										</div>
 									</td>
 								</tr>

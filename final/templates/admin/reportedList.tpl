@@ -1,7 +1,11 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <script src="{$BASE_URL}javascript/admin/reports.js"></script>
+<script type="text/javascript" src="{$BASE_URL}javascript/templates/paginatedTables.js"></script>
+
 <div class="container">
 	<div class="row profile">
 		<div class="col-md-3">
@@ -33,7 +37,7 @@
                         <i class='glyphicon glyphicon-pencil'></i>
                         Account Settings </a>
                     </li>
-                    <li> 
+                    <li>
                         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminSiteProjects.php'>
                         <i class='glyphicon glyphicon-file'></i>
                         Site Projects</a>
@@ -76,6 +80,12 @@
 						<h3 id="reportedH3">This site doesn't have any report</h3>
 					{else}
 						<table id="tableReported" class="table table-filter">
+							<thead>
+							    <tr>
+							        <th>
+							        </th>
+							    </tr>
+							</thead>
 							<tbody>
 								{for $i=0 to ($reported|@count-1)}
 								<tr data-status="reported">
@@ -91,7 +101,7 @@
 											{elseif $reported[$i]['projectid']}
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?fprojID={$reported[$i]['projectid']}" role="button">
 											{/if}
-											
+
 												<h4 class="title2">
 													{$namesReported[$i]}
 													<span class="pull-right active">Report date: {$reported[$i]['reportdate']}</span>
@@ -128,7 +138,7 @@
 											{elseif $reported[$i]['projectid']}
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?fprojID={$reported[$i]['projectid']}" role="button">
 											{/if}
-											
+
 												<h4 class="title2">
 													{$namesHandled[$i]}
 													<span class="pull-right active">Handled date: {$handled[$i]['handleddate']}</span>
@@ -137,7 +147,7 @@
 											<p class="summary">{$handled[$i]['content']}</p>
 											</div>
 										</div>
-										
+
 									</td>
 								</tr>
 								{/for}
@@ -154,10 +164,10 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-											
+
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$userReport[$i]['userid']}" role="button">
-											
-											
+
+
 												<h4 class="title2">
 													{$usernames[$i]}
 													<span class="pull-right active">Report date: {$userReport[$i]['reportdate']}</span>
@@ -185,9 +195,9 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-											
+
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$taskReport[$i]['taskid']}" role="button">
-											
+
 												<h4 class="title2">
 													{$names[$i]}
 													<span class="pull-right active">Report date: {$taskReport[$i]['reportdate']}</span>
@@ -215,9 +225,9 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-											
+
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?forumID={$threadReport[$i]['threadid']}" role="button">
-											
+
 												<h4 class="title2">
 													{$titles[$i]}
 													<span class="pull-right active">Report date: {$threadReport[$i]['reportdate']}</span>
@@ -245,9 +255,9 @@
 									<td>
 										<div class="media">
 											<div class="media-body">
-											
+
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/projectPage.php?projID={$projReport[$i]['projectid']}" role="button">
-											
+
 												<h4 class="title2">
 													{$projNames[$i]}
 													<span class="pull-right active">Report date: {$projReport[$i]['reportdate']}</span>
