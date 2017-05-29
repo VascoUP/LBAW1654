@@ -24,7 +24,11 @@
 	$smarty->assign('projectsCoord', $projectsCoord);
 	$smarty->assign('projectsCollab', $projectsCollab);
   	$smarty->assign('smartyProjInvites', $projectInvites);
-	$smarty->assign('smartyUser', false);
+	
+	if(isset($_GET['user']))
+		$smarty->assign('smartyUser', $_GET['user']);
+	else
+		$smarty->assign('smartyUser', false);
 	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/profiles/userProjects.tpl');
 	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/profiles/profileSidebar.tpl');
 

@@ -16,7 +16,10 @@
 
 	$smarty->assign('smartyUsrInfo', $userInfo);
 	$smarty->assign('userStatistics', $userStatistics);
-	$smarty->assign('smartyUser', false);
+	if(isset($_GET['user']))
+		$smarty->assign('smartyUser', $_GET['user']);
+	else
+		$smarty->assign('smartyUser', false);
 	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/profiles/userStatistics.tpl');
 	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/profiles/profileSidebar.tpl');
 	

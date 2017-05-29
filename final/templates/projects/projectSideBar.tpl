@@ -62,19 +62,19 @@
             </ul>
         </div>
     </div>
-{if $smartyUsrInfo['0']['type'] == 'administrator'}
+{if $smartyUsrInfo['0']['type'] == 'administrator' && $smartyProjInfo['0']['projectstatus'] != 'banned'}
     <div class='profile-userbuttons'>
         <a href='https://gnomo.fe.up.pt/~lbaw1654/final/actions/admin/banProject.php?projID={$smartyProjID}&userID={$smartyUsrInfo['0']['userid']}' type='button' class='btn btn-danger btn-sm'>Ban Project</a>
     </div>
 {else}
     <div class='profile-userbuttons'>
-        {if $leaveBtnVisibility != 'not_visible'}
+        {if $leaveBtnVisibility != 'not_visible' || $smartyProjInfo['0']['projectstatus'] != 'banned'}
         <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveProject.php?projID={$smartyProjID}" class="btn btn-warning btn-sm" id="leaveProject">Leave Project</a>
         {/if}
-        {if $joinBtnVisibility != 'not_visible'}
+        {if $joinBtnVisibility != 'not_visible' || $smartyProjInfo['0']['projectstatus'] != 'banned'}
         <a id="request" class="btn btn-primary btn-sm">Request to Join</a>
         {/if}
-		{if $leaveBtnVisibility == 'not_visible'}
+		{if $leaveBtnVisibility == 'not_visible' || $smartyProjInfo['0']['projectstatus'] != 'banned'}
         <a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?projID={$smartyProjID}" class="btn btn-danger btn-sm" id="reportProkect">Report Project</a>
 		{/if}
     </div>

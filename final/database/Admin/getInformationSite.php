@@ -17,7 +17,7 @@
 	function getSiteUsers($status){
 		try {
 			global $conn;
-			$stmt = $conn->prepare("SELECT * FROM UserSite WHERE userStatus = ?");	
+			$stmt = $conn->prepare("SELECT * FROM UserSite WHERE userStatus = ? AND type != 'administrator");	
 			
 			$stmt->execute(array($status));
 			$result = $stmt->fetchAll();
@@ -74,9 +74,10 @@
 			global $conn;
 			$stmt = $conn->prepare("SELECT DISTINCT UserSite.username AS username, UserSite.email AS email, UserSite.userID AS userID, UserSite.description AS description, UserSite.userStatus AS userStatus, UserSite.type AS type, ts_rank_cd(textsearch, query) AS rank
 									FROM UserSite, to_tsvector(username || ' ' || email || ' ' || description) textsearch, to_tsquery('english', ?) query
-									WHERE textsearch @@ query
+									WHERE UserSite.type != 'administrator'
+									AND (textsearch @@ query
 									OR username ILIKE '%' || ? || '%'
-									OR email ILIKE '%' || ? || '%'
+									OR email ILIKE '%' || ? || '%')
 									ORDER BY rank DESC LIMIT 10");	
 			
 			$stmt->execute(array($name, $name, $name));
@@ -137,9 +138,10 @@
 			global $conn;
 			$stmt = $conn->prepare("SELECT DISTINCT UserSite.username AS username, UserSite.email AS email, UserSite.userID AS userID, UserSite.description AS description, UserSite.userStatus AS userStatus, UserSite.type AS type, ts_rank_cd(textsearch, query) AS rank
 									FROM UserSite, to_tsvector(username || ' ' || email || ' ' || description) textsearch, to_tsquery('english', ?) query
-									WHERE textsearch @@ query
+									WHERE UserSite.type != 'administrator'
+									AND (textsearch @@ query
 									OR username ILIKE '%' || ? || '%'
-									OR email ILIKE '%' || ? || '%'
+									OR email ILIKE '%' || ? || '%')
 									ORDER BY UserSite.username
 									LIMIT 10");	
 			
@@ -157,9 +159,10 @@
 			global $conn;
 			$stmt = $conn->prepare("SELECT DISTINCT UserSite.username AS username, UserSite.email AS email, UserSite.userID AS userID, UserSite.description AS description, UserSite.userStatus AS userStatus, UserSite.type AS type, ts_rank_cd(textsearch, query) AS rank
 									FROM UserSite, to_tsvector(username || ' ' || email || ' ' || description) textsearch, to_tsquery('english', ?) query
-									WHERE textsearch @@ query
+									WHERE UserSite.type != 'administrator'
+									AND (textsearch @@ query
 									OR username ILIKE '%' || ? || '%'
-									OR email ILIKE '%' || ? || '%'
+									OR email ILIKE '%' || ? || '%')
 									ORDER BY UserSite.username DESC
 									LIMIT 10");	
 			

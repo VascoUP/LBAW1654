@@ -15,7 +15,7 @@
   $userInfo = getUserInformation($username);
 		
   if(empty($_SESSION['username'])){
-	  if($userInfo['0']['userstatus'] != 'inactive'){
+	  if($userInfo['0']['userstatus'] != 'inactive' || $userInfo['0']['userstatus'] != 'banned'){
 		  if (isLoginCorrect($username, $password)) {
 			$_SESSION['username'] = $username;
 			$_SESSION['success_messages'][] = 'Login successful'; 
@@ -36,7 +36,10 @@
 	  }
 	  else
     {
-      $_SESSION['field_errors'][inactive] = 'Inactive User Account';
+		if($userInfo['0']['userstatus'] != 'inactive')
+			$_SESSION['field_errors'][inactive] = 'Inactive User Account';
+		else
+			$_SESSION['field_errors'][banned] = 'Banned User Account';
 		  header("Location: $BASE_URL" . "pages/users/login.php");
     }
 

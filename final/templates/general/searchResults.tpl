@@ -18,8 +18,8 @@
 		</div>
 	</div>
 	
-	
-	<div class="card card-container first" id="first">
+	<div id="cont">
+	<div class="card card-container first">
 		<h3 class="title">Users</h3>
 		<div class="table-container" id="containerResultsUser">
 		{if $smartyUsers|@count == 0}
@@ -35,11 +35,7 @@
 							<div class="media">
 								<div class="media-body">
 									<h4 class="title">
-									{if $smartyUsers[$i]['type'] != 'administrator'}
 											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?searchUser={$smartyUsers[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}">
-											{else}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php" role="button">
-											{/if}
 										{$smartyUsers[$i]['username']}</a></h4>
 									<p class="summary">{$smartyUsers[$i]['email']}</p>
 								</div>
@@ -53,7 +49,7 @@
 		</div>
 	</div>
 	
-	<div class="card card-container second" id="second">
+	<div class="card card-container second">
 		<h3 class="title">Projects</h3>
 		<div class="table-container" id="containerResultsProj">
 		{if $smartyProjs|@count == 0}
@@ -79,6 +75,7 @@
 			</table>
 					{/if}
 		</div>
+	</div>
 	</div>
 </div>
 </div>

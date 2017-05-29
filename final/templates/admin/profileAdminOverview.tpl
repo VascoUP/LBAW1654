@@ -13,5 +13,4 @@
     <h3>Curriculum Vitae</h3>
     <a href="https://gnomo.fe.up.pt{$BASE_URL}documents/{$smartyUsrInfo['0']['curriculumvitae']}" download>{$smartyUsrInfo['0']['curriculumvitae']}</a>
 {/if}
-
 </div>
