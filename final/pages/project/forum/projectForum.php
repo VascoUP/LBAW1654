@@ -21,8 +21,8 @@
 
     foreach($threads as $thread) {
         $numberComments[] = numberOfComments($thread['threadid']);
-        $userInfo = getUserInformationByID($thread['userid']);
-        $usernames[] = $userInfo['0']['username'];
+        $user = getUserInformationByID($thread['userid']);
+        $usernames[] = $user['0']['username'];
         $lastComment = lastComment($thread['threadid']);
         $lastCommentInfo = getUserInformationByID($lastComment['0']['userid']);
         if(count($lastCommentInfo) != 0) {
@@ -38,9 +38,11 @@
     $smarty->assign('usernames', $usernames);
     $smarty->assign('lastCommentUser', $lastCommentUser);
     $smarty->assign('lastCommentDate', $lastCommentDate);
+	
 	$smarty->assign('varSideBar', 4);
 	$smarty->assign('collaborator', $isCollaborator);
 	$smarty->assign('userIsCoord', $userIsCoord);
+	
 	$smarty->assign('type', $userType);
     $smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/projects/projectForum.tpl');
     $smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'templates/projects/projectSideBar.tpl');
