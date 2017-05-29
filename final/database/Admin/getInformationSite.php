@@ -17,7 +17,7 @@
 	function getSiteUsers($status){
 		try {
 			global $conn;
-			$stmt = $conn->prepare("SELECT * FROM UserSite WHERE userStatus = ? AND type != 'administrator");	
+			$stmt = $conn->prepare("SELECT * FROM UserSite WHERE userStatus = ? AND type != 'administrator'");	
 			
 			$stmt->execute(array($status));
 			$result = $stmt->fetchAll();

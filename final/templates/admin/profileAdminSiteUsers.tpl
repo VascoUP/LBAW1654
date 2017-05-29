@@ -78,7 +78,7 @@
 				</div>
 					<div id="usersTable" class="table-container">
 					{if $smartyUsersActive|@count == 0}
-									<h3 id="Useractiveh3">This site doesn't have any active user</h3>
+							<h3 id="Useractiveh3">This site doesn't have any active user</h3>
 					{else}
 						<table id="tableActive" class="table table-filter">
 							<tbody>
@@ -94,11 +94,7 @@
 												<img src="{$BASE_URL}images/assets/loginImage.png" class='media-photo' alt='Profile image'>
 											{/if}
 											</div>
-											{if $smartyUsersActive[$i]['type'] != 'administrator'}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersActive[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}" role="button">
-											{else}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/profileAdminOverview.php" role="button">
-											{/if}
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$smartyUsersActive[$i]['userid']}&user={$smartyUsrInfo['0']['userid']}">
 												<h4 class="title2">
 													{$smartyUsersActive[$i]['username']}
 													<span class="pull-right active">{$smartyUsersActive[$i]['userstatus']}</span>

@@ -42,8 +42,11 @@
                         placeholder="Project Tags" required
                         class="form-control form-style input-xs">
                 </div>
+                            <span class="field_error" >{$FIELD_ERRORS.projCreate}</span>
             </div>
             </div>
+
+
 
             <legend></legend>
 
