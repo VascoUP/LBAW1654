@@ -13,7 +13,6 @@
     <table class='table iteration table-striped' id='page_table'>
       <thead>
         <tr>
-          <th class='hidden-xs cell-stat'></th>
           <th>
             Iterations
           </th>
@@ -30,7 +29,6 @@
       <tbody>
       {for $i=0 to ($smartyIterations|@count-1)}
         <tr>
-          <td class='hidden-xs text-center'><i class='fa fa-question fa-2x text-primary'></i></td>
           <td>
             <h4><a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/iteration/iterationPage.php?projID={$smartyProjID}&itID={$smartyIterations[$i]['iterationid']}">{$smartyIterations[$i]['name']}</a></h4>
           </td>
