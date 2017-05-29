@@ -73,7 +73,8 @@
         <fieldset>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="deleteProj">Delete Project</label>
-                <div class="col-md-4">   
+                <div class="col-md-4">
+                    <span class="field_error" >{$FIELD_ERRORS.delete}</span>
                     <button id="deleteProj" name='deleteProj' type='submit' class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-down"></span> Delete</button>
                 </div>
             </div>

@@ -2,8 +2,8 @@
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 
 	function createProject($projName, $description, $access, $tags) {
-		if(	!preg_match('/^[a-z0-9 \-]+$/i', $projName) || 
-			!preg_match('/^[a-z0-9 \-]+$/i', $description))
+		if(	!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $projName) || 
+			!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $description))
 			return 'Invalid project information';
 
 		try {
@@ -27,8 +27,9 @@
 			$id = getProjectID($projName);
 			
 			foreach($tags as $tag) {
-				if(	!preg_match('/^[a-z0-9 \-]+$/i', $tag) )
-					return 'Invalid project information';
+				$tag = trim($tag);
+				if(	!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $tag) )
+					return 'Invalid tag';
 
 				$stmt = $conn->prepare("SELECT *
 										FROM Tag

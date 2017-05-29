@@ -12,11 +12,11 @@
     $name = strip_tags($_POST['projName']);
     $overview = strip_tags($_POST['overview']);
     $access = strip_tags($_POST['access']);
-    $tags = explode(' ; ', $_POST['tags']);
+    $tags = explode(';', $_POST['tags']);
 
     $id = createProject($name, $overview, $access, $tags);
     if(!$id || !ctype_digit($id)){
-        $_SESSION['field_errors'][projCreate] = 'Parameter didn\'t were not valid. Make sure only Letters, numbers, \'.\' and \'-\' are used';
+        $_SESSION['field_errors'][projCreate] = 'Invalid parameters. Make sure only Letters, numbers, \'.\' and \'-\' are used';
         header("Location: $BASE_URL" . 'pages/project/projectCreate.php');
     }
     else{

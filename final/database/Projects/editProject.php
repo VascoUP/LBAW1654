@@ -1,6 +1,6 @@
 <?php
   	function updateProjName($name, $id){
-		if(!preg_match('/^[a-z0-9 \-]+$/i', $name))
+		if(!preg_match('/^[a-zA-Z0-9 \-]+$/i', $name))
 			return 'Invalid name';
 		
 		try {
@@ -15,7 +15,7 @@
 	}
 	
  	function updateOverview($overview, $id) {
-		if(!preg_match('/^[a-z0-9 .\-]+$/i', $overview))
+		if(!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $overview))
 			return 'Invalid overview';
 
 		try {
@@ -47,22 +47,20 @@
 	function deleteProject($id){
 		try {
 			global $conn;
+			/*$stmt = $conn->prepare("DELETE
+									FROM TagProject
+									WHERE projectID = ?");
+			$stmt->execute(array($id));*/
 			$stmt = $conn->prepare("DELETE
 									FROM Project
 									WHERE projectID = ?");
 			$stmt->execute(array($id));
-			
-			$stmt = $conn->prepare("DELETE
+			/*$stmt = $conn->prepare("DELETE
 									FROM ProjectCoordinator
 									WHERE projectID = ?");
-			$stmt->execute(array($id));
-			
-			$stmt = $conn->prepare("DELETE
-									FROM TagProject
-									WHERE projectID = ?");
-			$stmt->execute(array($id));
+			$stmt->execute(array($id));	*/	
 		} catch(Exception $e) {
-			echo $e->getMessage();
+			return $e->getMessage();
 		}
   	}
 	
