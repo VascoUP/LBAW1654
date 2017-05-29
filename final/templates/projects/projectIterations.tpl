@@ -21,9 +21,6 @@
           <th class='cell-stat text-center hidden-xs hidden-sm'>Start date</th>
           <th class='cell-stat text-center hidden-xs hidden-sm'>Due date</th>
           <th class='cell-stat text-center hidden-xs hidden-sm'>Status</th>
-		  {if $userIsCoord}
-          <th class='column join button'></th>
-		  {/if}
         </tr>
       </thead>
       <tbody>
@@ -45,11 +42,6 @@
           Active
         {else}
           Completed
-        {/if}
-          </td>
-          <td>
-        {if $userIsCoord && ($numberTasksCompleted[$i] != $smartyIterationsCounter[$i] || $smartyIterationsCounter[$i] == 0) }
-            <a id="editIteration" class="btn btn-warning" href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/iteration/editIteration.php?projID={$smartyProjID}&itID={$smartyIterations[$i]['iterationid']}">Edit <br> Iteration</a>
         {/if}
           </td>
         </tr>
