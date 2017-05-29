@@ -12,16 +12,16 @@
 		exit;
 	}
 
-  $name = strip_tags($_POST['IterationName']);
-  $maximum = strip_tags($_POST['maximum']);
-  $startDate = strip_tags($_POST['StartDate']);
-  $dueDate = strip_tags($_POST['DueDate']);
-  $description = strip_tags($_POST['Description']);
+	$name = strip_tags($_POST['IterationName']);
+	$maximum = strip_tags($_POST['maximum']);
+	$startDate = strip_tags($_POST['StartDate']);
+	$dueDate = strip_tags($_POST['DueDate']);
+	$description = strip_tags($_POST['Description']);
+		
+	$itID = addIteration($id, $name, $description, $startDate, $maximum, $dueDate);
+	$userID = getUserID($_SESSION['username']);
+	insertPermission($itID, $userID);
 	
- $itID = addIteration($id, $name, $description, $startDate, $maximum, $dueDate);
- $userID = getUserID($_SESSION['username']);
- insertPermission($itID, $userID);
- 
-  $_SESSION['success_messages'][] = 'Iteration created successfully';  
-  header('Location: ' .$BASE_URL.'pages/project/iteration/projectIterations.php?projID='.$id);
+	$_SESSION['success_messages'][] = 'Iteration created successfully';  
+	header('Location: ' .$BASE_URL.'pages/project/iteration/projectIterations.php?projID='.$id);
 ?>
