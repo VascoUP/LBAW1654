@@ -20,9 +20,12 @@
 	$effort = strip_tags($_POST['Effort']);
     $description = htmlspecialchars($_POST['Description']);
 	
-	
-	addTask($name, $priority, $description, $effort, $id, $userID);
+	$result = addTask($name, $priority, $description, $effort, $id, $userID);
+	if( $result ) {
+		echo "<p>$result</p>";
+		die();
+	}
  
-  $_SESSION['success_messages'][] = 'Task created successfully';  
- header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?projID=' . $projID . '&itID='.$id);
+	$_SESSION['success_messages'][] = 'Task created successfully';  
+	header('Location: ' .$BASE_URL.'pages/project/iteration/iterationPage.php?projID=' . $projID . '&itID='.$id);
 ?>

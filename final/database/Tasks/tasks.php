@@ -123,7 +123,7 @@
 	function addTask($name, $priority, $description, $effort, $itID, $userID){
 		if(	userHasPremission($itID, $userID) !== true || 
 			!preg_match('/^[a-zA-Z0-9 \-]+$/i', $name) ||
-			!filter_var($priority, FILTER_SANITIZE_NUMBER_INT) ||
+			!filter_var($effort, FILTER_SANITIZE_NUMBER_INT) ||
 			!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $description) )
 			echo 'Invalid input';
 
@@ -142,7 +142,7 @@
 			$stmt->bindParam(':taskStatus', $taskStatus);
 			$stmt->execute();
 		} catch(Exception $e) {
-			echo $e->getMessage();
+			return $e->getMessage();
 		}
 	}
 
