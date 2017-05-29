@@ -1,9 +1,12 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
 <link href="{$BASE_URL}css/pages/profile.css" rel="stylesheet">
 <link href="{$BASE_URL}css/pages/search.css" rel="stylesheet">
 <link href="{$BASE_URL}css/templates/projectsUsers.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <script src="{$BASE_URL}javascript/admin/search.js"></script>
+<script type="text/javascript" src="{$BASE_URL}javascript/templates/paginatedTables.js"></script>
 
 <div class="container">
 	<div class="overlay">
@@ -17,16 +20,23 @@
 		<button id="filter" type="button" class="btn btn-primary btn-filter" >Apply Filters</button>
 		</div>
 	</div>
-	
+
 	<div id="first" class="card card-container first">
 		<h3 class="title">Users</h3>
 		<div class="table-container" id="containerResultsUser">
 		{if $smartyUsers|@count == 0}
 				<h4 class="title">
-				Any users found
+				No users found
 				</h4>
 				{else}
 			<table id="tableUser" class="table table-filter">
+				<thead>
+				    <tr>
+				        <th>
+
+				        </th>
+				    </tr>
+				</thead>
 				<tbody>
 				{for $i=0 to ($smartyUsers|@count - 1)}
 					<tr>
@@ -47,15 +57,22 @@
 			{/if}
 		</div>
 	</div>
-	
+
 	<div id="second" class="card card-container second">
 		<h3 class="title">Projects</h3>
 		<div class="table-container" id="containerResultsProj">
 		{if $smartyProjs|@count == 0}
 				<h4 class="title">
-				Any projects found</h4>
+				No projects found</h4>
 			{else}
 			<table id="tableProject" class="table table-filter">
+				<thead>
+				    <tr>
+				        <th>
+
+				        </th>
+				    </tr>
+				</thead>
 				<tbody>
 					{for $i=0 to ($smartyProjs|@count - 1)}
 					<tr>
