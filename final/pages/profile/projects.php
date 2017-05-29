@@ -10,6 +10,10 @@
 	$userID = $_GET['userID'];
 	$projects = getProjects($userID);
 	$userInfo = getUserInformationByID($userID);
+	if( empty($userInfo) ) {
+		header('Location: https://gnomo.fe.up.pt' . $BASE_URL . 'pages/general/mainPage.php');
+		die();
+	}
   	include_once($BASE_DIR .'database/prepareNotifications.php');
 
 	$smarty->assign('userID', $userID);
