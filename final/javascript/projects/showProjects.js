@@ -53,7 +53,8 @@ function init() {
 	$("#coord").click(function() {
 		$('#collabbody').DataTable().destroy();
 		$('#coordbody').DataTable( {
-			"pagingType": "full_numbers"
+			"pagingType": "full_numbers",
+			"bFilter": false
 		} );
 		
 		$("#coordbody").show();
@@ -69,7 +70,8 @@ function init() {
 		$('#coordbody').DataTable().destroy();
 		
 		$('#collabbody').DataTable( {
-			"pagingType": "full_numbers"
+			"pagingType": "full_numbers",
+			"bFilter": false
 		} );
 		
 		$("#collabbody").show();
