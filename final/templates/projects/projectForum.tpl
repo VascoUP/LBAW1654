@@ -17,7 +17,8 @@
 					<th class='cell-stat hidden-xs hidden-sm'>Last Comment</th>
 					{if $userIsCoord}
 					<th class='column join button'></th>
-					{elseif $collaborator}
+					{/if}
+					{if $collaborator ||  $userIsCoord}
 					<th class="column report button"></th>
 					{/if}
 				</tr>
@@ -41,7 +42,8 @@
 					<td>   
 						<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/editThread.php?projID={$smartyProjID}&forumID={$smartyThreads[$i]['threadid']}" class="btn btn-warning forum">Edit Forum</a>
 					</td>
-				{elseif $collaborator}
+				{/if}
+				{if $collaborator || $userIsCoord}
 					<td>
 						<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?projID={$smartyProjID}&threadID={$smartyThreads[$i]['threadid']}" class="btn btn-danger">Report Forum</a>
 					</td>

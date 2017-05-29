@@ -93,13 +93,13 @@
 										<div class="media">
 											<div class="media-body">
 											{if $reported[$i]['userid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$reported[$i]['userid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/profile/profileUserOverview.php?userInfo={$reported[$i]['userid']}">
 											{elseif $reported[$i]['taskid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$reported[$i]['taskid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/task/taskPage.php?taskID={$reported[$i]['taskid']}">
 											{elseif $reported[$i]['threadid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?forumID={$reported[$i]['threadid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?forumID={$reported[$i]['threadid']}">
 											{elseif $reported[$i]['projectid']}
-											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?fprojID={$reported[$i]['projectid']}" role="button">
+											<a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/projectPage.php?fprojID={$reported[$i]['projectid']}">
 											{/if}
 
 												<h4 class="title2">
