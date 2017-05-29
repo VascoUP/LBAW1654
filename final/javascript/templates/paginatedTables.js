@@ -39,16 +39,4 @@ $(document).ready(function() {
         "pagingType": "full_numbers"
     } );
 
-    $('#top5body').DataTable( {
-        "pagingType": "full_numbers"
-    } );
-
-    $('#coordbody').DataTable( {
-        "pagingType": "full_numbers"
-    } );
-
-    $('#collabbody').DataTable( {
-        "pagingType": "full_numbers"
-    } );
-
 } );

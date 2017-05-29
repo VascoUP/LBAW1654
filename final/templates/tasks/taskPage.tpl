@@ -50,7 +50,7 @@
                 <a href="https://gnomo.fe.up.pt{$BASE_URL}actions/projects/completeTask.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-success btn-sm">Conclude Task</a>
             {/if}
                 <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/admin/report.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-warning btn-sm">Report task</a>
-			{if $userTask == 1}
+			{if $userTask == '1'}
                 <a href="https://gnomo.fe.up.pt{$BASE_URL}actions/projects/leaveTask.php?projID={$smartyProjID}&taskID={$smartyTaskID}" class="btn btn-primary btn-sm" id="leaveTask">Leave Task</a>
 			{/if}
             {if $smartyPermission}	
