@@ -1,7 +1,7 @@
 <?
 include_once('../../config/init.php');
-  include_once($BASE_DIR .'database/Admin/ban.php');
- include_once($BASE_DIR .'database/Users/report.php');  
+include_once($BASE_DIR .'database/Admin/ban.php');
+include_once($BASE_DIR .'database/Users/report.php');  
   
   
   $content = $_POST['content'];

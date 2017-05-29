@@ -1,7 +1,7 @@
 <?php	
 	include_once('../../config/init.php');
 	include_once($BASE_DIR .'database/Threads/threads.php'); 
-include_once($BASE_DIR .'database/Users/userInformation.php'); 	
+    include_once($BASE_DIR .'database/Users/userInformation.php'); 	
 
 	$id = $_GET['projID'];
 	$projID = $_GET['projID'];

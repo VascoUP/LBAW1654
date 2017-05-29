@@ -11,7 +11,6 @@
 		<table class='table forum table-striped'>
 			<thead>
 				<tr>
-					<th class='hidden-xs cell-stat'></th>
 					<th>Forums</th>
 					<th class='cell-stat text-center hidden-xs hidden-sm'>Creator</th>
 					<th class='cell-stat text-center hidden-xs hidden-sm'>Comments</th>
@@ -26,7 +25,6 @@
 			<tbody>
 			{for $i=0 to ($smartyThreads|@count-1)}
 				<tr>
-					<td class='hidden-xs text-center'><i class='fa fa-question fa-2x text-primary'></i></td>
 					<td>
 						<h4><a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/project/forum/forum.php?projID={$smartyProjID}&forumID={$smartyThreads[$i]['threadid']}">{$smartyThreads[$i]['title']}</a><br></h4>
 					</td>

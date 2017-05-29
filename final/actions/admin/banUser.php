@@ -1,7 +1,7 @@
 <?
 include_once('../../config/init.php');
-  include_once($BASE_DIR .'database/Admin/ban.php');
- include_once($BASE_DIR .'database/Users/userInformation.php');  
+include_once($BASE_DIR .'database/Admin/ban.php');
+include_once($BASE_DIR .'database/Users/userInformation.php');  
   
   $userID = $_GET['userID'];
   

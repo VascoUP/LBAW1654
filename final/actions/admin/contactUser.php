@@ -1,7 +1,7 @@
 <?php
   include_once('../../config/init.php');
   include_once($BASE_DIR .'database/Admin/contacts.php');
- include_once($BASE_DIR .'database/Users/userInformation.php');  
+  include_once($BASE_DIR .'database/Users/userInformation.php');  
   
   if(!$_POST['comment'] || !$_POST['subject'] || !$_GET['userID'] || !$_GET['second']){
 	  $_SESSION['error_messages'][] = 'Invalid contact';

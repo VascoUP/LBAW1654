@@ -16,7 +16,7 @@
 	$smarty->assign('smartyProjID', $projID);
   	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/iterations/createIteration.tpl');
   	$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/projects/projectSideBar.tpl');
-$smarty->assign('varSideBar', 3);
+	$smarty->assign('varSideBar', 3);
 	$smarty->assign('collaborator', $isCollaborator);
 	$smarty->assign('userIsCoord', $userIsCoord);
 	$smarty->assign('type', $userType);

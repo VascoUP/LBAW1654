@@ -30,7 +30,7 @@
 	$smarty->assign('smartyForumID', $forumID);
 	$smarty->assign('smartyTaskID', $taskID);
 	$smarty->assign('collaborator', $isCollaborator);
- $smarty->assign('varSideBar', 4);
+	$smarty->assign('varSideBar', 4);
 	$smarty->assign('collaborator', $isCollaborator);
 	$smarty->assign('userIsCoord', $userIsCoord);
 	$smarty->assign('type', $userType);

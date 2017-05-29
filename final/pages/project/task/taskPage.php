@@ -47,6 +47,7 @@
 	$smarty->assign('collaborator', $isCollaborator);
 	$smarty->assign('userIsCoord', $userIsCoord);
 	$smarty->assign('type', $userType);
+	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
   	$smarty->display($BASE_DIR .'templates/page.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl');

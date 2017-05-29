@@ -8,6 +8,7 @@
 		editThread($id, $_POST['ThreadName']);
 	
 	$projID = getProject($id);
+	
   $_SESSION['success_messages'][] = 'Thread updated successfully';  
   header('Location: ' .$BASE_URL.'pages/project/forum/projectForum.php?projID='.$projID);
  ?>
