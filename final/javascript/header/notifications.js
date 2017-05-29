@@ -29,12 +29,10 @@ function init() {
 }
 
 function getUserId(element) {
-    //var parent = $(this).parent();
     var userid = parseInt($(this).siblings('.userID').text());
 }
 
 function getProjId(element) {
-    //var parent = $(this).parent();
     var projid = parseInt($(this).siblings('.projID').text());
 }
 
