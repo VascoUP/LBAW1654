@@ -105,8 +105,10 @@
         </fieldset>
         </form>
     
+		{if $admin == 'administrator'}
         <br>
         <br>
+		
         <form action="{$BASE_URL}actions/users/deleteAccount.php" method="post">
         <div class="form-group">
             <label class="col-md-4 control-label" ></label>  
@@ -114,6 +116,7 @@
                 <button id="delete" type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up"></span> Delete account</button>
             </div>
         </div>
-    </form>
+		</form>
+		{/if}
 </div>
 </div>

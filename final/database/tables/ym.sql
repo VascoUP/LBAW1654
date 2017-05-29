@@ -621,24 +621,10 @@ INSERT INTO TaskUser(taskID, userID) VALUES (51,12);
 INSERT INTO TaskUser(taskID, userID) VALUES (54,11);
 INSERT INTO TaskUser(taskID, userID) VALUES (56,12);
 
-CREATE OR REPLACE FUNCTION checkAdmins()
-	RETURNS TRIGGER AS $checkAdmins$ 
-	BEGIN
-        IF (SELECT COUNT(*) FROM UserSite WHERE NEW.type = 'administrator') = 1
-        THEN RAISE EXCEPTION 'Website needs administrators! ';
-        END IF;
-        RETURN OLD;
-	END;
-$checkAdmins$ LANGUAGE plpgsql;
-
-CREATE TRIGGER checkRemoveAdmins
-BEFORE DELETE ON UserSite
-EXECUTE PROCEDURE checkAdmins();
-
 CREATE OR REPLACE FUNCTION checkCoords()
 	RETURNS TRIGGER AS $checkCoords$ 
 	BEGIN
-        IF (SELECT COUNT(*) FROM ProjectCoordinator WHERE projectID = NEW.projectID) = 1
+        IF (SELECT COUNT(*) FROM ProjectCoordinator WHERE projectID = Project.projectID) = 1
         THEN RAISE EXCEPTION 'Project needs coordinators! ';
         END IF;
         RETURN OLD;
@@ -646,7 +632,7 @@ CREATE OR REPLACE FUNCTION checkCoords()
 $checkCoords$ LANGUAGE plpgsql;
 
 CREATE TRIGGER checkCoords
-BEFORE DELETE ON ProjectCoordinator
+BEFORE DELETE ON Project
 EXECUTE PROCEDURE checkCoords();
 
 CREATE OR REPLACE FUNCTION checkIterarions()
@@ -679,8 +665,7 @@ BEFORE INSERT ON Task
 FOR EACH ROW
 EXECUTE PROCEDURE checkEffort();
 
-CREATE FUNCTION
-	CheckTag()
+CREATE FUNCTION CheckTag()
 RETURNS TRIGGER AS $checkTag$
 	BEGIN
         IF EXISTS (SELECT * FROM Tag 

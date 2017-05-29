@@ -21,7 +21,9 @@
   		$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/admin/adminSidebar.tpl');
 	else
 		$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/profiles/profileSidebar.tpl');
-  
+	
+	$smarty->assign('admin', $userType);
+	
 	$smarty->display($BASE_DIR .'templates/common/header.tpl');
   	$smarty->display($BASE_DIR .'templates/page.tpl');
 	$smarty->display($BASE_DIR .'templates/common/footer.tpl');
