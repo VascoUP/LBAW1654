@@ -68,14 +68,16 @@
     </div>
 {else}
     <div class='profile-userbuttons'>
-        {if !$leaveBtnVisibility' &&  $joinBtnVisibility == 'not_visible' || $smartyProjInfo['0']['projectstatus'] != 'banned' || $collaborator == 1 || $userIsCoord == 1}
+	{if $joinBtnVisibility != 'not_visible'}
+        {if $joinProjectButton eq false && $smartyProjInfo['0']['projectstatus'] != 'banned'}
         <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveProject.php?projID={$smartyProjID}" class="btn btn-warning btn-sm" id="leaveProject">Leave Project</a>
-        {elseif $joinBtnVisibility != 'not_visible' || $smartyProjInfo['0']['projectstatus'] != 'banned' || !($collaborator == 0 && $userIsCoord == 0)}
+        {elseif $joinProjectButton eq true && $smartyProjInfo['0']['projectstatus'] != 'banned'}
         <a id="request" class="btn btn-primary btn-sm">Request to join</a>
         {/if}
 		{if $smartyProjInfo['0']['projectstatus'] != 'banned'}
         <a href="https://gnomo.fe.up.pt/~lbaw1654/final/pages/admin/report.php?projID={$smartyProjID}" class="btn btn-danger btn-sm" id="reportProkect">Report Project</a>
 		{/if}
+	{/if}
     </div>
 {/if}
 </div>
