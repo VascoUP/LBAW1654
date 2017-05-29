@@ -68,9 +68,9 @@
     </div>
 {else}
     <div class='profile-userbuttons'>
-        {if $smartyProjInfo['0']['projectstatus'] != 'banned' || $collaborator === true || $userIsCoord === true}
+        {if $smartyProjInfo['0']['projectstatus'] != 'banned' || $collaborator == 1 || $userIsCoord == 1}
         <a href="https://gnomo.fe.up.pt/~lbaw1654/final/actions/projects/leaveProject.php?projID={$smartyProjID}" class="btn btn-warning btn-sm" id="leaveProject">Leave Project</a>
-        {elseif $smartyProjInfo['0']['projectstatus'] != 'banned' || !($collaborator === '0' || $userIsCoord === '0')}
+        {elseif $smartyProjInfo['0']['projectstatus'] != 'banned' || !($collaborator == 0 && $userIsCoord == 0)}
         <a id="request" class="btn btn-primary btn-sm">Request to join</a>
         {/if}
 		{if $smartyProjInfo['0']['projectstatus'] != 'banned'}
