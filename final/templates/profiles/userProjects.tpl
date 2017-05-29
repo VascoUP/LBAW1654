@@ -17,14 +17,14 @@
         <input id="searchProj" name='search' type="text" class="form-control search" placeholder="Search...">
     </div>
     <div id="userProjTable" class="table-container">
+		{if $top|@count == 0}
+            <h3 id="projh3">{$smartyUsrInfo['0']['username']} doesn't have any project</h3>
+		{else}
         <table id="top5body" class="table table-filter">
             <tbody>
             {for $i=0 to ($top|@count-1)}
                 <tr>
                     <td>
-                    {if $top|@count == 0}
-                        <h3 id="projh3">{$smartyUsrInfo['0']['username']} doesn't have any project</h3>
-                    {/if}
                         <div class="media">
                             <div class="media-body">
                                 <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectPage.php?projID={$top[$i]['projectid']}" role="button">
@@ -40,14 +40,16 @@
             {/for}
             </tbody>
         </table>
+		{/if}
+		{if $projectsCoord|@count == 0}
+            <h3 id="coordh3">{$smartyUsrInfo['0']['username']} doesn't coordinates any project</h3>
+        {else}
         <table id="coordbody" class="table table-filter">
             <tbody>
                 {for $i=0 to ($projectsCoord|@count-1)}
                 <tr>
                     <td>
-                    {if $projectsCoord|@count == 0}
-                <h3 id="coordh3">{$smartyUsrInfo['0']['username']} doesn't coordinates any project</h3>
-                {/if}
+                    
                         <div class="media">
                             <div class="media-body">
                                 <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectPage.php?projID={$projectsCoord[$i]['projectid']}" role="button">
@@ -67,14 +69,15 @@
                 {/for}
             </tbody>
         </table>
+		{/if}
+		{if $projectsCollab|@count == 0}
+            <h3 id="collabh3">{$smartyUsrInfo['0']['username']} doesn't collaborates in any project</h3>
+        {else}
         <table id="collabbody" class="table table-filter">
             <tbody>
                 {for $i=0 to ($projectsCollab|@count-1)}
                 <tr>
                     <td>
-                    {if $projectsCollab|@count == 0}
-                    <h3 id="collabh3">{$smartyUsrInfo['0']['username']} doesn't collaborates in any project</h3>
-                    {/if}
                         <div class="media">
                             <div class="media-body">
                                 <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/project/projectPage.php?projID={$projectsCollab[$i]['projectid']}" role="button">
@@ -90,5 +93,6 @@
                 {/for}
             </tbody>
         </table>
+		{/if}
     </div>
 </div>
