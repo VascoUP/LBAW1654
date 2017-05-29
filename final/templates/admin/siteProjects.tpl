@@ -27,8 +27,8 @@ Username
 					<h3 id="projecth3">This site doesn't have any projects created</h3>
 				{else}
 				</td>
+				</tr>
 				{for $i=0 to ($smartyProjects|@count-1)}
-					</tr>
 					<tr>
 						<td>
 							<div class="media-body">

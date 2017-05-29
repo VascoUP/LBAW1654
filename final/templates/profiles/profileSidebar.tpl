@@ -25,13 +25,13 @@
                         Overview</a>
                 </li>
             {if !$smartyUser }
-                <li>
+                <li {if $varSideBar == 2} class='active' {/if}>
                     <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/editProfile.php">
                         <i class='glyphicon glyphicon-pencil'></i>
                         Account Settings</a>
                 </li>
             {/if}
-                <li {if $varSideBar == 2} class='active' {/if}>
+                <li {if $varSideBar == 3} class='active' {/if}>
                 {if $smartyUser }
                     <a href="https://gnomo.fe.up.pt{$BASE_URL}pages/profile/userProjects.php?user={$smartyUser}&userInfo={$smartyUsrInfo['0']['userid']}">
                         <i class='glyphicon glyphicon-ok'></i>

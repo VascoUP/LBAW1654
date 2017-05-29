@@ -87,9 +87,9 @@
             <!-- Form Name -->
             <legend class="tab">Give User Permission</legend>
             <div class="form-group">
-                <label for="givePermission" class="col-md-4 control-label">Give Permission</label>
+                <label for="permission" class="col-md-4 control-label">Give Permission</label>
                 <div class="col-md-4">
-                    <input name='givePermission' id='givePermission' type='text' class="form-control form-style input-md" placeholder='ex: aed1123'>
+                    <input name='permission' id='permission' type='text' class="form-control form-style input-md" placeholder='ex: aed1123'>
                     <button id="givePermission" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Add User</button>
                 </div>
             </div>

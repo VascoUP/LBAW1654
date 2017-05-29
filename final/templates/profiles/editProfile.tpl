@@ -105,7 +105,7 @@
         </fieldset>
         </form>
     
-		{if $admin == 'administrator'}
+		{if $admin != 'administrator'}
         <br>
         <br>
 		
