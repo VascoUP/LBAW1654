@@ -1,7 +1,7 @@
 <?
 	include_once('../../config/init.php');
-	include($BASE_DIR .'database/Tasks/tasks.php');
-	include($BASE_DIR .'database/Users/userInformation.php');
+	include_once($BASE_DIR .'database/Tasks/tasks.php');
+	include_once($BASE_DIR .'database/Users/userInformation.php');
 	
 	$taskID = $_GET['taskID'];
 	$projID = $_GET['projID'];

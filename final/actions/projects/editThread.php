@@ -1,6 +1,6 @@
 <?php	
 	include_once('../../config/init.php');
-	include($BASE_DIR .'database/Threads/threads.php');
+	include_once($BASE_DIR .'database/Threads/threads.php');
 
 	$id = $_GET['forumID'];
 
