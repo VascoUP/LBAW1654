@@ -32,7 +32,10 @@
 	else
 		$value = 0;
 
+	$userTask = getUserTask($userInfo['0']['userid'], $taskID);
+	
   	$smarty->assign('smartyUsrInfo', $userInfo);
+	$smarty->assign('userTask', $userTask);
   	$smarty->assign('smartyProjID', $projID);
 	$smarty->assign('smartyTaskID', $taskID);
 	$smarty->assign('smartyInfo', $taskInfo);

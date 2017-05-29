@@ -23,6 +23,7 @@
     vertical-align: middle;
     background-color: white;
     min-width: 100px;
+	text-align: center;
 }
 
 .task.table {

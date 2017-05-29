@@ -190,4 +190,20 @@
 			return $e->getMessage();
 		}
 	}
+	
+	function getUserTask($userID, $taskID){
+		try {
+			global $conn;
+			
+			$stmt = $conn->prepare("SELECT * FROM TaskUser WHERE TaskUser.userID = ? AND TaskUser.taskID = ?");					
+			$stmt->execute(array($userID, $taskID));
+			$result = $stmt->fetchAll();
+			
+			if(count($result) == 0)
+				return 0;
+			return 1;
+		} catch(Exception $e) {
+			return $e->getMessage();
+		}
+	}
 ?>
