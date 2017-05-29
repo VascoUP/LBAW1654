@@ -31,4 +31,16 @@
     unset($_SESSION['error_messages']);  
     unset($_SESSION['field_errors']);
     unset($_SESSION['form_values']);
+
+    include_once($BASE_DIR .'database/Users/userInformation.php');
+    if( $_SESSION['username'] ) {
+        $userInfo = getUserInformation($username);
+        if( count($userInfo) == 0 ) {
+            session_destroy();
+            unset($_COOKIE['remember_username']);
+            setcookie('remember_username', '', time() - 3600, '/');
+            header('Location: https://gnomo.fe.up.pt' .$BASE_URL .'pages/general/mainPage.php');
+            die();
+        }
+    }
 ?>

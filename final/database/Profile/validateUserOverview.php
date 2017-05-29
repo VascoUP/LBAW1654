@@ -2,7 +2,7 @@
 	include_once($BASE_DIR .'database/Users/userInformation.php');
     
 	if( !$_SESSION['username'] ) {
-		header('Location: https://gnomo.fe.up.pt/~lbaw1654/final/pages/general/mainPage.php');
+		header('Location: https://gnomo.fe.up.pt' .$BASE_URL .'pages/general/mainPage.php');
 		die();
 	}
     
