@@ -12,7 +12,7 @@
     $name = strip_tags($_POST['projName']);
     $overview = strip_tags($_POST['overview']);
     $access = strip_tags($_POST['access']);
-    $tags = explode(' ; ', $_POST['tags']);
+    $tags = explode(';', $_POST['tags']);
 
     $id = createProject($name, $overview, $access, $tags);
     if(!$id || !ctype_digit($id)){
