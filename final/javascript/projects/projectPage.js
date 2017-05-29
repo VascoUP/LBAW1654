@@ -2,7 +2,7 @@ $(document).ready(init);
 
 function init() {
     $('#request').click(function() {
-        requestProject(1);
+        requestProject($('#projectid').html());
     });
 }
 
@@ -10,8 +10,9 @@ function requestProject(projid) {
     var data = {
         'projid': projid
     }
-    $.post("../../api/answerInvite.php", JSON.stringify(data))
+    $.post("../../api/requestProject.php", JSON.stringify(data))
         .done(function(data) {
+            console.log(data);
             $('#request').attr("disabled", true);
             $('#request').attr("value", "Requested");
         })

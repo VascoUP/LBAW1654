@@ -9,5 +9,5 @@
 	
     $result = requestParticipation($userID, $projID);
 	
-	echo $data['accepted'];
+	echo json_encode("$userID $projID");
 ?>

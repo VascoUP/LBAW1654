@@ -49,9 +49,7 @@
 			$stmt->bindParam(':inviteDate', $invitedate);
 			$stmt->bindParam(':userStatusProject', $userStatusProject);
 			$stmt->execute();
-			
-		}
-		 catch(Exception $e) {
+		} catch(Exception $e) {
 			return $e->getMessage() . " - " . $invitedate;
 		}
     }

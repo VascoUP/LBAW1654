@@ -72,6 +72,7 @@
         {if $joinProjectButton eq false && $smartyProjInfo['0']['projectstatus'] != 'banned'}
         <a href="https://gnomo.fe.up.pt{$BASE_URL}actions/projects/leaveProject.php?projID={$smartyProjID}" class="btn btn-warning btn-sm" id="leaveProject">Leave Project</a>
         {elseif $joinProjectButton eq true && $smartyProjInfo['0']['projectstatus'] != 'banned'}
+        <p id="projectid" hidden>{$smartyProjID}</p>
         <a id="request" class="btn btn-primary btn-sm">Request to join</a>
         {/if}
 		{if $smartyProjInfo['0']['projectstatus'] != 'banned'}
