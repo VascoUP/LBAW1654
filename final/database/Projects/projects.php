@@ -1,5 +1,6 @@
 <?php
 	include_once($BASE_DIR .'database/Users/userInformation.php');
+	include_once($BASE_DIR .'database/Projects/projectInformation.php');
 
 	function createProject($projName, $description, $access, $tags) {
 		if(	!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $projName) || 
@@ -139,19 +140,20 @@
 		}
 	}
 
-	function leaveProject($userID, $projID){
+	function leaveProject($userID, $projID) {
 		try{
 			global $conn;
-			$type = getUserInformationByID($userID)['0']['type'];
-			
-				$stmt = $conn->prepare("DELETE FROM ProjectCoordinator WHERE userID = ? AND projectID = ?");
-				$stmt->execute(array($userID, $projID));
-				
+			if(isCoordinatorInProject($projID, $userID) == 1) {
+				if(count(getCoordinator($projID)) !== 1) { 
+					$stmt = $conn->prepare("DELETE FROM ProjectCoordinator WHERE userID = ? AND projectID = ?");
+					$stmt->execute(array($userID, $projID));
+				} else
+					return 'Unable to delete a coordinator from this project';
+			} else {
 				$stmt = $conn->prepare("DELETE FROM ProjectUsers WHERE userID = ? AND projectID = ?");
 				$stmt->execute(array($userID, $projID));
-
-		}
-			catch(Exception $e) {
+			}
+		} catch(Exception $e) {
 			return $e->getMessage();
 		}
 	}

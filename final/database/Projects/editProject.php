@@ -47,18 +47,10 @@
 	function deleteProject($id){
 		try {
 			global $conn;
-			/*$stmt = $conn->prepare("DELETE
-									FROM TagProject
-									WHERE projectID = ?");
-			$stmt->execute(array($id));*/
 			$stmt = $conn->prepare("DELETE
 									FROM Project
 									WHERE projectID = ?");
 			$stmt->execute(array($id));
-			/*$stmt = $conn->prepare("DELETE
-									FROM ProjectCoordinator
-									WHERE projectID = ?");
-			$stmt->execute(array($id));	*/	
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
