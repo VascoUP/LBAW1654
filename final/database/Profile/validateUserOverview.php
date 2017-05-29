@@ -14,11 +14,6 @@
 	$userInfoFirst = getUserInformationByID($first);
 	$userInfo = getUserInformationByID($userID);
 
-	/*if( empty($userInfoFirst) || empty($userInfo) ) {
-		header('Location: https://gnomo.fe.up.pt' . $BASE_URL . 'pages/general/mainPage.php');
-		die();
-	}*/
-
     $userType = $userInfo[0]['type'];
     if( $userType == 'administrator' ) {
 		header('Location: https://gnomo.fe.up.pt' . $BASE_URL . 'pages/admin/profileAdminOverview.php');
