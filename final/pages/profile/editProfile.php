@@ -18,9 +18,9 @@
 	$smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/profiles/editProfile.tpl');
 
     if( $userType == 'administrator' )
-  		$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/admin/adminSidebar.tpl');
+  		$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'templates/admin/adminSidebar.tpl');
 	else
-		$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/profiles/profileSidebar.tpl');
+		$smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'templates/profiles/profileSidebar.tpl');
 	
 	$smarty->assign('admin', $userType);
 	
