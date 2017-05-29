@@ -1,7 +1,6 @@
 <?
-
-function removeUserProject($user, $proj){
-try {
+	function removeUserProject($user, $proj){
+		try {
 			global $conn;
 			$stmt = $conn->prepare("DELETE 
 									FROM ProjectUsers 
@@ -12,10 +11,10 @@ try {
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-}
+	}
 
-function removeCoordProject($user, $proj){
-try {
+	function removeCoordProject($user, $proj){
+		try {
 			global $conn;
 			$stmt = $conn->prepare("DELETE 
 									FROM ProjectCoordinator
@@ -26,5 +25,5 @@ try {
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-}
+	}
 ?>

@@ -1,7 +1,7 @@
 <?
 	include_once('../../config/init.php');
-	include($BASE_DIR .'database/Iterations/iterations.php');
-	include($BASE_DIR .'database/Users/userInformation.php');
+	include_once($BASE_DIR .'database/Iterations/iterations.php');
+	include_once($BASE_DIR .'database/Users/userInformation.php');
 	
 	$itID = $_GET['itID'];
 	$projID = $_GET['projID'];

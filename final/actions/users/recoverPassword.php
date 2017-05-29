@@ -1,6 +1,6 @@
 <?php
   include_once('../../config/init.php');
-  include($BASE_DIR .'database/Users/recoverPassword.php');  
+  include_once($BASE_DIR .'database/Users/recoverPassword.php');  
 
   $email = $_POST['email'];
   $password = $_POST['password'];

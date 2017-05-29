@@ -1,4 +1,4 @@
-<?
+<?php
 	function addContactSite($name, $email, $phone, $content){
 		try {
 			global $conn;
