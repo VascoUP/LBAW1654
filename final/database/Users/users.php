@@ -1,7 +1,7 @@
 <?php
-include($BASE_DIR .'database/Users/userInformation.php');
+	include_once($BASE_DIR .'database/Users/userInformation.php');
 
-  function createUser($username, $email, $password) {
+	function createUser($username, $email, $password) {
 		try {
 			global $conn;
 			$passwordHash = password_hash($password, PASSWORD_DEFAULT);
@@ -20,9 +20,9 @@ include($BASE_DIR .'database/Users/userInformation.php');
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-  }
-  
-  function emailExists($email) {
+	}
+
+	function emailExists($email) {
 		try {
 			global $conn;
 
@@ -33,8 +33,8 @@ include($BASE_DIR .'database/Users/userInformation.php');
 			return $e->getMessage();
 		}
 		return ($result !== false);
-  }
-  
+	}
+
 	function usernameExists($username) {
 		try {
 			global $conn;
@@ -47,18 +47,18 @@ include($BASE_DIR .'database/Users/userInformation.php');
 		return ($result !== false);
 	}
 
-  function isLoginCorrect($username, $password) {
+	function isLoginCorrect($username, $password) {
 		try {
 			global $conn;
 			$stmt = $conn->prepare("SELECT * 
-																FROM UserSite 
-																WHERE username = ?");
+									FROM UserSite 
+									WHERE username = ?");
 			$stmt->execute(array($username));
 			$result = $stmt->fetch();
 		} catch(Exception $e) {
 			return $e->getMessage();
 		}
-	
+
 		if(!password_verify($password, $result["password"])) {
 			$data = array('result' => 'fail');
 			header($_SERVER["SERVER_PROTOCOL"]."400 Bad Request");
@@ -67,16 +67,16 @@ include($BASE_DIR .'database/Users/userInformation.php');
 		
 		$data = array('result' => 'done');
 		return true;
-  }
-  
-  function verifyPassword($password, $confirm) {
-	  if($password === $confirm)
-		  return true;
-	  return false;
-  }
-  
-  function deleteUser($username) {
-	  $id = getUserID($username);
+	}
+
+	function verifyPassword($password, $confirm) {
+		if($password === $confirm)
+			return true;
+		return false;
+	}
+
+	function deleteUser($username) {
+		$id = getUserID($username);
 		try {
 			global $conn;	
 			
@@ -98,5 +98,5 @@ include($BASE_DIR .'database/Users/userInformation.php');
 			$conn->rollBack();
 			return $e->getMessage();
 		}
-  }
+	}
 ?>
