@@ -88,6 +88,7 @@
                 <label for="joinUser" class="col-md-4 control-label">Invite to join</label>
                 <div class="col-md-4">
                     <input name='joinUser' id='joinUser' type='text' class="form-control form-style input-md" placeholder='ex: aed1123'>
+                    <span class="field_error" >{$FIELD_ERRORS.user}</span>
                     <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Add User</button>
                 </div>
             </div>
