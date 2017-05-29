@@ -11,10 +11,6 @@
 <div class="container">
 	<div class="overlay">
 		<div class="results">
-		<select id="order" name="order">
-			<option value="ASC">Alphabetical A->Z</option>
-			<option value="DESC">Alphabetical Z->A</option>
-		</select>
 		<input id="users" type="checkbox" name="users" value="Users">Search user<br>
 		<input id="projs" type="checkbox" name="projects" value="Projects">Search project
 		<button id="filter" type="button" class="btn btn-primary btn-filter" >Apply Filters</button>

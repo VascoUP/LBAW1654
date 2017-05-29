@@ -18,9 +18,10 @@
   $smarty->assign('collaborator', $isCollaborator);
   $smarty->assign('userIsCoord', $userIsCoord);
   $smarty->assign('type', $userType);
-  $smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/projects/projectPage.tpl');
-  $smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'/templates/projects/projectSideBar.tpl');
   
+  $smarty->assign('PAGE_TEMPLATE', $BASE_DIR .'templates/projects/projectPage.tpl');
+  $smarty->assign('SIDEBAR_TEMPLATE', $BASE_DIR .'templates/projects/projectSideBar.tpl');
+
   $smarty->display($BASE_DIR .'templates/common/header.tpl');
   $smarty->display($BASE_DIR .'templates/page.tpl');
   $smarty->display($BASE_DIR .'templates/common/footer.tpl');

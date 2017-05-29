@@ -78,7 +78,7 @@
 									AND (textsearch @@ query
 									OR username ILIKE '%' || ? || '%'
 									OR email ILIKE '%' || ? || '%')
-									ORDER BY rank DESC LIMIT 10");	
+									ORDER BY rank DESC");	
 			
 			$stmt->execute(array($name, $name, $name));
 			$result = $stmt->fetchAll();
@@ -141,8 +141,7 @@
 									AND (textsearch @@ query
 									OR username ILIKE '%' || ? || '%'
 									OR email ILIKE '%' || ? || '%')
-									ORDER BY UserSite.username
-									LIMIT 10");	
+									ORDER BY UserSite.username");	
 			
 			$stmt->execute(array($name, $name, $name));
 			$result = $stmt->fetchAll();
@@ -162,8 +161,7 @@
 									AND (textsearch @@ query
 									OR username ILIKE '%' || ? || '%'
 									OR email ILIKE '%' || ? || '%')
-									ORDER BY UserSite.username DESC
-									LIMIT 10");	
+									ORDER BY UserSite.username DESC");	
 			
 			$stmt->execute(array($name, $name, $name));
 			$result = $stmt->fetchAll();
@@ -187,8 +185,7 @@
 									OR Tag.name ILIKE '%' || ? || '%'
 									AND TagProject.tagID = Tag.tagID
 									AND Project.projectID = TagProject.projectID))
-									ORDER BY Project.name
-									LIMIT 10");
+									ORDER BY Project.name");
 			$stmt->execute(array($name, $name, $name, $name));
 			
 			$result = $stmt->fetchAll();
@@ -212,8 +209,7 @@
 									OR Tag.name ILIKE '%' || ? || '%'
 									AND TagProject.tagID = Tag.tagID
 									AND Project.projectID = TagProject.projectID))
-									ORDER BY Project.name DESC
-									LIMIT 10");
+									ORDER BY Project.name DESC");
 			$stmt->execute(array($name, $name, $name, $name));
 			
 			$result = $stmt->fetchAll();
