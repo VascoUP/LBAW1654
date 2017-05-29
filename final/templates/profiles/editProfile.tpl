@@ -1,9 +1,10 @@
 <link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
 <link href="{$BASE_URL}css/bootstrap/bootstrap-social.css" rel="stylesheet">
 <script src="{$BASE_URL}javascript/users/confirmDelete.js"></script>
+<script src="{$BASE_URL}javascript/users/edit.js"></script>
 
 <div class="card card-container">
-    <form class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
+    <form id= "name" class="form-horizontal" action="{$BASE_URL}actions/profile/editProfile.php" method="post" enctype="multipart/form-data">
         <!-- Form Name -->
         <h2>Edit Profile</h2>
         
@@ -15,7 +16,7 @@
             <label class="col-md-4 control-label" for="username">Username</label>  
                 <div class="col-md-4">
                     <input id="username" name="username" type="text" placeholder="Username" class="form-control form-style input-md">
-                    <button	type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Username</button>
+                    <button type="submit" class="btn btn-success update"><span class="glyphicon glyphicon-thumbs-up"></span> Update Username</button>
                 </div>
         </div>
         </fieldset>
