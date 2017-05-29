@@ -2,8 +2,8 @@
 	include_once($BASE_DIR .'database/Users/userInformation.php');
 
 	function createProject($projName, $description, $access, $tags) {
-		if(	!preg_match('/^[a-z0-9 \-]+$/i', $projName) || 
-			!preg_match('/^[a-z0-9 \-]+$/i', $description))
+		if(	!preg_match('/^[a-zA-Z0-9 \-]+$/i', $projName) || 
+			!preg_match('/^[a-zA-Z0-9 .\-]+$/i', $description))
 			return 'Invalid project information';
 
 		try {

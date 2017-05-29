@@ -16,7 +16,7 @@
 
     $id = createProject($name, $overview, $access, $tags);
     if(!$id || !ctype_digit($id)){
-        $_SESSION['field_errors'][projCreate] = 'Parameter didn\'t were not valid. Make sure only Letters, numbers, \'.\' and \'-\' are used';
+        $_SESSION['field_errors'][projCreate] = 'Invalid parameters. Make sure only Letters, numbers, \'.\' and \'-\' are used';
         header("Location: $BASE_URL" . 'pages/project/projectCreate.php');
     }
     else{
