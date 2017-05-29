@@ -7,11 +7,6 @@
 	
 	if($_POST['ItName'])
 		$result = updateName($_POST['ItName'], $id);
-					if ($result) {
-            		    $_SESSION['field_errors'][iterations] = 'Invalid Parameter';
-            		    header("Location: https://gnomo.fe.up.pt" . $BASE_URL ."pages/project/editIteration.php?projID=" .$id);
-            			die();
-            		}
 	else if($_POST['maximum'])
 		updateMaximum($_POST['maximum'], $id);
 	else if($_POST['StartDate'] || $_POST['DueDate']){

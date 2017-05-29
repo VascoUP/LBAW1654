@@ -1,7 +1,8 @@
 <link href="{$BASE_URL}css/pages/forms.css" rel="stylesheet">
+<script src="{$BASE_URL}javascript/projects/forum.js"></script>
 
 <div id='profile-content' class='profile-content'>
-    <form class="form-horizontal" action="{$BASE_URL}actions/projects/createForum.php?projID={$smartyProjID}" method="post">
+    <form id ="forumform" class="form-horizontal" action="{$BASE_URL}actions/projects/createForum.php?projID={$smartyProjID}" method="post">
         <fieldset>
             <!-- Form Name -->
             <legend>Create Forum</legend>
